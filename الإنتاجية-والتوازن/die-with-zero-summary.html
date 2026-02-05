@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مت بصفر - ملخص شامل | بيل بيركنز</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #9b59b6; border-radius: 4px; }
+
+  .hero {
+    background: linear-gradient(135deg, #4a235a 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #9b59b6;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(155, 89, 182, 0.08) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #9b59b6; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(155, 89, 182, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(155, 89, 182, 0.2); }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b2d, #1a1a2e);
+    border: 2px solid #8e44ad;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section::before { content: '💀'; position: absolute; top: -15px; right: 30px; font-size: 1.8rem; background: #1a1a2e; padding: 0 10px; }
+  .problem-section h2 { font-size: 1.6rem; color: #9b59b6; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0d0; font-size: 1rem; }
+  .problem-section ul li::before { content: '⚡'; position: absolute; right: 0; }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #4a235a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 { font-size: 1.8rem; color: #9b59b6; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(155, 89, 182, 0.1); color: #9b59b6; transform: translateX(-4px); }
+  .toc-num { background: #9b59b6; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #4a235a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 { font-size: 1.6rem; color: #9b59b6; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #4a235a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover { border-color: #9b59b6; }
+
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(155, 89, 182, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #9b59b6, #8e44ad); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #9b59b6; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+
+  .section-label { display: inline-block; background: rgba(155, 89, 182, 0.12); color: #9b59b6; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+
+  .quote-block { background: rgba(155, 89, 182, 0.06); border-right: 4px solid #9b59b6; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '"'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(155, 89, 182, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+
+  .lesson-box { background: linear-gradient(135deg, rgba(74, 35, 90, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(155, 89, 182, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #9b59b6; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+
+  .insight-box { background: rgba(39, 174, 96, 0.08); border: 1px solid rgba(39, 174, 96, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #27ae60; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #b0d0b0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+
+  .rule-box { background: rgba(241, 196, 15, 0.08); border: 1px solid rgba(241, 196, 15, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .rule-box .rule-title { color: #f1c40f; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .rule-box p { color: #d0d0b0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(155, 89, 182, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #9b59b6; }
+
+  .footer { background: linear-gradient(145deg, #4a235a, #1a1a2e); border-top: 3px solid #9b59b6; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(155, 89, 182, 0.15); font-size: 0.85rem; color: #666680; }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">⏳</span>
+    <h1>مت بصفر</h1>
+    <p class="subtitle">Die With Zero: Getting All You Can from Your Money and Your Life</p>
+    <p class="author">بيل بيركنز — Bill Perkins</p>
+    <div class="meta-info">
+      <span>9 قواعد للحياة</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>عش حياتك كاملة</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>المشكلة اللي يعالجها هذا الكتاب</h2>
+  <p>
+    لو أنت من الناس اللي تأجل السعادة والتجارب عشان "توفّر للمستقبل"، وتخاف تصرف على نفسك، وتخطط تستمتع "لما تتقاعد" — هذا الكتاب يقلب تفكيرك:
+  </p>
+  <ul>
+    <li>تشتغل وتوفّر وتأجل كل شي لـ"بكره"</li>
+    <li>تخاف من الصرف حتى على التجارب اللي تحبها</li>
+    <li>تتخيل إن التقاعد هو وقت الاستمتاع — وتنسى إن جسمك بيكون أضعف</li>
+    <li>توفّر أكثر من اللازم وتموت والفلوس في البنك</li>
+    <li>تنسى إن الوقت أثمن من المال — والوقت ما يرجع</li>
+  </ul>
+  <p>
+    بيل بيركنز يقول: <strong>أسوأ شي إنك تموت وعندك فلوس ما استمتعت فيها.</strong> الهدف مو الادخار لذاته — الهدف تعظيم التجارب والذكريات والسعادة في حياتك. "مت بصفر" يعني: استخدم مواردك (مال، وقت، صحة) بذكاء عشان تعيش أكثر حياة ممكنة.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    بيل بيركنز مستثمر ورجل أعمال ناجح، لكن الكتاب مو عن الثراء — عن استخدام الثراء صح. شاف أصدقاء يموتون صغار ومعهم ملايين ما استمتعوا فيها. شاف آخرين يوفّرون للتقاعد ويوصلون له منهكين ومرضى ما يقدرون يستمتعون.
+  </p>
+  <p>
+    الكتاب يقدم 9 قواعد لتعظيم الحياة — مو المال. الفكرة الأساسية: المال أداة، والهدف هو التجارب. والتجارب لها وقت مثالي — ما تقدر تسافر backpacking وأنت عمرك 80، ولا تلعب مع أطفالك لما يكبرون.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس القواعد</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>عظّم التجارب الإيجابية</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>ابدأ الاستثمار في التجارب بدري</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>استهدف الموت بصفر</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>استخدم أدوات تعظيم الحياة</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>أعطِ قبل ما تموت</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>لا تعيش حياة Autopilot</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>فكر في حياتك كمواسم</a>
+    <a href="#ch8" class="toc-item"><span class="toc-num">8</span>اعرف متى تتوقف عن الادخار</a>
+    <a href="#ch9" class="toc-item"><span class="toc-num">9</span>خاطر في الوقت المناسب</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">عظّم التجارب الإيجابية</h2>
+      <span class="chapter-title-en">Maximize Your Positive Life Experiences</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    الحياة مو مجموع الأيام — مجموع التجارب والذكريات. لما تموت، ما بتاخذ معك شي إلا ذكرياتك (وحتى هذي بتروح). الهدف إذاً: تعظيم التجارب الإيجابية في حياتك.
+  </p>
+  <p>
+    بيركنز يقدم مفهوم "أرباح الذاكرة" (Memory Dividends): التجربة ما تعطيك سعادة وقتها بس — تعطيك سعادة كل مرة تتذكرها. رحلة حلوة مع العائلة تعطيك سعادة لسنوات. هالأرباح تتراكم مع الوقت، فكل ما استثمرت في التجارب بدري، كل ما كسبت أرباح ذاكرة أكثر.
+  </p>
+
+  <div class="quote-block">
+    <p>في نهاية حياتك، ما بتتمنى لو اشتغلت أكثر. بتتمنى لو عشت أكثر — سافرت أكثر، قضيت وقت أكثر مع اللي تحبهم، جربت أشياء جديدة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>الهدف مو جمع المال — الهدف جمع التجارب والذكريات. المال أداة لهذا الهدف، مو الهدف نفسه. اسأل نفسك: كم تجربة ذات معنى عشتها السنة الماضية؟</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">ابدأ الاستثمار في التجارب بدري</h2>
+      <span class="chapter-title-en">Start Investing in Experiences Early</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    بيركنز يقلب منطق الادخار: في المال، الاستثمار المبكر أفضل بسبب الفائدة المركبة. في التجارب، نفس الشي! كل ما استثمرت في تجربة بدري، كل ما حصلت على "أرباح ذاكرة" أكثر.
+  </p>
+  <p>
+    مثال: رحلة مع أصدقائك وأنت عمرك 25 تعطيك 50 سنة من الذكريات الحلوة. نفس الرحلة وأنت عمرك 65 تعطيك 15 سنة بس. الاستثمار المبكر في التجارب يعطي عوائد أكبر.
+  </p>
+  <p>
+    أيضاً، بعض التجارب لها "صلاحية". ما تقدر تسوي backpacking في أوروبا وأنت عمرك 80. ما تقدر تلعب مع أطفالك الصغار لما يكبرون. الوقت المناسب للتجربة مو دايماً "بكره" — أحياناً الوقت المناسب هو الحين.
+  </p>
+
+  <div class="quote-block">
+    <p>الوقت المناسب للتجربة مو لما يكون عندك فلوس كافية — الوقت المناسب لما تكون قادر جسدياً ونفسياً تستمتع فيها.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>لا تأجل التجارب المهمة. فيه تجارب لها وقت مثالي، وتأجيلها يعني خسارتها أو تقليل قيمتها. اسأل: هل هالتجربة ممكن أسويها بنفس الجودة بعد 10 سنين؟</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">استهدف الموت بصفر</h2>
+      <span class="chapter-title-en">Aim to Die With Zero</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    القاعدة الأكثر جدلاً في الكتاب: خطط إنك تموت بصفر. كل ريال يبقى بعد موتك هو ريال ما استمتعت فيه — ريال ضيّعته على شغل إضافي كان ممكن يكون وقت مع عائلتك.
+  </p>
+  <p>
+    طبعاً هذا ما يعني تصفّر حسابك وأنت عمرك 50. يعني: خطط بناءً على متوسط العمر المتوقع، احسب احتياجاتك، وصمم خطة تخليك تستخدم مواردك بكفاءة. بيركنز يقترح شراء تأمينات لتغطية المخاطر (لو عشت أطول من المتوقع) بدل ادخار مبالغ ضخمة "احتياطاً".
+  </p>
+  <p>
+    الفكرة مو البخل على نفسك في الشيخوخة — الفكرة عدم الادخار المفرط اللي يحرمك من الحياة الحين على أمل مستقبل ممكن ما يجي.
+  </p>
+
+  <div class="rule-box">
+    <div class="rule-title">⚠️ تحذير مهم</div>
+    <p>"مت بصفر" ما يعني تصرف بدون تخطيط. يعني: خطط بذكاء، استخدم التأمينات لتغطية المخاطر، ولا توفّر أكثر من اللازم خوفاً من مستقبل مجهول.</p>
+  </div>
+
+  <div class="quote-block">
+    <p>كل ريال تموت وهو في حسابك هو ريال حرمت نفسك منه. سواء كان تجربة ما عشتها، أو وقت مع عائلة ضيّعته على شغل إضافي.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>الادخار المفرط خطر بنفس درجة الإسراف. وازن بين الأمان المالي والاستمتاع بالحياة. الهدف: استخدام مواردك بكفاءة، مو تجميعها.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">استخدم أدوات تعظيم الحياة</h2>
+      <span class="chapter-title-en">Use All Available Tools</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    بيركنز يقترح أدوات مالية تساعدك توازن بين الأمان والاستمتاع:
+  </p>
+  <p>
+    <strong>التأمين على الحياة:</strong> لو عندك معالين، التأمين يحميهم بدون ما تحتاج توفّر مبالغ ضخمة.
+  </p>
+  <p>
+    <strong>Annuities (المعاشات):</strong> تحوّل مبلغ لدخل شهري مضمون لنهاية حياتك. هذا يحل مشكلة "ماذا لو عشت أطول من المتوقع".
+  </p>
+  <p>
+    <strong>التخطيط المالي الذكي:</strong> بدل ادخار "كل ما أقدر"، احسب احتياجاتك الفعلية وخطط لها.
+  </p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>استخدم الأدوات المالية الحديثة (تأمينات، معاشات) لتغطية المخاطر بدل الادخار المفرط. هذا يحررك للاستمتاع بأموالك وأنت تقدر.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">أعطِ المال لأحبابك قبل ما تموت</h2>
+      <span class="chapter-title-en">Give Money to Your Children When They Need It Most</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    لو ناوي تورّث أولادك فلوس — ليش تنتظر لما تموت؟ لما تموت وعمرك 85، أولادك بيكونون 55-60 سنة. هم ما يحتاجون الفلوس وقتها — يحتاجونها وهم شباب يؤسسون حياتهم.
+  </p>
+  <p>
+    بيركنز يقول: أعطِ الفلوس لأولادك (وللي تحبهم) وهم يحتاجونها — لما يشترون أول بيت، لما يبدأون مشروع، لما عندهم أطفال صغار. الفلوس وقتها تفرق فعلاً. نفس الفلوس بعد 30 سنة تفرق أقل بكثير.
+  </p>
+  <p>
+    نفس المنطق ينطبق على العطاء الخيري. لو ناوي تتبرع، تبرّع الحين وشوف أثر تبرعك بعينك. ليش تنتظر لما تموت؟
+  </p>
+
+  <div class="quote-block">
+    <p>الميراث اللي يوصل لأولادك وهم في الستين عمره — جاء متأخر. الفلوس أقيم لما الناس تحتاجها، مو لما يكون عندهم كفايتهم.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>لو تبي تساعد أحد مالياً، ساعده الحين مو بعد موتك. المساعدة في الوقت المناسب أقيم بمراحل من الميراث المتأخر.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">لا تعيش حياة على الطيار الآلي</h2>
+      <span class="chapter-title-en">Don't Live Life on Autopilot</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    كثير من الناس يعيشون بدون تفكير — يشتغلون، يوفّرون، ينتظرون التقاعد، بدون ما يسألون: هل هذا اللي أبيه فعلاً؟ بيركنز يقول: توقف بين فترة وفترة واسأل نفسك أسئلة كبيرة.
+  </p>
+  <p>
+    شو الذكريات اللي أبي أصنعها؟ شو التجارب اللي بندم لو ما سويتها؟ هل أنا أعيش حياتي ولا حياة الآخرين يتوقعونها مني؟ هالأسئلة مو سهلة، لكنها ضرورية.
+  </p>
+
+  <div class="quote-block">
+    <p>الحياة غير المدروسة ما تستاهل تُعاش. توقف بين فترة وفترة واسأل: هل أنا في المسار الصحيح؟</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>خذ وقت للتفكير في حياتك بشكل منتظم. هل تعيش بقصد ولا بالعادة؟ هل تجاربك وذكرياتك تعكس قيمك الحقيقية؟</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">فكر في حياتك كمواسم</h2>
+      <span class="chapter-title-en">Think of Your Life in Seasons</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    كل مرحلة عمرية لها تجارب مناسبة. بيركنز يقسم الحياة لـ"دلاء زمنية" (Time Buckets) — كل دلو يمثل فترة عمرية (20-30، 30-40، الخ) وفيه قائمة بالتجارب اللي تناسبه.
+  </p>
+  <p>
+    مثال: السفر المغامر (backpacking، تسلق جبال) يناسب العشرينات والثلاثينات. بناء مسيرة مهنية يناسب الثلاثينات والأربعينات. قضاء وقت مع الأحفاد يناسب الستينات والسبعينات. لكل مرحلة قوتها الخاصة.
+  </p>
+  <p>
+    لما تخطط لحياتك بهالطريقة، تتأكد إنك ما تفوّت التجارب بسبب التأجيل. ما تنتظر التقاعد لتسافر العالم — لأنك بتكتشف إن جسمك في السبعين ما يتحمل نفس المغامرات.
+  </p>
+
+  <div class="quote-block">
+    <p>ما فيه شي اسمه "الوقت المناسب العام" — فيه الوقت المناسب لهذي التجربة بالذات. ولو فاتك، فاتك للأبد.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 تمرين الدلاء الزمنية</div>
+    <p>قسّم حياتك المتبقية لفترات 5-10 سنوات. لكل فترة، اكتب: شو التجارب اللي لازم أسويها في هالفترة قبل فوات الأوان؟ هذا يساعدك تخطط وتحدد الأولويات.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 8 -->
+<article class="chapter" id="ch8">
+  <div class="chapter-header">
+    <div class="chapter-number">8</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">اعرف متى تتوقف عن الادخار</h2>
+      <span class="chapter-title-en">Know When to Stop Growing Your Wealth</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    في نقطة معينة، الادخار الإضافي ما يفيدك — لأنك ما بتقدر تصرف كل اللي عندك. بيركنز يسميها "نقطة الذروة" (Peak) — النقطة اللي بعدها لازم تبدأ تصرف بدل ما تدّخر.
+  </p>
+  <p>
+    كيف تحسبها؟ تقريباً: قدّر متوسط عمرك المتوقع، احسب مصاريفك السنوية المتوقعة، اطرح دخلك من التقاعد والتأمينات. الرقم المتبقي هو اللي تحتاج تدّخره — أي شي فوقه هو زيادة ما بتستخدمها.
+  </p>
+
+  <div class="quote-block">
+    <p>فيه رقم كافي. بعده، كل ريال تدّخره هو ريال ما بتستمتع فيه — ريال خسرته على تجارب كان ممكن تعيشها.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>الادخار له حد أقصى منطقي. بعد ما توصله، كل ادخار إضافي هو خسارة للتجارب. احسب رقمك وخطط بناءً عليه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 9 -->
+<article class="chapter" id="ch9">
+  <div class="chapter-header">
+    <div class="chapter-number">9</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">خاطر في الوقت المناسب</h2>
+      <span class="chapter-title-en">Take Your Risks When You're Young</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    المخاطرة لها وقت مثالي — الشباب. لما تكون صغير، عندك وقت تتعافى من الفشل، مسؤولياتك أقل، وطاقتك أعلى. كل ما كبرت، المخاطرة صارت أصعب وأثمن.
+  </p>
+  <p>
+    لو تبي تترك وظيفتك وتبدأ مشروع، سوّيها وأنت شاب. لو تبي تسافر سنة كاملة، سوّيها قبل ما يكون عندك أطفال وقروض. لو تبي تغيّر مجالك، سوّيها وأنت عندك وقت تبني من جديد.
+  </p>
+
+  <div class="quote-block">
+    <p>الشباب مو وقت "التأسيس للمستقبل" بس — الشباب وقت المخاطرة والتجربة. كل ما انتظرت أكثر، كل ما صارت المخاطرة أصعب.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>لا تأجل المخاطرات المحسوبة للـ"وقت المناسب" — الوقت المناسب هو الشباب. كل ما كبرت، كل ما صارت المخاطرة أصعب والأمان أهم.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>الخلاصة النهائية</h3>
+  <p>
+    "مت بصفر" مو دعوة للإسراف — دعوة لاستخدام مواردك بذكاء. المال أداة للتجارب والذكريات، مو هدف بذاته. الادخار المفرط يحرمك من الحياة بنفس درجة الإسراف.
+  </p>
+  <p>
+    القواعد التسع: عظّم التجارب، استثمر فيها بدري، استهدف الصفر، استخدم التأمينات، أعطِ قبل موتك، عش بقصد، فكر بالمواسم، اعرف متى تتوقف، خاطر وأنت شاب.
+  </p>
+  <p>
+    السؤال الأخير: لو بقي لك سنة واحدة، شو بتسوي؟ الجواب يكشف أولوياتك الحقيقية. ابدأ فيها الحين — لا تنتظر.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص شخصي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي أمثلة وحسابات تفصيلية أكثر.
+  </div>
+</footer>
+
+</body>
+</html>

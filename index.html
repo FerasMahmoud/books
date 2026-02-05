@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مكتبتي الشخصية</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #0f0f1a;
+    color: #e0e0e0;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 3px solid #e94560;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header h1 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 10px; }
+  .header p { color: #8888a0; font-size: 1.1rem; }
+  .header .book-count {
+    display: inline-block;
+    background: #e94560;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+  .category { margin-bottom: 50px; }
+  .category-title {
+    font-size: 1.5rem;
+    color: #e94560;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(233, 69, 96, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .category-title span { font-size: 1.5rem; }
+
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  .book-card {
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(233, 69, 96, 0.3);
+  }
+
+  .book-cover {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+  }
+
+  .book-card[data-color="red"] .book-cover { background: linear-gradient(135deg, #e94560, #c0392b); }
+  .book-card[data-color="blue"] .book-cover { background: linear-gradient(135deg, #4a90a4, #357a8a); }
+  .book-card[data-color="orange"] .book-cover { background: linear-gradient(135deg, #e67e22, #d35400); }
+  .book-card[data-color="green"] .book-cover { background: linear-gradient(135deg, #1abc9c, #16a085); }
+  .book-card[data-color="crimson"] .book-cover { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+  .book-card[data-color="purple"] .book-cover { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+  .book-card[data-color="teal"] .book-cover { background: linear-gradient(135deg, #00b894, #00a878); }
+  .book-card[data-color="pink"] .book-cover { background: linear-gradient(135deg, #fd79a8, #e84393); }
+  .book-card[data-color="amber"] .book-cover { background: linear-gradient(135deg, #fdcb6e, #f39c12); }
+  .book-card[data-color="cyan"] .book-cover { background: linear-gradient(135deg, #00cec9, #0984e3); }
+
+  .book-info { padding: 20px; }
+  .book-title { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 5px; }
+  .book-subtitle { font-size: 0.85rem; color: #e94560; font-style: italic; margin-bottom: 8px; direction: ltr; text-align: right; }
+  .book-author { font-size: 0.9rem; color: #8888a0; margin-bottom: 12px; }
+  .book-description { font-size: 0.9rem; color: #a0a0b0; line-height: 1.7; }
+  .book-tag {
+    display: inline-block;
+    background: rgba(233, 69, 96, 0.1);
+    color: #e94560;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    margin-top: 12px;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 30px;
+    color: #666680;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .back-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #e94560;
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
+    transition: all 0.3s ease;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .back-button:hover { background: #c0392b; transform: scale(1.1); }
+  .back-button.visible { display: flex; }
+
+  .book-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #0f0f1a;
+    z-index: 999;
+    display: none;
+  }
+  .book-viewer.active { display: block; }
+  .book-viewer iframe { width: 100%; height: 100%; border: none; }
+
+  @media (max-width: 768px) {
+    .header h1 { font-size: 1.8rem; }
+    .header { padding: 30px 15px; }
+    .container { padding: 25px 15px; }
+    .books-grid { grid-template-columns: 1fr; gap: 20px; }
+    .book-cover { height: 150px; font-size: 3.5rem; }
+    .book-title { font-size: 1.2rem; }
+    .category-title { font-size: 1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<button class="back-button" id="backBtn" onclick="closeBook()">&#10005;</button>
+
+<div class="book-viewer" id="bookViewer">
+  <iframe id="bookFrame" src=""></iframe>
+</div>
+
+<header class="header" id="header">
+  <h1>&#128218; مكتبتي الشخصية</h1>
+  <p>ملخصات الكتب باللغة العربية</p>
+  <span class="book-count">6 كتب</span>
+</header>
+
+<main class="container" id="library">
+
+  <section class="category">
+    <h2 class="category-title"><span>&#9889;</span> الإنتاجية والتوازن</h2>
+    <div class="books-grid">
+
+      <a class="book-card" data-color="red" onclick="openBook('الإنتاجية-والتوازن/4-hour-workweek-summary.html')">
+        <div class="book-cover">⏰</div>
+        <div class="book-info">
+          <h3 class="book-title">أسبوع العمل 4 ساعات</h3>
+          <p class="book-subtitle">The 4-Hour Workweek: Escape 9-5, Live Anywhere</p>
+          <p class="book-author">تيم فيريس</p>
+          <p class="book-description">لو أنت عالق في وظيفة 9-5، تنتظر التقاعد عشان "تعيش حياتك"، وتحس إن أفضل سنينك تروح على مكتب — هذا الكتاب يقدم بديل جذري:...</p>
+          <span class="book-tag">6 فصل</span>
+        </div>
+      </a>
+
+      <a class="book-card" data-color="blue" onclick="openBook('الإنتاجية-والتوازن/deep-work-summary.html')">
+        <div class="book-cover">🧠</div>
+        <div class="book-info">
+          <h3 class="book-title">العمل العميق</h3>
+          <p class="book-subtitle">Deep Work: Rules for Focused Success in a Distracted World</p>
+          <p class="book-author">كال نيوبورت</p>
+          <p class="book-description">Deep Work: Rules for Focused Success in a Distracted World...</p>
+          <span class="book-tag">8 فصل</span>
+        </div>
+      </a>
+
+      <a class="book-card" data-color="orange" onclick="openBook('الإنتاجية-والتوازن/die-with-zero-summary.html')">
+        <div class="book-cover">⏳</div>
+        <div class="book-info">
+          <h3 class="book-title">مت بصفر</h3>
+          <p class="book-subtitle">Die With Zero: Getting All You Can from Your Money and Your Life</p>
+          <p class="book-author">بيل بيركنز</p>
+          <p class="book-description">Die With Zero: Getting All You Can from Your Money and Your Life...</p>
+          <span class="book-tag">9 فصل</span>
+        </div>
+      </a>
+
+      <a class="book-card" data-color="green" onclick="openBook('الإنتاجية-والتوازن/essentialism-summary.html')">
+        <div class="book-cover">✨</div>
+        <div class="book-info">
+          <h3 class="book-title">الجوهرية</h3>
+          <p class="book-subtitle">Essentialism: The Disciplined Pursuit of Less</p>
+          <p class="book-author">غريغ ماكيون</p>
+          <p class="book-description">لو حياتك مليانة التزامات، وكل يوم تحس إنك تركض بدون ما توصل، وما تقدر تقول "لا" لأي طلب — هذا الكتاب يغيّر حياتك. المشكلة:...</p>
+          <span class="book-tag">8 فصل</span>
+        </div>
+      </a>
+
+      <a class="book-card" data-color="crimson" onclick="openBook('الإنتاجية-والتوازن/rest-book-summary.html')">
+        <div class="book-cover">🌙</div>
+        <div class="book-info">
+          <h3 class="book-title">الراحة</h3>
+          <p class="book-subtitle">Rest: Why You Get More Done When You Work Less</p>
+          <p class="book-author">أليكس سونغ-كيم بانغ</p>
+          <p class="book-description">لو أنت من الناس اللي تشتغل طول الوقت، وتحس إن الراحة = كسل، وإنك لازم تكون "productive" 24/7 عشان تنجح — هذا الكتاب يغيّر حياتك. المشكلة اللي نعيشها ا...</p>
+          <span class="book-tag">12 فصل</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="category">
+    <h2 class="category-title"><span>&#128176;</span> المال والاستثمار</h2>
+    <div class="books-grid">
+
+      <a class="book-card" data-color="purple" onclick="openBook('المال-والاستثمار/psychology-of-money-summary.html')">
+        <div class="book-cover">📖</div>
+        <div class="book-info">
+          <h3 class="book-title">سيكولوجية المال</h3>
+          <p class="book-subtitle">The Psychology of Money</p>
+          <p class="book-author">مورغان هاوسل</p>
+          <p class="book-description">كتاب "سيكولوجية المال" من أهم الكتب اللي صدرت في العقد الأخير عن المال والاستثمار. المؤلف مورغان هاوسل — كاتب مالي مخضرم — يقدم فيه فكرة بسيطة لكن عمي...</p>
+          <span class="book-tag">20 فصل</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>مكتبة شخصية للملخصات العربية | يتم التحديث تلقائيا</p>
+</footer>
+
+<script>
+  function openBook(bookPath) {
+    const viewer = document.getElementById('bookViewer');
+    const frame = document.getElementById('bookFrame');
+    const backBtn = document.getElementById('backBtn');
+    const header = document.getElementById('header');
+    const library = document.getElementById('library');
+
+    frame.src = bookPath;
+    viewer.classList.add('active');
+    backBtn.classList.add('visible');
+    header.style.display = 'none';
+    library.style.display = 'none';
+    document.body.style.overflow = 'hidden';
+    history.pushState({book: bookPath}, '', '#' + bookPath);
+  }
+
+  function closeBook() {
+    const viewer = document.getElementById('bookViewer');
+    const frame = document.getElementById('bookFrame');
+    const backBtn = document.getElementById('backBtn');
+    const header = document.getElementById('header');
+    const library = document.getElementById('library');
+
+    viewer.classList.remove('active');
+    backBtn.classList.remove('visible');
+    frame.src = '';
+    header.style.display = 'block';
+    library.style.display = 'block';
+    document.body.style.overflow = 'auto';
+    window.scrollTo(0, 0);
+    history.pushState({}, '', window.location.pathname);
+  }
+
+  window.addEventListener('popstate', function(event) {
+    if (document.getElementById('bookViewer').classList.contains('active')) {
+      closeBook();
+    }
+  });
+
+  window.addEventListener('load', function() {
+    if (window.location.hash) {
+      const bookPath = window.location.hash.substring(1);
+      if (bookPath) openBook(decodeURIComponent(bookPath));
+    }
+  });
+</script>
+
+</body>
+</html>

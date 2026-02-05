@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أسبوع العمل 4 ساعات - ملخص شامل | تيم فيريس</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #e74c3c; border-radius: 4px; }
+
+  .hero {
+    background: linear-gradient(135deg, #5c1a1a 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #e74c3c;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(231, 76, 60, 0.08) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #e74c3c; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(231, 76, 60, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(231, 76, 60, 0.2); }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section::before { content: '🚀'; position: absolute; top: -15px; right: 30px; font-size: 1.8rem; background: #1a1a2e; padding: 0 10px; }
+  .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '⚡'; position: absolute; right: 0; }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #5c1a1a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 { font-size: 1.8rem; color: #e74c3c; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(231, 76, 60, 0.1); color: #e74c3c; transform: translateX(-4px); }
+  .toc-num { background: #e74c3c; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #5c1a1a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #5c1a1a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover { border-color: #e74c3c; }
+
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(231, 76, 60, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #e74c3c, #c0392b); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #e74c3c; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+
+  .section-label { display: inline-block; background: rgba(231, 76, 60, 0.12); color: #e74c3c; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+
+  .quote-block { background: rgba(231, 76, 60, 0.06); border-right: 4px solid #e74c3c; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '"'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(231, 76, 60, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+
+  .lesson-box { background: linear-gradient(135deg, rgba(92, 26, 26, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(231, 76, 60, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #e74c3c; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+
+  .insight-box { background: rgba(39, 174, 96, 0.08); border: 1px solid rgba(39, 174, 96, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #27ae60; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #b0d0b0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+
+  .deal-box { background: rgba(241, 196, 15, 0.08); border: 1px solid rgba(241, 196, 15, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .deal-box .deal-title { color: #f1c40f; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .deal-box p { color: #d0d0b0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(231, 76, 60, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #e74c3c; }
+
+  .footer { background: linear-gradient(145deg, #5c1a1a, #1a1a2e); border-top: 3px solid #e74c3c; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(231, 76, 60, 0.15); font-size: 0.85rem; color: #666680; }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">⏰</span>
+    <h1>أسبوع العمل 4 ساعات</h1>
+    <p class="subtitle">The 4-Hour Workweek: Escape 9-5, Live Anywhere</p>
+    <p class="author">تيم فيريس — Tim Ferriss</p>
+    <div class="meta-info">
+      <span>نظام DEAL</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>الهروب من 9-5</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>المشكلة اللي يعالجها هذا الكتاب</h2>
+  <p>
+    لو أنت عالق في وظيفة 9-5، تنتظر التقاعد عشان "تعيش حياتك"، وتحس إن أفضل سنينك تروح على مكتب — هذا الكتاب يقدم بديل جذري:
+  </p>
+  <ul>
+    <li>تشتغل 40-60 ساعة أسبوعياً على أمل تقاعد مريح بعد 40 سنة</li>
+    <li>تأجل كل أحلامك لـ"لما أتقاعد"</li>
+    <li>تحس إنك محبوس في نظام ما صممته</li>
+    <li>تبي تسافر، تتعلم، تعيش — لكن "ما عندك وقت"</li>
+    <li>تخاف من فكرة ترك الوظيفة لأن "ما فيه بديل"</li>
+  </ul>
+  <p>
+    تيم فيريس يقول: <strong>فيه بديل.</strong> تقدر تصمم حياة فيها حرية ودخل ومغامرة — بدون انتظار التقاعد. الكتاب يعلّمك كيف تبني "نمط حياة" بدل "مسيرة مهنية" تقليدية. مو للكل، لكن للي جاهز يفكر بطريقة مختلفة تماماً.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    تيم فيريس كان يشتغل 80 ساعة أسبوعياً في شركته، منهك ومحبط. بدل ما يستمر أو يبيع الشركة ويتقاعد، اختار طريق ثالث: أتمتة الشركة بحيث تشتغل بدونه، والسفر حول العالم بينما الدخل يجي. الكتاب يشرح كيف سوّى هذا، وكيف تقدر تطبق نفس المبادئ.
+  </p>
+  <p>
+    فيريس يقدم نظام DEAL: Definition (التعريف)، Elimination (الإزالة)، Automation (الأتمتة)، Liberation (التحرر). كل جزء يبني على اللي قبله، والنتيجة النهائية: حياة فيها حرية، دخل، ووقت للأشياء اللي تحبها.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الأجزاء</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>مقدمة: الأغنياء الجدد</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>D: التعريف</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>E: الإزالة</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>A: الأتمتة</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>L: التحرر</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>التطبيق العملي</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الأغنياء الجدد: فلسفة مختلفة</h2>
+      <span class="chapter-title-en">The New Rich</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    فيريس يفرّق بين نوعين من الناس: "المؤجلين" (Deferrers) و"الأغنياء الجدد" (New Rich). المؤجل يشتغل الحين ويعيش لاحقاً — يأجل السفر والمغامرة والحياة لما يتقاعد. الغني الجديد يصمم حياته عشان يعيش الحين — يوزع "تقاعدات صغيرة" على طول حياته بدل تقاعد واحد في النهاية.
+  </p>
+  <p>
+    الهدف مو المال نفسه — الهدف اللي يشتريه المال: الحرية، الوقت، التجارب. مليون في البنك ما يفيدك لو ما عندك وقت تستمتع فيه. بالمقابل، 50 ألف سنوياً مع حرية كاملة ممكن تعطيك حياة أغنى.
+  </p>
+
+  <div class="quote-block">
+    <p>الغنى النسبي = الدخل ÷ (الوقت × التكاليف). اللي يكسب 100 ألف ويشتغل 80 ساعة أسبوعياً "أفقر" من اللي يكسب 50 ألف ويشتغل 10 ساعات.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>أعد تعريف "الغنى". مو كم في حسابك — كم حرية عندك، كم وقت تملك، كم تجارب تعيش. صمم حياتك حول هالتعريف الجديد.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">D — التعريف: شو تبي فعلاً؟</h2>
+      <span class="chapter-title-en">Definition</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    قبل ما تبدأ، لازم تعرف وين تبي توصل. أغلب الناس يقولون "أبي أكون غني" أو "أبي أتقاعد بدري" بدون ما يعرفون شو يعني هذا فعلاً. فيريس يقول: كن محدد. شو بالضبط تبي تسوي، تملك، تكون؟
+  </p>
+  <p>
+    <strong>تمرين Dreamlining:</strong> اكتب 5 أشياء تبي تملكها (Having)، 5 أشياء تبي تسويها (Being)، 5 أشياء تبي تصير (Doing) — في الـ6 شهور الجاية و12 شهر الجاية. لكل واحد، احسب التكلفة الشهرية. غالباً بتكتشف إن "حياة الأحلام" أرخص مما تتخيل.
+  </p>
+  <p>
+    <strong>تغلب على الخوف:</strong> أكبر عائق مو المال — الخوف. خوف من الفشل، من حكم الناس، من المجهول. فيريس يقترح تمرين: اكتب أسوأ سيناريو ممكن لو فشلت. غالباً بتكتشف إنه مو بهالسوء — وإن تكلفة عدم المحاولة أسوأ.
+  </p>
+
+  <div class="deal-box">
+    <div class="deal-title">📝 تمرين Dreamlining</div>
+    <p>اكتب 5 أحلام في كل فئة (تملك، تسوي، تصير). لكل حلم، حدد: التكلفة، الخطوة الأولى، الموعد النهائي. اختر الـ4 الأهم وابدأ فيها هالأسبوع.</p>
+  </div>
+
+  <div class="quote-block">
+    <p>الخوف من الفشل غالباً أسوأ من الفشل نفسه. اسأل نفسك: شو أسوأ شي ممكن يصير؟ وهل أقدر أتحمله؟</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>كن محدد في أحلامك واحسب تكلفتها الحقيقية. غالباً "حياة الأحلام" أرخص مما تتخيل — الغالي هو الخوف من المحاولة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">E — الإزالة: فن عدم الفعل</h2>
+      <span class="chapter-title-en">Elimination</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    قبل ما تأتمت شغلك، لازم تقلله. فيريس يطبق قانون باريتو بقوة: 80% من النتائج تجي من 20% من الجهود. حدد الـ20% وركّز عليها، والغِ أو قلل الـ80% الباقية.
+  </p>
+  <p>
+    <strong>قانون باركنسون:</strong> المهمة تتمدد لتملأ الوقت المتاح. لو أعطيت نفسك أسبوع لمهمة، بتاخذ أسبوع. لو أعطيت نفسك يوم، بتخلص بيوم. حط مواعيد نهائية قصيرة تجبرك على التركيز.
+  </p>
+  <p>
+    <strong>حمية المعلومات:</strong> أغلب الأخبار والإيميلات والاجتماعات ما تحتاجها. فيريس يقترح: توقف عن قراءة الأخبار تماماً، تشيك الإيميل مرتين يومياً بس، ارفض أغلب الاجتماعات. اسأل دائماً: هل هذا ضروري فعلاً؟
+  </p>
+
+  <div class="quote-block">
+    <p>أن تكون مشغولاً شكل من أشكال الكسل — كسل في التفكير والتمييز بين المهم وغير المهم.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>قلّل قبل ما تأتمت. حدد الـ20% اللي تنتج 80% من النتائج. ألغِ، قلّص، أو تجاهل الباقي. الإنتاجية مو عن سوي أكثر — عن سوي اللي يفرق.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>جرّب هالأسبوع: تشيك الإيميل مرتين بس (11 صباحاً و4 مساءً). لا تقرأ أخبار. ارفض اجتماع واحد على الأقل. لاحظ: العالم ما انهار، وعندك وقت أكثر.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">A — الأتمتة: الدخل السلبي</h2>
+      <span class="chapter-title-en">Automation</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    الهدف: بناء مصدر دخل يشتغل بدونك. فيريس يسميه "muse" (ملهمة) — مشروع صغير آلي يولّد دخل كافي يغطي نمط حياتك المثالي.
+  </p>
+  <p>
+    <strong>خصائص الـMuse المثالي:</strong> (1) منتج مو خدمة — المنتج يُباع بدون وقتك، الخدمة تحتاج وقتك. (2) سعر 50-200 دولار — أقل من كذا الهامش ضعيف، أكثر من كذا يحتاج مبيعات معقدة. (3) يمكن شرحه في 30 ثانية. (4) يمكن إنتاجه في أقل من 4 أسابيع.
+  </p>
+  <p>
+    <strong>الأتمتة:</strong> فوّض كل شي ممكن. استخدم مساعدين افتراضيين للمهام الروتينية. أتمت الطلبات والشحن والدعم الفني. الهدف: المشروع يشتغل بدون ما تلمسه يومياً.
+  </p>
+
+  <div class="quote-block">
+    <p>الهدف مو بناء إمبراطورية تديرها — الهدف بناء آلة تديرها بدونك عشان تعيش حياتك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>الدخل السلبي الحقيقي يجي من بناء أنظمة تشتغل بدونك. هذا يتطلب جهد مقدماً، لكن النتيجة: دخل + حرية. ما تحتاج مشروع ضخم — تحتاج مشروع ذكي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">L — التحرر: العمل عن بعد والسفر</h2>
+      <span class="chapter-title-en">Liberation</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    لو عندك وظيفة، التحرر يعني: التحول للعمل عن بعد. فيريس يقدم خطة تدريجية: ابدأ بيوم واحد من البيت، أثبت إنك أكثر إنتاجية، زوّد تدريجياً، حتى توصل لحرية كاملة.
+  </p>
+  <p>
+    لو عندك مشروع، التحرر يعني: تأكد إن المشروع يشتغل بدونك. فيريس كان يدير شركته من أي مكان في العالم — إيميل أسبوعي واحد كان كافي.
+  </p>
+  <p>
+    <strong>Mini-Retirements:</strong> بدل تقاعد واحد في آخر العمر، خذ "تقاعدات صغيرة" على طول حياتك. شهر هنا، ثلاثة أشهر هناك. سافر، تعلّم، عش — الحين مو لاحقاً.
+  </p>
+
+  <div class="quote-block">
+    <p>الحياة قصيرة جداً عشان تأجلها. لا تنتظر التقاعد — وزّع التقاعد على طول حياتك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>الحرية الجغرافية ممكنة — بس تحتاج تصميم وجرأة. ما تحتاج تترك كل شي دفعة واحدة. ابدأ تدريجياً، أثبت نفسك، ووسّع حريتك خطوة خطوة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التطبيق العملي</h2>
+      <span class="chapter-title-en">Getting Started</span>
+    </div>
+  </div>
+
+  <span class="section-label">الخطة</span>
+  <p>
+    <strong>هالأسبوع:</strong> (1) سوّي تمرين Dreamlining — حدد أحلامك وتكلفتها. (2) طبّق حمية المعلومات — إيميل مرتين يومياً، بدون أخبار.
+  </p>
+  <p>
+    <strong>هالشهر:</strong> (1) حدد الـ20% من شغلك اللي ينتج 80% من النتائج. (2) لو موظف، تفاوض على يوم واحد من البيت.
+  </p>
+  <p>
+    <strong>الـ3 شهور الجاية:</strong> (1) فكّر في muse — منتج بسيط يمكن تبيعه أونلاين. (2) جرّب مساعد افتراضي لمهام روتينية.
+  </p>
+  <p>
+    <strong>تذكّر:</strong> هذي رحلة، مو حدث واحد. ما تحتاج تسوي كل شي مرة واحدة. خطوة خطوة، تبني الحياة اللي تبيها.
+  </p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>الكتاب مو وصفة سحرية — هو إطار تفكير. خذ اللي يناسبك واترك الباقي. الفكرة الأساسية: تقدر تصمم حياتك بدل ما تقبل التصميم الافتراضي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>الخلاصة النهائية</h3>
+  <p>
+    أسبوع العمل 4 ساعات مو حرفياً عن الشغل 4 ساعات — عن تصميم حياة فيها حرية. نظام DEAL: حدد أهدافك الحقيقية، أزل غير الضروري، أتمت ما أمكن، وتحرر من القيود المكانية والزمنية.
+  </p>
+  <p>
+    مو كل الأفكار تناسب كل شخص. لكن الفكرة الأساسية قوية: ما تحتاج تنتظر 40 سنة عشان تعيش. تقدر تصمم حياة فيها عمل ذو معنى، دخل كافي، وحرية تستمتع فيها — الحين.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص شخصي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأدوات عملية أكثر بكثير.
+  </div>
+</footer>
+
+</body>
+</html>
