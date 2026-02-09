@@ -797,6 +797,8 @@ textarea:focus {
   z-index: 2000;
   display: none;
   flex-direction: column;
+  padding-bottom: 0 !important;
+  min-height: 0 !important;
 }
 
 #view-reader.active {
@@ -2758,14 +2760,7 @@ textarea:focus {
 }
 
 /* === BOOK FRAME === */
-
-.book-frame {
-  flex: 1;
-  width: 100%;
-  border: none;
-  margin-top: calc(env(safe-area-inset-top) + 55px);
-  background: var(--bg-secondary);
-}
+/* (Defined as #book-frame in Reader View section above) */
 
 /* === READER PROGRESS === */
 
