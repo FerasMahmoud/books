@@ -2,7 +2,7 @@
   "name": "مكتبتي الشخصية",
   "short_name": "مكتبتي",
   "description": "مكتبة شخصية لملخصات الكتب باللغة العربية",
-  "start_url": "/",
+  "start_url": "/books/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0f0f1a",

@@ -1,35 +1,35 @@
-const CACHE_NAME = 'books-library-v6';
+const CACHE_NAME = 'books-library-v7';
 
 // Files to pre-cache on install
 const PRECACHE_URLS = [
-  '/',
-  '/css/app.css',
-  '/css/reader.css',
-  '/js/db.js',
-  '/js/sync.js',
-  '/js/app.js',
-  '/js/book-reader.js',
-  '/manifest.json',
+  '/books/',
+  '/books/css/app.css',
+  '/books/css/reader.css',
+  '/books/js/db.js',
+  '/books/js/sync.js',
+  '/books/js/app.js',
+  '/books/js/book-reader.js',
+  '/books/manifest.json',
   // Book HTML files - Productivity & Balance
-  '/%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B2%D9%86/4-hour-workweek-summary.html',
-  '/%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B2%D9%86/deep-work-summary.html',
-  '/%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B2%D9%86/die-with-zero-summary.html',
-  '/%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B2%D9%86/essentialism-summary.html',
-  '/%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B2%D9%86/rest-book-summary.html',
+  '/books/%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B2%D9%86/4-hour-workweek-summary.html',
+  '/books/%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B2%D9%86/deep-work-summary.html',
+  '/books/%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B2%D9%86/die-with-zero-summary.html',
+  '/books/%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B2%D9%86/essentialism-summary.html',
+  '/books/%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B2%D9%86/rest-book-summary.html',
   // Book HTML files - Money & Investment
-  '/%D8%A7%D9%84%D9%85%D8%A7%D9%84-%D9%88%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AB%D9%85%D8%A7%D8%B1/psychology-of-money-summary.html',
+  '/books/%D8%A7%D9%84%D9%85%D8%A7%D9%84-%D9%88%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AB%D9%85%D8%A7%D8%B1/psychology-of-money-summary.html',
   // Book HTML files - Biographies
-  '/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/steve-jobs-summary.html',
-  '/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/elon-musk-summary.html',
-  '/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/leonardo-da-vinci-summary.html',
-  '/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/einstein-summary.html',
-  '/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/benjamin-franklin-summary.html',
-  '/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/shoe-dog-summary.html',
-  '/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/ride-of-a-lifetime-summary.html',
-  '/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/titan-summary.html',
-  '/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/when-breath-becomes-air-summary.html',
-  '/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/greenlights-summary.html',
-  '/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/caged-bird-sings-summary.html',
+  '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/steve-jobs-summary.html',
+  '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/elon-musk-summary.html',
+  '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/leonardo-da-vinci-summary.html',
+  '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/einstein-summary.html',
+  '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/benjamin-franklin-summary.html',
+  '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/shoe-dog-summary.html',
+  '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/ride-of-a-lifetime-summary.html',
+  '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/titan-summary.html',
+  '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/when-breath-becomes-air-summary.html',
+  '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/greenlights-summary.html',
+  '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/caged-bird-sings-summary.html',
   // Google Fonts
   'https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap'
 ];
