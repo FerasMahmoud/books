@@ -128,11 +128,11 @@
     const views = ['library', 'reader', 'dashboard', 'quotes', 'settings'];
     views.forEach((v) => {
       const el = document.getElementById('view-' + v);
-      if (el) el.style.display = 'none';
+      if (el) el.classList.remove('active');
     });
 
     const target = document.getElementById('view-' + viewId);
-    if (target) target.style.display = '';
+    if (target) target.classList.add('active');
 
     currentView = viewId;
 
@@ -1417,12 +1417,5 @@
     BOOKS,
     CATEGORIES,
   };
-
-  // Auto-initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
 
 })();
