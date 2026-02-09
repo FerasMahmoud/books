@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>العادات السبع للناس الأكثر فعالية - ملخص شامل | ستيفن كوفي</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #1976d2; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #2196f3; }
+
+  .hero {
+    background: linear-gradient(135deg, #0a2a4a 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #2196f3;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(33, 150, 243, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(10, 42, 74, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #2196f3;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(33, 150, 243, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(33, 150, 243, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #d0b0b0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #d0b0b0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '\26A1';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a2a4a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #2196f3;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(33, 150, 243, 0.1);
+    color: #2196f3;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #2196f3;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a2a4a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #2196f3;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a2a4a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #2196f3;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(33, 150, 243, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #2196f3, #1565c0);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #2196f3;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(33, 150, 243, 0.12);
+    color: #2196f3;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(33, 150, 243, 0.06);
+    border-right: 4px solid #2196f3;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '\201C';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(33, 150, 243, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(10, 42, 74, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(33, 150, 243, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #2196f3;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(0, 206, 201, 0.08);
+    border: 1px solid rgba(0, 206, 201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #00cec9;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #b0d0d0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(33, 150, 243, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #2196f3;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #0a2a4a, #1a1a2e);
+    border-top: 3px solid #2196f3;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(33, 150, 243, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#128260;</span>
+    <h1>العادات السبع للناس الأكثر فعالية</h1>
+    <p class="subtitle">The 7 Habits of Highly Effective People</p>
+    <p class="author">ستيفن كوفي &mdash; Stephen R. Covey</p>
+    <div class="meta-info">
+      <span>7 عادات أساسية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>من الداخل للخارج</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>المشكلة اللي يعالجها هذا الكتاب</h2>
+  <p>
+    كثير من الناس يدوّرون على حلول سريعة — تقنيات ومهارات سطحية تخليهم أكثر إنتاجية أو نجاحاً. بس المشكلة الحقيقية أعمق من كذا. كوفي يقول إن أغلب مشاكلنا ترجع لطريقة تفكيرنا مو لنقص في المهارات:
+  </p>
+  <ul>
+    <li>تحس إنك مشغول كل اليوم بس ما تنجز شي مهم فعلاً</li>
+    <li>تتأثر بالظروف والناس حولك بدل ما تتحكم في ردود فعلك</li>
+    <li>ما عندك رؤية واضحة لحياتك — تعيش يوم بيوم بدون اتجاه</li>
+    <li>علاقاتك مع الآخرين فيها مشاكل متكررة</li>
+    <li>تحس بالإرهاق والاحتراق لأنك ما تجدد طاقتك</li>
+  </ul>
+  <p>
+    كوفي يقدم منهج شامل: <strong>7 عادات</strong> تبني شخصيتك من الداخل للخارج. مو تقنيات سطحية — مبادئ عميقة تغيّر طريقة تفكيرك وتعاملك مع الحياة. الكتاب من أكثر الكتب مبيعاً في التاريخ وغيّر حياة ملايين الناس حول العالم.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    ستيفن كوفي كان أستاذ إدارة ومستشار قيادي. الكتاب هذا نزل سنة 1989 وصار من أهم كتب التطوير الذاتي في العالم — انباع منه أكثر من 40 مليون نسخة. السبب إنه ما يتكلم عن حيل سريعة — يتكلم عن مبادئ ثابتة تشتغل في أي زمان ومكان.
+  </p>
+  <p>
+    كوفي يقسم العادات السبع لثلاث مراحل: الأولى "النصر الخاص" (العادات 1-3) وهي عن الاستقلالية الشخصية. الثانية "النصر العام" (العادات 4-6) وهي عن العلاقات والتعاون. والسابعة عن التجديد المستمر. الفكرة إنك لازم تبني نفسك أول قبل ما تبني علاقاتك — من الداخل للخارج.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس العادات</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>كن مبادراً</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>ابدأ والنهاية في ذهنك</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>ابدأ بالأهم أولاً</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>فكر بالمنفعة المشتركة</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>افهم أولاً ثم اطلب أن تُفهم</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>التآزر والتعاون</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>اشحذ المنشار</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">كن مبادراً</h2>
+      <span class="chapter-title-en">Be Proactive</span>
+    </div>
+  </div>
+
+  <span class="section-label">العادة الأولى</span>
+  <p>
+    كوفي يبدأ بأهم فكرة في الكتاب كله: بين كل شي يصير لك (المحفّز) وبين ردة فعلك — فيه مساحة. في هالمساحة عندك حرية الاختيار. الشخص المبادر يعرف إن عنده القدرة يختار استجابته لأي موقف. يعني مو الظروف هي اللي تتحكم فيك — أنت اللي تتحكم في ردة فعلك تجاه الظروف.
+  </p>
+  <p>
+    كوفي يفرّق بين دائرة الاهتمام ودائرة التأثير. دائرة الاهتمام هي كل شي يهمّك (الاقتصاد، الطقس، السياسة، آراء الناس). دائرة التأثير هي الأشياء اللي فعلاً تقدر تغيّرها (عاداتك، مهاراتك، ردود فعلك). الشخص المبادر يركّز على دائرة التأثير — يشتغل على اللي يقدر يغيّره ويترك اللي ما يقدر عليه. كل ما ركّزت على دائرة تأثيرك، كل ما كبرت.
+  </p>
+  <p>
+    الشخص اللي دايم يلوم الظروف والناس — هذا شخص "ردّ فعل" (reactive). يقول "لو وضعي أحسن كان نجحت"، "لو مديري عادل كان ترقّيت"، "الحظ ما يخدمني". المبادر يقول "وش أقدر أسوي الحين؟"، "وش أغيّر في نفسي؟"، "كيف أستغل اللي عندي؟". الفرق مو في الظروف — في طريقة التفكير.
+  </p>
+
+  <div class="quote-block">
+    <p>مو المشاكل اللي تحدد مصيرنا — استجابتنا للمشاكل هي اللي تحدده. بين المحفّز والاستجابة، فيه حرية الاختيار.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>توقّف عن لوم الظروف والناس. ركّز على دائرة تأثيرك — الأشياء اللي تقدر تغيّرها. كل ما ركّزت على اللي تقدر عليه، كل ما زادت قوتك وتأثيرك. المبادرة مو مجرد صفة — هي أساس كل العادات الثانية.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>لمدة أسبوع، انتبه لكلامك. كل ما سمعت نفسك تقول "ما أقدر" أو "هم اللي سووا" أو "لو بس..."، وقّف وغيّرها لـ"أختار" أو "أقدر أسوي كذا". هالتغيير البسيط في اللغة يغيّر طريقة تفكيرك بالكامل.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">ابدأ والنهاية في ذهنك</h2>
+      <span class="chapter-title-en">Begin with the End in Mind</span>
+    </div>
+  </div>
+
+  <span class="section-label">العادة الثانية</span>
+  <p>
+    كوفي يقول تخيّل جنازتك — مين بيكون موجود؟ وش بيقولون عنك؟ وش تبي يتذكرونك فيه؟ هالسؤال يكشف لك وش فعلاً مهم في حياتك. أغلب الناس مشغولة في أشياء "عاجلة" بس مو مهمة — وتنسى الأشياء اللي فعلاً تبي تحققها في حياتها.
+  </p>
+  <p>
+    العادة الثانية تقول: كل شي يُخلق مرتين. مرة في الذهن (التصور والتخطيط) ومرة في الواقع (التنفيذ). اللي ما يخطط لحياته — غيره بيخطط له. كوفي يقترح كتابة "بيان مهمة شخصي" — مثل رؤية الشركات بس لحياتك. وش قيمك؟ وش أدوارك المهمة (أب، زوج، موظف، صديق)؟ وش تبي تحقق في كل دور؟
+  </p>
+  <p>
+    هالبيان يصير بوصلتك في الحياة. كل ما جاك قرار صعب، ترجع له وتسأل: هل هالقرار يتوافق مع قيمي ورؤيتي؟ بدون هالبوصلة، تنجرف مع التيار — تروح وين ما ياخذك الضغط والظروف. بس مع البوصلة، تمشي في اتجاه واضح حتى لو الطريق صعب. القيادة الذاتية تعني إنك أنت اللي تحدد وجهتك، مو الآخرين.
+  </p>
+
+  <div class="quote-block">
+    <p>لو ما حددت وش تبي من حياتك، بيحدده لك غيرك. الناس الفعّالة يصممون حياتهم بأنفسهم — ما يخلّون الظروف تصممها لهم.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>اكتب بيان مهمة شخصي — رؤيتك لحياتك. حدد قيمك وأدوارك وأهدافك طويلة المدى. هذا يعطيك اتجاه واضح ويخليك تاخذ قرارات أفضل في كل يوم. ابدأ دايماً والنهاية في ذهنك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">ابدأ بالأهم أولاً</h2>
+      <span class="chapter-title-en">Put First Things First</span>
+    </div>
+  </div>
+
+  <span class="section-label">العادة الثالثة</span>
+  <p>
+    كوفي يقدم مصفوفة إدارة الوقت المشهورة — أربع خانات بناءً على العاجل والمهم. المربع الأول: عاجل ومهم (أزمات ومواعيد نهائية). المربع الثاني: مهم بس مو عاجل (تخطيط، تطوير ذات، علاقات، تمارين). المربع الثالث: عاجل بس مو مهم (مقاطعات، إيميلات كثيرة). المربع الرابع: مو عاجل ومو مهم (تصفح بلا هدف، وقت ضائع).
+  </p>
+  <p>
+    السر في المربع الثاني. أغلب الناس يقضون وقتهم بين الأول (أزمات) والثالث (مقاطعات). لكن الناس الفعّالين يستثمرون في المربع الثاني — الأشياء المهمة اللي مو عاجلة. لما تخطط وتطور نفسك وتبني علاقات وتاخذ وقت لصحتك، الأزمات في المربع الأول تقل تلقائياً لأنك منعتها قبل ما تصير.
+  </p>
+  <p>
+    كوفي يقول: الموضوع مو إدارة وقت — الموضوع إدارة أولويات. لازم تتعلم تقول "لا" للأشياء اللي تبان عاجلة بس مو مهمة، عشان تقدر تقول "نعم" للأشياء اللي فعلاً مهمة. كل مرة تقول "نعم" لشي تافه، أنت تقول "لا" لشي مهم — حتى لو ما تحس بكذا. الشجاعة في قول "لا" هي اللي تحرر وقتك للأشياء اللي فعلاً تحرّك حياتك للأمام.
+  </p>
+
+  <div class="quote-block">
+    <p>المفتاح مو إنك تحط الأولويات في جدولك — المفتاح إنك تجدول أولوياتك. فيه فرق كبير بين الاثنين.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>ركّز على المربع الثاني — الأشياء المهمة اللي مو عاجلة. هذا المربع هو اللي يبني مستقبلك. تعلّم تقول "لا" للمقاطعات والأشياء التافهة عشان تقدر تقول "نعم" لأولوياتك الحقيقية.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>كل أحد، اجلس 30 دقيقة وخطط لأسبوعك. حدد 2-3 أشياء مهمة في كل دور من أدوارك (أب، موظف، شخص) وحطها في الجدول أول. الباقي يتملى حوالينها. هالعادة البسيطة تغيّر أسبوعك بالكامل.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">فكر بالمنفعة المشتركة</h2>
+      <span class="chapter-title-en">Think Win-Win</span>
+    </div>
+  </div>
+
+  <span class="section-label">العادة الرابعة</span>
+  <p>
+    أغلب الناس يفكرون بعقلية "أنا أكسب وأنت تخسر" أو "أنا أخسر عشان أنت تكسب". كوفي يقول فيه خيار ثالث: كلنا نكسب. عقلية Win-Win مبنية على فكرة إن الحياة مو لعبة صفرية — فيه ما يكفي الكل. نجاحي ما يتطلب فشلك، وبالعكس.
+  </p>
+  <p>
+    كوفي يقدم مفهوم "الحساب البنكي العاطفي" — كل علاقة عندك فيها رصيد. كل ما تسوي شي إيجابي (تسمع، تساعد، توفي بوعدك) الرصيد يزيد. وكل ما تسوي شي سلبي (تخلف وعدك، ما تسمع، تكون أناني) الرصيد ينقص. لما الرصيد عالي، العلاقة تتحمل أي خلاف. لما ينخفض، أي شي بسيط يصير مشكلة كبيرة.
+  </p>
+  <p>
+    التفكير بالمنفعة المشتركة يتطلب شجاعة ومراعاة في نفس الوقت. شجاعة إنك تعبّر عن اللي تبيه بوضوح، ومراعاة إنك تهتم باللي يبيه الطرف الثاني. لو عندك شجاعة بدون مراعاة تصير عدواني. ولو عندك مراعاة بدون شجاعة تصير ضعيف. التوازن هو اللي يعطيك Win-Win. ولو ما قدرت توصل لحل يرضي الطرفين، الخيار الأفضل هو "لا اتفاق" — أحسن من اتفاق أحد فيه خاسر.
+  </p>
+
+  <div class="quote-block">
+    <p>الحياة مو مسابقة. نجاح غيرك ما يعني فشلك. العقلية الوفيرة تشوف الفرص في كل مكان — والعقلية الشحيحة تشوف التهديدات.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>في كل تعامل مع الآخرين، دوّر على حل يكسب فيه الكل. ابني رصيدك العاطفي مع الناس المهمين في حياتك — وعود تنفذها، استماع حقيقي، اهتمام صادق. العلاقات القوية أساس النجاح الحقيقي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">افهم أولاً ثم اطلب أن تُفهم</h2>
+      <span class="chapter-title-en">Seek First to Understand, Then to Be Understood</span>
+    </div>
+  </div>
+
+  <span class="section-label">العادة الخامسة</span>
+  <p>
+    كوفي يقول إن أكبر مشكلة في التواصل البشري هي إننا نسمع عشان نرد، مو عشان نفهم. وإحنا الطرف الثاني يتكلم، عقلنا يجهّز الرد ويحكم ويقيّم — بدل ما يسمع فعلاً. "الاستماع التعاطفي" يعني إنك تدخل في عالم الشخص الثاني وتشوف الأمور من منظوره — مو من منظورك أنت.
+  </p>
+  <p>
+    تخيّل إنك رحت لدكتور عيون وقبل ما يفحصك، شال نظارته وعطاك إياها وقال "البس هذي، ماشاء الله عليها تشتغل معاي زين من 10 سنين". هذا بالضبط اللي نسويه لما ننصح الناس بدون ما نسمعهم أول. نعطيهم حلولنا بناءً على تجربتنا — مو بناءً على مشكلتهم الحقيقية.
+  </p>
+  <p>
+    لما تسمع الشخص الثاني فعلاً وتفهمه من قلبك، شي عجيب يصير: يبدأ ينفتح ويقول أكثر. يحس بالأمان والثقة. وبعدين لما يحس إنك فهمته، يصير مستعد يسمعك ويفهم وجهة نظرك. هذي العادة تحل مشاكل كثير في الزواج والعمل والصداقات — لأن أغلب المشاكل أساسها سوء فهم مو سوء نية.
+  </p>
+
+  <div class="quote-block">
+    <p>أغلب الناس ما تسمع عشان تفهم — تسمع عشان ترد. ولو فعلاً سمعت لقيت إن أغلب المشاكل تنحل بنفسها.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>تعلّم الاستماع التعاطفي — اسمع عشان تفهم مو عشان ترد. لما تفهم الشخص الثاني حقيقي، هو بيفتح لك قلبه وبيسمعك. الفهم المتبادل أساس أي علاقة ناجحة ومستمرة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>في محادثتك الجاية مع شخص مهم في حياتك، جرّب هالشي: لا ترد أبداً قبل ما تعيد اللي قاله بكلامك أنت وتسأله "فهمتك صح؟". هالتقنية البسيطة تغيّر جودة المحادثة بشكل ما تتخيله.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التآزر والتعاون</h2>
+      <span class="chapter-title-en">Synergize</span>
+    </div>
+  </div>
+
+  <span class="section-label">العادة السادسة</span>
+  <p>
+    التآزر يعني إن الكل أكبر من مجموع أجزائه. 1+1 ما يساوي 2 — يساوي 3 أو 10 أو 100. لما ناس مختلفين يشتغلون مع بعض باحترام وانفتاح، النتيجة تكون أحسن بكثير مما أي واحد فيهم يقدر يسويه لحاله. هذا مو كلام نظري — كوفي يشرح كيف يصير عملياً.
+  </p>
+  <p>
+    السر في الاختلاف. أغلب الناس يشوفون الاختلاف تهديد — يبون الكل يفكر مثلهم. بس التآزر يجي من الاختلاف. لما شخص يشوف المشكلة من زاوية وثاني يشوفها من زاوية مختلفة، الحل اللي يطلعونه مع بعض أحسن من أي حل فردي. بس هذا يتطلب ثقة وانفتاح — لازم تكون مستعد تقول "ممكن أكون غلطان" و"ممكن فيه طريقة أحسن".
+  </p>
+  <p>
+    التآزر مبني على كل العادات السابقة: تكون مبادر (العادة 1)، عندك رؤية واضحة (العادة 2)، تعطي الأولوية للمهم (العادة 3)، تفكر بالمنفعة المشتركة (العادة 4)، وتسمع لتفهم (العادة 5). لما كل هالشي يتجمع، تقدر تتعاون مع أي شخص وتطلعون بنتائج مذهلة. الفريق اللي فيه تآزر حقيقي يسوي أشياء مستحيلة.
+  </p>
+
+  <div class="quote-block">
+    <p>القوة في الاختلاف. لو اثنين يفكرون بنفس الطريقة، واحد منهم زائد. التآزر الحقيقي يجي لما نحترم الاختلاف ونستفيد منه.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>احترم الاختلاف واستفد منه. دوّر على طريقة ثالثة — مو طريقتك ولا طريقتي، طريقة أحسن من الاثنين. التآزر الحقيقي يصنع نتائج ما كانت ممكنة بالعمل الفردي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">اشحذ المنشار</h2>
+      <span class="chapter-title-en">Sharpen the Saw</span>
+    </div>
+  </div>
+
+  <span class="section-label">العادة السابعة</span>
+  <p>
+    كوفي يختم بمثال: شخص يقطع شجرة من 5 ساعات والمنشار صار كالح. تقوله اوقف واشحذ المنشار، يقول "ما عندي وقت — مشغول أقطع!". هذا بالضبط اللي يسويه أغلب الناس — مشغولين جداً يشتغلون عشان يتوقفون ويجددون طاقتهم. والنتيجة؟ احتراق وتراجع في الأداء.
+  </p>
+  <p>
+    العادة السابعة تقول: لازم تجدد نفسك باستمرار في أربعة أبعاد. البعد الجسدي (تمارين، نوم، تغذية)، البعد الذهني (قراءة، تعلم، كتابة)، البعد الاجتماعي/العاطفي (علاقات، خدمة الآخرين)، والبعد الروحي (تأمل، عبادة، قيم). لو أهملت أي بعد، كل الأبعاد الثانية تتأثر.
+  </p>
+  <p>
+    أهم شي إن التجديد مو رفاهية — هو استثمار. الساعة اللي تقضيها في الرياضة تخليك أكثر إنتاجية في باقي اليوم. الوقت اللي تقضيه في القراءة يعطيك أفكار تحل فيها مشاكلك. العلاقات القوية تعطيك دعم وقت الضغط. العبادة والتأمل تعطيك سلام داخلي وصبر. لما تجدد نفسك في كل الأبعاد، تقدر تمارس العادات الست بقوة وفعالية أكبر — هذا اللي يخلي النظام كله يشتغل.
+  </p>
+
+  <div class="quote-block">
+    <p>لازم تصرف وقت تشحذ فيه أدواتك. التجديد المستمر هو اللي يعطيك القدرة على ممارسة كل العادات الأخرى بفعالية.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>استثمر في تجديد نفسك يومياً في الأبعاد الأربعة: جسدياً وذهنياً واجتماعياً وروحياً. هذا مو رفاهية — هذا أساس قدرتك على الأداء والاستمرار. اللي ما يجدد نفسه، يحترق حتى لو كان ناجح.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>ابني روتين يومي يغطي الأبعاد الأربعة: 30 دقيقة رياضة (جسدي)، 30 دقيقة قراءة (ذهني)، وقت مع العائلة أو صديق (اجتماعي)، وقت عبادة أو تأمل (روحي). هذا الروتين يخليك متجدد ومو بس ناجح — بل سعيد ومتوازن.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>الخلاصة النهائية</h3>
+  <p>
+    العادات السبع نظام متكامل يبني حياتك من الداخل للخارج. تبدأ بالنصر الخاص: كن مبادراً، ابدأ والنهاية في ذهنك، وابدأ بالأهم. بعدين تنتقل للنصر العام: فكر بالمنفعة المشتركة، افهم أولاً، وتآزر مع الآخرين. وأخيراً، جدد نفسك باستمرار.
+  </p>
+  <p>
+    الرسالة: التغيير الحقيقي يبدأ من الداخل. غيّر طريقة تفكيرك وقيمك وعاداتك — والنتائج الخارجية بتتبع. مو حيل سريعة — مبادئ عميقة وثابتة تشتغل مع أي شخص في أي مكان.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص شخصي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>هالأسبوع، انتبه لكلامك وغيّر كل "ما أقدر" لـ"أختار" — مارس المبادرة في كل موقف</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>اجلس ساعة واكتب بيان مهمتك الشخصي — قيمك، أدوارك، ورؤيتك لحياتك</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>كل أحد خطط لأسبوعك بناءً على المربع الثاني — الأشياء المهمة مو العاجلة</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>في أي خلاف هالأسبوع، اسمع الطرف الثاني أول وافهم وجهة نظره قبل ما ترد</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>سوّي إيداع واحد في الحساب البنكي العاطفي لشخص مهم (وعد تنفذه، وقت تعطيه)</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>ابني روتين يومي يجدد أبعادك الأربعة: جسدي وذهني واجتماعي وروحي</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ثمانية مواعيد - ملخص شامل | جون وجولي غوتمان</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #ff9800; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #ffb74d; }
+  .hero { background: linear-gradient(135deg, #3d2500 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #ff9800; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(255,152,0, 0.08) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(61,37,0, 0.15) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #ff9800; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(255,152,0, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(255,152,0, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #2d1b1b, #1a1a2e); border: 2px solid #c0392b; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '\26A1'; position: absolute; right: 0; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d2500; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #ff9800; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(255,152,0, 0.1); color: #ff9800; transform: translateX(-4px); }
+  .toc-num { background: #ff9800; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d2500; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #ff9800; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d2500; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; position: relative; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #ff9800; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(255,152,0, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #ff9800, #e68900); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(255,152,0, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #ff9800; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(255,152,0, 0.12); color: #ff9800; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(255,152,0, 0.06); border-right: 4px solid #ff9800; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(255,152,0, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(61,37,0, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(255,152,0, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #ff9800; font-weight: 700; font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(255,152,0, 0.08); border: 1px solid rgba(255,152,0, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #d0b0c0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .action-plan { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d2500; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .action-plan h2 { font-size: 1.6rem; color: #ff9800; margin-bottom: 25px; font-weight: 800; text-align: center; }
+  .action-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+  .action-num { background: #e94560; color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; }
+  .action-text { flex: 1; }
+  .action-text h4 { color: #ffffff; font-size: 1.05rem; margin-bottom: 4px; }
+  .action-text p { color: #b0b0c0; font-size: 0.95rem; margin: 0; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,152,0, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #ff9800; }
+  .footer { background: linear-gradient(145deg, #3d2500, #1a1a2e); border-top: 3px solid #ff9800; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,152,0, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero .subtitle { font-size: 1.1rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section, .action-plan { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; } .chapter-title-ar { font-size: 1.3rem; } .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; } .footer { padding: 30px 16px; } }
+  @media (max-width: 480px) { html { font-size: 14px; } .hero { padding: 50px 16px 40px; } .hero h1 { font-size: 1.7rem; } }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#x1F5D3;&#xFE0F;</span>
+    <h1>ثمانية مواعيد</h1>
+    <div class="subtitle">Eight Dates</div>
+    <div class="author">جون وجولي غوتمان — John &amp; Julie Gottman</div>
+    <div class="meta-info">
+      <span>&#x1F4D6; 8 فصول</span>
+      <span>&#x1F554; وقت القراءة: 40 دقيقة</span>
+      <span>&#x1F3AF; تقوية الزواج</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>&#x26A0;&#xFE0F; ليش هذا الكتاب مهم؟</h2>
+  <p>كثير من الأزواج بعد سنوات من الزواج يحسون إنهم صاروا مثل شركاء سكن — يعيشون في نفس البيت بس ما يعرفون بعض فعلاً. الحياة اليومية والمسؤوليات تاخذ كل الوقت وما يبقى شي للعلاقة نفسها.</p>
+  <p>جون غوتمان — اللي يعتبرونه أشهر باحث في العلاقات الزوجية في العالم — يقول إن الحل أبسط مما تتخيل: ثمانية مواعيد فقط تتكلمون فيها عن ثمانية مواضيع أساسية. هذي المواعيد مبنية على ٤٠ سنة بحث علمي وتقدر تنقذ أي علاقة.</p>
+  <ul>
+    <li>تحس إنك وشريكك صرتوا غرباء رغم إنكم تعيشون مع بعض</li>
+    <li>ما تعرف وش يحلم فيه شريكك أو وش يخاف منه</li>
+    <li>المواضيع الحساسة — مثل الفلوس والحميمية — صارت مواضيع ممنوع الكلام فيها</li>
+    <li>تحس إن العلاقة فقدت الحماس والشغف اللي كان في البداية</li>
+    <li>كل واحد منكم مشغول في عالمه ونسيتوا تتواصلون كزوجين</li>
+  </ul>
+</section>
+
+<!-- Intro Section -->
+<section class="intro-section">
+  <h2>&#x1F4A1; مقدمة عن الكتاب</h2>
+  <p>جون وجولي غوتمان قضوا عقود يدرسون العلاقات الزوجية في مختبرهم الشهير — اللي الناس يسمونه "مختبر الحب". من خلال مراقبة آلاف الأزواج، اكتشفوا إن الأزواج الناجحين عندهم شي مشترك: يتكلمون مع بعض عن المواضيع المهمة بشكل منتظم.</p>
+  <p>الكتاب مبني على فكرة بسيطة جداً: إنك تخصص ثمانية مواعيد مع شريكك، كل موعد فيه موضوع معين تتكلمون عنه بأسئلة مفتوحة. مو المطلوب إنكم تتفقون على كل شي — المطلوب إنكم تفهمون بعض. غوتمان يسمي هذا "بناء خارطة الحب" — يعني إنك تعرف عالم شريكك من جوا.</p>
+  <p>الحلو في الكتاب إنه يعطيك أسئلة جاهزة لكل موعد. ما تحتاج تفكر وش تقول — بس تروح الموعد وتبدأ تسأل وتسمع. وكل موعد مصمم إنه يفتح باب حوار عميق عن موضوع كثير أزواج يتجنبون الكلام عنه.</p>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc" id="toc">
+  <h2>&#x1F4D1; فهرس المواعيد</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span> الثقة والالتزام</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span> الصراع والخلاف</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span> الجنس والحميمية</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span> المال والأمان المالي</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span> الأسرة والأبناء</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span> المرح والمغامرة</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span> النمو والروحانية</a>
+    <a href="#ch8" class="toc-item"><span class="toc-num">8</span> الأحلام المشتركة</a>
+  </div>
+</nav>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الثقة والالتزام</div>
+      <div class="chapter-title-en">Trust and Commitment</div>
+    </div>
+  </div>
+
+  <span class="section-label">الموعد الأول</span>
+  <p>غوتمان يبدأ بأهم موضوع في أي علاقة: الثقة. ويقول إن الثقة مو شي كبير تبنيه مرة وحدة — الثقة تتبنى في اللحظات الصغيرة اللي يسميها "لحظات الباب المنزلق". يعني كل لحظة شريكك يحتاجك فيها وأنت تختار تكون موجود أو تتجاهله — هذي هي اللحظات اللي تبني الثقة أو تهدمها.</p>
+  <p>مثلاً لما شريكتك تقولك "تعال شوف هذا" وأنت مشغول بالجوال — لو تحط الجوال وتروح تشوف، هذي لحظة بنيت فيها ثقة. لو تجاهلتها، هذي لحظة خسرت فيها ثقة. الثقة ما تنهد بسبب خيانة كبيرة بس — تنهد بسبب ملايين اللحظات الصغيرة اللي اخترت فيها إنك ما تكون موجود.</p>
+  <p>الالتزام يعني إنك تختار شريكك كل يوم من جديد. مو عشان ما فيه خيارات ثانية — عشان أنت قررت إن هذا الشخص يستاهل. غوتمان يقول إن الأزواج الملتزمين يقارنون شريكهم بأحسن نسخة منه مو بأسوأ نسخة — ويقارنونه بالواقع مو بخيال مثالي مستحيل.</p>
+
+  <div class="quote-block">
+    <p>الثقة تُبنى في أصغر اللحظات — لما تختار إنك تلتفت لشريكك بدل ما تلتفت بعيد — جون غوتمان</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>الثقة مو حدث كبير — هي مجموع ملايين اللحظات الصغيرة. كل مرة شريكك يحتاجك وأنت تكون موجود، أنت تضيف لرصيد الثقة. وكل مرة تتجاهله، تسحب من الرصيد. ركز على اللحظات الصغيرة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>غوتمان يسمي هذا "حساب البنك العاطفي". كل تصرف إيجابي — ابتسامة، سؤال عن يومه، لمسة حب — يضيف للرصيد. وكل تصرف سلبي — تجاهل، انتقاد، سخرية — يسحب من الرصيد. العلاقات تنجح لما الرصيد دايماً إيجابي، والنسبة المثالية هي ٥ تفاعلات إيجابية لكل تفاعل سلبي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الصراع والخلاف</div>
+      <div class="chapter-title-en">Addressing Conflict</div>
+    </div>
+  </div>
+
+  <span class="section-label">الموعد الثاني</span>
+  <p>غوتمان اكتشف شي غريب من أبحاثه: ٦٩٪ من مشاكل الأزواج ما لها حل! يعني أغلب الخلافات بينك وبين شريكك بتفضل موجودة للأبد. بس الفرق بين الأزواج السعداء والأزواج التعساء مو إنهم يحلون مشاكلهم — الفرق إنهم يتعاملون معاها بطريقة صحية.</p>
+  <p>الأزواج السعداء يتكلمون عن خلافاتهم بلطف ويضحكون مع بعض حتى في وسط الخلاف. والأزواج التعساء يدخلون في اللي يسميه غوتمان "الفرسان الأربعة للدمار": النقد والازدراء والدفاعية والتجاهل. هذي الأربعة سلوكيات لو موجودة في علاقتك، غوتمان يقدر يتوقع الطلاق بدقة ٩٤٪.</p>
+  <p>الحل مو إنك تتجنب الخلاف — الحل إنك تتعلم تختلف بطريقة صحية. ابدأ بلطف، اعترف بدورك في المشكلة، هدي نفسك لما تتعصب، وتقبل إن بعض المشاكل ما لها حل وبس تحتاج تتعاملون معاها بتفاهم.</p>
+
+  <div class="quote-block">
+    <p>الهدف مو إنك تحل كل خلاف — الهدف إنك تتحاور مع شريكك عن الخلاف بطريقة تحافظ على الاحترام والحب — جون غوتمان</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>أغلب خلافاتك مع شريكك ما بتنحل — وهذا عادي! المهم مو تحل كل شي — المهم إنك تتكلم عن الخلاف بلطف واحترام. تجنب الفرسان الأربعة: النقد، الازدراء، الدفاعية، والتجاهل.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الجنس والحميمية</div>
+      <div class="chapter-title-en">Sex and Intimacy</div>
+    </div>
+  </div>
+
+  <span class="section-label">الموعد الثالث</span>
+  <p>هذا من أصعب المواضيع اللي كثير أزواج يتجنبون الكلام عنها. غوتمان يقول إن الحميمية الجسدية مهمة جداً للعلاقة بس كثير أزواج ما عمرهم تكلموا عنها بصراحة. كل واحد عنده توقعات ورغبات بس يستحي يقولها — وهذا يسبب سوء فهم وإحباط عند الطرفين.</p>
+  <p>المشكلة إن كثير من الناس يربطون الحميمية بالأداء بدل ما يربطونها بالتواصل العاطفي. غوتمان يقول إن أفضل حياة حميمية تكون لما الاثنين يحسون بالأمان العاطفي مع بعض — يعني يقدرون يكونون ضعفاء وصادقين بدون خوف من الحكم أو الرفض.</p>
+  <p>الموعد الثالث يشجعكم تتكلمون عن وش تحبون ووش ما تحبون، وش يخليكم تحسون بالقرب ووش يخليكم تحسون بالبعد. هذا الحوار ممكن يكون صعب في البداية بس هو أساسي عشان العلاقة الحميمية تكون مُرضية للطرفين. غوتمان يقول إن الكلام عن الحميمية أهم من الحميمية نفسها.</p>
+
+  <div class="quote-block">
+    <p>أفضل علاقة حميمية تبدأ من أفضل محادثة عن الحميمية — لما نتكلم بصراحة، كل شي يتحسن — جولي غوتمان</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>تكلم مع شريكك عن الحميمية بصراحة وبدون حكم. اسأله وش يحب ووش يحتاج واسمعه بقلب مفتوح. الحوار الصريح عن هذا الموضوع يحسن العلاقة بشكل ما تتخيله.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>غوتمان اكتشف إن الأزواج اللي يتكلمون عن احتياجاتهم الحميمية بانفتاح عندهم رضا أعلى بكثير في علاقتهم كلها — مو بس في الجانب الحميمي. السبب إن لما تقدر تتكلم عن أصعب المواضيع، كل المواضيع الثانية تصير سهلة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">المال والأمان المالي</div>
+      <div class="chapter-title-en">Work and Money</div>
+    </div>
+  </div>
+
+  <span class="section-label">الموعد الرابع</span>
+  <p>الفلوس من أكثر الأسباب اللي تسبب خلافات زوجية. بس غوتمان يقول إن الخلاف مو فعلاً على الفلوس — الخلاف على المعنى اللي الفلوس تمثله لكل شخص. لبعض الناس الفلوس تعني الأمان، ولبعضهم تعني الحرية، ولبعضهم تعني النجاح. لما اثنين عندهم معاني مختلفة للفلوس يتزوجون، الخلاف حتمي لو ما فهموا بعض.</p>
+  <p>كل واحد فينا عنده تاريخ مع الفلوس يرجع لطفولته. يمكن أبوك كان بخيل وهذا خلاك تحب تصرف بحرية. أو يمكن عشت فترة فقر وهذا خلاك تخاف من المصاريف. فهم تاريخك وتاريخ شريكك مع الفلوس يساعدكم تفهمون ليش كل واحد يتصرف بطريقة مختلفة.</p>
+  <p>الموعد الرابع يشجعكم تتكلمون عن علاقتكم بالفلوس والشغل — وش الفلوس تعني لك؟ وش أحلامك المالية؟ وش مخاوفك؟ وش تعلمت من أهلك عن الفلوس؟ هذي الأسئلة تفتح باب تفاهم كبير وتساعدكم تبنون خطة مالية مشتركة تحترم قيم الاثنين.</p>
+
+  <div class="quote-block">
+    <p>الخلاف على الفلوس هو في الحقيقة خلاف على القيم والمعاني — لما نفهم قيم بعض، الحل يصير ممكن — جون غوتمان</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>قبل ما تحلون خلاف مالي، افهموا وش الفلوس تعني لكل واحد فيكم. تكلموا عن تاريخكم مع الفلوس ومخاوفكم وأحلامكم. الفهم يجي أول والحلول تجي بعدين.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الأسرة والأبناء</div>
+      <div class="chapter-title-en">Family</div>
+    </div>
+  </div>
+
+  <span class="section-label">الموعد الخامس</span>
+  <p>لما يجيكم أطفال، العلاقة الزوجية تتغير بشكل كبير. غوتمان وجد إن ٦٧٪ من الأزواج يحسون بانخفاض في الرضا الزوجي بعد الطفل الأول. ليش؟ عشان الأطفال ياخذون كل الوقت والطاقة وما يبقى شي للعلاقة. بس هذا مو حتمي — الأزواج اللي يتكلمون عن توقعاتهم من الأبوة والأمومة قبل وبعد الأطفال يحافظون على علاقتهم.</p>
+  <p>كل واحد فيكم نشأ في عائلة مختلفة وتعلم طريقة مختلفة في التربية. يمكن أنت تبي تربي أولادك بحرية وشريكك يبي تربية صارمة. هذي الفروقات ما هي مشكلة لو تكلمتوا عنها — المشكلة لما كل واحد يفترض إن طريقته هي الصح ويحاول يفرضها.</p>
+  <p>الموعد الخامس يساعدكم تتكلمون عن: وش نوع العائلة اللي تبون تكونونها؟ وش القيم اللي تبون تزرعونها في أولادكم؟ كيف تقسمون المسؤوليات؟ وش دور العائلة الكبيرة في حياتكم؟ هذي أسئلة مهمة لازم تتكلمون عنها بانفتاح عشان تكونون فريق واحد في تربية أولادكم.</p>
+
+  <div class="quote-block">
+    <p>أفضل هدية تقدمونها لأولادكم هي علاقة صحية وقوية بينكم كزوجين — جون غوتمان</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>لا تخلون الأطفال يصيرون محور حياتكم على حساب علاقتكم الزوجية. تكلموا عن أدواركم كوالدين واتفقوا على منهج تربية مشترك. وتذكروا إن علاقتكم القوية هي أساس عائلة سعيدة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>غوتمان اكتشف إن الأزواج اللي يحافظون على "طقوس التواصل" — يعني عادات يومية يتواصلون فيها كزوجين مثل قهوة الصباح مع بعض أو مشي بالليل — يتأثرون أقل بضغوط الأطفال. هذي الطقوس البسيطة تذكركم إنكم زوجين أول وبعدين والدين.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">المرح والمغامرة</div>
+      <div class="chapter-title-en">Fun and Adventure</div>
+    </div>
+  </div>
+
+  <span class="section-label">الموعد السادس</span>
+  <p>كثير أزواج ينسون إنهم لازم يستمتعون مع بعض! غوتمان يقول إن المرح والضحك والمغامرة مو ترف في العلاقة — هي أساس. الأزواج اللي يضحكون مع بعض ويسوون أشياء جديدة عندهم علاقة أقوى بكثير من الأزواج اللي كل حياتهم روتين.</p>
+  <p>المشكلة إن بعد سنوات من الزواج ننسى نلعب. كل شي يصير جدي: الفلوس جدي، الأولاد جدي، الشغل جدي. بس الأبحاث تقول إن الأزواج اللي يخصصون وقت للمرح — حتى لو شي بسيط مثل لعبة بورد أو طبخ مع بعض أو مشوار بدون خطة — يكونون أسعد وأقرب لبعض.</p>
+  <p>غوتمان يقول إن المغامرة مهمة بالذات عشان لما تجربون شي جديد مع بعض، جسمكم يفرز نفس الهرمونات اللي كانت تنفرز في بداية العلاقة. يعني التجارب الجديدة تعيد الحماس والإثارة للعلاقة. ما لازم تكون مغامرة كبيرة — ممكن تكون بس تجربون مطعم جديد أو تتعلمون شي مع بعض.</p>
+
+  <div class="quote-block">
+    <p>الأزواج اللي يلعبون مع بعض يبقون مع بعض — المرح مو ترف في العلاقة، هو وقود العلاقة — جولي غوتمان</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>خصصوا وقت للمرح والمغامرة مع بعض — ولو شي بسيط كل أسبوع. جربوا أشياء جديدة واضحكوا مع بعض. العلاقة تحتاج مرح زي ما تحتاج جدية.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">النمو والروحانية</div>
+      <div class="chapter-title-en">Growth and Spirituality</div>
+    </div>
+  </div>
+
+  <span class="section-label">الموعد السابع</span>
+  <p>غوتمان يقول إن العلاقة القوية تحتاج بُعد أعمق من الحياة اليومية — تحتاج معنى مشترك. الروحانية هنا ما تعني بالضرورة الدين — تعني إنكم عندكم قيم ومعتقدات تربطكم ببعض وتعطي حياتكم هدف أكبر من الروتين اليومي.</p>
+  <p>كثير أزواج ما يتكلمون عن الأسئلة الكبيرة: وش معنى الحياة بالنسبة لك؟ وش تؤمن فيه؟ وش القيم اللي تعيش عليها؟ هذي الأسئلة ممكن تبان فلسفية زيادة بس هي مهمة جداً عشان العلاقة تكون عميقة ومستدامة.</p>
+  <p>الموعد السابع يشجعكم تتكلمون عن رحلة نموكم الشخصي والروحي. وش تعلمتوا عن أنفسكم خلال الزواج؟ وش القيم اللي تبون تعيشون عليها كعائلة؟ كيف تدعمون نمو بعض؟ لما يكون عندكم معنى مشترك وقيم مشتركة، العلاقة تكون أقوى من أي خلاف أو صعوبة.</p>
+
+  <div class="quote-block">
+    <p>العلاقة اللي ما فيها معنى مشترك تتحول مع الوقت لشراكة إدارية — والقلوب تبي أكثر من كذا — جون غوتمان</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>ابنوا معنى مشترك في علاقتكم — تكلموا عن قيمكم ومعتقداتكم وأحلامكم الروحية. لما يكون عندكم "ليش" مشترك، تقدرون تتحملون أي "كيف" في الحياة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>الأبحاث تبين إن الأزواج اللي عندهم طقوس مشتركة — سواء دينية أو روحية أو حتى عائلية — يكون عندهم إحساس أقوى بالانتماء والهدف. هذي الطقوس تكون مثل المرساة اللي تثبت العلاقة في وسط عواصف الحياة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 8 -->
+<article class="chapter" id="ch8">
+  <div class="chapter-header">
+    <div class="chapter-number">8</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الأحلام المشتركة</div>
+      <div class="chapter-title-en">Dreams</div>
+    </div>
+  </div>
+
+  <span class="section-label">الموعد الثامن</span>
+  <p>آخر موعد هو عن الأحلام — وش تحلمون فيه كأفراد وكزوجين؟ غوتمان يقول إن كل إنسان عنده أحلام عميقة يبي يحققها في حياته، ودور الشريك إنه يدعم هذي الأحلام مو يقف قدامها. لما شريكك يدعم حلمك، تحس بحب عميق ما يتوصف.</p>
+  <p>المشكلة إن كثير من الخلافات الزوجية المتكررة — اللي يسميها غوتمان "الخلافات المتحجرة" — سببها إن فيه حلم لأحد الطرفين ما يُحترم أو ما يُسمع. يمكن شريكتك تحلم إنها تكمل دراستها وأنت ما تاخذ الموضوع بجدية — هذا يصير خلاف متحجر ما ينحل لأنه متعلق بهويتها وأحلامها.</p>
+  <p>في هذا الموعد تتكلمون عن أحلامكم بكل صراحة: وش تبي تحقق في حياتك؟ وش الإرث اللي تبي تتركه؟ وش نوع الحياة اللي تتمناها بعد ١٠ أو ٢٠ سنة؟ ومن هنا تبدأون تبنون رؤية مشتركة لمستقبلكم — مو عشان تتفقون على كل شي، بس عشان تعرفون وش يحلم فيه كل واحد وتدعمون بعض.</p>
+
+  <div class="quote-block">
+    <p>وراء كل خلاف متحجر في العلاقة فيه حلم ما انسمع — لما نسمع أحلام بعض، الخلافات تذوب — جون غوتمان</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>اسمع أحلام شريكك وادعمها حتى لو كانت مختلفة عن أحلامك. شاركه أحلامك بصراحة. وابنوا مع بعض رؤية مشتركة لمستقبلكم — هذا اللي يخلي العلاقة تستمر وتزدهر.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Action Plan -->
+<section class="action-plan">
+  <h2>&#x1F3AF; خطة العمل</h2>
+  <div class="action-item">
+    <div class="action-num">1</div>
+    <div class="action-text">
+      <h4>جدولوا أول موعد خلال أسبوع</h4>
+      <p>اختاروا مكان هادي ومريح — مقهى أو مطعم أو حتى البيت بعد ما الأطفال يرقدون — وابدأوا بموضوع الثقة والالتزام. خذوا وقتكم ولا تستعجلون.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">2</div>
+    <div class="action-text">
+      <h4>التزموا بقواعد الموعد</h4>
+      <p>لا جوالات، لا أطفال، لا انتقاد. بس أسئلة مفتوحة واستماع صادق. الهدف إنكم تفهمون بعض مو إنكم تتفقون على كل شي.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">3</div>
+    <div class="action-text">
+      <h4>ابنوا حساب بنك عاطفي</h4>
+      <p>كل يوم سووا شي إيجابي صغير لشريككم — رسالة حلوة، سؤال عن يومه، لمسة حب. هدفكم ٥ تفاعلات إيجابية لكل تفاعل سلبي.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">4</div>
+    <div class="action-text">
+      <h4>حددوا الفرسان الأربعة في خلافاتكم</h4>
+      <p>راقبوا أنفسكم في الخلاف القادم — هل تستخدمون النقد أو الازدراء أو الدفاعية أو التجاهل؟ حددوا أكثر فارس تستخدمونه وابدأوا اشتغلوا عليه.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">5</div>
+    <div class="action-text">
+      <h4>أنشئوا طقوس تواصل يومية</h4>
+      <p>خصصوا وقت يومي — ولو ١٠ دقايق — تقعدون فيه مع بعض بدون مشتتات. قهوة الصباح، مشي بالليل، أي شي يناسبكم — المهم الانتظام.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">6</div>
+    <div class="action-text">
+      <h4>اكتبوا أحلامكم المشتركة</h4>
+      <p>بعد ما تخلصون المواعيد الثمانية، اقعدوا مع بعض واكتبوا رؤية مشتركة لمستقبلكم — وش تبون تحققون مع بعض في السنوات القادمة.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>ثمانية مواعيد — جون وجولي غوتمان</h3>
+  <p>ثمانية محادثات عميقة تقدر تغير مسار علاقتكم للأبد</p>
+  <p>مبنية على ٤٠ سنة من البحث العلمي في العلاقات الزوجية</p>
+  <div class="disclaimer">هذا ملخص تعليمي للكتاب وليس بديلاً عن قراءة الكتاب كاملاً. جميع الحقوق محفوظة للمؤلفين.</div>
+</footer>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الالتزامات الخمسة عشر للقيادة الواعية - ملخص شامل | جيم ديثمر وديانا تشابمان</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #5d8aa8; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #7baac8; }
+  .hero { background: linear-gradient(135deg, #0d1520 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #5d8aa8; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(93, 138, 168, 0.08) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(13, 21, 32, 0.15) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #5d8aa8; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(93, 138, 168, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(93, 138, 168, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #2d1b1b, #1a1a2e); border: 2px solid #c0392b; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '\26A1'; position: absolute; right: 0; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0d1520; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #5d8aa8; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(93, 138, 168, 0.1); color: #5d8aa8; transform: translateX(-4px); }
+  .toc-num { background: #34495e; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0d1520; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #5d8aa8; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0d1520; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; position: relative; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #5d8aa8; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(93, 138, 168, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #34495e, #2c3e50); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(52, 73, 94, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #5d8aa8; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(93, 138, 168, 0.12); color: #5d8aa8; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(93, 138, 168, 0.06); border-right: 4px solid #5d8aa8; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(93, 138, 168, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(13, 21, 32, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(93, 138, 168, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #5d8aa8; font-weight: 700; font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(93, 138, 168, 0.08); border: 1px solid rgba(93, 138, 168, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #d0b0c0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .action-plan { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 2px solid #5d8aa8; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .action-plan h2 { font-size: 1.6rem; color: #5d8aa8; margin-bottom: 25px; font-weight: 800; text-align: center; }
+  .action-plan ol { list-style: none; counter-reset: action-counter; margin: 0; padding: 0; }
+  .action-plan ol li { counter-increment: action-counter; padding: 14px 20px 14px 14px; position: relative; padding-right: 50px; color: #c0c0d0; font-size: 1.02rem; line-height: 1.8; margin-bottom: 8px; background: rgba(93, 138, 168, 0.04); border-radius: 10px; border: 1px solid rgba(93, 138, 168, 0.1); }
+  .action-plan ol li::before { content: counter(action-counter); position: absolute; right: 12px; top: 14px; background: #34495e; color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(93, 138, 168, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #5d8aa8; }
+  .footer { background: linear-gradient(145deg, #0d1520, #1a1a2e); border-top: 3px solid #5d8aa8; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(93, 138, 168, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero .subtitle { font-size: 1.1rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section, .action-plan { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; } .chapter-title-ar { font-size: 1.3rem; } .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; } .footer { padding: 30px 16px; } }
+  @media (max-width: 480px) { html { font-size: 14px; } .hero { padding: 50px 16px 40px; } .hero h1 { font-size: 1.7rem; } }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#x1F3AF;</span>
+    <h1>الالتزامات الخمسة عشر للقيادة الواعية</h1>
+    <div class="subtitle">The 15 Commitments of Conscious Leadership</div>
+    <div class="author">جيم ديثمر وديانا تشابمان &mdash; Jim Dethmer &amp; Diana Chapman</div>
+    <div class="meta-info">
+      <span>&#x1F4D6; قيادة وإدارة</span>
+      <span>&#x1F4D1; 7 فصول</span>
+      <span>&#x23F1;&#xFE0F; 25 دقيقة قراءة</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>&#x1F525; ليش هذا الكتاب مهم؟</h2>
+  <p>أغلب القادة والمدراء يعيشون حياتهم المهنية "تحت الخط" &mdash; يعني في حالة دفاع مستمر، يلومون غيرهم، يبرّرون أخطاءهم، ويحاولون يتحكمون في كل شي. هذا الكتاب يعلّمك كيف تنتقل "فوق الخط" وتصير قائد واعي يقود بفضول ومسؤولية وشفافية.</p>
+  <ul>
+    <li>ليش أغلب المشاكل في العمل سببها ردود أفعال تلقائية مو قرارات واعية؟</li>
+    <li>كيف "مثلث الدراما" يسيطر على معظم العلاقات المهنية بدون ما أحد يدري؟</li>
+    <li>وش الفرق بين القائد اللي يعيش فوق الخط واللي يعيش تحته؟</li>
+    <li>كيف تحوّل الصراعات في الفريق لفرص نمو حقيقية؟</li>
+    <li>ليش التخلي عن السيطرة هو أقوى أداة قيادية عندك؟</li>
+  </ul>
+</section>
+
+<!-- Intro Section -->
+<section class="intro-section">
+  <h2>&#x1F4D6; مقدمة الكتاب</h2>
+  <p>جيم ديثمر وديانا تشابمان يقدمون في هذا الكتاب إطار عمل بسيط بس قوي جداً للقيادة. الفكرة الأساسية هي إن كل لحظة في حياتك أنت إما "فوق الخط" أو "تحت الخط". فوق الخط يعني إنك واعي، منفتح، وفضولي. تحت الخط يعني إنك في حالة دفاع، مغلق، وخايف. وأغلب القادة يقضون معظم وقتهم تحت الخط بدون ما يدرون.</p>
+  <p>الكتاب ما يقول لك إن تحت الخط "غلط" وفوق الخط "صح". يقول لك إن أول خطوة هي إنك تدري وين أنت. لأن أغلب الناس ما تدري إنها تحت الخط. تفكر إنها تتصرف بعقلانية بينما في الحقيقة هي تتصرف بخوف ودفاعية. الوعي هو المفتاح الأول.</p>
+  <p>المؤلفان يعتمدون على خبرة سنوات طويلة في تدريب قادة شركات كبرى. كل التزام من الخمسة عشر مبني على ممارسات حقيقية جرّبوها مع مئات القادة وأثبتت فعاليتها. الكتاب ما يعطيك نظريات فاضية &mdash; يعطيك أدوات تقدر تستخدمها في أول اجتماع لك بكرة.</p>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc" id="toc">
+  <h2>&#x1F4D1; فهرس الملخص</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>فوق الخط وتحت الخط</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>المسؤولية الكاملة</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>الفضول بدل الدفاع</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>التخلي عن الحاجة للتحكم</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>التواصل الشفاف</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>العبقرية الجماعية</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>العيش بوعي كامل</a>
+  </div>
+</nav>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">فوق الخط وتحت الخط</div>
+      <div class="chapter-title-en">Above and Below the Line</div>
+    </div>
+  </div>
+
+  <span class="section-label">الإطار الأساسي</span>
+  <p>هذا هو الأساس اللي يبني عليه الكتاب كله. تخيّل خط أفقي في حياتك. فوق الخط أنت واعي، منفتح، فضولي، وتبي تتعلم. تحت الخط أنت خايف، مدافع، تبي تثبت إنك صح، وتبي تتحكم. الفكرة مو إنك تعيش فوق الخط طول الوقت &mdash; هذا مستحيل. الفكرة إنك تدري متى تكون تحت الخط وتختار تطلع.</p>
+  <p>جيم وديانا يقولون إن أغلب القادة يقضون ٩٨٪ من وقتهم تحت الخط. في اجتماعاتهم يدافعون عن أفكارهم بدل ما يستمعون. في صراعاتهم يبحثون عن مين الغلطان بدل ما يبحثون عن الحل. في قراراتهم يخافون من الفشل بدل ما يستكشفون الفرص. وكل هذا يصير تلقائي بدون وعي.</p>
+  <p>العلامات إنك تحت الخط واضحة لو تعرف تشوفها: تحس بضيق في صدرك، تبي "تكسب" النقاش، تلوم غيرك على المشاكل، تحس إنك ضحية، تبرّر تصرفاتك بدل ما تعترف بالخطأ. أما فوق الخط فتحس بانفتاح، فضول حقيقي عن رأي الثاني، استعداد تقول "ما أدري" أو "أنا غلطان"، وهدوء داخلي حتى في المواقف الصعبة.</p>
+
+  <div class="quote-block">
+    <p>السؤال الأهم ما هو "هل أنا صح؟" السؤال الأهم هو "هل أنا فوق الخط ولا تحته؟" لأن لو أنت تحت الخط، حتى لو كنت صح، طريقتك بتخرّب كل شي.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>خلّ السؤال "أنا فوق ولا تحت الخط الحين؟" يصير عادة يومية. اسأل نفسك هالسؤال قبل كل اجتماع مهم وقبل كل محادثة صعبة. مجرد السؤال يرفعك فوق الخط لأنه يخلّيك واعي بحالتك.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>المؤلفان يقولون إن فيه فرق كبير بين إنك تحت الخط وبين إنك تحت الخط وما تدري. الثانية أخطر بكثير. لأن لما تعرف إنك تحت الخط، عندك خيار تطلع. بس لما ما تدري، تتصرف بطريقة مدمّرة وأنت تعتقد إنك تتصرف صح. عشان كذا الوعي هو الخطوة الأولى دائماً.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">المسؤولية الكاملة</div>
+      <div class="chapter-title-en">Radical Responsibility</div>
+    </div>
+  </div>
+
+  <span class="section-label">تحمّل المسؤولية بالكامل</span>
+  <p>المسؤولية الكاملة يعني إنك تقبل إنك أنت السبب الرئيسي في كل شي يصير في حياتك. مو لأنك فعلاً تتحكم في كل شي، بس لأن هالعقلية تعطيك القوة إنك تغيّر. لما تلوم الظروف أو الناس، أنت تحط نفسك في موقع الضحية، واللي يعني إنك ما تقدر تسوي شي. بس لما تقول "أنا مسؤول"، فجأة عندك خيارات.</p>
+  <p>جيم وديانا يشرحون "مثلث الدراما" &mdash; اللي هو نمط سلوكي يتكرر في كل مكان عمل. المثلث فيه ثلاث شخصيات: الضحية اللي يقول "أنا مسكين"، والمنقذ اللي يقول "خلّني أساعدك"، والمضطهد اللي يقول "أنت الغلطان". أغلب الناس تتنقل بين هالثلاث شخصيات في يومها بدون ما تدري. والنتيجة: دراما لا تنتهي ومشاكل ما تنحل.</p>
+  <p>القائد الواعي يطلع من مثلث الدراما تماماً. بدل ما يكون ضحية، يكون "خالق" &mdash; يشوف التحدي ويبحث عن حلول. بدل ما يكون منقذ، يكون "مدرّب" &mdash; يساعد الناس يساعدون أنفسهم. بدل ما يكون مضطهد، يكون "متحدّي" &mdash; يطرح أسئلة صعبة بدون ما يلوم. هالتحوّل يغيّر ديناميكية الفريق كامل.</p>
+
+  <div class="quote-block">
+    <p>لما تقول "أنا مسؤول" ما تقول "أنا الغلطان". تقول "أنا عندي القوة إني أغيّر". الفرق بينهم هو الفرق بين الشعور بالذنب والشعور بالقوة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>في الأسبوع الجاي، كل ما لقيت نفسك تلوم أحد أو شي على مشكلة، وقّف واسأل نفسك: "وش دوري في هالموضوع؟ وش أقدر أسوي مختلف؟" ما تحتاج تلوم نفسك &mdash; بس اعترف بدورك واختار تغيّر.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الفضول بدل الدفاع</div>
+      <div class="chapter-title-en">Curiosity Over Defensiveness</div>
+    </div>
+  </div>
+
+  <span class="section-label">قوة الفضول الحقيقي</span>
+  <p>من أهم مهارات القائد الواعي هي إنه يميّز بين "الحقائق" و"القصص". الحقيقة هي شي موضوعي يقدر أي شخص يتفق عليه &mdash; مثلاً "أحمد وصل الاجتماع بعد عشر دقائق من بدايته". القصة هي التفسير اللي تضيفه أنت &mdash; "أحمد ما يحترم وقتنا" أو "أحمد ما يهتم بالشغل". المشكلة إن أغلب الناس تتعامل مع قصصها كأنها حقائق.</p>
+  <p>لما أحد ينتقدك في اجتماع، ردة الفعل الطبيعية (تحت الخط) هي إنك تدافع عن نفسك أو تهاجم الشخص الثاني. بس القائد الواعي (فوق الخط) يسأل بفضول حقيقي: "قول لي أكثر عن وجهة نظرك" أو "وش اللي خلاّك تشوفها بهالشكل؟" هذا الفضول مو تمثيل &mdash; هو رغبة حقيقية في الفهم. ولما الشخص الثاني يحس إنك فعلاً تبي تفهم، ردة فعله تتغيّر تماماً.</p>
+  <p>جيم وديانا يقولون إن ٩٠٪ من الصراعات في العمل سببها إن كل طرف متمسّك بقصته ويعتبرها حقيقة. لو كل طرف قال "هذي قصتي عن الموضوع، وش قصتك؟"، أغلب الصراعات بتنحل بسرعة. الفضول يفتح أبواب ما يقدر يفتحها الدفاع أبداً.</p>
+
+  <div class="quote-block">
+    <p>أغلب المشاكل في العمل مو مشاكل حقيقية. هي قصص مختلفة عن نفس الموقف. لما تفصل الحقيقة عن القصة، أغلب الوقت تكتشف إن ما فيه مشكلة أصلاً.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>في أول نقاش صعب يجيك، وقّف قبل ما ترد واسأل نفسك: هذي حقيقة ولا قصة أنا سويتها؟ بعدين اسأل الشخص الثاني بفضول حقيقي عن وجهة نظره. بتفاجأ كيف هالسؤال البسيط يحوّل مسار المحادثة كاملة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>المؤلفان يقدمون تمرين عملي: لما تلاقي نفسك في صراع مع أحد، اكتب "الحقائق" اللي كلكم تتفقون عليها في ورقة. بعدين اكتب "قصتك" عن الموقف وخلّ الشخص الثاني يكتب "قصته". غالباً بتلاقي إن الحقائق بسيطة بس القصص مختلفة تماماً. هالتمرين يبيّن لك قد وش قصصك تتحكم في تصرفاتك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">التخلي عن الحاجة للتحكم</div>
+      <div class="chapter-title-en">Letting Go of Control</div>
+    </div>
+  </div>
+
+  <span class="section-label">قوة التخلّي</span>
+  <p>هذا الفصل يتحدى واحدة من أكبر المعتقدات عند القادة: إنهم لازم يتحكمون في كل شي. جيم وديانا يقولون إن الحاجة للتحكم هي واحدة من أكبر علامات إنك تحت الخط. لأنها تجي من الخوف &mdash; خوف إن الأمور تنفلت، خوف إن الناس ما يسوّون شغلهم، خوف من المجهول. والنتيجة: مدير يتدخل في كل تفصيلة ويخنق فريقه.</p>
+  <p>التخلي عن التحكم ما يعني إنك تترك كل شي وما تهتم. يعني إنك تثق في فريقك وتعطيهم المساحة يبدعون ويتعلمون من أخطائهم. يعني إنك تحدد النتيجة المطلوبة وتخلّي الفريق يقرر "كيف" يوصلون لها. لأن لما تحدد الكيف بعد، أنت تقتل الإبداع وتخلّي الناس ما تتحمل مسؤولية.</p>
+  <p>المؤلفان يربطون بين التحكم والثقة. كل ما زادت حاجتك للتحكم، كل ما قلّت ثقتك في نفسك وفي غيرك. وكل ما زادت ثقتك، كل ما قلّت حاجتك للتحكم. عشان كذا التخلي عن التحكم ما هو بس مهارة إدارية &mdash; هو رحلة شخصية في بناء الثقة بنفسك وبالعالم حولك.</p>
+
+  <div class="quote-block">
+    <p>القائد اللي يتحكم في كل شي ما يبني فريق قوي. يبني فريق معتمد عليه. واللي يعتمد عليك ما يكبر أبداً، وأنت ما ترتاح أبداً.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>هالأسبوع، اختار مهمة كنت دايم تتحكم في تفاصيلها وخلّها كاملة لشخص ثاني. حدد النتيجة المطلوبة بس وخلّه يقرر الطريقة. شف وش يصير. غالباً بتفاجأ إن النتيجة حلوة حتى لو الطريقة مختلفة عن طريقتك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">التواصل الشفاف</div>
+      <div class="chapter-title-en">Candid Communication</div>
+    </div>
+  </div>
+
+  <span class="section-label">الصراحة البنّاءة</span>
+  <p>التواصل الشفاف يعني إنك تقول الحقيقة &mdash; حقيقتك &mdash; بشكل مباشر وبدون تجميل بس بعد بدون قسوة. أغلب القادة يعيشون في واحد من طرفين: إما يسكتون عن الأشياء المهمة عشان يتجنبون الصراع، أو يقولونها بطريقة هجومية تخرّب العلاقات. التواصل الشفاف هو الطريق الوسط: صراحة مع احترام.</p>
+  <p>المؤلفان يقدمون صيغة بسيطة للتواصل الشفاف: "أنا ألاحظ [حقيقة]، وأنا أحس [مشعر]، وأنا أبي [طلب]." مثلاً بدل ما تقول "أنت دايم تتأخر وما تحترم أحد" (هجوم)، تقول "لاحظت إنك وصلت متأخر آخر ثلاث اجتماعات (حقيقة)، وهذا يخلّيني أحس بالإحباط (مشعر)، وأبي نتفق على طريقة نضمن فيها إنك توصل بوقت (طلب)." نفس الرسالة بس بأسلوب يفتح حوار بدل ما يسكّره.</p>
+  <p>الشفافية تبني الثقة بشكل لا يصدّق. لما فريقك يعرف إنك بتقول لهم الحقيقة دايماً &mdash; الحلوة والمرّة &mdash; يبدأون يثقون فيك ثقة عميقة. وبعد يبدأون يتكلمون بصراحة معك ومع بعض. والنتيجة: بيئة عمل ما فيها ألعاب سياسية ولا كلام ورا الظهر، كل شي على الطاولة.</p>
+
+  <div class="quote-block">
+    <p>الأشياء اللي ما تقولها ما تختفي. تتحول لتوتر وسوء فهم ومشاكل أكبر. الصراحة المؤلمة أفضل بكثير من الصمت المدمّر.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>فكّر في محادثة صعبة كنت تتجنبها. استخدم صيغة "أنا ألاحظ... أنا أحس... أنا أبي..." واكتبها أول. بعدين سوّ المحادثة. بتلاقي إن الموضوع أسهل مما تتخيل، والنتيجة غالباً أحسن بكثير مما تتوقع.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>جيم وديانا يتكلمون عن مفهوم "التقدير" كجزء أساسي من التواصل الشفاف. يقولون إن أغلب القادة يركّزون على النقد ويتجاهلون التقدير. بس الأبحاث تقول إن الفرق الأكثر نجاحاً عندها نسبة ٥:١ &mdash; خمس تعليقات إيجابية لكل تعليق سلبي. الشفافية ما هي بس في قول المشاكل، بعد في قول الأشياء الحلوة اللي غالباً ما نقولها.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">العبقرية الجماعية</div>
+      <div class="chapter-title-en">Collective Genius</div>
+    </div>
+  </div>
+
+  <span class="section-label">قوة المجموعة</span>
+  <p>المؤلفان يقولون إن كل شخص عنده "منطقة عبقرية" &mdash; المجال اللي يبدع فيه بطبيعته بدون ما يحتاج يجبر نفسه. المشكلة إن أغلب المنظمات تحط الناس في مناصب بناءً على الخبرة أو الأقدمية مو بناءً على منطقة العبقرية. والنتيجة: ناس تشتغل في أشياء ما تحبها وما تبدع فيها، والمنظمة تخسر إمكانياتها الحقيقية.</p>
+  <p>القائد الواعي يشتغل على اكتشاف منطقة العبقرية لكل شخص في فريقه ويحاول يحطهم في المكان الصح. مو كل شخص مبدع في نفس الشي. واحد يبدع في التخطيط، وواحد في التنفيذ، وواحد في التواصل، وواحد في حل المشاكل. لما كل شخص يشتغل في منطقة عبقريته، الفريق كله يصير عبقري.</p>
+  <p>بعد، المؤلفان يتكلمون عن أهمية اللعب والراحة في القيادة. يقولون إن القادة اللي يشتغلون طول الوقت بدون راحة أو متعة ما يبدعون &mdash; ينتجون بس ما يبتكرون. الإبداع يحتاج مساحة، واللعب والراحة يعطون العقل هالمساحة. عشان كذا أفضل الأفكار تجيك وأنت تستحم أو تمشي أو تلعب، مو وأنت قاعد تحدّق في الشاشة.</p>
+
+  <div class="quote-block">
+    <p>ما تحتاج فريق من العباقرة. تحتاج عبقرية الفريق. والفرق كبير. لأن عبقرية الفريق تطلع لما كل شخص يشتغل في مكانه الصح.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>اسأل كل شخص في فريقك: "وش الشي اللي لما تسويه تحس إن الوقت يمر بسرعة وما تحس بتعب؟" الجواب يكشف لك منطقة عبقريته. بعدين شف كيف تقدر تعطيه أكثر من هالنوع من الشغل وتقلّل اللي يستنزفه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">العيش بوعي كامل</div>
+      <div class="chapter-title-en">Living Consciously</div>
+    </div>
+  </div>
+
+  <span class="section-label">الوعي كأسلوب حياة</span>
+  <p>الفصل الأخير يجمع كل شي. جيم وديانا يقولون إن القيادة الواعية مو تقنية تستخدمها في الشغل وتتركها لما تروح البيت. هي أسلوب حياة كامل. لأن الشخص اللي يعيش تحت الخط في بيته ما يقدر يعيش فوق الخط في شغله. الوعي ما ينقسم &mdash; إما أنت واعي في كل شي أو ما أنت واعي.</p>
+  <p>العيش بوعي كامل يعني إنك حاضر في اللحظة. مو تفكر في الماضي وتندم، ولا تفكر في المستقبل وتقلق. أنت هنا، الحين، مع اللي قدامك. هذا يبدو بسيط بس في الحقيقة هو من أصعب الأشياء اللي ممكن تسويها. لأن عقولنا مبرمجة إنها تسافر في الزمن &mdash; تروح للماضي وتروح للمستقبل &mdash; والحضور في اللحظة يحتاج تدريب مستمر.</p>
+  <p>المؤلفان يختمون بفكرة جميلة: القيادة الواعية مو رحلة لها نهاية. هي ممارسة يومية. مثل التمرين الرياضي &mdash; ما توصل لمرحلة تقول "خلاص أنا واعي" وتوقف. كل يوم تختار. كل لحظة تختار. وكل ما مارست أكثر، صار أسهل. بس ما يصير تلقائي أبداً &mdash; دايم يحتاج وعي واختيار.</p>
+
+  <div class="quote-block">
+    <p>الوعي مو شي تحققه مرة وحدة وتخلص. هو شي تختاره كل لحظة. واللحظة اللي توقف فيها تختار، ترجع تحت الخط تلقائياً.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>ابدأ ممارسة يومية بسيطة للوعي: خمس دقائق كل صبح تجلس بهدوء وتلاحظ أفكارك بدون ما تتبعها. بس تلاحظها وتخلّيها تمر. هالتمرين يبني عضلة الوعي اللي بتخدمك في كل موقف قيادي تمر فيه.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>المؤلفان يقولون إن أفضل القادة اللي عملوا معهم ما كانوا الأذكى أو الأكثر خبرة. كانوا الأكثر وعياً. لأن الذكاء بدون وعي يصير أداة للتلاعب والتحكم. والخبرة بدون وعي تصير تكرار للماضي. بس الوعي يخلّي كل شي &mdash; الذكاء والخبرة والمهارات &mdash; يشتغل بشكل أفضل وأصدق.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Action Plan -->
+<section class="action-plan">
+  <h2>&#x1F3AF; خطة العمل التطبيقية</h2>
+  <ol>
+    <li><strong>مارس فحص "فوق أو تحت الخط":</strong> حط تنبيه ثلاث مرات في اليوم واسأل نفسك: أنا فوق ولا تحت الخط الحين؟ لو تحت، خذ نفس عميق واختار تطلع. سجّل ملاحظاتك في دفتر.</li>
+    <li><strong>افصل الحقائق عن القصص:</strong> في أول صراع يجيك هالأسبوع، اكتب الحقائق المجردة في جهة والقصص (تفسيراتك) في جهة ثانية. بتكتشف إن أغلب ردود أفعالك مبنية على قصص مو حقائق.</li>
+    <li><strong>سوّ محادثة شفافة:</strong> اختار محادثة صعبة كنت تتجنبها واستخدم صيغة "ألاحظ... أحس... أبي..." وسوّها هالأسبوع. سجّل النتيجة وقارنها بتوقعاتك.</li>
+    <li><strong>اكتشف مناطق العبقرية:</strong> اسأل كل شخص في فريقك عن الشي اللي يستمتع فيه أكثر في شغله. ارسم خريطة لمناطق العبقرية وشف وين تقدر تعدّل المهام.</li>
+    <li><strong>طبّق المسؤولية الكاملة:</strong> لمدة أسبوع كامل، كل ما لقيت نفسك تلوم أحد، وقّف واسأل: "وش دوري؟ وش أقدر أسوي أنا؟" سجّل كم مرة لميت نفسك تلوم وكم مرة غيّرت.</li>
+    <li><strong>ابدأ ممارسة الوعي اليومية:</strong> خصص خمس دقائق كل صبح للجلوس بهدوء ومراقبة أفكارك. ما تحتاج تأمل معقد &mdash; بس اجلس ولاحظ. هذا التمرين يبني الأساس لكل المهارات القيادية الواعية.</li>
+  </ol>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>&#x1F3AF; الالتزامات الخمسة عشر للقيادة الواعية &mdash; جيم ديثمر وديانا تشابمان</h3>
+  <p>القيادة الواعية تبدأ بسؤال بسيط: أنا فوق ولا تحت الخط الحين؟ هالسؤال يغيّر كل شي.</p>
+  <p>ابدأ اليوم وكن القائد اللي فريقك يحتاجه.</p>
+  <div class="disclaimer">
+    هذا ملخص شامل للكتاب وليس بديلاً عن قراءته كاملاً. نوصي بشدة باقتناء الكتاب الأصلي للاستفادة الكاملة.
+  </div>
+</footer>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

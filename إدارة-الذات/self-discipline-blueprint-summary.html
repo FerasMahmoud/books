@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>مخطط الانضباط الذاتي - ملخص شامل | باتريك إدبلاد</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #e94560; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #ff6b81; }
+  .hero { background: linear-gradient(135deg, #3d0a15 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #e94560; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(233, 69, 96, 0.08) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(61, 10, 21, 0.15) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #e94560; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(233, 69, 96, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(233, 69, 96, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #2d1b1b, #1a1a2e); border: 2px solid #c0392b; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '\26A1'; position: absolute; right: 0; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d0a15; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #e94560; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(233, 69, 96, 0.1); color: #e94560; transform: translateX(-4px); }
+  .toc-num { background: #e94560; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d0a15; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #e94560; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d0a15; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; position: relative; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #e94560; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(233, 69, 96, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #e94560, #c0392b); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #e94560; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(233, 69, 96, 0.12); color: #e94560; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(233, 69, 96, 0.06); border-right: 4px solid #e94560; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(233, 69, 96, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(61, 10, 21, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(233, 69, 96, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #e94560; font-weight: 700; font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(233, 69, 96, 0.08); border: 1px solid rgba(233, 69, 96, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #d0b0c0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .action-plan { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 2px solid #e94560; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .action-plan h2 { font-size: 1.6rem; color: #e94560; margin-bottom: 25px; font-weight: 800; text-align: center; }
+  .action-plan ol { list-style: none; counter-reset: action-counter; margin: 0; padding: 0; }
+  .action-plan ol li { counter-increment: action-counter; padding: 14px 20px 14px 14px; position: relative; padding-right: 50px; color: #c0c0d0; font-size: 1.02rem; line-height: 1.8; margin-bottom: 8px; background: rgba(233, 69, 96, 0.04); border-radius: 10px; border: 1px solid rgba(233, 69, 96, 0.1); }
+  .action-plan ol li::before { content: counter(action-counter); position: absolute; right: 12px; top: 14px; background: #e94560; color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(233, 69, 96, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #e94560; }
+  .footer { background: linear-gradient(145deg, #3d0a15, #1a1a2e); border-top: 3px solid #e94560; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(233, 69, 96, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero .subtitle { font-size: 1.1rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section, .action-plan { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; } .chapter-title-ar { font-size: 1.3rem; } .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; } .footer { padding: 30px 16px; } }
+  @media (max-width: 480px) { html { font-size: 14px; } .hero { padding: 50px 16px 40px; } .hero h1 { font-size: 1.7rem; } }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#x1F4CB;</span>
+    <h1>مخطط الانضباط الذاتي</h1>
+    <div class="subtitle">The Self-Discipline Blueprint</div>
+    <div class="author">باتريك إدبلاد &mdash; Patrik Edblad</div>
+    <div class="meta-info">
+      <span>&#x1F4D6; تطوير الذات</span>
+      <span>&#x1F4D1; 6 فصول</span>
+      <span>&#x23F1;&#xFE0F; 20 دقيقة قراءة</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>&#x1F525; ليش هذا الكتاب مهم؟</h2>
+  <p>كلنا نعرف وش المفروض نسوي عشان نحسّن حياتنا. نعرف إننا لازم نتمرن، نأكل صحي، نشتغل على أهدافنا، ننام بدري. بس بين المعرفة والتنفيذ فيه هوّة كبيرة اسمها "الانضباط الذاتي". هذا الكتاب يعطيك المخطط العلمي عشان تسد هالهوّة وتحوّل المعرفة لفعل.</p>
+  <ul>
+    <li>ليش قوة الإرادة عندك تخلص بسرعة وكيف تحافظ عليها؟</li>
+    <li>وش السر ورا الناس اللي عندها انضباط ذاتي عالي؟</li>
+    <li>كيف تبني روتين يومي يشتغل على أوتوماتيك بدون ما تحتاج تجبر نفسك؟</li>
+    <li>ليش البيئة اللي حولك أهم من إرادتك وكيف تصممها لصالحك؟</li>
+    <li>كيف تتخلص من العادات السيئة وتبدلها بعادات تخدمك؟</li>
+  </ul>
+</section>
+
+<!-- Intro Section -->
+<section class="intro-section">
+  <h2>&#x1F4D6; مقدمة الكتاب</h2>
+  <p>باتريك إدبلاد يبدأ كتابه بفكرة مهمة: الانضباط الذاتي مو موهبة يولد فيها بعض الناس ويحرم منها الباقي. هو مهارة، وزي أي مهارة، تقدر تتعلمها وتطوّرها. المشكلة إن أغلب الناس تحاول تبني الانضباط بالطريقة الغلط &mdash; يعتمدون على الحماس وقوة الإرادة بس، وهذي أشياء تخلص بسرعة.</p>
+  <p>الكتاب يقدم لك مخطط عملي مبني على أبحاث علم النفس والسلوك. ما يكلمك عن التحفيز والحماس، يكلمك عن الأنظمة والعادات والبيئة. لأن الحقيقة إن الناس المنضبطة ما تعتمد على إرادتها في كل قرار &mdash; هي بنت أنظمة تشتغل تلقائياً.</p>
+  <p>باتريك يقسّم الكتاب بطريقة عملية جداً: يبدأ بالعلم ورا الانضباط، بعدين يدخل في التطبيق خطوة بخطوة. كل فصل يعطيك أدوات تقدر تستخدمها فوراً في حياتك. ما فيه كلام نظري فاضي &mdash; كل شي عملي ومباشر.</p>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc" id="toc">
+  <h2>&#x1F4D1; فهرس الملخص</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>علم الانضباط</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>بناء الروتين</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>قوة الإرادة</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>التخلص من العادات السيئة</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>بيئة النجاح</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>الانضباط المستدام</a>
+  </div>
+</nav>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">علم الانضباط</div>
+      <div class="chapter-title-en">The Science of Discipline</div>
+    </div>
+  </div>
+
+  <span class="section-label">الأساس العلمي</span>
+  <p>باتريك يبدأ بتحطيم خرافة كبيرة: الانضباط مو صفة شخصية ثابتة. يعني مو إنك "شخص منضبط" أو "شخص ما عنده انضباط". الانضباط الذاتي عضلة &mdash; تقوى بالاستخدام وتضعف بالإهمال. والأبحاث أثبتت إن الناس اللي نشوفها منضبطة مو لأنها تجبر نفسها أكثر، بس لأنها بنت عادات وأنظمة تقلل حاجتها لقوة الإرادة.</p>
+  <p>تجربة المارشملو الشهيرة اللي سوّوها على الأطفال &mdash; يحطون قدامهم حلوى ويقولون لو صبرت بنعطيك ثنتين &mdash; كانت توصف الانضباط بإنه صفة ثابتة. بس أبحاث جديدة أثبتت إن الأطفال اللي صبروا مو لأنهم "أقوى"، بس لأنهم استخدموا استراتيجيات ذكية مثل إنهم صرفوا انتباههم عن الحلوى. يعني الموضوع استراتيجية مو قوة خام.</p>
+  <p>هالنقطة تغيّر كل شي. لأنها تعني إنك ما تحتاج تكون "أقوى" عشان تكون أكثر انضباطاً. تحتاج تكون أذكى. تحتاج تفهم كيف عقلك يشتغل وتستخدم هالفهم لصالحك بدل ما تحارب نفسك. باتريك يقول: "اللي يحارب نفسه كل يوم عشان يسوي الشي الصح ما عنده انضباط، عنده مشكلة في النظام".</p>
+
+  <div class="quote-block">
+    <p>الانضباط الذاتي مو إنك تجبر نفسك كل يوم. الانضباط الحقيقي هو إنك تبني نظام يخلّي الشي الصح سهل والشي الغلط صعب.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>وقّف تلوم نفسك على "ضعف الإرادة" وابدأ ركّز على بناء أنظمة. لو كل يوم تحارب نفسك عشان تسوي شي، المشكلة مو فيك &mdash; المشكلة في النظام اللي حولك. غيّر النظام وبتتغيّر النتيجة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>باتريك يشير إلى بحث مهم: الناس اللي تسجّل نتائج عالية في اختبارات الانضباط الذاتي ما هي لأنها تقاوم الإغراءات أكثر. العكس &mdash; هي تتعرض لإغراءات أقل لأنها صممت حياتها بشكل يبعدها عن المواقف اللي تحتاج فيها تقاوم. هذا هو الانضباط الذكي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">بناء الروتين</div>
+      <div class="chapter-title-en">Building Routines</div>
+    </div>
+  </div>
+
+  <span class="section-label">العادات الأساسية</span>
+  <p>باتريك يتكلم عن مفهوم "العادات الأساسية" أو Keystone Habits. هذي عادات لما تبنيها، تأثيرها ينتشر على باقي حياتك. مثلاً، الناس اللي تبدأ تتمرن بانتظام غالباً تلاقي إنها بعد بدأت تأكل أحسن وتنام أحسن وتشتغل بإنتاجية أكثر. مو لأنها خططت لكل هالشي، بس لأن عادة وحدة قوية سحبت معها عادات ثانية.</p>
+  <p>بناء الروتين يبدأ بخطوة صغيرة جداً. باتريك يقول: "لو تبي تتمرن كل يوم، لا تبدأ بساعة في النادي. ابدأ بخمس دقائق في البيت." ليش؟ لأن الهدف في البداية مو النتيجة، الهدف هو بناء العادة. لما عقلك يتعوّد إنك تسوي هالشي كل يوم، بعدين تزيد الوقت والجهد. بس لو بدأت كبير، عقلك بيقاوم ويحسّك إن الموضوع صعب ويوقفك.</p>
+  <p>الربط بين العادات من أقوى الاستراتيجيات. يعني تربط العادة الجديدة بعادة موجودة. مثلاً: "بعد ما أشرب قهوتي الصبح (عادة موجودة)، بأقرأ عشر صفحات (عادة جديدة)." هالربط يخلّي العادة القديمة تشتغل كتذكير تلقائي للعادة الجديدة، وبعد فترة يصير الموضوع أوتوماتيك.</p>
+
+  <div class="quote-block">
+    <p>ما تحتاج تغيّر حياتك كلها دفعة وحدة. تحتاج تغيّر عادة وحدة بس، والباقي بيتغيّر تلقائياً. ابدأ بالعادة الأساسية وشف وش يصير.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>اختار عادة أساسية وحدة تبي تبنيها. خلّها صغيرة لدرجة إنها ما تحتاج إرادة (مثل دقيقتين تأمل أو خمس دقائق مشي). اربطها بعادة موجودة وسوّها كل يوم بنفس الوقت. لا تزيد إلا بعد ما تصير تلقائية.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">قوة الإرادة</div>
+      <div class="chapter-title-en">Willpower Management</div>
+    </div>
+  </div>
+
+  <span class="section-label">إدارة الطاقة الذهنية</span>
+  <p>من أهم الأفكار اللي يقدمها باتريك هي إن قوة الإرادة مورد محدود. مثل البطارية &mdash; تشحنها الصبح وتخلص مع نهاية اليوم. عشان كذا تلاقي نفسك منضبط الصبح بس بالليل تبدأ تاكل أي شي وتفتح الجوال بدون توقف. مو لأنك ضعيف بالليل، بس لأن بطارية الإرادة عندك خلصت.</p>
+  <p>هالفهم يغيّر طريقة تخطيطك ليومك بالكامل. باتريك يقول: حط أهم الأشياء اللي تحتاج انضباط في بداية يومك لما تكون بطاريتك مشحونة. القرارات الصعبة، الشغل المهم، التمارين الرياضية &mdash; كلها حطها في أول اليوم. وخلّ الأشياء السهلة لآخر اليوم لما إرادتك تكون ضعيفة.</p>
+  <p>بعد فيه أشياء تستنزف إرادتك بدون ما تدري: كثرة القرارات الصغيرة. كل قرار تاخذه &mdash; حتى لو بسيط مثل وش ألبس أو وش أفطر &mdash; ياخذ جزء من طاقة إرادتك. عشان كذا ناس ناجحة كثير تلبس نفس الشي كل يوم (مثل مارك زوكربيرج وستيف جوبز). مو لأنهم ما يحبون الأزياء، بس لأنهم يبون يوفرون طاقة الإرادة للقرارات المهمة.</p>
+
+  <div class="quote-block">
+    <p>ما تحتاج إرادة أقوى. تحتاج قرارات أقل. كل قرار بسيط تلغيه من يومك يعطيك طاقة إضافية للقرارات اللي فعلاً تهم.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>خطط ليومك من الليل. قرر وش بتلبس، وش بتفطر، ومتى بتسوي كل شي. كل ما قللت القرارات اللي تاخذها خلال اليوم، كل ما وفّرت طاقة إرادة للأشياء المهمة. وحط أصعب مهامك في أول ساعتين من يومك.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>باتريك يذكر دراسة مثيرة عن القضاة اللي يراجعون طلبات الإفراج المشروط. الدراسة أثبتت إن القضاة يوافقون على ٦٥٪ من الطلبات في بداية اليوم، بس النسبة تنزل لقريب الصفر قبل استراحة الغداء. ليش؟ لأن إرادتهم تنفذ ويختارون القرار "الآمن" (الرفض). هذا يبيّن لك قد وش الإرادة مورد محدود وقد وش يأثر على قراراتك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">التخلص من العادات السيئة</div>
+      <div class="chapter-title-en">Breaking Bad Habits</div>
+    </div>
+  </div>
+
+  <span class="section-label">كسر الأنماط السلبية</span>
+  <p>باتريك يشرح إن العادات السيئة ما تنتهي بإنك تقول "بوقّف". لو كان الموضوع بهالبساطة، ما أحد كان عنده عادات سيئة. العادات السيئة لها دورة محددة: محفّز، روتين، مكافأة. عشان توقف العادة، لازم تفهم الدورة هذي وتكسرها من مكان محدد، مو تحارب العادة كلها.</p>
+  <p>أول خطوة هي إنك تحدد المحفّز. وش الشي اللي يخلّيك تبدأ العادة السيئة؟ ممكن يكون مشعر (ملل، قلق، توتر)، أو وقت معيّن (بعد العشاء)، أو مكان (المكتب)، أو ناس معيّنين. لما تعرف المحفّز، تقدر إما تتجنبه أو تغيّر ردة فعلك عليه. يعني بدل ما تشيل العادة، تستبدلها بعادة ثانية تعطيك نفس المكافأة.</p>
+  <p>مثلاً، لو تدخن لما تحس بالتوتر (المحفّز = توتر، المكافأة = استرخاء)، ما تحتاج تشيل التوتر أو تلغي المكافأة. تحتاج تبدل الروتين بس. بدل السيجارة، ممكن تمشي خمس دقائق أو تتنفس بعمق أو تسوي تمارين استطالة. هالأشياء تعطيك استرخاء (نفس المكافأة) بدون الضرر. مع الوقت، العادة الجديدة تاخذ مكان القديمة.</p>
+
+  <div class="quote-block">
+    <p>ما تحذف عادة سيئة، تستبدلها. عقلك ما يقبل الفراغ. لو ما عطيته بديل، بيرجع للقديم تلقائياً.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>اختار عادة سيئة وحدة تبي تتخلص منها. اكتب: وش المحفّز؟ وش الروتين؟ وش المكافأة اللي أحصل عليها؟ بعدين فكر ببديل يعطيك نفس المكافأة بطريقة صحية. جرّبه لمدة ثلاثين يوم وسجّل تقدمك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">بيئة النجاح</div>
+      <div class="chapter-title-en">Engineering Your Environment</div>
+    </div>
+  </div>
+
+  <span class="section-label">تصميم البيئة المحيطة</span>
+  <p>هذا الفصل من أقوى فصول الكتاب. باتريك يقول: "لا تعتمد على إرادتك، صمم بيئتك." البيئة اللي حولك تأثر على سلوكك أكثر بكثير مما تتخيّل. لو بيتك مليان أكل غير صحي، ما تحتاج إرادة خارقة عشان تأكل صحي &mdash; تحتاج تغيّر اللي في الثلاجة. لو جوالك قريب منك وأنت تشتغل، ما تحتاج تقاوم إغراء فتحه &mdash; تحتاج تحطه في غرفة ثانية.</p>
+  <p>باتريك يشرح إن تصميم البيئة يشتغل على مستويين: المستوى المادي والمستوى الاجتماعي. المستوى المادي يعني ترتيب الأشياء حولك بحيث تسهّل العادات الحلوة وتصعّب العادات السيئة. المستوى الاجتماعي يعني إنك تحيط نفسك بناس تدعم أهدافك بدل ناس تسحبك لورا.</p>
+  <p>الأبحاث تقول إنك متوسط الخمسة أشخاص اللي تقضي معهم وقت أكثر. لو أصحابك كلهم ما عندهم طموح ويقضون وقتهم في أشياء ما تخدمك، صعب جداً تكون منضبط. مو لأنك ضعيف، بس لأن الضغط الاجتماعي قوي جداً. عشان كذا، من أهم قرارات الانضباط هي اختيار الناس اللي حولك بعناية.</p>
+
+  <div class="quote-block">
+    <p>الإرادة تخلص بس البيئة تشتغل ٢٤ ساعة. صمم بيئتك صح وبتلاقي الانضباط يصير تلقائي بدون ما تحتاج تجبر نفسك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>سوّ جولة في بيتك ومكتبك وشف: وش الأشياء اللي تسهّل العادات السيئة؟ شلها أو بعّدها. وش الأشياء اللي تسهّل العادات الحلوة؟ قرّبها وخلّها واضحة. غيّر بيئتك قبل ما تحاول تغيّر نفسك.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>باتريك يذكر تجربة عن المستشفيات اللي غيّرت مكان المشروبات الغازية وحطت الماء في مكان أوضح وأسهل وصول. النتيجة: استهلاك المشروبات الغازية نزل ١١٪ واستهلاك الماء ارتفع ٢٥٪. ما أحد طلب من الناس يغيّرون، ما أحد حفّزهم. بس البيئة تغيّرت والسلوك تغيّر تلقائياً. هذي قوة تصميم البيئة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الانضباط المستدام</div>
+      <div class="chapter-title-en">Sustainable Discipline</div>
+    </div>
+  </div>
+
+  <span class="section-label">الاستمرارية على المدى البعيد</span>
+  <p>باتريك يختم كتابه بموضوع حساس: كيف تحافظ على الانضباط على المدى البعيد بدون ما تحترق. كثير ناس تبدأ بحماس ناري وتسوي كل شي صح لمدة أسبوع أو شهر، بعدين ترجع لعاداتها القديمة. ليش؟ لأنها اعتمدت على الحماس واللي هو مشعر مؤقت بطبيعته. الانضباط المستدام ما يعتمد على الحماس، يعتمد على الأنظمة والروتين.</p>
+  <p>من أهم أسرار الاستدامة هو نظام المحاسبة. تحتاج شخص أو مجموعة تراجع تقدمك معاها. الأبحاث تقول إن مجرد إنك تعرف إن أحد بيسألك "هل سويت اللي قلت بتسويه؟" يزيد احتمالية إنك تسوّيه بنسبة كبيرة جداً. ممكن يكون صديق، مدرب، أو حتى مجتمع أونلاين &mdash; المهم إن فيه أحد يتابعك.</p>
+  <p>باتريك بعد يتكلم عن أهمية المرونة. الانضباط المستدام ما يعني الكمال. بتجي أيام تفشل فيها، وهذا طبيعي. الفرق بين الشخص المنضبط وغير المنضبط مو إن المنضبط ما يفشل أبداً. الفرق إنه لما يفشل، يرجع بسرعة. بدل ما يقول "خلاص خربت كل شي"، يقول "يوم واحد سيء، بكرة أبدأ من جديد". هالعقلية هي اللي تفرق.</p>
+
+  <div class="quote-block">
+    <p>الانضباط مو إنك ما تفشل أبداً. الانضباط إنك لما تفشل، ترجع أسرع. كل ما قصّرت وقت الرجعة، كل ما زاد انضباطك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>ابحث عن شريك محاسبة (Accountability Partner). شخص تثق فيه وتتفقون إنكم تراجعون أهدافكم مع بعض كل أسبوع. ما تحتاج يكون نفس المجال &mdash; المهم إن كلكم عندكم أهداف وتبون تتابعون بعض. هالخطوة البسيطة ممكن تضاعف نسبة نجاحك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Action Plan -->
+<section class="action-plan">
+  <h2>&#x1F3AF; خطة العمل التطبيقية</h2>
+  <ol>
+    <li><strong>حدد عادتك الأساسية:</strong> اختار عادة وحدة بس تبي تبنيها هالشهر. خلّها صغيرة وبسيطة (٥ دقائق أو أقل). اربطها بعادة موجودة وحدد الوقت والمكان بالضبط.</li>
+    <li><strong>صمم بيئتك:</strong> سوّ تنظيف شامل لبيئتك. شل كل شي يسهّل العادات السيئة وقرّب كل شي يسهّل العادات الحلوة. البيئة أقوى من الإرادة.</li>
+    <li><strong>قلّل قراراتك اليومية:</strong> حدد ملابسك ووجباتك وروتينك من الليل. كل قرار توفره الصبح يعطيك طاقة إرادة إضافية للأشياء المهمة.</li>
+    <li><strong>افهم دورة عاداتك السيئة:</strong> اكتب المحفّز والروتين والمكافأة لكل عادة سيئة عندك. بعدين صمم بديل يعطيك نفس المكافأة بطريقة صحية.</li>
+    <li><strong>ابحث عن شريك محاسبة:</strong> كلّم صديق أو زميل واتفقوا إنكم تتابعون أهداف بعض أسبوعياً. التزام اجتماعي يضاعف فرص النجاح.</li>
+    <li><strong>طبّق قاعدة "لا تكسر السلسلة":</strong> علّق تقويم على الحيط وحط علامة كل يوم تسوي فيه عادتك الجديدة. هدفك ما تكسر السلسلة. لو كسرتها، ارجع فوراً بدون ما تلوم نفسك.</li>
+  </ol>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>&#x1F4CB; مخطط الانضباط الذاتي &mdash; باتريك إدبلاد</h3>
+  <p>الانضباط مو قوة خارقة تحتاجها. هو مهارة تبنيها خطوة بخطوة، ونظام تصممه مرة ويشتغل لك كل يوم.</p>
+  <p>ابدأ بعادة صغيرة اليوم وشف كيف تتغيّر حياتك.</p>
+  <div class="disclaimer">
+    هذا ملخص شامل للكتاب وليس بديلاً عن قراءته كاملاً. نوصي بشدة باقتناء الكتاب الأصلي للاستفادة الكاملة.
+  </div>
+</footer>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

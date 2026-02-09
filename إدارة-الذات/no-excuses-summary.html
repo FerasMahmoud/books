@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>لا أعذار! قوة الانضباط الذاتي - ملخص شامل | براين تريسي</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #c0392b; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #e74c3c; }
+
+  .hero {
+    background: linear-gradient(135deg, #3d0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #e74c3c;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(231, 76, 60, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(61, 10, 10, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #e74c3c;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(231, 76, 60, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(231, 76, 60, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #d0b0b0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #d0b0b0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '\26A1';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d0a0a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #e74c3c;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #e74c3c;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d0a0a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d0a0a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #e74c3c;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(231, 76, 60, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #e74c3c;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(231, 76, 60, 0.12);
+    color: #e74c3c;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(231, 76, 60, 0.06);
+    border-right: 4px solid #e74c3c;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '\201C';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(231, 76, 60, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(61, 10, 10, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(231, 76, 60, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #e74c3c;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(0, 206, 201, 0.08);
+    border: 1px solid rgba(0, 206, 201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #00cec9;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #b0d0d0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(231, 76, 60, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #e74c3c;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #3d0a0a, #1a1a2e);
+    border-top: 3px solid #e74c3c;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(231, 76, 60, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#128683;</span>
+    <h1>لا أعذار! قوة الانضباط الذاتي</h1>
+    <p class="subtitle">No Excuses! The Power of Self-Discipline</p>
+    <p class="author">براين تريسي &mdash; Brian Tracy</p>
+    <div class="meta-info">
+      <span>7 فصول رئيسية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>الانضباط مفتاح كل شي</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>المشكلة اللي يعالجها هذا الكتاب</h2>
+  <p>
+    ليش ناس كثير يعرفون وش المفروض يسوون بس ما يسوونه؟ يعرفون إن التمارين مهمة بس ما يتمرنون. يعرفون إن الادخار ضروري بس ما يدّخرون. يعرفون إن القراءة تنفعهم بس ما يقرأون. المشكلة مو في المعرفة — المشكلة في الانضباط:
+  </p>
+  <ul>
+    <li>تأجّل الأشياء المهمة وتسوي الأشياء السهلة والممتعة أول</li>
+    <li>تلوم الظروف والناس بدل ما تتحمل مسؤوليتك</li>
+    <li>تبدأ بحماس وتوقف بعد شوي لأن ما عندك انضباط تستمر</li>
+    <li>تختار الراحة الفورية على النجاح طويل المدى</li>
+    <li>عندك أعذار لكل شي — والأعذار مريحة بس ما توصلك لمكان</li>
+  </ul>
+  <p>
+    براين تريسي يقول الحل بكل بساطة: <strong>الانضباط الذاتي</strong>. القدرة على إجبار نفسك تسوي اللي لازم تسويه حتى لو ما تبيه. هذي أهم صفة في أي شخص ناجح — وخبر حلو، تقدر تتعلمها وتبنيها مثل أي عضلة.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    براين تريسي من أشهر المتحدثين والكتّاب في العالم في مجال تطوير الذات والنجاح. كتب أكثر من 80 كتاب وانباعت ملايين النسخ. بدأ حياته فقير وبدون شهادة، وبنى نفسه بالانضباط الذاتي لحد ما صار مليونير ومؤلف عالمي.
+  </p>
+  <p>
+    في هذا الكتاب، تريسي يغطي 21 مجال في الحياة تحتاج فيها انضباط — من الأهداف والوقت والمال للصحة والعلاقات والشخصية. الرسالة: ما فيه شي يوقفك غير نفسك. توقّف عن الأعذار وابدأ بالانضباط — وكل شي بيتغير.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>الانضباط والنجاح</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>انضباط الشخصية</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>انضباط الأهداف</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>انضباط الوقت</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>انضباط المال</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>انضباط الصحة</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>انضباط العلاقات</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الانضباط والنجاح</h2>
+      <span class="chapter-title-en">Discipline and Success</span>
+    </div>
+  </div>
+
+  <span class="section-label">الأساس</span>
+  <p>
+    تريسي يبدأ بحقيقة صادمة: الفرق بين الناجح والفاشل مو الذكاء ولا الحظ ولا الموهبة — هو الانضباط الذاتي. القدرة على إجبار نفسك تسوي اللي لازم تسويه وقت ما لازم تسويه، حتى لو ما تبي. هذي الصفة الوحيدة اللي لو عندك إياها، كل شي ثاني بيجي.
+  </p>
+  <p>
+    تريسي يشرح مبدأ "تأخير المتعة" (Delayed Gratification). الدراسات أثبتت إن الأطفال اللي قدروا يأخّرون أكل قطعة حلوى 15 دقيقة عشان ياخذون قطعتين — هالأطفال لما كبروا كانوا أنجح في كل شي: دراسة، وظيفة، صحة، علاقات. القدرة على رفض المتعة الفورية عشان مكسب أكبر في المستقبل — هذي هي الانضباط الذاتي في أبسط صورها.
+  </p>
+  <p>
+    والحلو إن الانضباط عضلة — كل ما استخدمتها كل ما قويت. كل مرة تجبر نفسك تسوي شي صعب بس مفيد، عضلة الانضباط تقوى شوي. وكل مرة تختار الراحة، تضعف شوي. عشان كذا تريسي يقول: ابدأ بتحديات صغيرة — استيقظ بدري، رتّب سريرك، اغسل الصحون فوراً — هالأشياء الصغيرة تبني فيك عضلة الانضباط اللي تحتاجها للتحديات الكبيرة.
+  </p>
+
+  <div class="quote-block">
+    <p>الانضباط الذاتي هو القدرة على فعل ما يجب عليك فعله، وقتما يجب عليك فعله، سواء أردت ذلك أم لا. هذا هو مفتاح كل نجاح.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>الانضباط الذاتي هو أهم صفة للنجاح. تعلّم تأخير المتعة واختيار الصعب المفيد على السهل الفارغ. ابدأ بتحديات صغيرة وقوّي عضلة الانضباط يومياً — مع الوقت بتصير عندك القوة لإنجاز أي شي.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>هالأسبوع، اختر تحدي انضباط واحد بسيط: استيقظ قبل المعتاد بنص ساعة كل يوم. هالشي يبان بسيط بس يبني فيك عضلة الانضباط ويثبت لنفسك إنك تقدر تتحكم بقراراتك. بعد أسبوع، أضف تحدي ثاني.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">انضباط الشخصية</h2>
+      <span class="chapter-title-en">Character Discipline</span>
+    </div>
+  </div>
+
+  <span class="section-label">بناء الشخصية</span>
+  <p>
+    تريسي يقول إن الشخصية مو شي تولد فيه — شي تبنيه بالانضباط اليومي. كل مرة تختار الصدق وهو أصعب من الكذب، تبني شخصيتك. كل مرة توفي بوعدك وهو أسهل تتراجع عنه، تبني شخصيتك. كل مرة تسوي الشي الصح حتى لو ما أحد يشوفك، تبني شخصيتك.
+  </p>
+  <p>
+    الشخصية القوية مبنية على ثلاث ركائز: النزاهة (تسوي اللي تقول إنك بتسويه)، الشجاعة (تواجه المخاوف وتاخذ قرارات صعبة)، والمسؤولية (تتحمل نتائج أفعالك بدون أعذار). هالثلاث ركائز كلها تتطلب انضباط — لأن الأسهل دايماً هو الكذب والتهرب والتبرير.
+  </p>
+  <p>
+    تريسي يحذّر من "التبرير" — أخطر عدو للانضباط. التبرير هو لما تلاقي أسباب "منطقية" عشان ما تسوي اللي لازم تسويه. "ما أتمرن اليوم عشان تعبان" — هذا تبرير. "ما أدّخر عشان المصاريف كثيرة" — تبرير. "ما أقرأ عشان ما عندي وقت" — تبرير. كلها أعذار مغلّفة بشكل حلو. الشخص المنضبط يعترف: "ما سويتها لأني اخترت ما أسويها" — ويقرر يسويها المرة الجاية.
+  </p>
+
+  <div class="quote-block">
+    <p>شخصيتك تتحدد بالأفعال اللي تسويها وقت ما يكون الشي الصح صعب. أي أحد يسوي الصح لما يكون سهل — البطل يسويه لما يكون صعب.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>ابني شخصيتك بالنزاهة والشجاعة والمسؤولية. توقّف عن التبرير — اعترف بقراراتك وتحمّل مسؤوليتها. كل فعل منضبط يقوّي شخصيتك، وكل تبرير يضعفها. الشخصية هي أساس كل نجاح حقيقي ومستدام.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">انضباط الأهداف</h2>
+      <span class="chapter-title-en">Goal Discipline</span>
+    </div>
+  </div>
+
+  <span class="section-label">قوة الأهداف</span>
+  <p>
+    تريسي يقول إن 3% بس من الناس عندهم أهداف مكتوبة وواضحة — وهالـ3% يحققون أكثر من الـ97% الباقين مجتمعين. ليش؟ لأن الأهداف المكتوبة تعطيك وضوح واتجاه وتركيز. بدون أهداف واضحة، أنت مثل سفينة بدون بوصلة — تروح وين ما ياخذك التيار.
+  </p>
+  <p>
+    تريسي يعطيك خطوات عملية: اكتب 10 أهداف تبي تحققها هالسنة. من الـ10، اختر الهدف اللي لو حققته بيغيّر حياتك أكثر شي. هذا يصير هدفك الرئيسي. بعدين حدد خطوات واضحة للوصول له، وحط مواعيد نهائية لكل خطوة. وكل يوم سوّ شي واحد على الأقل يقرّبك من هالهدف.
+  </p>
+  <p>
+    الانضباط في الأهداف يعني إنك كل يوم الصبح تراجع أهدافك وتكتبها من جديد (تريسي يسوي هالشي كل يوم من سنين). هالتكرار يبرمج عقلك الباطن على التركيز في هالأهداف. وتبدأ تلاحظ فرص ما كنت تشوفها قبل — لأن عقلك صار مبرمج يدوّر عليها. الكتابة اليومية للأهداف بسيطة بس تأثيرها عجيب.
+  </p>
+
+  <div class="quote-block">
+    <p>الناس ما تفشل لأنها تخطط للفشل — تفشل لأنها ما تخطط للنجاح. اكتب أهدافك وحط خطة واضحة — هالخطوة البسيطة تحطك قدام 97% من الناس.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>اكتب أهدافك بوضوح وراجعها يومياً. حدد هدفك الأهم وخصص له وقت وجهد كل يوم. الأهداف المكتوبة + المراجعة اليومية + الفعل المستمر = نتائج مذهلة. ما فيه سحر — فيه انضباط.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>خذ دفتر وابدأ من الحين: اكتب 10 أهداف تبي تحققها هالسنة. اختر الأهم واكتب 5 خطوات عملية للوصول له. وكل صباح اكتب أهدافك من جديد (ما تقرأها — تكتبها). هالعادة تغيّر كل شي في تفكيرك وتركيزك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">انضباط الوقت</h2>
+      <span class="chapter-title-en">Time Discipline</span>
+    </div>
+  </div>
+
+  <span class="section-label">إدارة الوقت</span>
+  <p>
+    تريسي يقول إن إدارة الوقت هي إدارة الحياة. وقتك هو حياتك — كل ساعة تضيعها هي ساعة من عمرك راحت. الشخص المنضبط يعامل وقته مثل ما يعامل فلوسه — يعرف وين يروح كل دقيقة ويحرص ما يضيعها.
+  </p>
+  <p>
+    تريسي يقدم قاعدة 80/20: 20% من أفعالك تنتج 80% من نتائجك. المشكلة إن أغلب الناس تقضي وقتها في الـ80% اللي تنتج بس 20%. عشان كذا لازم تعرف وش هي الأنشطة الأكثر قيمة في حياتك وتعطيها الأولوية. تريسي يسمّيها ABCDE Method: رتّب مهامك من A (أهم شي) لـ E (ممكن تلغيه). وابدأ دايماً بـ A — لا تلمس B قبل ما تخلص A.
+  </p>
+  <p>
+    كمان يتكلم عن "أكل الضفدعة" — المهمة الأصعب والأكبر في يومك، سوّها أول شي بالصباح. لما تخلّص أصعب مهمة بدري، باقي اليوم يصير سهل ومنتج. بس أغلب الناس تأجّل الضفدعة وتسوي المهام السهلة أول — وبعدين آخر اليوم ما عندهم طاقة للصعبة فيأجلونها لبكرة. وبكرة نفس القصة. الانضباط هو إنك تاكل الضفدعة أول شي كل صباح.
+  </p>
+
+  <div class="quote-block">
+    <p>لو أول شي تسويه كل صباح هو أكل ضفدعة حية، باقي اليوم بيكون رائع لأنك تعرف إن أصعب شي خلّصته. ابدأ بالأصعب دايماً.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>رتّب مهامك حسب الأهمية وابدأ بالأهم. طبّق قاعدة "أكل الضفدعة" — سوّ أصعب مهمة أول شي بالصباح. حاسب نفسك على وقتك مثل ما تحاسبها على فلوسك. الانضباط في الوقت = انضباط في الحياة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">انضباط المال</h2>
+      <span class="chapter-title-en">Financial Discipline</span>
+    </div>
+  </div>
+
+  <span class="section-label">الحرية المالية</span>
+  <p>
+    تريسي يقول إن الحرية المالية ما تجي من الراتب العالي — تجي من الانضباط المالي. فيه ناس تكسب ملايين وتصرفها كلها ومديونة، وفيه ناس دخلها متوسط بس عندها ثروة لأنها منضبطة في مصاريفها. القاعدة بسيطة: ادّخر 10% من كل دخل تحصل عليه — قبل ما تصرف أي شي.
+  </p>
+  <p>
+    تريسي يشرح مفهوم "ادفع لنفسك أول" — يعني أول ما يجيك الراتب، حوّل 10% للادخار فوراً. بعدين عيش على الـ90% الباقية. أغلب الناس يعكسون: يصرفون أول وبعدين يدّخرون اللي يبقى (وعادةً ما يبقى شي). الانضباط هو إنك تقلب المعادلة وتدّخر أول. مع الوقت هالـ10% تتراكم وتتضاعف مع الاستثمار — وتوصل لمرحلة الحرية المالية.
+  </p>
+  <p>
+    كمان يحذّر من "الترقية في أسلوب الحياة" — كل ما يزيد دخلك، تزيد مصاريفك بنفس النسبة أو أكثر. سيارة أحسن، بيت أكبر، مطاعم أغلى. هذي الحلقة ما تخلّص أبداً وتخليك عبد للراتب مهما كان كبير. الشخص المنضبط مالياً يعيش تحت مستوى دخله — مو عشان بخيل، عشان يبني ثروة وحرية.
+  </p>
+
+  <div class="quote-block">
+    <p>الحرية المالية هي القدرة على اتخاذ قرارات حياتك بناءً على اللي تبيه — مو بناءً على اللي تقدر عليه. والطريق لها يبدأ بادّخار 10% من كل دخل.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>ادّخر 10% من كل دخل قبل ما تصرف أي شي. عيش تحت مستوى دخلك ولا ترقّي أسلوب حياتك كل ما يزيد دخلك. الانضباط المالي مو حرمان — هو طريقك للحرية الحقيقية.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>من هالشهر، سوّ تحويل تلقائي لـ10% من راتبك لحساب ادخار منفصل يوم استلام الراتب. وحدد ميزانية شهرية واضحة لكل فئة (أكل، تنقل، ترفيه). تتبع مصاريفك لمدة شهر وبتنصدم وين تروح فلوسك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">انضباط الصحة</h2>
+      <span class="chapter-title-en">Health Discipline</span>
+    </div>
+  </div>
+
+  <span class="section-label">جسمك رأس مالك</span>
+  <p>
+    تريسي يقول إن جسمك هو المركبة اللي بتوصلك لكل أهدافك — لو خربت، ما بتوصل لمكان. ومع ذلك، كثير من الناس يعتنون بسياراتهم أكثر من أجسامهم! الانضباط الصحي مو رفاهية — هو أساس كل شي ثاني. بدون صحة، النجاح والمال والعلاقات ما لها قيمة.
+  </p>
+  <p>
+    القواعد بسيطة بس تحتاج انضباط: كل أقل (أغلب الناس تاكل أكثر من حاجتها)، كل صحي (خضار وفواكه وبروتين، وقلّل السكر والمقالي)، تمرّن بانتظام (30 دقيقة على الأقل 5 مرات بالأسبوع)، ونام كفاية (7-8 ساعات). كل هالأشياء نعرفها — بس كم منّا يسويها فعلاً؟ الفرق بين اللي يعرف واللي يسوي هو الانضباط.
+  </p>
+  <p>
+    تريسي يقول إن الأشخاص المنضبطين صحياً عندهم طاقة أعلى وتركيز أحسن ومزاج أفضل — وهالشي ينعكس على كل مجالات حياتهم. التمرين الصباحي ما يأخذ من وقتك — يعطيك وقت، لأنه يزيد إنتاجيتك وتركيزك باقي اليوم. النوم الكافي ما يضيع وقتك — يوفّر وقت، لأنك تنجز أسرع وأفضل.
+  </p>
+
+  <div class="quote-block">
+    <p>صحتك هي أغلى أصولك. كل استثمار في صحتك يعود عليك بعوائد مضاعفة في الطاقة والإنتاجية والسعادة. لا تهملها أبداً.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>اعتنِ بجسمك مثل ما تعتني بأغلى أصولك. كل صحي، تمرّن بانتظام، نام كفاية. هالأشياء بسيطة بس تحتاج انضباط يومي. الصحة هي الأساس اللي يُبنى عليه كل نجاح ثاني.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">انضباط العلاقات</h2>
+      <span class="chapter-title-en">Relationship Discipline</span>
+    </div>
+  </div>
+
+  <span class="section-label">العلاقات والنجاح</span>
+  <p>
+    تريسي يقول إن 85% من سعادتك ونجاحك يعتمد على جودة علاقاتك. مو المال ولا المنصب — العلاقات. بس العلاقات الحسنة ما تجي بالصدفة — تحتاج انضباط واستثمار يومي. مثل أي شي قيّم، لازم تشتغل عليها باستمرار.
+  </p>
+  <p>
+    الانضباط في العلاقات يعني: تسمع أكثر مما تتكلم. توفي بوعودك مهما كانت صغيرة. تقدّر الناس وتشكرهم بصدق. تعتذر لما تغلط بدون أعذار. تكون صبور مع الآخرين حتى لما يكونون صعبين. كل هالأشياء تتطلب انضباط — لأن الأسهل هو التجاهل والعناد والكبر.
+  </p>
+  <p>
+    تريسي يركّز بشكل خاص على العلاقة الزوجية والعائلية — هالعلاقات تحتاج أكبر قدر من الانضباط لأنها أقرب ناس لك وأسهل ناس تأخذهم كـ"مسلّمين". الانضباط هنا يعني إنك تعطي أفضل ما عندك للناس الأقرب لك، مو الأبعد. كثير ناس يعاملون زملاءهم وأصدقاءهم بأحسن طريقة، ويرجعون البيت ويعاملون عائلتهم بأسوأ طريقة — وهذا عكس المنطق.
+  </p>
+
+  <div class="quote-block">
+    <p>أنجح الناس في العالم ما يتميزون بذكائهم فقط — يتميزون بقدرتهم على بناء علاقات قوية ومستدامة. العلاقات الحسنة هي أعظم ثروة في الحياة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>استثمر في علاقاتك بانضباط يومي — اسمع، قدّر، وفِ بوعودك، واعطِ أفضل ما عندك للناس الأقرب لك. العلاقات القوية هي أساس السعادة والنجاح الحقيقي. ما فيه نجاح يعوّض فشل العلاقات.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>هالأسبوع، خصص 15 دقيقة يومياً لشخص مهم في حياتك — اسمعه بدون جوال وبدون مقاطعة. وسوّ شي صغير غير متوقع يسعد شخص قريب منك (رسالة، هدية بسيطة، خدمة). العلاقات تُبنى بالأفعال الصغيرة المتكررة — مو بالكلام الكبير.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>الخلاصة النهائية</h3>
+  <p>
+    لا أعذار! رسالة الكتاب واضحة ومباشرة: الانضباط الذاتي هو مفتاح كل نجاح في الحياة. مو الحظ ولا الموهبة ولا الظروف — الانضباط. القدرة على إجبار نفسك تسوي اللي لازم تسويه حتى لو ما تبي.
+  </p>
+  <p>
+    الانضباط يغطي كل مجالات الحياة: الشخصية والأهداف والوقت والمال والصحة والعلاقات. وكل مجال يحتاج انضباط يومي مستمر. الخبر الحلو: الانضباط عضلة تقوى مع الاستخدام. ابدأ بتحديات صغيرة واستمر — ومع الوقت بتصير قادر على أشياء ما كنت تتخيلها.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص شخصي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>اكتب 10 أهداف لهالسنة واختر الأهم — واكتب أهدافك كل صباح من جديد</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>طبّق "أكل الضفدعة" — كل صباح سوّ أصعب مهمة أول شي قبل أي شي ثاني</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>حوّل 10% من راتبك تلقائياً لحساب ادخار منفصل من هالشهر</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>التزم بتمرين 30 دقيقة 5 أيام بالأسبوع — حتى لو مشي بس</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>خصص 15 دقيقة يومياً للاستماع الحقيقي لشخص مهم في حياتك</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>كل ما جاك عذر، وقّف وقل "ما فيه أعذار" — وسوّ اللي لازم تسويه فوراً</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

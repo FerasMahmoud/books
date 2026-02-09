@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الزواج العاطفي - ملخص شامل | ديفيد شنارش</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #e94560; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #f06292; }
+  .hero { background: linear-gradient(135deg, #3d0a15 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #e94560; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(233,69,96, 0.08) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(61,10,21, 0.15) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #e94560; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(233,69,96, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(233,69,96, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #2d1b1b, #1a1a2e); border: 2px solid #c0392b; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '\26A1'; position: absolute; right: 0; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d0a15; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #e94560; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(233,69,96, 0.1); color: #e94560; transform: translateX(-4px); }
+  .toc-num { background: #e94560; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d0a15; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #e94560; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d0a15; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; position: relative; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #e94560; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(233,69,96, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #e94560, #c2185b); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(233,69,96, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #e94560; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(233,69,96, 0.12); color: #e94560; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(233,69,96, 0.06); border-right: 4px solid #e94560; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(233,69,96, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(61,10,21, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(233,69,96, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #e94560; font-weight: 700; font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(233,69,96, 0.08); border: 1px solid rgba(233,69,96, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #d0b0c0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .action-plan { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d0a15; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .action-plan h2 { font-size: 1.6rem; color: #e94560; margin-bottom: 25px; font-weight: 800; text-align: center; }
+  .action-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+  .action-num { background: #e94560; color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; }
+  .action-text { flex: 1; }
+  .action-text h4 { color: #ffffff; font-size: 1.05rem; margin-bottom: 4px; }
+  .action-text p { color: #b0b0c0; font-size: 0.95rem; margin: 0; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(233,69,96, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #e94560; }
+  .footer { background: linear-gradient(145deg, #3d0a15, #1a1a2e); border-top: 3px solid #e94560; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(233,69,96, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero .subtitle { font-size: 1.1rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section, .action-plan { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; } .chapter-title-ar { font-size: 1.3rem; } .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; } .footer { padding: 30px 16px; } }
+  @media (max-width: 480px) { html { font-size: 14px; } .hero { padding: 50px 16px 40px; } .hero h1 { font-size: 1.7rem; } }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#x1F525;</span>
+    <h1>الزواج العاطفي</h1>
+    <div class="subtitle">Passionate Marriage</div>
+    <div class="author">ديفيد شنارش — David Schnarch</div>
+    <div class="meta-info">
+      <span>&#x1F4D6; 7 فصول</span>
+      <span>&#x1F554; وقت القراءة: 35 دقيقة</span>
+      <span>&#x1F3AF; العلاقة الحميمية</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>&#x26A0;&#xFE0F; ليش هذا الكتاب مهم؟</h2>
+  <p>كثير من الأزواج يحسون إن الشغف اللي كان في بداية العلاقة راح ولا يرجع. يفتقدون الحماس والإثارة ويحسون إن العلاقة صارت روتينية ومملة. والأسوأ إنهم يعتقدون إن هذا طبيعي وما فيه حل — وهذا أكبر غلط.</p>
+  <p>ديفيد شنارش — وهو من أشهر المعالجين النفسيين المتخصصين في العلاقات الزوجية — يقول إن أفضل حياة حميمية وعاطفية ما تكون في بداية العلاقة — تكون بعد سنوات من النمو والنضج مع بعض. بس هذا يتطلب شغل حقيقي على النفس.</p>
+  <ul>
+    <li>تحس إن الشغف والحماس راحوا من علاقتك وما تعرف كيف ترجعهم</li>
+    <li>العلاقة الحميمية صارت روتينية أو شبه معدومة</li>
+    <li>تخاف من العمق العاطفي وتتجنب المواجهة الحقيقية مع شريكك</li>
+    <li>تحس إنك ضايع بين إرضاء شريكك والحفاظ على هويتك</li>
+    <li>تعتقد إن فقدان الشغف يعني إن العلاقة انتهت</li>
+  </ul>
+</section>
+
+<!-- Intro Section -->
+<section class="intro-section">
+  <h2>&#x1F4A1; مقدمة عن الكتاب</h2>
+  <p>شنارش يقدم نظرة مختلفة تماماً عن كل كتب العلاقات الثانية. أغلب الكتب تقول "تعلم تتنازل وتوافق شريكك عشان العلاقة تنجح". شنارش يقول العكس: العلاقة تنجح لما كل واحد يكون قوي ومستقل ويعرف نفسه كويس — مو لما يذوب في الطرف الثاني.</p>
+  <p>المفهوم الأساسي في الكتاب هو "التمايز" — يعني قدرتك إنك تحافظ على هويتك وقيمك ورغباتك حتى لما تكون في علاقة قريبة مع شخص ثاني. أغلب الناس يعتقدون إن القرب يعني إنك تتنازل عن نفسك — بس شنارش يقول إن القرب الحقيقي يحتاج إنك تكون نفسك بالكامل.</p>
+  <p>الكتاب يقول إن الزواج هو "بوتقة" — يعني مكان فيه ضغط حراري عالي يحولك لشي أقوى وأنقى. الضغوط والخلافات والتحديات في الزواج مو علامة فشل — هي بالضبط العملية اللي تصنع منكم أشخاص أنضج وأقدر على الحب العميق والشغف الحقيقي.</p>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc" id="toc">
+  <h2>&#x1F4D1; فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span> الرغبة والنضج</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span> التمايز في العلاقة</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span> العلاقة الحميمية العميقة</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span> مواجهة الذات</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span> النمو من خلال الأزمات</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span> إعادة إشعال الشغف</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span> الحب الناضج</a>
+  </div>
+</nav>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الرغبة والنضج</div>
+      <div class="chapter-title-en">Desire and Maturity</div>
+    </div>
+  </div>
+
+  <span class="section-label">فهم الرغبة</span>
+  <p>شنارش يبدأ بفكرة تصدم كثير ناس: الرغبة والشغف ما يروحون مع الوقت بشكل طبيعي — يروحون بسبب عدم النضج العاطفي. يعني المشكلة مو في العلاقة ولا في شريكك — المشكلة فيك أنت ومستوى نضجك. الرغبة الحقيقية المستدامة تحتاج نضج عاطفي عالي.</p>
+  <p>في بداية العلاقة، الرغبة تكون سهلة عشان كل شي جديد ومثير. بس هذي الرغبة مبنية على الإثارة العصبية مو على الحب العميق. شنارش يسميها "رغبة النقص" — يعني أنت ترغب في الشخص عشان تحتاجه يكملك. بس فيه نوع ثاني من الرغبة اسمها "رغبة الامتلاء" — يعني أنت ترغب في الشخص من مكان القوة والحب مو من مكان النقص والاحتياج.</p>
+  <p>الانتقال من رغبة النقص لرغبة الامتلاء يحتاج شغل حقيقي على نفسك. يحتاج إنك تكون مكتفي بنفسك عاطفياً ومستقل — وبعدين تختار شريكك مو عشان تحتاجه بل عشان تحبه وتبي تكون معاه. هذا النوع من الرغبة ما يموت مع الوقت — يكبر.</p>
+
+  <div class="quote-block">
+    <p>الرغبة الحقيقية ما تتطلب غموض ومسافة — تتطلب شجاعة إنك تكون حاضر بالكامل مع شريكك — ديفيد شنارش</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>لا تلوم الوقت أو الروتين على فقدان الشغف. الشغف الحقيقي يحتاج نضج عاطفي — يحتاج إنك تكون قوي ومستقل عاطفياً وتختار شريكك من مكان الحب مو من مكان الاحتياج.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>شنارش يقول إن أغلب الناس يدورون على شريك يطمنهم ويريحهم — بس هذا بالضبط اللي يقتل الشغف. الشغف يحتاج شوي توتر وتحدي. لما تكون في علاقة "مريحة جداً" بدون أي نمو أو تحدي، الشغف يموت. الحل مو إنك تخلق مشاكل — بل إنك تستمر تنمو وتتحدى نفسك وشريكك ينمو ويتحداك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">التمايز في العلاقة</div>
+      <div class="chapter-title-en">Differentiation in Relationships</div>
+    </div>
+  </div>
+
+  <span class="section-label">المفهوم المحوري</span>
+  <p>التمايز هو أهم مفهوم في الكتاب كله. شنارش يعرفه بإنه: قدرتك إنك تحافظ على إحساسك بنفسك — قيمك ومعتقداتك ورغباتك — حتى لما تكون في علاقة قريبة جداً مع شخص ثاني. يعني ما تذوب في شريكك وما تنسى مين أنت عشان ترضيه.</p>
+  <p>الناس اللي عندهم تمايز منخفض يعتمدون على شريكهم عشان يحسون بالأمان والقيمة. لو شريكهم زعل منهم ينهارون. لو شريكهم ما وافقهم يحسون إنهم غلط. هذول الناس يتنازلون عن أنفسهم عشان يحافظون على العلاقة — وبعدين يحسون بالغضب والاستياء عشان ما يكونون صادقين مع أنفسهم.</p>
+  <p>الناس اللي عندهم تمايز عالي يقدرون يكونون قريبين من شريكهم بدون ما يخسرون أنفسهم. يقدرون يقولون "أنا أحبك بس ما أوافقك في هذا الشي" بدون ما يحسون بالذنب ولا يخافون العلاقة تنكسر. هذا النوع من القوة الداخلية هو اللي يخلي العلاقة فيها شغف حقيقي.</p>
+
+  <div class="quote-block">
+    <p>ما تقدر تكون قريب من أحد بشكل حقيقي إلا إذا كنت قادر تكون منفصل عنه — ديفيد شنارش</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>القرب الحقيقي يحتاج قوة داخلية مو ضعف. تعلم تكون نفسك بالكامل في علاقتك — بقيمك ورغباتك وآرائك — بدون ما تخاف من ردة فعل شريكك. هذا هو أساس العلاقة العميقة والشغف المستدام.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">العلاقة الحميمية العميقة</div>
+      <div class="chapter-title-en">Deep Intimacy</div>
+    </div>
+  </div>
+
+  <span class="section-label">الحميمية الحقيقية</span>
+  <p>شنارش يقدم مفهوم ثوري اسمه "الحميمية بعيون مفتوحة". أغلب الناس في لحظات القرب يغمضون عيونهم — حرفياً ومجازياً. يعني يتجنبون يشوفون شريكهم فعلاً ويتجنبون إن شريكهم يشوفهم. ليش؟ عشان يخافون. يخافون من الضعف ويخافون من الحكم.</p>
+  <p>الحميمية بعيون مفتوحة تعني إنك تكون حاضر بالكامل مع شريكك — تشوفه وتخليه يشوفك بكل ضعفك وقوتك. هذا أصعب شي ممكن تسويه بس هو اللي يخلي الحميمية عميقة ومُرضية بشكل ما تتخيله. لما تجرب إنك تكون مكشوف تماماً مع شخص ثاني وهو يقبلك، هذي من أقوى التجارب الإنسانية.</p>
+  <p>شنارش يقول إن الحميمية العميقة ما تحتاج تقنيات ولا حركات جديدة — تحتاج شجاعة. شجاعة إنك تكون صادق مع نفسك ومع شريكك عن وش تحب ووش تحتاج ووش تخاف منه. كل ما كنت أصدق وأشجع في حميميتك، كل ما كانت أعمق وأحلى.</p>
+
+  <div class="quote-block">
+    <p>الحميمية الحقيقية ما تحتاج ظلام وإغماض عيون — تحتاج نور وشجاعة إنك تنكشف بالكامل — ديفيد شنارش</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>الحميمية العميقة تبدأ بالشجاعة مو بالتقنيات. كن حاضراً بالكامل مع شريكك، خلّه يشوفك وشوفه فعلاً. لما تكونون صادقين ومكشوفين مع بعض، الحميمية تتحول لتجربة تغير حياتكم.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>شنارش يقول إن أغلب المشاكل الحميمية في الزواج مو جسدية — هي عاطفية. الناس يخافون من القرب الحقيقي عشان يخافون يُرفضون أو يُحكم عليهم. الحل مو إنك تتعلم تقنيات جديدة — الحل إنك تتعلم تكون شجاع بما يكفي إنك تنكشف وتقبل شريكك المنكشف.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">مواجهة الذات</div>
+      <div class="chapter-title-en">Confronting Yourself</div>
+    </div>
+  </div>
+
+  <span class="section-label">المرآة الداخلية</span>
+  <p>شنارش يقول إن أصعب جزء في الزواج مو التعامل مع شريكك — أصعب جزء هو التعامل مع نفسك. الزواج يجبرك تواجه أجزاء من نفسك ما كنت تبي تشوفها: أنانيتك، خوفك من القرب، حاجتك للسيطرة، عدم ثقتك بنفسك. كل هذي الأشياء تطلع في الزواج لأنه أقرب علاقة عندك.</p>
+  <p>أغلب الناس لما يواجهون هذي الأجزاء المظلمة يلومون شريكهم بدل ما يواجهون أنفسهم. يقولون "أنا عصبي بسببك" أو "لولاك كنت مرتاح". بس الحقيقة إن شريكك ما يسبب لك هذي المشاكل — هو بس يكشفها. المشاكل كانت موجودة من قبل بس ما كنت تشوفها.</p>
+  <p>شنارش يسمي عملية مواجهة الذات "التمسك بنفسك" — يعني إنك تقف مع نفسك وتواجه حقيقتك بدون ما تهرب. هذا مؤلم بس ضروري. لما تواجه عيوبك بصدق وتبدأ تشتغل عليها، مو بس علاقتك تتحسن — أنت كإنسان تتحسن. والشغف يرجع عشان أنت صرت شخص أقوى وأصدق.</p>
+
+  <div class="quote-block">
+    <p>التمسك بنفسك يعني إنك تقف مع حقيقتك حتى لما تكون مؤلمة — وهذا أشجع شي ممكن تسويه — ديفيد شنارش</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>بدل ما تلوم شريكك على مشاكل العلاقة، واجه نفسك بصدق. وش العيوب اللي يكشفها الزواج فيك؟ وش المخاوف اللي تتجنبها؟ لما تواجه نفسك وتبدأ تنمو، العلاقة كلها تنمو معك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">النمو من خلال الأزمات</div>
+      <div class="chapter-title-en">Growing Through Gridlock</div>
+    </div>
+  </div>
+
+  <span class="section-label">بوتقة الزواج</span>
+  <p>شنارش يستخدم مصطلح "البوتقة" عشان يوصف لحظات الضغط الشديد في الزواج — لحظات تحس فيها إنك محشور وما فيه مخرج. يمكن خلاف كبير ما ينحل، أو أزمة تهدد العلاقة كلها. أغلب الناس يشوفون هذي اللحظات كارثة — بس شنارش يقول إنها فرصة.</p>
+  <p>في البوتقة، أنت مجبور تنمو. ما فيه خيار ثاني. إما تنمو وتتعامل مع الموقف بنضج، أو العلاقة تنكسر. هذا الضغط هو بالضبط اللي يصنع التحول. مثل الألماس — ما يتكون إلا تحت ضغط هائل. نفس الشي في الزواج: أجمل فترات العلاقة تجي بعد أصعب فتراتها.</p>
+  <p>شنارش يقول إن "الخلافات المتحجرة" — يعني الخلافات اللي ما تنحل مهما حاولتوا — هي أعظم فرصة للنمو. هذي الخلافات ما تنحل بالتنازل — تنحل بنمو الاثنين لمستوى أعلى من النضج. يعني الحل مو في تغيير الموقف — الحل في تغيير نفسك.</p>
+
+  <div class="quote-block">
+    <p>الزواج مثل البوتقة — الضغط والحرارة يحولانك لشي أنقى وأقوى لو صبرت على العملية — ديفيد شنارش</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>لما تمر بأزمة في زواجك، لا تشوفها كنهاية — شوفها كفرصة. الضغط والألم هم بالضبط اللي يجبرك تنمو وتصير أقوى. أعظم تحولات العلاقة تصير في أصعب لحظاتها.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>شنارش يحدد أربع نقاط توازن لازم تحققها عشان تنجح في بوتقة الزواج: أولاً الثبات والاستقرار العاطفي، ثانياً القدرة على تهدئة نفسك بنفسك بدون ما تعتمد على شريكك، ثالثاً التأمل الذاتي الصادق، ورابعاً القدرة على تحمل الانزعاج عشان تنمو. هذي الأربع مهارات هي مفتاح الزواج الناجح.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">إعادة إشعال الشغف</div>
+      <div class="chapter-title-en">Reigniting Passion</div>
+    </div>
+  </div>
+
+  <span class="section-label">استعادة الشرارة</span>
+  <p>شنارش يقول إن الشغف ما ينتهي — هو بس يختبئ وراء الخوف والكسل والروتين. عشان ترجع الشغف، ما تحتاج تغير شريكك أو تغير ظروفك — تحتاج تغير نفسك. لما تصير أكثر شجاعة وصدق في علاقتك، الشغف يرجع لحاله.</p>
+  <p>كثير من الناس يعتقدون إن الشغف يحتاج غموض وإثارة — مثل البدايات. بس شنارش يقول العكس: الشغف الأعمق يجي من المعرفة العميقة. لما تعرف شريكك بكل تفاصيله وتختار إنك ترغب فيه رغم كل شي — هذا شغف ما يقارن فيه أي شي. هذا شغف ناضج ومستدام.</p>
+  <p>المفتاح هو إنك تستمر تنمو. لما يكون فيه نمو مستمر عندك وعند شريكك، دايماً فيه شي جديد تكتشفونه عن بعض. وهذا الاكتشاف المستمر يغذي الشغف. المشكلة مو إنكم تعرفون بعض كثير — المشكلة إنكم توقفتوا عن النمو وصرتوا نسخة واحدة ما تتغير.</p>
+
+  <div class="quote-block">
+    <p>الشغف ما يحتاج غموض — يحتاج شجاعة. شجاعة إنك تكون نفسك بالكامل مع شخص يعرفك بالكامل — ديفيد شنارش</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>عشان ترجع الشغف لعلاقتك: استمر في النمو، كن شجاع وصادق، وتوقف عن الاختباء وراء الروتين. الشغف يحب الناس اللي يعيشون بصدق ويستمرون يتطورون — مو الناس اللي يدورون حيل وتقنيات.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الحب الناضج</div>
+      <div class="chapter-title-en">Mature Love</div>
+    </div>
+  </div>
+
+  <span class="section-label">قمة العلاقة</span>
+  <p>شنارش يختم بوصف الحب الناضج — اللي هو الهدف النهائي لكل الشغل اللي تكلم عنه. الحب الناضج مختلف تماماً عن الحب الرومانسي في البداية. الحب في البداية مبني على الحاجة والإثارة — "أنا أحتاجك وأنت تثيرني". الحب الناضج مبني على الاختيار والمعرفة — "أنا أعرفك بكل تفاصيلك وأختار إني أحبك".</p>
+  <p>الحب الناضج فيه عمق وغنى ما يوجد في البدايات. فيه تاريخ مشترك وذكريات وتجارب مرتوا فيها مع بعض. فيه معرفة عميقة بالشخص الثاني — مو المعرفة السطحية بل المعرفة اللي تجي من سنوات من المواجهة والصدق والنمو. هذا النوع من الحب هادي وعميق ومستقر بس ما يفتقد الشغف.</p>
+  <p>شنارش يقول إن أغلب الناس ما يوصلون لهذا المستوى من الحب عشان يستسلمون قبل ما يوصلون. يواجهون صعوبات الزواج ويفترضون إن العلاقة فاشلة بدل ما يستمرون في النمو. بس اللي يصبرون ويستمرون في العمل على أنفسهم — هذول يوصلون لحب ما يتوصف بالكلام. حب يجمع بين العمق والشغف والأمان والحرية.</p>
+
+  <div class="quote-block">
+    <p>الحب الناضج مو نهاية الشغف — هو بدايته الحقيقية. عشان الشغف الحقيقي ما يبدأ إلا لما تكون قوي بما يكفي إنك تنكشف بالكامل — ديفيد شنارش</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>لا تستسلم على علاقتك قبل ما توصل للحب الناضج. البداية حلوة بس السطحية — العمق والجمال الحقيقي يجي بعد سنوات من النمو والمواجهة والصدق. استمر واصبر — الأفضل لسه قدام.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>شنارش يقول إن المجتمع يبيع لنا فكرة إن الحب لازم يكون سهل وطبيعي — ولو احتجت تشتغل عليه يعني فيه مشكلة. بس الحقيقة إن أعظم الأشياء في الحياة تحتاج شغل: الصحة تحتاج شغل، النجاح يحتاج شغل، والحب العميق يحتاج شغل. لما تقبل هذي الحقيقة وتستمتع بالرحلة، كل شي يتغير.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Action Plan -->
+<section class="action-plan">
+  <h2>&#x1F3AF; خطة العمل</h2>
+  <div class="action-item">
+    <div class="action-num">1</div>
+    <div class="action-text">
+      <h4>قيّم مستوى تمايزك</h4>
+      <p>اسأل نفسك بصراحة: هل أنا أقدر أكون نفسي في علاقتي أو أتنازل عن قيمي ورغباتي عشان أرضي شريكي؟ هل أقدر أقول "لا" بدون ما أحس بالذنب؟ حدد أين أنت وأين تبي تكون.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">2</div>
+    <div class="action-text">
+      <h4>واجه نفسك بصدق</h4>
+      <p>اكتب قائمة بالأشياء اللي تتجنبها في علاقتك — المحادثات اللي تتهرب منها، المشاعر اللي تكبتها، الحقائق اللي تخاف تواجهها. هذي بداية رحلة المواجهة الذاتية.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">3</div>
+    <div class="action-text">
+      <h4>تمرن على تهدئة نفسك بنفسك</h4>
+      <p>بدل ما تعتمد على شريكك يهديك لما تكون متضايق، تعلم تهدي نفسك. تنفس، تأمل، اكتب مشاعرك — أي طريقة تناسبك. هذي مهارة أساسية للتمايز.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">4</div>
+    <div class="action-text">
+      <h4>كن صادقاً في لحظة صعبة</h4>
+      <p>في الخلاف القادم مع شريكك، بدل ما تتجنب أو تدافع أو تلوم، جرب تكون صادق تماماً عن مشاعرك واحتياجاتك الحقيقية — حتى لو كان صعب.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">5</div>
+    <div class="action-text">
+      <h4>استمر في النمو الشخصي</h4>
+      <p>اقرأ كتب، تعلم أشياء جديدة، طور نفسك. لما تستمر تنمو كشخص، شريكك يكتشف جوانب جديدة فيك — وهذا يغذي الشغف والفضول في العلاقة.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">6</div>
+    <div class="action-text">
+      <h4>جربوا الحميمية بعيون مفتوحة</h4>
+      <p>في لحظة قرب مع شريكك، حاول تكون حاضر بالكامل — شوفه وخلّه يشوفك. ابدأ بخطوات صغيرة ومريحة ومع الوقت وسّع منطقة راحتك.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>الزواج العاطفي — ديفيد شنارش</h3>
+  <p>الشغف الحقيقي ما يموت — هو ينتظرك تنضج بما يكفي عشان تعيشه</p>
+  <p>التمايز — الشجاعة — الصدق — النمو</p>
+  <div class="disclaimer">هذا ملخص تعليمي للكتاب وليس بديلاً عن قراءة الكتاب كاملاً. جميع الحقوق محفوظة للمؤلف.</div>
+</footer>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

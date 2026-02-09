@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الانضباط هو القدر - ملخص شامل | رايان هوليداي</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #e08600; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #ff9800; }
+
+  .hero {
+    background: linear-gradient(135deg, #3d2500 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #ff9800;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 152, 0, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(61, 37, 0, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #ff9800;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(255, 152, 0, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 152, 0, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #d0b0b0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #d0b0b0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '\26A1';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d2500;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #ff9800;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(255, 152, 0, 0.1);
+    color: #ff9800;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #ff9800;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d2500;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #ff9800;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d2500;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #ff9800;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 152, 0, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #ff9800, #e68900);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #ff9800;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(255, 152, 0, 0.12);
+    color: #ff9800;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(255, 152, 0, 0.06);
+    border-right: 4px solid #ff9800;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '\201C';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(255, 152, 0, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(61, 37, 0, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(255, 152, 0, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #ff9800;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(0, 206, 201, 0.08);
+    border: 1px solid rgba(0, 206, 201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #00cec9;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #b0d0d0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 152, 0, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #ff9800;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #3d2500, #1a1a2e);
+    border-top: 3px solid #ff9800;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 152, 0, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#9876;&#65039;</span>
+    <h1>الانضباط هو القدر</h1>
+    <p class="subtitle">Discipline Is Destiny</p>
+    <p class="author">رايان هوليداي &mdash; Ryan Holiday</p>
+    <div class="meta-info">
+      <span>7 فصول رئيسية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>الفلسفة الرواقية والانضباط</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>المشكلة اللي يعالجها هذا الكتاب</h2>
+  <p>
+    في عصر الإفراط — إفراط في الأكل والشراء والتصفح والاستهلاك — صرنا نشوف الانضباط كأنه عقوبة أو حرمان. "عيش حياتك!" و"ما تحرم نفسك!" صارت شعارات العصر. بس وش النتيجة؟
+  </p>
+  <ul>
+    <li>ناس مستهلكة ومتعبة وما عندها تحكّم في نفسها</li>
+    <li>الإدمان على الشاشات والأكل والتسوق والسوشال ميديا في أعلى مستوياته</li>
+    <li>نحس بالحرية بس في الحقيقة عبيد لرغباتنا ونزواتنا</li>
+    <li>نشوف الانضباط قيد — ونجهل إنه في الحقيقة طريق الحرية</li>
+    <li>ما عندنا قدوات في الاعتدال والتحكّم الذاتي</li>
+  </ul>
+  <p>
+    رايان هوليداي يرجع للفلسفة الرواقية القديمة ويقول: <strong>الاعتدال (Temperance)</strong> هو الفضيلة المنسية. الانضباط مو حرمان — هو الطريق الوحيد للحرية الحقيقية والعظمة. ويستشهد بقصص شخصيات تاريخية عظيمة عاشت هالمبدأ.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    رايان هوليداي من أشهر الكتّاب في الفلسفة الرواقية المعاصرة. كتبه "العقبة هي الطريق" و"الهدوء هو المفتاح" صارت من أكثر الكتب مبيعاً. في هذا الكتاب، يتكلم عن الفضيلة الثانية من فضائل الرواقية: الاعتدال والانضباط.
+  </p>
+  <p>
+    الكتاب مقسّم لثلاثة أقسام: انضباط الجسد، انضباط المزاج، وانضباط العقل. في كل قسم، هوليداي يستشهد بقصص شخصيات تاريخية — من الملكة إليزابيث الثانية لماركوس أوريليوس للو غيريغ — عشان يبيّن كيف الانضباط شكّل مصيرهم. الأسلوب قصصي وممتع ومليان حكمة.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>الفضيلة المنسية</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>انضباط الجسد</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>انضباط المزاج</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>انضباط العقل</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>دروس من التاريخ</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>الحرية من خلال الانضباط</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>الإرث والقدر</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الفضيلة المنسية</h2>
+      <span class="chapter-title-en">The Forgotten Virtue</span>
+    </div>
+  </div>
+
+  <span class="section-label">الأساس الفلسفي</span>
+  <p>
+    هوليداي يبدأ بشرح إن الفلاسفة الرواقيين القدماء حددوا أربع فضائل أساسية: الشجاعة، العدالة، الحكمة، والاعتدال (Temperance). الاعتدال — أو ما نسميه الانضباط — هو الفضيلة اللي تخلّي كل الفضائل الثانية ممكنة. بدون انضباط، الشجاعة تصير تهور، والحكمة تصير نظرية، والعدالة تصير كلام فاضي.
+  </p>
+  <p>
+    المشكلة إن ثقافتنا المعاصرة نسيت هالفضيلة. صرنا نمجّد الإفراط والاستهلاك — أكل أكثر، اشترِ أكثر، استمتع أكثر. لكن الفلاسفة القدماء عرفوا حقيقة عميقة: السعادة ما تجي من الإفراط — تجي من التحكّم. الشخص اللي يتحكم في رغباته أحرّ من اللي يتبعها بدون وعي.
+  </p>
+  <p>
+    هوليداي يوضّح إن الانضباط مو قمع أو حرمان — هو اختيار واعي. ما تحرم نفسك من كل شي — تختار بوعي وش تستهلكه ومتى وكيف. الفرق بين الشخص المنضبط والمنفلت مو إن الأول ما يستمتع — الأول يستمتع بشكل أعمق وأكثر وعياً لأنه يختار متى وكيف، بدل ما يكون عبد لرغباته اللحظية.
+  </p>
+
+  <div class="quote-block">
+    <p>الاعتدال مو عن الحرمان من المتع — عن التحكّم فيها. الحر الحقيقي هو اللي يتحكم في نفسه، مو اللي يتبع كل رغبة بدون تفكير.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>الانضباط مو عقوبة ولا حرمان — هو الطريق للحرية الحقيقية. لما تتحكم في رغباتك وتختار بوعي، تصير أحرّ من اللي يتبع كل نزوة. الاعتدال هو الفضيلة اللي تمكّن كل الفضائل الأخرى.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>هالأسبوع، لاحظ لحظات الاندفاع: لما تبي تفتح الجوال تلقائي، لما تبي تاكل شي مو جوعان، لما تبي تشتري شي ما تحتاجه. في كل لحظة، وقّف ثانية وحدة واسأل: أنا فعلاً أبي هالشي ولا بس عادة؟ هالوقفة البسيطة تعطيك التحكّم.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">انضباط الجسد</h2>
+      <span class="chapter-title-en">Discipline of the Body</span>
+    </div>
+  </div>
+
+  <span class="section-label">السيطرة الجسدية</span>
+  <p>
+    هوليداي يبدأ بقصة لو غيريغ — لاعب البيسبول الأسطوري اللي لعب 2,130 مباراة متتالية بدون انقطاع. كان يلعب مصاب، يلعب مريض، يلعب متعب — ما توقّف أبداً. هذا مو قوة جسدية بس — هذا انضباط جسدي خرافي. القدرة على إجبار جسمك يسوي اللي لازم يسويه حتى لما يقول "لا".
+  </p>
+  <p>
+    انضباط الجسد يشمل كل شي: وش تاكل وكم تاكل، متى تنام ومتى تصحى، كيف تتعامل مع التعب والألم والراحة. هوليداي يقول إن الجسد هو أول ساحة للانضباط — لو ما تقدر تتحكم في جسمك، كيف بتتحكم في مزاجك وعقلك؟ الشخص اللي يقاوم زر الغفوة الصباحية يبني نفس العضلة اللي يحتاجها لمقاومة إغراءات أكبر.
+  </p>
+  <p>
+    كمان يتكلم هوليداي عن خطر الإفراط في الراحة. جسمنا مصمم للحركة والتحدي — بس إحنا نعامله كأنه يستحق الراحة الدائمة. الكسل ما يجدد طاقتك — يسحبها. والتمارين ما تتعبك — تعطيك طاقة. العلاقة عكسية تماماً عما يتوقعه أغلب الناس. لما تتحدى جسمك باستمرار، يصير أقوى وأكثر طاقة ومقاومة.
+  </p>
+
+  <div class="quote-block">
+    <p>الجسد مو عبء تحمله — هو أداة تتقنها. لو تقدر تتحكم في أبسط شي (متى تنام، وش تاكل)، تقدر تتحكم في كل شي.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>ابدأ الانضباط من الجسد — هو أول ساحة معركة. تحكّم في نومك وأكلك وحركتك. لا تستسلم للكسل والراحة المفرطة. كل انتصار صغير على جسمك يبني عضلة الانضباط اللي تحتاجها في كل مجالات الحياة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">انضباط المزاج</h2>
+      <span class="chapter-title-en">Discipline of Temperament</span>
+    </div>
+  </div>
+
+  <span class="section-label">التحكّم العاطفي</span>
+  <p>
+    هوليداي يروي قصة الملكة إليزابيث الثانية — اللي حكمت لأكثر من 70 سنة بانضباط عاطفي مذهل. ما أحد شافها تفقد أعصابها علنياً، ما شتكت من ضغوط منصبها، ما استغلّت سلطتها لمصالح شخصية. كانت ثابتة كالجبل في كل أزمة — وهذا مو لأنها ما تحس، بل لأنها تتحكم في مشاعرها بانضباط عجيب.
+  </p>
+  <p>
+    انضباط المزاج يعني إنك ما تكون عبد لمشاعرك اللحظية. الغضب يجيك — بس ما تصرّف عليه فوراً. الإحباط يجيك — بس ما تستسلم له. الخوف يجيك — بس ما يوقفك. المشاعر طبيعية ومهمة — بس الاستجابة لها لازم تكون واعية ومنضبطة. الفرق بين الشخص الناضج والشخص الطفولي هو القدرة على التحكم في الاستجابة العاطفية.
+  </p>
+  <p>
+    هوليداي يحذّر بشكل خاص من مشاعر النجاح — الغرور والكبر والشعور بالأحقية. كثير ناس تنضبط وقت الصعوبات بس تنفلت وقت النجاح. ياكلون أكثر، يصرفون أكثر، يتكبرون أكثر. الانضباط الحقيقي يبان في القمة مو في القاع — لأن في القمة أنت مسيطر وعندك كل الخيارات. اللي ينضبط وهو ناجح ومرتاح — هذا الانضباط الحقيقي.
+  </p>
+
+  <div class="quote-block">
+    <p>القوة الحقيقية مو في قدرتك على الانفجار — في قدرتك على التحكّم. أي أحد يقدر يغضب — بس القليل اللي يقدر يختار متى وكيف يعبّر عن غضبه.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>تحكّم في مشاعرك بدل ما تتحكم فيك. المشاعر طبيعية بس الاستجابة لها اختيار. وانتبه بشكل خاص وقت النجاح — الغرور والإفراط أخطر أعداء الانضباط. الثبات العاطفي هو علامة النضج الحقيقي.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>المرة الجاية لما تحس بغضب أو إحباط شديد، طبّق قاعدة "10 ثواني": عدّ لعشرة قبل ما ترد أو تتصرف. هالثواني تعطيك مساحة تختار استجابتك بدل ما تتصرف بالاندفاع. مع الممارسة، هالعادة تصير تلقائية وتغيّر علاقاتك بالكامل.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">انضباط العقل</h2>
+      <span class="chapter-title-en">Discipline of the Mind</span>
+    </div>
+  </div>
+
+  <span class="section-label">التحكّم الذهني</span>
+  <p>
+    هوليداي يتكلم عن ماركوس أوريليوس — إمبراطور روما والفيلسوف الرواقي اللي كتب "التأملات" وهو في ساحة المعركة. كان أقوى رجل في العالم بس كان يكتب لنفسه تذكيرات بالتواضع والانضباط. كان عنده القدرة يسوي أي شي يبيه — بس اختار الاعتدال. هذا هو انضباط العقل في أعلى مستوياته.
+  </p>
+  <p>
+    انضباط العقل يشمل عدة أشياء: التركيز (القدرة على توجيه انتباهك لشي واحد)، التعلم المستمر (ما تتوقف عن القراءة والتطور)، التفكير النقدي (ما تصدق كل شي تسمعه)، والتواضع الفكري (تعترف إنك ممكن تكون غلطان). كل هالأشياء تتطلب انضباط — لأن الأسهل هو التشتت والكسل الذهني والغرور.
+  </p>
+  <p>
+    هوليداي يركّز بشكل خاص على خطر التشتت الذهني في عصرنا. الإنترنت والسوشال ميديا صمّموا عشان يسرقون انتباهك — وانتباهك هو أغلى ما تملك. الشخص اللي يتحكم في انتباهه يتحكم في حياته. واللي يسلّم انتباهه للخوارزميات يسلّم حياته لهم. انضباط العقل يبدأ بحماية انتباهك من كل اللي يحاولون يسرقونه.
+  </p>
+
+  <div class="quote-block">
+    <p>العقل مثل الحديقة — لو ما تعتني فيها، الأعشاب الضارة تنمو لحالها. الأفكار الجيدة تحتاج زراعة ورعاية وانضباط. وأول خطوة: احمِ انتباهك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>تحكّم في عقلك وانتباهك. استمر في التعلم والقراءة. كن متواضع فكرياً واعترف بحدود معرفتك. واحمِ انتباهك من اللي يحاولون يسرقونه — انتباهك هو أغلى أصولك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">دروس من التاريخ</h2>
+      <span class="chapter-title-en">Lessons from History</span>
+    </div>
+  </div>
+
+  <span class="section-label">القدوات</span>
+  <p>
+    هوليداي يقدم عشرات القصص التاريخية اللي تبيّن قوة الانضباط. جورج واشنطن اللي رفض يصير ملك وتنازل عن السلطة طوعاً — في وقت كان يقدر يحكم لأبد. هذا مو ضعف — هذا أقوى أنواع الانضباط: القدرة على قول "لا" لشي تقدر تاخذه بس تعرف إنه مو صح.
+  </p>
+  <p>
+    ويحكي عن أنجيلا ميركل اللي حكمت ألمانيا بأسلوب هادئ ومنضبط — بدون استعراض ولا دراما. كانت تلبس نفس الملابس تقريباً وتعيش حياة بسيطة رغم إنها من أقوى الناس في العالم. هذا الاعتدال في السلطة نادر جداً وهو اللي خلّاها تستمر 16 سنة في الحكم بنجاح.
+  </p>
+  <p>
+    وفي المقابل، يعطي أمثلة على ناس فشلوا بسبب غياب الانضباط. رياضيين موهوبين ضاعت مسيرتهم بسبب الإدمان. قادة عظماء سقطوا بسبب الغرور. شركات ناجحة انهارت بسبب الإفراط في التوسع. الدرس واحد: الموهبة والذكاء والفرص ما تكفي — بدون انضباط، كل شي ينهار. والانضباط هو اللي يحول الموهبة لعظمة والفرصة لنجاح.
+  </p>
+
+  <div class="quote-block">
+    <p>التاريخ مليان بناس موهوبين فشلوا وناس عاديين نجحوا. الفارق الوحيد بينهم: الانضباط. الموهبة بدون انضباط = إمكانيات ضائعة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>ادرس قصص الناجحين — كلهم عندهم انضباط استثنائي. وادرس قصص الفاشلين — كلهم فقدوا الانضباط في لحظة حاسمة. الموهبة والذكاء مهمين، بس بدون انضباط ما يسوون شي. الانضباط هو اللي يحوّل الإمكانيات لواقع.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>اقرأ سيرة ذاتية لشخص تحترمه وركّز على الانضباط في حياته — كيف تعامل مع الإغراءات والضغوط. خذ منه قاعدة وحدة وطبقها في حياتك. القدوات الحقيقية تعلّمنا إن الانضباط ممكن وإن نتائجه تستحق الجهد.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الحرية من خلال الانضباط</h2>
+      <span class="chapter-title-en">Freedom Through Discipline</span>
+    </div>
+  </div>
+
+  <span class="section-label">المفارقة الكبرى</span>
+  <p>
+    هوليداي يقدم فكرة تبان متناقضة بس هي الحقيقة: الانضباط = الحرية. الشخص اللي ينضبط في أكله حر من الأمراض. اللي ينضبط في ماله حر من الديون. اللي ينضبط في وقته حر من الضغط. اللي ينضبط في مشاعره حر من الندم. كل انضباط يفتح لك باب حرية.
+  </p>
+  <p>
+    والعكس صحيح: كل انفلات يقيّدك. اللي ياكل بدون حساب يتقيّد بالأمراض. اللي يصرف بدون حساب يتقيّد بالديون. اللي يتصفح بدون حساب يتقيّد بالإدمان. اللي يغضب بدون تحكّم يتقيّد بعلاقات مدمّرة. الحرية اللي نظن إننا نحصل عليها بالانفلات هي في الحقيقة قيود مخفية.
+  </p>
+  <p>
+    هوليداي يستشهد بالرواقيين: الحر الحقيقي مو اللي يقدر يسوي أي شي — الحر اللي يقدر يقول "لا" لأي شي. القدرة على الرفض أقوى من القدرة على الاستهلاك. لما تتحكم في رغباتك، ما أحد يقدر يتحكم فيك — لا إعلانات ولا ضغط اجتماعي ولا خوارزميات. هذي هي الحرية الحقيقية اللي كلنا نبيها.
+  </p>
+
+  <div class="quote-block">
+    <p>الحر مو اللي يتبع كل رغبة — الحر اللي يختار أي رغبة يتبعها وأيها يرفضها. الانضباط هو مفتاح هالحرية اللي ما تُشترى بمال.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>الانضباط مو قيد — هو مفتاح الحرية الحقيقية. كل انضباط يفتح لك باب حرية وكل انفلات يقيّدك بقيد جديد. تعلّم تقول "لا" لرغباتك اللحظية عشان تقول "نعم" لحياة أفضل وأحرّ.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الإرث والقدر</h2>
+      <span class="chapter-title-en">Legacy and Destiny</span>
+    </div>
+  </div>
+
+  <span class="section-label">الرسالة النهائية</span>
+  <p>
+    هوليداي يختم بفكرة عميقة: الانضباط هو القدر. يعني مصيرك في الحياة يتحدد بمستوى انضباطك. مو الظروف ولا الحظ ولا الموهبة — الانضباط اليومي هو اللي يصنع مستقبلك. كل يوم تقرر مصيرك بالخيارات الصغيرة اللي تاخذها — والانضباط هو اللي يضمن إنك تاخذ الخيارات الصح.
+  </p>
+  <p>
+    كمان يتكلم عن الإرث. وش بتترك بعدك؟ الناس ما بيتذكرون كم كسبت من فلوس أو كم كان منصبك كبير. بيتذكرون شخصيتك — هل كنت منضبط، صادق، متواضع، كريم؟ الإرث الحقيقي مو مادي — هو الأثر اللي تتركه في الناس من حولك. والانضباط هو اللي يبني هالإرث يوم بيوم.
+  </p>
+  <p>
+    هوليداي يذكّرنا إن الانضباط مو وجهة نوصلها — هو طريقة حياة مستمرة. كل يوم فيه اختبارات وإغراءات وتحديات. وكل يوم عندك فرصة تختار الانضباط. ما فيه لحظة "خلاص وصلت" — فيه ممارسة يومية مستمرة. وهذا هو الجمال فيه: الانضباط يعطي الحياة معنى وهدف كل يوم. مو بس النتائج — الرحلة نفسها فيها قيمة لأنك تبني نفسك فيها.
+  </p>
+
+  <div class="quote-block">
+    <p>الانضباط هو القدر. مو عشان يضمن لك نتائج معينة — عشان يضمن إنك تعيش بطريقة تستحقها. النتائج ما تتحكم فيها، بس الطريقة اللي تعيش فيها أنت اللي تتحكم فيها.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>الانضباط يومي ومستمر — مو وجهة توصلها. كل يوم هو فرصة تبني فيها شخصيتك وإرثك. مصيرك يتحدد بخياراتك اليومية الصغيرة. اختر الانضباط كل يوم وبتبني حياة تستحقها وإرث يبقى بعدك.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>اكتب جملة وحدة تلخّص الشخص اللي تبي تكونه — مو وش تبي تحقق، بل كيف تبي تعيش. مثلاً: "أنا شخص منضبط يختار الصعب المفيد على السهل الفارغ". اكتبها في مكان تشوفه كل يوم. خلّها بوصلتك في كل قرار تاخذه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>الخلاصة النهائية</h3>
+  <p>
+    الانضباط هو القدر — هذي رسالة الكتاب الأساسية. في عالم يمجّد الإفراط والاستهلاك، الاعتدال هو الفضيلة المنسية اللي نحتاجها أكثر من أي وقت. الانضباط مو حرمان — هو الطريق الوحيد للحرية الحقيقية.
+  </p>
+  <p>
+    الانضباط يشمل ثلاثة أبعاد: الجسد (تحكّم في جسمك وصحتك)، المزاج (تحكّم في مشاعرك وردود فعلك)، والعقل (تحكّم في تفكيرك وانتباهك). والتاريخ يثبت إن العظماء كلهم عندهم انضباط استثنائي، والفاشلين كلهم فقدوه في لحظة حاسمة.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص شخصي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>مارس "الوقفة الواعية" — كل ما حسيت برغبة اندفاعية، وقّف 10 ثواني واسأل: هل أنا فعلاً أحتاج هالشي؟</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>ابني تحدي جسدي أسبوعي: دش بارد، تمرين صباحي، صيام متقطع — شي يتحدى جسمك</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>طبّق قاعدة "10 ثواني" قبل أي ردة فعل عاطفية — خاصة الغضب والإحباط</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>خصص 20 دقيقة يومياً للقراءة أو التعلّم — احمِ عقلك من الكسل الذهني</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>اقرأ سيرة ذاتية لشخص منضبط وخذ منها درس واحد تطبقه في حياتك</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>اكتب "بيان الانضباط الشخصي" — جملة وحدة تصف الشخص المنضبط اللي تبي تكونه</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

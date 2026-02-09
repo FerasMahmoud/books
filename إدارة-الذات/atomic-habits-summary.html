@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>العادات الذرية - ملخص شامل | جيمس كلير</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #e6a117; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #f39c12; }
+
+  .hero {
+    background: linear-gradient(135deg, #3d2500 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #f39c12;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(243, 156, 18, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(61, 37, 0, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #f39c12;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(243, 156, 18, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(243, 156, 18, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #d0b0b0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #d0b0b0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '\26A1';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d2500;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #f39c12;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(243, 156, 18, 0.1);
+    color: #f39c12;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #f39c12;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d2500;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #f39c12;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d2500;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #f39c12;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(243, 156, 18, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #f39c12, #d68910);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #f39c12;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(243, 156, 18, 0.12);
+    color: #f39c12;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(243, 156, 18, 0.06);
+    border-right: 4px solid #f39c12;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '\201C';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(243, 156, 18, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(61, 37, 0, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(243, 156, 18, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #f39c12;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(0, 206, 201, 0.08);
+    border: 1px solid rgba(0, 206, 201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #00cec9;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #b0d0d0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(243, 156, 18, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #f39c12;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #3d2500, #1a1a2e);
+    border-top: 3px solid #f39c12;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(243, 156, 18, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#9883;&#65039;</span>
+    <h1>العادات الذرية</h1>
+    <p class="subtitle">Atomic Habits</p>
+    <p class="author">جيمس كلير &mdash; James Clear</p>
+    <div class="meta-info">
+      <span>7 فصول رئيسية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>تغييرات صغيرة، نتائج ضخمة</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>المشكلة اللي يعالجها هذا الكتاب</h2>
+  <p>
+    كثير مننا يحاول يغيّر حياته دفعة وحدة — يبي يصحى بدري، يروح الجم، يقرأ كل يوم، يترك الأكل الغلط، كله مرة وحدة. وش يصير؟ بعد أسبوع أو اثنين يرجع لنفس العادات القديمة. ليش؟ عشان الطريقة غلط من الأساس:
+  </p>
+  <ul>
+    <li>تحاول تغيّر كل شي مرة وحدة وتحترق بسرعة</li>
+    <li>تركّز على الأهداف بدل ما تركّز على النظام اللي يوصلك لها</li>
+    <li>تعتمد على الإرادة والتحفيز اللي يروحون بعد شوي</li>
+    <li>ما تفهم كيف العادات تتشكل في المخ أصلاً</li>
+    <li>تحس إن التغييرات الصغيرة ما تسوي فرق فتتركها</li>
+  </ul>
+  <p>
+    جيمس كلير يقدم الحل: <strong>العادات الذرية</strong> — تغييرات صغيرة جداً (1% بس) بس مستمرة، تتراكم مع الوقت وتسوي فرق خرافي. الفكرة مو إنك تحتاج إرادة أقوى — تحتاج نظام أذكى.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    جيمس كلير كاتب ومتحدث متخصص في العادات وتطوير الأداء. الكتاب هذا انباع منه أكثر من 15 مليون نسخة حول العالم وانترجم لأكثر من 50 لغة. السبب واضح: الكتاب يعطيك نظام عملي مو كلام نظري.
+  </p>
+  <p>
+    كلير يبني أفكاره على أبحاث علم النفس والأعصاب، ويقدم أربع قوانين بسيطة لبناء عادات حسنة والتخلص من عادات سيئة. الجميل إنه يعطيك أمثلة حقيقية من حياته الشخصية ومن حياة رياضيين ورجال أعمال ناجحين. عشان كذا صار من أكثر كتب تطوير الذات تأثيراً في العقد الأخير.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>لماذا العادات الصغيرة تصنع فرق كبير</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>كيف تتشكل العادات</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>القانون الأول: اجعلها واضحة</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>القانون الثاني: اجعلها جذابة</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>القانون الثالث: اجعلها سهلة</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>القانون الرابع: اجعلها مُرضية</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>كيف تبني نظام عادات يدوم</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">لماذا العادات الصغيرة تصنع فرق كبير</h2>
+      <span class="chapter-title-en">Why Tiny Habits Make a Big Difference</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    كلير يبدأ الكتاب بفكرة بسيطة بس قوية: لو تحسّنت 1% كل يوم، بعد سنة بتكون أحسن بـ37 ضعف. يعني التغيير الصغير اللي يبان ما يسوي شي اليوم، لو استمريت فيه بيصير ضخم مع الوقت. المشكلة إن أغلبنا يبي نتائج فورية — يبي يشوف الفرق من أول أسبوع. بس الحقيقة إن التحسّن التراكمي ما يبان إلا بعد فترة، وهذا اللي يخلي ناس كثير تستسلم قبل ما تشوف النتائج.
+  </p>
+  <p>
+    كلير يسمّي هالظاهرة "وادي خيبة الأمل" — الفترة اللي تكون فيها تشتغل على عاداتك بس ما تشوف نتائج واضحة. هذي الفترة هي اللي تصفّي الجادين من اللي بس متحمسين شوي. اللي يستمر ويعدّي الوادي هذا، يبدأ يشوف نتائج تتسارع بشكل مجنون — مثل كرة الثلج اللي تكبر كل ما تنزل.
+  </p>
+  <p>
+    وهنا يجي المبدأ الأهم في الكتاب كله: لا تركّز على الأهداف، ركّز على الأنظمة. الهدف يقول "أبي أنزل 10 كيلو"، بس النظام يقول "أبي أكل صحي كل يوم وأتمرن 3 مرات بالأسبوع". الفرق إن الهدف مؤقت — لما توصله تتوقف. بس النظام مستمر — يخليك تتحسن طول حياتك. الفائز والخاسر عندهم نفس الهدف، اللي يختلف هو النظام.
+  </p>
+
+  <div class="quote-block">
+    <p>ما تحتاج ترتقي لمستوى أهدافك — تحتاج تنزل لمستوى أنظمتك. الأهداف تحدد الاتجاه، بس الأنظمة هي اللي تحدد التقدم الحقيقي.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>لا تستهين بالتغييرات الصغيرة. 1% تحسّن يومي يسوي فرق خرافي مع الوقت. ركّز على بناء أنظمة يومية بدل ما تلاحق أهداف كبيرة ومؤقتة. النظام هو اللي يوصلك ويخليك تستمر.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>بدل ما تحط هدف كبير (أقرأ 50 كتاب هالسنة)، ابني نظام صغير (أقرأ صفحتين كل يوم قبل النوم). التغيير البسيط هذا أسهل بكثير وبيتراكم مع الوقت. الأهم إنك تبدأ صغير وتلتزم، مو تبدأ كبير وتوقف.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">كيف تتشكل العادات</h2>
+      <span class="chapter-title-en">How Habits Form</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    كلير يشرح إن كل عادة تمر بأربع مراحل: الإشارة، الرغبة، الاستجابة، والمكافأة. هذي الحلقة تتكرر مئات المرات في اليوم بدون ما تحس. جوالك يرن (إشارة)، تحس بفضول (رغبة)، تفتحه (استجابة)، تشوف الإشعار (مكافأة). بعد فترة، جسمك يسوي هالشي تلقائي — ما تحتاج تفكر فيه.
+  </p>
+  <p>
+    بس الأهم من كذا، كلير يقدم فكرة العادات المبنية على الهوية. فيه ثلاث طبقات للتغيير: تغيير النتائج (أبي أنحف)، تغيير العمليات (أبي أتمرن)، وتغيير الهوية (أنا شخص رياضي). أغلب الناس يبدأون من برا — يركزون على النتائج. كلير يقول ابدأ من جوا — غيّر نظرتك لنفسك أول. لأن كل فعل تسويه هو تصويت لنوع الشخص اللي تبي تكونه.
+  </p>
+  <p>
+    يعني لما تروح الجم، مو بس تتمرن — أنت تصوّت إنك شخص رياضي. لما تقرأ صفحة، أنت تصوّت إنك شخص مثقف. كل ما تكررت الأصوات، كل ما صارت الهوية الجديدة أقوى. وهنا يصير التغيير من الداخل — ما تحتاج تجبر نفسك عشان عندك هدف، تسوي الشي عشان هذا أنت. الفرق ضخم بين "أحاول أترك التدخين" و"أنا مو مدخن".
+  </p>
+
+  <div class="quote-block">
+    <p>كل فعل تسويه هو تصويت لنوع الشخص اللي تبي تكونه. ما فيه فعل واحد يغيّر هويتك، بس كل ما تكررت الأفعال كل ما قويت الهوية الجديدة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>لا تسأل "وش أبي أحقق؟" — اسأل "مين أبي أكون؟" غيّر هويتك أول وبعدين العادات تتبع تلقائي. الشخص اللي يشوف نفسه قارئ ما يحتاج يجبر نفسه على القراءة — يسويها لأنها جزء من هويته.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">القانون الأول: اجعلها واضحة</h2>
+      <span class="chapter-title-en">The 1st Law: Make It Obvious</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    القانون الأول يقول: العادة لازم تكون واضحة عشان تبدأ. كثير من عاداتنا اليومية نسويها بدون وعي — نفتح الجوال تلقائي، ناكل بدون جوع، نتصفح بدون هدف. كلير يقول أول خطوة هي الوعي: اكتب كل عاداتك اليومية وصنّفها (إيجابية، سلبية، محايدة). لما تشوفها مكتوبة قدامك، تصير واعي فيها وتقدر تتحكم.
+  </p>
+  <p>
+    بعدين يقدم أداة قوية اسمها "تكديس العادات" (Habit Stacking). الفكرة بسيطة: اربط العادة الجديدة بعادة موجودة. مثلاً: "بعد ما أصب قهوتي الصباحية (عادة موجودة)، بقرأ صفحة وحدة (عادة جديدة)". هالطريقة تستخدم العادة القديمة كإشارة للجديدة. ما تحتاج تفكر ولا تخطط — الموضوع يصير تلقائي.
+  </p>
+  <p>
+    وأهم شي في هالقانون هو تصميم البيئة. كلير يقول البيئة أقوى من الإرادة. لو تبي تاكل صحي، حط الفواكه على الطاولة وخبّي الشيبس. لو تبي تقرأ، حط الكتاب على المخدة. لو تبي تتمرن، جهّز ملابس الرياضة من الليل. خلّي الإشارات الإيجابية واضحة في كل مكان حولك، وخبّي الإشارات السلبية. البيئة تشكّل سلوكك أكثر مما تتخيل.
+  </p>
+
+  <div class="quote-block">
+    <p>ما تحتاج تكون ضحية بيئتك — تقدر تكون مهندسها. الناس اللي عندها انضباط عالي مو لأنهم أقوياء — عشان هم يعيشون في بيئة ما تتطلب انضباط كثير.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>خلّي العادة الحسنة واضحة في بيئتك. استخدم تكديس العادات — اربط كل عادة جديدة بوحدة قديمة. وصمّم بيئتك عشان العادة الحسنة تكون الخيار الأسهل والأوضح. لا تعتمد على الإرادة — اعتمد على التصميم.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>جرّب هالشي اليوم: اختر عادة تبي تبنيها واربطها بعادة تسويها كل يوم. مثلاً: "بعد ما أغسل أسناني بالليل، بكتب ثلاث أشياء أنا ممتن لها". والأهم — غيّر بيئتك: حط كل شي يساعدك على العادة الجديدة في مكان واضح.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">القانون الثاني: اجعلها جذابة</h2>
+      <span class="chapter-title-en">The 2nd Law: Make It Attractive</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    القانون الثاني يتكلم عن الرغبة — كل ما كانت العادة جذابة أكثر، كل ما زادت احتمالية إنك تسويها. كلير يشرح إن المخ ما يسعى للمكافأة نفسها — يسعى لتوقّع المكافأة. يعني الدوبامين يطلع لما تتوقع شي حلو، مو بس لما تحصل عليه. عشان كذا السوشال ميديا مسببة إدمان — كل مرة تسحب الشاشة، في احتمال تشوف شي جديد ومثير.
+  </p>
+  <p>
+    الحل هو "ربط الإغراء" (Temptation Bundling) — تربط العادة اللي تبي تبنيها بشي تستمتع فيه. مثلاً: "ما أشاهد مسلسلي المفضل إلا وأنا أتمرن على جهاز المشي". أو "ما أروح المقهى اللي أحبه إلا يوم أدرس فيه ساعتين". كذا العادة الصعبة تنربط بشي ممتع، والمخ يبدأ يشوفها بشكل إيجابي.
+  </p>
+  <p>
+    كمان، المجتمع اللي حولك يأثر بشكل كبير على عاداتك. إحنا البشر نقلّد ثلاث مجموعات: الأقربين (العائلة والأصدقاء)، الأكثرية (المجتمع)، والأقوياء (اللي نحترمهم). لو تبي تبني عادة جديدة، انضم لمجموعة هالعادة عادية عندهم. تبي تقرأ أكثر؟ انضم لنادي قراءة. تبي تتمرن؟ اشترك مع صديق في الجم. لما تشوف الناس حولك يسوونها، العادة تصير عادية وطبيعية — مو جهد إضافي.
+  </p>
+
+  <div class="quote-block">
+    <p>عاداتنا مو بس أفعال فردية — هي منتج البيئة الاجتماعية اللي نعيش فيها. انضم للقبيلة الصح وبيتغير سلوكك تلقائياً.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>خلّي العادة جذابة عن طريق ربطها بشي تحبه (ربط الإغراء)، وانضم لمجموعة تمارس هالعادة. الدوبامين يشتغل على التوقع — فلما تتوقع متعة من العادة، تصير أسهل بكثير.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">القانون الثالث: اجعلها سهلة</h2>
+      <span class="chapter-title-en">The 3rd Law: Make It Easy</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    هنا يجي واحد من أقوى مبادئ الكتاب: قاعدة الدقيقتين. كلير يقول إن أي عادة جديدة لازم تبدأ بنسخة تاخذ دقيقتين أو أقل. تبي تتمرن؟ ابدأ بلبس ملابس الرياضة بس. تبي تقرأ؟ ابدأ بفتح الكتاب وقراءة جملة وحدة. تبي تتأمل؟ ابدأ بالجلوس بهدوء لمدة دقيقة. الهدف مو إنك تنجز — الهدف إنك تبدأ.
+  </p>
+  <p>
+    ليش؟ عشان أصعب جزء في أي عادة هو البداية. لما تبدأ — حتى لو بشي صغير — الزخم يشتغل وغالباً تكمّل أكثر مما خططت. اللي يلبس ملابس الرياضة غالباً يروح الجم. واللي يفتح الكتاب غالباً يقرأ أكثر من جملة. بس لو قلت لنفسك "لازم أتمرن ساعة" وأنت قاعد على الكنبة، مخك يقول "لا شكراً" ويقاوم.
+  </p>
+  <p>
+    كلير كمان يتكلم عن قانون الجهد الأقل — البشر بطبيعتهم يختارون الخيار الأسهل. بدل ما تحارب هالطبيعة، استغلها. قلّل الاحتكاك مع العادات الحسنة (جهّز كل شي مقدماً) وزيد الاحتكاك مع العادات السيئة (أبعد الجوال عن غرفة النوم، احذف التطبيقات المضيعة للوقت). خلّي العادة الحسنة أسهل شي تسويه، والسيئة أصعب شي تسويه.
+  </p>
+
+  <div class="quote-block">
+    <p>الناس يفكرون إنهم يحتاجون حافز أكبر — بس في الحقيقة يحتاجون احتكاك أقل. خلّي العادة الحسنة أسهل شي تسويه في يومك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>طبّق قاعدة الدقيقتين: كل عادة جديدة ابدأها بنسخة ما تاخذ أكثر من دقيقتين. الهدف هو البداية فقط. قلّل الاحتكاك قدر الإمكان وخلّي العادة الحسنة هي الخيار الافتراضي.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>اختر عادة وحدة تحاول تبنيها وصغّرها لدقيقتين. "أكتب يومياً" تصير "أكتب جملة وحدة". "أتمرن كل يوم" تصير "ألبس ملابس الرياضة". سوّها لمدة أسبوعين بدون ما تزيد، وبعدين ابدأ وسّع شوي شوي. السر في الاستمرارية مو في الكمية.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">القانون الرابع: اجعلها مُرضية</h2>
+      <span class="chapter-title-en">The 4th Law: Make It Satisfying</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    القانون الرابع يعالج مشكلة كبيرة: العادات الحسنة مكافآتها متأخرة والعادات السيئة مكافآتها فورية. التمرين ثمرته بعد شهور، بس الأكل السريع لذيذ الحين. القراءة تنفعك بعد سنين، بس السوشال ميديا ممتعة الحين. المخ البشري يميل للمكافأة الفورية — وهذا اللي يخلي العادات السيئة سهلة والحسنة صعبة.
+  </p>
+  <p>
+    الحل: أضف مكافأة فورية للعادة الحسنة. كلير يقترح أداة بسيطة وقوية جداً: تتبع العادات (Habit Tracking). استخدم تقويم أو تطبيق وعلّم على كل يوم تسوي فيه العادة. سلسلة الأيام المتتالية تصير مكافأة بحد ذاتها — ما تبي تكسرها. جيري سينفيلد كان يعلّم X على التقويم كل يوم يكتب فيه نكتة، وقال إن القاعدة الوحيدة هي "لا تكسر السلسلة".
+  </p>
+  <p>
+    بس كلير يحذّر: لو كسرت السلسلة (وبيصير)، القاعدة هي "لا تفوّت مرتين متتاليتين". فوّتت يوم؟ عادي، ارجع ثاني يوم. اللي يدمّر العادة مو إنك تفوّت مرة — إنك تفوّت مرتين وثلاث وتبدأ تتراجع. الفكرة إن الأيام السيئة جزء طبيعي من الرحلة — بس لا تخليها تتوالى.
+  </p>
+
+  <div class="quote-block">
+    <p>القاعدة الأولى لبناء العادات: لا تفوّت مرتين. أول يوم تفوّته هو حادث. ثاني يوم تفوّته هو بداية عادة جديدة سيئة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>تتبع عاداتك يومياً — شوف السلسلة تطول قدامك وهالشي بيحفّزك تكمّل. ولو فوّتت يوم، ارجع فوراً. المهم مو الكمال — المهم الاستمرارية. لا تفوّت مرتين متتاليتين أبداً.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">كيف تبني نظام عادات يدوم</h2>
+      <span class="chapter-title-en">Building a Lasting Habits System</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    في الفصل الأخير، كلير يجمع كل شي ويتكلم عن كيف تبني نظام متكامل يخلي عاداتك تستمر على المدى البعيد. أول شي يتكلم عنه هو "قاعدة جولديلوكس" — العادة لازم تكون في المنطقة الوسط بين السهل جداً والصعب جداً. لو سهلة كثير تمل منها، ولو صعبة كثير تحبط. الأفضل إنها تتحداك شوي — هذا اللي يخليك في حالة "تدفق" ومتحمس.
+  </p>
+  <p>
+    كمان يتكلم عن الجانب المظلم للعادات: لما تصير تلقائية، ممكن تتوقف عن التحسّن. اللي يتمرن كل يوم بنفس التمارين بنفس الأوزان ما يتقدم. عشان كذا كلير يقترح "مراجعة دورية" — كل شهر أو سنة، تراجع عاداتك وتسأل: هل هالعادة لسه تخدمني؟ وين أقدر أتحسّن؟ وش أحتاج أغيّر؟ التحسّن المستمر يتطلب وعي مستمر.
+  </p>
+  <p>
+    وأخيراً، كلير يذكّرك إن الهوية مو ثابتة. كل ما تطورت وتغيرت، عاداتك لازم تتغير معك. الشخص اللي كنته قبل 5 سنين مختلف عنك اليوم — واللي بتكونه بعد 5 سنين بيكون مختلف كمان. خلّي هويتك مرنة: "أنا شخص يتطور باستمرار" بدل "أنا شخص يسوي كذا وكذا". المرونة في الهوية تخليك تتكيف مع أي تغيير وتبني عادات جديدة كل ما احتجت.
+  </p>
+
+  <div class="quote-block">
+    <p>السر مو في عادة وحدة مثالية — السر في نظام تحسّن مستمر. الأبطال ما يولدون أبطال — يصيرون أبطال بالعادات اليومية الصغيرة اللي يلتزمون فيها.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>ابني نظام متكامل: عادات في المنطقة الصح من التحدي، مراجعة دورية للتحسّن، ومرونة في الهوية. العادات الذرية مو مشروع مؤقت — هي أسلوب حياة مستمر. كل يوم هو فرصة تصوّت فيها للشخص اللي تبي تكونه.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>حدد موعد شهري (أول يوم في كل شهر مثلاً) تراجع فيه عاداتك: وش اللي اشتغل؟ وش اللي ما اشتغل؟ وش أحتاج أعدّل؟ هالمراجعة البسيطة تمنعك من الركود وتضمن إنك دايماً تتقدم وتتطور.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>الخلاصة النهائية</h3>
+  <p>
+    العادات الذرية تقول إن التغيير الحقيقي ما يجي من قرارات كبيرة درامية — يجي من تحسّنات صغيرة يومية تتراكم مع الوقت. كل عادة تمر بأربع مراحل (إشارة، رغبة، استجابة، مكافأة) وكل مرحلة لها قانون.
+  </p>
+  <p>
+    القوانين الأربعة: (1) اجعلها واضحة — صمّم بيئتك واستخدم تكديس العادات. (2) اجعلها جذابة — اربطها بشي ممتع وانضم للمجتمع الصح. (3) اجعلها سهلة — قاعدة الدقيقتين وقلّل الاحتكاك. (4) اجعلها مُرضية — تتبع عاداتك ولا تفوّت مرتين.
+  </p>
+  <p>
+    الرسالة: أنت ما تحتاج تكون شخص مختلف تماماً — تحتاج تكون أحسن بـ1% كل يوم. وهذا يبدأ بعادة صغيرة وحدة... الحين.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص شخصي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>اكتب عاداتك اليومية الحالية كلها وصنّفها (إيجابية / سلبية / محايدة)</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>اختر عادة وحدة جديدة وطبّق قاعدة الدقيقتين عليها (صغّرها لأبسط نسخة)</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>اربطها بعادة موجودة باستخدام تكديس العادات: "بعد [عادة قديمة]، أسوي [عادة جديدة]"</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>صمّم بيئتك: حط إشارات العادة الحسنة في كل مكان وأخفِ إشارات السيئة</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>ابدأ تتبع العادة يومياً في تقويم أو تطبيق — وطبّق قاعدة "لا تفوّت مرتين"</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>حدد موعد شهري لمراجعة عاداتك وتقييم تقدمك — واسأل نفسك: مين أبي أكون؟</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

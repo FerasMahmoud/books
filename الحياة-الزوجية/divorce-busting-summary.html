@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>إنقاذ الزواج - ملخص شامل | ميشيل واينر-ديفيس</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #f39c12; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #f9ca24; }
+  .hero { background: linear-gradient(135deg, #3d2500 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #f39c12; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(243,156,18, 0.08) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(61,37,0, 0.15) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #f39c12; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(243,156,18, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(243,156,18, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #2d1b1b, #1a1a2e); border: 2px solid #c0392b; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '\26A1'; position: absolute; right: 0; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d2500; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #f39c12; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(243,156,18, 0.1); color: #f39c12; transform: translateX(-4px); }
+  .toc-num { background: #f39c12; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d2500; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #f39c12; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d2500; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; position: relative; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #f39c12; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(243,156,18, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #f39c12, #d68910); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(243,156,18, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #f39c12; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(243,156,18, 0.12); color: #f39c12; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(243,156,18, 0.06); border-right: 4px solid #f39c12; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(243,156,18, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(61,37,0, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(243,156,18, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #f39c12; font-weight: 700; font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(243,156,18, 0.08); border: 1px solid rgba(243,156,18, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #d0b0c0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .action-plan { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d2500; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .action-plan h2 { font-size: 1.6rem; color: #f39c12; margin-bottom: 25px; font-weight: 800; text-align: center; }
+  .action-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+  .action-num { background: #e94560; color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; }
+  .action-text { flex: 1; }
+  .action-text h4 { color: #ffffff; font-size: 1.05rem; margin-bottom: 4px; }
+  .action-text p { color: #b0b0c0; font-size: 0.95rem; margin: 0; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(243,156,18, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #f39c12; }
+  .footer { background: linear-gradient(145deg, #3d2500, #1a1a2e); border-top: 3px solid #f39c12; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(243,156,18, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero .subtitle { font-size: 1.1rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section, .action-plan { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; } .chapter-title-ar { font-size: 1.3rem; } .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; } .footer { padding: 30px 16px; } }
+  @media (max-width: 480px) { html { font-size: 14px; } .hero { padding: 50px 16px 40px; } .hero h1 { font-size: 1.7rem; } }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#x1F6DF;</span>
+    <h1>إنقاذ الزواج</h1>
+    <div class="subtitle">Divorce Busting</div>
+    <div class="author">ميشيل واينر-ديفيس — Michele Weiner-Davis</div>
+    <div class="meta-info">
+      <span>&#x1F4D6; 6 فصول</span>
+      <span>&#x1F554; وقت القراءة: 30 دقيقة</span>
+      <span>&#x1F3AF; إنقاذ العلاقات</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>&#x26A0;&#xFE0F; ليش هذا الكتاب مهم؟</h2>
+  <p>لما تكون في علاقة زوجية على وشك الانهيار، تحس إن العالم كله ظلام وما فيه أمل. تكون جربت كل شي — الكلام والعلاج والنصايح — وما فيه شي نفع. تبدأ تفكر إن الطلاق هو الحل الوحيد.</p>
+  <p>ميشيل واينر-ديفيس — معالجة نفسية متخصصة في إنقاذ الزواجات — تقول إن أغلب الناس اللي يفكرون في الطلاق ما جربوا فعلاً الأشياء اللي تنفع. جربوا نفس الحلول الفاشلة مرات ومرات وتوقعوا نتائج مختلفة. الكتاب هذا يعطيك نهج مختلف تماماً — نهج عملي ومثبت علمياً.</p>
+  <ul>
+    <li>علاقتك الزوجية في مرحلة حرجة وتحس إن ما فيه أمل</li>
+    <li>جربت كل الحلول التقليدية وما شي نفع</li>
+    <li>شريكك رافض يتغير أو يتعاون معك</li>
+    <li>تبحث عن حل عملي وسريع مو كلام نظري</li>
+    <li>محتاج أمل وخطة واضحة عشان تنقذ علاقتك</li>
+  </ul>
+</section>
+
+<!-- Intro Section -->
+<section class="intro-section">
+  <h2>&#x1F4A1; مقدمة عن الكتاب</h2>
+  <p>واينر-ديفيس تستخدم نهج اسمه "العلاج الموجه نحو الحل" — وهذا النهج مختلف تماماً عن العلاج التقليدي. العلاج التقليدي يركز على المشكلة: ليش تتخانقون؟ وش السبب؟ وش صار في طفولتكم؟ بس العلاج الموجه نحو الحل يركز على: متى كانت الأمور أحسن؟ وش كنتوا تسوون وقتها؟ وكيف ترجعون تسوونه؟</p>
+  <p>الفكرة العبقرية في هذا النهج إنك ما تحتاج تفهم المشكلة عشان تحلها. أحياناً فهم المشكلة يزيدها سوء عشان يخليك تركز على السلبي. بدل كذا، ركز على اللي ينفع — سوّ أكثر منه. وركز على اللي ما ينفع — وقّفه وسوّ شي مختلف.</p>
+  <p>واينر-ديفيس تقول إن التغييرات الصغيرة تسوي فرق كبير في العلاقات. ما تحتاج تغير كل شي مرة وحدة. غير شي واحد صغير — وشوف كيف باقي العلاقة تبدأ تتغير معاه. هذا اللي يسمونه "تأثير الفراشة" في العلاقات — تغيير صغير في مكان واحد ممكن يغير النظام كله.</p>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc" id="toc">
+  <h2>&#x1F4D1; فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span> لماذا تفشل الحلول التقليدية</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span> النهج الموجه نحو الحل</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span> كسر الحلقة المفرغة</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span> تغيير سلوكك أولاً</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span> التعامل مع المقاومة</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span> بناء مستقبل جديد</a>
+  </div>
+</nav>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">لماذا تفشل الحلول التقليدية</div>
+      <div class="chapter-title-en">Why Traditional Solutions Fail</div>
+    </div>
+  </div>
+
+  <span class="section-label">فخ الحلول القديمة</span>
+  <p>واينر-ديفيس تبدأ بتوضيح ليش أغلب الحلول اللي نجربها في مشاكلنا الزوجية ما تنفع. السبب بسيط: نسوي نفس الشي مرة ومرة ونتوقع نتيجة مختلفة. يعني لو كل مرة تتخانقون تبدأ تصرخ وتلوم — وما تنحل المشكلة — ليش تتوقع إنك لو صرخت أعلى المرة الجاية بتنحل؟</p>
+  <p>المشكلة إن أغلبنا عندنا "حلول مفضلة" نرجع لها دايماً. بعض الناس حلهم المفضل هو الكلام الكثير — يفكرون إنهم لو شرحوا أكثر الطرف الثاني بيفهم. بعضهم حلهم المفضل هو الانسحاب والصمت. وبعضهم حلهم المفضل هو اللوم والعتاب. كل هذي الحلول لو ما نفعت أول مرة ما بتنفع المرة العاشرة.</p>
+  <p>واينر-ديفيس تقول إن كثير من العلاج الزوجي التقليدي يفشل بعد عشان يركز على تحليل المشكلة لأشهر أو سنوات بدون ما يقدم حلول عملية. تقعد تحلل طفولتك وطفولة شريكك وتفهم ليش كل واحد يتصرف بطريقة معينة — وفي النهاية تفهم ليش عندكم مشكلة بس المشكلة لسه موجودة. الفهم لحاله ما يكفي — تحتاج عمل.</p>
+
+  <div class="quote-block">
+    <p>لو اللي تسويه ما ينفع، لا تسويه بقوة أكبر — سوّ شي مختلف تماماً — ميشيل واينر-ديفيس</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>توقف عن تكرار نفس الحلول الفاشلة. لو أسلوبك في التعامل مع المشاكل ما ينفع — مهما كان منطقي في نظرك — غيره. الجنون هو إنك تسوي نفس الشي وتتوقع نتيجة مختلفة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>واينر-ديفيس تقول إن "الحل أحياناً يكون هو المشكلة". يعني الطريقة اللي تحاول فيها تحل المشكلة هي اللي تزيدها. مثلاً: لما أحد الزوجين يحاول يقرب والثاني ينسحب — كل ما الأول يحاول أكثر كل ما الثاني ينسحب أكثر. الحل مو إنك تحاول أكثر — الحل إنك توقف وتسوي شي مختلف.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">النهج الموجه نحو الحل</div>
+      <div class="chapter-title-en">The Solution-Oriented Approach</div>
+    </div>
+  </div>
+
+  <span class="section-label">منهج جديد</span>
+  <p>واينر-ديفيس تقدم ثلاث قواعد ذهبية للتعامل مع مشاكل الزواج. القاعدة الأولى: "لو شي ينفع، سوّ أكثر منه." يبدو بسيط صح؟ بس كثير أزواج ما يسوونه! يعرفون إن الأوقات الحلوة تكون لما يطلعون مع بعض بس ما يطلعون. يعرفون إن العلاقة تتحسن لما يتكلمون بهدوء بس يستمرون يصرخون.</p>
+  <p>القاعدة الثانية: "لو شي ما ينفع، لا تسويه ثاني — سوّ شي مختلف." ما يهم وش الشي المختلف — المهم إنه مختلف. لو كنت دايماً تبدأ الخناقة بالصراخ، جرب تتكلم بهدوء. لو ما نفع، جرب تكتب رسالة. لو ما نفع، جرب تسكت وتعطي مساحة. استمر تجرب أشياء مختلفة لين تلاقي اللي ينفع.</p>
+  <p>القاعدة الثالثة: "لو ما كسرته، لا تصلحه." يعني بعض الأشياء في علاقتكم شغالة كويس — لا تحاول تغيرها! ركز على الأجزاء المكسورة فقط وخلّ الأجزاء الشغالة كما هي. كثير أزواج في محاولتهم يصلحون العلاقة يكسرون الأشياء اللي كانت شغالة.</p>
+
+  <div class="quote-block">
+    <p>ما تحتاج تفهم المشكلة عشان تحلها — تحتاج بس تعرف وش ينفع وتسوي أكثر منه — ميشيل واينر-ديفيس</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>ثلاث قواعد بس: سوّ أكثر من اللي ينفع، توقف عن اللي ما ينفع وجرب شي مختلف، ولا تكسر اللي شغال. هذي القواعد البسيطة لو طبقتها بجدية تقدر تغير علاقتك بالكامل.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">كسر الحلقة المفرغة</div>
+      <div class="chapter-title-en">Breaking the Pattern</div>
+    </div>
+  </div>
+
+  <span class="section-label">كسر النمط</span>
+  <p>أغلب الخلافات الزوجية تتبع نمط معين يتكرر كل مرة — مثل رقصة متعلمينها الاثنين. واحد يسوي شي، الثاني يرد بطريقة معينة، الأول يرد على الرد، وهكذا لين يوصلون لنفس النهاية كل مرة. واينر-ديفيس تسمي هذا "الحلقة المفرغة" — دايرة ما لها نهاية.</p>
+  <p>مثال شائع: الزوجة تبي تتكلم عن مشاعرها، الزوج ينسحب ويسكت، الزوجة تتعصب أكثر وتلح عليه، الزوج ينسحب أكثر، الزوجة تنفجر، الزوج يطلع من البيت. هذا النمط يتكرر كل مرة بنفس الشكل. والحل مو إن أحدكم يتغير — الحل إن أحدكم يكسر النمط بسلوك مختلف.</p>
+  <p>واينر-ديفيس تقول إنك ما تحتاج شريكك يوافق يتغير عشان تكسر النمط. أنت لحالك تقدر تكسره! عشان النمط مثل الرقصة — لو غيرت خطوتك، شريكك مجبور يغير خطوته. يعني لو الزوجة بدل ما تلح على الزوج يتكلم قالت "أنا بانتظرك لما تكون مستعد" وراحت تسوي شي ثاني — النمط كله يتغير.</p>
+
+  <div class="quote-block">
+    <p>ما تحتاج تنتظر شريكك يتغير — لو غيرت خطوتك في الرقصة، شريكك مجبور يغير خطوته — ميشيل واينر-ديفيس</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>حدد النمط المتكرر في خلافاتكم — وش يصير أول، وش ردة فعل كل واحد — وبعدين اكسر النمط بسلوك مختلف تماماً. ما تحتاج شريكك يتعاون — لو أنت تغيرت، النمط كله يتغير.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>واينر-ديفيس تسمي هذا "الانعطاف ١٨٠ درجة". يعني تسوي العكس تماماً من اللي كنت تسويه. لو كنت تلح، توقف. لو كنت تسكت، تكلم. لو كنت تزعل، ابتسم. لو كنت تنتقد، امدح. الانعطاف ١٨٠ درجة يصدم الطرف الثاني ويكسر النمط القديم ويفتح مجال لتفاعل جديد تماماً.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">تغيير سلوكك أولاً</div>
+      <div class="chapter-title-en">Changing Your Behavior First</div>
+    </div>
+  </div>
+
+  <span class="section-label">ابدأ بنفسك</span>
+  <p>أكثر شي يحبط الأزواج هو إن كل واحد ينتظر الثاني يتغير أول. "لو هو تغير أنا أتغير"، "لو هي بدأت أنا أبدأ". بس واينر-ديفيس تقول إن هذا الانتظار ممكن يطول للأبد. الحل إنك تبدأ أنت — بغض النظر عن وش يسوي شريكك.</p>
+  <p>الفكرة هنا مو إنك تتنازل أو تتحمل — الفكرة إنك تاخذ زمام المبادرة. لما تغير سلوكك أنت، شريكك غالباً بيتغير كردة فعل طبيعية. العلاقة مثل النظام — لما تغير جزء منه، باقي الأجزاء تتأثر. ما تحتاج تغير شريكك — غير نفسك والعلاقة كلها تتغير.</p>
+  <p>واينر-ديفيس تقدم أداة قوية اسمها "سؤال المعجزة": تخيل إنك نمت الليلة وصارت معجزة وعلاقتك تحسنت. لما تصحى الصباح، وش أول شي بتلاحظه مختلف؟ وش بتسوي مختلف؟ الجواب على هذا السؤال يعطيك خارطة طريق — ابدأ سوّ الأشياء اللي كنت بتسويها لو صارت المعجزة. ما تحتاج تنتظر المعجزة — ابدأ أنت.</p>
+
+  <div class="quote-block">
+    <p>لا تنتظر شريكك يبدأ — ابدأ أنت. التغيير اللي تبيه في علاقتك يبدأ منك أنت — ميشيل واينر-ديفيس</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>توقف عن انتظار شريكك يتغير وابدأ غير سلوكك أنت. استخدم سؤال المعجزة: تخيل علاقتك مثالية — وبعدين ابدأ تتصرف كأنها كذلك. التغييرات الصغيرة في سلوكك تصنع تغييرات كبيرة في العلاقة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">التعامل مع المقاومة</div>
+      <div class="chapter-title-en">Dealing with Resistance</div>
+    </div>
+  </div>
+
+  <span class="section-label">لما شريكك يرفض</span>
+  <p>وش تسوي لما شريكك رافض تماماً يتغير أو حتى يعترف إن فيه مشكلة؟ هذا من أصعب المواقف — وواينر-ديفيس عندها حلول عملية. أول شي: لا تيأس. حتى لو شريكك ما يبي يتعاون، أنت لحالك تقدر تغير ديناميكية العلاقة كلها.</p>
+  <p>واينر-ديفيس تقدم "تقنية الملاذ الأخير" للحالات الصعبة جداً — لما شريكك يقول "أبي الطلاق" أو "خلاص انتهينا". في هذي الحالة، بدل ما تتوسل وتبكي وتلح — سوّ العكس. وافق. قل "أنا أحترم قرارك". هذا يصدم الطرف الثاني عشان ما كان يتوقع هذا الرد — وأحياناً يفتح باب جديد للحوار.</p>
+  <p>المقاومة في كثير من الأحيان تكون ردة فعل على الضغط. يعني كل ما ضغطت على شريكك يتغير كل ما قاوم أكثر. بس لما توقف الضغط وتعطيه مساحة، أحياناً يبدأ يتغير لحاله. هذا مو سحر — هذا طبيعة بشرية. الناس يقاومون الضغط بس يستجيبون للحرية.</p>
+
+  <div class="quote-block">
+    <p>أحياناً أقوى شي تسويه هو إنك توقف عن المحاولة — وتخلي شريكك يقرر بنفسه — ميشيل واينر-ديفيس</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>لما شريكك يقاوم التغيير، لا تضغط أكثر — خفف الضغط. أحياناً أقوى شي تسويه هو إنك تعطي مساحة وتركز على تغيير نفسك. الناس يتغيرون لما يحسون بالحرية مو لما يحسون بالضغط.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>واينر-ديفيس تقول إن "تقنية الملاذ الأخير" ما تنفع مع الكل — بس تنفع مع كثير ناس أكثر مما تتوقع. السبب إن لما شخص يقول "أبي الطلاق"، أحياناً هو في الحقيقة يقول "أبي اهتمام" أو "أبي تغيير". لما تستجيب بهدوء بدل الذعر، تعطيه مساحة يفكر فيها فعلاً وش يبي — وكثير أحيان يكتشف إنه ما يبي الطلاق فعلاً.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">بناء مستقبل جديد</div>
+      <div class="chapter-title-en">Building a New Future</div>
+    </div>
+  </div>
+
+  <span class="section-label">البداية الجديدة</span>
+  <p>واينر-ديفيس تختم بإنها تقول إن إنقاذ الزواج مو نهاية الرحلة — هو بدايتها. لما تنجح تكسر الأنماط القديمة وتبني تفاعلات جديدة، تحتاج تحافظ على هذي التغييرات وتستمر تبني عليها. العلاقة مثل الحديقة — ما يكفي تزرعها مرة، لازم تسقيها كل يوم.</p>
+  <p>النقطة المهمة إنك تتوقع انتكاسات. يعني حتى بعد ما الأمور تتحسن، بترجعون أحياناً للأنماط القديمة — وهذا طبيعي جداً. المهم إنك ما تستسلم لما تصير انتكاسة. تعرف إنها مؤقتة وترجع تطبق اللي تعلمته. كل مرة ترجع بتكون أسرع وأسهل.</p>
+  <p>واينر-ديفيس تشجعك تحتفل بالنجاحات الصغيرة. كل يوم تعدي بدون خناقة — احتفل. كل محادثة تنتهي بتفاهم — احتفل. كل لحظة قرب — احتفل. هذي الاحتفالات الصغيرة تبني زخم إيجابي يساعدك تستمر. وتذكر دايماً: التغييرات الصغيرة تصنع نتائج كبيرة.</p>
+
+  <div class="quote-block">
+    <p>ما تحتاج تغيير كبير عشان تنقذ زواجك — تحتاج تغييرات صغيرة مستمرة. قطرة قطرة تصنع نهر — ميشيل واينر-ديفيس</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>بعد ما تبدأ التغيير، حافظ عليه وتوقع انتكاسات. احتفل بالنجاحات الصغيرة واستمر في البناء. وتذكر إن التغييرات الصغيرة المستمرة أقوى بكثير من التغييرات الكبيرة المؤقتة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Action Plan -->
+<section class="action-plan">
+  <h2>&#x1F3AF; خطة العمل</h2>
+  <div class="action-item">
+    <div class="action-num">1</div>
+    <div class="action-text">
+      <h4>حدد الأنماط المتكررة</h4>
+      <p>اكتب أكبر ثلاث خلافات متكررة مع شريكك. لكل خلاف، اكتب: وش يبدأ الخلاف؟ وش ردة فعلك؟ وش ردة فعل شريكك؟ كيف ينتهي؟ هذا يخليك تشوف النمط بوضوح.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">2</div>
+    <div class="action-text">
+      <h4>اكتشف وش كان ينفع</h4>
+      <p>فكر في أوقات كانت علاقتكم أحسن — وش كنتوا تسوون مختلف؟ وش كانت عاداتكم؟ اكتب هذي الأشياء وابدأ ارجع سوّها.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">3</div>
+    <div class="action-text">
+      <h4>جرب الانعطاف ١٨٠ درجة</h4>
+      <p>في الخلاف القادم، سوّ العكس تماماً من اللي تسويه عادة. لو عادةً تصرخ — اهدأ. لو عادةً تسكت — تكلم بلطف. لو عادةً تلوم — اعترف بدورك. شوف وش يصير.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">4</div>
+    <div class="action-text">
+      <h4>استخدم سؤال المعجزة</h4>
+      <p>اسأل نفسك: لو صحيت بكرة والعلاقة صارت مثالية، وش أول شي بتلاحظه مختلف؟ وبعدين ابدأ سوّ هذا الشي المختلف — بدون ما تنتظر المعجزة.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">5</div>
+    <div class="action-text">
+      <h4>وقف الحلول الفاشلة</h4>
+      <p>حدد الحل المفضل عندك اللي تكرره دايماً وما ينفع — واتخذ قرار إنك توقفه تماماً. حتى لو ما عندك بديل واضح، مجرد إنك توقف اللي ما ينفع يفتح مجال لشي جديد.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">6</div>
+    <div class="action-text">
+      <h4>احتفل بكل تقدم صغير</h4>
+      <p>كل يوم اكتب شي واحد إيجابي صار في علاقتكم — ولو شي صغير جداً. هذا يخليك تركز على التقدم بدل ما تركز على اللي لسه ناقص. التقدم الصغير يتراكم ويصنع تحول كبير.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>إنقاذ الزواج — ميشيل واينر-ديفيس</h3>
+  <p>ما تحتاج معجزة عشان تنقذ زواجك — تحتاج شجاعة تسوي شي مختلف</p>
+  <p>سوّ أكثر من اللي ينفع — توقف عن اللي ما ينفع — جرب شي جديد</p>
+  <div class="disclaimer">هذا ملخص تعليمي للكتاب وليس بديلاً عن قراءة الكتاب كاملاً. جميع الحقوق محفوظة للمؤلفة.</div>
+</footer>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

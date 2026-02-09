@@ -1,4 +1,4 @@
-const CACHE_NAME = 'books-library-v11';
+const CACHE_NAME = 'books-library-v12';
 
 // Files to pre-cache on install
 const PRECACHE_URLS = [
@@ -70,6 +70,27 @@ const PRECACHE_URLS = [
   '/books/%D8%A7%D9%84%D8%A3%D8%A8%D9%88%D8%A9/strong-fathers-daughters-summary.html',
   '/books/%D8%A7%D9%84%D8%A3%D8%A8%D9%88%D8%A9/better-dads-sons-summary.html',
   '/books/%D8%A7%D9%84%D8%A3%D8%A8%D9%88%D8%A9/fatherhood-summary.html',
+  // Book HTML files - Self-Management
+  '/books/%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA/atomic-habits-summary.html',
+  '/books/%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA/seven-habits-summary.html',
+  '/books/%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA/compound-effect-summary.html',
+  '/books/%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA/no-excuses-summary.html',
+  '/books/%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA/discipline-destiny-summary.html',
+  '/books/%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA/mountain-is-you-summary.html',
+  '/books/%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA/self-discipline-blueprint-summary.html',
+  '/books/%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA/fifteen-commitments-summary.html',
+  '/books/%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA/leader-no-title-summary.html',
+  // Book HTML files - Marriage
+  '/books/%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9-%D8%A7%D9%84%D8%B2%D9%88%D8%AC%D9%8A%D8%A9/seven-principles-marriage-summary.html',
+  '/books/%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9-%D8%A7%D9%84%D8%B2%D9%88%D8%AC%D9%8A%D8%A9/hold-me-tight-summary.html',
+  '/books/%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9-%D8%A7%D9%84%D8%B2%D9%88%D8%AC%D9%8A%D8%A9/wired-for-love-summary.html',
+  '/books/%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9-%D8%A7%D9%84%D8%B2%D9%88%D8%AC%D9%8A%D8%A9/getting-love-you-want-summary.html',
+  '/books/%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9-%D8%A7%D9%84%D8%B2%D9%88%D8%AC%D9%8A%D8%A9/five-love-languages-summary.html',
+  '/books/%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9-%D8%A7%D9%84%D8%B2%D9%88%D8%AC%D9%8A%D8%A9/nonviolent-communication-summary.html',
+  '/books/%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9-%D8%A7%D9%84%D8%B2%D9%88%D8%AC%D9%8A%D8%A9/eight-dates-summary.html',
+  '/books/%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9-%D8%A7%D9%84%D8%B2%D9%88%D8%AC%D9%8A%D8%A9/sacred-marriage-summary.html',
+  '/books/%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9-%D8%A7%D9%84%D8%B2%D9%88%D8%AC%D9%8A%D8%A9/passionate-marriage-summary.html',
+  '/books/%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9-%D8%A7%D9%84%D8%B2%D9%88%D8%AC%D9%8A%D8%A9/divorce-busting-summary.html',
 ];
 
 // Install event - pre-cache all static assets

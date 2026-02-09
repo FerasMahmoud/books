@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>التأثير المركّب - ملخص شامل | دارين هاردي</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #219a52; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #27ae60; }
+
+  .hero {
+    background: linear-gradient(135deg, #0a3a1a 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #27ae60;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(39, 174, 96, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(10, 58, 26, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #27ae60;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(39, 174, 96, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(39, 174, 96, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #d0b0b0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #d0b0b0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '\26A1';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a3a1a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #27ae60;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(39, 174, 96, 0.1);
+    color: #27ae60;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #27ae60;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a3a1a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #27ae60;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a3a1a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #27ae60;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(39, 174, 96, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #27ae60, #1e8449);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #27ae60;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(39, 174, 96, 0.12);
+    color: #27ae60;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(39, 174, 96, 0.06);
+    border-right: 4px solid #27ae60;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '\201C';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(39, 174, 96, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(10, 58, 26, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(39, 174, 96, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #27ae60;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(0, 206, 201, 0.08);
+    border: 1px solid rgba(0, 206, 201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #00cec9;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #b0d0d0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(39, 174, 96, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #27ae60;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #0a3a1a, #1a1a2e);
+    border-top: 3px solid #27ae60;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(39, 174, 96, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#128200;</span>
+    <h1>التأثير المركّب</h1>
+    <p class="subtitle">The Compound Effect</p>
+    <p class="author">دارين هاردي &mdash; Darren Hardy</p>
+    <div class="meta-info">
+      <span>6 فصول رئيسية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>خطوات صغيرة، نتائج عظيمة</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>المشكلة اللي يعالجها هذا الكتاب</h2>
+  <p>
+    كلنا نبي نجاح كبير وسريع — نبي النتائج بكرة مو بعد سنة. عشان كذا نلاحق الحلول السحرية والطرق المختصرة. بس الحقيقة إن ما فيه شي اسمه نجاح بين يوم وليلة — كل نجاح حقيقي هو نتيجة أفعال صغيرة تراكمت مع الوقت:
+  </p>
+  <ul>
+    <li>تبدأ مشروع أو عادة بحماس كبير وتتركها بعد أسابيع لأنك ما شفت نتائج</li>
+    <li>تقارن نفسك بناس "ناجحة" وتنسى إنهم وصلوا بسنين من العمل</li>
+    <li>تستهين بالأفعال الصغيرة اليومية وتقول "وش بتسوي هالشي الصغير؟"</li>
+    <li>ما تتتبع قراراتك وعاداتك اليومية وتخلّيها عشوائية</li>
+    <li>تتأثر بالبيئة والناس السلبية حولك بدون ما تحس</li>
+  </ul>
+  <p>
+    دارين هاردي يكشف الحقيقة البسيطة بس القوية: <strong>النجاح هو نتيجة أفعال صغيرة + وقت + تراكم</strong>. مو سحر ولا حظ — هو رياضيات بسيطة. واللي يفهم هالمعادلة ويطبقها بصبر، النتائج تكون خرافية.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    دارين هاردي كان رئيس تحرير مجلة SUCCESS وقابل أنجح الناس في العالم. لاحظ إن كلهم عندهم شي مشترك: ما أحد فيهم وصل بطريقة مختصرة — كلهم وصلوا بأفعال صغيرة متراكمة مع الوقت.
+  </p>
+  <p>
+    الكتاب يشرح هالمبدأ بأمثلة واقعية وعملية. ما فيه كلام نظري ممل — كل فصل يعطيك أدوات تقدر تطبقها من اليوم. الرسالة واضحة: النجاح مو حدث واحد كبير — هو عملية تراكمية يومية. واللي يفهم هالنقطة ويتصرف بناءً عليها، يتفوق على الكل.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>التأثير المركّب في حياتك</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>الخيارات الصغيرة اليومية</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>العادات والروتين</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>الزخم والاستمرارية</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>التأثيرات المحيطة</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>التسارع نحو النجاح</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التأثير المركّب في حياتك</h2>
+      <span class="chapter-title-en">The Compound Effect in Action</span>
+    </div>
+  </div>
+
+  <span class="section-label">المبدأ الأساسي</span>
+  <p>
+    هاردي يبدأ بقصة ثلاث أصدقاء: الأول ما غيّر شي في حياته. الثاني بدأ يقرأ 10 صفحات يومياً ويمشي 30 دقيقة ويقلل أكله شوي. الثالث بدأ يشرب أكثر ويسهر أكثر وياكل بدون حساب. بعد 5 شهور؟ ما فيه فرق يذكر. بعد 10 شهور؟ فرق بسيط. بعد سنتين ونص؟ الفرق بينهم صار مثل الليل والنهار. الثاني صار صحي ومثقف وناجح، والثالث صحته تعبانة وحياته تراجعت.
+  </p>
+  <p>
+    هذا هو التأثير المركّب — أفعال صغيرة جداً ما تسوي فرق ملحوظ في البداية، بس لما تتراكم مع الوقت تصنع فرق ضخم. المشكلة إن أغلب الناس يستسلمون في الفترة اللي الفرق فيها ما يبان — يقولون "ما فيه فايدة، ما شي يتغير". بس اللي يفهم المبدأ يعرف إن النتائج جاية — بس تحتاج وقت عشان تتجمع وتبان.
+  </p>
+  <p>
+    هاردي يشبّهها بالفايدة المركّبة في البنك. لو حطيت ريال واحد وضاعفته كل يوم، بعد 30 يوم عندك أكثر من مليار ريال. النمو المركّب يبدأ بطيء جداً ثم يتسارع بشكل مجنون. نفس الشي مع العادات — البداية بطيئة بس النتائج النهائية تتجاوز كل توقعاتك.
+  </p>
+
+  <div class="quote-block">
+    <p>النجاح ما يجي من الأشياء الكبيرة اللي تسويها مرة — يجي من الأشياء الصغيرة اللي تسويها كل يوم. التراكم هو السر اللي ما يفهمه أغلب الناس.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>لا تستهين بالأفعال الصغيرة اليومية — هي اللي تصنع الفرق الحقيقي مع الوقت. كل تحسّن بسيط يتراكم ويتضاعف. فقط اصبر واستمر — والنتائج بتصدمك بعد فترة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>فكّر في مجال واحد في حياتك (صحة، مال، علاقات). وش الفعل الصغير اللي لو سويته كل يوم لمدة سنة بيغيّر حياتك؟ مثلاً: ادّخر 10 ريال يومياً = 3,650 ريال في السنة. امشِ 15 دقيقة يومياً = أكثر من 90 ساعة مشي في السنة. ابدأ بشي صغير بس التزم فيه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الخيارات الصغيرة اليومية</h2>
+      <span class="chapter-title-en">Small Daily Choices</span>
+    </div>
+  </div>
+
+  <span class="section-label">قوة القرارات</span>
+  <p>
+    هاردي يقول إن حياتك الحالية هي نتيجة كل القرارات الصغيرة اللي اخذتها لحد الحين. وش تاكل، متى تنام، وش تقرأ، مع مين تقضي وقتك — كل قرار صغير يضيف لمسار حياتك. المشكلة إن أغلب القرارات هذي نسويها تلقائي بدون تفكير — وهذا اللي يخلينا ما نحس بتأثيرها إلا لما يتراكم.
+  </p>
+  <p>
+    الحل هو الوعي والتتبع. هاردي يقول: تتبع كل شي. تتبع أكلك، مصاريفك، وقتك. لما تكتب كل شي، تكتشف أشياء ما كنت تحس فيها. ناس كثير فوجئوا لما اكتشفوا إنهم يصرفون 3000 ريال شهرياً على أشياء ما يحتاجونها أصلاً. أو إنهم يقضون 3 ساعات يومياً على الجوال بدون فايدة.
+  </p>
+  <p>
+    هاردي يعطي قاعدة ذهبية: أنت مسؤول 100% عن حياتك. مو 50% ولا 80% — مئة بالمئة. الظروف ما تتحكم فيك — قراراتك هي اللي تتحكم. لما تتحمل مسؤولية كاملة، تتوقف عن لوم الآخرين وتبدأ تاخذ قرارات واعية كل يوم. وهالقرارات الواعية الصغيرة هي اللي تتراكم وتصنع الفرق الكبير.
+  </p>
+
+  <div class="quote-block">
+    <p>لحظة القرار هي اللي تشكّل مصيرك. مو القرارات الكبيرة — القرارات الصغيرة اللي تاخذها كل يوم بدون ما تنتبه لها.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>تحمّل مسؤولية كاملة عن حياتك وقراراتك. تتبع عاداتك ومصاريفك ووقتك — الوعي هو الخطوة الأولى للتغيير. كل قرار صغير واعي تاخذه اليوم يتراكم ويشكّل مستقبلك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">العادات والروتين</h2>
+      <span class="chapter-title-en">Habits and Routines</span>
+    </div>
+  </div>
+
+  <span class="section-label">بناء العادات</span>
+  <p>
+    هاردي يقول إن 95% من أفعالنا اليومية عادات تلقائية — يعني أغلب يومك يمشي على أوتوبايلوت. عشان كذا تغيير العادات هو أقوى طريقة لتغيير حياتك. بس تغيير العادات صعب — المخ يحب الروتين القديم حتى لو سيء، لأنه مريح ومألوف. عشان كذا لازم تفهم كيف العادات تشتغل.
+  </p>
+  <p>
+    هاردي يقترح استراتيجية بسيطة: لا تحاول تغيّر عادات كثيرة مرة وحدة. اختر عادة وحدة بس وركّز عليها لمدة 30 يوم. لما تصير تلقائية، أضف عادة ثانية. هالطريقة أبطأ بس أكثر فعالية بمراحل من محاولة تغيير كل شي مرة وحدة. ونقطة مهمة: لازم تستبدل العادة السيئة بعادة حسنة — ما ينفع بس تحذف عادة وتترك فراغ.
+  </p>
+  <p>
+    كمان يتكلم هاردي عن روتين الصباح والمساء. الناجحون عندهم روتين صباحي قوي يبدأ يومهم بطاقة وتركيز — مو يصحون متأخرين ويتصفحون الجوال ساعة. وعندهم روتين مسائي يجهّزهم لبكرة. الروتين يوفّر طاقة ذهنية لأنك ما تحتاج تاخذ قرارات كل صباح — كل شي مخطط مسبقاً.
+  </p>
+
+  <div class="quote-block">
+    <p>العادات ما تحتاج تحفيز — تحتاج نظام. ابني الروتين الصح وبيشتغل لحاله. التحفيز يجيك ويروح، بس النظام يبقى.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>غيّر عادة وحدة كل شهر. ابني روتين صباحي ومسائي قوي. استبدل كل عادة سيئة بعادة حسنة بدل ما تحاول تحذفها بس. التغيير التدريجي المستمر أقوى بكثير من التغيير الجذري المؤقت.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>اكتب روتينك الصباحي المثالي (30-60 دقيقة). مثلاً: صلاة + 10 دقائق قراءة + 15 دقيقة رياضة + كتابة أهداف اليوم. جرّبه لمدة 30 يوم بدون تغيير. الروتين الصباحي القوي يغيّر يومك كله — ومع التراكم، يغيّر حياتك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الزخم والاستمرارية</h2>
+      <span class="chapter-title-en">Momentum and Consistency</span>
+    </div>
+  </div>
+
+  <span class="section-label">قوة الزخم</span>
+  <p>
+    هاردي يقدم مفهوم "Big Mo" — الزخم الكبير. تخيّل قطار ضخم واقف — يحتاج طاقة هائلة عشان يبدأ يتحرك. بس لما يبدأ ويتسارع، يصير من المستحيل توقفه. نفس الشي مع عاداتك: البداية هي الأصعب. أول أسبوعين يحتاجون جهد كبير. بس بعدين الزخم يبدأ يساعدك ويصير الأمر أسهل.
+  </p>
+  <p>
+    المشكلة إن الزخم يشتغل في الاتجاهين. لو عندك زخم إيجابي (تتمرن كل يوم، تقرأ كل يوم) يصير أسهل تستمر. بس لو عندك زخم سلبي (تسهر كل يوم، تأجّل كل يوم) يصير أصعب تتوقف. عشان كذا الاستمرارية مهمة جداً — لأنها تحافظ على الزخم الإيجابي.
+  </p>
+  <p>
+    هاردي يقول: ما تحتاج تكون مثالي — تحتاج تكون مستمر. لو فوّتت يوم، ارجع فوراً. لا تخلي يوم سيء يتحول لأسبوع سيء يتحول لشهر سيء. حافظ على الزخم مهما كان. حتى لو سويت نسخة صغيرة من العادة (5 دقائق بدل 30)، هذا أحسن بكثير من إنك تتوقف تماماً. الاستمرارية تكسب الكمال دايماً.
+  </p>
+
+  <div class="quote-block">
+    <p>الاستمرارية هي المفتاح السحري. مو الكمال، مو الموهبة، مو الحظ — الاستمرارية. اللي يستمر يكسب اللي ينسحب حتى لو كان أقل موهبة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>ابني الزخم الإيجابي وحافظ عليه. البداية صعبة بس تسهل مع الوقت. لا تتوقف مهما كان — حتى لو فوّتت يوم، ارجع فوراً. الاستمرارية أهم من الكمال بمراحل.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التأثيرات المحيطة</h2>
+      <span class="chapter-title-en">Influences Around You</span>
+    </div>
+  </div>
+
+  <span class="section-label">قوة البيئة</span>
+  <p>
+    هاردي يقول: أنت متوسط الخمس أشخاص اللي تقضي معهم أكثر وقت. لو أصدقاءك يتمرنون ويقرأون ويطورون أنفسهم، بتتأثر فيهم وتسوي مثلهم. ولو أصدقاءك يشتكون ويسهرون ويضيعون وقتهم، بتتأثر فيهم بنفس الطريقة. التأثير هذا يصير بدون ما تحس — ببطء وتدريجياً.
+  </p>
+  <p>
+    بس مو بس الأشخاص — كل شي حولك يأثر عليك. وش تسمع (أخبار سلبية؟ بودكاست مفيد؟)، وش تشاهد (سوشال ميديا بلا هدف؟ محتوى تعليمي؟)، وش تقرأ، وين تقضي وقتك. كل هالمدخلات تشكّل تفكيرك ومشاعرك وقراراتك. لازم تكون واعي وتختار مدخلاتك بعناية.
+  </p>
+  <p>
+    هاردي يقسم الناس في حياتك لثلاث فئات: "إضافات" (يضيفون لك طاقة وتحفيز)، "محايدين" (ما يأثرون كثير)، و"ناقصات" (يسحبون طاقتك ويحبطونك). النصيحة واضحة: زيد وقتك مع الإضافات، قلّل مع الناقصات. ما تحتاج تقطع أحد — بس وزّع وقتك بذكاء. ودوّر على مرشد (mentor) ناجح في المجال اللي تبي تنجح فيه.
+  </p>
+
+  <div class="quote-block">
+    <p>أنت ما تختار مصيرك بشكل مباشر — تختار عاداتك وعاداتك تختار مصيرك. وعاداتك تتشكل من البيئة والناس حولك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>راجع بيئتك ودائرتك الاجتماعية. زيد وقتك مع الناس اللي يرفعونك وقلّل مع اللي يحبطونك. تحكّم في مدخلاتك — وش تسمع وتشاهد وتقرأ. البيئة تشكّل سلوكك أكثر مما تتخيل.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>اكتب أسماء أكثر 5 أشخاص تقضي معهم وقت. قيّم كل واحد: هل يضيف لحياتك أو ينقص منها؟ بعدين خذ قرارات واعية: زيد وقتك مع الإيجابيين، ودوّر على شخص واحد ناجح في مجالك تقدر تتعلم منه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التسارع نحو النجاح</h2>
+      <span class="chapter-title-en">Accelerating Success</span>
+    </div>
+  </div>
+
+  <span class="section-label">الميل الإضافي</span>
+  <p>
+    هاردي يختم الكتاب بفكرة قوية: بعد ما تبني الأساس (عادات + استمرارية + بيئة)، الخطوة الأخيرة هي "الميل الإضافي" — تسوي أكثر مما هو متوقع منك. مو شوي أكثر — أكثر بكثير. في الوظيفة، سوّي شي إضافي ما أحد طلبه. في العلاقات، قدّم أكثر مما هو متوقع. هذا اللي يميّزك عن الآخرين.
+  </p>
+  <p>
+    الفكرة إن أغلب الناس يسوون المطلوب بالضبط — لا أكثر ولا أقل. اللي يروح الميل الإضافي يبرز ويتميّز لأن المنافسة هناك شبه معدومة. كلنا نتنافس في المستوى العادي، بس لما تروح فوق المتوقع، تصير لحالك تقريباً. هذا مو عن الشغل أكثر ساعات — عن تقديم جودة أعلى وقيمة أكبر.
+  </p>
+  <p>
+    هاردي يشبّهها بسباق الخيل — الفرق بين الأول والثاني ممكن يكون جزء من الثانية، بس الفرق في الجائزة ضخم. في الحياة نفس الشي: فرق صغير في الأداء = فرق ضخم في النتائج. التأثير المركّب يشتغل على هالفرق الصغير ويضاعفه مع الوقت لحد ما يصير الفرق بينك وبين غيرك واضح للكل.
+  </p>
+
+  <div class="quote-block">
+    <p>ما فيه ازدحام في الميل الإضافي. أغلب الناس يتوقفون عند المطلوب — اللي يكمّل شوي أكثر يلقى الطريق فاضي وفرص ما أحد شافها.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>بعد ما تبني الأساسيات، اذهب الميل الإضافي في كل شي تسويه. سوّي أكثر مما هو متوقع. هالفرق الصغير في الأداء، مع التأثير المركّب، يتحوّل لفرق ضخم في النتائج على المدى البعيد.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>الخلاصة النهائية</h3>
+  <p>
+    التأثير المركّب بسيط: أفعال صغيرة + وقت + تراكم = نتائج ضخمة. النجاح مو حدث مفاجئ — هو عملية يومية. كل قرار صغير واعي يضيف لمسار حياتك.
+  </p>
+  <p>
+    المبادئ الأساسية: تحمّل مسؤولية كاملة عن حياتك. تتبع قراراتك وعاداتك. ابني عادات إيجابية واحدة تلو الأخرى. حافظ على الزخم بالاستمرارية. صمّم بيئتك لتدعم نجاحك. واذهب الميل الإضافي.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص شخصي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>ابدأ تتبع شي واحد هالأسبوع: مصاريفك أو أكلك أو وقتك على الجوال</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>اختر عادة إيجابية وحدة والتزم فيها لمدة 30 يوم بدون انقطاع</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>ابني روتين صباحي ثابت (30-60 دقيقة) يشمل رياضة وقراءة وتخطيط</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>قيّم دائرتك الاجتماعية: مين يضيف لحياتك؟ ومين ينقص منها؟ وزّع وقتك بذكاء</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>قلّل مدخلات سلبية واحدة (أخبار سلبية، سوشال ميديا) واستبدلها بمدخل إيجابي (بودكاست، كتاب)</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>هالأسبوع، سوّ شي إضافي غير متوقع في شغلك أو علاقتك — اذهب الميل الإضافي</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>القائد الذي بلا منصب - ملخص شامل | روبن شارما</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #e91e63; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #f06292; }
+  .hero { background: linear-gradient(135deg, #4a0020 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #e91e63; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(233, 30, 99, 0.08) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(74, 0, 32, 0.15) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #e91e63; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(233, 30, 99, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(233, 30, 99, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #2d1b1b, #1a1a2e); border: 2px solid #c0392b; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '\26A1'; position: absolute; right: 0; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #4a0020; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #e91e63; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(233, 30, 99, 0.1); color: #e91e63; transform: translateX(-4px); }
+  .toc-num { background: #e91e63; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #4a0020; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #e91e63; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #4a0020; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; position: relative; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #e91e63; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(233, 30, 99, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #e91e63, #c2185b); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #e91e63; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(233, 30, 99, 0.12); color: #e91e63; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(233, 30, 99, 0.06); border-right: 4px solid #e91e63; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(233, 30, 99, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(74, 0, 32, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(233, 30, 99, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #e91e63; font-weight: 700; font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(233, 30, 99, 0.08); border: 1px solid rgba(233, 30, 99, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #d0b0c0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .action-plan { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 2px solid #e91e63; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .action-plan h2 { font-size: 1.6rem; color: #e91e63; margin-bottom: 25px; font-weight: 800; text-align: center; }
+  .action-plan ol { list-style: none; counter-reset: action-counter; margin: 0; padding: 0; }
+  .action-plan ol li { counter-increment: action-counter; padding: 14px 20px 14px 14px; position: relative; padding-right: 50px; color: #c0c0d0; font-size: 1.02rem; line-height: 1.8; margin-bottom: 8px; background: rgba(233, 30, 99, 0.04); border-radius: 10px; border: 1px solid rgba(233, 30, 99, 0.1); }
+  .action-plan ol li::before { content: counter(action-counter); position: absolute; right: 12px; top: 14px; background: #e91e63; color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(233, 30, 99, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #e91e63; }
+  .footer { background: linear-gradient(145deg, #4a0020, #1a1a2e); border-top: 3px solid #e91e63; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(233, 30, 99, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero .subtitle { font-size: 1.1rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section, .action-plan { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; } .chapter-title-ar { font-size: 1.3rem; } .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; } .footer { padding: 30px 16px; } }
+  @media (max-width: 480px) { html { font-size: 14px; } .hero { padding: 50px 16px 40px; } .hero h1 { font-size: 1.7rem; } }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#x1F451;</span>
+    <h1>القائد الذي بلا منصب</h1>
+    <div class="subtitle">The Leader Who Had No Title</div>
+    <div class="author">روبن شارما &mdash; Robin Sharma</div>
+    <div class="meta-info">
+      <span>&#x1F4D6; قيادة وتطوير</span>
+      <span>&#x1F4D1; 7 فصول</span>
+      <span>&#x23F1;&#xFE0F; 25 دقيقة قراءة</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>&#x1F525; ليش هذا الكتاب مهم؟</h2>
+  <p>كثير ناس تستنى إنها تحصل على منصب رسمي عشان تبدأ تقود. يقولون "لما أصير مدير" أو "لما يعطوني صلاحيات" أو "لما يترقّوني". روبن شارما يقول لك: القيادة ما تجي من المنصب، تجي من الداخل. ما تحتاج أحد يعطيك لقب عشان تكون قائد. تحتاج بس تقرر إنك قائد وتبدأ تتصرف على هالأساس.</p>
+  <ul>
+    <li>ليش أغلب الناس تضيّع سنوات من عمرها تستنى "الفرصة المناسبة" بدل ما تصنعها؟</li>
+    <li>كيف تقود وتأثّر في الناس حتى لو ما عندك أي منصب رسمي؟</li>
+    <li>وش القوى الأربع الطبيعية اللي كل شخص يملكها بس ما يستخدمها؟</li>
+    <li>كيف التميّز في شغلك اليومي يحوّلك لقائد حتى بدون ما تطلب؟</li>
+    <li>ليش الأوقات الصعبة هي أفضل وقت عشان تبيّن معدنك القيادي؟</li>
+  </ul>
+</section>
+
+<!-- Intro Section -->
+<section class="intro-section">
+  <h2>&#x1F4D6; مقدمة الكتاب</h2>
+  <p>روبن شارما كتب هالكتاب كقصة &mdash; رواية عن شخص اسمه بليك يتعلم فلسفة القيادة بدون منصب من أربع شخصيات مختلفة يقابلها في يوم واحد. كل شخصية تعلّمه جانب مختلف من القيادة. الأسلوب القصصي يخلّي الأفكار تعلق في ذهنك أكثر من أي كتاب نظري.</p>
+  <p>الفكرة الأساسية بسيطة بس عميقة: كل شخص قائد. مو بس اللي عنده منصب. الموظف العادي في أي شركة يقدر يكون قائد في مكانه. الأم في بيتها قائدة. الطالب في جامعته قائد. القيادة مو منصب، هي طريقة تفكير وسلوك. ولما تتبنى هالعقلية، حياتك كلها تتغير وتأثيرك في الناس يصير أكبر بكثير مما تتخيل.</p>
+  <p>روبن شارما يقدم فلسفة اسمها LWT &mdash; Lead Without Title. وهي مبنية على أربع قوى طبيعية موجودة عند كل شخص: قوة الابتكار، قوة الإتقان، قوة التأثير، وقوة القدوة. الكتاب يشرح كيف تفعّل هالقوى في حياتك اليومية عشان تصير قائد حقيقي &mdash; بمنصب أو بدونه.</p>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc" id="toc">
+  <h2>&#x1F4D1; فهرس الملخص</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>كل شخص قائد</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>الابتكار من أي موقع</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>التميز في العمل اليومي</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>العلاقات القيادية</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>المرونة والصلابة</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>القيادة بالقدوة</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>الإرث الشخصي</a>
+  </div>
+</nav>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">كل شخص قائد</div>
+      <div class="chapter-title-en">Everyone Is a Leader</div>
+    </div>
+  </div>
+
+  <span class="section-label">فلسفة القيادة بدون منصب</span>
+  <p>روبن شارما يبدأ بتحطيم أكبر خرافة عن القيادة: إن القيادة تحتاج منصب. يقول إن هالفكرة هي اللي تخلّي ملايين الناس تقعد مكانها وتستنّى بدل ما تتحرك. الحقيقة إن كل شخص يقدر يقود من مكانه الحين. النادل في المطعم يقدر يكون قائد في خدمته. المبرمج المبتدئ يقدر يكون قائد في جودة كوده. المعلم يقدر يكون قائد يغيّر حياة طلابه.</p>
+  <p>المشكلة إن أغلبنا ننتظر "اللحظة المناسبة" أو "المنصب المناسب" عشان نبدأ نعطي أفضل ما عندنا. بس روبن يقول إن العكس هو الصح: لما تعطي أفضل ما عندك الحين &mdash; في مكانك الحالي ومع إمكانياتك الحالية &mdash; الفرص والمناصب بتجيك تلقائياً. لأن الناس تلاحظ اللي يتميّز. بس اللي يستنّى المنصب عشان يتميّز، ما بيتميّز أبداً.</p>
+  <p>شارما يقدم مفهوم "اللقب الداخلي" مقابل "اللقب الخارجي". اللقب الخارجي هو اللي مكتوب على كرتك &mdash; مدير، رئيس، مشرف. اللقب الداخلي هو اللي في قلبك &mdash; قائد، مبدع، صانع تغيير. وأقوى الناس هم اللي لقبهم الداخلي أكبر من لقبهم الخارجي. لأن اللقب الخارجي ممكن يتغيّر أو ينسحب، بس اللقب الداخلي ما أحد يقدر ياخذه منك.</p>
+
+  <div class="quote-block">
+    <p>ما تحتاج أحد يعطيك إذن عشان تقود. القيادة قرار شخصي تاخذه كل صبح لما تقوم من نومك وتقرر إنك بتعطي هاليوم أفضل ما عندك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>وقّف تستنّى المنصب أو الترقية أو الفرصة. ابدأ الحين من مكانك. اسأل نفسك: لو أنا القائد في هالمكان، وش بأسوي مختلف اليوم؟ بعدين سوّه. القيادة تبدأ بقرار، مو بتعيين.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>روبن شارما يقول إن أكثر القادة تأثيراً في التاريخ ما كانوا في مناصب رسمية لما بدأوا. غاندي كان محامي عادي. مارتن لوثر كنج كان قسّيس في كنيسة صغيرة. ستيف جوبز كان شاب في كراج. كلهم قرروا يقودون قبل ما أحد يعطيهم لقب. القرار جا أول، والمنصب جا بعدين كنتيجة طبيعية.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الابتكار من أي موقع</div>
+      <div class="chapter-title-en">Innovation from Any Position</div>
+    </div>
+  </div>
+
+  <span class="section-label">القوة الأولى: الابتكار</span>
+  <p>أول قوة طبيعية يتكلم عنها شارما هي قوة الابتكار. والابتكار هنا مو يعني إنك تخترع شي جديد أو تسوي تقنية ما سبقك لها أحد. الابتكار يعني إنك تشوف الأشياء بعيون مختلفة وتلاقي طرق أحسن لسوّي الأشياء اللي تسويها كل يوم. الموظف اللي يلاقي طريقة يوفّر فيها عشر دقائق من عمليته اليومية مبتكر. اللي يقترح فكرة تحسّن خدمة العملاء مبتكر.</p>
+  <p>شارما يقول إن أغلب الناس تقتل الابتكار عند نفسها لأنها تخاف من الرفض أو الانتقاد. يقولون "ما راح يسمعون لي" أو "مين أنا عشان أقترح؟" وهالخوف يخلّيهم يسكتون ويسوّون نفس الشي كل يوم بنفس الطريقة. بس القائد بدون منصب ما يسكت. يقترح ويجرّب ويبادر، حتى لو ما أحد طلب منه. لأنه يعرف إن الابتكار هو اللي يفرّقه عن الباقي.</p>
+  <p>الابتكار بعد يحتاج شجاعة تفشل. مو كل فكرة بتنجح، وهذا طبيعي. بس الفرق بين المبتكر وغير المبتكر مو في عدد الأفكار الناجحة &mdash; في عدد الأفكار اللي جرّبها. المبتكر يجرّب عشر أفكار وتنجح ثنتين. غير المبتكر ما يجرّب ولا فكرة لأنه خايف تفشل. والنتيجة واضحة.</p>
+
+  <div class="quote-block">
+    <p>ما تحتاج تكون عبقري عشان تبتكر. تحتاج تكون شجاع عشان تقول "في طريقة أحسن" وتبدأ تبحث عنها بدل ما تقبل الوضع الحالي.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>كل أسبوع، اكتب ثلاث أفكار لتحسين شي في شغلك أو حياتك. ما تحتاج تكون أفكار عبقرية &mdash; أفكار بسيطة تكفي. المهم إنك تمرّن عقلك يفكر بالتحسين بدل ما يقبل الوضع الحالي. وجرّب تطبّق فكرة وحدة على الأقل كل أسبوع.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">التميز في العمل اليومي</div>
+      <div class="chapter-title-en">Excellence in Daily Work</div>
+    </div>
+  </div>
+
+  <span class="section-label">القوة الثانية: الإتقان</span>
+  <p>شارما يقول إن القيادة الحقيقية تبدأ من إتقان شغلك اليومي. مو من المشاريع الكبيرة أو القرارات الاستراتيجية &mdash; من الأشياء الصغيرة اللي تسويها كل يوم. كيف ترد على الإيميل، كيف تتعامل مع زميلك، كيف تسلّم شغلك. لأن التميّز عادة، مو حدث. اللي يتميّز في الأشياء الصغيرة بيتميّز تلقائياً في الأشياء الكبيرة.</p>
+  <p>مفهوم "ساعة العبقرية" من أقوى الأدوات اللي يقدمها شارما. الفكرة إنك تخصص أول ساعة من يومك لتطوير نفسك &mdash; قراءة، تمارين، تأمل، تخطيط. هالساعة تحط الأساس ليومك كله. لأن لما تبدأ يومك باستثمار في نفسك، تبدأ بعقلية مختلفة. تحس بقيمتك وتتعامل مع يومك من موقع قوة مو ضعف.</p>
+  <p>شارما بعد يتكلم عن مفهوم "قاعدة ٢.٥ إكس" &mdash; يعني إنك تعطي ضعفين ونص اللي يتوقعونه منك. مو لأنك تبي ترضي مديرك، بس لأنك تبني سمعة التميّز. ولما سمعتك تسبقك، الفرص تجيك بدون ما تبحث عنها. الناس تبي تشتغل مع اللي يتميّز، وتبي تترقّى اللي يتميّز، وتبي تستثمر في اللي يتميّز.</p>
+
+  <div class="quote-block">
+    <p>ما تصير قائد يوم واحد. تصير قائد من آلاف اللحظات الصغيرة اللي اخترت فيها التميّز بدل المتوسط. القيادة تتبنى في التفاصيل.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>ابدأ "ساعة العبقرية" بكرة الصبح. خصص أول ساعة بعد ما تقوم لتطوير نفسك: ٢٠ دقيقة رياضة، ٢٠ دقيقة قراءة، ٢٠ دقيقة تخطيط ليومك. هالساعة بتغيّر طريقة تعاملك مع كل شي باقي اليوم.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>شارما يذكر قصة عن خادمة في فندق كانت تتقن شغلها لدرجة إن الضيوف يطلبونها بالاسم. ما عندها منصب قيادي ولا لقب فخم. بس إتقانها خلاّها قائدة في مجالها. الناس يتعلمون منها والفندق يعتبرها مثال. هذا هو معنى القيادة بدون منصب: التميّز في مكانك يخلّيك قائد تلقائياً.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">العلاقات القيادية</div>
+      <div class="chapter-title-en">Leadership Relationships</div>
+    </div>
+  </div>
+
+  <span class="section-label">القوة الثالثة: التأثير</span>
+  <p>القوة الثالثة اللي يتكلم عنها شارما هي قوة التأثير من خلال العلاقات. يقول إن القائد الحقيقي مو اللي يأمر الناس، هو اللي يلهمهم. مو اللي يخوّفهم، هو اللي يحبّونه ويحترمونه. والاحترام ما يجي من المنصب &mdash; يجي من طريقة تعاملك مع الناس. كيف تسمع لهم، كيف تهتم فيهم، كيف تساعدهم ينجحون.</p>
+  <p>شارما يعلّمك مبدأ مهم: قبل ما تبي تأثّر في أحد، لازم أول تبني علاقة حقيقية معاه. والعلاقة الحقيقية تبدأ بالاهتمام الصادق. اسأل الناس عن حالهم وفعلاً اسمع الجواب. تذكّر أسماءهم وأسماء عيالهم. ساعدهم بدون ما يطلبون. هالأشياء البسيطة تبني ثقة عميقة، والثقة هي أساس التأثير.</p>
+  <p>بعد فيه مفهوم مهم: "القائد يخدم". يعني بدل ما تتعامل مع الناس كأنهم موجودين عشان يخدمونك، تعامل معاهم كأنك أنت موجود عشان تخدمهم. هالعقلية تغيّر كل شي. لأن لما الناس يحسون إنك فعلاً تهتم فيهم وتبي مصلحتهم، يعطونك ولاءهم وجهدهم وإبداعهم. وهذا أقوى بكثير من أي أمر أو تهديد.</p>
+
+  <div class="quote-block">
+    <p>القيادة مو إنك تمشي قدام الكل وتقول "اتبعوني". القيادة إنك تمشي جنبهم وتقول "خلنا نوصل مع بعض". الفرق بين الاثنين هو الفرق بين المدير والقائد.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>هالأسبوع، اختار ثلاثة أشخاص في حياتك &mdash; في الشغل أو خارجه &mdash; وسوّ لهم شي حلو بدون ما يطلبون. ممكن تساعدهم في مهمة، تشكرهم على شي محدد، أو تسألهم وش تقدر تسوي لهم. لاحظ كيف تتغيّر العلاقة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">المرونة والصلابة</div>
+      <div class="chapter-title-en">Resilience and Toughness</div>
+    </div>
+  </div>
+
+  <span class="section-label">القيادة في الأوقات الصعبة</span>
+  <p>شارما يقول إن القائد الحقيقي يبيّن معدنه في الأوقات الصعبة مو السهلة. أي أحد يقدر يكون "قائد" لما كل شي ماشي تمام. بس القائد الحقيقي هو اللي يحافظ على هدوءه وتفاؤله وقدرته على التفكير لما كل شي ينهار حوله. هذي هي المرونة &mdash; القدرة على التعافي من الصدمات والمصائب.</p>
+  <p>شارما يعلّمك إن الأوقات الصعبة مو عقاب &mdash; هي امتحان. كل أزمة تكشف لك وش أنت مصنوع منه. وكل أزمة تعطيك فرصة تطلع منها أقوى. لأن المرونة مثل العضلة &mdash; ما تقوى إلا لما تتحداها. لو حياتك كلها سهلة، ما بتطوّر المرونة اللي تحتاجها لما تجي الأوقات الصعبة فعلاً.</p>
+  <p>بعد، شارما يتكلم عن مفهوم "الصلابة الذهنية". يعني إنك ما تخلّي الظروف الخارجية تحدد حالتك الداخلية. الجو سيء؟ أنت مرتاح من جوا. الناس سلبيين؟ أنت إيجابي. الشغل صعب؟ أنت حامس. هالصلابة ما تعني إنك ما تتأثر &mdash; تعني إنك تختار كيف تتأثر وكيف تتصرف بدل ما الظروف تختار لك.</p>
+
+  <div class="quote-block">
+    <p>العواصف ما تدمّر الأشجار اللي جذورها عميقة. تقلع بس اللي جذورها على السطح. ابني جذورك عميقة في قيمك ومبادئك، وما فيه عاصفة تقدر عليك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>ابدأ تبني مرونتك قبل ما تحتاجها. خلّك تطلع من منطقة راحتك يومياً بأشياء صغيرة: استحم بماء بارد، سوّ تمرين صعب، تكلم مع شخص غريب. هالتحديات الصغيرة تبني العضلة اللي بتحتاجها في التحديات الكبيرة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>شارما يتكلم عن مفهوم "الوقود المزدوج" &mdash; يعني إن القادة العظام يستخدمون الأوقات الحلوة والأوقات الصعبة كوقود. الأوقات الحلوة تعطيهم طاقة إيجابية ودافع. والأوقات الصعبة تعطيهم عزيمة وصلابة. اللي يقدر يستفيد من الاثنين ما يوقفه شي. لأن كل تجربة عنده هي فرصة للنمو.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">القيادة بالقدوة</div>
+      <div class="chapter-title-en">Leading by Example</div>
+    </div>
+  </div>
+
+  <span class="section-label">القوة الرابعة: القدوة</span>
+  <p>القوة الرابعة والأخيرة هي قوة القدوة. شارما يقول إن الناس ما تسمع كلامك &mdash; تشوف أفعالك. تقدر تلقي أحلى خطابات عن النزاهة والتميّز والعمل الجاد، بس لو تصرفاتك تناقض كلامك، ما أحد بيصدقك. القيادة بالقدوة يعني إن حياتك هي رسالتك. كل تصرف تسويه يبعث رسالة للناس حولك.</p>
+  <p>شارما يتكلم عن الطقوس اليومية كأساس للقيادة بالقدوة. يقول إن الأشياء اللي تسويها كل يوم &mdash; لا أحد يشوفها &mdash; هي اللي تبني الشخص اللي يشوفه الكل. كيف تبدأ صبحك، وش تقرأ، كيف تتعامل مع نفسك في الخاص. لأن القيادة ما تصير بس قدام الناس، تصير خلف الكواليس. واللي يقود نفسه في الخاص يقود غيره في العلن تلقائياً.</p>
+  <p>من أهم النقاط: شارما يقول إن القائد بالقدوة ما يخاف يعترف بأخطائه. العكس &mdash; اعترافه بأخطائه يزيد احترام الناس له. لأنه يبيّن إنه بشر مو كامل، وإنه صادق مع نفسه ومع الناس. وهالصدق يلهم الناس يكونون صادقين بعد. والنتيجة: بيئة مبنية على الثقة والاحترام بدل الخوف والتمثيل.</p>
+
+  <div class="quote-block">
+    <p>كلامك يعلّم الناس وش تعرف. بس أفعالك تعلّمهم وش تؤمن فيه فعلاً. وأفعالك دايماً تتكلم أعلى من كلامك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>راجع تصرفاتك في آخر أسبوع واسأل نفسك: لو أحد يتابعني بدون ما أدري، وش بيتعلم مني؟ هل تصرفاتي تعكس القيم اللي أنا أتكلم عنها؟ لو فيه فجوة بين كلامك وأفعالك، ابدأ سدّها من اليوم.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الإرث الشخصي</div>
+      <div class="chapter-title-en">Personal Legacy</div>
+    </div>
+  </div>
+
+  <span class="section-label">وش بتترك وراك؟</span>
+  <p>شارما يختم الكتاب بسؤال عميق: لما تخلص حياتك، وش بيتذكّرونك الناس فيه؟ مو منصبك ولا راتبك ولا سيارتك. بيتذكرونك بالأثر اللي تركته في حياتهم. وش عطيتهم، كيف خلّيتهم يحسون، وش تعلموا منك. هذا هو إرثك الشخصي. والقائد الحقيقي يفكر في إرثه كل يوم مو بس في آخر حياته.</p>
+  <p>التفكير في الإرث يغيّر طريقة تعاملك مع يومك. لأنك تبدأ تسأل: هل اللي أسويه الحين يبني الإرث اللي أبيه؟ لو تقضي وقتك في أشياء ما لها قيمة وتتجنب الأشياء المهمة، إرثك بيكون فارغ. بس لو تستثمر وقتك في التأثير الإيجابي في الناس وفي ترك بصمة حقيقية، إرثك بيعيش بعدك.</p>
+  <p>شارما يقول إن أعظم إرث تقدر تتركه هو إلهام شخص ثاني يقود. يعني مو بس إنك تكون قائد، بس إنك تخلّي غيرك يكتشف القائد اللي جواه. لأن القائد اللي يبني قادة تأثيره يتضاعف بشكل ما ينتهي. كل قائد يبنيه يبني قادة ثانيين، وكل جيل يبني الجيل اللي بعده. هذا هو الإرث الحقيقي.</p>
+
+  <div class="quote-block">
+    <p>عش حياتك بطريقة إنه لما تموت، الناس تبكي. ولما ولدت أنت، أنت بكيت والناس فرحت. اقلب المعادلة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>اكتب "بيان الإرث الشخصي" &mdash; فقرة أو فقرتين عن الأثر اللي تبي تتركه في هالدنيا. وش تبي الناس يقولون عنك بعد ما تروح؟ خلّ هالبيان يكون مرجعك في كل قرار كبير تاخذه. واسأل نفسك كل يوم: هل اللي سويته اليوم يقرّبني من إرثي ولا يبعّدني عنه؟</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>شارما يقول إن أكبر ندم عند الناس اللي على فراش الموت مو إنهم فشلوا &mdash; إنهم ما حاولوا. ما عاشوا الحياة اللي كانوا يبونها. ما قالوا الكلام اللي كانوا يبون يقولونه. ما ساعدوا الناس اللي كانوا يبون يساعدونهم. عشان كذا لا تستنّى. ابدأ اليوم ترسم إرثك بأفعالك مو بس بأحلامك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Action Plan -->
+<section class="action-plan">
+  <h2>&#x1F3AF; خطة العمل التطبيقية</h2>
+  <ol>
+    <li><strong>قرر إنك قائد اليوم:</strong> اكتب "أنا قائد في مكاني" وعلّقها في مكان تشوفها كل يوم. بعدين اسأل نفسك كل صبح: لو أنا القائد هنا، وش بأسوي مختلف اليوم؟ وسوّه.</li>
+    <li><strong>ابدأ ساعة العبقرية:</strong> خصص أول ساعة من يومك لتطوير نفسك &mdash; ٢٠ دقيقة حركة، ٢٠ دقيقة تعلّم، ٢٠ دقيقة تخطيط. سوّها كل يوم بدون استثناء لمدة شهر وسجّل الفرق.</li>
+    <li><strong>طبّق قاعدة ٢.٥ إكس:</strong> هالأسبوع، اختار مهمة في شغلك وسوّها بجودة تفوق المتوقع بضعفين ونص. لا تبي شكر ولا مقابل &mdash; بس سوّها لأنك قائد والقائد يتميّز.</li>
+    <li><strong>ابني ثلاث علاقات قيادية:</strong> اختار ثلاثة أشخاص وابدأ استثمر في علاقتك معهم. اسألهم عن أهدافهم وتحدياتهم وشف كيف تقدر تساعدهم. القيادة تبدأ بالخدمة.</li>
+    <li><strong>اطلع من منطقة راحتك يومياً:</strong> سوّ شي يخوّفك شوي كل يوم. كلّم شخص غريب، اقترح فكرة في اجتماع، جرّب شي جديد. هالتحديات الصغيرة تبني مرونتك وصلابتك.</li>
+    <li><strong>اكتب بيان إرثك:</strong> خصص ساعة هالأسبوع واكتب وش تبي تتركه وراك. وش التأثير اللي تبي يكون لك في حياة الناس؟ خلّ هالبيان يكون بوصلتك في كل قرار كبير.</li>
+  </ol>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>&#x1F451; القائد الذي بلا منصب &mdash; روبن شارما</h3>
+  <p>ما تحتاج لقب عشان تقود. تحتاج قرار. والقرار يبدأ اليوم، الحين، من مكانك.</p>
+  <p>كن القائد اللي العالم يحتاجه بدون ما تستنى أحد يعطيك إذن.</p>
+  <div class="disclaimer">
+    هذا ملخص شامل للكتاب وليس بديلاً عن قراءته كاملاً. نوصي بشدة باقتناء الكتاب الأصلي للاستفادة الكاملة.
+  </div>
+</footer>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

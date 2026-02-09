@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>التواصل اللاعنفي - ملخص شامل | مارشال روزنبرغ</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #00b894; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #55efc4; }
+  .hero { background: linear-gradient(135deg, #003d2e 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #00b894; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(0,184,148, 0.08) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(0,61,46, 0.15) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #00b894; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(0,184,148, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(0,184,148, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #2d1b1b, #1a1a2e); border: 2px solid #c0392b; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '\26A1'; position: absolute; right: 0; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #003d2e; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #00b894; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(0,184,148, 0.1); color: #00b894; transform: translateX(-4px); }
+  .toc-num { background: #00b894; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #003d2e; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #00b894; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #003d2e; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; position: relative; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #00b894; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(0,184,148, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #00b894, #00866d); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(0,184,148, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #00b894; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(0,184,148, 0.12); color: #00b894; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(0,184,148, 0.06); border-right: 4px solid #00b894; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(0,184,148, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(0,61,46, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(0,184,148, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #00b894; font-weight: 700; font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(0,184,148, 0.08); border: 1px solid rgba(0,184,148, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #d0b0c0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .action-plan { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #003d2e; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .action-plan h2 { font-size: 1.6rem; color: #00b894; margin-bottom: 25px; font-weight: 800; text-align: center; }
+  .action-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+  .action-num { background: #e94560; color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; }
+  .action-text { flex: 1; }
+  .action-text h4 { color: #ffffff; font-size: 1.05rem; margin-bottom: 4px; }
+  .action-text p { color: #b0b0c0; font-size: 0.95rem; margin: 0; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(0,184,148, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #00b894; }
+  .footer { background: linear-gradient(145deg, #003d2e, #1a1a2e); border-top: 3px solid #00b894; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(0,184,148, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero .subtitle { font-size: 1.1rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section, .action-plan { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; } .chapter-title-ar { font-size: 1.3rem; } .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; } .footer { padding: 30px 16px; } }
+  @media (max-width: 480px) { html { font-size: 14px; } .hero { padding: 50px 16px 40px; } .hero h1 { font-size: 1.7rem; } }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#x1F54A;&#xFE0F;</span>
+    <h1>التواصل اللاعنفي</h1>
+    <div class="subtitle">Nonviolent Communication</div>
+    <div class="author">مارشال روزنبرغ — Marshall Rosenberg</div>
+    <div class="meta-info">
+      <span>&#x1F4D6; 7 فصول</span>
+      <span>&#x1F554; وقت القراءة: 35 دقيقة</span>
+      <span>&#x1F3AF; تطوير العلاقات</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>&#x26A0;&#xFE0F; ليش هذا الكتاب مهم؟</h2>
+  <p>كثير مننا نتكلم مع الشريك ونحس إننا نحاول نوصل شي بس الكلام يطلع غلط ويتحول لخناقة. المشكلة مو فيك ولا في شريكك — المشكلة في الطريقة اللي تعلمناها من صغرنا عشان نتواصل مع الناس.</p>
+  <p>مارشال روزنبرغ يقول إن لغتنا العادية مليانة أحكام ولوم وانتقاد، وهذي الأشياء تخلي الطرف الثاني يدخل وضع الدفاع بدل ما يسمعك. الكتاب هذا يعطيك طريقة جديدة تماماً تتكلم فيها — طريقة تخلي قلب الشخص اللي قدامك ينفتح لك.</p>
+  <ul>
+    <li>كل ما تبي توصل رسالة لشريكك تحس إنها تنقلب لمشكلة أكبر</li>
+    <li>تحس إن شريكك ما يفهمك مهما حاولت تشرح</li>
+    <li>الخلافات الصغيرة تتحول لحروب كبيرة عشان كل واحد يحس إنه مو مسموع</li>
+    <li>تبي تعبر عن مشاعرك بس تخاف من ردة فعل الطرف الثاني</li>
+    <li>تحس إنك ضايع بين إنك تكون صريح وبين إنك تحافظ على العلاقة</li>
+  </ul>
+</section>
+
+<!-- Intro Section -->
+<section class="intro-section">
+  <h2>&#x1F4A1; مقدمة عن الكتاب</h2>
+  <p>مارشال روزنبرغ قضى حياته كلها يدرس ليش بعض الناس يقدرون يتواصلون بشكل مذهل وبعضهم يفشلون فشل ذريع. اكتشف إن السر مو في الذكاء ولا في الثقافة — السر في أربع خطوات بسيطة: تلاحظ بدون ما تحكم، تحس بمشاعرك، تعرف وش تحتاج، وتطلب بوضوح.</p>
+  <p>الكتاب هذا مو بس عن التواصل مع شريك حياتك — هو عن إنك تغير طريقة تفكيرك كلها. لما تتعلم التواصل اللاعنفي، ما بس تتحسن علاقتك الزوجية — تتحسن علاقتك مع نفسك ومع كل الناس حولك. روزنبرغ يقول إن العنف في الكلام هو أصل كل المشاكل، ولما نتعلم نتكلم بطريقة ثانية، العالم كله يتغير.</p>
+  <p>الشي الحلو في هذا الكتاب إنه مو نظري فقط — مليان أمثلة حقيقية من ناس غيروا علاقاتهم الزوجية بس عشان غيروا طريقة كلامهم. تخيل إنك تقدر تحل أي خلاف مع شريكك بدون ما أحد يحس إنه خسران — هذا بالضبط اللي يعلمك إياه روزنبرغ.</p>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc" id="toc">
+  <h2>&#x1F4D1; فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span> لغة الحياة</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span> الملاحظة بدون حكم</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span> التعرف على المشاعر</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span> الاحتياجات الإنسانية</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span> الطلب بوضوح</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span> الاستماع بتعاطف</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span> التواصل في الخلافات</a>
+  </div>
+</nav>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">لغة الحياة</div>
+      <div class="chapter-title-en">The Language of Life</div>
+    </div>
+  </div>
+
+  <span class="section-label">المفهوم الأساسي</span>
+  <p>روزنبرغ يبدأ الكتاب بفكرة قوية جداً: إن اللغة اللي نستخدمها يومياً هي لغة "ابن آوى" — يعني لغة مليانة أحكام وانتقادات ومقارنات. لما تقول لشريكك "أنت دايماً كذا" أو "أنت ما تهتم"، أنت تستخدم لغة ابن آوى اللي تخلي الطرف الثاني يحس إنه مهاجَم ويبدأ يدافع عن نفسه.</p>
+  <p>المقابل هي لغة "الزرافة" — وليش الزرافة بالذات؟ عشان الزرافة عندها أكبر قلب بين الحيوانات البرية. لغة الزرافة هي لغة القلب، لغة تركز على المشاعر والاحتياجات بدل الأحكام واللوم. لما تتكلم بلغة الزرافة، أنت تقول وش تحس ووش تحتاج بدون ما تلوم أحد.</p>
+  <p>المكونات الأربعة للتواصل اللاعنفي هي: أولاً تلاحظ وش اللي صار بالضبط بدون ما تضيف تقييم، ثانياً تحدد مشاعرك الحقيقية، ثالثاً تربط مشاعرك باحتياجاتك، ورابعاً تطلب طلب واضح ومحدد. هذي الأربع خطوات تبدو بسيطة بس تغير كل شي.</p>
+
+  <div class="quote-block">
+    <p>كل انتقاد ولوم وحكم هو في الحقيقة تعبير محزن عن احتياج ما انلبّى — مارشال روزنبرغ</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>لما شريكك يقول كلام جارح، لا تاخذه على إنه هجوم شخصي. حاول تسمع وراء الكلمات — وش الاحتياج اللي ما انلبّى عنده وخلاه يتكلم كذا؟ لما تبدأ تسمع الاحتياجات بدل الانتقادات، كل شي يتغير.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>روزنبرغ يقول إن أغلب الخلافات الزوجية مو عشان الموضوع نفسه — يعني الخلاف مو فعلاً على مين يغسل الصحون أو مين ينظف البيت. الخلاف الحقيقي هو إن كل واحد يحس إن احتياجه مو مسموع. لما نتعلم نسمع الاحتياج الحقيقي، الحلول تصير سهلة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الملاحظة بدون حكم</div>
+      <div class="chapter-title-en">Observing Without Evaluating</div>
+    </div>
+  </div>
+
+  <span class="section-label">الخطوة الأولى</span>
+  <p>أول خطوة في التواصل اللاعنفي هي إنك تفرق بين الملاحظة والتقييم. يعني بدل ما تقول "أنت كسلان" تقول "لاحظت إنك ما غسلت الصحون آخر ثلاث مرات". الفرق كبير — الأولى حكم والثانية ملاحظة محددة. لما تقول حكم، الطرف الثاني يحس إنك تهاجم شخصيته كلها. بس لما تقول ملاحظة محددة، يقدر يسمعك ويتناقش معك.</p>
+  <p>المشكلة إننا تربينا على إننا نخلط بين الملاحظة والتقييم طول الوقت. لما تقول "أنت ما تحبني" هذا تقييم — بس الملاحظة هي "لما رجعت البيت أمس ما سلمت علي". الفرق إن الملاحظة شي ممكن نتكلم عنه ونحله، بس التقييم يخلي الطرف الثاني يحس إنه محكوم عليه.</p>
+  <p>روزنبرغ يقول إن "الملاحظة بدون تقييم هي أعلى أشكال الذكاء البشري". وهذا صعب صعوبة مو طبيعية عشان عقولنا متعودة تحكم على كل شي. بس مع التمرين تصير أحسن. ابدأ بإنك لما تحس بالضيق من شريكك، قبل ما تتكلم اسأل نفسك: وش اللي صار بالضبط؟ وش الفعل المحدد اللي ضايقني؟ بدون ما تضيف أي تفسير أو حكم.</p>
+
+  <div class="quote-block">
+    <p>لما نخلط الملاحظة بالتقييم، الناس يسمعون انتقاد ويقاومون كلامنا — مارشال روزنبرغ</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>قبل ما تتكلم مع شريكك عن شي ضايقك، خذ لحظة وحدد وش اللي صار بالضبط — الفعل المحدد — بدون ما تضيف أي تفسير أو حكم. "لاحظت إنك..." أقوى بكثير من "أنت دايماً...".</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">التعرف على المشاعر</div>
+      <div class="chapter-title-en">Identifying Feelings</div>
+    </div>
+  </div>
+
+  <span class="section-label">الخطوة الثانية</span>
+  <p>ثاني خطوة هي إنك تتعرف على مشاعرك الحقيقية وتعبر عنها. وهنا المشكلة الكبيرة — أغلبنا ما نعرف نفرق بين المشاعر الحقيقية والأفكار المتنكرة بلبس مشاعر. يعني لما تقول "أحس إنك ما تقدرني" — هذا مو شعور، هذا فكرة عن سلوك الشخص الثاني. الشعور الحقيقي هو "أحس بالحزن" أو "أحس بالوحدة".</p>
+  <p>روزنبرغ يقول إن كثير من الرجال بالذات عندهم مشكلة في التعبير عن مشاعرهم عشان المجتمع علمهم من صغرهم إن الرجال ما يبكون وما يحسون. بس المشاعر موجودة عند الكل — الفرق إن بعض الناس تعلموا يكبتونها. في العلاقة الزوجية، كبت المشاعر يتحول لانفجارات غضب أو انسحاب كامل، وكلا الشيين يدمر العلاقة.</p>
+  <p>فيه فرق كبير بين "أحس إنك مهملني" و"أحس بالوحدة". الأولى تحمّل الطرف الثاني المسؤولية وتخليه يدافع عن نفسه. الثانية تكشف وش يصير جواك فعلاً وتفتح الباب للتواصل الحقيقي. تعلم إنك تقول "أنا حزين" بدل "أنت سبب حزني" — هذا الفرق بين لغة الزرافة ولغة ابن آوى.</p>
+
+  <div class="quote-block">
+    <p>التعبير عن ضعفنا يقدر يساعد في حل الخلافات — مارشال روزنبرغ</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>ابني قاموس مشاعر حقيقي — تعلم تفرق بين المشاعر الحقيقية (حزين، خايف، فرحان، متضايق) والأفكار المتنكرة بشكل مشاعر (مهمل، مظلوم، مستغل). المشاعر الحقيقية ما فيها لوم — هي وصف لحالتك الداخلية فقط.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>لما تقدر تسمي مشاعرك بدقة، قوة هذي المشاعر تقل عليك. يعني لما تحس بشي غامض وضاغط، بس تقول "أنا أحس بالخوف من إني أُرفض" — فجأة يصير الشعور أقل سيطرة عليك. هذا اللي يسمونه في علم النفس "name it to tame it" — سمّه عشان تهدّيه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الاحتياجات الإنسانية</div>
+      <div class="chapter-title-en">Human Needs</div>
+    </div>
+  </div>
+
+  <span class="section-label">الخطوة الثالثة</span>
+  <p>ثالث خطوة وأهم خطوة في التواصل اللاعنفي هي إنك تربط مشاعرك باحتياجاتك. روزنبرغ يقول إن كل مشاعرنا — سواء إيجابية أو سلبية — هي إشارات تقولنا إن فيه احتياج ملبّى أو مو ملبّى. لما تحس بالسعادة يعني فيه احتياج عندك انلبّى، ولما تحس بالحزن أو الغضب يعني فيه احتياج مو ملبّى.</p>
+  <p>الاحتياجات الإنسانية الأساسية تشمل: الأمان، الحب، الاحترام، الاستقلالية، الفهم، التقدير، الدعم، الصدق، والمعنى. كل إنسان عنده نفس الاحتياجات بس بدرجات مختلفة. المشكلة في العلاقات الزوجية إن كل واحد يتوقع من الثاني يعرف احتياجاته بدون ما يقولها — وهذا مستحيل!</p>
+  <p>السر إنك تتعلم تقول "أنا محتاج..." بدل "أنت لازم...". لما تقول "أنا محتاج أحس بالأمان في علاقتنا" هذا يفتح باب الحوار. بس لما تقول "أنت لازم تكون أحسن" هذا يقفل الباب. الاحتياجات مشتركة بين كل البشر، ولما تعبر عن احتياجك بصراحة، شريكك غالباً بيفهمك عشان عنده نفس الاحتياج.</p>
+
+  <div class="quote-block">
+    <p>وراء كل سلوك مزعج احتياج إنساني جميل — لو نتعلم نشوفه بدل ما نحكم على السلوك — مارشال روزنبرغ</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>بدل ما تلوم شريكك على مشاعرك السلبية، خذ مسؤولية مشاعرك وربطها باحتياجاتك. "أنا حزين عشان أنا محتاج أحس بالقرب منك" أقوى بمليون مرة من "أنت سبب حزني عشان تتجاهلني".</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الطلب بوضوح</div>
+      <div class="chapter-title-en">Making Clear Requests</div>
+    </div>
+  </div>
+
+  <span class="section-label">الخطوة الرابعة</span>
+  <p>آخر خطوة هي إنك تطلب طلب واضح ومحدد. وهنا فيه فرق كبير بين الطلب والمطالبة. الطلب يعطي الطرف الثاني حرية يقول لا بدون ما يخاف من العواقب. المطالبة فيها تهديد ضمني — يعني لو ما سويت اللي أبيه بتكون فيه مشكلة. لما شريكك يحس إنك تطالب مو تطلب، حتى لو سوى اللي تبيه ما بيسويه بقلب صافي.</p>
+  <p>الطلب لازم يكون إيجابي ومحدد. يعني بدل "لا تتجاهلني" — اللي هو طلب سلبي وغامض — قول "أبيك لما أرجع البيت تسلم علي وتسألني عن يومي". شوف الفرق! الأول ما يعطي الشخص أي فكرة وش يسوي، والثاني واضح تماماً ويقدر يطبقه على طول.</p>
+  <p>روزنبرغ يقول إن كثير من الأزواج يعانون عشان يقولون "أبيك تحبني أكثر" — وهذا طلب غامض ما أحد يعرف كيف يطبقه. التحدي هو إنك تحول هذا الشعور لطلب محدد: "أبيك تقولي إنك تحبني مرة في اليوم" أو "أبيك نقعد مع بعض نص ساعة كل يوم بدون جوالات". كل ما كان الطلب أوضح، كل ما كانت فرصة تحقيقه أكبر.</p>
+
+  <div class="quote-block">
+    <p>لما الناس يسمعون مطالبة، يشوفون خيارين بس: الخضوع أو التمرد — مارشال روزنبرغ</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>حول شكاواك لطلبات واضحة ومحددة وإيجابية. بدل "لا تسوي كذا" قل "أبيك تسوي كذا". وتأكد إن طلبك فعلاً طلب مو مطالبة — يعني إنك مستعد تسمع "لا" وتتفاوض على بديل.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>الطريقة اللي تتأكد فيها إن كلامك طلب مو مطالبة: شوف ردة فعلك لما شريكك يقول "لا". لو تحس بالغضب والرغبة في العقاب، يعني كان مطالبة. لو تحس بخيبة أمل بس تبي تفهم ليش قال لا وتدور حل ثاني، يعني كان طلب حقيقي. الفرق في قلبك أنت مو في كلماتك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الاستماع بتعاطف</div>
+      <div class="chapter-title-en">Empathic Listening</div>
+    </div>
+  </div>
+
+  <span class="section-label">فن الاستماع</span>
+  <p>روزنبرغ يقول إن التعاطف قبل التعليم — يعني لازم تسمع شريكك وتفهمه أول قبل ما تحاول تحل المشكلة أو تعطيه نصيحة. أغلب الناس لما شريكهم يتكلم عن مشكلة يبدأون على طول يقدمون حلول أو يقولون "لا تحس كذا". بس الشريك في أغلب الأوقات ما يبي حل — يبي أحد يسمعه ويفهمه.</p>
+  <p>الاستماع بتعاطف يعني إنك تكون موجود ١٠٠٪ مع شريكك. ما تفكر في ردك وهو يتكلم، ما تنتظر يخلص عشان تقول رأيك، ما تحاول تصلح شي. بس تسمع. وتعكس اللي تسمعه — يعني تقول "فهمت إنك تحس بكذا عشان محتاج كذا... صح؟". هذا يخلي شريكك يحس إنه مسموع ومفهوم، وهذا أقوى شي ممكن تسويه لعلاقتك.</p>
+  <p>أصعب وقت تسمع فيه بتعاطف هو لما شريكك يتكلم عنك أنت — لما يقول كلام تحس إنه غلط أو ظالم. في هذي اللحظات روزنبرغ يقول لا تسمع الكلمات — اسمع المشاعر والاحتياجات وراء الكلمات. لما شريكتك تقول "أنت ما تحبني" لا تبدأ تدافع عن نفسك. بدل كذا قول "تحسين بالوحدة وتحتاجين تحسين إنك مهمة عندي؟". هذا يغير المحادثة كلها.</p>
+
+  <div class="quote-block">
+    <p>التعاطف يكمن في قدرتنا على أن نكون حاضرين — لا نحتاج أن نقول شيئاً ذكياً أو نقدم حلاً — بس نكون موجودين — مارشال روزنبرغ</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>قبل ما تحاول تحل أي مشكلة مع شريكك، اسمع أول. اسمع مشاعره واحتياجاته وعكسها عليه عشان يحس إنه مفهوم. بعدها — وبس بعدها — ممكن تبدأون تدورون حل مع بعض.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">التواصل في الخلافات</div>
+      <div class="chapter-title-en">NVC in Conflict</div>
+    </div>
+  </div>
+
+  <span class="section-label">التطبيق في الخلافات</span>
+  <p>هنا ندخل في أصعب جزء — كيف تستخدم التواصل اللاعنفي لما تكون في خلاف حقيقي مع شريكك وكلكم متعصبين. روزنبرغ يقول إن الغضب مو شي سيء — الغضب إشارة إن عندك احتياج مهم مو ملبّى. بس المشكلة إن لما نكون غاضبين نتكلم بلغة ابن آوى ونزيد الموقف سوء.</p>
+  <p>الخطوة الأولى لما تكون متعصب: توقف. خذ نفس. لا تتكلم وأنت في قمة غضبك. بعدين اسأل نفسك: وش أنا أحس الحين بالضبط؟ وش الاحتياج اللي مو ملبّى عندي؟ وش أقدر أطلب بشكل محدد؟ هذي الأسئلة الثلاث تحولك من وضع الهجوم لوضع التواصل.</p>
+  <p>الشي المهم في الخلافات إنك تتذكر إن شريكك مو عدوك — شريكك إنسان عنده احتياجات زيك بالضبط. الخلاف مو حرب فيها فائز وخاسر — الخلاف فرصة تفهمون بعض أكثر. روزنبرغ يقول إن أجمل اللحظات في العلاقة ممكن تجي بعد خلاف تتحل بطريقة صحية — عشان الاثنين يحسون إنهم اقتربوا من بعض أكثر.</p>
+
+  <div class="quote-block">
+    <p>الغضب دايماً نتيجة تفكير منفصل عن الحياة ومنفصل عن احتياجاتنا الحقيقية — مارشال روزنبرغ</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>في الخلاف: توقف، تنفس، حدد مشاعرك واحتياجاتك، وبعدين تكلم. تذكر إن شريكك مو عدوك وإن الهدف مو تكسب الخلاف — الهدف إنكم تفهمون بعض وتلاقون حل يلبي احتياجاتكم الاثنين.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>روزنبرغ يقول إن أغلب الخلافات الزوجية المتكررة سببها إن فيه احتياجات أساسية ما تنلبى عند أحد الطرفين أو كلاهم. الخلافات السطحية — على الفلوس أو الأولاد أو البيت — هي بس القشرة. تحتها فيه حاجة للأمان أو التقدير أو الحب. لما نوصل للاحتياج الحقيقي، الحل يصير واضح.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Action Plan -->
+<section class="action-plan">
+  <h2>&#x1F3AF; خطة العمل</h2>
+  <div class="action-item">
+    <div class="action-num">1</div>
+    <div class="action-text">
+      <h4>تمرن على الملاحظة بدون حكم</h4>
+      <p>لمدة أسبوع كامل، كل ما تحس بالضيق من شريكك، اكتب وش اللي صار بالضبط — الفعل المحدد — بدون أي تقييم أو تفسير. هذا التمرين يغير طريقة تفكيرك.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">2</div>
+    <div class="action-text">
+      <h4>ابني قاموس مشاعرك</h4>
+      <p>اكتب قائمة بكل المشاعر اللي تمر عليك في اليوم — حزن، فرح، خوف، قلق، راحة — وابدأ استخدمها لما تتكلم مع شريكك بدل الأحكام العامة.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">3</div>
+    <div class="action-text">
+      <h4>اكتشف احتياجاتك الحقيقية</h4>
+      <p>كل ما تحس بمشاعر سلبية، اسأل نفسك: وش الاحتياج اللي ما انلبّى عندي الحين؟ أمان؟ تقدير؟ حب؟ فهم؟ اكتب الجواب.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">4</div>
+    <div class="action-text">
+      <h4>حول الشكاوى لطلبات</h4>
+      <p>خذ أكبر ثلاث شكاوى عندك من شريكك وحولها لطلبات واضحة ومحددة وإيجابية. جرب تقدمها لشريكك بهذي الصيغة الجديدة.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">5</div>
+    <div class="action-text">
+      <h4>تمرن على الاستماع التعاطفي</h4>
+      <p>خصص ١٠ دقايق كل يوم تسمع فيها شريكك بدون ما تقاطع أو تقدم حلول. بس اسمع وعكس مشاعره واحتياجاته.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">6</div>
+    <div class="action-text">
+      <h4>استخدم صيغة التواصل الرباعية</h4>
+      <p>في أي خلاف جديد جرب الصيغة: "لما [ملاحظة]، أحس ب[شعور]، عشان أنا محتاج [احتياج]، فأبيك [طلب]". مع الوقت بتصير طبيعية.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>التواصل اللاعنفي — مارشال روزنبرغ</h3>
+  <p>أربع خطوات بسيطة تغير طريقة تواصلك مع شريك حياتك للأبد</p>
+  <p>الملاحظة — المشاعر — الاحتياجات — الطلب</p>
+  <div class="disclaimer">هذا ملخص تعليمي للكتاب وليس بديلاً عن قراءة الكتاب كاملاً. جميع الحقوق محفوظة للمؤلف.</div>
+</footer>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

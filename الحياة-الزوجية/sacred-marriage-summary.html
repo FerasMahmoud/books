@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الزواج المقدس - ملخص شامل | غاري توماس</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #34495e; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #5d8aa8; }
+  .hero { background: linear-gradient(135deg, #0d1520 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #34495e; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(52,73,94, 0.08) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(13,21,32, 0.15) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #5d8aa8; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(52,73,94, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(52,73,94, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #2d1b1b, #1a1a2e); border: 2px solid #c0392b; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '\26A1'; position: absolute; right: 0; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0d1520; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #5d8aa8; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(52,73,94, 0.1); color: #5d8aa8; transform: translateX(-4px); }
+  .toc-num { background: #34495e; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0d1520; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #5d8aa8; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0d1520; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; position: relative; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #34495e; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(52,73,94, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #34495e, #243342); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(52,73,94, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #5d8aa8; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(52,73,94, 0.12); color: #5d8aa8; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(52,73,94, 0.06); border-right: 4px solid #34495e; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(52,73,94, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(13,21,32, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(52,73,94, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #5d8aa8; font-weight: 700; font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(52,73,94, 0.08); border: 1px solid rgba(52,73,94, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #d0b0c0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .action-plan { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0d1520; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .action-plan h2 { font-size: 1.6rem; color: #5d8aa8; margin-bottom: 25px; font-weight: 800; text-align: center; }
+  .action-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+  .action-num { background: #e94560; color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; }
+  .action-text { flex: 1; }
+  .action-text h4 { color: #ffffff; font-size: 1.05rem; margin-bottom: 4px; }
+  .action-text p { color: #b0b0c0; font-size: 0.95rem; margin: 0; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(52,73,94, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #5d8aa8; }
+  .footer { background: linear-gradient(145deg, #0d1520, #1a1a2e); border-top: 3px solid #34495e; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(52,73,94, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero .subtitle { font-size: 1.1rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section, .action-plan { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; } .chapter-title-ar { font-size: 1.3rem; } .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; } .footer { padding: 30px 16px; } }
+  @media (max-width: 480px) { html { font-size: 14px; } .hero { padding: 50px 16px 40px; } .hero h1 { font-size: 1.7rem; } }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#x1F64F;</span>
+    <h1>الزواج المقدس</h1>
+    <div class="subtitle">Sacred Marriage</div>
+    <div class="author">غاري توماس — Gary Thomas</div>
+    <div class="meta-info">
+      <span>&#x1F4D6; 7 فصول</span>
+      <span>&#x1F554; وقت القراءة: 35 دقيقة</span>
+      <span>&#x1F3AF; النمو الروحي</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>&#x26A0;&#xFE0F; ليش هذا الكتاب مهم؟</h2>
+  <p>كثير من الناس يدخلون الزواج وعندهم توقع واحد: السعادة. يتوقعون إن شريكهم بيكملهم وبيخلي حياتهم حلوة طول الوقت. وبعد فترة يكتشفون إن الزواج صعب ومتعب وفيه تحديات ما كانوا يتخيلونها — ويبدأون يشكون إنهم اختاروا الشخص الغلط.</p>
+  <p>غاري توماس يقلب هذي النظرة رأساً على عقب ويسأل سؤال مختلف تماماً: وش لو الهدف من الزواج مو إنك تكون سعيد — بل إنك تكون إنسان أفضل؟ وش لو الصعوبات في الزواج مو فشل — بل هي بالضبط الأداة اللي تصنع منك شخص أقوى وأنضج وأقرب لله؟</p>
+  <ul>
+    <li>تحس إن الزواج ما حقق توقعاتك وتتساءل هل اخترت الشخص الصح</li>
+    <li>تواجه صعوبات في الزواج وتحس إنها علامة فشل</li>
+    <li>تدور السعادة في الزواج بس ما تلاقيها وتحس بالإحباط</li>
+    <li>تبي تفهم الحكمة الروحية وراء مؤسسة الزواج</li>
+    <li>تحتاج نظرة جديدة تعطيك أمل وتحفزك تكمل في علاقتك</li>
+  </ul>
+</section>
+
+<!-- Intro Section -->
+<section class="intro-section">
+  <h2>&#x1F4A1; مقدمة عن الكتاب</h2>
+  <p>غاري توماس كاتب ومفكر روحي قضى سنوات يدرس العلاقة بين الزواج والنمو الروحي. وصل لنتيجة غيرت حياة ملايين الناس: الزواج مو المكان اللي تلاقي فيه السعادة — الزواج هو المكان اللي تتحول فيه لنسخة أفضل من نفسك.</p>
+  <p>الفكرة الأساسية في الكتاب إن الزواج هو أعظم أداة لبناء الشخصية. ليش؟ عشان ما فيه علاقة ثانية تكشف عيوبك وتتحداك وتجبرك تنمو مثل الزواج. لما تعيش مع شخص ٢٤ ساعة في اليوم، كل عيوبك تطلع على السطح — وهنا تبدأ الرحلة الحقيقية.</p>
+  <p>الكتاب مو عن إنك تتحمل زواج سيء وتصبر على الألم — لا أبداً. الكتاب عن إنك تشوف الصعوبات بنظرة مختلفة: كل تحدي في الزواج هو فرصة تنمو فيها. كل خلاف هو فرصة تتعلم فيها الصبر. كل لحظة ضعف هي فرصة تتعلم فيها التسامح. هذي النظرة تغير كل شي.</p>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc" id="toc">
+  <h2>&#x1F4D1; فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span> الهدف الأعمق للزواج</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span> التحول من خلال الشريك</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span> تعلّم الاحترام</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span> التسامح والغفران</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span> الخدمة والتضحية</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span> المثابرة والصبر</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span> الحب كقرار</a>
+  </div>
+</nav>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الهدف الأعمق للزواج</div>
+      <div class="chapter-title-en">The Deeper Purpose of Marriage</div>
+    </div>
+  </div>
+
+  <span class="section-label">تغيير المنظور</span>
+  <p>توماس يبدأ بسؤال يغير كل شي: "وش لو الله صمم الزواج عشان يخلينا أقدس مو عشان يخلينا أسعد؟" هذا السؤال يقلب كل التوقعات اللي عندنا عن الزواج. أغلبنا دخلنا الزواج ونحن نتوقع إنه بيكون مصدر سعادتنا — وبعدين نتفاجأ لما نكتشف إنه صعب.</p>
+  <p>بس توماس يقول إن هذي الصعوبة هي بالضبط الهدف. الزواج مثل المدرسة — ما تروح المدرسة عشان تستمتع فقط، تروح عشان تتعلم. وأحياناً التعلم صعب ومتعب بس في النهاية يصنع منك شخص أفضل. نفس الشي في الزواج: كل تحدي تواجهه هو درس يصقل شخصيتك.</p>
+  <p>هذا ما يعني إن السعادة ممنوعة في الزواج — بالعكس! توماس يقول إن لما تتوقف عن ملاحقة السعادة وتركز على النمو، السعادة تجيك كنتيجة طبيعية. يعني لما تتعلم الصبر والتسامح والخدمة، علاقتك تتحسن وتصير أسعد — بس السعادة تجي كهدية مو كهدف.</p>
+
+  <div class="quote-block">
+    <p>وش لو الله صمم الزواج مو عشان يخلينا أسعد بل عشان يخلينا أقدس؟ — غاري توماس</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>غير توقعاتك من الزواج: بدل ما تدور السعادة، دور النمو. لما تشوف كل صعوبة كفرصة تتعلم وتكبر، تتحول من شخص محبط لشخص ممتن — وهنا تلاقي السعادة اللي كنت تدور عليها.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>توماس يقارن بين "ثقافة الاستهلاك" و"ثقافة العبادة" في الزواج. ثقافة الاستهلاك تسأل: وش أنا آخذ من هذي العلاقة؟ وثقافة العبادة تسأل: وش أنا أقدم في هذي العلاقة؟ لما ننتقل من الأولى للثانية، الزواج يتحول من عبء لعبادة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">التحول من خلال الشريك</div>
+      <div class="chapter-title-en">Transformation Through Your Spouse</div>
+    </div>
+  </div>
+
+  <span class="section-label">مرآة النمو</span>
+  <p>توماس يقول إن شريكك هو أفضل مرآة ممكن تشوف فيها عيوبك. ليش؟ عشان ما فيه أحد يعرفك مثل شريكك — يشوفك في أحسن أوقاتك وأسوأ أوقاتك، يشوف صبرك وعصبيتك، كرمك وأنانيتك. وهذي المرآة ممكن تكون مؤلمة بس هي هدية.</p>
+  <p>كثير من الناس لما يشوفون عيوبهم في مرآة الزواج يلومون المرآة بدل ما يصلحون العيب. يعني بدل ما يقولون "أنا فعلاً أحتاج أتعلم الصبر"، يقولون "شريكي هو اللي يعصبني". بس الحقيقة إن شريكك ما يخلق فيك عيوب جديدة — هو بس يكشف عيوب كانت موجودة بس ما كنت تشوفها.</p>
+  <p>النقطة الحلوة هنا إن نفس الشخص اللي يكشف عيوبك هو نفس الشخص اللي يقدر يساعدك تتغلب عليها. لما شريكك يحبك رغم عيوبك ويصبر عليك وأنت تحاول تتغير، هذا الحب يديك قوة ما تلاقيها في أي مكان ثاني. الزواج يصير مثل المختبر — تجرب وتخطئ وتتعلم في بيئة آمنة.</p>
+
+  <div class="quote-block">
+    <p>الزواج ما يخلق مشاكل جديدة — هو بس يكشف اللي كان مختبئ جواك طول الوقت — غاري توماس</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>لما شريكك يضايقك أو يكشف عيب فيك، لا تلوم الشريك. اشكره في قلبك عشان كشف لك شي تحتاج تشتغل عليه. الزواج مرآة — والمرآة ما تكذب.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">تعلّم الاحترام</div>
+      <div class="chapter-title-en">Learning Respect</div>
+    </div>
+  </div>
+
+  <span class="section-label">ركيزة العلاقة</span>
+  <p>توماس يقول إن الاحترام مو شي طبيعي — الاحترام شي نتعلمه ونبنيه. في بداية العلاقة الاحترام يكون سهل عشان كل شي جديد وحلو. بس بعد سنوات من الزواج، لما تعرف كل عيوب شريكك وكل نقاط ضعفه، الاحترام يصير تحدي حقيقي — ومن هنا تبدأ قيمته الحقيقية.</p>
+  <p>الاحترام في الزواج يعني إنك تشوف شريكك كإنسان كامل — بعيوبه ومميزاته — وتقدره رغم كل شي. ما يعني إنك توافق على كل شي يسويه، بس يعني إنك تتعامل معاه بكرامة حتى لما تختلفون. توماس يقول إن طريقة كلامك مع شريكك — خاصة في لحظات الخلاف — تكشف مستوى احترامك الحقيقي.</p>
+  <p>الاحترام يتبنى في الأفعال الصغيرة: الطريقة اللي تتكلم فيها عن شريكك قدام الناس، الطريقة اللي تسمعه فيها لما يتكلم، الطريقة اللي تتعامل فيها مع اختلافاتكم. كل هذي الأفعال إما تبني احترام أو تهدمه. والعلاقة اللي ما فيها احترام متبادل مستحيل تزدهر حتى لو فيها حب كبير.</p>
+
+  <div class="quote-block">
+    <p>الاحترام يُختبر في لحظات الخلاف — أي شخص يحترم شريكه في الأوقات الحلوة، بس الأوقات الصعبة هي اللي تكشف الاحترام الحقيقي — غاري توماس</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>راقب طريقة كلامك مع شريكك — خاصة لما تكون متعصب أو متضايق. الاحترام الحقيقي يظهر في أصعب اللحظات مو في أسهلها. تعلم تحترم شريكك حتى لما تختلفون — هذا أساس أي علاقة ناجحة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>توماس يقول إن احترام شريكك هو في الحقيقة شكل من أشكال العبادة — عشان لما تحترم إنسان خلقه الله، أنت تحترم خلق الله. هذا المنظور يعطي الاحترام بُعد أعمق بكثير من مجرد أدب اجتماعي — يحوله لعمل روحي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">التسامح والغفران</div>
+      <div class="chapter-title-en">Forgiveness in Marriage</div>
+    </div>
+  </div>
+
+  <span class="section-label">قوة المغفرة</span>
+  <p>توماس يقول إن ما فيه زواج ناجح بدون تسامح. ليش؟ عشان كل إنسان بيغلط وبيجرح شريكه — مو عشان سيء بل عشان بشر. الفرق بين الزواج الناجح والزواج الفاشل مو إن الزوجين ما يغلطون — الفرق إنهم يتسامحون لما يغلطون.</p>
+  <p>التسامح مو إنك تنسى اللي صار أو تتظاهر إنه ما ألمك. التسامح هو قرار واعي إنك ما تخلي الألم يتحكم في علاقتك. يعني أنت تقول "نعم، تألمت. بس أختار إني ما أحمل هذا الألم وأخليه يسمم علاقتي." هذا قرار شجاع وصعب بس هو أقوى شي ممكن تسويه لعلاقتك.</p>
+  <p>توماس يقول إن الحقد في الزواج مثل السم — تشربه أنت وتنتظر الطرف الثاني يموت. لما تحمل حقد على شريكك، أنت تتأذى أكثر منه. التسامح مو هدية لشريكك — التسامح هدية لنفسك أول. يحررك من ثقل الألم ويخليك تمشي لقدام بدل ما تفضل عالق في الماضي.</p>
+
+  <div class="quote-block">
+    <p>التسامح مو حدث يصير مرة وحدة — هو عادة تتمرن عليها كل يوم في الزواج — غاري توماس</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>التسامح قرار يومي في الزواج مو حدث كبير يصير مرة. كل يوم فيه لحظات تحتاج تختار فيها إنك تتسامح — على شي صغير أو كبير. تذكر إن التسامح يحررك أنت أول قبل ما يحرر شريكك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الخدمة والتضحية</div>
+      <div class="chapter-title-en">Service and Sacrifice</div>
+    </div>
+  </div>
+
+  <span class="section-label">الحب الخادم</span>
+  <p>توماس يقول إن الحب الحقيقي في الزواج يظهر في الخدمة مو في المشاعر. المشاعر تجي وتروح — يوم تحس بالحب ويوم ما تحس بشي. بس الخدمة هي اللي تبقى. لما تخدم شريكك في الأوقات اللي ما تحس فيها بالحب، أنت تختار الحب بدل ما تنتظره.</p>
+  <p>الخدمة في الزواج تعني إنك تحط احتياجات شريكك قبل احتياجاتك أحياناً. مو دايماً — لأن لازم تهتم بنفسك بعد — بس أحياناً تسوي أشياء ما تبي تسويها عشان شريكك يحتاجها. تغسل الصحون مو عشان تحب تغسل الصحون — عشان تحب شريكك وتبي تخفف عنه.</p>
+  <p>توماس يحذر من "الحب الأناني المتنكر بالخدمة" — يعني لما تخدم شريكك بس عشان تحس بالتفوق أو عشان تحسسه بالذنب. الخدمة الحقيقية ما تنتظر مقابل وما تحسب النقاط. تسوي الشي الصح عشان هو الشي الصح — وهذا أصعب شي في الزواج وأجمله.</p>
+
+  <div class="quote-block">
+    <p>الحب الحقيقي ما يسأل "وش أنا آخذ من هذي العلاقة؟" — يسأل "وش أقدر أقدم لها؟" — غاري توماس</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>اخدم شريكك بدون ما تنتظر مقابل وبدون ما تحسب النقاط. سوي شي واحد كل يوم يبين لشريكك إنك تحبه من خلال أفعالك مو كلماتك بس. الخدمة هي لغة الحب الأقوى.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>توماس يقول إن الخدمة في الزواج تغير الخادم قبل ما تغير المخدوم. يعني لما تتعلم تضحي وتقدم شريكك على نفسك، أنت تتحول لإنسان أقل أنانية وأكثر نضج. الزواج يعلمك الخدمة، والخدمة تصنع منك إنسان أفضل — وهذا بالضبط الهدف الأعمق للزواج.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">المثابرة والصبر</div>
+      <div class="chapter-title-en">Perseverance and Patience</div>
+    </div>
+  </div>
+
+  <span class="section-label">الاستمرارية</span>
+  <p>توماس يقول إن من أعظم الدروس اللي يعلمك إياها الزواج هي المثابرة. في ثقافتنا اليوم، لما شي يصعب نتركه ونروح لشي ثاني. بس الزواج يعلمك إنك تصبر وتثابر حتى لما الأمور تكون صعبة — وهذا الدرس ينفعك في كل جانب من جوانب حياتك.</p>
+  <p>الصبر في الزواج مو إنك تتحمل بسكوت وأنت تموت من جوا — هذا كبت مو صبر. الصبر الحقيقي هو إنك تعترف إن الموقف صعب وتحس بالألم بس تختار إنك تستمر في العمل على العلاقة. يعني أنت تقول "نعم هذا صعب. بس أنا ما أستسلم. أنا بأستمر أحاول."</p>
+  <p>توماس يشارك قصص أزواج مروا بفترات صعبة جداً — فترات كان الطلاق أسهل خيار — بس اختاروا إنهم يصبرون ويثابرون. وبعد سنوات، هذول الأزواج يقولون إن أسعد فترات حياتهم جت بعد أصعب فتراتهم. يعني الجمال جا بعد الألم — وهذا ما كان ممكن يصير لو استسلموا.</p>
+
+  <div class="quote-block">
+    <p>أجمل ما في الزواج الطويل مو غياب المشاكل — بل الانتصارات اللي حققتوها مع بعض على هذي المشاكل — غاري توماس</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>لما تمر بفترة صعبة في زواجك، تذكر إن هذي الفترة ما بتدوم وإن اللي يجي بعدها ممكن يكون أجمل شي عشته. الاستسلام سهل بس المثابرة هي اللي تصنع القصص الحلوة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الحب كقرار</div>
+      <div class="chapter-title-en">Love as a Decision</div>
+    </div>
+  </div>
+
+  <span class="section-label">الحب الحقيقي</span>
+  <p>في الفصل الأخير، توماس يوصل لأهم فكرة في الكتاب كله: الحب مو شعور — الحب قرار. المشاعر الرومانسية اللي تحسها في البداية حلوة بس ما تدوم. اللي يدوم هو القرار اليومي إنك تحب شريكك — في أيامه الحلوة وأيامه الصعبة، لما يكون في أحسن حالاته ولما يكون في أسوأ حالاته.</p>
+  <p>توماس يفرق بين الحب "كشعور" والحب "كفعل". الحب كشعور ما تتحكم فيه — يجي ويروح لحاله. بس الحب كفعل أنت تتحكم فيه — تقرر إنك تكون لطيف، تقرر إنك تسامح، تقرر إنك تخدم، تقرر إنك تصبر. هذي القرارات اليومية هي الحب الحقيقي.</p>
+  <p>الشي الجميل إن لما تختار إنك تحب بأفعالك حتى في الأوقات اللي المشاعر ما تكون موجودة، المشاعر ترجع. يعني الأفعال تصنع المشاعر مو العكس. لما تعامل شريكك بحب حتى لما ما تحس بالحب، قلبك يبدأ يحس من جديد. هذا سر الزواج الطويل: إنك تختار الحب كل يوم من جديد.</p>
+
+  <div class="quote-block">
+    <p>الحب الحقيقي مو إنك تلاقي الشخص المثالي — الحب الحقيقي إنك تتعلم تحب شخص غير مثالي بطريقة مثالية — غاري توماس</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4CC; الدرس الرئيسي</div>
+    <p>لا تنتظر المشاعر عشان تحب — اختار الحب بأفعالك والمشاعر بتتبع. الحب في الزواج الناضج هو قرار يومي: كل صباح تقرر إنك تحب هذا الشخص بعيوبه ومميزاته وتستثمر في العلاقة بكل ما عندك.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; نظرة أعمق</div>
+    <p>توماس يقول إن الزواج الناضج فيه نوع من الحب ما يعرفه إلا اللي عاشه — حب يجي بعد سنوات من التضحية والتسامح والصبر. هذا الحب أعمق بكثير من الحب الرومانسي في البداية عشان مبني على اختيارات حقيقية مو على مشاعر عابرة. هذا هو الحب اللي يستاهل كل التعب.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06; الرجوع للفهرس</a></div>
+</article>
+
+<!-- Action Plan -->
+<section class="action-plan">
+  <h2>&#x1F3AF; خطة العمل</h2>
+  <div class="action-item">
+    <div class="action-num">1</div>
+    <div class="action-text">
+      <h4>غير سؤالك الأساسي</h4>
+      <p>بدل ما تسأل "هل أنا سعيد في زواجي؟" ابدأ اسأل "هل أنا أنمو كإنسان من خلال زواجي؟" هذا التحول في التفكير يغير كل شي.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">2</div>
+    <div class="action-text">
+      <h4>اكتب العيوب اللي كشفها زواجك</h4>
+      <p>بصراحة مع نفسك، اكتب العيوب اللي اكتشفتها عن نفسك من خلال الزواج. بدل ما تلوم شريكك عليها، اشكره في قلبك عشان ساعدك تشوفها وابدأ اشتغل عليها.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">3</div>
+    <div class="action-text">
+      <h4>تمرن على التسامح اليومي</h4>
+      <p>كل ليلة قبل ما ترقد، سامح شريكك على أي شي ضايقك في اليوم. لا تحمل شي للغد. خلّ قلبك نظيف كل يوم.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">4</div>
+    <div class="action-text">
+      <h4>سوي فعل خدمة يومي</h4>
+      <p>كل يوم سوي شي واحد على الأقل لشريكك بدون ما يطلب — ولا تنتظر شكر. اغسل صحن، رتب شي، جهز قهوة. أفعال صغيرة بحب كبير.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">5</div>
+    <div class="action-text">
+      <h4>اختار الحب كل صباح</h4>
+      <p>لما تصحى، خذ لحظة وقل في نفسك: "اليوم أختار إني أحب شريكي بأفعالي." هذا القرار الواعي يغير يومك كله.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-num">6</div>
+    <div class="action-text">
+      <h4>شارك شريكك رؤيتك الروحية</h4>
+      <p>اقعدوا مع بعض وتكلموا عن قيمكم المشتركة وهدفكم من الزواج. وش تبون تحققون كزوجين؟ وش الإرث اللي تبون تتركونه؟ هذا الحوار يعطي زواجكم معنى أعمق.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>الزواج المقدس — غاري توماس</h3>
+  <p>الزواج مو مصدر سعادتك — هو أعظم أداة لبناء شخصيتك وتقربك من الله</p>
+  <p>القداسة قبل السعادة — والسعادة تجي كهدية</p>
+  <div class="disclaimer">هذا ملخص تعليمي للكتاب وليس بديلاً عن قراءة الكتاب كاملاً. جميع الحقوق محفوظة للمؤلف.</div>
+</footer>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الجبل هو أنت - ملخص شامل | بريانا ويست</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #00b894; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #00d9a7; }
+  .hero { background: linear-gradient(135deg, #003d2e 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #00b894; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(0, 184, 148, 0.08) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(0, 61, 46, 0.15) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #00b894; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(0, 184, 148, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(0, 184, 148, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #2d1b1b, #1a1a2e); border: 2px solid #c0392b; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '\26A1'; position: absolute; right: 0; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #003d2e; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #00b894; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(0, 184, 148, 0.1); color: #00b894; transform: translateX(-4px); }
+  .toc-num { background: #00b894; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #003d2e; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #00b894; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #003d2e; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; position: relative; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #00b894; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 184, 148, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #00b894, #008c6e); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #00b894; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(0, 184, 148, 0.12); color: #00b894; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(0, 184, 148, 0.06); border-right: 4px solid #00b894; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(0, 184, 148, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(0, 61, 46, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(0, 184, 148, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #00b894; font-weight: 700; font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(0, 184, 148, 0.08); border: 1px solid rgba(0, 184, 148, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #d0b0c0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .action-plan { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 2px solid #00b894; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .action-plan h2 { font-size: 1.6rem; color: #00b894; margin-bottom: 25px; font-weight: 800; text-align: center; }
+  .action-plan ol { list-style: none; counter-reset: action-counter; margin: 0; padding: 0; }
+  .action-plan ol li { counter-increment: action-counter; padding: 14px 20px 14px 14px; position: relative; padding-right: 50px; color: #c0c0d0; font-size: 1.02rem; line-height: 1.8; margin-bottom: 8px; background: rgba(0, 184, 148, 0.04); border-radius: 10px; border: 1px solid rgba(0, 184, 148, 0.1); }
+  .action-plan ol li::before { content: counter(action-counter); position: absolute; right: 12px; top: 14px; background: #00b894; color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(0, 184, 148, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #00b894; }
+  .footer { background: linear-gradient(145deg, #003d2e, #1a1a2e); border-top: 3px solid #00b894; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(0, 184, 148, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero .subtitle { font-size: 1.1rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section, .action-plan { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; } .chapter-title-ar { font-size: 1.3rem; } .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; } .footer { padding: 30px 16px; } }
+  @media (max-width: 480px) { html { font-size: 14px; } .hero { padding: 50px 16px 40px; } .hero h1 { font-size: 1.7rem; } }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#x1F3D4;&#xFE0F;</span>
+    <h1>الجبل هو أنت</h1>
+    <div class="subtitle">The Mountain Is You</div>
+    <div class="author">بريانا ويست &mdash; Brianna Wiest</div>
+    <div class="meta-info">
+      <span>&#x1F4D6; تطوير الذات</span>
+      <span>&#x1F4D1; 7 فصول</span>
+      <span>&#x23F1;&#xFE0F; 25 دقيقة قراءة</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>&#x1F525; ليش هذا الكتاب مهم؟</h2>
+  <p>كثير مننا يحس إنه يبي يتغير بس في شي يشدّه لورا. يبدأ مشاريع ويوقفها، يحط أهداف ويتركها، يعرف الصح بس يسوي الغلط. هذا الكتاب يكشف لك السر اللي ما أحد يقوله لك: إنت اللي تخرّب على نفسك، والجبل اللي قدامك ما هو إلا انعكاس لمخاوفك الداخلية.</p>
+  <ul>
+    <li>ليش تلاقي نفسك تكرر نفس الأخطاء مع إنك تعرف إنها غلط؟</li>
+    <li>وش السبب إنك تخاف من النجاح أكثر من الفشل أحياناً؟</li>
+    <li>كيف المشاعر اللي تكبتها تتحكم في قراراتك بدون ما تدري؟</li>
+    <li>ليش منطقة الراحة تحسسك بالأمان بس في الحقيقة هي سجنك؟</li>
+    <li>كيف تحوّل الألم والمعاناة لوقود يدفعك للتغيير الحقيقي؟</li>
+  </ul>
+</section>
+
+<!-- Intro Section -->
+<section class="intro-section">
+  <h2>&#x1F4D6; مقدمة الكتاب</h2>
+  <p>بريانا ويست تقول لك بصراحة: الجبل اللي تحس إنه يوقفك عن حياتك المثالية ما هو شي خارجي. هو أنت. هو مجموعة المخاوف والعادات والمعتقدات اللي تراكمت عندك من سنين وصارت جزء من هويتك. بس الخبر الحلو إنك لو أنت الجبل، يعني أنت بعد تقدر تتسلّقه.</p>
+  <p>الكتاب هذا ما يعطيك كلام حلو وتحفيز فاضي. يدخل في العمق ويشرح لك ليش التخريب الذاتي يصير، وش جذوره النفسية، وكيف تفكك الأنماط السلبية اللي تتحكم في حياتك بدون ما تحس. كل فصل يبني على اللي قبله عشان يوصلك لمرحلة إنك تقدر تواجه نفسك بصدق وتبدأ التحوّل الحقيقي.</p>
+  <p>اللي يميّز هذا الكتاب إنه يجمع بين علم النفس والفلسفة العملية بأسلوب يوصل لأي شخص. ما تحتاج تكون متخصص عشان تستفيد، تحتاج بس تكون صادق مع نفسك وعندك استعداد تشوف الأشياء اللي كنت تتجنبها.</p>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc" id="toc">
+  <h2>&#x1F4D1; فهرس الملخص</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>التخريب الذاتي</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>جذور المقاومة الداخلية</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>المشاعر المكبوتة</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>بناء الذات الجديدة</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>التحول من خلال الألم</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>الذكاء العاطفي</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>تسلّق جبلك</a>
+  </div>
+</nav>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">التخريب الذاتي</div>
+      <div class="chapter-title-en">Self-Sabotage</div>
+    </div>
+  </div>
+
+  <span class="section-label">المفهوم الأساسي</span>
+  <p>التخريب الذاتي هو لما تسوي أشياء ضد مصلحتك وأنت تدري أو ما تدري. مو لأنك غبي أو ضعيف، بس لأن عقلك الباطن يحاول يحميك من شي يخوّفه. يمكن يخوّفه النجاح لأن النجاح يعني مسؤولية جديدة، أو يخوّفه التغيير لأن المجهول مرعب حتى لو الوضع الحالي سيء.</p>
+  <p>بريانا تقول إن أغلب الناس تفكر إن المشكلة في قلة الإرادة أو الحماس. بس الحقيقة إن المشكلة أعمق بكثير. التخريب الذاتي هو صراع بين شخصيتين جواك: الشخصية اللي تبي تتطور وتوصل لأحلامها، والشخصية اللي تبي تبقى في مكانها لأن المكان المعروف أأمن من المجهول. وكل ما حاولت تتقدم، الشخصية الثانية تسحبك لورا.</p>
+  <p>الأمثلة كثيرة: الشخص اللي يبدأ دايت ويوقفه بعد أسبوع، اللي يبدأ مشروع ويتركه قبل ما يشوف نتائج، اللي يدخل علاقة حلوة ويخرّبها بتصرفاته. كلها أشكال للتخريب الذاتي. مو لأن الشخص ما يبي الشي الحلو، بس لأن جزء منه يحس إنه ما يستاهله أو ما يقدر يتحمل مسؤوليته.</p>
+
+  <div class="quote-block">
+    <p>التخريب الذاتي مو دليل إنك ضعيف، هو دليل إن عندك صراع داخلي ما حلّيته. عقلك يحاول يحميك من شي، بس بطريقة غلط.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>أول خطوة عشان توقف التخريب الذاتي هي إنك تعترف إنه موجود. لا تلوم الظروف ولا الناس. شف وين أنت اللي تخرّب على نفسك، واسأل نفسك: وش الشي اللي أخاف منه لو نجحت؟ الجواب هذا هو المفتاح.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>بريانا تشير إلى إن التخريب الذاتي غالباً يكون أقوى لما تكون قريب من تحقيق هدفك. يعني كل ما اقتربت من النجاح، كل ما زاد الخوف الداخلي. هذا يفسر ليش ناس كثير توقف قبل خط النهاية بشوي. الحل مو إنك تتجاهل الخوف، بس إنك تفهمه وتمشي رغماً عنه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">جذور المقاومة الداخلية</div>
+      <div class="chapter-title-en">Roots of Internal Resistance</div>
+    </div>
+  </div>
+
+  <span class="section-label">الأصول النفسية</span>
+  <p>المقاومة الداخلية ما جت من فراغ. لها جذور عميقة ترجع لطفولتك وتجاربك الأولى. لما كنت صغير وسمعت كلام مثل "ما تقدر" أو "وش فيك غبي" أو حتى لو ما قالوا لك شي بس تجاهلوك، عقلك بنى معتقدات عن نفسك. هالمعتقدات صارت الأساس اللي تبني عليه كل قراراتك اليوم.</p>
+  <p>بريانا تشرح إن المقاومة الداخلية هي نظام حماية بناه عقلك عشان يحميك من الألم. لو تعرضت لرفض كبير وأنت صغير، عقلك يقول "لا تحاول عشان ما تنرفض مرة ثانية". لو تعرضت لفشل محرج، عقلك يقول "ابقَ في مكانك عشان ما تنفشل مرة ثانية". المشكلة إن هالنظام اللي كان يحميك صار يسجنك.</p>
+  <p>الشي اللي يزيد الموضوع تعقيد إن هالمعتقدات تشتغل تحت الوعي. يعني ما تقدر تشوفها بسهولة. تحس بس إنك "ما تبي" أو "ما لك خلق" أو "الوقت مو مناسب"، بس في الحقيقة هذي كلها أعذار يسوّيها عقلك عشان يبعدك عن الشي اللي يخوّفه. عشان كذا لازم تحفر عميق وتسأل نفسك: وش المعتقد اللي ورا هالسلوك؟</p>
+
+  <div class="quote-block">
+    <p>ما تقاوم التغيير لأنك كسلان. تقاومه لأن جزء منك يعتقد إنك ما تستاهل الحياة اللي تحلم فيها، أو إنك ما تقدر تتحمل ثمنها.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>اجلس مع نفسك واكتب كل المعتقدات اللي عندك عن نفسك. كل فكرة سلبية تتكرر في راسك. بعدين اسأل نفسك: متى أول مرة حسيت بهالشي؟ مين قاله لي؟ غالباً بتلاقي إن الجذر يرجع لتجربة قديمة. لما تشوف الجذر، تقدر تقصّه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">المشاعر المكبوتة</div>
+      <div class="chapter-title-en">Suppressed Emotions</div>
+    </div>
+  </div>
+
+  <span class="section-label">التعامل مع المشاعر</span>
+  <p>من أكبر أسباب التخريب الذاتي هي المشاعر اللي نكبتها ونرفض نتعامل معاها. بريانا تقول إن المشاعر ما تختفي لما تتجاهلها، هي تتراكم وتتحول لسلوكيات سلبية. الغضب اللي ما عبّرت عنه يتحول لسخرية وعدوانية. الحزن اللي كبتّه يتحول لخمول واكتئاب. الخوف اللي تجاهلته يتحول لقلق مزمن يتحكم في كل قرار تاخذه.</p>
+  <p>المجتمع علّمنا إن إظهار المشاعر ضعف. خصوصاً عندنا في ثقافتنا، يقولون لك "لا تبكي"، "كن قوي"، "لا تكبّر الموضوع". بس هالكلام مع إنه يجي بنيّة حلوة، يسوّي ضرر كبير على المدى الطويل. لأنك تتعلم إنك لازم تخبّي مشاعرك الحقيقية وتلبس قناع. ومع الوقت تنسى حتى وش مشاعرك الحقيقية.</p>
+  <p>بريانا تقترح إنك بدل ما تهرب من المشاعر الصعبة، تجلس معاها. تحس فيها كاملة بدون ما تحكم عليها. لأن المشاعر مثل الموجة: لو سبتها تمر، تروح. بس لو حاولت توقفها، تكبر وتكبر لين تغرقك. الشجاعة الحقيقية مو إنك ما تحس، الشجاعة إنك تحس وتكمل.</p>
+
+  <div class="quote-block">
+    <p>المشاعر اللي ترفض تعيشها ما تروح. تستنّاك في أماكن ثانية: في جسمك كمرض، في علاقاتك كمشاكل، في عاداتك كإدمان.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>خصص وقت يومي عشان تتواصل مع مشاعرك. اكتب في دفتر وش تحس بدون تعديل أو تجميل. سمّي المشعر باسمه: "أنا خايف"، "أنا حزين"، "أنا غضبان". مجرد التسمية تعطيك قوة على المشعر بدل ما هو اللي يتحكم فيك.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>بريانا تربط بين كبت المشاعر والأمراض الجسدية. تقول إن الجسم يخزّن المشاعر اللي ما تعالجها. القلق المزمن يتحول لمشاكل في المعدة، الغضب المكبوت يتحول لصداع وتوتر في العضلات. لما تبدأ تتعامل مع مشاعرك بصدق، غالباً بتلاحظ تحسّن في صحتك الجسدية بعد.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">بناء الذات الجديدة</div>
+      <div class="chapter-title-en">Building Your New Self</div>
+    </div>
+  </div>
+
+  <span class="section-label">التحوّل الشخصي</span>
+  <p>بريانا تقول إن التغيير الحقيقي ما يجي من إنك تعدّل سلوك هنا وسلوك هناك. التغيير الحقيقي يجي لما تغيّر هويتك كاملة. يعني مو بس توقف تدخين، بس تصير شخص غير مدخن. الفرق كبير. لأن لما تغيّر السلوك بس، ممكن ترجع. بس لما تغيّر الهوية، السلوك يتغير تلقائياً.</p>
+  <p>بناء الذات الجديدة يبدأ بإنك تقرر وش تبي تكون. مو وش تبي تسوي أو وش تبي تحقق، بس وش نوع الشخص اللي تبي تكونه. بعدين تبدأ تتصرف كأنك هذا الشخص حتى لو ما حسيت بالراحة. الراحة تجي بعد ما تتعوّد، مو قبل. هذا اللي أغلب الناس ما يفهمونه: يستنون يحسون بالراحة عشان يبدأون، بس الراحة ما تجي إلا بعد ما تبدأ.</p>
+  <p>الموضوع مو سهل لأنك بتواجه مقاومة من نفسك ومن الناس حولك. الناس تعوّدت على شخصيتك القديمة وبتحاول ترجّعك لها، مو لأنهم سيئين بس لأن تغيّرك يخوّفهم. وأنت بنفسك بتحس بعدم ارتياح لأن الجديد غريب. بس هذا طبيعي وجزء من عملية النمو.</p>
+
+  <div class="quote-block">
+    <p>ما تحتاج تلاقي نفسك. تحتاج تبنيها. الشخص اللي تبي تكونه ما هو مخبّى في مكان ما، أنت اللي بتصنعه من قراراتك اليومية.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>اكتب وصف تفصيلي للشخص اللي تبي تكونه. وش يسوي في يومه؟ كيف يتعامل مع المشاكل؟ وش عاداته؟ بعدين ابدأ كل يوم اسأل نفسك: هالقرار اللي بآخذه، هل هو قرار الشخص اللي أبي أكونه؟ لو لا، غيّره.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">التحول من خلال الألم</div>
+      <div class="chapter-title-en">Transformation Through Pain</div>
+    </div>
+  </div>
+
+  <span class="section-label">الألم كمحفّز</span>
+  <p>بريانا تقدم فكرة جريئة: الألم مو عدوّك، هو معلّمك. كل تجربة مؤلمة مرّت عليك فيها رسالة ودرس. المشكلة مو في الألم نفسه، المشكلة إننا نهرب منه بدل ما نفهمه. لما تفقد وظيفتك، الألم يقول لك شي. لما تنتهي علاقة مهمة، الألم يقول لك شي. السؤال: هل أنت تسمع ولا تهرب؟</p>
+  <p>أغلب التحوّلات الكبيرة في حياة الناس جت بعد أزمة أو ألم شديد. ليش؟ لأن الألم يكسر الأنماط القديمة. يوقفك غصب ويخلّيك تعيد تقييم كل شي. اللي كنت تعتبره مهم فجأة يصير ما له قيمة، واللي كنت تتجاهله يصير أهم شي. الألم يعيد ترتيب أولوياتك بطريقة ما شي ثاني يقدر يسويها.</p>
+  <p>بس فيه فرق كبير بين إنك تتعلم من الألم وبين إنك تعلق فيه. بعض الناس يصير الألم هويتهم. يعرّفون أنفسهم بمعاناتهم ويرفضون يتجاوزونها. بريانا تقول إن الهدف مو إنك تنسى الألم، بس إنك تاخذ الدرس وتكمل. الألم زي النار: لو تتحكم فيه يدفّيك، ولو يتحكم فيك يحرقك.</p>
+
+  <div class="quote-block">
+    <p>ما تتحوّل رغم الألم، تتحوّل بسببه. كل شي صعب مريت فيه كان يبنيك بطريقة ما كنت تشوفها وقتها.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>لما تمر بوقت صعب، بدل ما تسأل "ليش هالشي يصير لي؟"، اسأل "وش هالشي يبي يعلّمني؟". هالسؤال البسيط يحوّلك من ضحية لطالب. والفرق بين الاثنين هو الفرق بين شخص يعلق في مكانه وشخص ينمو.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>بريانا تتكلم عن مفهوم "النمو ما بعد الصدمة" (Post-Traumatic Growth). تقول إن الأبحاث أثبتت إن كثير من الناس اللي يمرون بتجارب صعبة جداً يطلعون منها أقوى وأحكم وأكثر تعاطفاً. مو لأن المعاناة حلوة، بس لأنها تجبرك تكتشف قوة فيك ما كنت تعرف إنها موجودة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الذكاء العاطفي</div>
+      <div class="chapter-title-en">Emotional Intelligence</div>
+    </div>
+  </div>
+
+  <span class="section-label">فهم المشاعر والتعامل معها</span>
+  <p>الذكاء العاطفي مو إنك ما تحس أو إنك تتحكم في مشاعرك وتخبّيها. الذكاء العاطفي هو إنك تفهم مشاعرك، تعرف من وين جت، وتختار كيف تتصرف بناءً عليها بدل ما تنجرف وراها. بريانا تقول إن أغلب مشاكلنا في الحياة سببها إننا نتصرف بردود أفعال تلقائية بدل ما نتصرف بوعي.</p>
+  <p>تخيّل إنك في اجتماع وأحد انتقدك قدام الكل. ردة الفعل التلقائية ممكن تكون إنك تدافع عن نفسك بعصبية أو تسكت وتتألم من جوا. بس الشخص الذكي عاطفياً يلاحظ المشعر (غضب أو إحراج)، يفهم ليش حس فيه (ممكن يذكّره بموقف قديم)، ويختار ردة فعل مناسبة بدل ما ينجرف. هذا الفرق بين ردة الفعل والاستجابة الواعية.</p>
+  <p>بريانا تأكد إن الذكاء العاطفي مهارة تتعلمها مو موهبة تولد فيها. مثل أي مهارة، تحتاج تمارين وصبر ووقت. بس لما تطوّرها، حياتك كلها تتغير: علاقاتك تتحسن، قراراتك تصير أحكم، وتوقف تخرّب على نفسك لأنك صرت تفهم نفسك أحسن.</p>
+
+  <div class="quote-block">
+    <p>الناس الأقوياء مو اللي ما يحسون. الناس الأقوياء هم اللي يحسون بكل شي بس يختارون كيف يتصرفون بوعي بدل ما ينجرفون.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>مارس تمرين "الفجوة المقدسة": لما تحس بمشعر قوي (غضب، خوف، حزن)، لا تتصرف فوراً. خذ ثلاثة أنفاس عميقة واسأل نفسك: وش أنا حاس فيه الحين؟ ليش أحس فيه؟ وش أفضل طريقة أتصرف فيها؟ هالثواني القليلة تفرق بين قرار تندم عليه وقرار تفخر فيه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">تسلّق جبلك</div>
+      <div class="chapter-title-en">Climbing Your Mountain</div>
+    </div>
+  </div>
+
+  <span class="section-label">الرحلة النهائية</span>
+  <p>بعد كل اللي تعلمته في الفصول السابقة، حان وقت الفعل. تسلّق جبلك يعني إنك تواجه كل المخاوف والمعتقدات السلبية والعادات المدمّرة اللي اكتشفتها، وتبدأ تمشي رغماً عنها. مو لأنها اختفت، بس لأنك صرت أقوى منها. بريانا تقول إن الشجاعة مو غياب الخوف، هي القدرة على الحركة مع وجود الخوف.</p>
+  <p>التسلّق ما يصير دفعة وحدة. يصير خطوة بخطوة، يوم بيوم. كل يوم تختار تسوي الشي الصح حتى لو ما تبيه، أنت تتسلّق. كل مرة تواجه مشعر صعب بدل ما تهرب منه، أنت تتسلّق. كل مرة تقول لا للعادة القديمة وتختار العادة الجديدة، أنت تتسلّق. التقدم بطيء بس هو تقدم حقيقي.</p>
+  <p>بريانا تختم الكتاب برسالة جميلة: الجبل اللي قدامك مو عقاب. هو فرصة. كل عقبة فيه هي درس، وكل صعوبة فيه تبنيك. ولما توصل القمة، ما بتلاقي جائزة مادية تستنّاك. بتلاقي نفسك الحقيقية. النسخة اللي كنت دايم تعرف إنها موجودة بس كنت خايف توصل لها. وهذا أعظم إنجاز يمكن تحققه.</p>
+
+  <div class="quote-block">
+    <p>ما تتسلّق الجبل عشان يشوفك العالم. تتسلّقه عشان تشوف العالم. ولما توصل القمة، أحلى شي تكتشفه هو نفسك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>ابدأ اليوم. مو بكرة، مو الأسبوع الجاي، اليوم. اختار شي واحد بسيط تقدر تسويه الحين يقرّبك من الشخص اللي تبي تكونه. يمكن تمرين رياضي، يمكن محادثة صعبة، يمكن قرار كنت تأجّله. سوّه الحين وخلّ هذي أول خطوة في تسلّق جبلك.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; رؤية معمّقة</div>
+    <p>بريانا تقول إن أغلب الناس يبحثون عن "اللحظة" اللي كل شي يتغير فيها. بس الحقيقة إن التغيير ما يصير في لحظة وحدة. يصير في آلاف اللحظات الصغيرة اللي ما أحد يشوفها. كل مرة تختار الصعب على السهل، أنت تتغيّر. وبعد فترة، تلتفت وراك وتلاقي إنك صرت شخص ثاني تماماً.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&#x2B06;&#xFE0F; رجوع للفهرس</a></div>
+</article>
+
+<!-- Action Plan -->
+<section class="action-plan">
+  <h2>&#x1F3AF; خطة العمل التطبيقية</h2>
+  <ol>
+    <li><strong>اكتشف أنماط التخريب الذاتي:</strong> خصص ساعة هالأسبوع واكتب كل المرات اللي خرّبت فيها على نفسك. وش السلوك؟ وش كان المشعر قبله؟ وش الموقف اللي حفّزه؟ ابحث عن النمط المتكرر.</li>
+    <li><strong>افحص معتقداتك الجذرية:</strong> اكتب ١٠ أشياء تعتقدها عن نفسك. بعدين اسأل: هل هذي حقيقة ولا بس شي تعلّمته؟ مين قال لي هالشي أول مرة؟ غالباً بتكتشف إن أغلبها مو حقائق.</li>
+    <li><strong>ابدأ يوميات المشاعر:</strong> كل يوم قبل ما تنام، اكتب ٣ مشاعر حسيت فيها خلال اليوم. سمّها باسمها وافهم ليش جت. هذا التمرين يقوّي ذكاءك العاطفي بشكل كبير.</li>
+    <li><strong>ارسم هويتك الجديدة:</strong> اكتب وصف تفصيلي للشخص اللي تبي تكونه بعد سنة. وش عاداته؟ كيف يفكر؟ كيف يتعامل مع المشاكل؟ خلّ هالوصف يكون مرجعك في كل قرار.</li>
+    <li><strong>مارس الفجوة المقدسة:</strong> كل ما جاك مشعر قوي، وقّف ٣٠ ثانية قبل ما تتصرف. تنفّس، افهم المشعر، بعدين اختار ردة فعلك بوعي. سجّل كل مرة نجحت فيها عشان تحفّز نفسك.</li>
+    <li><strong>سوّ خطوة يومية نحو جبلك:</strong> كل يوم الصبح، اختار فعل واحد يقرّبك من النسخة الأفضل منك. ممكن يكون بسيط مثل تمرين ١٥ دقيقة أو قراءة ١٠ صفحات. الاستمرارية أهم من الكمية.</li>
+  </ol>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>&#x1F3D4;&#xFE0F; الجبل هو أنت &mdash; بريانا ويست</h3>
+  <p>الجبل اللي قدامك مو عقبة. هو الطريق. كل خطوة فيه تبنيك وتقرّبك من نفسك الحقيقية.</p>
+  <p>ابدأ رحلة التسلّق اليوم، خطوة بخطوة.</p>
+  <div class="disclaimer">
+    هذا ملخص شامل للكتاب وليس بديلاً عن قراءته كاملاً. نوصي بشدة باقتناء الكتاب الأصلي للاستفادة الكاملة.
+  </div>
+</footer>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>
