@@ -213,6 +213,7 @@
       if (savedZoom) currentZoom = savedZoom;
 
       applyTheme(currentTheme);
+      applyFontToBody();
       await renderLibrary();
       setupBottomNav();
       setupEventListeners();
@@ -252,7 +253,13 @@
   function applyTheme(theme) {
     currentTheme = theme;
     document.documentElement.setAttribute('data-theme', theme);
+    document.body.setAttribute('data-theme', theme);
     DB.setSetting('theme', theme);
+
+    // Update meta theme-color for browser chrome
+    const themeColors = { dark: '#0f0f1a', light: '#f5f5f5', sepia: '#f4ecd8' };
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) metaTheme.setAttribute('content', themeColors[theme] || '#0f0f1a');
 
     // Send to iframe if open
     const frame = document.getElementById('book-frame');
@@ -289,6 +296,16 @@
     const bottomNav = document.getElementById('bottom-nav');
     if (bottomNav) {
       bottomNav.style.display = isReader ? 'none' : '';
+    }
+
+    // Reset library header visibility when switching back to library
+    if (viewId === 'library') {
+      const header = document.querySelector('.library-header');
+      const search = document.querySelector('.search-container');
+      const filters = document.querySelector('.filter-tabs');
+      if (header) header.classList.remove('header-hidden');
+      if (search) search.classList.remove('header-hidden');
+      if (filters) filters.classList.remove('header-hidden');
     }
 
     // Render view content on switch
@@ -394,6 +411,9 @@
       btnFont.addEventListener('click', () => toggleFontPanel());
     }
 
+    // Library scroll direction detection (hide header on scroll down)
+    setupLibraryScrollHide();
+
     // Listen for messages from iframe
     window.addEventListener('message', handleIframeMessage);
 
@@ -407,6 +427,56 @@
         switchView('library');
       }
     });
+  }
+
+  // ==================== LIBRARY SCROLL HIDE ====================
+
+  function setupLibraryScrollHide() {
+    let lastScrollTop = 0;
+    let scrollDirection = '';
+    const libraryView = document.getElementById('view-library');
+    if (!libraryView) return;
+
+    window.addEventListener('scroll', () => {
+      // Only apply on library view
+      if (currentView !== 'library') return;
+
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const delta = scrollTop - lastScrollTop;
+
+      if (Math.abs(delta) > 8) {
+        const newDir = delta > 0 ? 'down' : 'up';
+        if (newDir !== scrollDirection) {
+          scrollDirection = newDir;
+          const header = document.querySelector('.library-header');
+          const search = document.querySelector('.search-container');
+          const filters = document.querySelector('.filter-tabs');
+
+          if (scrollDirection === 'down' && scrollTop > 100) {
+            if (header) header.classList.add('header-hidden');
+            if (search) search.classList.add('header-hidden');
+            if (filters) filters.classList.add('header-hidden');
+          } else {
+            if (header) header.classList.remove('header-hidden');
+            if (search) search.classList.remove('header-hidden');
+            if (filters) filters.classList.remove('header-hidden');
+          }
+        }
+        lastScrollTop = scrollTop;
+      }
+    }, { passive: true });
+  }
+
+  // ==================== FONT APPLICATION ====================
+
+  function applyFontToBody() {
+    // Remove all font classes
+    document.body.classList.remove('font-tajawal', 'font-noto', 'font-amiri');
+
+    // Add the correct one
+    if (currentFontFamily === 'Tajawal') document.body.classList.add('font-tajawal');
+    else if (currentFontFamily === 'Noto Naskh Arabic') document.body.classList.add('font-noto');
+    else if (currentFontFamily === 'Amiri') document.body.classList.add('font-amiri');
   }
 
   // ==================== STREAK BADGE ====================
@@ -878,6 +948,7 @@
         panel.querySelectorAll('.font-btn').forEach((b) => b.classList.remove('active'));
         e.target.classList.add('active');
         DB.setSetting('fontFamily', currentFontFamily);
+        applyFontToBody();
         sendFontToIframe();
       });
     });
@@ -1583,6 +1654,7 @@
         currentFontSize = parseInt(e.target.value);
         settingsEl.querySelector('#settings-font-size-val').textContent = currentFontSize + 'px';
         DB.setSetting('fontSize', currentFontSize);
+        document.body.style.fontSize = currentFontSize + 'px';
       });
     }
 
@@ -1593,6 +1665,7 @@
         settingsEl.querySelectorAll('[data-sfont]').forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
         DB.setSetting('fontFamily', currentFontFamily);
+        applyFontToBody();
       });
     });
 
