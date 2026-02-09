@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>اختبار الأم - ملخص شامل | روب فيتزباتريك</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #d68910; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #f39c12; }
+
+  .hero {
+    background: linear-gradient(135deg, #3d2500 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #f39c12;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(243, 156, 18, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(61, 37, 0, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #f39c12;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(243, 156, 18, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(243, 156, 18, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #d0b0b0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #d0b0b0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '\26A1';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d2500;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #f39c12;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(243, 156, 18, 0.1);
+    color: #f39c12;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #f39c12;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d2500;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #f39c12;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d2500;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #f39c12;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(243, 156, 18, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #f39c12, #d68910);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #f39c12;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(243, 156, 18, 0.12);
+    color: #f39c12;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(243, 156, 18, 0.06);
+    border-right: 4px solid #f39c12;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '\201C';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(243, 156, 18, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(61, 37, 0, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(243, 156, 18, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #f39c12;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(0, 206, 201, 0.08);
+    border: 1px solid rgba(0, 206, 201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #00cec9;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #b0d0d0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(243, 156, 18, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #f39c12;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #3d2500, #1a1a2e);
+    border-top: 3px solid #f39c12;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(243, 156, 18, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#127919;</span>
+    <h1>اختبار الأم</h1>
+    <p class="subtitle">The Mom Test</p>
+    <p class="author">روب فيتزباتريك &mdash; Rob Fitzpatrick</p>
+    <div class="meta-info">
+      <span>6 فصول رئيسية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>كيف تتكلم مع العملاء صح</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>ليش هذا الكتاب مهم؟</h2>
+  <p>
+    كل مؤسس يقول "لازم نتكلم مع العملاء" — بس المشكلة إن أغلبهم يتكلم غلط. يسأل أسئلة تجيب أجوبة حلوة بس مو صادقة. والنتيجة؟ يبني منتج ما أحد يبيه. هذي أبرز المشاكل:
+  </p>
+  <ul>
+    <li>تسأل الناس "وش رأيكم في فكرتي؟" ويقولون "حلوة!" عشان ما يبون يحرجونك</li>
+    <li>تركّز على المستقبل ("هل بتشتري؟") بدل الماضي ("وش سويت فعلاً؟")</li>
+    <li>تتكلم عن فكرتك أكثر من ما تسمع مشاكل العميل</li>
+    <li>ما تعرف الفرق بين المجاملة والالتزام الحقيقي</li>
+    <li>تضيّع شهور تبني شي بناءً على بيانات غلط من محادثات سطحية</li>
+  </ul>
+  <p>
+    روب فيتزباتريك يقدم نظام بسيط ومجرّب عشان تحصل على معلومات حقيقية من العملاء — معلومات تقدر تبني عليها قرارات. اسم الكتاب "اختبار الأم" لأن <strong>الأسئلة الصح حتى أمك ما تقدر تكذب فيها</strong>.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    روب فيتزباتريك مؤسس لعدة شركات ناشئة وعانى بنفسه من مشكلة الحصول على بيانات غلط من العملاء. الكتاب قصير ومباشر — حوالي 130 صفحة بس — بس مليان أفكار عملية تقدر تطبقها فوراً. ما فيه كلام نظري أو فلسفي — كل فصل يعطيك أدوات وأمثلة حقيقية.
+  </p>
+  <p>
+    الكتاب صار من أكثر الكتب المطلوبة في حاضنات الأعمال ومسرّعات الشركات الناشئة حول العالم. السبب بسيط: يحل مشكلة يعاني منها كل مؤسس — كيف تعرف إن فكرتك فعلاً تحل مشكلة حقيقية عند ناس فعلاً مستعدين يدفعون عليها. ما فيه طريقة أسرع وأرخص من المحادثات — بس لازم تعرف كيف تسوّيها صح.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>ليش الناس يكذبون عليك</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>طرح الأسئلة الصحيحة</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>تجنّب البيانات السيئة</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>الدفع نحو الالتزام</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>إيجاد المحادثات</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>تحليل ما تسمعه</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">ليش الناس يكذبون عليك</h2>
+      <span class="chapter-title-en">Why People Lie to You</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    فيتزباتريك يبدأ بحقيقة مزعجة: الناس يكذبون عليك — مو عشان سيئين، بس عشان ما يبون يحرجونك. لو قلت لأمك "عندي فكرة تطبيق يسوي كذا وكذا، وش رأيك؟" بتقول لك "فكرة رائعة يا حبيبي!" حتى لو الفكرة سيئة. ليش؟ عشان تحبك وما تبي تجرح مشاعرك. والمشكلة إن أغلب الناس — مو بس أمك — يسوون نفس الشي.
+  </p>
+  <p>
+    الكذب هذا مو بالضرورة متعمّد — هو ردة فعل اجتماعية طبيعية. لما تسأل شخص "هل بتستخدم هذا المنتج؟" وهو ما يبي يقول لا عشان يحس إنك بتنحرج. فيقول "أكيد!" — بس في الواقع ما بيستخدمه ولا بيدفع عليه. فيتزباتريك يقول إن المشكلة مو في الناس — المشكلة في أسئلتك. لو تسأل أسئلة غلط، بتحصل أجوبة غلط — حتى من أصدق الناس.
+  </p>
+  <p>
+    الحل هو "اختبار الأم": اسأل أسئلة حتى أمك ما تقدر تكذب في إجاباتها. كيف؟ بدل ما تسأل عن المستقبل ("هل بتشتري؟")، اسأل عن الماضي ("آخر مرة واجهت هالمشكلة وش سويت؟"). بدل ما تسأل عن الرأي ("وش رأيك؟")، اسأل عن السلوك ("كم مرة سويت كذا الشهر الماضي؟"). الماضي ما يكذب — الناس ممكن يتخيّلون مستقبل مختلف بس ما يقدرون يغيّرون اللي سووه فعلاً.
+  </p>
+
+  <div class="quote-block">
+    <p>الناس ما يكذبون عشان سيئين — يكذبون عشان أسئلتك تخلّيهم يكذبون. غيّر أسئلتك وبتحصل على الصدق.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>لا تسأل الناس عن آرائهم في فكرتك ولا عن نواياهم المستقبلية. اسأل عن سلوكهم الماضي والمشاكل الحقيقية اللي يواجهونها. الماضي ما يكذب — والسلوك أصدق من الكلام.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>في المحادثة الجاية مع أي عميل محتمل، لا تذكر فكرتك أبداً. بدل كذا اسأل: "وش أكبر مشكلة تواجهك في [المجال]؟ وش سويت عشان تحلها؟ كم دفعت؟ وش اللي ما عجبك في الحلول الموجودة؟" هالأسئلة تعطيك معلومات حقيقية بدون ما تلوّثها بفكرتك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">طرح الأسئلة الصحيحة</h2>
+      <span class="chapter-title-en">Asking Good Questions</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    فيتزباتريك يعطي قواعد واضحة للأسئلة الجيدة. أول قاعدة: تكلّم عن حياتهم مو عن فكرتك. بدل "وش رأيك في تطبيق يسوي كذا؟" اسأل "احكيلي عن آخر مرة حاولت تسوي كذا — كيف كانت التجربة؟". لما تخلّي المحادثة عن حياة العميل ومشاكله، المعلومات اللي تحصل عليها تكون أصدق وأعمق بكثير.
+  </p>
+  <p>
+    ثاني قاعدة: اسأل عن الماضي مو المستقبل. "هل بتدفع على هالمنتج؟" سؤال غلط — لأن أي واحد يقدر يقول "أكيد!" بدون ما يلتزم بشي. السؤال الصح: "آخر مرة واجهت هالمشكلة، كم دفعت عشان تحلها؟" أو "وش الحلول اللي جرّبتها ووش كانت مشاكلها؟" لو الشخص ما عمره دفع أو حاول يحل المشكلة — يعني المشكلة مو كبيرة بما فيه الكفاية.
+  </p>
+  <p>
+    ثالث قاعدة: اسكت واسمع. كثير من المؤسسين يدخلون المحادثة ويتكلمون 80% من الوقت عن فكرتهم ومميزاتها. فيتزباتريك يقول العكس تماماً: أنت لازم تسمع 80% وتتكلم 20%. كل ما تكلّمت أكثر، كل ما لوّثت البيانات أكثر. العميل لما يحس إنك متحمس لفكرتك، بيقولك اللي تبي تسمعه — مو اللي تحتاج تسمعه. اسكت، اسأل سؤال مفتوح، وخلّهم يتكلمون.
+  </p>
+
+  <div class="quote-block">
+    <p>أفضل محادثة مع عميل هي اللي ما تذكر فيها فكرتك أبداً. لما تسمع أكثر مما تتكلم، تتعلم أكثر مما تتخيل.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>تكلّم عن حياة العميل مو عن فكرتك. اسأل عن الماضي مو المستقبل. واسمع أكثر من ما تتكلم. ثلاث قواعد بسيطة تحوّل محادثاتك من جلسة مجاملة لجلسة اكتشاف حقيقية.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">تجنّب البيانات السيئة</h2>
+      <span class="chapter-title-en">Avoiding Bad Data</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    فيتزباتريك يحدد ثلاث أنواع من البيانات السيئة اللي لازم تنتبه لها: المجاملات، الكلام العام، والأفكار المستقبلية. المجاملات هي لما الشخص يقول "فكرة رهيبة!" أو "أكيد بشتري!" — هذي ما تسوى شي. الكلام العام هو لما الشخص يقول "الناس يحتاجون كذا" أو "السوق كبير" — بدون أي تجربة شخصية. والأفكار المستقبلية هي لما يقول "لو تسوون كذا بيكون حلو" — بدون ما يكون جرّب أو دفع.
+  </p>
+  <p>
+    كل هالأنواع من البيانات تخدعك وتخليك تحس إنك على الطريق الصح وأنت مو كذا. فيتزباتريك يقول إن البيانات الجيدة هي: حقائق محددة عن سلوك سابق. يعني "أنا دفعت 500 ريال الشهر الماضي على حل مشابه بس ما كنت راضي عنه عشان كذا وكذا" — هذي بيانات ذهبية. بس "أتوقع إني بدفع على هالشي" — هذي ما تسوى شي.
+  </p>
+  <p>
+    الطريقة اللي تكتشف فيها البيانات السيئة بسيطة: اسأل نفسك بعد كل محادثة: هل تعلّمت شي جديد ومحدد؟ أو بس سمعت كلام حلو؟ لو طلعت من المحادثة تحس بالسعادة بس ما عندك معلومات جديدة — المحادثة كانت فاشلة. المحادثة الناجحة ممكن تحسسك بالقلق — لأن المعلومات الحقيقية أحياناً تكون مؤلمة. بس هالألم يوفر عليك شهور من بناء شي ما أحد يبيه.
+  </p>
+
+  <div class="quote-block">
+    <p>لو طلعت من محادثة مع عميل وأنت سعيد — غالباً سمعت كلام حلو بس ما تعلّمت شي. المحادثات المفيدة تحسسك بعدم الراحة — لأن الحقيقة مو دايماً حلوة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>انتبه لثلاث أنواع من البيانات السيئة: المجاملات، الكلام العام، والوعود المستقبلية. ركّز على الحقائق المحددة عن سلوك سابق. وبعد كل محادثة اسأل نفسك: هل تعلّمت شي محدد وجديد؟</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>بعد كل محادثة مع عميل، اكتب ثلاث أشياء: (1) حقائق محددة تعلّمتها عن سلوكهم، (2) مشاكل حقيقية يعانون منها، (3) مبالغ دفعوها فعلاً على حلول. لو ما قدرت تملأ هالثلاث نقاط — المحادثة ما أعطتك شي مفيد وتحتاج تحسّن أسئلتك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الدفع نحو الالتزام</h2>
+      <span class="chapter-title-en">Pushing for Commitment</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    فيتزباتريك يقول إن الكلام رخيص — الالتزام غالي. لما شخص يقول "فكرة حلوة وأكيد بشتري" هذا كلام. بس لما يقول "خلني أحجز الحين وأدفع مقدّم" — هذا التزام. الفرق بين الكلام والالتزام يبيّن لك مين فعلاً مهتم ومين بس يجاملك. وأنت كمؤسس، لازم تدفع كل محادثة نحو الالتزام.
+  </p>
+  <p>
+    الالتزام ما لازم يكون مالي بس. فيتزباتريك يقسّم الالتزام لثلاث مستويات: الوقت (يعطيك اجتماع ثاني أطول)، السمعة (يعرّفك على شخص ثاني أو يحكي عنك)، والمال (يدفع مقدّم أو يوقّع عقد). كل مستوى يثبت لك إن المشكلة حقيقية وإن الحل مطلوب. لو الشخص ما يقدر يعطيك حتى وقته — يعني ما عنده مشكلة فعلية.
+  </p>
+  <p>
+    أفضل طريقة تدفع نحو الالتزام هي إنك في نهاية كل محادثة تطلب خطوة واحدة واضحة. مثلاً: "ممكن نجتمع مرة ثانية الأسبوع الجاي وأوريك النسخة الأولية؟" أو "ممكن تعرّفني على شخص في فريقك يقدر يستفيد؟" أو "لو بنيت هالشي، هل مستعد تدفع X ريال مقدّم؟" الجواب يقولك كل شي. لو قال نعم وسوّاها — عندك عميل حقيقي. لو تهرّب — عندك مجامل.
+  </p>
+
+  <div class="quote-block">
+    <p>المحادثة ما تنتهي بالكلام — تنتهي بالالتزام. لو ما حصلت على خطوة تالية واضحة، ما حصلت على شي.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>ادفع كل محادثة نحو التزام حقيقي: وقت، سمعة، أو مال. الكلام الحلو بدون التزام ما يسوى شي. والالتزام الحقيقي هو أفضل دليل على إن فكرتك تحل مشكلة حقيقية.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">إيجاد المحادثات</h2>
+      <span class="chapter-title-en">Finding Conversations</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    كثير من المؤسسين يقولون "أبي أتكلم مع العملاء بس ما أعرف وين ألقاهم". فيتزباتريك يقول إن هالعذر كسل مو مشكلة حقيقية. العملاء المحتملين في كل مكان — مؤتمرات، مجموعات أونلاين، لينكدإن، المقاهي، حتى في حفلات العشاء. السر مو إنك تلاقيهم — السر إنك تبدأ المحادثة بطريقة طبيعية مو بطريقة "أبيع لك شي".
+  </p>
+  <p>
+    فيتزباتريك يقترح إنك ما تبدأ بطلب اجتماع رسمي — هذا يخوّف الناس. بدل كذا ابدأ بسؤال بسيط في سياق طبيعي. في مؤتمر مثلاً: "أنت في مجال كذا صح؟ أنا أحاول أفهم أكثر عن مشكلة كذا — عندك دقيقتين تحكيلي عن تجربتك؟" أغلب الناس يحبون يتكلمون عن مشاكلهم — بس ما يحبون يتعرّضون لعرض بيع.
+  </p>
+  <p>
+    كمان، فيتزباتريك يشدد على أهمية التقديم الدافئ (warm intro). بدل ما ترسل إيميل بارد لشخص ما يعرفك، اطلب من شخص يعرفكم الاثنين يقدّمك. التقديم الدافئ يزيد احتمالية الرد بشكل كبير ويخلي المحادثة أكثر صراحة. ابني شبكتك بشكل مستمر واستثمر في العلاقات — كل شخص تعرفه ممكن يوصلك لعميل محتمل.
+  </p>
+
+  <div class="quote-block">
+    <p>ما تحتاج اجتماعات رسمية عشان تتعلم من العملاء. أفضل المحادثات تصير في سياقات طبيعية — مقهى، مؤتمر، أو حتى مكالمة عفوية.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>ما فيه عذر لعدم التكلم مع العملاء. ابدأ محادثات طبيعية في كل مكان — مؤتمرات، مجموعات، سوشال ميديا. واستخدم التقديم الدافئ كلما أمكن. الهدف مو البيع — الهدف التعلّم.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>هالأسبوع، ابدأ 3 محادثات مع أشخاص في مجال عملائك المستهدفين. ما تحتاج اجتماعات رسمية — مجرد رسالة في لينكدإن أو سؤال في مجموعة أونلاين. الهدف: اسمع عن مشاكلهم بدون ما تذكر فكرتك. وسجّل اللي تعلّمته فوراً.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">تحليل ما تسمعه</h2>
+      <span class="chapter-title-en">Analyzing What You Hear</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    فيتزباتريك يقول إن المحادثات ما تنفع لو ما سجّلت وحلّلت اللي سمعته. كثير من المؤسسين يسوون محادثات ممتازة بس ينسون التفاصيل بعد يومين. أو الأسوأ: يتذكرون بس اللي يتوافق مع فكرتهم ويتجاهلون اللي يتعارض معها. هذا اسمه "تحيّز التأكيد" (confirmation bias) — وهو عدو كل مؤسس.
+  </p>
+  <p>
+    الحل بسيط: سجّل ملاحظاتك فوراً بعد كل محادثة — مو بعد يوم. اكتب: وش المشكلة اللي ذكرها؟ وش الحلول اللي جرّبها؟ كم دفع؟ وش اللي أزعجه في الحلول الحالية؟ هل فيه التزام حقيقي؟ فيتزباتريك يقول إن أفضل نظام هو ورقة بسيطة فيها أعمدة لكل سؤال — تملأها بعد كل محادثة. مع الوقت، الأنماط تبدأ تبان بوضوح.
+  </p>
+  <p>
+    الأنماط هي اللي تعطيك القرارات. لو 8 من 10 أشخاص ذكروا نفس المشكلة — هالمشكلة حقيقية. لو 3 من 10 بس اهتموا — يمكن تحتاج تغيّر شريحتك المستهدفة. ولو ما أحد ذكر المشكلة اللي تحاول تحلها — يمكن فكرتك تحتاج تتغير. فيتزباتريك يقول إن أحسن شي يقدر يحصل لك هو إنك تكتشف إن فكرتك غلط بعد 20 محادثة — بدل ما تكتشف بعد سنة من البناء.
+  </p>
+
+  <div class="quote-block">
+    <p>أفضل هدية تحصل عليها كمؤسس هي اكتشاف إن فكرتك غلط بدري — قبل ما تضيّع وقتك وفلوسك. المحادثات الجيدة تعطيك هالهدية.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>سجّل ملاحظاتك فوراً بعد كل محادثة. ابحث عن الأنماط المتكررة. وكن صريح مع نفسك: لو البيانات تقول إن فكرتك غلط — غيّرها. اكتشاف الخطأ بدري أفضل بكثير من اكتشافه بعد فوات الأوان.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>الخلاصة النهائية</h3>
+  <p>
+    كتاب اختبار الأم يعلّمك مهارة واحدة بسيطة بس حاسمة: كيف تتكلم مع العملاء وتحصل على معلومات حقيقية. لا تسأل عن الآراء — اسأل عن السلوك. لا تتكلم عن فكرتك — اسمع عن مشاكلهم. ولا تكتفي بالكلام — ادفع نحو الالتزام.
+  </p>
+  <p>
+    الرسالة الأهم: الفكرة ما تنجح بس عشان أنت متحمس لها. تنجح لما تحل مشكلة حقيقية عند ناس حقيقيين مستعدين يدفعون عليها. والطريقة الوحيدة تعرف هالشي هي إنك تتكلم — بس تتكلم صح.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص تعليمي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>اكتب 5 أسئلة عن الماضي والسلوك — بدون ذكر فكرتك أبداً</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>ابدأ 3 محادثات هالأسبوع مع عملاء محتملين — طبيعية وعفوية</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>سجّل ملاحظاتك فوراً بعد كل محادثة في جدول بسيط</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>بعد كل محادثة اسأل: هل تعلّمت شي محدد؟ أو بس سمعت كلام حلو؟</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>في نهاية كل محادثة، اطلب خطوة التزام واحدة واضحة</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>بعد 10 محادثات، راجع الأنماط: وش المشكلة الأكثر تكراراً؟</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

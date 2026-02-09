@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>المدير التنفيذي للشركة الناشئة - ملخص شامل | مات بلومبيرغ</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #009b7d; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #00b894; }
+
+  .hero {
+    background: linear-gradient(135deg, #003d2e 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #00b894;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(0, 184, 148, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(0, 61, 46, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #00b894;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(0, 184, 148, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 184, 148, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #d0b0b0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #d0b0b0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '\26A1';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #003d2e;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #00b894;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(0, 184, 148, 0.1);
+    color: #00b894;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #00b894;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #003d2e;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #00b894;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #003d2e;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #00b894;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(0, 184, 148, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #00b894, #009b7d);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #00b894;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(0, 184, 148, 0.12);
+    color: #00b894;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(0, 184, 148, 0.06);
+    border-right: 4px solid #00b894;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '\201C';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(0, 184, 148, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(0, 61, 46, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(0, 184, 148, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #00b894;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(0, 206, 201, 0.08);
+    border: 1px solid rgba(0, 206, 201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #00cec9;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #b0d0d0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 184, 148, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #00b894;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #003d2e, #1a1a2e);
+    border-top: 3px solid #00b894;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 184, 148, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#128084;</span>
+    <h1>المدير التنفيذي للشركة الناشئة</h1>
+    <p class="subtitle">Startup CEO</p>
+    <p class="author">مات بلومبيرغ &mdash; Matt Blumberg</p>
+    <div class="meta-info">
+      <span>7 فصول رئيسية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>دليل عملي لكل CEO ناشئ</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>ليش هذا الكتاب مهم؟</h2>
+  <p>
+    كثير من المؤسسين يبدأون شركاتهم وهم متحمسين للفكرة، بس ما عندهم أدنى فكرة وش يعني تكون CEO فعلياً. الدور هذا مختلف تماماً عن كونك مبرمج أو مصمم أو حتى مدير — وهذي أبرز المشاكل:
+  </p>
+  <ul>
+    <li>ما تعرف وش بالضبط مسؤولياتك كمدير تنفيذي وكيف تقسّم وقتك</li>
+    <li>تحاول تسوي كل شي بنفسك بدل ما تبني فريق يتولى المهام</li>
+    <li>ما عندك خبرة في التعامل مع مجلس الإدارة والمستثمرين</li>
+    <li>تخاف تاخذ قرارات صعبة مثل فصل موظف أو تغيير الاستراتيجية</li>
+    <li>ما تفهم الجانب المالي وتعتمد على الحدس بدل الأرقام</li>
+  </ul>
+  <p>
+    مات بلومبيرغ عاش هالتجربة كاملة وبنى شركة Return Path من الصفر لأكثر من 500 موظف. الكتاب هذا هو <strong>الدليل التكتيكي</strong> اللي يتمنى كل CEO إنه قرأه من البداية — يغطي كل شي من بناء الفريق للإدارة المالية للتوسع.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    مات بلومبيرغ مؤسس ومدير تنفيذي سابق لشركة Return Path، واللي قادها لأكثر من 20 سنة. الكتاب هذا مو كلام نظري أو فلسفي — هو دليل عملي مليان تفاصيل من تجربته الشخصية ومن تجارب عشرات المؤسسين اللي قابلهم.
+  </p>
+  <p>
+    الكتاب يغطي كل جانب من جوانب دور CEO: من بناء الرؤية للتوظيف لإدارة مجلس الإدارة للشؤون المالية للتوسع. اللي يميّزه إنه ما يعطيك نصايح عامة — يعطيك خطوات محددة وأدوات تقدر تطبقها من بكرة. عشان كذا يعتبر من أفضل الكتب العملية لأي شخص يدير أو يبي يدير شركة ناشئة.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>عقلية المدير التنفيذي</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>السرد القصصي والرؤية</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>بناء الفريق</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>إدارة مجلس الإدارة</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>المنتج والتنفيذ</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>الإدارة المالية</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>توسيع الشركة</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">عقلية المدير التنفيذي</h2>
+      <span class="chapter-title-en">The CEO Mindset</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    بلومبيرغ يبدأ الكتاب بنقطة مهمة جداً: دور الـCEO مو مثل أي دور ثاني في الشركة. أنت ما عندك مدير فوقك يقولك وش تسوي، وما عندك وصف وظيفي واضح. أنت المسؤول عن كل شي — الرؤية، الفريق، الفلوس، المنتج، والثقافة. وهذا الشي يخلي كثير من المؤسسين يحسون بضغط رهيب، خصوصاً لو أول مرة يكونون في هالموقع. بس الحقيقة إن الـCEO الناجح مو لازم يكون عبقري في كل شي — لازم يكون ذكي في اختيار الناس اللي يكملون نقاط ضعفه.
+  </p>
+  <p>
+    أهم شي يسويه الـCEO هو إنه يحدد أولوياته بوضوح. بلومبيرغ يقول إن وقتك كـCEO هو أغلى مورد عندك — وأكبر غلط إنك تضيّعه في أشياء ممكن غيرك يسويها. لازم تسأل نفسك كل يوم: وش هو الشي الوحيد اللي أنا بس أقدر أسويه؟ الباقي فوّضه. كثير من المؤسسين يقعون في فخ إنهم يبون يتحكمون في كل تفصيلة صغيرة، وهذا يبطّئ الشركة ويحرق الفريق.
+  </p>
+  <p>
+    كمان، بلومبيرغ يتكلم عن أهمية الوعي الذاتي. الـCEO اللي ما يعرف نقاط قوته وضعفه بيفشل. لازم تكون صادق مع نفسك: وش تجيد؟ وش تكره؟ وين تحتاج مساعدة؟ الوعي هذا يخليك توظّف الناس الصح وتبني هيكل يعوّض النواقص. ما فيه CEO كامل — بس فيه CEO واعي يعرف يحيط نفسه بالناس الصح.
+  </p>
+
+  <div class="quote-block">
+    <p>وظيفة الـCEO مو إنه يكون أذكى واحد في الغرفة — وظيفته إنه يتأكد إن الناس الأذكياء موجودين في الغرفة ويشتغلون على الشي الصح.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>ركّز على الأشياء اللي أنت بس تقدر تسويها: الرؤية، الاستراتيجية، وبناء الفريق القيادي. كل شي ثاني فوّضه. واعرف نفسك — نقاط قوتك وضعفك — عشان تبني فريق يكمّلك مو فريق يشبهك.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>اكتب قائمة بكل المهام اللي تسويها في الأسبوع. قسّمها لثلاث فئات: أشياء أنا بس أقدر أسويها، أشياء أقدر أفوّضها، وأشياء المفروض ما أسويها أصلاً. ابدأ فوّض الفئة الثانية والثالثة فوراً. هالتمرين البسيط بيغيّر طريقة إدارتك لوقتك بشكل جذري.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">السرد القصصي والرؤية</h2>
+      <span class="chapter-title-en">Storytelling & Vision</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    بلومبيرغ يقول إن أهم مهارة عند الـCEO هي القدرة على سرد قصة مقنعة. سواء كنت تتكلم مع مستثمرين أو موظفين أو عملاء — لازم تقدر توصّل رؤيتك بطريقة تلهم الناس وتخليهم يبون يكونون جزء من الرحلة. الأرقام والبيانات مهمة، بس الناس ما تتحرك بالأرقام — تتحرك بالقصص. القصة تجاوب على سؤال بسيط: ليش هالشركة موجودة؟ وش المشكلة اللي تحلها؟ وكيف العالم بيكون أحسن بسببها؟
+  </p>
+  <p>
+    الرؤية مو بس كلام حلو تحطه على الموقع — هي البوصلة اللي توجّه كل قرار في الشركة. لما الرؤية واضحة، الفريق يعرف وين يروح حتى لو ما كنت موجود. بلومبيرغ يقول إنه كان يكرر رؤية الشركة في كل اجتماع، كل خطاب، كل مناسبة — لدرجة إنه حس إنه يكرر نفسه. بس هذا بالضبط الهدف: لما تحس إنك كررت الرؤية ألف مرة، فريقك يمكن يكون سمعها للمرة العاشرة بس. التكرار هو الطريقة الوحيدة عشان الرؤية توصل وتثبت.
+  </p>
+  <p>
+    كمان، القصة لازم تتطور مع الشركة. في البداية القصة عن المشكلة والحل. بعدين تصير عن النمو والنجاحات. وبعدين عن التأثير والمستقبل. الـCEO الشاطر يعرف متى يغيّر القصة ويحدّثها بدون ما يفقد الجوهر. الرؤية ثابتة — بس طريقة التعبير عنها تتغير حسب المرحلة.
+  </p>
+
+  <div class="quote-block">
+    <p>لو ما تقدر تشرح ليش شركتك موجودة في جملة وحدة واضحة — فأنت نفسك ما تعرف. والناس ما تتبع اللي ما يعرف وين رايح.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>بناء رؤية واضحة وقصة مقنعة هي أهم وظيفة عندك كـCEO. كررها في كل مكان وكل وقت. القصة الجيدة تجذب المستثمرين، تلهم الموظفين، وتبني ثقة العملاء. ما تحتاج تكون خطيب بارع — تحتاج تكون صادق ومؤمن فيما تقول.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">بناء الفريق</h2>
+      <span class="chapter-title-en">Building the Team</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    بلومبيرغ يقول إن أكبر رافعة عند الـCEO هي التوظيف. الشركة ما هي إلا مجموعة أشخاص — ولو وظّفت الناس الغلط، كل شي ثاني ما يفرق. المشكلة إن كثير من المؤسسين يوظّفون بسرعة عشان يبون يسدون الحاجة، وبعدين يندمون. بلومبيرغ يشدد على قاعدة مهمة: وظّف ببطء واطرد بسرعة. يعني خذ وقتك في اختيار الشخص الصح، بس لو اكتشفت إنه مو مناسب لا تتأخر في التغيير.
+  </p>
+  <p>
+    في البدايات، كل توظيفة مصيرية. لو عندك 10 أشخاص في الشركة وجبت واحد مو كفؤ، هذا يعني 10% من فريقك ضعيف — وهذا يأثر على الكل. بلومبيرغ يتكلم عن أهمية التوظيف على أساس القيم والثقافة أولاً، وبعدين المهارات. الشخص اللي يشاركك القيم تقدر تعلّمه المهارات، بس الشخص اللي عنده مهارات بس ما يتماشى مع ثقافة الشركة بيسبب مشاكل ما تنتهي.
+  </p>
+  <p>
+    كمان، لما الشركة تكبر لازم تغيّر الفريق القيادي. مو كل شخص اللي كان معك في البداية بيقدر يكمّل معك للمرحلة الجاية. وهذا واحد من أصعب القرارات اللي يواجهها الـCEO — إنك ترقّي أو تستبدل ناس ساعدوك من البداية. بلومبيرغ يقول هالقرار لازم يكون على أساس المصلحة العامة للشركة مو على أساس العواطف. الرحمة الحقيقية هي إنك تكون صريح وتساعدهم يلاقون المكان الصح.
+  </p>
+
+  <div class="quote-block">
+    <p>ما تبني شركة عظيمة بأشخاص عاديين. كل توظيفة هي استثمار — وأهم استثمار تسويه هو في الناس.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>وظّف ببطء واطرد بسرعة. ركّز على القيم والثقافة قبل المهارات. وكن جاهز تغيّر الفريق القيادي مع نمو الشركة — مو كل مؤسس مشارك بيكون المدير الصح في المرحلة الجاية.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>قبل ما توظّف أي شخص، اكتب ثلاث قيم أساسية لازم تكون عنده. في المقابلة، اسأل أسئلة سلوكية تكشف هالقيم (مثلاً: "احكيلي عن موقف صعب واجهته وكيف تعاملت معه"). لو القيم ما تتوافق — حتى لو الشخص خارق في المهارات — لا توظّفه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">إدارة مجلس الإدارة</h2>
+      <span class="chapter-title-en">Managing the Board</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    أكثر موضوع يخوّف المؤسسين الجدد هو مجلس الإدارة. بلومبيرغ يقول إن كثير من الـCEOs يتعاملون مع المجلس بخوف أو بتجاهل — وكلا الطريقتين غلط. مجلس الإدارة لازم يكون حليفك مو عدوك. لكن عشان يكون كذا، لازم تديره بذكاء. أول شي: لا مفاجآت أبداً. لو عندك خبر سيء، قوله للمجلس قبل الاجتماع مو فيه. المفاجآت تدمّر الثقة.
+  </p>
+  <p>
+    بلومبيرغ يشرح كيف تبني علاقة قوية مع كل عضو في المجلس. ما تكفي إنك تشوفهم كل ربع سنة في الاجتماع — لازم تتواصل معهم بشكل دوري، تطلب رأيهم، وتستفيد من خبراتهم. كل عضو مجلس إدارة عنده شبكة علاقات وخبرة في مجال معين — استغل هالشي. بس في نفس الوقت، تذكّر إنك أنت الـCEO وأنت اللي تدير الشركة يومياً. المجلس يقدم نصايح واستشارات — بس القرار النهائي قرارك.
+  </p>
+  <p>
+    اجتماعات المجلس لازم تكون منظمة وفعّالة. بلومبيرغ يقترح إنك ترسل المواد قبل الاجتماع بأسبوع على الأقل، وتخلي الاجتماع للنقاش مو للعرض. ما تضيّع وقت المجلس في عرض أرقام يقدرون يقرأونها بأنفسهم — ركّز على الأسئلة الاستراتيجية اللي تحتاج رأيهم فيها. والأهم: لا تحاول تخبّي المشاكل. المجلس اللي ما يعرف المشاكل ما يقدر يساعدك تحلها.
+  </p>
+
+  <div class="quote-block">
+    <p>أفضل علاقة مع مجلس الإدارة مبنية على الشفافية الكاملة. ما تقدر تتوقع مساعدتهم لو ما تعطيهم الصورة الكاملة — بالحلو والمر.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>عامل مجلس الإدارة كشريك استراتيجي. كن شفاف معهم، تواصل معهم بين الاجتماعات، واستفد من خبراتهم. بس تذكّر إنك أنت القبطان — المجلس يساعدك توجّه السفينة بس ما يسوق بدالك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">المنتج والتنفيذ</h2>
+      <span class="chapter-title-en">Product & Execution</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    بلومبيرغ يقول إن الـCEO لازم يكون قريب من المنتج حتى لو ما هو المسؤول المباشر عنه. ليش؟ عشان المنتج هو الشي الوحيد اللي يقدمه عملاؤك فلوسهم عليه. لو المنتج سيء، ما فيه تسويق ولا مبيعات ينقذك. بس "قريب من المنتج" ما يعني تتدخل في كل تفصيلة — يعني تفهم الاستراتيجية، تعرف العملاء، وتتأكد إن الفريق يشتغل على الأشياء الصح.
+  </p>
+  <p>
+    التنفيذ هو اللي يفرّق بين الشركات الناجحة والفاشلة. بلومبيرغ يقول إن أغلب الشركات ما تفشل بسبب أفكار سيئة — تفشل بسبب تنفيذ سيء. الفكرة تمثل 1% والتنفيذ 99%. والتنفيذ الجيد يتطلب وضوح الأولويات. الشركة اللي تشتغل على 20 مشروع بنفس الوقت ما تنجز ولا واحد. لازم تختار 3-5 أولويات وتركّز عليها بكل طاقتك.
+  </p>
+  <p>
+    كمان، بلومبيرغ يشدد على أهمية قياس الأداء. ما تقدر تحسّن شي ما تقيسه. حدد مؤشرات أداء واضحة (KPIs) لكل فريق ولكل مشروع، وتابعها بشكل أسبوعي. بس انتبه — لا تقيس كل شي. ركّز على المؤشرات اللي فعلاً تحرّك الشركة للأمام. الرقم اللي يخليك تاخذ قرار أهم من الرقم اللي بس يعطيك شعور بالإنجاز.
+  </p>
+
+  <div class="quote-block">
+    <p>الاستراتيجية بدون تنفيذ حلم، والتنفيذ بدون استراتيجية فوضى. الـCEO الناجح يجمع بين الاثنين.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>ابقَ قريب من المنتج بدون ما تكون micromanager. حدد أولويات واضحة وقليلة، وقِس النتائج بمؤشرات محددة. التنفيذ المتميز في أشياء قليلة أفضل بكثير من التنفيذ المتوسط في أشياء كثيرة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>كل ربع سنة، اجلس مع فريقك وحددوا 3 أولويات بس — لا أكثر. اكتبوها في مكان واضح يشوفه الكل. وكل أسبوع، راجعوا التقدم على هالأولويات الثلاث. لو جاتكم فرصة جديدة ما تخدم هالأولويات — قولوا لا. التركيز أقوى سلاح عندك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الإدارة المالية</h2>
+      <span class="chapter-title-en">Financial Management</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    كثير من المؤسسين يكرهون الجانب المالي ويتهربون منه — وهذا من أكبر الأخطاء. بلومبيرغ يقول إن الـCEO ما لازم يكون محاسب، بس لازم يفهم الأرقام الأساسية: الإيرادات، المصاريف، التدفق النقدي (cash flow)، ومعدل الحرق (burn rate). لو ما تفهم هالأرقام، أنت تسوق السيارة وأنت مغمّض عيونك — ممكن توصل بس الأغلب بتصطدم.
+  </p>
+  <p>
+    أهم رقم في الشركة الناشئة هو الـrunway — يعني كم شهر تقدر تستمر بالفلوس اللي عندك. بلومبيرغ يقول إن الـCEO لازم يعرف هالرقم بالضبط في أي لحظة. لو الـrunway أقل من 6 شهور وما بدأت تجمع استثمار جديد — أنت في مشكلة. التخطيط المالي مو شي تسويه مرة في السنة — لازم تراجع الأرقام كل أسبوع على الأقل.
+  </p>
+  <p>
+    وبالنسبة لجمع التمويل، بلومبيرغ يعطي نصيحة ذهبية: اجمع الفلوس لما ما تحتاجها. أسوأ وقت تجمع فيه تمويل هو لما تكون محتاج بشكل عاجل — لأن المستثمرين يحسون بالاستعجال ويستغلونه. الأفضل تبدأ تبني علاقات مع مستثمرين من بدري وتجمع التمويل وأنت في وضع قوة. والأهم: لا تصرف الفلوس عشان عندك فلوس. كل ريال لازم يكون له هدف واضح ومبرر.
+  </p>
+
+  <div class="quote-block">
+    <p>الفلوس مثل الأكسجين — ما تفكر فيها إلا لما تنقص. الـCEO الذكي يخلي الأكسجين متوفر دايماً عشان يركّز على بناء الشركة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>افهم أرقامك المالية حتى لو ما تحبها. اعرف الـrunway دايماً، راجع الميزانية أسبوعياً، واجمع التمويل وأنت في موقف قوة مو ضعف. الإدارة المالية السليمة تشتري لك الوقت — وأثمن شي عند الشركة الناشئة هو الوقت.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">توسيع الشركة</h2>
+      <span class="chapter-title-en">Scaling the Company</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    التوسع هو المرحلة اللي تكسر أو تصنع الشركة. بلومبيرغ يقول إن كثير من الشركات الناشئة تنجح في البداية بس تفشل في التوسع — والسبب إن اللي اشتغل مع فريق من 10 أشخاص ما يشتغل مع 100 أو 500. العمليات، الهيكل التنظيمي، طريقة التواصل — كل شي لازم يتغير مع النمو. والـCEO اللي ما يعرف يتكيّف مع هالتغييرات بيصير هو العقبة.
+  </p>
+  <p>
+    أول شي يتغير في التوسع هو التواصل. لما كنتم 10 أشخاص، كل واحد يعرف كل شي. بس لما تصيرون 50 أو 100، لازم تبني أنظمة تواصل رسمية — اجتماعات دورية، تقارير، وأدوات مشتركة. بلومبيرغ يقول إن أكثر مشكلة يسمعها من الموظفين في الشركات النامية هي "ما أدري وش يصير في الشركة". والحل هو التواصل الزائد — overcommunicate. قول المعلومة عشر مرات بعشر طرق مختلفة عشان توصل.
+  </p>
+  <p>
+    كمان، التوسع يتطلب إنك تبني ثقافة قوية. الثقافة في البداية تتشكل طبيعي — بس لما الشركة تكبر لازم تكون واعي وتبنيها بقصد. وثّق القيم، احتفل بالسلوكيات الصحيحة، وحاسب على السلوكيات الغلط. الثقافة مو لوحة على الحيط — هي الطريقة اللي الناس يتصرفون فيها لما ما أحد يراقبهم. والـCEO هو الحارس الأول للثقافة.
+  </p>
+
+  <div class="quote-block">
+    <p>التوسع مو بس إنك تكبّر الشركة — هو إنك تكبّر نفسك كقائد. الشركة ما تقدر تتجاوز مستوى قائدها.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>التوسع يتطلب تغيير كل شي: الهيكل، التواصل، والعمليات. ابني أنظمة تتحمّل النمو، واستثمر في الثقافة. والأهم — كبّر نفسك كقائد مع نمو الشركة. اللي يصلح لشركة من 10 أشخاص ما يصلح لشركة من 200.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>كل ما تضاعف عدد موظفينك، اسأل نفسك: وش اللي لازم يتغير في طريقة إدارتي؟ وش العمليات اللي كانت تشتغل وتوقفت؟ وش يحتاج الفريق مني في هالمرحلة الجديدة؟ التكيّف المستمر هو سر البقاء والنمو.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>الخلاصة النهائية</h3>
+  <p>
+    كتاب المدير التنفيذي للشركة الناشئة هو الدليل العملي اللي يحتاجه كل مؤسس. من بناء العقلية الصحيحة لصياغة الرؤية لتوظيف الفريق لإدارة المجلس والمال والتوسع — بلومبيرغ يغطي كل جانب بتفاصيل عملية مبنية على تجربة حقيقية.
+  </p>
+  <p>
+    الرسالة الأهم: دور الـCEO يتغير مع كل مرحلة. اللي ينجح هو اللي يتعلم ويتكيّف باستمرار. ما فيه وصفة سحرية — بس فيه مبادئ ثابتة: الشفافية، التركيز، بناء الفريق الصح، وفهم الأرقام.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص تعليمي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>اكتب رؤية شركتك في جملة وحدة واضحة وكررها لفريقك كل أسبوع</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>اعمل قائمة بمهامك الأسبوعية وحدد وش تقدر تفوّضه — وفوّضه فعلاً</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>حدد ثلاث قيم أساسية للتوظيف واسأل عنها في كل مقابلة</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>احسب الـrunway حقك الحين وراجع الأرقام المالية كل أسبوع</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>تواصل مع أعضاء مجلس الإدارة بشكل فردي بين الاجتماعات الرسمية</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>حدد 3 أولويات فقط للربع القادم وقل لا لكل شي ثاني</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

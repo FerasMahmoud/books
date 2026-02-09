@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الأشياء الصعبة في الأشياء الصعبة - ملخص شامل | بن هورويتز</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #2c3e50; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #34495e; }
+
+  .hero {
+    background: linear-gradient(135deg, #0d1520 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #34495e;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(52, 73, 94, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(13, 21, 32, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #34495e;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(52, 73, 94, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(52, 73, 94, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #d0b0b0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #d0b0b0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '\26A1';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0d1520;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #34495e;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(52, 73, 94, 0.1);
+    color: #34495e;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #34495e;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0d1520;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #34495e;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0d1520;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #34495e;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(52, 73, 94, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(52, 73, 94, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #34495e;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(52, 73, 94, 0.12);
+    color: #34495e;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(52, 73, 94, 0.06);
+    border-right: 4px solid #34495e;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '\201C';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(52, 73, 94, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(13, 21, 32, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(52, 73, 94, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #34495e;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(0, 206, 201, 0.08);
+    border: 1px solid rgba(0, 206, 201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #00cec9;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #b0d0d0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(52, 73, 94, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #34495e;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #0d1520, #1a1a2e);
+    border-top: 3px solid #34495e;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(52, 73, 94, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#9968;&#65039;</span>
+    <h1>الأشياء الصعبة في الأشياء الصعبة</h1>
+    <p class="subtitle">The Hard Thing About Hard Things</p>
+    <p class="author">بن هورويتز &mdash; Ben Horowitz</p>
+    <div class="meta-info">
+      <span>7 فصول رئيسية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>الحقيقة المُرّة عن ريادة الأعمال</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>ليش هذا الكتاب مهم؟</h2>
+  <p>
+    أغلب كتب ريادة الأعمال تقولك كيف تنجح — بس ما أحد يقولك وش تسوي لما كل شي ينهار. بن هورويتز يتكلم عن اللحظات اللي ما فيها حل واضح، اللحظات اللي تحس فيها إنك وحدك في الظلام. هذي أبرز المواقف اللي يعالجها:
+  </p>
+  <ul>
+    <li>شركتك على حافة الإفلاس وما عندك خيارات واضحة</li>
+    <li>لازم تفصل ناس كثير وتواجههم وجهاً لوجه</li>
+    <li>أفضل موظف عندك يبي يطلع وما تقدر توقفه</li>
+    <li>المستثمرين فقدوا الثقة فيك والسوق تغيّر عليك</li>
+    <li>تحس بعزلة رهيبة لأن ما أحد يفهم ضغطك كـCEO</li>
+  </ul>
+  <p>
+    هورويتز عاش كل هالمواقف شخصياً وهو يبني شركة Opsware. الكتاب هذا مو نصايح من شخص يتفلسف — هو <strong>تجربة حقيقية من قلب المعركة</strong>. يعلّمك كيف تتعامل مع المواقف اللي ما لها كتاب.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    بن هورويتز مؤسس مشارك لشركة Andreessen Horowitz، واحدة من أكبر شركات رأس المال الجريء في وادي السيليكون. قبل كذا كان CEO لشركة Opsware اللي باعها لـHP بـ1.6 مليار دولار. بس الطريق لهالنجاح كان مليان ألم — الشركة كانت على وشك الإفلاس أكثر من مرة.
+  </p>
+  <p>
+    الكتاب هذا مختلف عن أي كتاب ريادة أعمال ثاني لأنه صريح ومؤلم وحقيقي. هورويتز ما يحاول يبيّن إنه بطل — يحكي عن الأخطاء والمواقف اللي كان يبكي فيها وهو الـCEO. يعطيك نصايح عملية مبنية على تجارب فعلية مو نظريات أكاديمية. عشان كذا صار من أكثر الكتب تأثيراً في مجتمع الشركات الناشئة.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>الصراع الحقيقي</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>اتخاذ القرارات الصعبة</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>التوظيف والفصل</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>الإدارة في الأوقات الصعبة</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>بناء الثقافة</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>نفسية المدير التنفيذي</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>CEO السلم وCEO الحرب</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الصراع الحقيقي</h2>
+      <span class="chapter-title-en">The Struggle</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    هورويتز يبدأ الكتاب بالتكلم عن "الصراع" — The Struggle. وهو يقصد تلك الفترة اللي تحس فيها إن كل شي ضدك. المنتج ما يشتغل، الفلوس تخلص، الفريق يتفكك، وأنت ما تعرف وش تسوي. يقول إن كل CEO يمر بهالفترة — الفرق إن بعضهم يستسلم وبعضهم يكمّل. ما فيه وصفة سحرية للنجاة من الصراع — بس فيه شي واحد مهم: لا تستسلم.
+  </p>
+  <p>
+    هورويتز يحكي عن تجربته الشخصية لما كانت شركته Loudcloud على حافة الإفلاس. السهم نزل من 6 دولار لأقل من دولار. الموظفين يطلعون. المستثمرين يتصلون يبون فلوسهم. وهو كل ليلة ما ينام يفكر: هل أقفل الشركة؟ هل أبيعها؟ هل فيه حل ثالث؟ كل خيار كان سيء — بس كان لازم يختار.
+  </p>
+  <p>
+    الدرس اللي يعطيه هورويتز: الصراع مو فشل — الصراع هو جزء طبيعي من بناء شي عظيم. المشكلة مو إنك تواجه صعوبات — المشكلة إنك تتوقع إن الطريق سهل. لما تفهم إن الصراع جزء من الرحلة، تتعامل معه بشكل مختلف. ما تنكسر — تتعلم وتكمّل. وأحياناً الحل اللي ما كنت تشوفه يطلع لأنك ما استسلمت.
+  </p>
+
+  <div class="quote-block">
+    <p>ما فيه كتاب يعلّمك كيف تتعامل مع الصراع الحقيقي. بس فيه شي واحد أقوله لك: لا تستسلم. أحياناً الحل يجي بعد ما تظن إنه مستحيل.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>الصراع جزء طبيعي من ريادة الأعمال — مو علامة فشل. كل CEO ناجح مر بلحظات ظن فيها إن كل شي انتهى. اللي يفرقهم إنهم كملوا. ما تحتاج تعرف كل الإجابات — تحتاج تستمر تبحث عنها.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>لما تكون في وسط أزمة، اكتب كل الخيارات المتاحة حتى لو كانت سيئة. أحياناً الخيار اللي يبان أسوأ يكون فيه فرصة مخبية. والأهم: لا تواجه الصراع وحدك. كلّم شخص تثق فيه — مؤسس مشارك، مرشد، أو حتى معالج نفسي. ما فيه عيب تطلب مساعدة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">اتخاذ القرارات الصعبة</h2>
+      <span class="chapter-title-en">Making Hard Decisions</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    هورويتز يقول إن أصعب شي في كونك CEO مو إنك ما تعرف القرار الصح — الأصعب إنك تعرفه بس تخاف تاخذه. القرارات الصعبة هي اللي تحدد مصير الشركة — وأغلبها ما فيها خيار حلو. كلها سيئة، بس واحد أقل سوءاً من الثاني. مثلاً: هل تسرّح 30% من الموظفين عشان تنقذ الشركة، أو تستمر وتخاطر بإفلاس الكل؟
+  </p>
+  <p>
+    هورويتز يعطي مبدأ مهم: لا تأجّل القرارات الصعبة. كل يوم تأجل فيه القرار، الوضع يزيد سوءاً. لو تعرف إن موظف لازم يطلع، كل يوم إضافي هو يوم ضائع. لو تعرف إن المنتج لازم يتغير، كل أسبوع تأجيل هو أسبوع خسارة. القرار الصعب اللي تاخذه اليوم أفضل بكثير من القرار الصعب اللي تاخذه بعد شهر.
+  </p>
+  <p>
+    كمان، يتكلم عن أهمية الشفافية في القرارات الصعبة. لما تسرّح موظفين، قول الحقيقة — قول إن الشركة في وضع صعب وهذا القرار لازم يصير عشان الباقي يستمرون. ما تحتاج تحلّي الموقف أو تكذب. الناس تحترم الصراحة حتى لو كانت مؤلمة. والموظفين اللي يبقون يحتاجون يثقون فيك — والثقة تيجي من الصدق مو من الحماية الزائفة.
+  </p>
+
+  <div class="quote-block">
+    <p>ما فيه قرار مثالي في عالم الشركات الناشئة. فيه بس قرارات سيئة وقرارات أسوأ — وظيفتك تختار الأقل سوءاً وتنفذه بسرعة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>لا تأجّل القرارات الصعبة — التأجيل يخلي الوضع أسوأ. كن شفاف مع فريقك حتى في الأخبار السيئة. والقرار اللي تاخذه اليوم — حتى لو كان مؤلم — أفضل من القرار المتأخر اللي يجي بعد ما الضرر تضاعف.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التوظيف والفصل</h2>
+      <span class="chapter-title-en">Hiring & Firing</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    هورويتز يعتبر التوظيف من أهم وأخطر القرارات. يقول إنك لما توظف شخص غلط في منصب قيادي، الضرر يكون مضاعف: مو بس خسرت الشخص الصح — كمان دمّرت الفريق اللي تحته. كثير من المؤسسين يوظفون أشخاص من شركات كبيرة ويتوقعون إنهم بينجحون في بيئة ناشئة — بس الحقيقة إن المهارات مختلفة تماماً. اللي ينجح في شركة فيها 10 آلاف موظف ما بالضرورة ينجح في شركة فيها 10.
+  </p>
+  <p>
+    وبالنسبة للفصل، هورويتز يقول إنه واحد من أصعب الأشياء اللي يسويها الـCEO — بس لازم يسويها صح. لما تفصل موظف، لازم تحترمه وتعطيه السبب بوضوح. ما تغلّف الكلام ولا تحاول تخلي الموضوع يبان سهل — هو مو سهل. بس الاحترام في الفصل يحمي سمعة شركتك ويخلي الموظفين الباقين يحترمونك أكثر.
+  </p>
+  <p>
+    وفيه نقطة مهمة جداً: التسريح الجماعي (layoffs). هورويتز يقول إنك لما تقرر تسرّح، سرّح مرة وحدة وبعمق كافي — لا تسوّيها على دفعات. كل جولة تسريح تدمّر الثقة أكثر. لو تحتاج تقلّص 30%، سوّها دفعة وحدة وخلّص. بعدين اجمع الفريق الباقي وكن صريح: هذا اللي صار، ليش صار، ووش خطتنا الجاية. الشفافية في هالمواقف مو خيار — هي ضرورة.
+  </p>
+
+  <div class="quote-block">
+    <p>لما تفصل شخص، تذكّر إنه إنسان عنده عائلة ومسؤوليات. عامله بالاحترام اللي تبي أحد يعاملك فيه لو كنت مكانه.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>وظّف بناءً على البيئة اللي عندك مو على السيرة الذاتية. وفي الفصل والتسريح، كن صريح ومحترم واسوّها دفعة وحدة. الطريقة اللي تفصل فيها الناس تحدد ثقافة شركتك أكثر من الطريقة اللي توظّف فيها.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>قبل ما توظف أي شخص لمنصب قيادي، اسأله عن تجاربه في بيئات فوضوية وموارد محدودة — مو بس في شركات مستقرة. اللي يقدر يبني من الصفر بموارد قليلة هو اللي تحتاجه في شركة ناشئة. والتجربة في شركة كبيرة ممكن تكون عيب مو ميزة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الإدارة في الأوقات الصعبة</h2>
+      <span class="chapter-title-en">Managing in Hard Times</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    هورويتز يفرّق بين الإدارة في الأوقات العادية والإدارة في الأزمات. في الأوقات العادية، تقدر تخطط وتنظّم وتفوّض. بس في الأزمات، القواعد تتغير. ما عندك وقت تخطط — لازم تتحرك. ما عندك رفاهية الخطأ — لازم تصيب من أول محاولة. وما عندك مجال تجامل — لازم تكون صريح وحاد.
+  </p>
+  <p>
+    واحدة من أهم النصايح: في الأوقات الصعبة، ركّز على المشكلة مو على اللوم. كثير من الـCEOs يضيّعون وقتهم يدورون مين غلط — بدل ما يركّزون على الحل. هورويتز يقول: المشكلة موجودة سواء عرفت مين السبب أو لا. حلّها أولاً — واللوم سوّه بعدين (أو لا تسوّه أصلاً).
+  </p>
+  <p>
+    كمان، هورويتز يتكلم عن أهمية التحكم في المعلومات. في الأزمات، الشائعات تنتشر بسرعة وتدمّر المعنويات. الحل هو إنك تكون مصدر المعلومات الرئيسي — تواصل مع فريقك بشكل مستمر، قل لهم الحقيقة كاملة، واشرح لهم الخطة. الصمت في الأزمات أسوأ من أي خبر سيء. لما الناس ما يعرفون وش يصير، يتخيّلون أسوأ سيناريو — وهالشي يشل الشركة.
+  </p>
+
+  <div class="quote-block">
+    <p>في الأوقات الحلوة كل واحد يقدر يكون قائد. القيادة الحقيقية تبان في الظلام — لما ما أحد يشوف الطريق وأنت لازم تقود.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>في الأزمات: تحرّك بسرعة، ركّز على الحل مو اللوم، وتواصل مع فريقك بشفافية كاملة. الصمت أخطر من الخبر السيء. والقائد اللي يواجه الحقيقة ويتكلم بصراحة يكسب ثقة فريقه حتى في أحلك الأوقات.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">بناء الثقافة</h2>
+      <span class="chapter-title-en">Building Culture</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    هورويتز يقول إن الثقافة مو لوحات حلوة على الحيط فيها كلام عن القيم — الثقافة هي الطريقة اللي الناس يتصرفون فيها لما ما أحد يراقبهم. وبناء ثقافة قوية يتطلب أفعال مو كلام. لو قلت إن الشفافية قيمة بس تخبّي المعلومات عن الفريق — ما عندك ثقافة شفافية. الناس تشوف وش تسوي مو وش تقول.
+  </p>
+  <p>
+    واحدة من أقوى الأمثلة اللي يعطيها هورويتز هي عن شركة اللي حط فيها قاعدة إن الاجتماعات لازم تبدأ بالوقت — بدون أي استثناء. حتى لو الـCEO نفسه متأخر. هالقاعدة البسيطة رسّخت ثقافة احترام الوقت في الشركة كلها. الثقافة تتبنى بالتفاصيل الصغيرة اللي تتكرر كل يوم — مو بالخطابات الكبيرة.
+  </p>
+  <p>
+    كمان، هورويتز يحذّر من تجاهل السلوكيات السيئة. لو عندك موظف يحقق نتائج ممتازة بس يدمّر الثقافة — لازم تتعامل معه. الناس تشوف: لو النجم المتميز يقدر يكسر القواعد بدون عواقب، ليش أنا ألتزم؟ الثقافة تموت لما تصير فيها استثناءات. والـCEO هو المسؤول الأول عن حمايتها.
+  </p>
+
+  <div class="quote-block">
+    <p>الثقافة ما تتبنى بالكلام — تتبنى بالقرارات الصعبة. لما تفصل نجم يدمّر الثقافة، كل واحد في الشركة يعرف إنك جاد.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>ابني الثقافة بالأفعال مو بالكلام. حط قواعد واضحة وطبّقها على الكل بدون استثناء — حتى النجوم. الثقافة القوية تجذب الناس الصح وتطرد الناس الغلط تلقائياً.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>اختر سلوك واحد تبي يكون جزء من ثقافة شركتك (مثلاً: الشفافية، الالتزام بالمواعيد، أو الصراحة). حط قاعدة بسيطة تعكسه وطبّقها على نفسك أولاً. لما الفريق يشوفك تلتزم — هم بيلتزمون. القيادة بالقدوة أقوى ألف مرة من القيادة بالأوامر.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">نفسية المدير التنفيذي</h2>
+      <span class="chapter-title-en">CEO Psychology</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    هورويتز يتكلم عن الجانب اللي ما أحد يتكلم عنه: الصحة النفسية للـCEO. يقول إن أكثر CEOs يعانون بصمت — يحسون بوحدة، قلق، وخوف بس ما يقدرون يبيّنون هالشي لأحد. الفريق يعتمد عليك، المستثمرين يتوقعون منك الثقة، والعائلة تشوفك مشغول دايماً. وأنت في الوسط تحاول تتحمّل.
+  </p>
+  <p>
+    واحد من أقوى المفاهيم اللي يطرحها هورويتز هو إنه "ما فيه أحد يقولك الحقيقة". الموظفين يحلّون لك الصورة عشان ما تزعل. المستثمرين يقولون لك اللي تبي تسمعه. والأصدقاء ما يفهمون وضعك. عشان كذا، الـCEO لازم يبني شبكة من الناس اللي يقدر يكون صريح معهم — مؤسسين ثانيين مروا بنفس التجربة يفهمون الضغط.
+  </p>
+  <p>
+    هورويتز كمان يتكلم عن ظاهرة "متلازمة المحتال" — الإحساس إنك ما تستاهل تكون في هالمنصب وإن الناس بتكتشف إنك ما تدري وش تسوي. يقول إن هالإحساس طبيعي وكل CEO يحس فيه — بس لا تخليه يشلّك. الحل مو إنك تتخلص من الشك — الحل إنك تتعلم تتحرك رغم الشك. القائد مو اللي ما يخاف — هو اللي يخاف ويكمّل.
+  </p>
+
+  <div class="quote-block">
+    <p>أصعب شي في كونك CEO مو القرارات — هو إنك تتحمّل وزن كل قرار على أكتافك وحدك. ما أحد يقولك "بتكون تمام" — لازم تقولها لنفسك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>اعتني بصحتك النفسية. ابني شبكة من الناس اللي تقدر تكون صريح معهم. ما فيه عيب تحس بالخوف أو الشك — العيب إنك تخليهم يوقفونك. وتذكّر: كل CEO ناجح تشوفه مر بنفس المشاعر اللي تمر فيها.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">CEO السلم وCEO الحرب</h2>
+      <span class="chapter-title-en">Peacetime CEO vs Wartime CEO</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    هورويتز يقدم واحد من أشهر المفاهيم في عالم ريادة الأعمال: الفرق بين CEO السلم وCEO الحرب. CEO السلم يقود شركة في مرحلة نمو مستقر — عنده وقت يخطط، يطوّر الموظفين، ويبني أنظمة. يركّز على التفويض والثقة. بس CEO الحرب يقود شركة في أزمة وجودية — كل يوم ممكن يكون الأخير. يركّز على السرعة والحسم.
+  </p>
+  <p>
+    الفرق كبير في أسلوب القيادة. CEO السلم يقول: "خلوا الفريق يقرر". CEO الحرب يقول: "أنا أقرر الحين". CEO السلم يقبل مستويات أداء معقولة. CEO الحرب يطلب الكمال في كل تفصيلة. CEO السلم يبني إجماع. CEO الحرب ياخذ القرار وينفذ. ما فيه أسلوب أفضل من الثاني — يعتمد على الموقف.
+  </p>
+  <p>
+    المشكلة إن أغلب المؤسسين يبقون في نمط واحد. اللي اعتاد على السلم ما يعرف يتحوّل للحرب لما تجي الأزمة — فيضيع وقت ثمين. واللي اعتاد على الحرب يستمر بنفس الأسلوب الحاد حتى لما الأمور تستقر — فيحرق فريقه. الـCEO العظيم هو اللي يعرف متى يتحوّل بين الأسلوبين. يحس بالموقف ويتكيّف.
+  </p>
+
+  <div class="quote-block">
+    <p>CEO السلم يعرف يكسب. CEO الحرب يعرف يبقى. والأعظم هو اللي يعرف متى يتحوّل بين الاثنين.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>اعرف في أي مرحلة شركتك: سلم أو حرب. في السلم: فوّض، ابني أنظمة، طوّر الناس. في الحرب: تحرّك بسرعة، قرر بحزم، وركّز على البقاء. والأهم: كن مرن وجاهز تتحوّل بين الأسلوبين حسب الظرف.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>اسأل نفسك الحين: شركتي في مرحلة سلم أو حرب؟ لو سلم — ركّز على بناء الأنظمة والثقافة وتطوير الناس. لو حرب — ضيّق التركيز على شي واحد (البقاء) وخذ القرارات بنفسك بسرعة. ولا تحاول تكون ديمقراطي في الحرب — الحرب تتطلب قائد حاسم.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>الخلاصة النهائية</h3>
+  <p>
+    كتاب الأشياء الصعبة هو واحد من أصدق الكتب اللي تتكلم عن ريادة الأعمال. هورويتز ما يعطيك وصفات سحرية — يقولك الحقيقة المرّة: بناء شركة ناشئة صعب، ومؤلم، ووحيد. بس اللي يستمر ويتعلم من أخطائه يقدر يبني شي عظيم.
+  </p>
+  <p>
+    الرسالة الأهم: ما فيه كتاب ولا كورس يجهّزك لكل موقف بتواجهه. بس لو فهمت إن الصراع طبيعي، والقرارات الصعبة جزء من الوظيفة، والثقافة تتبنى بالأفعال — بتكون أجهز من 99% من المؤسسين.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص تعليمي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>حدد أصعب قرار تأجلته — واتخذه هذا الأسبوع بدون مزيد من التأجيل</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>ابني شبكة من 2-3 مؤسسين تثق فيهم تقدر تتكلم معهم بصراحة كاملة</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>حدد هل شركتك في مرحلة سلم أو حرب — وعدّل أسلوب قيادتك</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>اختر سلوك واحد يعكس ثقافة شركتك وطبّقه على نفسك أولاً</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>سوِّ اجتماع شفافية مع فريقك — شارك الأرقام الحقيقية والتحديات</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>خصص وقت أسبوعي لصحتك النفسية — تمرين، تأمل، أو مجرد وقت هادي لنفسك</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

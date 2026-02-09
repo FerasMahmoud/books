@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>من الصفر إلى الواحد - ملخص شامل | بيتر ثيل</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #2196f3; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #1976d2; }
+
+  .hero {
+    background: linear-gradient(135deg, #0a2a4a 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #2196f3;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(33, 150, 243, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(10, 42, 74, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #2196f3;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(33, 150, 243, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(33, 150, 243, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #1b1b2d, #1a1a2e);
+    border: 2px solid #1565c0;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #2196f3;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #b0b0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #b0b0d0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '⚡';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a2a4a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #2196f3;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(33, 150, 243, 0.1);
+    color: #2196f3;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #2196f3;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a2a4a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #2196f3;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a2a4a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #2196f3;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(33, 150, 243, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #2196f3, #1565c0);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #2196f3;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(33, 150, 243, 0.12);
+    color: #2196f3;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(33, 150, 243, 0.06);
+    border-right: 4px solid #2196f3;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '"';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(33, 150, 243, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(10, 42, 74, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(33, 150, 243, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #2196f3;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(0, 206, 201, 0.08);
+    border: 1px solid rgba(0, 206, 201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #00cec9;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #b0d0d0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(33, 150, 243, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #2196f3;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #0a2a4a, #1a1a2e);
+    border-top: 3px solid #2196f3;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(33, 150, 243, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">💡</span>
+    <h1>من الصفر إلى الواحد</h1>
+    <p class="subtitle">Zero to One: Notes on Startups, or How to Build the Future</p>
+    <p class="author">بيتر ثيل — Peter Thiel</p>
+    <div class="meta-info">
+      <span>7 فصول رئيسية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>التفكير المضاد للسائد</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>ليش هذا الكتاب مهم؟</h2>
+  <p>
+    لو تبي تبني شي حقيقي يغيّر العالم — مو بس نسخة من شي موجود — هذا الكتاب يعلمك كيف تفكر بطريقة مختلفة عن الكل. المشكلة اللي يواجهها أغلب رواد الأعمال:
+  </p>
+  <ul>
+    <li>يقلدون مشاريع ناجحة بدل ما يبتكرون شي جديد</li>
+    <li>يتنافسون في أسواق مزدحمة ويخسرون فلوسهم على حروب الأسعار</li>
+    <li>يتبعون النصائح "المعروفة" بدون ما يفكرون لو هي فعلاً صحيحة</li>
+    <li>يخافون من الأفكار الجريئة ويلعبون بالأمان</li>
+    <li>ما يفهمون ليش بعض الشركات تنجح نجاح خيالي وأغلبها تفشل</li>
+  </ul>
+  <p>
+    بيتر ثيل — مؤسس PayPal وأول مستثمر في فيسبوك — يقدم رؤية مختلفة تماماً عن السائد. يقول: <strong>التقدم الحقيقي يجي من خلق شي جديد ما كان موجود</strong> (من 0 إلى 1)، مو من تكرار شي موجود (من 1 إلى n). هذا الكتاب يعلمك كيف تفكر وتبني بطريقة تخلق مستقبل جديد.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    بيتر ثيل واحد من أنجح رواد الأعمال والمستثمرين في التاريخ. أسس PayPal، استثمر في فيسبوك ولينكد إن وسبيس إكس، وأسس صندوق Founders Fund. هالكتاب مبني على محاضراته في جامعة ستانفورد اللي وثّقها طالبه بليك ماسترز.
+  </p>
+  <p>
+    الكتاب مو دليل عملي خطوة بخطوة — هو إطار تفكير. يعلمك كيف تشوف العالم بطريقة مختلفة، كيف تسأل الأسئلة الصحيحة، وكيف تبني شي ما سبقك أحد فيه. أسلوب ثيل استفزازي ومضاد للسائد — وهذا بالضبط اللي يخلي الكتاب قيّم.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>التفكير في المستقبل</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>الاحتكار الإبداعي</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>ميزة المتحرك الأخير</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>قانون القوة</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>الأسرار</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>الأساسات</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>بناء المستقبل</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التفكير في المستقبل</h2>
+      <span class="chapter-title-en">The Challenge of the Future</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    ثيل يبدأ بسؤال مقابلة شهير: "وش الحقيقة المهمة اللي أغلب الناس يختلفون معك فيها؟" هالسؤال يكشف طريقة تفكيرك. الإجابات السهلة (مثل "التعليم مهم") ما تعلّم شي. الإجابات الحقيقية هي اللي تخلي الناس يستغربون — لأنها تكشف رؤية مختلفة للعالم.
+  </p>
+  <p>
+    التقدم نوعين: <strong>أفقي</strong> (من 1 إلى n) — يعني تنسخ شي موجود وتوسّعه. مثل: تفتح مطعم جديد في مدينة ثانية. و<strong>عمودي</strong> (من 0 إلى 1) — يعني تخلق شي ما كان موجود. مثل: تخترع الإنترنت. التقدم الأفقي سهل نسبياً لأنك تعرف وش تسوي. التقدم العمودي صعب لأنك تبني شي ما أحد بناه قبلك.
+  </p>
+  <p>
+    ثيل يقول: أغلب الشركات الناشئة تسوي تقدم أفقي — نسخة من أوبر بس للدراجات، نسخة من إنستغرام بس للطبخ. هالشركات تتنافس في سوق مزدحم وأرباحها قليلة. الشركات اللي تغيّر العالم فعلاً هي اللي تخلق شي جديد تماماً. السؤال: وش تقدر تبني اليوم ما كان ممكن قبل؟
+  </p>
+
+  <div class="quote-block">
+    <p>كل لحظة في عالم الأعمال تصير مرة واحدة بس. اللي بعده بيل غيتس ما بيبني نظام تشغيل. اللي بعده مارك زوكربيرغ ما بيسوّي شبكة اجتماعية. لو تقلدهم — أنت ما تعلمت منهم شي.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>لا تسأل "وش الصناعة اللي فيها فلوس عشان أدخلها؟" — اسأل "وش المشكلة اللي ما أحد حلها وأنا عندي طريقة مختلفة لحلها؟" الفرق بين السؤالين هو الفرق بين التقليد والابتكار.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>اكتب إجابتك لسؤال ثيل: "وش الحقيقة المهمة اللي أغلب الناس يختلفون معك فيها عن مجالك؟" لو ما قدرت تجاوب — هذي إشارة إنك تفكر مثل الكل. أفكار المشاريع الحقيقية تجي من إجابات هالسؤال.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الاحتكار الإبداعي</h2>
+      <span class="chapter-title-en">Creative Monopoly</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    هنا ثيل يقلب التفكير التقليدي رأساً على عقب. في الاقتصاد يعلمونك إن المنافسة صحية والاحتكار سيء. ثيل يقول العكس: <strong>المنافسة الشديدة تدمّر الأرباح</strong> والاحتكار (لو كان إبداعي) هو اللي يخلق قيمة حقيقية.
+  </p>
+  <p>
+    فكّر فيها: لو تبيع نفس الشي اللي يبيعه 100 منافس، السعر بينزل لين ما أحد يربح. هذا وضع الأسواق التنافسية — الكل يتعب والكل ما يكسب. بس لو عندك شي فريد ما أحد يقدر ينافسك فيه — مثل قوقل في البحث أو آبل في الأيفون — أرباحك تكون ضخمة وتقدر تستثمرها في بناء المستقبل.
+  </p>
+  <p>
+    ثيل يلاحظ شي مضحك: الشركات المحتكرة تقول "عندنا منافسين كثير" عشان ما تجذب انتباه الحكومة. والشركات اللي في منافسة شديدة تقول "نحن فريدين" عشان تجذب المستثمرين. الحقيقة: لو أنت في سوق تنافسي حقيقي — فرصة نجاحك ضعيفة. الهدف: ابني شي فريد لدرجة إنه ما عنده منافس حقيقي.
+  </p>
+
+  <div class="quote-block">
+    <p>المنافسة مو علامة صحة — هي علامة إن ما أحد يربح. الشركات الأكثر نجاحاً في العالم هي اللي بنت احتكارات إبداعية في أسواقها.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>لا تدخل سوق مزدحم وتحاول تنافس بالسعر. ابني شي فريد لدرجة إنك ما عندك منافس حقيقي. الاحتكار الإبداعي هو الطريق للأرباح الحقيقية والتأثير الحقيقي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">ميزة المتحرك الأخير</h2>
+      <span class="chapter-title-en">Last Mover Advantage</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    الكل يتكلم عن "ميزة المتحرك الأول" — يعني إنك لو دخلت السوق أول واحد بتنجح. ثيل يقول هذا مو دايماً صحيح. الأهم مو إنك تكون أول — الأهم إنك تكون <strong>الأخير</strong>. يعني: تبني شي قوي لدرجة إنه ما أحد يقدر يتغلب عليك بعده.
+  </p>
+  <p>
+    ثيل يحدد 4 عناصر للاحتكار الإبداعي: <strong>تقنية خاصة</strong> (منتجك أحسن من أقرب بديل بـ10 أضعاف على الأقل — مو 20% أحسن، 10 أضعاف)، <strong>تأثير الشبكة</strong> (المنتج يصير أحسن كل ما زاد المستخدمين)، <strong>اقتصاديات الحجم</strong> (تكلفة خدمة كل عميل إضافي تقريباً صفر)، <strong>العلامة التجارية</strong> (قوة العلامة تخلق ولاء ما يتغلب عليه المنافسون).
+  </p>
+  <p>
+    بس لازم تبدأ صغير. ثيل يقول: ابدأ بسوق صغير جداً وسيطر عليه تماماً، بعدين توسّع. أمازون بدأ ببيع الكتب بس — ما حاول يبيع كل شي من البداية. فيسبوك بدأ بطلاب هارفارد بس. لو تحاول تسيطر على سوق كبير من البداية، غالباً بتفشل لأنك ما تقدر تنافس اللاعبين الكبار.
+  </p>
+
+  <div class="quote-block">
+    <p>لا تحاول تكون أول واحد يدخل السوق — حاول تكون آخر واحد يدخل. يعني ابني شي قوي لدرجة إنه ما أحد بعدك يقدر ينافسك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>ابدأ بسوق صغير وسيطر عليه 100%، بعدين توسّع بالتدريج. لا تحاول تغزو سوق ضخم من البداية. والأهم: ابني منتج أحسن بـ10 أضعاف — مو شوي أحسن.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>حدد أصغر سوق تقدر تسيطر عليه بالكامل. مو "رواد أعمال في السعودية" — أصغر من كذا. ممكن "مؤسسات تقنية ناشئة في الرياض عدد موظفيها أقل من 10". سيطر على هالسوق أول، بعدين وسّع.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">قانون القوة</h2>
+      <span class="chapter-title-en">The Power Law</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    قانون القوة من أهم المفاهيم في الكتاب. الفكرة: النتائج مو موزعة بالتساوي — قلة قليلة تاخذ أغلب النتائج. في عالم المشاريع الاستثمارية: استثمار واحد ناجح يعوّض كل الخسائر ويزيد. من صندوق Founders Fund حق ثيل، فيسبوك لحاله جاب أكثر من كل الاستثمارات الثانية مجتمعة.
+  </p>
+  <p>
+    هالقانون ينطبق على كل شي: أفضل قرار في مسيرتك بيأثر أكثر من كل القرارات الثانية مجتمعة. أهم موظف في الشركة يساوي أكثر من عدة موظفين عاديين. أفضل قناة تسويقية بتجيب أكثر من كل القنوات الثانية. المشكلة إن أغلب الناس يعاملون كل شي بالتساوي بدل ما يركزون على اللي يصنع الفرق الأكبر.
+  </p>
+  <p>
+    ثيل يقول: هالقانون لازم يأثر على طريقة تفكيرك في كل شي. لما تختار مشروع، اختر واحد عنده القدرة يكون ضخم — مو مشروع "كويس". لما تختار شريك، اختر الأفضل. لما تختار سوق، اختر سوق فيه فرصة تكون الأول بمسافة كبيرة.
+  </p>
+
+  <div class="quote-block">
+    <p>في عالم الشركات الناشئة، التوزيع مو متساوي. شركة واحدة ممكن تساوي أكثر من كل الشركات الثانية في محفظتك مجتمعة. ركّز على الرهانات الكبيرة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>لا تنوّع جهودك بالتساوي. حدد الشي اللي عنده أكبر فرصة للنجاح الضخم وحط فيه أغلب طاقتك ومواردك. التركيز على الأفضل أهم من التنويع.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الأسرار</h2>
+      <span class="chapter-title-en">Secrets</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    ثيل يقول: كل شركة عظيمة مبنية على "سر" — حقيقة مهمة ما يعرفها أغلب الناس. قوقل كان مبني على سر: إن روابط الويب تقدر تستخدم كنظام تصنيف للصفحات. Airbnb كان مبني على سر: إن ناس كثير مستعدين يأجرون بيوتهم لغرباء ويثقون فيهم.
+  </p>
+  <p>
+    المشكلة إن أغلب الناس يفترضون إن كل الأسرار اتكشفت — إن كل شي يستاهل يُبنى انبنى. ثيل يقول هذا غلط خطير. فيه أسرار كثيرة بعد ما اتكشفت — في التقنية، في الأعمال، في الحياة. اللي يدوّر عليها ويلاقيها هو اللي يبني شركات عظيمة.
+  </p>
+  <p>
+    فيه نوعين من الأسرار: <strong>أسرار الطبيعة</strong> (اكتشافات علمية أو تقنية ما أحد وصل لها) و<strong>أسرار الناس</strong> (أشياء يسوّوها الناس ما أحد يتكلم عنها أو ما أحد ينتبه لها). الثانية أسهل لأنك تلاقيها بالمراقبة والسؤال: "وش الشي اللي الناس يسوّوه بس ما أحد بنى له حل أحسن؟"
+  </p>
+
+  <div class="quote-block">
+    <p>كل شركة ناجحة مبنية على سر — شي الكل يتجاهله أو ما يشوفه. الأسرار ما خلصت. بس الناس اللي يدوّرون عليها صاروا قليلين.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>لا تفترض إن كل شي اتبنى. ابحث عن الأسرار — الحقائق المهمة اللي ما يعرفها أغلب الناس. وش الشي اللي تشوفه أنت وما يشوفه غيرك؟ هذا ممكن يكون أساس شركتك القادمة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>راقب الناس حولك هالأسبوع. وش الأشياء اللي يعانون منها ويتقبلونها كأنها طبيعية؟ وش العمليات اللي يسوّونها بطريقة غبية وما أحد يفكر يحسّنها؟ كل مشكلة "عادية" ما لها حل هي سر محتمل — وفرصة مشروع.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الأساسات</h2>
+      <span class="chapter-title-en">Foundations</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    ثيل يقول: القرارات اللي تاخذها في بداية المشروع هي الأهم — لأنها صعب تتغيّر بعدين. مثل أساسات البيت: لو غلط فيها، كل شي فوقها بيكون غلط. أهم 3 أساسات: <strong>اختيار الشركاء</strong>، <strong>توزيع الأسهم</strong>، و<strong>بنية القرارات</strong>.
+  </p>
+  <p>
+    اختيار الشريك المؤسس مثل الزواج — لازم تعرف الشخص كويس قبل. ثيل يقول أكبر سبب لفشل الشركات الناشئة هو خلافات المؤسسين. لازم يكون بينكم توافق في الرؤية والقيم وطريقة العمل. مو بس إنكم أصحاب — لازم تكونون شركاء فعّالين.
+  </p>
+  <p>
+    توزيع الأسهم لازم يكون واضح من البداية وعادل. الراتب لازم يكون منخفض نسبياً للمؤسسين — ثيل يقول: "أي مؤسس يدفع لنفسه أكثر من 150 ألف دولار سنوياً، إما يكذب على نفسه أو يكذب على المستثمرين". الراتب المنخفض يخلي المؤسس ملتزم بنجاح الشركة على المدى الطويل.
+  </p>
+
+  <div class="quote-block">
+    <p>كل شركة عظيمة فريدة بطريقتها، بس كلها مشتركة في شي: أساساتها كانت قوية من البداية. القرارات الأولى هي الأهم.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>لا تتسرع في بداية مشروعك. اختر شريكك بعناية شديدة، اتفقوا على كل شي بالكتابة من البداية، وحطوا قواعد واضحة لحل الخلافات. الأساسات القوية تبني شركات قوية.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">بناء المستقبل</h2>
+      <span class="chapter-title-en">Building the Future</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    ثيل يختم الكتاب برؤيته للمستقبل. يقول: فيه نوعين من التفكير عن المستقبل — <strong>محدد متفائل</strong> (عندي رؤية واضحة وبشتغل عليها) و<strong>غير محدد متفائل</strong> (المستقبل بيكون أحسن بس ما أعرف كيف). أمريكا الحين في المرحلة الثانية — الكل يتوقع الخير بس ما أحد يبني شي محدد.
+  </p>
+  <p>
+    ثيل يبي يرجعنا للتفكير المحدد المتفائل — يعني: أنا عندي رؤية واضحة للمستقبل اللي أبيه، وبشتغل بجد عشان أبنيه. هذا التفكير اللي بنى الإنترنت والأيفون وسبيس إكس. مو الحظ ولا القدر — بل رؤية واضحة وتنفيذ قوي.
+  </p>
+  <p>
+    رسالة ثيل الأخيرة: العالم يحتاج ناس يفكرون بجرأة ويبنون أشياء جديدة. التقدم مو حتمي — هو نتيجة لجهود بشر محددين قرروا يصنعون مستقبل أحسن. السؤال مو "وش بيصير في المستقبل؟" — السؤال "وش بتبني للمستقبل؟"
+  </p>
+
+  <div class="quote-block">
+    <p>المستقبل ما بيبني نفسه. كل تقدم في تاريخ البشرية صنعه شخص قرر يسوّي شي ما أحد سواه قبله. السؤال: وش بتسوي أنت؟</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>لا تنتظر المستقبل يجي لك. قرر وش تبي تبنيه واشتغل عليه بجد. العالم يتقدم لأن أفراد قرروا يبنون شي جديد — مو لأن التقدم حتمي. كون واحد من هالأفراد.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>اكتب رؤيتك للمستقبل اللي تبي تبنيه — بالتحديد. مو "أبي أنجح" — بل "أبي أبني منصة تحل مشكلة X لشريحة Y بطريقة Z". الوضوح في الرؤية أول خطوة نحو بناء شي حقيقي. بعدين حدد أول 3 خطوات ملموسة وابدأ فيها بكره.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>الخلاصة النهائية</h3>
+  <p>
+    من الصفر إلى الواحد مو مجرد كتاب عن ريادة الأعمال — هو كتاب عن التفكير بطريقة مختلفة. ثيل يقول: التقدم الحقيقي يجي من خلق شي جديد ما كان موجود — مو من نسخ الموجود.
+  </p>
+  <p>
+    ابني احتكار إبداعي في سوق صغير، ابحث عن الأسرار اللي ما يشوفها غيرك، ركّز مواردك على الرهانات الكبيرة، واختر أساساتك بعناية. المنافسة مو دليل نجاح — هي دليل إنك في المكان الغلط.
+  </p>
+  <p>
+    الرسالة الأساسية: العالم يحتاج ناس تفكر بجرأة وتبني أشياء جديدة. المستقبل مو حتمي — أنت تبنيه بقراراتك وأفعالك اليوم.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص تعليمي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>جاوب سؤال ثيل: وش الحقيقة المهمة اللي أغلب الناس يختلفون معك فيها؟</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>حدد 3 أسرار في مجالك — مشاكل ما أحد يتكلم عنها أو حلول ما أحد جرّبها</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>حدد أصغر سوق تقدر تسيطر عليه بالكامل واكتب خطة للسيطرة عليه</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>اسأل نفسك: هل منتجي أحسن 10 أضعاف من أقرب بديل؟ لو لا — حسّنه لين يكون</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>اكتب رؤيتك المحددة للمستقبل اللي تبي تبنيه — بأكثر تفصيل ممكن</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>راجع أساسات مشروعك: الشركاء، توزيع الأسهم، قواعد القرار — وصلّح أي خلل</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

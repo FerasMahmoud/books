@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>مشروع بـ100 دولار - ملخص شامل | كريس غيلبو</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #27ae60; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #2ecc71; }
+
+  .hero {
+    background: linear-gradient(135deg, #0a3a1a 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #27ae60;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(39, 174, 96, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(10, 58, 26, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #27ae60;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(39, 174, 96, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(39, 174, 96, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #1b2d1b, #1a1a2e);
+    border: 2px solid #1e8449;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #27ae60;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #b0d0b0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #b0d0b0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '⚡';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a3a1a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #27ae60;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(39, 174, 96, 0.1);
+    color: #27ae60;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #27ae60;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a3a1a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #27ae60;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a3a1a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #27ae60;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(39, 174, 96, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #27ae60, #1e8449);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #27ae60;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(39, 174, 96, 0.12);
+    color: #27ae60;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(39, 174, 96, 0.06);
+    border-right: 4px solid #27ae60;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '"';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(39, 174, 96, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(10, 58, 26, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(39, 174, 96, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #27ae60;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(0, 206, 201, 0.08);
+    border: 1px solid rgba(0, 206, 201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #00cec9;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #b0d0d0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(39, 174, 96, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #27ae60;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #0a3a1a, #1a1a2e);
+    border-top: 3px solid #27ae60;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(39, 174, 96, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">💵</span>
+    <h1>مشروع بـ100 دولار</h1>
+    <p class="subtitle">The $100 Startup: Reinvent the Way You Make a Living</p>
+    <p class="author">كريس غيلبو — Chris Guillebeau</p>
+    <div class="meta-info">
+      <span>7 فصول رئيسية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>من فكرة لدخل بأقل ميزانية</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>ليش هذا الكتاب مهم؟</h2>
+  <p>
+    لو تحلم بمشروعك الخاص بس تحس إنك تحتاج فلوس كثيرة وخبرة سنين عشان تبدأ — هذا الكتاب يثبت لك العكس. قصص حقيقية لناس عاديين بدأوا بأقل من 100 دولار وبنوا مشاريع تعيّشهم. المشاكل اللي تمنع أغلب الناس:
+  </p>
+  <ul>
+    <li>يحسبون إن بدء مشروع يحتاج رأس مال كبير واستثمار ضخم</li>
+    <li>ينتظرون "الوقت المناسب" اللي ما يجي أبداً</li>
+    <li>يفكرون إنهم يحتاجون شهادة ماجستير أو MBA عشان يبدأون</li>
+    <li>يخافون يتركون الوظيفة قبل ما يكون عندهم خطة بديلة</li>
+    <li>عندهم مهارات وشغف بس ما يعرفون كيف يحولونهم لفلوس</li>
+  </ul>
+  <p>
+    كريس غيلبو درس أكثر من 1,500 شخص بدأوا مشاريع بأقل من 100 دولار ونجحوا. <strong>الكتاب يعطيك خارطة طريق عملية</strong> — من اكتشاف الفكرة لإطلاق المشروع لبناء دخل مستدام. مو نظريات — قصص حقيقية وأدوات عملية.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    كريس غيلبو مسافر وكاتب ورائد أعمال زار كل دول العالم (193 دولة) قبل عمر الـ35. بنى مشروعه الخاص من بيته وبميزانية بسيطة. في هالكتاب، ما يتكلم عن نفسه بس — يتكلم عن مئات الأشخاص اللي سووا نفس الشي.
+  </p>
+  <p>
+    الكتاب مبني على بحث حقيقي: غيلبو درس 1,500 شخص بدأوا مشاريع ناجحة بميزانية أقل من 100 دولار ويكسبون أكثر من 50,000 دولار سنوياً. اختار أفضل القصص واستخرج منها الأنماط المشتركة والدروس العملية. النتيجة: دليل بسيط لأي شخص يبي يبدأ مشروعه الخاص بدون ما يحتاج فلوس كثيرة.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>ريادة الأعمال المصغّرة</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>نقطة التقاطع</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>صناعة العرض</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>استراتيجية الإطلاق</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>إدارة الفلوس</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>الرافعة المالية</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>الحرية</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">ريادة الأعمال المصغّرة</h2>
+      <span class="chapter-title-en">Micro-Entrepreneurship</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    غيلبو يبدأ بفكرة قوية: ما تحتاج تكون رائد أعمال تقليدي عشان تبني مشروع. ما تحتاج خطة عمل من 50 صفحة، ولا مستثمرين، ولا مكتب فخم. كل اللي تحتاجه: <strong>منتج أو خدمة يبيها الناس</strong>، طريقة توصلها لهم، وطريقة تستلم الفلوس. بس. الباقي تفاصيل تقدر تحلها بعدين.
+  </p>
+  <p>
+    القصص في الكتاب تثبت هالشي. مُعلمة يوغا بدأت تبيع دورات أونلاين من بيتها. مبرمج بدأ يبيع قوالب ووردبريس بأقل من 50 دولار استثمار. مصمم بدأ يبيع تصاميم على طباعة عند الطلب بدون ما يحتاج مخزون. كلهم بدأوا بفلوس قليلة ومهارات عندهم وبنوا مشاريع تعيّشهم كويس.
+  </p>
+  <p>
+    الفكرة الأساسية: العالم تغيّر. قبل كنت تحتاج محل وموظفين ورأس مال. اليوم تقدر تبدأ بلابتوب واتصال إنترنت. تكاليف البدء نزلت بشكل خيالي. اللي يمنعك مو الفلوس — هو الخوف والتردد. غيلبو يقول: ابدأ بسيط، ابدأ الحين، وتعلم بالطريق.
+  </p>
+
+  <div class="quote-block">
+    <p>لو تبي تبدأ مشروع، لا تبحث عن فلوس — ابحث عن مشكلة تقدر تحلها. الفلوس تجي لما الناس تحتاج اللي تقدمه.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>بدء مشروع ما يتطلب ميزانية كبيرة ولا خبرة طويلة. يتطلب مهارة يحتاجها الناس، وشجاعة إنك تبدأ بدون ما يكون كل شي كامل. أبسط مشروع أحسن من أعظم خطة ما تنفّذت.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>اكتب قائمة بكل المهارات اللي عندك — مو بس المهنية، حتى الهوايات والأشياء اللي الناس يطلبون مساعدتك فيها. بعدين اسأل: أي واحدة من هالمهارات ممكن الناس تدفع عليها؟ هذي بداية مشروعك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">نقطة التقاطع</h2>
+      <span class="chapter-title-en">Convergence</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    غيلبو يقدم مفهوم "نقطة التقاطع" — المكان اللي تتقاطع فيه 3 أشياء: <strong>مهاراتك</strong> (وش تعرف تسوي)، <strong>شغفك</strong> (وش تحب تسوي)، و<strong>حاجة السوق</strong> (وش الناس مستعدة تدفع عليه). لو لقيت هالنقطة، عندك أساس مشروع ناجح.
+  </p>
+  <p>
+    المشكلة إن كثير ناس يركزون على عنصر واحد ويتجاهلون الباقي. واحد يحب الرسم (شغف) بس ما يعرف كيف يبيع (مهارة تسويق) أو يرسم أشياء ما أحد يبيها (ما فيه حاجة سوق). أو واحد يعرف يبرمج (مهارة) بس يكره الشغل (ما فيه شغف) فما يستمر. لازم العناصر الثلاثة تكون موجودة.
+  </p>
+  <p>
+    غيلبو يقول: لا تبحث عن شغفك أول — ابحث عن مشاكل الناس. بعدين شف: هل عندي مهارة تحل هالمشكلة؟ وهل أنا مستمتع بحلها؟ كثير مرات، الشغف يجي بعد ما تبدأ — مو قبل. لما تشوف إن شغلك يساعد ناس ويجيب لك فلوس، الشغف يجي تلقائياً.
+  </p>
+
+  <div class="quote-block">
+    <p>لا تبحث عن شغفك — ابحث عن المشكلة اللي تقدر تحلها للناس. الشغف يجي لما تشوف إنك تصنع فرق حقيقي في حياة الآخرين.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>المشروع الناجح يقع عند نقطة تقاطع مهاراتك وشغفك وحاجة السوق. ما يكفي إنك تحب الشي — لازم الناس تحتاجه وتدفع عليه. ابحث عن المشكلة أول، بعدين طبّق مهارتك عليها.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">صناعة العرض</h2>
+      <span class="chapter-title-en">Creating an Irresistible Offer</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    عندك مهارة وفيه حاجة سوق — بس كيف تصنع عرض الناس ما تقدر ترفضه؟ غيلبو يقول: لازم تفهم إن الناس ما تشتري المنتج — تشتري <strong>النتيجة</strong>. ما أحد يشتري كورس تصوير — يشتري صور حلوة يفتخر فيها. ما أحد يشتري استشارة تسويق — يشتري مبيعات أكثر.
+  </p>
+  <p>
+    عشان كذا، عرضك لازم يركّز على الفائدة مو الميزة. بدل "كورس 10 ساعات في التصوير"، قل "تعلم تاخذ صور احترافية بجوالك في 3 أيام". بدل "استشارة تسويقية"، قل "خطة تزيد مبيعاتك 30% خلال شهر". الفرق كبير — الأول يبيع وقتك، الثاني يبيع نتيجة.
+  </p>
+  <p>
+    غيلبو يقدم صيغة بسيطة للعرض: <strong>حدد المشكلة بوضوح + قدم الحل بطريقة واضحة + اعطِ ضمان يقلل المخاطرة + اضف مكافأة تزيد القيمة</strong>. مثال: "لو ما حسيت بفرق بعد 30 يوم، أرجع لك فلوسك". هالضمان يشيل الخوف من العميل ويخليه يجرّب.
+  </p>
+
+  <div class="quote-block">
+    <p>الناس ما تدفع على وقتك ولا على مهارتك — تدفع على النتيجة اللي بتحصل لها. ركّز على النتيجة وبيّنها بوضوح.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>صمم عرضك حول النتيجة اللي يبيها العميل — مو حول المنتج اللي تبيعه. اعطِ ضمان يشيل المخاطرة من العميل. لو عرضك واضح وقوي، المبيعات تجي لحالها.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>اكتب عرضك في جملة واحدة: "أساعد [شريحة محددة] يحققون [نتيجة محددة] عن طريق [طريقتك]". مثال: "أساعد أصحاب المتاجر الإلكترونية يزيدون مبيعاتهم 25% عن طريق تحسين صفحات المنتجات". لو ما قدرت تكتبها بوضوح — عرضك يحتاج تحسين.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">استراتيجية الإطلاق</h2>
+      <span class="chapter-title-en">Launch Strategy</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    الإطلاق مو مجرد "حطيت المنتج على الموقع" — هو حدث تبنيه بعناية. غيلبو يقول: أفضل عمليات الإطلاق تبدأ قبل الإطلاق بأسابيع. تبني قائمة بريدية، تشارك قصتك، تعطي الناس لمحة عن اللي جاي، وتخلق حماس وترقب.
+  </p>
+  <p>
+    خطوات الإطلاق: <strong>أول</strong>، ابني جمهور قبل ما يكون عندك منتج (مدونة، حساب، قائمة بريدية). <strong>ثاني</strong>، شارك رحلة بناء المنتج مع جمهورك — الناس تحب تشوف "خلف الكواليس". <strong>ثالث</strong>، سوّ عروض خاصة لأول المشترين — خصم أو مكافأة. <strong>رابع</strong>، حدد تاريخ إطلاق واضح وسوّ عد تنازلي.
+  </p>
+  <p>
+    غيلبو يشدد على نقطة مهمة: <strong>لا تنتظر لين يكون كل شي كامل</strong>. أطلق بأسرع ما تقدر وحسّن بالطريق. كثير مشاريع ماتت لأن صاحبها فضل يحسّنها بدل ما يطلقها. الإطلاق مو نهاية — هو بداية. بعد الإطلاق تجمع ردود فعل حقيقية وتحسّن بناءً عليها.
+  </p>
+
+  <div class="quote-block">
+    <p>الإطلاق المثالي ما يوجد. الإطلاق الأفضل هو اللي يصير — بدل اللي تنتظره لين يكون كامل. ابدأ الحين وحسّن بالطريق.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>ابني جمهور قبل ما تطلق منتجك. شارك رحلتك، اخلق حماس، وسوّ عروض خاصة لأول المشترين. الإطلاق حدث — مو مجرد نشر رابط. وتذكر: أطلق بسرعة وحسّن لاحقاً.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">إدارة الفلوس</h2>
+      <span class="chapter-title-en">Money Management</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    غيلبو يقول: ما تحتاج تكون محاسب عشان تدير فلوس مشروعك. بس لازم تفهم الأساسيات. أهم رقم لازم تعرفه: <strong>كم تحتاج تبيع عشان تغطي تكاليفك؟</strong> هذا اسمه نقطة التعادل. لو تبيع منتج بـ50 ريال وتكاليفك الشهرية 5,000 ريال، لازم تبيع 100 قطعة شهرياً عشان تتعادل.
+  </p>
+  <p>
+    من أهم النصائح: <strong>ابدأ بأقل تكلفة ممكنة</strong>. لا تأجر مكتب من البداية. لا توظف أحد قبل ما تحتاج فعلاً. لا تشتري أدوات غالية. كل ريال توفره في البداية يزيد فرصة بقائك. كثير مشاريع فشلت مو لأن الفكرة سيئة — لأنهم صرفوا أكثر من اللازم قبل ما يكسبون.
+  </p>
+  <p>
+    غيلبو يعطي قاعدة بسيطة: <strong>حط 50% من أرباحك في حساب منفصل كاحتياطي</strong>. هالاحتياطي ينقذك لو جا شهر مبيعاته ضعيفة أو لو واجهت مصروف غير متوقع. المشاريع الصغيرة تموت لما تنفد الكاش — مو لما تنفد الأفكار.
+  </p>
+
+  <div class="quote-block">
+    <p>مشروعك ما يحتاج فلوس كثيرة عشان يبدأ — يحتاج فلوس كافية عشان يبقى. التحكم في المصاريف أهم من زيادة المبيعات في البداية.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>ابدأ بأقل تكلفة ممكنة، اعرف نقطة التعادل حقتك، وحط احتياطي مالي من البداية. لا تصرف على أشياء "حلوة" قبل ما يكون عندك دخل ثابت يغطي المصاريف ويزيد.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>اليوم، اكتب كل المصاريف الثابتة لمشروعك (ولو كان بعد ما بدأ). بعدين احسب: كم لازم أبيع عشان أغطيها؟ هل هالرقم واقعي؟ لو صعب — قلل مصاريفك. لو واقعي — حطه كهدف شهري وركّز عليه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الرافعة المالية</h2>
+      <span class="chapter-title-en">Leverage</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    بعد ما تأسس مشروعك ويبدأ يجيب دخل، كيف تنمّيه بدون ما تشتغل ضعف الساعات؟ الجواب: <strong>الرافعة</strong>. الرافعة يعني تزيد النتائج بدون ما تزيد الجهد بنفس النسبة. فيه عدة طرق: الأتمتة (أنظمة تشتغل بدونك)، المنتجات الرقمية (تبيعها مرة وتبقى تكسب)، والتوسع الأفقي (تطبق نفس النموذج في أسواق جديدة).
+  </p>
+  <p>
+    غيلبو يعطي مثال: لو تقدم خدمة استشارية، أنت محدود بعدد الساعات في اليوم. بس لو حوّلت خبرتك لكورس أونلاين، ممكن يشتريه 1000 شخص بنفس الجهد اللي تحتاجه لعميل واحد. هذي رافعة. أو لو عندك متجر ناجح في مدينة، تفتح فرع أونلاين — نفس المنتجات، سوق أوسع، تكلفة أقل.
+  </p>
+  <p>
+    بس غيلبو يحذّر: <strong>لا تحاول تكبّر قبل ما يكون عندك أساس قوي</strong>. لو منتجك ما يكسب حالياً، التوسع بيخسّرك أكثر. لازم أول يكون عندك شي يشتغل — بعدين تكبّره. مثل ما تبني بيت: أول الأساس، بعدين الأدوار.
+  </p>
+
+  <div class="quote-block">
+    <p>الهدف مو إنك تشتغل أكثر — الهدف إنك تشتغل بذكاء أكثر. ابني أنظمة تشتغل بدونك وتكسبك وأنت نايم.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>بعد ما تأسس مشروعك، دوّر على الرافعة: وش الشي اللي أقدر أسويه مرة ويكسبني مرات؟ المنتجات الرقمية، الأتمتة، والتوسع لأسواق جديدة كلها أشكال رافعة. بس لا تكبّر قبل ما يكون الأساس قوي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الحرية</h2>
+      <span class="chapter-title-en">Freedom</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    غيلبو يختم بالهدف الأكبر: <strong>الحرية</strong>. مو كل شخص يبي يبني شركة بمليارات. كثير ناس يبون مشروع يعيّشهم كويس ويعطيهم حرية — حرية الوقت، حرية المكان، حرية الاختيار. هذا اللي يسميه "أسلوب الحياة المتحرر".
+  </p>
+  <p>
+    القصص في الكتاب تبيّن: فيه ناس يشتغلون من البيت، من المقهى، من أي مكان في العالم. يشتغلون الساعات اللي يبونها. ما عندهم مدير يقول لهم وش يسوون. بنوا مشاريع تعيّشهم وتعطيهم الحرية اللي يبونها. مو كلهم أغنياء — بس كلهم مرتاحين ومسيطرين على حياتهم.
+  </p>
+  <p>
+    غيلبو يقول: حدد وش الحرية تعني لك أنت بالتحديد. لبعض الناس: إني أشتغل من بيتي. لبعضهم: إني أسافر وأشتغل من أي مكان. لبعضهم: إني أختار مشاريعي وعملائي. مهما كان تعريفك، ابني مشروعك حوله. المشروع وسيلة للحرية — مو هدف بحد ذاته.
+  </p>
+
+  <div class="quote-block">
+    <p>القيمة الحقيقية لمشروعك مو في الفلوس اللي يجيبها — في الحرية اللي يعطيك إياها. ابني مشروع يخدم حياتك، مو حياة تخدم مشروعك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>المشروع وسيلة مو هدف. حدد نوع الحرية اللي تبيها (وقت، مكان، اختيار) وابني مشروعك حولها. ما كل مشروع ناجح يعطيك حرية — بس لو صممته صح من البداية، يقدر.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>اكتب تعريفك الشخصي للحرية: وش بالضبط تتمنى يكون مختلف في حياتك اليومية؟ بعدين اسأل: هل مشروعي الحالي (أو المستقبلي) مصمم ليعطيني هالحرية؟ لو لا — عدّل التصميم من البداية. لا تبني سجن جديد وتسميه مشروع.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>الخلاصة النهائية</h3>
+  <p>
+    ما تحتاج فلوس كثيرة عشان تبدأ مشروع. تحتاج مهارة يحتاجها الناس، عرض واضح يركّز على النتيجة، وشجاعة تطلق بسرعة وتتعلم بالطريق. هذا اللي أثبتته قصص 1,500 رائد أعمال في هالكتاب.
+  </p>
+  <p>
+    ابحث عن نقطة التقاطع بين مهاراتك وشغفك وحاجة السوق. صمم عرض ما يقدر يرفضه العميل. أطلق بسرعة وحسّن لاحقاً. دير فلوسك بذكاء. واستخدم الرافعة عشان تنمو بدون ما تحترق.
+  </p>
+  <p>
+    الرسالة الأساسية: الحرية هي الهدف. المشروع وسيلة. ابني مشروع يخدم الحياة اللي تبيها — مو العكس.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص تعليمي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>اكتب قائمة بمهاراتك وحدد أي واحدة الناس تحتاجها وتدفع عليها</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>صمم عرضك في جملة واحدة تركّز على النتيجة مو المنتج</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>ابدأ ببناء جمهور اليوم — حساب تواصل أو قائمة بريدية بسيطة</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>حدد موعد إطلاق خلال أسبوعين ولا تأجل — أي شي أحسن من لا شي</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>احسب نقطة التعادل حقتك واكتبها على ورقة وعلّقها قدامك</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>اكتب تعريفك للحرية وتأكد إن مشروعك مصمم ليحققها لك</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

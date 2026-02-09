@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>معضلات المؤسس - ملخص شامل | نعوم واسرمان</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #c2185b; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #e91e63; }
+
+  .hero {
+    background: linear-gradient(135deg, #4a0020 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #e91e63;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(233, 30, 99, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(74, 0, 32, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #e91e63;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(233, 30, 99, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(233, 30, 99, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #d0b0b0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #d0b0b0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '\26A1';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #4a0020;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #e91e63;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(233, 30, 99, 0.1);
+    color: #e91e63;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #e91e63;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #4a0020;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #e91e63;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #4a0020;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #e91e63;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(233, 30, 99, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #e91e63, #c2185b);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #e91e63;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(233, 30, 99, 0.12);
+    color: #e91e63;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(233, 30, 99, 0.06);
+    border-right: 4px solid #e91e63;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '\201C';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(233, 30, 99, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(74, 0, 32, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(233, 30, 99, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #e91e63;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(0, 206, 201, 0.08);
+    border: 1px solid rgba(0, 206, 201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #00cec9;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #b0d0d0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(233, 30, 99, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #e91e63;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #4a0020, #1a1a2e);
+    border-top: 3px solid #e91e63;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(233, 30, 99, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#129300;</span>
+    <h1>معضلات المؤسس</h1>
+    <p class="subtitle">The Founder's Dilemmas</p>
+    <p class="author">نعوم واسرمان &mdash; Noam Wasserman</p>
+    <div class="meta-info">
+      <span>7 فصول رئيسية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>بحث على أكثر من 10,000 مؤسس</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>ليش هذا الكتاب مهم؟</h2>
+  <p>
+    كثير من المؤسسين يبدأون شركاتهم بحماس كبير بس يقعون في أخطاء كان ممكن يتجنبونها — أخطاء مو في المنتج أو السوق، بس في القرارات التأسيسية: مع مين أشارك؟ كيف نقسّم الحصص؟ مين يكون الـCEO؟ هذي أبرز المشاكل:
+  </p>
+  <ul>
+    <li>تختار شريك عشان صديقك مو عشان يكمّلك مهنياً</li>
+    <li>تقسّم الحصص بالتساوي عشان ما تبي مشاكل — وتخلق مشاكل أكبر</li>
+    <li>ما تحدد الأدوار من البداية وكل واحد يتدخل في شغل الثاني</li>
+    <li>توظّف ناس قريبين منك بدل الناس الأكفأ</li>
+    <li>تتنازل عن السيطرة للمستثمرين بدون ما تفهم العواقب</li>
+  </ul>
+  <p>
+    واسرمان درس أكثر من 10,000 مؤسس وحلّل قراراتهم ونتائجها. الكتاب هذا مبني على <strong>بيانات حقيقية مو آراء شخصية</strong> — يبيّن لك الأخطاء الشائعة وكيف تتجنبها عشان ما تصير إحصائية ثانية.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    نعوم واسرمان أستاذ في كلية هارفارد للأعمال ومتخصص في دراسة المؤسسين والشركات الناشئة. قضى سنين يجمع بيانات عن آلاف المؤسسين — وش قراراتهم الأولى؟ مع مين شاركوا؟ كيف قسّموا الحصص؟ وش كانت النتيجة؟
+  </p>
+  <p>
+    الكتاب يقدم إطار عمل واضح لأهم القرارات اللي يواجهها أي مؤسس في السنة الأولى. الجميل إنه مبني على أرقام وبيانات مو على قصص نجاح مختارة بعناية. واسرمان يبيّن الأنماط المتكررة — الأخطاء اللي يسويها أغلب المؤسسين — ويعطيك أدوات عشان تتجنبها. هو مو كتاب يقولك وش تسوي بالضبط — يقولك وش تفكر فيه قبل ما تقرر.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>معضلة الغنى مقابل السيطرة</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>التأسيس الفردي أو الجماعي</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>اختيار الشركاء المؤسسين</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>تقسيم الحصص</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>الأدوار وصناعة القرار</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>توظيف أوائل الموظفين</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>العلاقة مع المستثمرين</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">معضلة الغنى مقابل السيطرة</h2>
+      <span class="chapter-title-en">Rich vs King Dilemma</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    واسرمان يبدأ بأهم معضلة يواجهها أي مؤسس: هل تبي تكون غني أو تبي تكون ملك؟ يعني هل تبي تبني شركة كبيرة تكسب منها فلوس كثير حتى لو فقدت السيطرة عليها — أو تبي تتحكم في كل شي حتى لو الشركة بقت صغيرة؟ واسرمان يقول إن هالمعضلة موجودة في كل قرار تاخذه من بداية التأسيس.
+  </p>
+  <p>
+    البيانات تبيّن إن أغلب المؤسسين يبون الاثنين — الغنى والسيطرة — بس في الواقع قليل جداً يحصلون على الاثنين. كل ما جبت مستثمرين أكثر وموظفين أكثر وأعضاء مجلس إدارة أكثر، كل ما نقصت سيطرتك. بس في المقابل، هالأشياء هي اللي تكبّر الشركة وتزيد قيمة حصتك. المؤسس اللي يتمسك بالسيطرة ويرفض يشارك أي أحد غالباً يبقى ملك على مملكة صغيرة.
+  </p>
+  <p>
+    واسرمان يقول إن أول خطوة هي إنك تكون صادق مع نفسك: وش أهم عندك فعلاً؟ الجواب يحدد كل قرار بعده — من اختيار الشركاء لتقسيم الحصص لقبول الاستثمار. ما فيه جواب صح أو غلط — بس فيه جواب يتماشى مع قيمك وجواب يتناقض معها. واللي يتناقض مع قيمه بيعاني لأنه بيحس إنه خسر حتى لو نجح.
+  </p>
+
+  <div class="quote-block">
+    <p>أغلب المؤسسين يبون يكونون أغنياء وملوك — بس البيانات تقول إنك غالباً بتختار واحد. اللي يفهم هالمعضلة بدري يقدر ياخذ قرارات أذكى.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>قبل أي قرار تأسيسي، اسأل نفسك: هل أنا أبي أكون غني (قيمة مالية عالية مع سيطرة أقل) أو أبي أكون ملك (سيطرة كاملة مع قيمة أقل)؟ الصراحة مع نفسك في هالسؤال بتوفر عليك سنين من الصراع الداخلي.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>اكتب في ورقة: وش أهم عندي — إني أملك 100% من شركة تسوى مليون، أو 10% من شركة تسوى 100 مليون؟ ما فيه جواب صح — بس الجواب يحدد استراتيجيتك كلها. ارجع لهالورقة كل ما واجهت قرار تأسيسي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التأسيس الفردي أو الجماعي</h2>
+      <span class="chapter-title-en">Solo vs Team Founding</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    واحد من أول القرارات اللي يواجهها المؤسس: هل أبدأ وحدي أو مع شريك؟ واسرمان يبيّن إن كل خيار له مميزات ومخاطر. المؤسس الفردي عنده سيطرة كاملة وسرعة في القرارات — بس يواجه ضغط أكبر وموارد أقل. الفريق المؤسس عنده مهارات متنوعة ودعم نفسي — بس يواجه خطر الخلافات وصعوبة التنسيق.
+  </p>
+  <p>
+    البيانات تبيّن إن الشركات اللي فيها فريق مؤسس غالباً تنجح أكثر من الشركات الفردية — بس بشرط إن الفريق مختار صح. والمشكلة إن كثير من المؤسسين يختارون شركاءهم لأسباب غلط: صداقة قديمة، معرفة اجتماعية، أو مجرد إنهم كانوا موجودين في الوقت المناسب. واسرمان يسمّي هالظاهرة "التأسيس بالصدفة" — وهي من أكبر أسباب فشل الشركات.
+  </p>
+  <p>
+    القرار لازم يكون مبني على تحليل واضح: وش أحتاج في هالمرحلة؟ وش المهارات الناقصة عندي؟ هل أقدر أكمّلها بتوظيف بدل شراكة؟ واسرمان يقول إن الشراكة قرار أخطر من الزواج في بعض الجوانب — لأنك ممكن تتخارج من زواج بسهولة أكثر من شراكة فيها حصص وعقود ومستثمرين. عشان كذا، لا تتعجّل.
+  </p>
+
+  <div class="quote-block">
+    <p>أسوأ سبب تختار فيه شريك هو إنك ما تبي تكون وحدك. الوحدة أفضل بكثير من شراكة سيئة — لأن الشراكة السيئة ما توفر عليك الوحدة بس تضيف لها مشاكل.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>قبل ما تاخذ شريك، اسأل: هل فعلاً أحتاج شريك أو مجرد موظف أول؟ الشراكة قرار طويل المدى ومعقد — لا تدخل فيه إلا لو الشخص يكمّل نقاط ضعفك بشكل واضح ومحدد. وتجنّب التأسيس بالصدفة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">اختيار الشركاء المؤسسين</h2>
+      <span class="chapter-title-en">Choosing Co-Founders</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    واسرمان يقول إن اختيار الشريك المؤسس من أهم القرارات وأخطرها — والبيانات تبيّن إن 65% من الشركات الناشئة تفشل بسبب خلافات بين المؤسسين. المشكلة مو بس إنك تختار شخص غلط — المشكلة إنك تختار شخص كويس بس مو مناسب لك أو لشركتك. الصداقة القوية ما تعني شراكة ناجحة — والمهارات التقنية القوية ما تعني إنه شريك جيد.
+  </p>
+  <p>
+    واسرمان يحدد ثلاث فئات لازم تقيّمها في أي شريك محتمل: العلاقة السابقة (هل تعرفه كويس أو معرفة سطحية؟)، التكامل في المهارات (هل يكمّلك أو يشبهك؟)، والتوافق في الرؤية (هل عنده نفس التوقعات عن الشركة؟). أغلب المؤسسين يركّزون على المهارات ويتجاهلون التوافق في الرؤية — وهذا مصدر أكبر الخلافات.
+  </p>
+  <p>
+    من أهم الأسئلة اللي لازم تسألها قبل الشراكة: وش هدفك من الشركة؟ كم تبي تشتغل؟ متى تبي تطلع (exit)؟ وش تسوي لو ما اتفقنا؟ هالأسئلة صعبة ومزعجة — بس أسهل بكثير من إنك تواجهها بعد سنة وأنت في منتصف أزمة. واسرمان يشبّه الموضوع بعقد الزواج: ناقش الصعب وأنت بعدك تحب الشخص، مو بعد ما تكرهه.
+  </p>
+
+  <div class="quote-block">
+    <p>أكبر خطأ يسويه المؤسسون هو إنهم يتجنبون المحادثات الصعبة مع شركائهم في البداية. كل محادثة تتجنبها اليوم بتتحول لانفجار بكرة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>اختر شريك يكمّلك في المهارات ويتوافق معك في الرؤية. وقبل ما توقّع أي شي، ناقش كل الأسئلة الصعبة: الأهداف، التوقعات، والسيناريوهات السيئة. المحادثات المزعجة الحين أسهل بكثير من المعارك القانونية بعدين.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>اجلس مع شريكك المحتمل واسألوا بعض 10 أسئلة: وش هدفك من الشركة؟ كم سنة تبي تلتزم؟ وش تسوي لو جاك عرض وظيفي أفضل؟ وش توقعاتك المالية؟ كيف نحل الخلافات؟ لو الإجابات ما تتوافق — فكّر مرتين قبل الشراكة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">تقسيم الحصص</h2>
+      <span class="chapter-title-en">Splitting Equity</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    واسرمان يقول إن تقسيم الحصص هو القرار اللي يسببه أكبر عدد من الخلافات بين المؤسسين. والمفاجأة: أكثر من 70% من فرق التأسيس يقسمون الحصص بالتساوي — مثلاً 50/50 لو اثنين أو 33/33/33 لو ثلاثة. ليش؟ عشان ما أحد يبي يتكلم عن الموضوع ويسبب خلاف. بس هالتساوي الزائف هو بالضبط اللي يسبب الخلاف لاحقاً.
+  </p>
+  <p>
+    المشكلة إن التقسيم المتساوي يتجاهل الواقع: مو كل المؤسسين يساهمون بنفس القدر. واحد جاب الفكرة، واحد يشتغل فل تايم والثاني بارت تايم، واحد حط فلوس والثاني ما حط. لما تقسّم بالتساوي رغم هالفروقات، الشخص اللي يشتغل أكثر بيحس بظلم — والشخص اللي يشتغل أقل ما عنده حافز يزيد. والنتيجة: استياء متراكم ينفجر في أسوأ وقت.
+  </p>
+  <p>
+    واسرمان يقترح تقسيم الحصص بناءً على معايير واضحة: الفكرة الأصلية، الوقت المبذول، الخبرة، الفلوس المستثمرة، والمخاطرة. والأهم: التقسيم لازم يكون ديناميكي مو ثابت. يعني استخدم آلية الـvesting — الحصص تتحرر مع الوقت. لو واحد طلع بعد 6 شهور ما ياخذ نفس اللي جلس 4 سنين. هالآلية تحمي الجميع وتضمن إن كل واحد ياخذ على قد مساهمته.
+  </p>
+
+  <div class="quote-block">
+    <p>التقسيم المتساوي للحصص مو عدالة — هو تجنّب لمحادثة صعبة. والمحادثات اللي تتجنبها في البداية تتحول لمعارك في النهاية.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>لا تقسّم الحصص بالتساوي عشان تتجنب الخلاف. استخدم معايير واضحة (وقت، خبرة، فلوس، مخاطرة) وطبّق نظام vesting. المحادثة الصعبة الحين أرحم بكثير من المعركة القانونية بعد سنتين.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الأدوار وصناعة القرار</h2>
+      <span class="chapter-title-en">Roles & Decision-Making</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    واسرمان يبيّن إن من أكبر أسباب الخلافات بين المؤسسين هو عدم وضوح الأدوار. في البداية الكل يسوي كل شي — وهذا طبيعي لما تكونون شخصين أو ثلاثة. بس المشكلة إن هالفوضى ما تتحمّل النمو. لما الشركة تكبر ويجون موظفين جدد، لازم يعرفون مين المسؤول عن وش. ولو المؤسسين نفسهم ما يعرفون — الفوضى تنتشر في الشركة كلها.
+  </p>
+  <p>
+    واسرمان يقول إن أول شي لازم تحددونه: مين الـCEO؟ كثير من الفرق يتجنبون هالسؤال — يقولون "كلنا متساوين" أو "نقرر مع بعض". بس في الواقع، لازم يكون فيه شخص واحد ياخذ القرار النهائي لما ما يكون فيه إجماع. الديمقراطية حلوة في النظرية بس في الشركة الناشئة ممكن تقتلك — عشان السرعة مهمة والقرارات ما تستنّى.
+  </p>
+  <p>
+    كمان، واسرمان يتكلم عن تقسيم المسؤوليات. كل مؤسس لازم يكون عنده مجال واضح يملكه — مثلاً واحد يملك المنتج والتقنية، والثاني يملك المبيعات والتسويق. التداخل يسبب صراعات ويبطّئ كل شي. والأهم: حددوا آلية لحل الخلافات من البداية. وش يصير لو ما اتفقنا؟ مين يحسم؟ كيف؟ هالأسئلة لازم تكون مجابة قبل ما يصير أول خلاف.
+  </p>
+
+  <div class="quote-block">
+    <p>المساواة في الأدوار تبدو عادلة بس تنتج شلل. الشركة تحتاج قائد واحد واضح — والباقي يقودون مجالاتهم. الوضوح أهم من المساواة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>حددوا الأدوار والمسؤوليات بوضوح من البداية. عيّنوا CEO واحد ياخذ القرارات النهائية. واتفقوا على آلية لحل الخلافات قبل ما تحتاجونها. الوضوح في الأدوار يمنع 90% من الخلافات.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>اجلسوا كمؤسسين واكتبوا: مين المسؤول عن وش؟ مين ياخذ القرار النهائي لو ما اتفقنا؟ كيف نحل الخلاف (تصويت، مستشار خارجي، الـCEO يحسم)؟ وثّقوا هالشي في اتفاقية المؤسسين — مو بس كلام شفوي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">توظيف أوائل الموظفين</h2>
+      <span class="chapter-title-en">Hiring Early Employees</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    واسرمان يبيّن إن أوائل الموظفين يشكّلون ثقافة الشركة أكثر من أي شي ثاني. اللي توظّفهم في أول 10 مواقع هم اللي يحددون كيف الشركة تشتغل وتفكر وتتعامل. عشان كذا، التوظيف المبكر ما هو مجرد ملء شواغر — هو بناء الأساس.
+  </p>
+  <p>
+    المشكلة الشائعة إن المؤسسين يوظفون ناس يعرفونهم — أصدقاء، أقارب، زملاء قدام. واسرمان يسمّي هذا "التوظيف من الشبكة المغلقة". المميز إنك تعرفهم وتثق فيهم. بس العيب إنهم غالباً يشبهونك في المهارات والتفكير — وأنت تحتاج تنويع. كمان، العلاقة الشخصية تصعّب المحاسبة: كيف تقول لصديقك إن أداءه ضعيف؟ كيف تفصل قريبك؟
+  </p>
+  <p>
+    واسرمان يقترح إنك توازن بين التوظيف من شبكتك والتوظيف من برا. واستخدم معايير واضحة — مو "أعرفه وأثق فيه" بس "عنده المهارات اللي أحتاجها والقيم اللي تتوافق مع ثقافة الشركة". والأهم: حط نظام تقييم أداء من البداية حتى لو كنتم 5 أشخاص. النظام يحميك من المجاملة ويضمن إن الجميع يعرف المتوقع منه.
+  </p>
+
+  <div class="quote-block">
+    <p>أوائل الموظفين مو بس يسوون الشغل — هم يبنون الثقافة اللي كل موظف بعدهم بيتأثر فيها. اختارهم كأنك تختار أساس البيت.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>لا توظّف بس من شبكتك المغلقة — نوّع. استخدم معايير واضحة للتقييم وطبّقها على الكل بنفس الدرجة. وتذكّر إن أول 10 موظفين يحددون ثقافة الشركة لسنين قادمة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">العلاقة مع المستثمرين</h2>
+      <span class="chapter-title-en">Investor Relationships</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    واسرمان يقول إن العلاقة مع المستثمرين هي المكان اللي معضلة الغنى مقابل السيطرة تتجلّى بأوضح شكل. كل ما جبت استثمار أكثر، كل ما تنازلت عن حصة أكبر وسيطرة أكبر. بس بدون استثمار، الشركة ممكن ما تنمو بالسرعة المطلوبة. المؤسس لازم يفهم هالمعادلة كويس قبل ما يوقّع أي اتفاقية.
+  </p>
+  <p>
+    من أهم الأشياء اللي يحذّر منها واسرمان هي شروط الاستثمار اللي تبدو بسيطة بس عواقبها ضخمة. مثلاً: حق الـliquidation preference يعني إن المستثمر ياخذ فلوسه أول قبل المؤسسين في أي عملية بيع. وحق الـanti-dilution يعني إن حصة المستثمر محمية من التخفيف بس حصتك أنت لا. هالشروط ممكن تخلّيك تبني شركة ناجحة وتطلع بدون فلوس تقريباً.
+  </p>
+  <p>
+    واسرمان يقول إن اختيار المستثمر لازم يكون مثل اختيار الشريك — مو بس على أساس الفلوس. اسأل: وش القيمة اللي يضيفها غير المال؟ كيف يتعامل مع شركاته في الأوقات الصعبة؟ هل يحترم المؤسسين أو يحاول يسيطر؟ اسأل المؤسسين اللي استثمر فيهم قبلك — هم أصدق مصدر. والأهم: لا تاخذ فلوس من أي أحد بس عشان يعطيك — اختار المستثمر اللي يتوافق مع رؤيتك وقيمك.
+  </p>
+
+  <div class="quote-block">
+    <p>المستثمر مو مجرد محفظة — هو شريك بيكون معك في مجلس الإدارة ويأثر على قراراتك. اختاره بنفس العناية اللي تختار فيها شريكك المؤسس.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>افهم شروط الاستثمار بالتفصيل قبل ما توقّع. اختار مستثمر يضيف قيمة حقيقية مو بس فلوس. واسأل مؤسسين سابقين عن تجربتهم معه. القرار اللي تاخذه في التمويل يحدد مصير سيطرتك على الشركة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>قبل ما تقبل أي استثمار، اسأل المستثمر: أعطني أسماء 3 مؤسسين استثمرت فيهم — واحد نجح، واحد فشل، وواحد لسه في البداية. كلّم الثلاثة واسألهم: كيف كان التعامل في الأوقات الصعبة؟ هالسؤال يكشف لك الحقيقة اللي ما بتلقاها في العرض التقديمي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>الخلاصة النهائية</h3>
+  <p>
+    كتاب معضلات المؤسس يبيّن إن أكبر تهديد للشركة الناشئة مو المنافسة أو السوق — هو القرارات التأسيسية الغلط. اختيار الشريك، تقسيم الحصص، تحديد الأدوار، والعلاقة مع المستثمرين — كل هالقرارات تتاخذ في البداية بس تأثيرها يستمر لسنين.
+  </p>
+  <p>
+    الرسالة الأهم: كن صريح مع نفسك ومع شركائك من البداية. ناقشوا الصعب وأنتم لسه تحبون بعض. ووثّقوا كل شي. البيانات واضحة: المؤسسين اللي يتجنبون المحادثات الصعبة في البداية يدفعون الثمن مضاعف لاحقاً.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص تعليمي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>حدد إجابتك على سؤال الغنى مقابل السيطرة — واكتبها بوضوح</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>اجلس مع شريكك وناقشوا 10 أسئلة صعبة عن التوقعات والأهداف</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>راجع تقسيم الحصص — هل مبني على معايير واضحة أو مجرد تساوي؟</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>تأكد إن عندكم نظام vesting — لو ما فيه، حطوه الحين</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>وثّقوا الأدوار والمسؤوليات وآلية حل الخلافات في اتفاقية مكتوبة</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>قبل أي استثمار، كلّم 3 مؤسسين سابقين عن تجربتهم مع المستثمر</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

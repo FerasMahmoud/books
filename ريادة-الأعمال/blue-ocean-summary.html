@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>استراتيجية المحيط الأزرق - ملخص شامل | دبليو تشان كيم</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #0097a7; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #00bcd4; }
+
+  .hero {
+    background: linear-gradient(135deg, #003d4a 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #00bcd4;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(0, 188, 212, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(0, 61, 74, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #00bcd4;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(0, 188, 212, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 188, 212, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #d0b0b0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #d0b0b0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '\26A1';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #003d4a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #00bcd4;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(0, 188, 212, 0.1);
+    color: #00bcd4;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #00bcd4;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #003d4a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #00bcd4;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #003d4a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #00bcd4;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(0, 188, 212, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #00bcd4, #0097a7);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #00bcd4;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(0, 188, 212, 0.12);
+    color: #00bcd4;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(0, 188, 212, 0.06);
+    border-right: 4px solid #00bcd4;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '\201C';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(0, 188, 212, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(0, 61, 74, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(0, 188, 212, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #00bcd4;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(0, 206, 201, 0.08);
+    border: 1px solid rgba(0, 206, 201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #00cec9;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #b0d0d0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 188, 212, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #00bcd4;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #003d4a, #1a1a2e);
+    border-top: 3px solid #00bcd4;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 188, 212, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#127754;</span>
+    <h1>استراتيجية المحيط الأزرق</h1>
+    <p class="subtitle">Blue Ocean Strategy</p>
+    <p class="author">دبليو تشان كيم &mdash; W. Chan Kim &amp; Ren&eacute;e Mauborgne</p>
+    <div class="meta-info">
+      <span>7 فصول رئيسية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>اخلق سوقك الخاص</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>ليش هذا الكتاب مهم؟</h2>
+  <p>
+    أغلب الشركات تتنافس في نفس السوق على نفس العملاء بنفس الطريقة — وهذا اللي يسمّيه المؤلفين "المحيط الأحمر". أحمر لأنه مليان دم المنافسة. النتيجة: هوامش ربح ضعيفة، حروب أسعار، وتعب بدون نمو حقيقي. هذي أبرز المشاكل:
+  </p>
+  <ul>
+    <li>تتنافس على نفس العملاء مع عشرات الشركات اللي تقدم نفس الشي</li>
+    <li>تقلّل أسعارك عشان تجذب عملاء وتخرب هوامش ربحك</li>
+    <li>تضيف مميزات ما أحد يبيها بس عشان تبان مختلف</li>
+    <li>ما تعرف كيف تنافس بدون ما تحارب المنافسين بشكل مباشر</li>
+    <li>السوق مشبع والنمو صار شبه مستحيل</li>
+  </ul>
+  <p>
+    كيم وموبورن يقدمون بديل جذري: بدل ما تتنافس في المحيط الأحمر، <strong>اخلق محيط أزرق جديد</strong> — سوق ما فيه منافسين لأنك أنت اللي اخترعته. مو خيال — الكتاب يعطيك أدوات عملية مبنية على دراسة أكثر من 150 حالة نجاح.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    دبليو تشان كيم ورينيه موبورن أساتذة في معهد INSEAD للأعمال ودرسوا الابتكار الاستراتيجي لأكثر من 20 سنة. الكتاب مبني على تحليل أكثر من 150 خطوة استراتيجية في أكثر من 30 صناعة على مدار 100 سنة. مو نظرية — هو نمط متكرر اكتشفوه في الشركات اللي حققت نمو استثنائي.
+  </p>
+  <p>
+    الفكرة بسيطة بس قوية: بدل ما تتنافس على حصة من سوق موجود، اخلق سوق جديد. الأمثلة كثيرة: Cirque du Soleil ما نافست السيرك التقليدي — خلقت فئة جديدة. Nintendo Wii ما نافست PlayStation على الجرافيكس — استهدفت ناس ما يلعبون أصلاً. Southwest Airlines ما نافست الطيران الفاخر — خلقت فئة طيران اقتصادي بسيط. كل هالشركات نجحت لأنها ما تنافست — ابتكرت.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>المحيط الأحمر مقابل الأزرق</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>ابتكار القيمة</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>لوحة الاستراتيجية</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>إطار الإجراءات الأربعة</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>الوصول لما وراء الطلب</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>التسلسل الاستراتيجي</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>تجاوز العوائق</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">المحيط الأحمر مقابل الأزرق</h2>
+      <span class="chapter-title-en">Red Ocean vs Blue Ocean</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    المؤلفين يبدأون بتقسيم عالم الأعمال لنوعين: المحيط الأحمر والمحيط الأزرق. المحيط الأحمر هو الأسواق الموجودة — اللي كل الشركات تتنافس فيها على نفس العملاء بنفس المعايير. السعر أقل، الجودة أعلى، المميزات أكثر — حرب ما تنتهي. كل ما زاد عدد المنافسين، كل ما صغرت الكعكة وصار الربح أصعب. والمياه تتحوّل لأحمر من كثر الدم.
+  </p>
+  <p>
+    المحيط الأزرق هو العكس تماماً: أسواق جديدة ما موجودة حالياً. ما فيه منافسين لأن ما أحد فكّر في هالسوق قبلك. الطلب يتخلق بدل ما يتنافس عليه. الربح عالي لأن ما فيه حرب أسعار. والنمو سريع لأنك تخدم ناس ما كانوا يُخدمون قبل. المؤلفين يبيّنون إن أغلب النمو الحقيقي في تاريخ الأعمال جاء من المحيطات الزرقاء مو الحمراء.
+  </p>
+  <p>
+    النقطة المهمة: المحيط الأزرق مو بالضرورة تقنية جديدة أو اختراع ثوري. أغلب المحيطات الزرقاء تتخلق من إعادة تجميع أشياء موجودة بطريقة مختلفة. Cirque du Soleil ما اخترعت شي جديد — جمعت بين السيرك والمسرح. ستاربكس ما اخترعت القهوة — غيّرت تجربة شرب القهوة. الابتكار مو في التقنية — في القيمة اللي تقدمها.
+  </p>
+
+  <div class="quote-block">
+    <p>الطريقة الوحيدة للفوز في المنافسة هي إنك توقف تحاول تفوز في المنافسة. اخلق سوق جديد وخلّ المنافسين يتنافسون بدونك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>لا تتنافس في المحيط الأحمر — اخلق محيط أزرق. بدل ما تحاول تكون أفضل من المنافسين في نفس اللعبة، غيّر اللعبة كلها. الابتكار الحقيقي مو في التقنية — في القيمة الجديدة اللي تقدمها.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>اسأل نفسك: هل أنا أتنافس على عملاء موجودين أو أخلق طلب جديد؟ لو كل تركيزك على التغلب على المنافسين — أنت في المحيط الأحمر. فكّر: مين الناس اللي ما يستخدمون منتجات مشابهة؟ ليش؟ وش يمنعهم؟ الجواب ممكن يكون المحيط الأزرق حقك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">ابتكار القيمة</h2>
+      <span class="chapter-title-en">Value Innovation</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    ابتكار القيمة هو حجر الأساس لاستراتيجية المحيط الأزرق. المؤلفين يقولون إن الشركات التقليدية تختار بين شيئين: تقدم قيمة عالية بسعر عالي (تمايز)، أو تقدم قيمة منخفضة بسعر منخفض (تكلفة أقل). ابتكار القيمة يكسر هالمعادلة — تقدم قيمة أعلى وتكلفة أقل في نفس الوقت. كيف؟ بإنك تشيل الأشياء اللي ما أحد يبيها وتضيف أشياء ما أحد فكّر فيها.
+  </p>
+  <p>
+    مثال واضح: Cirque du Soleil شالت الحيوانات والنجوم المشاهير (تكلفة عالية وما أحد يبيها) وأضافت قصة درامية وموسيقى راقية (قيمة عالية بتكلفة معقولة). النتيجة: تجربة جديدة تماماً ما أحد يقدمها، بسعر أعلى من السيرك العادي بس أقل من المسرح. الناس اللي ما كانوا يروحون السيرك ولا المسرح — صاروا يحضرون.
+  </p>
+  <p>
+    المفتاح هو إنك تفكر في القيمة من وجهة نظر العميل مو من وجهة نظر الصناعة. الصناعة تقول "لازم نضيف مميزات أكثر عشان نبرر السعر". العميل يقول "أبي حل بسيط يشتغل بدون تعقيد". لما تسمع للعميل بدل ما تسمع للصناعة، تكتشف فرص لا حصر لها. كثير من المميزات اللي تتنافس عليها الشركات — العميل ما يهتم فيها أصلاً.
+  </p>
+
+  <div class="quote-block">
+    <p>ابتكار القيمة مو اختيار بين التمايز والتكلفة المنخفضة — هو تحقيق الاثنين في نفس الوقت. وهذا هو السر.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>لا تختار بين القيمة العالية والتكلفة المنخفضة — حقق الاثنين. شيل الأشياء اللي العميل ما يبيها (حتى لو الصناعة تعتبرها ضرورية) وأضف أشياء جديدة تحل مشكلة حقيقية. هذا هو ابتكار القيمة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">لوحة الاستراتيجية</h2>
+      <span class="chapter-title-en">The Strategy Canvas</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    لوحة الاستراتيجية هي الأداة الأولى اللي يقدمها الكتاب. الفكرة بسيطة: ارسم رسم بياني — المحور الأفقي فيه عوامل المنافسة في صناعتك (السعر، الجودة، السرعة، المميزات، الخدمة...) والمحور العمودي فيه مستوى تقديم كل عامل (منخفض لعالي). ارسم خط لشركتك وخطوط للمنافسين. لو الخطوط متشابهة — أنتم كلكم في المحيط الأحمر.
+  </p>
+  <p>
+    المحيط الأزرق يتخلق لما يكون خطك مختلف تماماً عن خطوط المنافسين. يعني بعض العوامل عالية عندك ومنخفضة عندهم، وبعض العوامل ما موجودة عندهم أصلاً. لوحة الاستراتيجية تخليك تشوف الصورة الكاملة بنظرة وحدة — وتكتشف وين الفرص.
+  </p>
+  <p>
+    المؤلفين يعطون مثال صناعة النبيذ الأمريكية. كل الشركات كانت تتنافس على نفس العوامل: نوع العنب، عمر النبيذ، تعقيد النكهة، هيبة المزرعة. شركة Casella Wines (اللي سوّت Yellow Tail) شالت كل هالعوامل وأضافت عوامل جديدة: سهولة الاختيار، طعم بسيط وممتع، ومرح. استهدفت ناس ما يشربون نبيذ عشان يحسون إنه معقد ومخيف. النتيجة: صارت أكثر نبيذ مبيعاً في أمريكا خلال سنتين.
+  </p>
+
+  <div class="quote-block">
+    <p>لو خط استراتيجيتك يشبه خطوط المنافسين — ما عندك استراتيجية. عندك بس نسخة من اللي يسوونه. الاستراتيجية الحقيقية تبان في الاختلاف.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>ارسم لوحة الاستراتيجية لصناعتك. شوف وين كل الشركات متشابهة — وفكّر: وش أقدر أشيل؟ وش أقدر أضيف؟ وش أقدر أغيّر؟ الاختلاف الواضح هو بداية المحيط الأزرق.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>خذ ورقة وارسم لوحة استراتيجية لمجالك. حط عوامل المنافسة الرئيسية على المحور الأفقي وقيّم نفسك والمنافسين على كل عامل. لو الخطوط متشابهة — عندك فرصة كبيرة تخلق محيط أزرق بتغيير بعض العوامل بشكل جذري.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">إطار الإجراءات الأربعة</h2>
+      <span class="chapter-title-en">The Four Actions Framework</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    إطار الإجراءات الأربعة هو الأداة العملية اللي تحوّل لوحة الاستراتيجية لخطة عمل. المؤلفين يقولون اسأل أربعة أسئلة عن صناعتك: وش العوامل اللي لازم تُشال تماماً؟ (Eliminate) وش اللي لازم يقل بشكل كبير؟ (Reduce) وش اللي لازم يزيد بشكل كبير؟ (Raise) وش اللي لازم يُخلق ما كان موجود؟ (Create)
+  </p>
+  <p>
+    الشيل والتقليل يخفّضون التكلفة. الزيادة والخلق يرفعون القيمة. لما تسوي الأربعة مع بعض، تحصل على ابتكار القيمة — قيمة أعلى بتكلفة أقل. بس المهم إنك تكون جريء في الشيل والتقليل. كثير من الشركات تخاف تشيل أشياء عشان "الصناعة كلها تسويها" — بس هذا بالضبط اللي يخليك عادي.
+  </p>
+  <p>
+    مثال: لما IKEA دخلت سوق الأثاث، شالت التوصيل والتركيب (اللي كانت الصناعة تعتبرها ضرورية)، قلّلت خدمة العملاء في المعرض، زادت التصميم العصري بأسعار منخفضة جداً، وخلقت تجربة التسوّق كعائلة (مطعم، منطقة ألعاب للأطفال). النتيجة: فئة جديدة من الأثاث ما أحد كان يقدمها — أثاث أنيق، رخيص، وممتع تشتريه. ملايين العملاء اللي ما كانوا يشترون أثاث جديد — صاروا عملاء دائمين.
+  </p>
+
+  <div class="quote-block">
+    <p>المحيط الأزرق ما يتخلق بالإضافة بس — يتخلق بالشيل والإضافة معاً. أحياناً أقوى قرار استراتيجي هو إنك توقف تسوي شي كل الصناعة تسويه.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>طبّق إطار الإجراءات الأربعة: شِل، قلّل، زِد، اخلق. كن جريء في الشيل — ما كل شي الصناعة تسويه ضروري. والأشياء اللي تخلقها لازم تكون مبنية على حاجة حقيقية عند العميل مو على تقليد المنافسين.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الوصول لما وراء الطلب</h2>
+      <span class="chapter-title-en">Reaching Beyond Existing Demand</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    المؤلفين يقولون إن أغلب الشركات تركّز على العملاء الحاليين — اللي يشترون منهم فعلاً. بس المحيط الأزرق يتطلب إنك تفكر في "غير العملاء" — الناس اللي ما يشترون منك ولا من أي أحد في صناعتك. هؤلاء هم الفرصة الأكبر لأنهم أكثر بكثير من عملائك الحاليين.
+  </p>
+  <p>
+    المؤلفين يقسّمون غير العملاء لثلاث فئات. الفئة الأولى: اللي على الحد — يشترون بالحد الأدنى ومستعدين يطلعون لو لقوا بديل أفضل. الفئة الثانية: الرافضين — اللي اختاروا بشكل واعي إنهم ما يستخدمون منتجات صناعتك لأنها ما تناسبهم. الفئة الثالثة: البعيدين — اللي ما فكّروا أصلاً في صناعتك كخيار. كل فئة من هالفئات فيها فرصة ضخمة.
+  </p>
+  <p>
+    الطريقة إنك تفهم ليش هالناس ما يشترون. وش اللي يمنعهم؟ وش اللي يزعجهم في الحلول الموجودة؟ وش يحتاجون بس ما يلاقونه؟ لما تجاوب على هالأسئلة، تلاقي فرص لبناء منتج يخدم جمهور أكبر بكثير. Nintendo فهمت إن ملايين الناس ما يلعبون ألعاب فيديو عشان المتحكمات معقدة والألعاب عنيفة — فسوّت Wii بتحكم حركي بسيط وألعاب عائلية. النتيجة: ملايين العملاء الجدد.
+  </p>
+
+  <div class="quote-block">
+    <p>لا تسأل كيف أجذب عملاء أكثر — اسأل ليش الملايين ما يشترون أصلاً. الجواب على هالسؤال هو مفتاح المحيط الأزرق.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>وسّع نظرك وراء العملاء الحاليين. فكّر في غير العملاء — الناس اللي ما يستخدمون منتجات صناعتك. افهم ليش ما يشترون وابني منتج يحل مشاكلهم. هؤلاء هم السوق الأكبر اللي ما أحد يخدمهم.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>اعمل قائمة بثلاث فئات: ناس يستخدمون منتجك بالحد الأدنى، ناس رفضوا يستخدمونه، وناس ما فكّروا فيه أصلاً. لكل فئة اسأل: ليش؟ وش يمنعهم؟ وش يحتاجون؟ الإجابات بتفتح لك أبواب ما كنت تشوفها.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التسلسل الاستراتيجي</h2>
+      <span class="chapter-title-en">The Strategic Sequence</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    المؤلفين يقولون إن المحيط الأزرق ما يكفي إنك تلاقيه — لازم تبنيه بتسلسل صحيح. يقدمون أربع خطوات بترتيب محدد: أولاً منفعة المشتري (هل المنتج يقدم قيمة استثنائية؟)، ثانياً السعر (هل السعر يجذب الكتلة الأكبر من العملاء؟)، ثالثاً التكلفة (هل تقدر تحقق ربح بهالسعر؟)، رابعاً التبنّي (هل تقدر تتغلب على عوائق التبنّي؟).
+  </p>
+  <p>
+    أغلب الشركات تبدأ بالتقنية — تبني شي متقدم وبعدين تدور له سوق. المؤلفين يقولون ابدأ بالعكس: ابدأ بالمنفعة للعميل. لو المنتج ما يقدم منفعة واضحة وكبيرة — لا تكمّل. والسعر لازم يكون استراتيجي: مو الأرخص بالضرورة، بس لازم يكون في النطاق اللي يجذب أكبر عدد من العملاء المحتملين. والتكلفة لازم تخليك تحقق ربح بهالسعر — مو بالعكس.
+  </p>
+  <p>
+    عوائق التبنّي كثيرة: الموظفين ما يبون يتغيرون، الشركاء ما يفهمون الاستراتيجية، والعملاء متعودين على الطريقة القديمة. المؤلفين يقولون إنك لازم تفكر في هالعوائق من البداية مو بعد ما تبني المنتج. كيف تقنع الموظفين؟ كيف تبسّط التجربة للعملاء؟ كيف تبني ثقة مع الشركاء؟ كل هالأسئلة لازم تكون مجابة قبل الإطلاق.
+  </p>
+
+  <div class="quote-block">
+    <p>الابتكار بدون تسلسل استراتيجي صح هو مغامرة غير محسوبة. ابدأ بالمنفعة، مر بالسعر، تأكد من التكلفة، وجهّز للتبنّي.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>اتبع التسلسل الصح: منفعة المشتري، ثم السعر الاستراتيجي، ثم التكلفة المستهدفة، ثم التغلب على عوائق التبنّي. لو أي خطوة ما تنجح — ارجع وعدّل قبل ما تكمّل.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">تجاوز العوائق</h2>
+      <span class="chapter-title-en">Overcoming Organizational Barriers</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    المؤلفين يقولون إن أكبر عائق للمحيط الأزرق مو السوق — هو شركتك نفسها. الناس تقاوم التغيير. المدراء يتمسكون بالطريقة القديمة. الموظفين يخافون من المجهول. وكل ما كانت الشركة أكبر وأنجح في المحيط الأحمر، كل ما كانت المقاومة أشد. "ليش نتغير والأمور ماشية؟" — هالسؤال يقتل الابتكار.
+  </p>
+  <p>
+    المؤلفين يقدمون مفهوم "القيادة بنقطة التحول" (Tipping Point Leadership). الفكرة إنك ما تحتاج تقنع الكل — تحتاج تقنع الأشخاص المؤثرين. في كل منظمة فيه عدد صغير من الأشخاص اللي يأثرون بشكل كبير على البقية. ركّز عليهم وخلّهم يشوفون المشكلة بأعينهم — مو بالتقارير والأرقام. خذهم لزيارة عملاء غير راضين. خلّهم يسمعون الشكاوي بأنفسهم. لما يحسون بالمشكلة شخصياً، الرغبة في التغيير تصير داخلية.
+  </p>
+  <p>
+    كمان، المؤلفين يتكلمون عن أربعة عوائق تنظيمية رئيسية: عائق الإدراك (الناس ما تشوف الحاجة للتغيير)، عائق الموارد (ما عندنا فلوس)، عائق الدافع (ما عندنا حافز نتغير)، وعائق السياسة (فيه ناس بتعارض عشان مصالحها). لكل عائق حل محدد — بس الأهم إنك تبدأ بعائق الإدراك لأن لو الناس ما شافوا المشكلة ما بيتحركون.
+  </p>
+
+  <div class="quote-block">
+    <p>أكبر عدو للمحيط الأزرق مو المنافسين — هو المقاومة الداخلية في شركتك. التغيير يبدأ بإنك تخلّي الناس يشوفون المشكلة بأعينهم.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#128161; الدرس الرئيسي</div>
+    <p>لا تحاول تقنع الكل — ركّز على المؤثرين. خلّهم يعيشون المشكلة بأنفسهم. وعالج العوائق الأربعة بترتيب: أولاً خلّهم يشوفون الحاجة للتغيير، بعدين وفّر الموارد، بعدين ابني الحافز، وأخيراً تعامل مع المقاومة السياسية.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#128204; الفائدة العملية</div>
+    <p>حدد 3-5 أشخاص مؤثرين في فريقك أو شركتك. بدل ما ترسل لهم تقرير — خذهم يقابلون عميل غير راضي أو عميل محتمل رفض يشتري. التجربة المباشرة تقنع أكثر من ألف شريحة PowerPoint. لما هؤلاء يقتنعون — الباقي يتبعون.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">&uarr; العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>الخلاصة النهائية</h3>
+  <p>
+    استراتيجية المحيط الأزرق تقدم طريقة تفكير مختلفة تماماً عن المنافسة التقليدية. بدل ما تتنافس على حصة من سوق مزدحم، اخلق سوق جديد ما فيه منافسين. استخدم لوحة الاستراتيجية عشان تشوف الفرص، وإطار الإجراءات الأربعة عشان تبني عرض قيمة مختلف.
+  </p>
+  <p>
+    الرسالة الأهم: المنافسة مو القدر الوحيد. الشركات العظيمة ما نجحت لأنها كانت أفضل من المنافسين — نجحت لأنها غيّرت قواعد اللعبة. وأنت كمان تقدر تسويها — بالأدوات الصح والجرأة الكافية.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص تعليمي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>ارسم لوحة الاستراتيجية لصناعتك — حط عوامل المنافسة وقيّم نفسك والمنافسين</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>طبّق إطار الإجراءات الأربعة: وش تشيل؟ وش تقلّل؟ وش تزيد؟ وش تخلق؟</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>حدد ثلاث فئات من غير العملاء وافهم ليش ما يشترون</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>اختبر فكرتك بالتسلسل الصح: منفعة، سعر، تكلفة، تبنّي</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>حدد المؤثرين في فريقك وخلّهم يشوفون مشاكل العملاء مباشرة</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>اسأل نفسك: هل أتنافس في المحيط الأحمر؟ وش أقدر أسوي عشان أخلق أزرق؟</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

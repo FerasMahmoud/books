@@ -814,8 +814,10 @@ textarea:focus {
   z-index: 2000;
   display: none;
   flex-direction: column;
-  padding-bottom: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
   min-height: 0 !important;
+  overflow: hidden;
 }
 
 #view-reader.active {
@@ -885,19 +887,21 @@ textarea:focus {
   transition: width 0.1s ease;
 }
 
-/* Book Frame */
+/* Book Frame - absolute positioning for reliable bottom coverage */
 #book-frame {
-  flex: 1;
+  position: absolute;
+  top: calc(env(safe-area-inset-top) + 59px);
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   border: none;
-  margin-top: calc(env(safe-area-inset-top) + 59px);
-  margin-bottom: 0;
-  background: var(--bg-secondary);
-  transition: margin-top 0.3s ease;
+  background: var(--bg-primary);
+  transition: top 0.3s ease;
 }
 
 #book-frame.immersive {
-  margin-top: 0;
+  top: 0;
 }
 
 /* Reader Toolbar */
@@ -2990,6 +2994,13 @@ textarea:focus {
 }
 
 /* === BODY READING STATE === */
+
+body.reading {
+  overflow: hidden !important;
+  background: var(--bg-primary) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
 
 body.reading .bottom-nav {
   display: none !important;
