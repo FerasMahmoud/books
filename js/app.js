@@ -36,6 +36,147 @@
     { id: 'biography', ar: '\u0627\u0644\u0633\u064A\u0631 \u0627\u0644\u0630\u0627\u062A\u064A\u0629', icon: '\uD83D\uDC64' },
   ];
 
+  // ==================== BOOK ACTIONS ====================
+
+  const BOOK_ACTIONS = {
+    '4hww': [
+      'حدد 3 مهام أساسية كل يوم وركز عليها فقط',
+      'طبق قاعدة 80/20: حدد الـ20% من عملك اللي يجيب 80% من النتائج',
+      'جرب تفويض مهمة واحدة هالأسبوع لشخص ثاني أو خدمة',
+      'حدد أوقات محددة لتشيك الإيميل بدل ما تشيكه كل شوي',
+      'اعمل "تجربة مصغرة" لمشروع جانبي يدخلك دخل إضافي',
+      'خطط لإجازة قصيرة وشوف كيف شغلك يمشي بدونك',
+    ],
+    'dw': [
+      'خصص ساعتين يومياً للعمل العميق بدون أي مشتتات',
+      'أغلق الإشعارات والسوشل ميديا وقت التركيز',
+      'حدد مكان ثابت للعمل العميق وخليه بيئة خالية من المشتتات',
+      'طبق "طقوس البداية": قهوة، موسيقى محددة، أو تمرين قبل العمل العميق',
+      'تتبع ساعات العمل العميق يومياً واكتبها في دفتر',
+      'قل "لا" لاجتماع واحد غير ضروري هالأسبوع',
+    ],
+    'dwz': [
+      'اكتب قائمة بـ10 تجارب تبي تعيشها قبل عمر الـ50',
+      'احسب "عائد الذكريات" لتجربة تفكر فيها مقابل تكلفتها',
+      'اعطِ هدية أو ساعد شخص قريب الحين بدل ما تنتظر',
+      'خطط لتجربة جديدة هالشهر مع عائلتك أو أصدقائك',
+      'راجع مصاريفك وحول جزء من الادخار المفرط لتجارب حقيقية',
+      'اكتب "خطة حياة" بالعقود: وش تبي تحقق كل 10 سنوات',
+    ],
+    'ess': [
+      'اكتب قائمة بكل التزاماتك وشطب 3 أشياء غير ضرورية',
+      'تعلم تقول "لا" بلطف: جرب رفض طلب واحد هالأسبوع',
+      'حدد الشيء الواحد الأهم عندك في الحياة الحين',
+      'نظف مكتبك أو غرفتك: تخلص من 10 أشياء ما تحتاجها',
+      'خصص وقت "فراغ مخطط" أسبوعياً للتفكير والتأمل',
+      'قبل ما تقبل أي التزام جديد، اسأل: "هل هذا ضروري فعلاً؟"',
+    ],
+    'rest': [
+      'خذ قيلولة 20 دقيقة يومياً بعد الظهر',
+      'مارس هواية إبداعية لا علاقة لها بشغلك (رسم، موسيقى، طبخ)',
+      'امشِ 30 دقيقة يومياً في الطبيعة بدون جوال',
+      'حدد وقت نهاية ثابت لشغلك كل يوم والتزم فيه',
+      'خصص يوم راحة كامل في الأسبوع بدون أي شغل',
+      'جرب التأمل أو تمارين التنفس 10 دقائق كل صباح',
+    ],
+    'pom': [
+      'ابدأ بادخار 10% من دخلك الشهري بشكل تلقائي',
+      'اكتب "قصتك المالية": كيف أثرت تربيتك على علاقتك بالفلوس',
+      'لا تقارن نفسك بغيرك مالياً - حدد أهدافك الخاصة',
+      'ابدأ في استثمار بسيط (صندوق مؤشرات) ولو بمبلغ صغير',
+      'اعمل "صندوق طوارئ" يكفيك 6 شهور من المصاريف',
+      'اقرأ عن مفهوم "الفائدة المركبة" وطبقه على استثماراتك',
+    ],
+    'sj': [
+      'جرب ربط مجالين مختلفين من اهتماماتك في مشروع واحد',
+      'اشتغل على تبسيط شيء معقد في حياتك أو شغلك',
+      'اطلب رأي صريح من 3 أشخاص تثق فيهم عن أدائك',
+      'صمم أو حسّن تجربة المستخدم لمنتج أو خدمة تقدمها',
+      'ارجع لمشروع فاشل قديم وشوفه بنظرة جديدة',
+      'ركز على الجودة مو الكمية: أنهِ مشروع واحد باحترافية',
+    ],
+    'em': [
+      'حدد مشكلة كبيرة تهمك وفكر في حل من المبادئ الأساسية',
+      'تعلم مهارة تقنية جديدة خارج تخصصك (برمجة، تصميم، هندسة)',
+      'حدد هدف طموح جداً لـ5 سنوات قدام واكتب خطوات تحقيقه',
+      'اسأل نفسك: "إيش الأسوأ اللي ممكن يصير؟" قبل ما تخاف من المخاطرة',
+      'اقرأ عن مجال علمي جديد كل شهر (فيزياء، فلك، ذكاء اصطناعي)',
+      'طبق "التفكير من المبادئ الأولى" على مشكلة تواجهك حالياً',
+    ],
+    'ldv': [
+      'احمل دفتر صغير وسجل كل فكرة أو ملاحظة تمر عليك',
+      'ارسم شيء تشوفه يومياً حتى لو ما كنت فنان',
+      'اسأل "ليش؟" 5 مرات عن شيء عادي تشوفه كل يوم',
+      'ادرس مجال مختلف تماماً عن تخصصك لمدة شهر',
+      'لاحظ تفاصيل الطبيعة: الظل، الضوء، حركة الماء',
+      'اجمع بين العلم والفن: جرب مشروع يدمج الاثنين',
+    ],
+    'ein': [
+      'خصص وقت للتخيل والتفكير الحر بدون قيود',
+      'تحدى فرضية واحدة تؤمن فيها واسأل: "ماذا لو كنت غلطان؟"',
+      'بسّط فكرة معقدة حتى يفهمها طفل عمره 10 سنوات',
+      'مارس هواية موسيقية (العزف يحفز التفكير الإبداعي)',
+      'اقضِ وقت بمفردك للتأمل العميق بدون أي تشتيت',
+      'ناقش أفكارك مع شخص يختلف معك في الرأي',
+    ],
+    'bf': [
+      'اختر 3 فضائل من قائمة فرانكلين واشتغل عليها هالأسبوع',
+      'اقرأ 30 دقيقة يومياً في مجال جديد ما تعرفه',
+      'ابدأ مشروع خدمة مجتمعية صغير في حيك',
+      'اكتب جدول يومك بالتفصيل وقيّم إنتاجيتك كل مساء',
+      'تعلم مهارة عملية جديدة (نجارة، كهرباء، برمجة)',
+      'وفّر جزء من دخلك واستثمره بحكمة في مشروع صغير',
+    ],
+    'sd': [
+      'ابدأ مشروعك الجانبي حتى لو ما كنت مستعد 100%',
+      'اطلب نصيحة من شخص ناجح في مجالك',
+      'تقبل الفشل كجزء من الرحلة واكتب 3 دروس تعلمتها من فشل سابق',
+      'ابني علاقة مع شريك أو فريق يكمل نقاط ضعفك',
+      'ركض أو مارس رياضة تحبها - الجسم السليم يدعم العقل',
+      'لا تستسلم عند أول عقبة: ارجع حاول بطريقة مختلفة',
+    ],
+    'rol': [
+      'تعلم الإنصات الحقيقي: استمع لشخص بدون ما تقاطعه',
+      'اتخذ قرار واحد جريء كنت تأجله من زمان',
+      'كن متفائل بنية: ابدأ كل يوم بذكر 3 أشياء إيجابية',
+      'ادرس المنافسين في مجالك وحدد فرصة للتميز',
+      'استثمر في تطوير فريقك أو من حولك',
+      'اعترف بخطأ واحد ارتكبته وصلحه بسرعة',
+    ],
+    'titan': [
+      'طبق الانضباط المالي: تتبع كل ريال تصرفه لمدة شهر',
+      'ابحث عن فرصة استثمارية يتجاهلها الجميع',
+      'ابني سمعة قوية: خل كلمتك تكون وعدك',
+      'فكر على المدى الطويل: خطط لـ10-20 سنة قدام',
+      'تبرع أو ساهم في عمل خيري منتظم',
+      'تعلم من أخطاء غيرك: اقرأ عن فشل رجال أعمال مشهورين',
+    ],
+    'wbba': [
+      'اكتب رسالة لشخص تحبه تعبر فيها عن تقديرك',
+      'حدد قيمك الأساسية: ما الأشياء اللي تعطي حياتك معنى؟',
+      'اقضِ وقت نوعي مع عائلتك بدون جوالات أو تشتيت',
+      'ابدأ مشروع إرث: شيء يبقى بعدك (كتاب، مشروع، تعليم)',
+      'سامح شخص كنت زعلان منه - الحياة قصيرة',
+      'عيش اللحظة الحالية: مارس الامتنان يومياً',
+    ],
+    'gl': [
+      'اكتب يومياتك: سجل أفكارك وتجاربك كل يوم',
+      'سافر لمكان جديد تماماً ما زرته قبل',
+      'اخرج من منطقة الراحة: جرب شيء يخوفك هالأسبوع',
+      'حول "الضوء الأحمر" في حياتك لفرصة تعلم',
+      'كن صادق مع نفسك: وش تبي فعلاً مو وش يبون منك',
+      'اضحك أكثر: شوف فيلم كوميدي أو اقضِ وقت مع ناس مرحين',
+    ],
+    'cbs': [
+      'اقرأ أدب من ثقافة مختلفة عن ثقافتك كل شهر',
+      'دافع عن شخص يتعرض للظلم حتى لو بسيط',
+      'اكتب قصة من طفولتك وشوف كيف شكلتك',
+      'تعلم من تجارب الآخرين: استمع لقصة حياة شخص مختلف عنك',
+      'عبّر عن مشاعرك بالكتابة (قصة، شعر، يوميات)',
+      'قاوم الظلم بالتعليم: علّم شخص مهارة مجاناً',
+    ],
+  };
+
   // ==================== STATE ====================
 
   let currentView = 'library';
@@ -84,7 +225,7 @@
         if (hash.startsWith('book:')) {
           const bookPath = decodeURIComponent(hash.substring(5));
           await openBook(bookPath);
-        } else if (['dashboard', 'quotes', 'settings'].includes(hash)) {
+        } else if (['dashboard', 'quotes', 'actions', 'settings'].includes(hash)) {
           switchView(hash);
         }
       }
@@ -125,7 +266,7 @@
   // ==================== VIEW NAVIGATION ====================
 
   function switchView(viewId) {
-    const views = ['library', 'reader', 'dashboard', 'quotes', 'settings'];
+    const views = ['library', 'reader', 'dashboard', 'quotes', 'actions', 'settings'];
     views.forEach((v) => {
       const el = document.getElementById('view-' + v);
       if (el) el.classList.remove('active');
@@ -142,15 +283,18 @@
       item.classList.toggle('active', item.getAttribute('data-view') === viewId);
     });
 
-    // Show/hide bottom nav in reader
+    // Show/hide bottom nav and body class in reader
+    const isReader = viewId === 'reader';
+    document.body.classList.toggle('reading', isReader);
     const bottomNav = document.getElementById('bottom-nav');
     if (bottomNav) {
-      bottomNav.style.display = viewId === 'reader' ? 'none' : '';
+      bottomNav.style.display = isReader ? 'none' : '';
     }
 
     // Render view content on switch
     if (viewId === 'dashboard') renderDashboard();
     if (viewId === 'quotes') renderQuotes();
+    if (viewId === 'actions') renderActions();
     if (viewId === 'settings') renderSettings();
     if (viewId === 'library') renderLibrary();
 
@@ -175,15 +319,19 @@
       </button>
       <button class="nav-item" data-view="dashboard">
         <span class="nav-icon">\uD83D\uDCCA</span>
-        <span class="nav-label">\u0627\u0644\u0625\u062D\u0635\u0627\u0626\u064A\u0627\u062A</span>
+        <span class="nav-label">\u0625\u062D\u0635\u0627\u0626\u064A\u0627\u062A</span>
       </button>
       <button class="nav-item" data-view="quotes">
         <span class="nav-icon">\uD83D\uDCDD</span>
-        <span class="nav-label">\u0627\u0644\u0627\u0642\u062A\u0628\u0627\u0633\u0627\u062A</span>
+        <span class="nav-label">\u0627\u0642\u062A\u0628\u0627\u0633\u0627\u062A</span>
+      </button>
+      <button class="nav-item" data-view="actions">
+        <span class="nav-icon">\u2705</span>
+        <span class="nav-label">\u0625\u062C\u0631\u0627\u0621\u0627\u062A</span>
       </button>
       <button class="nav-item" data-view="settings">
         <span class="nav-icon">\u2699\uFE0F</span>
-        <span class="nav-label">\u0627\u0644\u0625\u0639\u062F\u0627\u062F\u0627\u062A</span>
+        <span class="nav-label">\u0625\u0639\u062F\u0627\u062F\u0627\u062A</span>
       </button>
     `;
 
@@ -1464,6 +1612,159 @@
         }
       });
     }
+  }
+
+  // ==================== ACTIONS VIEW ====================
+
+  async function renderActions() {
+    const actionsEl = document.getElementById('view-actions');
+    if (!actionsEl) return;
+
+    // Load all action states from settings
+    const actionStates = {};
+    for (const book of BOOKS) {
+      const actions = BOOK_ACTIONS[book.id];
+      if (!actions) continue;
+      for (let i = 0; i < actions.length; i++) {
+        const key = 'action:' + book.id + ':' + i;
+        const val = await DB.getSetting(key);
+        actionStates[key] = !!val;
+      }
+    }
+
+    // Calculate stats
+    let totalActions = 0;
+    let completedActions = 0;
+    const bookStats = {};
+
+    BOOKS.forEach((book) => {
+      const actions = BOOK_ACTIONS[book.id];
+      if (!actions) return;
+      let done = 0;
+      actions.forEach((_, i) => {
+        totalActions++;
+        const key = 'action:' + book.id + ':' + i;
+        if (actionStates[key]) {
+          completedActions++;
+          done++;
+        }
+      });
+      bookStats[book.id] = { total: actions.length, done };
+    });
+
+    const overallPct = totalActions > 0 ? Math.round((completedActions / totalActions) * 100) : 0;
+
+    // Build HTML
+    let html = `
+      <div class="actions-content">
+        <div class="actions-overall">
+          <div class="actions-overall-ring">
+            <svg viewBox="0 0 100 100" width="80" height="80">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="var(--border)" stroke-width="8"/>
+              <circle cx="50" cy="50" r="42" fill="none" stroke="var(--accent)" stroke-width="8"
+                stroke-linecap="round" stroke-dasharray="${2 * Math.PI * 42}"
+                stroke-dashoffset="${2 * Math.PI * 42 * (1 - overallPct / 100)}"
+                transform="rotate(-90 50 50)"/>
+            </svg>
+            <span class="actions-overall-pct">${overallPct}%</span>
+          </div>
+          <div class="actions-overall-info">
+            <span class="actions-overall-count">${completedActions} / ${totalActions}</span>
+            <span class="actions-overall-label">\u0625\u062C\u0631\u0627\u0621 \u0645\u0643\u062A\u0645\u0644</span>
+          </div>
+        </div>
+    `;
+
+    // Group books by category
+    const categoryOrder = ['productivity', 'finance', 'biography'];
+    categoryOrder.forEach((catId) => {
+      const cat = CATEGORIES.find((c) => c.id === catId);
+      const catBooks = BOOKS.filter((b) => b.category === catId && BOOK_ACTIONS[b.id]);
+      if (catBooks.length === 0) return;
+
+      html += `<div class="actions-category">
+        <h3 class="actions-category-title">${cat.icon} ${cat.ar}</h3>`;
+
+      catBooks.forEach((book) => {
+        const stats = bookStats[book.id];
+        const bookPct = stats.total > 0 ? Math.round((stats.done / stats.total) * 100) : 0;
+        const isAllDone = stats.done === stats.total;
+
+        html += `
+        <div class="actions-book ${isAllDone ? 'all-done' : ''}">
+          <div class="actions-book-header" data-toggle-book="${book.id}">
+            <span class="actions-book-emoji">${book.emoji}</span>
+            <div class="actions-book-info">
+              <span class="actions-book-title">${book.title}</span>
+              <div class="actions-book-progress">
+                <div class="actions-book-bar">
+                  <div class="actions-book-bar-fill" style="width:${bookPct}%"></div>
+                </div>
+                <span class="actions-book-pct">${stats.done}/${stats.total}</span>
+              </div>
+            </div>
+            <span class="actions-book-chevron">\u276F</span>
+          </div>
+          <div class="actions-book-list" id="actions-list-${book.id}" style="display:none">`;
+
+        const actions = BOOK_ACTIONS[book.id];
+        actions.forEach((action, i) => {
+          const key = 'action:' + book.id + ':' + i;
+          const checked = actionStates[key];
+          html += `
+            <label class="action-item ${checked ? 'done' : ''}">
+              <input type="checkbox" ${checked ? 'checked' : ''} data-action-key="${key}">
+              <span class="action-check">${checked ? '\u2713' : ''}</span>
+              <span class="action-text">${action}</span>
+            </label>`;
+        });
+
+        html += `</div></div>`;
+      });
+
+      html += `</div>`;
+    });
+
+    html += `</div>`;
+
+    actionsEl.innerHTML = `
+      <div class="view-header">
+        <h2>\u062E\u0637\u0629 \u0627\u0644\u062A\u0637\u0628\u064A\u0642</h2>
+      </div>
+      ${html}
+    `;
+
+    // Toggle book expand/collapse
+    actionsEl.querySelectorAll('[data-toggle-book]').forEach((header) => {
+      header.addEventListener('click', () => {
+        const bookId = header.getAttribute('data-toggle-book');
+        const list = document.getElementById('actions-list-' + bookId);
+        const chevron = header.querySelector('.actions-book-chevron');
+        if (list) {
+          const isOpen = list.style.display !== 'none';
+          list.style.display = isOpen ? 'none' : 'block';
+          if (chevron) chevron.style.transform = isOpen ? '' : 'rotate(90deg)';
+        }
+      });
+    });
+
+    // Checkbox handlers
+    actionsEl.querySelectorAll('input[data-action-key]').forEach((cb) => {
+      cb.addEventListener('change', async (e) => {
+        e.stopPropagation();
+        const key = cb.getAttribute('data-action-key');
+        const checked = cb.checked;
+        await DB.setSetting(key, checked ? 1 : 0);
+
+        // Sync to cloud
+        if (window.CloudSync) {
+          CloudSync.pushSetting(key, checked ? 1 : 0);
+        }
+
+        // Re-render to update stats
+        renderActions();
+      });
+    });
   }
 
   // ==================== UTILITIES ====================

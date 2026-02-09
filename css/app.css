@@ -2972,4 +2972,236 @@ textarea:focus {
   padding-right: 36px;
 }
 
+/* === BODY READING STATE === */
+
+body.reading .bottom-nav {
+  display: none !important;
+}
+
+/* === ACTIONS VIEW === */
+
+#view-actions {
+  padding: calc(env(safe-area-inset-top) + 20px) 0 20px;
+}
+
+.actions-content {
+  padding: 0 16px;
+}
+
+.actions-overall {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--card-gradient);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.actions-overall-ring {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.actions-overall-pct {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.actions-overall-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.actions-overall-count {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.actions-overall-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.actions-category {
+  margin-bottom: 20px;
+}
+
+.actions-category-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding: 0 4px;
+  color: var(--text-primary);
+}
+
+.actions-book {
+  background: var(--card-gradient);
+  border-radius: 14px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.actions-book.all-done {
+  border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.actions-book-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.actions-book-header:active {
+  background: var(--bg-card);
+}
+
+.actions-book-emoji {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.actions-book-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.actions-book-title {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actions-book-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.actions-book-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-card);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.actions-book-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.actions-book.all-done .actions-book-bar-fill {
+  background: #2ecc71;
+}
+
+.actions-book-pct {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  min-width: 28px;
+  text-align: left;
+}
+
+.actions-book-chevron {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.actions-book-list {
+  padding: 0 14px 14px;
+}
+
+.action-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: opacity 0.2s ease;
+}
+
+.action-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.action-item input[type="checkbox"] {
+  display: none;
+}
+
+.action-check {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: white;
+  transition: all 0.2s ease;
+  margin-top: 2px;
+}
+
+.action-item.done .action-check {
+  background: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.action-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.action-item.done .action-text {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* iPhone touch optimization */
+@supports (-webkit-touch-callout: none) {
+  .action-item,
+  .actions-book-header,
+  .nav-item,
+  .book-card,
+  .filter-tab,
+  .quotes-tab,
+  .cat-filter-btn {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
 /* === END === */
