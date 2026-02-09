@@ -26,6 +26,7 @@
         init();
         setupScrollTracking();
         setupTextSelection();
+        setupTapActions();
         createUI();
         notifyContentLoaded();
     });
@@ -143,6 +144,203 @@
                 showSelectionPopup(e);
             }
         }, 10);
+    }
+
+    // === Tap-to-Act (single tap on paragraph) ===
+    let tapActionBar = null;
+    let tappedElement = null;
+    let tapTimeout = null;
+
+    function setupTapActions() {
+        document.addEventListener('click', handleTapAction);
+    }
+
+    function handleTapAction(e) {
+        // Ignore if tapping on popup/dialog/action-bar UI
+        if (selectionPopup && selectionPopup.contains(e.target)) return;
+        if (commentDialog && commentDialog.contains(e.target)) return;
+        if (tapActionBar && tapActionBar.contains(e.target)) return;
+        if (e.target.closest('.comment-indicator')) return;
+        if (e.target.closest('.comment-popup')) return;
+
+        // Ignore if text is selected (let the selection popup handle it)
+        const sel = window.getSelection();
+        if (sel && !sel.isCollapsed && sel.toString().trim().length > 0) return;
+
+        // Find the closest content element
+        const el = e.target.closest('p, li, h1, h2, h3, h4, h5, h6, blockquote, td, th');
+        if (!el) {
+            hideTapActionBar();
+            return;
+        }
+
+        const text = el.textContent.trim();
+        if (!text || text.length < 2) {
+            hideTapActionBar();
+            return;
+        }
+
+        // Clear any previous tap timeout
+        if (tapTimeout) clearTimeout(tapTimeout);
+
+        // If tapping the same element, toggle off
+        if (tappedElement === el && tapActionBar && tapActionBar.style.display === 'flex') {
+            hideTapActionBar();
+            return;
+        }
+
+        // Remove previous highlight
+        if (tappedElement) {
+            tappedElement.style.removeProperty('outline');
+            tappedElement.style.removeProperty('outline-offset');
+            tappedElement.style.removeProperty('border-radius');
+        }
+
+        tappedElement = el;
+
+        // Highlight tapped element
+        el.style.outline = '2px solid rgba(233, 69, 96, 0.5)';
+        el.style.outlineOffset = '4px';
+        el.style.borderRadius = '4px';
+
+        showTapActionBar(text);
+    }
+
+    function showTapActionBar(text) {
+        if (!tapActionBar) {
+            tapActionBar = document.createElement('div');
+            tapActionBar.className = 'tap-action-bar';
+            tapActionBar.style.cssText = `
+                position: fixed;
+                bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+                left: 50%;
+                transform: translateX(-50%);
+                display: none;
+                gap: 8px;
+                padding: 10px 16px;
+                background: rgba(30, 30, 50, 0.95);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border-radius: 16px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+                z-index: 10002;
+                direction: rtl;
+                align-items: center;
+            `;
+
+            const btnStyle = `
+                padding: 10px 16px;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                font-size: 14px;
+                font-family: inherit;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                white-space: nowrap;
+                transition: all 0.2s ease;
+            `;
+
+            tapActionBar.innerHTML = `
+                <button class="tap-copy-btn" style="${btnStyle} background: #2a2a40; color: #e0e0e0;">نسخ</button>
+                <button class="tap-highlight-btn" style="${btnStyle} background: rgba(255,215,0,0.25); color: #ffd700;">تظليل</button>
+                <button class="tap-comment-btn" style="${btnStyle} background: rgba(33,150,243,0.2); color: #64b5f6;">تعليق</button>
+            `;
+
+            document.body.appendChild(tapActionBar);
+
+            // Copy
+            tapActionBar.querySelector('.tap-copy-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (!tappedElement) return;
+                const t = tappedElement.textContent.trim();
+                navigator.clipboard.writeText(t).catch(() => {
+                    const ta = document.createElement('textarea');
+                    ta.value = t;
+                    ta.style.cssText = 'position:fixed;opacity:0';
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                });
+                // Visual feedback
+                const btn = tapActionBar.querySelector('.tap-copy-btn');
+                btn.textContent = 'تم!';
+                btn.style.background = '#4caf50';
+                btn.style.color = 'white';
+                setTimeout(() => {
+                    btn.textContent = 'نسخ';
+                    btn.style.background = '#2a2a40';
+                    btn.style.color = '#e0e0e0';
+                    hideTapActionBar();
+                }, 800);
+            });
+
+            // Highlight
+            tapActionBar.querySelector('.tap-highlight-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (!tappedElement) return;
+                const t = tappedElement.textContent.trim();
+                const color = highlightMode.color || 'yellow';
+
+                // Wrap entire element content in mark
+                const mark = document.createElement('mark');
+                mark.className = `highlight-${color}`;
+                mark.style.cssText = `background-color: ${getColorValue(color)}; padding: 2px 0;`;
+
+                // Move all children into the mark
+                while (tappedElement.firstChild) {
+                    mark.appendChild(tappedElement.firstChild);
+                }
+                tappedElement.appendChild(mark);
+
+                sendToParent({
+                    type: 'HIGHLIGHT_CREATED',
+                    text: t,
+                    color,
+                    elementSelector: generateElementSelector(tappedElement)
+                });
+
+                hideTapActionBar();
+            });
+
+            // Comment
+            tapActionBar.querySelector('.tap-comment-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (!tappedElement) return;
+                currentSelection = {
+                    text: tappedElement.textContent.trim(),
+                    range: null,
+                    element: tappedElement
+                };
+                showCommentDialog();
+                hideTapActionBar();
+            });
+        }
+
+        tapActionBar.style.display = 'flex';
+
+        // Auto-hide after 6 seconds
+        if (tapTimeout) clearTimeout(tapTimeout);
+        tapTimeout = setTimeout(() => hideTapActionBar(), 6000);
+    }
+
+    function hideTapActionBar() {
+        if (tapActionBar) {
+            tapActionBar.style.display = 'none';
+        }
+        if (tappedElement) {
+            tappedElement.style.removeProperty('outline');
+            tappedElement.style.removeProperty('outline-offset');
+            tappedElement.style.removeProperty('border-radius');
+            tappedElement = null;
+        }
+        if (tapTimeout) {
+            clearTimeout(tapTimeout);
+            tapTimeout = null;
+        }
     }
 
     // === Selection Popup ===
