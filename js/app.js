@@ -755,7 +755,7 @@
     html += '</div>';
 
     // Render grouped books
-    const categoryOrder = ['productivity', 'finance', 'biography'];
+    const categoryOrder = ['productivity', 'finance', 'biography', 'pregnancy', 'fatherhood'];
     categoryOrder.forEach((catId) => {
       const books = grouped[catId];
       if (!books || books.length === 0) return;
@@ -1972,7 +1972,7 @@
     `;
 
     // Group books by category
-    const categoryOrder = ['productivity', 'finance', 'biography'];
+    const categoryOrder = ['productivity', 'finance', 'biography', 'pregnancy', 'fatherhood'];
     categoryOrder.forEach((catId) => {
       const cat = CATEGORIES.find((c) => c.id === catId);
       const catBooks = BOOKS.filter((b) => b.category === catId && BOOK_ACTIONS[b.id]);
