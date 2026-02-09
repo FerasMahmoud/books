@@ -1,0 +1,20 @@
+{
+  "name": "مكتبتي الشخصية",
+  "short_name": "مكتبتي",
+  "description": "مكتبة شخصية لملخصات الكتب باللغة العربية",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f0f1a",
+  "theme_color": "#0f0f1a",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='100' fill='%230f0f1a'/><text x='256' y='340' font-size='280' text-anchor='middle'>📚</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

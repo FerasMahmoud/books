@@ -1,447 +1,198 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مكتبتي الشخصية</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; font-size: 16px; }
-  body {
-    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
-    background-color: #0f0f1a;
-    color: #e0e0e0;
-    line-height: 1.8;
-    min-height: 100vh;
-  }
-
-  .header {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    padding: 40px 20px;
-    text-align: center;
-    border-bottom: 3px solid #e94560;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .header h1 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 10px; }
-  .header p { color: #8888a0; font-size: 1.1rem; }
-  .header .book-count {
-    display: inline-block;
-    background: #e94560;
-    color: #fff;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    margin-top: 10px;
-  }
-
-  .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-
-  .category { margin-bottom: 50px; }
-  .category-title {
-    font-size: 1.5rem;
-    color: #e94560;
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid rgba(233, 69, 96, 0.2);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .category-title span { font-size: 1.5rem; }
-
-  .books-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-  }
-
-  .book-card {
-    background: linear-gradient(145deg, #1a1a2e, #16213e);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  .book-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    border-color: rgba(233, 69, 96, 0.3);
-  }
-
-  .book-cover {
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-  }
-
-  .book-card[data-color="red"] .book-cover { background: linear-gradient(135deg, #e94560, #c0392b); }
-  .book-card[data-color="blue"] .book-cover { background: linear-gradient(135deg, #4a90a4, #357a8a); }
-  .book-card[data-color="orange"] .book-cover { background: linear-gradient(135deg, #e67e22, #d35400); }
-  .book-card[data-color="green"] .book-cover { background: linear-gradient(135deg, #1abc9c, #16a085); }
-  .book-card[data-color="crimson"] .book-cover { background: linear-gradient(135deg, #e74c3c, #c0392b); }
-  .book-card[data-color="purple"] .book-cover { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
-  .book-card[data-color="teal"] .book-cover { background: linear-gradient(135deg, #00b894, #00a878); }
-  .book-card[data-color="pink"] .book-cover { background: linear-gradient(135deg, #fd79a8, #e84393); }
-  .book-card[data-color="amber"] .book-cover { background: linear-gradient(135deg, #fdcb6e, #f39c12); }
-  .book-card[data-color="cyan"] .book-cover { background: linear-gradient(135deg, #00cec9, #0984e3); }
-  .book-card[data-color="navy"] .book-cover { background: linear-gradient(135deg, #34495e, #2c3e50); }
-  .book-card[data-color="forest"] .book-cover { background: linear-gradient(135deg, #27ae60, #1e8449); }
-
-  .book-info { padding: 20px; }
-  .book-title { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 5px; }
-  .book-subtitle { font-size: 0.85rem; color: #e94560; font-style: italic; margin-bottom: 8px; direction: ltr; text-align: right; }
-  .book-author { font-size: 0.9rem; color: #8888a0; margin-bottom: 12px; }
-  .book-description { font-size: 0.9rem; color: #a0a0b0; line-height: 1.7; }
-  .book-tag {
-    display: inline-block;
-    background: rgba(233, 69, 96, 0.1);
-    color: #e94560;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    margin-top: 12px;
-  }
-
-  .footer {
-    text-align: center;
-    padding: 30px;
-    color: #666680;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  .back-button {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #e94560;
-    color: #fff;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
-    transition: all 0.3s ease;
-    display: none;
-    align-items: center;
-    justify-content: center;
-  }
-  .back-button:hover { background: #c0392b; transform: scale(1.1); }
-  .back-button.visible { display: flex; }
-
-  .book-viewer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #0f0f1a;
-    z-index: 999;
-    display: none;
-  }
-  .book-viewer.active { display: block; }
-  .book-viewer iframe { width: 100%; height: 100%; border: none; }
-
-  @media (max-width: 768px) {
-    .header h1 { font-size: 1.8rem; }
-    .header { padding: 30px 15px; }
-    .container { padding: 25px 15px; }
-    .books-grid { grid-template-columns: 1fr; gap: 20px; }
-    .book-cover { height: 150px; font-size: 3.5rem; }
-    .book-title { font-size: 1.2rem; }
-    .category-title { font-size: 1.3rem; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="مكتبتي">
+  <meta name="theme-color" content="#0f0f1a">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230f0f1a'/><text x='50' y='65' font-size='60' text-anchor='middle' fill='%23fff'>📚</text></svg>">
+  <title>مكتبتي الشخصية</title>
+  <link rel="stylesheet" href="css/app.css">
 </head>
-<body>
+<body data-theme="dark">
 
-<button class="back-button" id="backBtn" onclick="closeBook()">&#10005;</button>
+<!-- ==================== VIEW: LIBRARY ==================== -->
+<div id="view-library" class="view active">
 
-<div class="book-viewer" id="bookViewer">
-  <iframe id="bookFrame" src=""></iframe>
+  <!-- Library Header -->
+  <div class="library-header">
+    <div class="header-top">
+      <h1 class="app-title">📚 مكتبتي</h1>
+      <div id="streak-badge" class="streak-badge">
+        <span class="streak-fire">🔥</span>
+        <span class="streak-count">0</span>
+      </div>
+    </div>
+    <p class="app-subtitle">ملخصات الكتب باللغة العربية</p>
+    <span class="book-count" id="book-count">17 كتاب</span>
+  </div>
+
+  <!-- Search -->
+  <div class="search-container">
+    <input type="search" id="search-input" class="search-input" placeholder="🔍 ابحث عن كتاب أو مؤلف..." autocomplete="off">
+  </div>
+
+  <!-- Filter Tabs -->
+  <div class="filter-tabs" id="filter-tabs">
+    <button class="filter-tab active" data-filter="all">الكل</button>
+    <button class="filter-tab" data-filter="unread">لم يُقرأ</button>
+    <button class="filter-tab" data-filter="reading">قيد القراءة</button>
+    <button class="filter-tab" data-filter="completed">مكتمل ✓</button>
+  </div>
+
+  <!-- Books Grid (populated by JS) -->
+  <div id="books-grid" class="books-grid"></div>
+
 </div>
 
-<header class="header" id="header">
-  <h1>&#128218; مكتبتي الشخصية</h1>
-  <p>ملخصات الكتب باللغة العربية</p>
-  <span class="book-count">17 كتب</span>
-</header>
+<!-- ==================== VIEW: READER ==================== -->
+<div id="view-reader" class="view">
 
-<main class="container" id="library">
-
-  <section class="category">
-    <h2 class="category-title"><span>&#9889;</span> الإنتاجية والتوازن</h2>
-    <div class="books-grid">
-
-      <a class="book-card" data-color="red" onclick="openBook('الإنتاجية-والتوازن/4-hour-workweek-summary.html')">
-        <div class="book-cover">⏰</div>
-        <div class="book-info">
-          <h3 class="book-title">أسبوع العمل 4 ساعات</h3>
-          <p class="book-subtitle">The 4-Hour Workweek: Escape 9-5, Live Anywhere</p>
-          <p class="book-author">تيم فيريس</p>
-          <p class="book-description">لو أنت عالق في وظيفة 9-5، تنتظر التقاعد عشان "تعيش حياتك"، وتحس إن أفضل سنينك تروح على مكتب — هذا الكتاب يقدم بديل جذري:...</p>
-          <span class="book-tag">6 فصل</span>
-        </div>
-      </a>
-
-      <a class="book-card" data-color="blue" onclick="openBook('الإنتاجية-والتوازن/deep-work-summary.html')">
-        <div class="book-cover">🧠</div>
-        <div class="book-info">
-          <h3 class="book-title">العمل العميق</h3>
-          <p class="book-subtitle">Deep Work: Rules for Focused Success in a Distracted World</p>
-          <p class="book-author">كال نيوبورت</p>
-          <p class="book-description">Deep Work: Rules for Focused Success in a Distracted World...</p>
-          <span class="book-tag">8 فصل</span>
-        </div>
-      </a>
-
-      <a class="book-card" data-color="orange" onclick="openBook('الإنتاجية-والتوازن/die-with-zero-summary.html')">
-        <div class="book-cover">⏳</div>
-        <div class="book-info">
-          <h3 class="book-title">مت بصفر</h3>
-          <p class="book-subtitle">Die With Zero: Getting All You Can from Your Money and Your Life</p>
-          <p class="book-author">بيل بيركنز</p>
-          <p class="book-description">Die With Zero: Getting All You Can from Your Money and Your Life...</p>
-          <span class="book-tag">9 فصل</span>
-        </div>
-      </a>
-
-      <a class="book-card" data-color="green" onclick="openBook('الإنتاجية-والتوازن/essentialism-summary.html')">
-        <div class="book-cover">✨</div>
-        <div class="book-info">
-          <h3 class="book-title">الجوهرية</h3>
-          <p class="book-subtitle">Essentialism: The Disciplined Pursuit of Less</p>
-          <p class="book-author">غريغ ماكيون</p>
-          <p class="book-description">لو حياتك مليانة التزامات، وكل يوم تحس إنك تركض بدون ما توصل، وما تقدر تقول "لا" لأي طلب — هذا الكتاب يغيّر حياتك. المشكلة:...</p>
-          <span class="book-tag">8 فصل</span>
-        </div>
-      </a>
-
-      <a class="book-card" data-color="crimson" onclick="openBook('الإنتاجية-والتوازن/rest-book-summary.html')">
-        <div class="book-cover">🌙</div>
-        <div class="book-info">
-          <h3 class="book-title">الراحة</h3>
-          <p class="book-subtitle">Rest: Why You Get More Done When You Work Less</p>
-          <p class="book-author">أليكس سونغ-كيم بانغ</p>
-          <p class="book-description">لو أنت من الناس اللي تشتغل طول الوقت، وتحس إن الراحة = كسل، وإنك لازم تكون "productive" 24/7 عشان تنجح — هذا الكتاب يغيّر حياتك. المشكلة اللي نعيشها ا...</p>
-          <span class="book-tag">12 فصل</span>
-        </div>
-      </a>
-
+  <!-- Reader Header -->
+  <div class="reader-header">
+    <button id="btn-close-reader" class="reader-btn">✕</button>
+    <span id="reader-title" class="reader-title-text">...</span>
+    <div class="reader-actions">
+      <button id="btn-bookmark" class="reader-btn" title="إضافة علامة">🔖</button>
+      <button id="btn-highlight-mode" class="reader-btn" title="تظليل">🖍️</button>
+      <button id="btn-font-settings" class="reader-btn" title="خط">Aa</button>
     </div>
-  </section>
+  </div>
 
-  <section class="category">
-    <h2 class="category-title"><span>&#128176;</span> المال والاستثمار</h2>
-    <div class="books-grid">
+  <!-- Reading Progress Bar -->
+  <div class="reader-progress-container">
+    <div id="reader-progress" class="reader-progress-bar"></div>
+  </div>
 
-      <a class="book-card" data-color="purple" onclick="openBook('المال-والاستثمار/psychology-of-money-summary.html')">
-        <div class="book-cover">📖</div>
-        <div class="book-info">
-          <h3 class="book-title">سيكولوجية المال</h3>
-          <p class="book-subtitle">The Psychology of Money</p>
-          <p class="book-author">مورغان هاوسل</p>
-          <p class="book-description">كتاب "سيكولوجية المال" من أهم الكتب اللي صدرت في العقد الأخير عن المال والاستثمار. المؤلف مورغان هاوسل — كاتب مالي مخضرم — يقدم فيه فكرة بسيطة لكن عمي...</p>
-          <span class="book-tag">20 فصل</span>
-        </div>
-      </a>
+  <!-- Book Content (iframe) -->
+  <iframe id="book-frame" class="book-frame" src="" sandbox="allow-same-origin allow-scripts"></iframe>
 
+  <!-- Reader Toolbar (slides up) -->
+  <div id="reader-toolbar" class="reader-toolbar">
+    <div class="toolbar-section">
+      <h4>حجم الخط</h4>
+      <div class="font-size-control">
+        <button class="font-btn" data-action="decrease">أ-</button>
+        <span id="font-size-display">16</span>
+        <button class="font-btn" data-action="increase">أ+</button>
+      </div>
     </div>
-  </section>
-
-  <section class="category">
-    <h2 class="category-title"><span>&#128100;</span> السير الذاتية والمذكرات</h2>
-    <div class="books-grid">
-
-      <a class="book-card" data-color="blue" onclick="openBook('السير-الذاتية/steve-jobs-summary.html')">
-        <div class="book-cover">🍎</div>
-        <div class="book-info">
-          <h3 class="book-title">ستيف جوبز</h3>
-          <p class="book-subtitle">Steve Jobs</p>
-          <p class="book-author">والتر إيزاكسون</p>
-          <p class="book-description">قصة مؤسس أبل من التبني والبداية في الجراج، مروراً بطرده من شركته، وعودته الأسطورية اللي غيّرت صناعات كاملة بالآيفون والآيباد...</p>
-          <span class="book-tag">8 فصل</span>
-        </div>
-      </a>
-
-      <a class="book-card" data-color="crimson" onclick="openBook('السير-الذاتية/elon-musk-summary.html')">
-        <div class="book-cover">🚀</div>
-        <div class="book-info">
-          <h3 class="book-title">إيلون ماسك</h3>
-          <p class="book-subtitle">Elon Musk</p>
-          <p class="book-author">والتر إيزاكسون</p>
-          <p class="book-description">من طفولة صعبة في جنوب أفريقيا إلى أغنى رجل في العالم — قصة الرجل اللي أسس تيسلا وسبيس إكس وغيّر مستقبل البشرية...</p>
-          <span class="book-tag">8 فصل</span>
-        </div>
-      </a>
-
-      <a class="book-card" data-color="amber" onclick="openBook('السير-الذاتية/leonardo-da-vinci-summary.html')">
-        <div class="book-cover">🎨</div>
-        <div class="book-info">
-          <h3 class="book-title">ليوناردو دافنشي</h3>
-          <p class="book-subtitle">Leonardo da Vinci</p>
-          <p class="book-author">والتر إيزاكسون</p>
-          <p class="book-description">أعظم عبقري في التاريخ — فنان ومخترع وعالم تشريح. الراجل اللي رسم الموناليزا وصمم آلات طيران قبل 500 سنة...</p>
-          <span class="book-tag">8 فصل</span>
-        </div>
-      </a>
-
-      <a class="book-card" data-color="teal" onclick="openBook('السير-الذاتية/einstein-summary.html')">
-        <div class="book-cover">⚛️</div>
-        <div class="book-info">
-          <h3 class="book-title">أينشتاين: حياته وكونه</h3>
-          <p class="book-subtitle">Einstein: His Life and Universe</p>
-          <p class="book-author">والتر إيزاكسون</p>
-          <p class="book-description">العقل اللي غيّر فهمنا للكون — من موظف براءات اختراع فاشل إلى أعظم عالم فيزياء في التاريخ ونظرية النسبية...</p>
-          <span class="book-tag">8 فصل</span>
-        </div>
-      </a>
-
-      <a class="book-card" data-color="navy" onclick="openBook('السير-الذاتية/benjamin-franklin-summary.html')">
-        <div class="book-cover">⚡</div>
-        <div class="book-info">
-          <h3 class="book-title">بنجامين فرانكلين</h3>
-          <p class="book-subtitle">Benjamin Franklin: An American Life</p>
-          <p class="book-author">والتر إيزاكسون</p>
-          <p class="book-description">ابن صانع الشموع اللي صار مخترع وعالم ودبلوماسي وأب مؤسس لأمريكا — وفلسفته في تطوير الذات بـ13 فضيلة...</p>
-          <span class="book-tag">7 فصل</span>
-        </div>
-      </a>
-
-      <a class="book-card" data-color="orange" onclick="openBook('السير-الذاتية/shoe-dog-summary.html')">
-        <div class="book-cover">👟</div>
-        <div class="book-info">
-          <h3 class="book-title">شو دوج: مذكرات مؤسس نايكي</h3>
-          <p class="book-subtitle">Shoe Dog: A Memoir by the Creator of Nike</p>
-          <p class="book-author">فيل نايت</p>
-          <p class="book-description">من فكرة مجنونة عن استيراد أحذية يابانية إلى بناء أكبر علامة رياضية في العالم — رحلة نايكي من الصفر...</p>
-          <span class="book-tag">8 فصل</span>
-        </div>
-      </a>
-
-      <a class="book-card" data-color="purple" onclick="openBook('السير-الذاتية/ride-of-a-lifetime-summary.html')">
-        <div class="book-cover">🏰</div>
-        <div class="book-info">
-          <h3 class="book-title">رحلة العمر</h3>
-          <p class="book-subtitle">The Ride of a Lifetime</p>
-          <p class="book-author">بوب إيغر</p>
-          <p class="book-description">من مساعد استوديو إلى رئيس ديزني — الرجل اللي اشترى بيكسار ومارفل وستار وورز وحوّل ديزني لأكبر شركة ترفيه...</p>
-          <span class="book-tag">8 فصل</span>
-        </div>
-      </a>
-
-      <a class="book-card" data-color="red" onclick="openBook('السير-الذاتية/titan-summary.html')">
-        <div class="book-cover">🛢️</div>
-        <div class="book-info">
-          <h3 class="book-title">تايتان: حياة جون دي روكفلر</h3>
-          <p class="book-subtitle">Titan: The Life of John D. Rockefeller, Sr.</p>
-          <p class="book-author">رون شيرنو</p>
-          <p class="book-description">أغنى رجل في التاريخ الحديث — كيف بنى إمبراطورية النفط ستاندرد أويل، وكيف تحوّل من أكثر رجل مكروه لأعظم محسن...</p>
-          <span class="book-tag">8 فصل</span>
-        </div>
-      </a>
-
-      <a class="book-card" data-color="cyan" onclick="openBook('السير-الذاتية/when-breath-becomes-air-summary.html')">
-        <div class="book-cover">🌬️</div>
-        <div class="book-info">
-          <h3 class="book-title">عندما يصبح النَفَس هواءً</h3>
-          <p class="book-subtitle">When Breath Becomes Air</p>
-          <p class="book-author">بول كالانيثي</p>
-          <p class="book-description">جراح أعصاب في ستانفورد عمره 36 سنة يُشخّص بسرطان الرئة — مذكرات مؤثرة عن معنى الحياة لما يكون الوقت محدود...</p>
-          <span class="book-tag">7 فصل</span>
-        </div>
-      </a>
-
-      <a class="book-card" data-color="forest" onclick="openBook('السير-الذاتية/greenlights-summary.html')">
-        <div class="book-cover">🟢</div>
-        <div class="book-info">
-          <h3 class="book-title">الأضواء الخضراء</h3>
-          <p class="book-subtitle">Greenlights</p>
-          <p class="book-author">ماثيو ماكونهي</p>
-          <p class="book-description">مذكرات النجم الحائز على أوسكار — فلسفته في الحياة إن كل تجربة صعبة هي "ضوء أحمر" بيتحوّل أخضر لو صبرت...</p>
-          <span class="book-tag">7 فصل</span>
-        </div>
-      </a>
-
-      <a class="book-card" data-color="pink" onclick="openBook('السير-الذاتية/caged-bird-sings-summary.html')">
-        <div class="book-cover">🐦</div>
-        <div class="book-info">
-          <h3 class="book-title">أعرف لماذا يغرد الطائر الحبيس</h3>
-          <p class="book-subtitle">I Know Why the Caged Bird Sings</p>
-          <p class="book-author">مايا أنجيلو</p>
-          <p class="book-description">سيرة ذاتية أسطورية عن طفولة مايا أنجيلو — من العنصرية والفقر في الجنوب الأمريكي إلى اكتشاف قوة الكلمة والأدب...</p>
-          <span class="book-tag">7 فصل</span>
-        </div>
-      </a>
-
+    <div class="toolbar-section">
+      <h4>نوع الخط</h4>
+      <div class="font-family-options">
+        <button class="font-family-btn active" data-font="Tajawal">تجوال</button>
+        <button class="font-family-btn" data-font="Amiri">أميري</button>
+        <button class="font-family-btn" data-font="Noto Naskh Arabic">نسخ</button>
+      </div>
     </div>
-  </section>
+    <div class="toolbar-section">
+      <h4>تكبير / تصغير</h4>
+      <div class="zoom-control">
+        <button class="zoom-btn" data-action="zoom-out">−</button>
+        <span id="zoom-display">100%</span>
+        <button class="zoom-btn" data-action="zoom-in">+</button>
+      </div>
+    </div>
+    <div class="toolbar-section">
+      <h4>لون التظليل</h4>
+      <div class="highlight-colors">
+        <button class="color-dot active" data-color="yellow" style="background:#FFEB3B"></button>
+        <button class="color-dot" data-color="green" style="background:#4CAF50"></button>
+        <button class="color-dot" data-color="blue" style="background:#2196F3"></button>
+        <button class="color-dot" data-color="pink" style="background:#E91E63"></button>
+        <button class="color-dot" data-color="orange" style="background:#FF9800"></button>
+      </div>
+    </div>
+  </div>
 
-</main>
+  <!-- Highlight Color Bar (shown when highlight mode active) -->
+  <div id="highlight-bar" class="highlight-bar hidden">
+    <span>وضع التظليل مفعّل</span>
+    <button id="btn-exit-highlight">✕ إلغاء</button>
+  </div>
+</div>
 
-<footer class="footer">
-  <p>مكتبة شخصية للملخصات العربية | يتم التحديث تلقائيا</p>
-</footer>
+<!-- ==================== VIEW: DASHBOARD ==================== -->
+<div id="view-dashboard" class="view">
+  <div class="view-header">
+    <h2>📊 لوحة القراءة</h2>
+  </div>
 
+  <div id="streak-section" class="dashboard-section">
+    <!-- Streak calendar and stats rendered by JS -->
+  </div>
+
+  <div id="stats-section" class="dashboard-section">
+    <!-- Reading stats cards rendered by JS -->
+  </div>
+
+  <div id="category-chart" class="dashboard-section">
+    <!-- Category breakdown rendered by JS -->
+  </div>
+
+  <div id="mind-map-section" class="dashboard-section">
+    <!-- Author connections mind map rendered by JS -->
+  </div>
+</div>
+
+<!-- ==================== VIEW: QUOTES ==================== -->
+<div id="view-quotes" class="view">
+  <div class="view-header">
+    <h2>💬 الاقتباسات والملاحظات</h2>
+  </div>
+
+  <div class="quotes-tabs" id="quotes-tabs">
+    <button class="quotes-tab active" data-tab="highlights">اقتباسات</button>
+    <button class="quotes-tab" data-tab="comments">تعليقات</button>
+    <button class="quotes-tab" data-tab="bookmarks">علامات</button>
+  </div>
+
+  <div id="quotes-content" class="quotes-content">
+    <!-- Rendered by JS -->
+  </div>
+</div>
+
+<!-- ==================== VIEW: SETTINGS ==================== -->
+<div id="view-settings" class="view">
+  <div class="view-header">
+    <h2>⚙️ الإعدادات</h2>
+  </div>
+  <div id="settings-content">
+    <!-- Rendered by JS -->
+  </div>
+</div>
+
+<!-- ==================== BOTTOM NAVIGATION ==================== -->
+<nav class="bottom-nav" id="bottom-nav">
+  <button class="nav-item active" data-view="library">
+    <span class="nav-icon">📚</span>
+    <span class="nav-label">المكتبة</span>
+  </button>
+  <button class="nav-item" data-view="dashboard">
+    <span class="nav-icon">📊</span>
+    <span class="nav-label">لوحة</span>
+  </button>
+  <button class="nav-item" data-view="quotes">
+    <span class="nav-icon">💬</span>
+    <span class="nav-label">اقتباسات</span>
+  </button>
+  <button class="nav-item" data-view="settings">
+    <span class="nav-icon">⚙️</span>
+    <span class="nav-label">إعدادات</span>
+  </button>
+</nav>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast hidden"></div>
+
+<!-- Scripts -->
+<script src="js/db.js"></script>
+<script src="js/app.js"></script>
 <script>
-  function openBook(bookPath) {
-    const viewer = document.getElementById('bookViewer');
-    const frame = document.getElementById('bookFrame');
-    const backBtn = document.getElementById('backBtn');
-    const header = document.getElementById('header');
-    const library = document.getElementById('library');
-
-    frame.src = bookPath;
-    viewer.classList.add('active');
-    backBtn.classList.add('visible');
-    header.style.display = 'none';
-    library.style.display = 'none';
-    document.body.style.overflow = 'hidden';
-    history.pushState({book: bookPath}, '', '#' + bookPath);
-  }
-
-  function closeBook() {
-    const viewer = document.getElementById('bookViewer');
-    const frame = document.getElementById('bookFrame');
-    const backBtn = document.getElementById('backBtn');
-    const header = document.getElementById('header');
-    const library = document.getElementById('library');
-
-    viewer.classList.remove('active');
-    backBtn.classList.remove('visible');
-    frame.src = '';
-    header.style.display = 'block';
-    library.style.display = 'block';
-    document.body.style.overflow = 'auto';
-    window.scrollTo(0, 0);
-    history.pushState({}, '', window.location.pathname);
-  }
-
-  window.addEventListener('popstate', function(event) {
-    if (document.getElementById('bookViewer').classList.contains('active')) {
-      closeBook();
-    }
-  });
-
-  window.addEventListener('load', function() {
-    if (window.location.hash) {
-      const bookPath = window.location.hash.substring(1);
-      if (bookPath) openBook(decodeURIComponent(bookPath));
-    }
-  });
+  document.addEventListener('DOMContentLoaded', () => App.init());
 </script>
 
 </body>

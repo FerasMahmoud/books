@@ -1,0 +1,638 @@
+/**
+ * Book Reader Script
+ * Runs inside each book HTML (in iframe)
+ * Provides highlighting, comments, scroll tracking, and theme/font overrides
+ */
+
+(function() {
+    'use strict';
+
+    // State
+    let highlightMode = {
+        enabled: false,
+        color: 'yellow'
+    };
+    let isReadingComplete = false;
+    let lastScrollUpdate = 0;
+    const SCROLL_THROTTLE = 500; // ms
+
+    // UI Elements (created dynamically)
+    let selectionPopup = null;
+    let commentDialog = null;
+    let currentSelection = null;
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        init();
+        setupScrollTracking();
+        setupTextSelection();
+        createUI();
+        notifyContentLoaded();
+    });
+
+    // Listen for messages from parent
+    window.addEventListener('message', (event) => {
+        // Security: verify origin if needed
+        const { type, ...data } = event.data;
+
+        switch (type) {
+            case 'INIT':
+                handleInit(data);
+                break;
+            case 'SET_THEME':
+                setTheme(data.theme);
+                break;
+            case 'SET_FONT_SIZE':
+                setFontSize(data.size);
+                break;
+            case 'SET_FONT_FAMILY':
+                setFontFamily(data.family);
+                break;
+            case 'SET_ZOOM':
+                setZoom(data.zoom);
+                break;
+            case 'SCROLL_TO':
+                scrollToPercent(data.percent);
+                break;
+            case 'TOGGLE_HIGHLIGHT_MODE':
+                toggleHighlightMode(data.enabled, data.color);
+                break;
+        }
+    });
+
+    function init() {
+        // Any initial setup
+    }
+
+    function notifyContentLoaded() {
+        const title = document.title || 'كتاب';
+        const totalHeight = document.documentElement.scrollHeight;
+
+        sendToParent({
+            type: 'CONTENT_LOADED',
+            title,
+            totalHeight
+        });
+    }
+
+    // === Scroll Tracking ===
+    function setupScrollTracking() {
+        window.addEventListener('scroll', throttle(handleScroll, SCROLL_THROTTLE), { passive: true });
+    }
+
+    function handleScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const maxScroll = scrollHeight - clientHeight;
+
+        const scrollPercent = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
+
+        sendToParent({
+            type: 'SCROLL_UPDATE',
+            scrollPercent,
+            scrollTop
+        });
+
+        // Reading complete
+        if (scrollPercent >= 95 && !isReadingComplete) {
+            isReadingComplete = true;
+            sendToParent({ type: 'READING_COMPLETE' });
+        }
+    }
+
+    function scrollToPercent(percent) {
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const maxScroll = scrollHeight - clientHeight;
+        const targetScroll = (percent / 100) * maxScroll;
+
+        window.scrollTo({
+            top: targetScroll,
+            behavior: 'smooth'
+        });
+    }
+
+    // === Text Selection ===
+    function setupTextSelection() {
+        document.addEventListener('mouseup', handleTextSelection);
+        document.addEventListener('touchend', handleTextSelection);
+    }
+
+    function handleTextSelection(e) {
+        setTimeout(() => {
+            const selection = window.getSelection();
+            if (!selection || selection.isCollapsed || !selection.toString().trim()) {
+                hideSelectionPopup();
+                return;
+            }
+
+            currentSelection = {
+                text: selection.toString().trim(),
+                range: selection.getRangeAt(0),
+                element: selection.anchorNode.parentElement
+            };
+
+            if (highlightMode.enabled) {
+                // In highlight mode: immediately create highlight
+                createHighlight(currentSelection, highlightMode.color);
+                selection.removeAllRanges();
+                hideSelectionPopup();
+            } else {
+                // Not in highlight mode: show selection popup
+                showSelectionPopup(e);
+            }
+        }, 10);
+    }
+
+    // === Selection Popup ===
+    function createUI() {
+        createSelectionPopup();
+        createCommentDialog();
+    }
+
+    function createSelectionPopup() {
+        selectionPopup = document.createElement('div');
+        selectionPopup.className = 'selection-popup';
+        selectionPopup.style.cssText = `
+            position: absolute;
+            display: none;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            padding: 8px;
+            z-index: 10000;
+            direction: rtl;
+        `;
+
+        selectionPopup.innerHTML = `
+            <div class="popup-buttons" style="display: flex; gap: 8px; align-items: center;">
+                <button class="popup-btn highlight-btn" style="padding: 8px 12px; border: none; background: #f0f0f0; border-radius: 6px; cursor: pointer; font-size: 14px;">تظليل</button>
+                <button class="popup-btn comment-btn" style="padding: 8px 12px; border: none; background: #f0f0f0; border-radius: 6px; cursor: pointer; font-size: 14px;">تعليق</button>
+                <button class="popup-btn copy-btn" style="padding: 8px 12px; border: none; background: #f0f0f0; border-radius: 6px; cursor: pointer; font-size: 14px;">نسخ</button>
+            </div>
+            <div class="color-picker" style="display: none; gap: 6px; margin-top: 8px; justify-content: center;">
+                <div class="color-dot" data-color="yellow" style="width: 28px; height: 28px; border-radius: 50%; background: #ffd700; cursor: pointer; border: 2px solid #ddd;"></div>
+                <div class="color-dot" data-color="green" style="width: 28px; height: 28px; border-radius: 50%; background: #90ee90; cursor: pointer; border: 2px solid #ddd;"></div>
+                <div class="color-dot" data-color="blue" style="width: 28px; height: 28px; border-radius: 50%; background: #add8e6; cursor: pointer; border: 2px solid #ddd;"></div>
+                <div class="color-dot" data-color="pink" style="width: 28px; height: 28px; border-radius: 50%; background: #ffb6c1; cursor: pointer; border: 2px solid #ddd;"></div>
+                <div class="color-dot" data-color="orange" style="width: 28px; height: 28px; border-radius: 50%; background: #ffa500; cursor: pointer; border: 2px solid #ddd;"></div>
+            </div>
+        `;
+
+        document.body.appendChild(selectionPopup);
+
+        // Event listeners
+        selectionPopup.querySelector('.highlight-btn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleColorPicker();
+        });
+
+        selectionPopup.querySelector('.comment-btn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            showCommentDialog();
+        });
+
+        selectionPopup.querySelector('.copy-btn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            copyToClipboard();
+        });
+
+        selectionPopup.querySelectorAll('.color-dot').forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const color = dot.dataset.color;
+                if (currentSelection) {
+                    createHighlight(currentSelection, color);
+                }
+                hideSelectionPopup();
+            });
+        });
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (!selectionPopup.contains(e.target)) {
+                hideSelectionPopup();
+            }
+        });
+    }
+
+    function showSelectionPopup(event) {
+        const selection = window.getSelection();
+        if (!selection.rangeCount) return;
+
+        const range = selection.getRangeAt(0);
+        const rect = range.getBoundingClientRect();
+
+        selectionPopup.style.display = 'block';
+
+        // Position above selection, centered
+        const popupRect = selectionPopup.getBoundingClientRect();
+        const left = rect.left + (rect.width / 2) - (popupRect.width / 2);
+        const top = rect.top + window.pageYOffset - popupRect.height - 10;
+
+        selectionPopup.style.left = `${Math.max(10, left)}px`;
+        selectionPopup.style.top = `${top}px`;
+
+        // Hide color picker by default
+        selectionPopup.querySelector('.color-picker').style.display = 'none';
+        selectionPopup.querySelector('.popup-buttons').style.display = 'flex';
+    }
+
+    function hideSelectionPopup() {
+        if (selectionPopup) {
+            selectionPopup.style.display = 'none';
+        }
+    }
+
+    function toggleColorPicker() {
+        const picker = selectionPopup.querySelector('.color-picker');
+        const buttons = selectionPopup.querySelector('.popup-buttons');
+
+        if (picker.style.display === 'none') {
+            picker.style.display = 'flex';
+            buttons.style.display = 'none';
+        } else {
+            picker.style.display = 'none';
+            buttons.style.display = 'flex';
+        }
+    }
+
+    function copyToClipboard() {
+        if (!currentSelection) return;
+
+        navigator.clipboard.writeText(currentSelection.text).then(() => {
+            // Visual feedback
+            const copyBtn = selectionPopup.querySelector('.copy-btn');
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = 'تم النسخ!';
+            copyBtn.style.background = '#4caf50';
+            copyBtn.style.color = 'white';
+
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+                copyBtn.style.background = '#f0f0f0';
+                copyBtn.style.color = 'black';
+                hideSelectionPopup();
+            }, 1000);
+        }).catch(() => {
+            // Fallback for older browsers
+            const textarea = document.createElement('textarea');
+            textarea.value = currentSelection.text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            hideSelectionPopup();
+        });
+    }
+
+    // === Comment Dialog ===
+    function createCommentDialog() {
+        commentDialog = document.createElement('div');
+        commentDialog.className = 'comment-dialog';
+        commentDialog.style.cssText = `
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: none;
+            z-index: 10001;
+        `;
+
+        commentDialog.innerHTML = `
+            <div class="comment-backdrop" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5);"></div>
+            <div class="comment-content" style="position: relative; background: white; border-radius: 16px 16px 0 0; padding: 20px; padding-bottom: calc(20px + env(safe-area-inset-bottom)); direction: rtl;">
+                <h3 style="margin: 0 0 12px 0; font-size: 18px; text-align: right;">إضافة تعليق</h3>
+                <div class="selected-text-ref" style="background: #f5f5f5; padding: 10px; border-radius: 8px; margin-bottom: 12px; font-size: 14px; color: #666; max-height: 60px; overflow-y: auto;"></div>
+                <textarea class="comment-textarea" placeholder="اكتب تعليقك هنا..." style="width: 100%; min-height: 120px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; font-family: inherit; resize: vertical; direction: rtl;"></textarea>
+                <div class="comment-actions" style="display: flex; gap: 10px; margin-top: 12px; justify-content: flex-end;">
+                    <button class="comment-cancel" style="padding: 10px 20px; border: 1px solid #ddd; background: white; border-radius: 8px; cursor: pointer; font-size: 16px;">إلغاء</button>
+                    <button class="comment-save" style="padding: 10px 20px; border: none; background: #2196f3; color: white; border-radius: 8px; cursor: pointer; font-size: 16px;">حفظ</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(commentDialog);
+
+        // Event listeners
+        commentDialog.querySelector('.comment-backdrop').addEventListener('click', hideCommentDialog);
+        commentDialog.querySelector('.comment-cancel').addEventListener('click', hideCommentDialog);
+        commentDialog.querySelector('.comment-save').addEventListener('click', saveComment);
+    }
+
+    function showCommentDialog() {
+        if (!currentSelection) return;
+
+        commentDialog.querySelector('.selected-text-ref').textContent = currentSelection.text;
+        commentDialog.querySelector('.comment-textarea').value = '';
+        commentDialog.style.display = 'block';
+
+        // Focus textarea
+        setTimeout(() => {
+            commentDialog.querySelector('.comment-textarea').focus();
+        }, 100);
+
+        hideSelectionPopup();
+    }
+
+    function hideCommentDialog() {
+        commentDialog.style.display = 'none';
+    }
+
+    function saveComment() {
+        const commentText = commentDialog.querySelector('.comment-textarea').value.trim();
+        if (!commentText || !currentSelection) return;
+
+        const elementSelector = generateElementSelector(currentSelection.element);
+
+        sendToParent({
+            type: 'COMMENT_CREATED',
+            text: commentText,
+            elementSelector,
+            selectedText: currentSelection.text
+        });
+
+        // Add comment indicator
+        addCommentIndicator(currentSelection.element, commentText);
+
+        hideCommentDialog();
+        window.getSelection().removeAllRanges();
+    }
+
+    function addCommentIndicator(element, commentText) {
+        // Check if indicator already exists
+        if (element.querySelector('.comment-indicator')) return;
+
+        const indicator = document.createElement('div');
+        indicator.className = 'comment-indicator';
+        indicator.style.cssText = `
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 4px;
+            cursor: pointer;
+            vertical-align: middle;
+        `;
+        indicator.innerHTML = '💬';
+        indicator.title = commentText;
+
+        // Insert at beginning of element
+        element.insertBefore(indicator, element.firstChild);
+
+        // Show comment on click
+        indicator.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showCommentPopup(indicator, commentText);
+        });
+    }
+
+    function showCommentPopup(indicator, text) {
+        // Remove existing popups
+        document.querySelectorAll('.comment-popup').forEach(p => p.remove());
+
+        const popup = document.createElement('div');
+        popup.className = 'comment-popup';
+        popup.style.cssText = `
+            position: absolute;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px;
+            max-width: 300px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10000;
+            direction: rtl;
+            font-size: 14px;
+        `;
+        popup.textContent = text;
+
+        document.body.appendChild(popup);
+
+        const rect = indicator.getBoundingClientRect();
+        popup.style.left = `${rect.left}px`;
+        popup.style.top = `${rect.bottom + window.pageYOffset + 5}px`;
+
+        // Close on outside click
+        const closePopup = (e) => {
+            if (!popup.contains(e.target) && e.target !== indicator) {
+                popup.remove();
+                document.removeEventListener('click', closePopup);
+            }
+        };
+        setTimeout(() => document.addEventListener('click', closePopup), 10);
+    }
+
+    // === Highlighting ===
+    function toggleHighlightMode(enabled, color) {
+        highlightMode.enabled = enabled;
+        highlightMode.color = color || 'yellow';
+
+        if (enabled) {
+            document.body.classList.add('highlight-mode-active');
+            document.body.style.setProperty('--current-highlight-color', getColorValue(color));
+        } else {
+            document.body.classList.remove('highlight-mode-active');
+        }
+    }
+
+    function createHighlight(selection, color) {
+        try {
+            const range = selection.range;
+            const mark = document.createElement('mark');
+            mark.className = `highlight-${color}`;
+            mark.style.cssText = `
+                background-color: ${getColorValue(color)};
+                padding: 2px 0;
+            `;
+
+            range.surroundContents(mark);
+
+            const elementSelector = generateElementSelector(selection.element);
+
+            sendToParent({
+                type: 'HIGHLIGHT_CREATED',
+                text: selection.text,
+                color,
+                elementSelector
+            });
+
+            window.getSelection().removeAllRanges();
+        } catch (error) {
+            console.error('Failed to create highlight:', error);
+        }
+    }
+
+    function getColorValue(colorName) {
+        const colors = {
+            yellow: '#ffd700',
+            green: '#90ee90',
+            blue: '#add8e6',
+            pink: '#ffb6c1',
+            orange: '#ffa500'
+        };
+        return colors[colorName] || colors.yellow;
+    }
+
+    // === Apply Saved Highlights ===
+    function applyHighlights(highlights) {
+        highlights.forEach(h => {
+            try {
+                const element = document.querySelector(h.elementSelector);
+                if (!element) return;
+
+                highlightTextInElement(element, h.text, h.color);
+            } catch (error) {
+                console.error('Failed to apply highlight:', error);
+            }
+        });
+    }
+
+    function highlightTextInElement(element, text, color) {
+        const walker = document.createTreeWalker(
+            element,
+            NodeFilter.SHOW_TEXT,
+            null,
+            false
+        );
+
+        const textNodes = [];
+        while (walker.nextNode()) {
+            textNodes.push(walker.currentNode);
+        }
+
+        for (const node of textNodes) {
+            const index = node.textContent.indexOf(text);
+            if (index !== -1) {
+                const range = document.createRange();
+                range.setStart(node, index);
+                range.setEnd(node, index + text.length);
+
+                const mark = document.createElement('mark');
+                mark.className = `highlight-${color}`;
+                mark.style.cssText = `
+                    background-color: ${getColorValue(color)};
+                    padding: 2px 0;
+                `;
+
+                try {
+                    range.surroundContents(mark);
+                    return; // Found and highlighted
+                } catch (error) {
+                    console.error('Failed to wrap text:', error);
+                }
+            }
+        }
+    }
+
+    // === Apply Saved Comments ===
+    function applyComments(comments) {
+        comments.forEach(c => {
+            try {
+                const element = document.querySelector(c.elementSelector);
+                if (element) {
+                    addCommentIndicator(element, c.text);
+                }
+            } catch (error) {
+                console.error('Failed to apply comment:', error);
+            }
+        });
+    }
+
+    // === Theme/Font/Zoom ===
+    function handleInit(data) {
+        if (data.theme) setTheme(data.theme);
+        if (data.fontSize) setFontSize(data.fontSize);
+        if (data.fontFamily) setFontFamily(data.fontFamily);
+        if (data.zoom) setZoom(data.zoom);
+        if (data.scrollPercent !== undefined) scrollToPercent(data.scrollPercent);
+        if (data.highlights) applyHighlights(data.highlights);
+        if (data.comments) applyComments(data.comments);
+    }
+
+    function setTheme(theme) {
+        if (theme === 'dark') {
+            document.body.removeAttribute('data-reader-theme');
+        } else {
+            document.body.setAttribute('data-reader-theme', theme);
+        }
+    }
+
+    function setFontSize(size) {
+        document.body.style.setProperty('--reader-font-size', `${size}px`);
+    }
+
+    function setFontFamily(family) {
+        document.body.style.setProperty('--reader-font', family);
+    }
+
+    function setZoom(zoom) {
+        const container = document.querySelector('.container') || document.body;
+        container.style.transform = `scale(${zoom})`;
+        container.style.transformOrigin = 'top right'; // RTL
+        document.body.style.width = `${100 / zoom}%`;
+    }
+
+    // === Utilities ===
+    function generateElementSelector(element) {
+        // Try to generate a unique selector
+        if (element.id) {
+            return `#${element.id}`;
+        }
+
+        const tagName = element.tagName.toLowerCase();
+        const parent = element.parentElement;
+
+        if (!parent) {
+            return tagName;
+        }
+
+        const siblings = Array.from(parent.children).filter(e => e.tagName === element.tagName);
+        if (siblings.length === 1) {
+            return `${tagName}`;
+        }
+
+        const index = siblings.indexOf(element) + 1;
+
+        // Use nth-of-type for common elements
+        if (['p', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div'].includes(tagName)) {
+            return `${tagName}:nth-of-type(${index})`;
+        }
+
+        return `${tagName}:nth-child(${Array.from(parent.children).indexOf(element) + 1})`;
+    }
+
+    function sendToParent(message) {
+        window.parent.postMessage(message, '*');
+    }
+
+    function throttle(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // Add CSS for highlight mode cursor
+    const style = document.createElement('style');
+    style.textContent = `
+        body.highlight-mode-active {
+            cursor: crosshair;
+        }
+        .comment-indicator {
+            transition: transform 0.2s;
+        }
+        .comment-indicator:hover {
+            transform: scale(1.2);
+        }
+    `;
+    document.head.appendChild(style);
+
+})();
