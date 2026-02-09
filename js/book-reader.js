@@ -770,7 +770,13 @@
         const container = document.querySelector('.container') || document.body;
         container.style.transform = `scale(${zoom})`;
         container.style.transformOrigin = 'top right'; // RTL
-        document.body.style.width = `${100 / zoom}%`;
+        // Contain width to prevent horizontal overflow
+        if (zoom > 1) {
+            document.body.style.width = `${100 / zoom}%`;
+        } else {
+            document.body.style.width = '100%';
+        }
+        document.body.style.overflowX = 'hidden';
     }
 
     // === Utilities ===
@@ -818,9 +824,24 @@
         };
     }
 
-    // Add CSS for highlight mode cursor
+    // Add CSS for highlight mode cursor + prevent horizontal scroll
     const style = document.createElement('style');
     style.textContent = `
+        html, body {
+            overflow-x: hidden !important;
+            max-width: 100vw !important;
+        }
+        body {
+            -webkit-overflow-scrolling: touch;
+        }
+        img, video, iframe, table, pre, code, canvas, svg {
+            max-width: 100% !important;
+            height: auto;
+        }
+        .hero, .container, .problem-section, .toc, .chapter, section, footer {
+            max-width: 100vw !important;
+            overflow-x: hidden !important;
+        }
         body.highlight-mode-active {
             cursor: crosshair;
         }

@@ -794,7 +794,7 @@ textarea:focus {
   right: 0;
   bottom: 0;
   background: var(--bg-primary);
-  z-index: 1000;
+  z-index: 2000;
   display: none;
   flex-direction: column;
 }
@@ -2976,6 +2976,11 @@ textarea:focus {
 
 body.reading .bottom-nav {
   display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
 }
 
 /* === ACTIONS VIEW === */
