@@ -1,4 +1,4 @@
-const CACHE_NAME = 'books-library-v12';
+const CACHE_NAME = 'books-library-v13';
 
 // Files to pre-cache on install
 const PRECACHE_URLS = [
@@ -225,7 +225,7 @@ self.addEventListener('fetch', (event) => {
             console.error(`[Service Worker] Fetch failed for ${request.url}:`, err);
 
             // If offline and requesting HTML, return offline page
-            if (request.headers.get('accept').includes('text/html')) {
+            if ((request.headers.get('accept') || '').includes('text/html')) {
               return new Response(
                 `<!DOCTYPE html>
                 <html dir="rtl" lang="ar">

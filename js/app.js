@@ -850,7 +850,8 @@
 
     const streak = await DB.getStreak();
     if (streak > 0) {
-      badge.textContent = streak + ' \uD83D\uDD25';
+      const countEl = badge.querySelector('.streak-count');
+      if (countEl) countEl.textContent = streak;
       badge.style.display = '';
     } else {
       badge.style.display = 'none';
@@ -862,6 +863,10 @@
   async function renderLibrary() {
     const grid = document.getElementById('books-grid');
     if (!grid) return;
+
+    // Update book count dynamically
+    const bookCountEl = document.getElementById('book-count');
+    if (bookCountEl) bookCountEl.textContent = BOOKS.length + ' كتاب';
 
     // Get all reading progress
     const allProgress = await DB.getAllProgress();
@@ -1033,7 +1038,6 @@
     // Wait for iframe load to send settings
     if (frame) {
       frame.onload = async () => {
-        await sendSettingsToIframe();
         await sendSavedDataToIframe(bookPath);
       };
     }
@@ -1250,7 +1254,7 @@
       try {
         frame.contentWindow.postMessage({
           type: 'TOGGLE_HIGHLIGHT_MODE',
-          active: highlightModeActive,
+          enabled: highlightModeActive,
           color: currentHighlightColor,
         }, '*');
       } catch (e) { /* cross-origin */ }
@@ -1463,9 +1467,14 @@
     readingTimerInterval = setInterval(async () => {
       if (currentBookPath && readingTimerStart) {
         const elapsedMs = Date.now() - readingTimerStart;
+        // Accumulate time: get existing and add elapsed
+        const existing = await DB.getProgress(currentBookPath);
+        const prevTime = existing?.totalReadTimeMs || 0;
         await DB.saveProgress(currentBookPath, {
-          totalReadTimeMs: elapsedMs,
+          totalReadTimeMs: prevTime + elapsedMs,
         });
+        // Reset timer start so we don't double-count
+        readingTimerStart = Date.now();
       }
     }, 60000); // every minute
   }

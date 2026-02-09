@@ -893,10 +893,14 @@
 
     function setFontSize(size) {
         document.body.style.setProperty('--reader-font-size', `${size}px`);
+        // Set root font-size so rem-based elements scale proportionally
+        document.documentElement.style.setProperty('font-size', `${size}px`, 'important');
     }
 
     function setFontFamily(family) {
         document.body.style.setProperty('--reader-font', family);
+        // Apply font-family directly to body to override inline styles
+        document.body.style.setProperty('font-family', `'${family}', sans-serif`, 'important');
     }
 
     function setZoom(zoom) {
