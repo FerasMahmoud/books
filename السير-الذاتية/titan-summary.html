@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تايتان: حياة جون دي روكفلر - ملخص شامل | رون شيرنو</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #c0392b; border-radius: 4px; }
+  .hero { background: linear-gradient(135deg, #4a1a1a 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #c0392b; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(192, 57, 43, 0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #c0392b; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(192, 57, 43, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(192, 57, 43, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #2a1a1a, #1a1a2e); border: 2px solid #962d22; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section::before { content: ''; position: absolute; top: -15px; right: 30px; font-size: 1.8rem; background: #1a1a2e; padding: 0 10px; }
+  .problem-section h2 { font-size: 1.6rem; color: #c0392b; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: ''; position: absolute; right: 0; color: #c0392b; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #4a1a1a; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #c0392b; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(192, 57, 43, 0.1); color: #c0392b; transform: translateX(-4px); }
+  .toc-num { background: #c0392b; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #4a1a1a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #c0392b; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #4a1a1a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #c0392b; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(192, 57, 43, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #c0392b, #962d22); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(192, 57, 43, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #c0392b; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(192, 57, 43, 0.12); color: #c0392b; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(192, 57, 43, 0.06); border-right: 4px solid #c0392b; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '"'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(192, 57, 43, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(150, 45, 34, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(192, 57, 43, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #c0392b; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(39, 174, 96, 0.08); border: 1px solid rgba(39, 174, 96, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #27ae60; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #b0d0b0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(192, 57, 43, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; }
+  .back-top a:hover { color: #c0392b; }
+  .footer { background: linear-gradient(145deg, #4a1a1a, #1a1a2e); border-top: 3px solid #c0392b; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(192, 57, 43, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } }
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#x1F6E2;&#xFE0F;</span>
+    <h1>تايتان: حياة جون دي روكفلر</h1>
+    <div class="subtitle">Titan: The Life of John D. Rockefeller, Sr.</div>
+    <div class="author">رون شيرنو &mdash; Ron Chernow</div>
+    <div class="meta-info">
+      <span>سيرة ذاتية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>أغنى رجل في التاريخ</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>ليش تقرا هالكتاب؟</h2>
+  <p>جون دي روكفلر هو أغنى إنسان مشى على وجه الأرض لو حسبت ثروته بقيمة اليوم. بس قصته مو بس عن الفلوس. هالكتاب يحكي لك كيف واحد طلع من الفقر المدقع وبنى أكبر إمبراطورية اقتصادية في التاريخ، وبعدين صار أكبر محسن في العالم. يعني شخصية مليانة تناقضات ودروس ما تنتهي.</p>
+  <ul>
+    <li>كيف بنى روكفلر احتكار كامل لصناعة النفط وسيطر على 90% من السوق الأمريكي</li>
+    <li>شو الاستراتيجيات اللي استخدمها وليش بعضها كان بلا رحمة</li>
+    <li>كيف تحوّل من أكثر رجل مكروه في أمريكا لأكبر محسن في تاريخ البشرية</li>
+    <li>الدروس اللي نتعلمها من حياته عن الثروة والسلطة والتناقضات البشرية</li>
+    <li>ليش قصة روكفلر لسا مهمة حتى اليوم في فهم الرأسمالية والاحتكار</li>
+  </ul>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc" id="toc">
+  <h2>فهرس الملخص</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span> طفولة صعبة</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span> بدايات في كليفلاند</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span> بناء ستاندرد أويل</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span> الاحتكار والسيطرة</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span> المحاكمات والتفكيك</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span> العمل الخيري</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span> الحياة الشخصية</a>
+    <a href="#ch8" class="toc-item"><span class="toc-num">8</span> إرث روكفلر</a>
+  </div>
+</nav>
+
+<!-- Introduction -->
+<section class="intro-section">
+  <h2>مقدمة عن الكتاب</h2>
+  <p>رون شيرنو كتب هالكتاب سنة 1998 بعد سنوات من البحث في أرشيفات روكفلر الخاصة. والنتيجة كانت سيرة ذاتية ضخمة &mdash; أكثر من 800 صفحة &mdash; تغطي كل جانب من حياة أغنى رجل في التاريخ. من طفولته الصعبة مع أب نصاب، لبناء إمبراطورية النفط، لتحوّله لأكبر محسن في العالم.</p>
+  <p>اللي يميّز هالكتاب إن شيرنو ما يحاول يبرر أو يدين روكفلر. يعطيك الصورة الكاملة بكل تناقضاتها وتعقيداتها. تشوف رجل كان متدين بعمق بس يسحق منافسيه بلا رحمة. رجل بخيل في حياته الشخصية بس يتبرع بمئات الملايين. هالتناقضات هي اللي تخلي القصة مثيرة للاهتمام.</p>
+</section>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">طفولة صعبة</div>
+      <div class="chapter-title-en">A Difficult Childhood</div>
+    </div>
+  </div>
+  <span class="section-label">الأب الغائب والأم المتدينة</span>
+  <p>جون دي روكفلر انولد سنة 1839 في ريف نيويورك. أبوه، ويليام روكفلر، كان شخصية غريبة ومعقدة &mdash; نصاب محترف يتنقل بين المدن يبيع أدوية مزيفة ويدّعي إنه طبيب. كان يغيب عن البيت شهور وأحيانا سنوات كاملة. والأغرب من كذا إنه تزوج وحدة ثانية بسر وعاش حياة مزدوجة.</p>
+  <p>أمه، إليزا، كانت العكس تماما. متدينة بشكل عميق، صارمة، وتؤمن بالانضباط والتوفير. هي اللي ربّت جون وأخوانه على قيم الصدق والعمل الجاد والتوفير. يقول شيرنو إن جون أخذ من أبوه حدّة الذكاء التجاري، ومن أمه الانضباط الأخلاقي والديني.</p>
+
+  <div class="quote-block">
+    <p>أنا أتعامل مع الفلوس مثل ما أتعامل مع النار. أحترمها وأخاف منها بنفس الوقت. الفلوس خادم ممتاز بس سيد مرعب.</p>
+  </div>
+
+  <p>من صغره، جون كان مختلف عن باقي الأطفال. كان يحب الأرقام والحسابات، وكان يسجل كل فلس يصرفه في دفتر صغير سماه "Ledger A". هالعادة استمرت معه طول حياته. كان يعرف وين كل سنت يروح، وهالانضباط المالي صار أساس نجاحه لاحقا.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>الظروف الصعبة ما تحدد مصيرك. روكفلر طلع من بيت مفكك مع أب نصاب، بس بدال ما يتبع خطوات أبوه، اختار يكون العكس تماما. البيئة الصعبة ممكن تكون محفز للنجاح لو اخترت تتعلم منها بدال ما تستسلم لها.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>أبوه ويليام كان يعلّم أولاده التجارة بطريقته الخاصة: كان يقرضهم فلوس بفوائد ويبيعهم حلويات بأسعار مرتفعة. يقول شيرنو إن هالتربية "القاسية" زرعت في جون فهم عميق للمال والقيمة من سن مبكر جدا.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">بدايات في كليفلاند</div>
+      <div class="chapter-title-en">Cleveland Beginnings</div>
+    </div>
+  </div>
+  <span class="section-label">أول وظيفة واكتشاف النفط</span>
+  <p>سنة 1855، روكفلر عمره 16 سنة، راح كليفلاند ولقى أول وظيفة كمحاسب مساعد في شركة تجارية صغيرة. الراتب كان 50 سنت في اليوم. بس روكفلر يقول إن هاليوم &mdash; 26 سبتمبر 1855 &mdash; كان أهم يوم في حياته. كان يحتفل فيه كل سنة وسمّاه "Job Day".</p>
+  <p>خلال سنوات قليلة، روكفلر تعلم كل شي عن المحاسبة والتجارة. وبعدين بدأ مع شريكه موريس كلارك مشروع تجاري صغير. كانوا يبيعون حبوب ولحوم ومواد غذائية. بس اللي غيّر كل شي كان اكتشاف النفط في بنسلفانيا سنة 1859.</p>
+
+  <div class="quote-block">
+    <p>ما كنت أبي أكون ثري. كنت أبي أكون مفيد. بس الله شاء إن الاثنين يجون مع بعض.</p>
+  </div>
+
+  <p>روكفلر شاف فرصة ما شافها غيره. الكل كان يركض يحفر آبار نفط، بس هو شاف إن الحفر محفوف بالمخاطر. الربح الحقيقي مو في إنك تستخرج النفط، الربح في إنك تكرره وتنقله وتبيعه. فبدال ما يحفر، بنى مصفاة. وهالقرار كان بداية كل شي.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>ما تحتاج تكون أول واحد في السوق عشان تنجح. تحتاج تكون أذكى واحد في فهم السوق. روكفلر ما راح يحفر نفط مثل الباقي. فهم إن القيمة الحقيقية في التكرير والتوزيع، وهذا اللي خلاه يسيطر على الصناعة كلها.</p>
+  </div>
+
+  <p>مصفاة روكفلر في كليفلاند بدأت صغيرة، بس كان يديرها بكفاءة ما أحد شافها قبل. كان يراقب كل تفصيلة: كمية الحطب المستخدمة، عدد القطرات اللي تضيع، تكلفة البراميل. هالهوس بالكفاءة والتوفير هو اللي خلّى مصفاته أرخص وأربح من أي مصفاة ثانية.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>روكفلر كان عمره 23 سنة لما دخل عالم النفط. يعني ما كان عنده خبرة ولا علاقات في الصناعة. بس كان عنده شيين: انضباط مالي حديدي، وعين تشوف الفرص اللي غيره ما يشوفها. هالشيين كافيين عشان تبني إمبراطورية.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">بناء ستاندرد أويل</div>
+      <div class="chapter-title-en">Building Standard Oil</div>
+    </div>
+  </div>
+  <span class="section-label">استراتيجية الاحتكار</span>
+  <p>سنة 1870، روكفلر أسس شركة ستاندرد أويل مع شركائه. من البداية، كانت عنده رؤية واضحة: يبي يوحّد صناعة النفط تحت شركة وحدة. يقول إن الصناعة كانت فوضوية &mdash; مئات المصافي الصغيرة تتنافس وتخسر &mdash; وإن التوحيد هو الحل الوحيد للاستقرار.</p>
+  <p>استراتيجية روكفلر كانت ذكية وقاسية بنفس الوقت. أول شي، فاوض شركات السكك الحديدية على أسعار نقل سرية أرخص من منافسيه. يعني هو يدفع أقل عشان ينقل نفطه، والمنافسين يدفعون أكثر. وبكذا صار سعره أرخص ومافي أحد يقدر يتنافس معه.</p>
+
+  <div class="quote-block">
+    <p>المنافسة خطيئة. الفوضى تدمّر الصناعات. النظام والتنظيم هم اللي يبنون الحضارات.</p>
+  </div>
+
+  <p>بعدين بدأ يشتري المنافسين واحد ورا الثاني. كان يعطيهم خيارين: تبيعون لي بسعر عادل وتصيرون جزء من ستاندرد أويل، أو أخفض أسعاري لين أفلّسكم. أغلبهم اختاروا الخيار الأول. واللي رفض، فعلا فلّسهم روكفلر بتخفيض الأسعار لأقل من التكلفة في مناطقهم.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>روكفلر يعلمنا إن السيطرة على السوق ما تجي من منتج أحسن فقط، تجي من التحكم في سلسلة التوريد كلها. اللي يتحكم في النقل والتكرير والتوزيع يتحكم في السوق. وهالدرس لسا ينطبق اليوم على شركات مثل أمازون وأبل.</p>
+  </div>
+
+  <p>خلال عشر سنوات فقط، ستاندرد أويل صارت تسيطر على أكثر من 90% من صناعة تكرير النفط في أمريكا. روكفلر ما كان يبي يكون الأكبر بس، كان يبي يكون الوحيد. وتقريبا نجح.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>الشي اللي كثير ناس ما يعرفونه إن روكفلر فعلا خفّض أسعار النفط للمستهلكين بشكل كبير. سعر الكيروسين نزل من 26 سنت للغالون لـ 8 سنوات. يعني الاحتكار &mdash; رغم كل مشاكله &mdash; حقق كفاءة ما كانت ممكنة بدون التوحيد.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الاحتكار والسيطرة</div>
+      <div class="chapter-title-en">The Monopoly</div>
+    </div>
+  </div>
+  <span class="section-label">السيطرة على 90% من النفط الأمريكي</span>
+  <p>بحلول سنة 1880، ستاندرد أويل كانت تسيطر على تقريبا كل شي يتعلق بالنفط في أمريكا. مو بس التكرير، بس النقل بالأنابيب، التوزيع، حتى صناعة البراميل. روكفلر بنى إمبراطورية متكاملة رأسيا بشكل ما أحد شافه قبل.</p>
+  <p>عشان يتجنب القوانين اللي تمنع شركة وحدة من العمل في عدة ولايات، روكفلر اخترع هيكل "الترست" (Trust). يعني بدال ما تكون شركة وحدة، صار فيه مجموعة شركات ظاهريا مستقلة بس كلها تحت إدارة مجلس أمناء واحد &mdash; وهو طبعا روكفلر وشركائه.</p>
+
+  <div class="quote-block">
+    <p>أنا ما احتكرت شي. أنا بس نظّمت صناعة كانت فوضوية ورتّبتها. اللي يقول احتكار ما يفهم الفرق بين الفوضى والنظام.</p>
+  </div>
+
+  <p>ستاندرد أويل كانت تشتغل بسرية كبيرة. روكفلر كان يكره الصحافة ويرفض يتكلم مع الإعلام. كان يؤمن إن الصمت قوة وإن اللي يتكلم كثير يخسر. بس هالسرية خلّت الناس تشك فيه أكثر وتتخيل أشياء أسوأ من الواقع.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>السرية سلاح ذو حدين. روكفلر فكّر إن الصمت يحميه، بس بالعكس، خلّى الناس تكرهه أكثر. في عالم اليوم، الشفافية أقوى من السرية. الشركات اللي تتكلم بصراحة عن نفسها تكسب ثقة الناس أكثر من اللي تختبي.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>لو حسبنا ثروة روكفلر بقيمة اليوم، تقريبا توصل لـ 400 مليار دولار أو أكثر. يعني أغنى من جيف بيزوس وإيلون ماسك مجتمعين. ما فيه أحد في التاريخ الحديث وصل لهالمستوى من الثروة مقارنة بحجم الاقتصاد.</p>
+  </div>
+
+  <p>بس مع كل هالقوة والثروة، روكفلر كان يعيش حياة بسيطة نسبيا. ما كان يشرب ولا يدخن، يروح الكنيسة كل أحد، وينام بدري. هالتناقض بين القوة الهائلة والحياة البسيطة هو اللي يخلي شخصيته مثيرة للاهتمام.</p>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">المحاكمات والتفكيك</div>
+      <div class="chapter-title-en">Antitrust & Breakup</div>
+    </div>
+  </div>
+  <span class="section-label">الحكومة ضد روكفلر</span>
+  <p>مع نهاية القرن التاسع عشر، الرأي العام بدأ ينقلب على روكفلر وستاندرد أويل. الصحفية إيدا تاربل نشرت سلسلة مقالات مدمّرة في مجلة McClure's كشفت فيها الممارسات السرية لستاندرد أويل. هالمقالات غيّرت الرأي العام بالكامل وصارت من أهم التحقيقات الصحفية في التاريخ الأمريكي.</p>
+  <p>إيدا تاربل كانت عندها حافز شخصي: أبوها كان يملك مصفاة صغيرة في بنسلفانيا ودمّره روكفلر. فكتبت وهي مليانة غضب، بس بحثها كان دقيق وموثّق. روكفلر حاول يتجاهلها بس ما قدر &mdash; الناس صدّقوها والحكومة بدأت تتحرك.</p>
+
+  <div class="quote-block">
+    <p>الظلم ما يدوم. ممكن تبني إمبراطورية على حساب الناس، بس يجي يوم الناس توقفك. والقانون يلحقك مهما كنت كبير.</p>
+  </div>
+
+  <p>سنة 1890، الكونغرس أصدر قانون شيرمان لمكافحة الاحتكار. وسنة 1911، المحكمة العليا حكمت بتفكيك ستاندرد أويل لـ 34 شركة مستقلة. الحكم كان تاريخي وغيّر شكل الاقتصاد الأمريكي للأبد.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>القوة بلا حدود تدمّر نفسها. روكفلر كان يقدر يتجنب التفكيك لو كان أكثر شفافية وأقل عدوانية. بس هو فكّر إنه فوق القانون، والتاريخ أثبت إن ما أحد فوق القانون. الشركات اللي تتجاهل المجتمع والحكومة تدفع الثمن.</p>
+  </div>
+
+  <p>المفارقة العجيبة إن التفكيك خلّى روكفلر أغنى! كل واحدة من الـ 34 شركة صارت شركة ناجحة لحالها، وروكفلر كان يملك أسهم في كلها. يعني ثروته تضاعفت بعد "العقوبة". من هالشركات طلعت ExxonMobil وChevron وغيرها من عمالقة النفط اللي نعرفها اليوم.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>قضية ستاندرد أويل صارت الأساس لكل قوانين مكافحة الاحتكار في أمريكا والعالم. واليوم، نفس المبادئ تُستخدم ضد شركات التكنولوجيا مثل غوغل وأمازون. يعني إرث روكفلر القانوني لسا حي بعد أكثر من 100 سنة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">العمل الخيري</div>
+      <div class="chapter-title-en">Philanthropy</div>
+    </div>
+  </div>
+  <span class="section-label">من أغنى رجل لأكبر محسن</span>
+  <p>روكفلر بدأ يتبرع من أول راتب حصل عليه. من وهو عمره 16 سنة، كان يعطي 10% من دخله للكنيسة. بس مع الوقت، تبرعاته صارت أكبر وأكثر تنظيما. وبحلول نهاية حياته، كان تبرع بما يعادل مليارات الدولارات بقيمة اليوم.</p>
+  <p>أهم إنجازاته الخيرية كانت تأسيس جامعة شيكاغو. الجامعة بدأت من الصفر وروكفلر ضخ فيها ملايين الدولارات لين صارت من أقوى الجامعات في العالم. يقول شيرنو إن روكفلر كان يعامل عمله الخيري بنفس الجدية والكفاءة اللي يعامل فيها أعماله التجارية.</p>
+
+  <div class="quote-block">
+    <p>الله أعطاني الفلوس عشان أستخدمها في خدمة البشرية. أنا مجرد وكيل، مو مالك. وبيحاسبني على كل فلس.</p>
+  </div>
+
+  <p>مؤسسة روكفلر (Rockefeller Foundation) اللي أسسها سنة 1913 صارت أكبر مؤسسة خيرية في العالم. ركّزت على الطب والصحة العامة والتعليم. من أهم إنجازاتها القضاء على مرض الدودة الخطافية في الجنوب الأمريكي ودعم الأبحاث اللي أدت لاكتشاف البنسلين.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>روكفلر غيّر مفهوم العمل الخيري للأبد. قبله، الأثرياء كانوا يتبرعون بشكل عشوائي. هو حوّل الخير لعلم منظم بأهداف واضحة ومقاييس أداء. واليوم، كل المؤسسات الخيرية الكبرى &mdash; من بيل غيتس لغيره &mdash; تتبع نفس المنهج اللي أسسه روكفلر.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>معهد روكفلر للأبحاث الطبية (اليوم جامعة روكفلر) أنتج أكثر من 25 فائز بجائزة نوبل. يعني استثمار روكفلر في العلوم أنتج اكتشافات أنقذت حرفيا ملايين الأرواح. وهالشي يخلي إرثه الخيري يتفوق على إرثه التجاري بمراحل.</p>
+  </div>
+
+  <p>بس السؤال اللي يطرحه شيرنو: هل العمل الخيري يمسح أخطاء الماضي؟ هل تقدر تسحق الناس عشان تبني ثروة وبعدين تستخدم الثروة في الخير؟ هالسؤال ما له جواب بسيط، وشيرنو يتركه للقارئ يقرر.</p>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الحياة الشخصية</div>
+      <div class="chapter-title-en">Personal Life</div>
+    </div>
+  </div>
+  <span class="section-label">الدين والعائلة والتناقضات</span>
+  <p>روكفلر كان متدين بشكل عميق. كان يروح الكنيسة المعمدانية كل أحد ويقرا الإنجيل يوميا ويصلي قبل كل وجبة. يقول إنه يؤمن إن الله اختاره عشان يكون ثري وإن ثروته اختبار من الله. هالإيمان كان يعطيه راحة ضمير حتى لما كان يسحق منافسيه.</p>
+  <p>تزوج من لورا سبيلمان سنة 1864 وعاشوا مع بعض أكثر من 50 سنة. العلاقة كانت قوية ومستقرة. لورا كانت ذكية ومثقفة وكانت تدعم زوجها في كل قراراته. عندهم أربع بنات وولد واحد &mdash; جون جونيور &mdash; اللي ورث الإمبراطورية بعد أبوه.</p>
+
+  <div class="quote-block">
+    <p>ما يهمني شو الناس يقولون عني. يهمني شو ربي يقول عني يوم القيامة. وأنا واثق إني سويت اللي أقدر عليه.</p>
+  </div>
+
+  <p>حياة روكفلر اليومية كانت منظمة بشكل مذهل. يقوم بدري، يقرا الأخبار، يلعب غولف، ياكل وجبات بسيطة جدا. كان بخيل في حياته الشخصية لدرجة مضحكة &mdash; يعطي الأطفال في الشارع عملات معدنية صغيرة ويفرح فيها. بس بنفس الوقت يتبرع بملايين الدولارات.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>التناقضات جزء من الطبيعة البشرية. روكفلر كان رجل يسحق منافسيه بلا رحمة بس يبكي في الكنيسة. يتبرع بملايين بس يحاسب على كل سنت. فهم هالتناقضات يخلينا نفهم إن البشر ما يمكن نحطهم في خانة وحدة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>روكفلر عاش 97 سنة &mdash; عمر طويل جدا بمقاييس وقته. الأطباء يقولون إن حياته المنظمة وابتعاده عن الكحول والتدخين والتوتر ساعدته. بعد ما ترك إدارة ستاندرد أويل، صحته تحسنت بشكل ملحوظ وعاش بسلام لعقود.</p>
+  </div>
+
+  <p>ابنه جون جونيور ورث مسؤولية الثروة وكان عليه ضغط هائل. يقول شيرنو إن جونيور عانى من اكتئاب شديد بسبب توقعات أبوه العالية والكراهية اللي ورثها معه. بس مع الوقت، جونيور بنى إرثه الخاص وأسس مركز روكفلر في نيويورك.</p>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 8 -->
+<article class="chapter" id="ch8">
+  <div class="chapter-header">
+    <div class="chapter-number">8</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">إرث روكفلر</div>
+      <div class="chapter-title-en">Rockefeller's Legacy</div>
+    </div>
+  </div>
+  <span class="section-label">دروس عن الثروة والسلطة</span>
+  <p>شيرنو يختم الكتاب بتأمل عميق في إرث روكفلر. يقول إن روكفلر شخصية ما تقدر تحكم عليها بسهولة. هو بنفس الوقت أسوأ احتكاري في التاريخ وأعظم محسن في التاريخ. سحق آلاف الناس عشان يبني ثروته، وبعدين استخدم ثروته عشان ينقذ ملايين الأرواح.</p>
+  <p>أول درس من حياة روكفلر هو قوة الانضباط. من دفتر حساباته الأول لما كان عمره 16 سنة لإدارة إمبراطورية نفطية عالمية، الانضباط كان الثابت الوحيد. ما تغيّر أبدا. كل يوم نفس الروتين، نفس الالتزام، نفس الدقة.</p>
+
+  <div class="quote-block">
+    <p>أول ألف دولار كسبتها كانت أصعب فلوس في حياتي. وآخر مليار تبرعت فيه كان أسهل قرار اتخذته.</p>
+  </div>
+
+  <p>ثاني درس هو إن الثروة بدون هدف أعلى تدمّر صاحبها. روكفلر كان بيجن لو ما لقى طريقة يستخدم فيها ثروته في شي مفيد. العمل الخيري أعطاه هدف وراحة ضمير ومعنى لحياته. بدونه، كان بيكون مجرد رجل ثري مكروه.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>إرث الإنسان مو في كم فلوس جمع. إرثه في شو سوى بهالفلوس. روكفلر ممكن ننسى إنه كان محتكر، بس مستحيل ننسى جامعة شيكاغو ومعهد روكفلر والأبحاث الطبية اللي أنقذت ملايين. الأفعال تبقى أطول من الأرقام.</p>
+  </div>
+
+  <p>شيرنو يقول إن قصة روكفلر تطرح سؤال ما له جواب: هل الرأسمالية الحرة تحتاج وحوش مثل روكفلر عشان تتطور؟ هل التقدم يتطلب أحيانا قسوة؟ ولا ممكن نحقق نفس النتائج بطريقة أكثر إنسانية؟</p>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>عائلة روكفلر لسا من أغنى وأقوى العائلات في أمريكا بعد أكثر من 100 سنة. مركز روكفلر في نيويورك، جامعة شيكاغو، مؤسسة روكفلر &mdash; كلها لسا موجودة وفعّالة. قليل من البشر يقدرون يتركون إرث يعيش أكثر من 100 سنة.</p>
+  </div>
+
+  <p>آخر شي يقوله شيرنو: روكفلر كان نتاج عصره. عصر كان فيه الطموح بلا حدود والقوانين ضعيفة والفرص لا نهائية. ما نقدر نحكم عليه بمعايير اليوم. بس نقدر نتعلم من قصته &mdash; الإيجابي والسلبي &mdash; ونستخدم هالدروس في حياتنا.</p>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>تايتان: حياة جون دي روكفلر &mdash; رون شيرنو</h3>
+  <p>ملخص شامل ومفصّل لكتاب Titan: The Life of John D. Rockefeller, Sr.</p>
+  <p>من أعظم السير الذاتية في تاريخ الأدب الأمريكي</p>
+  <div class="disclaimer">
+    هذا ملخص غير رسمي للكتاب ولا يغني عن قراءة النسخة الأصلية. جميع الاقتباسات مترجمة بتصرف. الكتاب من تأليف رون شيرنو وصدر عن دار نشر Random House سنة 1998.
+  </div>
+</footer>
+
+</body>
+</html>

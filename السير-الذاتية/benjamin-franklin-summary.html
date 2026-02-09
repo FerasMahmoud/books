@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بنجامين فرانكلين: حياة أمريكية - ملخص شامل | والتر إيزاكسون</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #2c3e50; border-radius: 4px; }
+  .hero { background: linear-gradient(135deg, #0f1a22 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #2c3e50; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(44, 62, 80, 0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #2c3e50; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(44, 62, 80, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(44, 62, 80, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #0f1a22, #1a1a2e); border: 2px solid #1a252f; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section::before { content: ''; position: absolute; top: -15px; right: 30px; font-size: 1.8rem; background: #1a1a2e; padding: 0 10px; }
+  .problem-section h2 { font-size: 1.6rem; color: #2c3e50; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: ''; position: absolute; right: 0; color: #2c3e50; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #1a252f; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #2c3e50; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(44, 62, 80, 0.1); color: #2c3e50; transform: translateX(-4px); }
+  .toc-num { background: #2c3e50; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #1a252f; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #2c3e50; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #1a252f; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #2c3e50; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(44, 62, 80, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #2c3e50, #1a252f); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #2c3e50; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(44, 62, 80, 0.12); color: #2c3e50; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(44, 62, 80, 0.06); border-right: 4px solid #2c3e50; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(44, 62, 80, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(26, 37, 47, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(44, 62, 80, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #2c3e50; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(39, 174, 96, 0.08); border: 1px solid rgba(39, 174, 96, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #27ae60; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #b0d0b0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(44, 62, 80, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; }
+  .back-top a:hover { color: #2c3e50; }
+  .footer { background: linear-gradient(145deg, #1a252f, #1a1a2e); border-top: 3px solid #2c3e50; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(44, 62, 80, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } }
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="book-icon">&#9889;</span>
+    <h1>بنجامين فرانكلين: حياة أمريكية</h1>
+    <div class="subtitle">Benjamin Franklin: An American Life</div>
+    <div class="author">والتر إيزاكسون &mdash; Walter Isaacson</div>
+    <div class="meta-info">
+      <span>سيرة ذاتية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>الأب المؤسس</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>ليش تقرأ هالكتاب؟</h2>
+  <p>تبي تعرف كيف واحد من أبسط العائلات في أمريكا صار من أعظم الشخصيات في التاريخ؟ هالكتاب يعطيك القصة كاملة. بنجامين فرانكلين ما كان عنده لا جامعة ولا واسطة ولا فلوس &mdash; بس كان عنده فضول ما ينتهي وإرادة حديد.</p>
+  <p>والتر إيزاكسون يوريك كيف فرانكلين غيّر حياته وغيّر أمريكا كلها من خلال:</p>
+  <ul>
+    <li>التعليم الذاتي والقراءة المستمرة بدون ما يروح مدرسة</li>
+    <li>التجارب العلمية اللي غيّرت فهم البشرية للكهرباء</li>
+    <li>الدبلوماسية اللي أنقذت الثورة الأمريكية</li>
+    <li>فلسفة التطوير الذاتي اللي لا زالت تنفع لليوم</li>
+    <li>بناء المؤسسات اللي خدمت المجتمع لمئات السنين</li>
+  </ul>
+</section>
+
+<!-- TOC -->
+<nav class="toc" id="top">
+  <h2>فهرس الملخص</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span> من صانع شموع لعبقري</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span> الطابع والصحيفة</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span> العالِم والمخترع</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span> الدبلوماسي في باريس</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span> الأب المؤسس</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span> فلسفة التطوير الذاتي</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span> إرث فرانكلين</a>
+  </div>
+</nav>
+
+<!-- Intro Section -->
+<section class="intro-section">
+  <h2>مقدمة عن الكتاب</h2>
+  <p>والتر إيزاكسون &mdash; نفس الكاتب اللي كتب سيرة ستيف جوبز وأينشتاين &mdash; قدّم لنا في هالكتاب صورة شاملة عن بنجامين فرانكلين، الرجّال اللي كان طابع وعالم ومخترع ودبلوماسي وأب مؤسس لأمريكا. يعني الرجّال هذا ما ترك شي إلا ودخل فيه.</p>
+  <p>الكتاب يبدأ من بوسطن في بداية القرن الثامن عشر ويوصلك لحظة توقيع الدستور الأمريكي. إيزاكسون يركّز على شي مهم: فرانكلين ما كان مجرد عبقري ولد كذا &mdash; هو صنع نفسه بنفسه. وهالشي هو اللي يخلي قصته ملهمة لأي واحد يبي يغيّر حياته.</p>
+  <p>الملخص هذا يغطي أهم الأفكار والدروس من كل مرحلة في حياة فرانكلين، من طفولته المتواضعة إلى إرثه اللي يعيش لليوم.</p>
+</section>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">من صانع شموع لعبقري</div>
+      <div class="chapter-title-en">From Candle Maker to Genius</div>
+    </div>
+  </div>
+
+  <span class="section-label">البداية المتواضعة</span>
+  <p>بنجامين فرانكلين انولد سنة 1706 في بوسطن، وكان الولد الخامس عشر من سبعة عشر أخ وأخت! أبوه جوزايا كان يصنع شموع وصابون &mdash; يعني عائلة بسيطة جداً ما عندها شي من الرفاهية. بس الشي اللي ميّز بنجامين من صغره إنه كان يحب القراءة بشكل جنوني. كل كتاب يوصل يده كان يبلعه.</p>
+
+  <p>أبوه ما كان يقدر يدخله مدرسة أكثر من سنتين عشان الفلوس ما تكفي. بس فرانكلين ما خلّى هالشي يوقفه. علّم نفسه بنفسه. كان يقرأ كل شي يقدر يوصل له، من الصحف للكتب القديمة. وعمره اثني عشر سنة، أبوه حطه عند أخوه الكبير جيمس يتعلم الطباعة.</p>
+
+  <div class="quote-block">
+    <p>ما كان عندي فلوس أشتري كتب، بس ما كان في شي يوقفني عن القراءة. كنت أستعير من أي مكان وأرجعه بسرعة عشان أستعير غيره.</p>
+  </div>
+
+  <p>فرانكلين كان يتدرب على الكتابة بطريقة ذكية جداً: يقرأ مقال في مجلة، يكتب ملاحظات قصيرة، وبعد كم يوم يحاول يعيد كتابة المقال من الملاحظات ويقارن. كذا طوّر أسلوبه لحد ما صار من أحسن الكتّاب في أمريكا.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>ما تحتاج جامعة ولا شهادة عشان تتعلم. فرانكلين وريّانا إن الفضول والإصرار على القراءة والتطبيق أقوى من أي مدرسة. التعليم الذاتي ممكن يوصلك لأماكن ما توصلها أحسن الجامعات.</p>
+  </div>
+
+  <p>عمره سبعة عشر سنة، هرب من بوسطن لفيلادلفيا بدون فلس في جيبه. وصل المدينة متعب وجوعان، واشترى ثلاث خبزات كبيرة ومشى في الشارع ياكل منها. هالمشهد صار من أشهر المشاهد في التاريخ الأمريكي &mdash; الشاب المفلس اللي بيصير من أعظم رجال أمريكا.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>فرانكلين يعتبر أول أمريكي حقق "الحلم الأمريكي" قبل ما يكون في شي اسمه أمريكا حتى. من صفر طلع لأعلى المراتب بجهده الشخصي.</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الطابع والصحيفة</div>
+      <div class="chapter-title-en">The Printer &amp; Newspaper</div>
+    </div>
+  </div>
+
+  <span class="section-label">بناء الإمبراطورية الإعلامية</span>
+  <p>لما استقر فرانكلين في فيلادلفيا، بدأ يشتغل في مطبعة واشترى صحيفة "بنسلفينيا غازيت" وهو عمره أربعة وعشرين سنة. حوّلها من صحيفة فاشلة لأنجح صحيفة في المستعمرات الأمريكية. كان يكتب فيها بأسلوب ذكي وخفيف يخلي الناس يحبون يقرؤونها.</p>
+
+  <p>بس الشي اللي صار أشهر من الصحيفة هو "تقويم ريتشارد الفقير" &mdash; Poor Richard's Almanack. هذا كان تقويم سنوي فيه نصائح ومعلومات وأمثال حكيمة. فرانكلين كان يكتبه بشخصية خيالية اسمها "ريتشارد الفقير"، وكان أسلوبه مضحك وعملي في نفس الوقت.</p>
+
+  <div class="quote-block">
+    <p>النوم المبكر والصحيان المبكر يخلي الإنسان صحيح وغني وحكيم. &mdash; من تقويم ريتشارد الفقير</p>
+  </div>
+
+  <p>التقويم صار يبيع عشرة آلاف نسخة في السنة &mdash; رقم خيالي لذاك الوقت. فرانكلين صار ثري من الطباعة والنشر، وهالثروة هي اللي حررته إنه يركز على العلم والسياسة بعدين. يعني الرجّال بنى أساس مالي قوي أول، وبعدين انطلق يغيّر العالم.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>فرانكلين فهم شي مهم: لازم تبني استقلالك المالي أول عشان تقدر تتفرغ لشغفك الحقيقي. ما راح أحد لأهدافه الكبيرة وهو مشغول يلاحق الرزق.</p>
+  </div>
+
+  <p>الحكم والأمثال اللي كتبها فرانكلين في التقويم لا زالت تُستخدم لليوم. أشياء مثل "الوقت من ذهب" و"الضيف مثل السمك، بعد ثلاث أيام يخرب". الرجّال كان عنده قدرة يوصّل الحكمة بطريقة بسيطة ومضحكة تخلي الناس يتذكرونها.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>فرانكلين كان أول واحد يفهم قوة الإعلام في تشكيل الرأي العام. استخدم الصحافة والطباعة عشان ينشر أفكاره ويبني سمعته، وهالشي خدمه طول حياته.</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">العالِم والمخترع</div>
+      <div class="chapter-title-en">The Scientist &amp; Inventor</div>
+    </div>
+  </div>
+
+  <span class="section-label">تجربة البرق التاريخية</span>
+  <p>سنة 1752، فرانكلين سوّى واحدة من أشهر التجارب في تاريخ العلم: طيّر طيّارة ورقية في عاصفة رعدية عشان يثبت إن البرق هو كهرباء. ربط مفتاح معدني في خيط الطيّارة، ولما ضرب البرق، المفتاح طلعت منه شرارات. هالتجربة غيّرت فهم البشرية للكهرباء للأبد.</p>
+
+  <p>بس فرانكلين ما كان مجرد عالم نظري &mdash; كان مخترع عملي. اخترع مانع الصواعق اللي أنقذ آلاف المباني من الحرائق. واخترع النظارة ثنائية البؤرة (البايفوكال) عشان كان يتعب وهو يبدّل بين نظارتين. واخترع موقد فرانكلين اللي كان يسخّن البيوت بكفاءة أعلى وحطب أقل.</p>
+
+  <div class="quote-block">
+    <p>نحن نستمتع بفوائد اختراعات غيرنا كثير، فلازم نفرح بفرصة نخدم غيرنا باختراعاتنا. وهالشي لازم نسويه بسخاء ومجاناً.</p>
+  </div>
+
+  <p>الشي العجيب إن فرانكلين رفض يسجّل براءة اختراع لأي شي اخترعه. كان يقول إن الاختراعات لازم تكون للجميع. هالموقف خلّى الناس تحترمه أكثر وزاد شهرته في أوروبا. الأكاديميات العلمية في لندن وباريس كرّمته وأعطته جوائز.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>فرانكلين كان يشوف العلم كخدمة للمجتمع مو وسيلة للربح. وبالمقابل، هالكرم رجع له أضعاف مضاعفة بالسمعة والاحترام اللي فتحوا له أبواب ما كانت تنفتح بالفلوس.</p>
+  </div>
+
+  <p>فرانكلين أسس أول مكتبة عامة في أمريكا، وأول قسم إطفاء متطوع، وأول جامعة علمانية (اللي صارت جامعة بنسلفينيا). يعني ما كان بس يخترع أشياء &mdash; كان يبني مؤسسات تخدم المجتمع لمئات السنين بعده.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>تجربة البرق كانت ممكن تقتل فرانكلين &mdash; وفعلاً قتلت علماء ثانيين حاولوا يقلدونها. بس فرانكلين كان محظوظ، والتجربة خلّته أشهر عالم في العالم في ذاك الوقت.</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الدبلوماسي في باريس</div>
+      <div class="chapter-title-en">The Diplomat in Paris</div>
+    </div>
+  </div>
+
+  <span class="section-label">مهمة إنقاذ الثورة</span>
+  <p>سنة 1776، أمريكا أعلنت استقلالها عن بريطانيا وبدأت حرب ما عندها فيها أي فرصة تفوز بدون مساعدة. الجيش الأمريكي ما عنده سلاح ولا فلوس ولا تدريب. فأرسلوا فرانكلين &mdash; وعمره سبعين سنة &mdash; لباريس عشان يقنع فرنسا تساعدهم.</p>
+
+  <p>فرانكلين وصل باريس وكان ذكي جداً في طريقة تعامله. لبس بساطة وحط على راسه قبعة فرو بسيطة بدل الباروكات الفرنسية الفخمة. الفرنسيين انبهروا فيه وشافوه كرمز للبساطة الأمريكية والفلسفة الطبيعية. صار أشهر شخص في باريس!</p>
+
+  <div class="quote-block">
+    <p>فرانكلين ما كان يحتاج يقنع الفرنسيين بالمنطق بس &mdash; كان يسحرهم بشخصيته. كان يعرف إن الدبلوماسية مو مجرد كلام، هي فن بناء العلاقات.</p>
+  </div>
+
+  <p>بعد جهود مستمرة ومفاوضات معقدة، فرانكلين نجح يقنع الملك لويس السادس عشر يتحالف مع أمريكا ضد بريطانيا. فرنسا أرسلت جيوش وسفن وفلوس &mdash; وبدون هالمساعدة، الثورة الأمريكية كانت فشلت مئة بالمئة. يعني فرانكلين لحاله أنقذ الثورة.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>النجاح في الحياة ما يعتمد بس على شو تعرف &mdash; يعتمد كثير على مين تعرف وكيف تبني علاقاتك. فرانكلين كان أستاذ في فن التواصل وبناء الثقة مع الناس.</p>
+  </div>
+
+  <p>فرانكلين قضى تسع سنوات في باريس وصار محبوب من الجميع. كان يحضر الصالونات الفكرية ويتناقش مع الفلاسفة ويلعب شطرنج مع السيدات الراقيات. وفي نفس الوقت كان يدبّر أكبر تحالف عسكري في التاريخ.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>شهرة فرانكلين العلمية هي اللي فتحت له الأبواب في باريس. الفرنسيين كانوا يحترمون العلم والفلسفة، وفرانكلين جاهم كعالم مشهور مو مجرد سياسي. سمعتك تسبقك.</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الأب المؤسس</div>
+      <div class="chapter-title-en">The Founding Father</div>
+    </div>
+  </div>
+
+  <span class="section-label">بناء الأمة</span>
+  <p>فرانكلين هو الشخص الوحيد اللي وقّع على الوثائق الأربع الأساسية لتأسيس أمريكا: إعلان الاستقلال، والتحالف مع فرنسا، ومعاهدة السلام مع بريطانيا، والدستور الأمريكي. ما في أحد ثاني سوّى كذا. هالشي يوريك قد إيش كان مركزي في تأسيس أمريكا.</p>
+
+  <p>في مؤتمر الدستور سنة 1787، فرانكلين كان عمره واحد وثمانين سنة &mdash; أكبر واحد في القاعة. بس دوره كان حاسم. لما الوفود اختلفوا وكادوا ينفضّوا، فرانكلين هو اللي هدّاهم وذكّرهم ليش هم هناك. كان يمثل دور الحكيم الكبير اللي الكل يحترمه.</p>
+
+  <div class="quote-block">
+    <p>أعترف إن في أجزاء من هالدستور ما أوافق عليها حالياً. بس ما أنا متأكد إني ما بغيّر رأيي بعدين. كل ما كبرت بالعمر، كل ما صرت أشك أكثر في آرائي الخاصة.</p>
+  </div>
+
+  <p>خطاب فرانكلين الأخير في المؤتمر يعتبر من أعظم الخطابات في التاريخ الأمريكي. قال فيه إن الدستور مو كامل، بس هو أحسن شي يقدرون يسوونه. وطلب من الجميع يوقعون عليه بالإجماع عشان يعطونه قوة. وفعلاً نجح.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>فرانكلين علّمنا إن التواضع الفكري قوة مو ضعف. الاعتراف إنك ممكن تكون غلطان يخلي الناس تثق فيك أكثر ويخلي الحلول الوسط ممكنة.</p>
+  </div>
+
+  <p>فرانكلين كان يؤمن بالحلول الوسطى. ما كان متعصب لرأيه. وهالشي خلّاه الشخص المثالي لجمع الأطراف المتنازعة. في وقت كان كل وفد يبي مصلحة ولايته، فرانكلين كان يشوف الصورة الكبيرة ويدفع الجميع للتنازل عشان الخير العام.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>فرانكلين كان ضد العبودية في آخر حياته وصار رئيس أول جمعية لإلغاء العبودية في أمريكا. يعني حتى في آخر أيامه، كان لا زال يتطور ويغيّر آراءه للأحسن.</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">فلسفة التطوير الذاتي</div>
+      <div class="chapter-title-en">Self-Improvement Philosophy</div>
+    </div>
+  </div>
+
+  <span class="section-label">الفضائل الثلاث عشرة</span>
+  <p>فرانكلين وهو شاب سوّى لنفسه نظام تطوير ذاتي يعتبر من أول أنظمة تطوير الذات في التاريخ. حدد ثلاث عشرة فضيلة يبي يتقنها: الاعتدال، الصمت، النظام، العزم، التوفير، الاجتهاد، الإخلاص، العدل، الاعتدال، النظافة، الهدوء، العفة، والتواضع.</p>
+
+  <p>كان عنده دفتر صغير يتابع فيه أداءه كل يوم. كل أسبوع يركز على فضيلة وحدة ويحاول يتقنها. ويسجّل كل مرة يفشل فيها. بعد ثلاث عشرة أسبوع يكون مرّ على كل الفضائل ويبدأ من جديد. يعني أربع دورات كاملة في السنة.</p>
+
+  <div class="quote-block">
+    <p>ما قدرت أوصل للكمال في أي فضيلة، بس المحاولة نفسها خلّتني إنسان أحسن بكثير مما كنت بكون لو ما حاولت.</p>
+  </div>
+
+  <p>الشي اللي يميّز نظام فرانكلين إنه كان عملي وواقعي. ما كان يتوقع الكمال &mdash; كان يبي التحسّن المستمر. وكان صريح إنه فشل في بعض الفضائل، خاصة التواضع. يقول إنه حتى لو نجح يكون متواضع، بيكون فخور بتواضعه، وهذا بحد ذاته مو تواضع!</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>التطوير الذاتي يحتاج نظام واضح ومتابعة يومية. فرانكلين سبق عصره بمئات السنين &mdash; نفس المبادئ اللي استخدمها هي اللي تنصح فيها كتب التطوير الذاتي اليوم: حدد هدفك، تابع تقدمك، وراجع نفسك بانتظام.</p>
+  </div>
+
+  <p>روتين فرانكلين اليومي كان منظّم بدقة. يصحى الساعة خمس الفجر ويسأل نفسه: "شو الشي الطيب اللي بسويه اليوم؟" وبالليل قبل ما ينام يسأل نفسه: "شو الشي الطيب اللي سويته اليوم؟" هالسؤالين البسيطين خلّوا كل يوم عنده هدف ومراجعة.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>فرانكلين اعترف إن أصعب فضيلة عليه كانت "النظام" &mdash; ترتيب أغراضه وجدوله. يعني حتى أعظم الناس عندهم نقاط ضعف. المهم إنك تعترف فيها وتشتغل عليها.</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">إرث فرانكلين</div>
+      <div class="chapter-title-en">Franklin's Legacy</div>
+    </div>
+  </div>
+
+  <span class="section-label">دروس للحاضر والمستقبل</span>
+  <p>بنجامين فرانكلين توفى سنة 1790 وعمره أربعة وثمانين سنة. جنازته حضرها عشرين ألف شخص &mdash; أكبر تجمع في تاريخ أمريكا لذاك الوقت. بس إرثه ما مات معه. المؤسسات اللي أسسها لا زالت تشتغل لليوم: جامعة بنسلفينيا، ومكتبة فيلادلفيا، وقسم الإطفاء.</p>
+
+  <p>إيزاكسون يقول إن فرانكلين يمثل أحسن ما في أمريكا: الإيمان بالتطوير الذاتي، والعملية، والفضول العلمي، والخدمة العامة. ما كان أذكى من الجميع، بس كان أكثر واحد فضولي وأكثر واحد عملي. كان يسأل دائماً: "كيف أقدر أخلي هالشي أحسن؟"</p>
+
+  <div class="quote-block">
+    <p>إما تكتب شي يستاهل يُقرأ، أو تسوي شي يستاهل يُكتب عنه. &mdash; بنجامين فرانكلين</p>
+  </div>
+
+  <p>في وصيته، فرانكلين حط فلوس في صندوقين لمدينتي بوسطن وفيلادلفيا بشرط ما ينفتحون إلا بعد مئة سنة. لما فتحوها سنة 1890، كانت الفلوس تضاعفت عشرات المرات. وحطوا جزء ثاني ما ينفتح إلا بعد مئتين سنة &mdash; وفعلاً فتحوه سنة 1990 وكان فيه ملايين الدولارات. حتى بعد موته، فرانكلين كان يعلّم الناس قوة الاستثمار طويل الأمد!</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>فرانكلين يعلّمنا إن الإرث الحقيقي مو الفلوس أو الشهرة &mdash; هو المؤسسات والأفكار اللي تبقى بعدك وتخدم الناس لأجيال. فكّر: شو الشي اللي بتتركه وراك؟</p>
+  </div>
+
+  <p>هالكتاب يخلّيك تفكر في حياتك بطريقة ثانية. فرانكلين ما كان سوبرمان &mdash; كان إنسان عادي عنده عيوب ونقاط ضعف. بس كان عنده إرادة حديد وفضول ما ينتهي ورغبة حقيقية يخدم مجتمعه. وهالأشياء الثلاث متاحة لأي واحد فينا.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>صورة فرانكلين موجودة على ورقة المئة دولار &mdash; وهو الشخص الوحيد على العملة الأمريكية اللي ما كان رئيس. هالشي يوريك قد إيش أمريكا تحترم إرثه كعالم ومفكر ومؤسس.</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>بنجامين فرانكلين: حياة أمريكية</h3>
+  <p>تأليف: والتر إيزاكسون &mdash; Walter Isaacson</p>
+  <p>من أعظم السير الذاتية في القرن الحادي والعشرين &mdash; قصة رجل صنع نفسه وصنع أمة</p>
+  <div class="disclaimer">
+    هذا ملخص شامل للكتاب وليس بديلاً عن قراءته. الآراء المطروحة تمثل محتوى الكتاب. ننصح بشدة بقراءة الكتاب الأصلي للاستفادة الكاملة.
+  </div>
+</footer>
+
+</body>
+</html>

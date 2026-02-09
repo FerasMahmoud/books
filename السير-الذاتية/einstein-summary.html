@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أينشتاين: حياته وكونه - ملخص شامل | والتر إيزاكسون</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #00b894; border-radius: 4px; }
+  .hero { background: linear-gradient(135deg, #0a3a2e 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #00b894; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(0, 184, 148, 0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #00b894; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(0, 184, 148, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(0, 184, 148, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #1a2a2e, #1a1a2e); border: 2px solid #00a878; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section::before { content: '\1F4A1'; position: absolute; top: -15px; right: 30px; font-size: 1.8rem; background: #1a1a2e; padding: 0 10px; }
+  .problem-section h2 { font-size: 1.6rem; color: #00b894; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #a0d0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #a0d0c0; font-size: 1rem; }
+  .problem-section ul li::before { content: '\25B8'; position: absolute; right: 0; color: #00b894; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0a3a2e; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #00b894; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(0, 184, 148, 0.1); color: #00b894; transform: translateX(-4px); }
+  .toc-num { background: #00b894; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0a3a2e; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #00b894; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0a3a2e; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #00b894; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 184, 148, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #00b894, #00a878); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #00b894; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(0, 184, 148, 0.12); color: #00b894; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(0, 184, 148, 0.06); border-right: 4px solid #00b894; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(0, 184, 148, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(10, 58, 46, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(0, 184, 148, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #00b894; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(39, 174, 96, 0.08); border: 1px solid rgba(39, 174, 96, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #27ae60; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #b0d0b0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(0, 184, 148, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; }
+  .back-top a:hover { color: #00b894; }
+  .footer { background: linear-gradient(145deg, #0a3a2e, #1a1a2e); border-top: 3px solid #00b894; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(0, 184, 148, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } }
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#x269B;&#xFE0F;</span>
+    <h1>أينشتاين: حياته وكونه</h1>
+    <div class="subtitle">Einstein: His Life and Universe</div>
+    <div class="author">والتر إيزاكسون &mdash; Walter Isaacson</div>
+    <div class="meta-info">
+      <span>سيرة ذاتية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>عبقري الفيزياء</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>ليش تقرأ هالكتاب؟</h2>
+  <p>أينشتاين مو بس عالم فيزياء غيّر فهمنا للكون &mdash; كان إنسان معقّد ومثير للجدل. إيزاكسون يبي يوريك الشخص ورا المعادلات: الولد اللي طردوه من المدرسة، الموظف اللي غيّر الفيزياء من مكتبه الصغير، والعبقري اللي رفض يتقبّل ميكانيكا الكم. هالكتاب يجاوب على أسئلة مهمة:</p>
+  <ul>
+    <li>كيف موظف بسيط في مكتب براءات اختراع غيّر الفيزياء للأبد؟</li>
+    <li>وش العلاقة بين التمرد على السلطة والإبداع العلمي؟</li>
+    <li>ليش أينشتاين رفض ميكانيكا الكم رغم إنه هو اللي أسسها؟</li>
+    <li>كيف أثّرت السياسة والحروب على حياته العلمية؟</li>
+  </ul>
+  <p>إيزاكسون اعتمد على آلاف الرسائل الشخصية اللي انفتحت للعامة لأول مرة، وقدّم صورة كاملة عن أينشتاين الإنسان &mdash; بعبقريته وعيوبه.</p>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc" id="toc">
+  <h2>فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span> الطفولة والتمرد</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span> معجزات 1905</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span> النسبية العامة</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span> الشهرة العالمية</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span> أينشتاين والسياسة</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span> ميكانيكا الكم والجدل</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span> السنوات الأخيرة</a>
+    <a href="#ch8" class="toc-item"><span class="toc-num">8</span> عبقرية أينشتاين: الدروس</a>
+  </div>
+</nav>
+
+<!-- Introduction -->
+<section class="intro-section">
+  <h2>مقدمة الكتاب</h2>
+  <p>والتر إيزاكسون يبدأ كتابه بسؤال بسيط: وش اللي يخلي أينشتاين مختلف؟ الجواب مو الذكاء الخارق &mdash; كان فيه علماء رياضيات أذكى منه &mdash; بس التمرد. أينشتاين كان يرفض يقبل أي شي على أساس إن "هذا المعروف" أو "هذا اللي الكل يقوله." كان يسأل أسئلة ما أحد عنده الشجاعة يسألها.</p>
+  <p>إيزاكسون يقول إن خياله كان أهم من ذكائه. أينشتاين نفسه قال: "الخيال أهم من المعرفة." لما كان عمره 16 سنة، تخيّل نفسه يركب شعاع ضوء &mdash; وهالتجربة الذهنية هي اللي قادته في النهاية للنسبية الخاصة.</p>
+</section>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الطفولة والتمرد</div>
+      <div class="chapter-title-en">Childhood &amp; Rebellion</div>
+    </div>
+  </div>
+
+  <span class="section-label">البوصلة اللي غيّرت كل شي</span>
+  <p>ألبرت أينشتاين انولد سنة 1879 في مدينة أولم في ألمانيا. لما كان عمره 4 أو 5 سنين، أبوه عطاه بوصلة. هاللحظة غيّرت حياته. الطفل الصغير انصدم: كيف الإبرة تتحرك بدون ما أحد يلمسها؟ فيه قوة خفية تحرّكها! إيزاكسون يقول إن هاللحظة زرعت في أينشتاين فضول عميق عن القوى الخفية اللي تحكم الكون.</p>
+  <p>في المدرسة، أينشتاين كان كارثة. مو عشان غبي &mdash; بس عشان كان يكره أسلوب التعليم الألماني اللي يعتمد على الحفظ والطاعة العمياء. المدرسين ما كانوا يطيقونه عشان كان يسأل أسئلة محرجة ويتحدى سلطتهم. واحد من مدرسيه قال له: "وجودك في الفصل يكفي إنه يقضي على احترام الطلاب للمعلم."</p>
+  <p>بس في البيت، الوضع كان مختلف. عمه ياكوب كان مهندس وعلّمه الجبر والرياضيات بطريقة ممتعة. وأمه شجعته يتعلم الكمان &mdash; وصار يحب الموسيقى حب جنوني، خصوصا موزارت. أينشتاين كان يقول إن الموسيقى والفيزياء مرتبطين &mdash; كلهم يبحثون عن الأنماط المخفية في الكون.</p>
+  <p>لما صار عمره 16 سنة، ترك المدرسة الألمانية وراح سويسرا. هناك دخل المعهد الفيدرالي السويسري للتقنية (ETH) في زيورخ. حتى في الجامعة، أينشتاين ما كان طالب مثالي &mdash; كان يتغيّب عن المحاضرات ويقرأ في المواضيع اللي تهمه بدال المنهج.</p>
+
+  <div class="quote-block">
+    <p>"إن البوصلة اللي شفتها وأنا صغير خلتني أحس إن ورا هالعالم المرئي فيه شي عميق ومخفي ينتظر اللي يكتشفه."</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">التمرد المنتج</div>
+    <p>أينشتاين ما كان يتمرد عشان يزعّل أحد. كان يتمرد عشان عقله يرفض يقبل أي شي بدون ما يفهمه. هالنوع من التمرد &mdash; التمرد الفكري &mdash; هو اللي يصنع العباقرة. لو كان أينشتاين طالب مطيع كان صار أستاذ فيزياء عادي.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>النجاح في المدرسة مو مقياس للذكاء ولا للإبداع. أينشتاين فشل في النظام التعليمي التقليدي بس غيّر وجه العلم. لو عندك طفل "صعب" في المدرسة، ممكن يكون عبقري ينتظر البيئة المناسبة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">معجزات 1905</div>
+      <div class="chapter-title-en">The Miracle Year 1905</div>
+    </div>
+  </div>
+
+  <span class="section-label">السنة اللي غيّرت الفيزياء</span>
+  <p>سنة 1905، أينشتاين كان موظف بسيط عمره 26 سنة في مكتب براءات الاختراع في بيرن بسويسرا. ما كان أستاذ جامعي ولا باحث في مختبر &mdash; كان موظف حكومي يراجع طلبات براءات اختراع. بس في هالسنة، نشر أربع أوراق علمية غيّرت الفيزياء للأبد.</p>
+  <p>الورقة الأولى عن التأثير الكهروضوئي: أثبت إن الضوء مو بس موجة &mdash; كمان جسيمات (فوتونات). هالورقة هي اللي أخذ عليها نوبل بعدين، وهي اللي أسست لميكانيكا الكم &mdash; المجال اللي أينشتاين نفسه بيرفضه لاحقا! الورقة الثانية عن الحركة البراونية: فسّر كيف جزيئات الغبار تتحرك في الماء، وأثبت بكذا إن الذرات موجودة فعلا &mdash; شي كان لسا مختلف عليه بين العلماء.</p>
+  <p>الورقة الثالثة هي الأهم: النسبية الخاصة. أينشتاين أثبت إن الزمن مو ثابت &mdash; يتغير حسب السرعة. لو سافرت بسرعة قريبة من الضوء، الزمن عندك يبطئ مقارنة بشخص واقف. والورقة الرابعة فيها أشهر معادلة في التاريخ: E=mc&sup2;. يعني الطاقة تساوي الكتلة مضروبة في مربع سرعة الضوء. هالمعادلة البسيطة فسّرت كيف الشمس تنتج طاقة، وفتحت الباب للطاقة النووية.</p>
+
+  <div class="quote-block">
+    <p>"ما أقدر أفهم ليش ما أحد لاحظ هالشي قبلي. الفكرة كانت واضحة لو بس تبي تفكر فيها بجدية." &mdash; أينشتاين عن النسبية الخاصة</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">التجارب الذهنية</div>
+    <p>أينشتاين ما كان يشتغل في مختبر. كان يسوّي "تجارب ذهنية" &mdash; يعني يتخيل سيناريوهات في عقله ويشوف وش يصير. مثلا: "لو ركبت شعاع ضوء، وش بشوف؟" و"لو شخصين واحد في قطار سريع والثاني واقف، هل يشوفون نفس الشي؟" هالأسلوب البسيط قاده لأعظم اكتشافات في تاريخ الفيزياء.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>مكانك ووظيفتك ما يحددون قيمة أفكارك. أينشتاين غيّر الفيزياء وهو موظف حكومي بسيط. اللي يحدد إبداعك هو طريقة تفكيرك، مو المكان اللي تشتغل فيه. لا تنتظر لين توصل لمنصب معيّن عشان تبدأ تبدع.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">النسبية العامة</div>
+      <div class="chapter-title-en">General Relativity</div>
+    </div>
+  </div>
+
+  <span class="section-label">الجاذبية مو قوة &mdash; انحناء في الزمكان</span>
+  <p>بعد النسبية الخاصة، أينشتاين قضى عشر سنين كاملة (1905-1915) يشتغل على مشروعه الأعظم: النسبية العامة. الفكرة كانت ثورية بشكل ما يتصوره أحد: الجاذبية مو قوة تجذب الأشياء &mdash; الجاذبية هي انحناء في نسيج الزمكان نفسه. يعني الأرض ما "تجذب" القمر &mdash; الأرض تحني الزمكان حولها والقمر يمشي في هالانحناء.</p>
+  <p>إيزاكسون يوصف هالسنين العشر بأنها أصعب فترة في حياة أينشتاين العلمية. الرياضيات اللي يحتاجها كانت معقّدة جدا &mdash; تنسورات ريمان وهندسة غير إقليدية &mdash; وأينشتاين اعترف إنه احتاج مساعدة من صديقه عالم الرياضيات مارسيل غروسمان. أينشتاين ما كان أقوى عالم رياضيات، بس كان أقوى واحد في الحدس الفيزيائي.</p>
+  <p>في نوفمبر 1915، أينشتاين قدّم المعادلات النهائية للنسبية العامة في أربع محاضرات متتالية. يقول إنه لما حلّ المعادلات ولقى إنها تفسّر انحراف مدار عطارد (مشكلة ما أحد قدر يحلها قبله)، حصل له خفقان في القلب من الفرح.</p>
+  <p>التأكيد النهائي جا سنة 1919 لما عالم الفلك آرثر إدنغتون راقب كسوف الشمس من غرب أفريقيا ولقى إن ضوء النجوم فعلا ينحني لما يمر قريب من الشمس &mdash; بالضبط مثل ما تنبأ أينشتاين. هاللحظة حوّلت أينشتاين من عالم فيزياء مو معروف عند العامة لأشهر شخص في العالم.</p>
+
+  <div class="quote-block">
+    <p>"لما جت نتائج الكسوف وأكّدت نظريتي، ما انصدمت. لو كانت النتائج مختلفة، كنت بقول إن الله ضيّع فرصة حلوة." &mdash; أينشتاين</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">عشر سنين من المعاناة</div>
+    <p>النسبية العامة ما جت في لحظة إلهام &mdash; جت بعد عشر سنين من الشغل المتواصل والفشل والمحاولة مرة ثانية. أينشتاين نشر نسخ خطأ من المعادلات قبل ما يوصل للصح. هالقصة تبيّن إن حتى أعظم العباقرة يحتاجون وقت ويغلطون.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>الحدس أحيانا أهم من المهارة التقنية. أينشتاين ما كان أحسن عالم رياضيات، بس كان عنده حدس فيزيائي خارق. اعرف نقاط قوتك واستخدمها، واطلب مساعدة في النقاط اللي تحتاج فيها مساعدة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الشهرة العالمية</div>
+      <div class="chapter-title-en">Global Fame</div>
+    </div>
+  </div>
+
+  <span class="section-label">من عالم فيزياء لنجم عالمي</span>
+  <p>بعد تأكيد النسبية العامة في 1919، أينشتاين صار أشهر عالم في العالم بين ليلة وضحاها. الصحف البريطانية كتبت عناوين مثل: "ثورة في العلم &mdash; نظرية نيوتن أُسقطت." فجأة، هالعالم اللي ما كان أحد يعرفه صار نجم &mdash; الناس تبي تشوفه وتسمع كلامه في كل شي، حتى المواضيع اللي ما لها علاقة بالفيزياء.</p>
+  <p>إيزاكسون يقول إن أينشتاين تعامل مع الشهرة بشكل غريب. من جهة، كان يحبها ويستخدمها عشان ينشر أفكاره السياسية والاجتماعية. من جهة ثانية، كان يكرهها عشان تمنعه من الشغل العلمي. كان يقول: "أنا مثل الملك ميداس &mdash; بس بدال الذهب، كل شي ألمسه يتحول لضجة إعلامية."</p>
+  <p>جائزة نوبل جته سنة 1922 &mdash; بس مو على النسبية! أعطوه إياها على التأثير الكهروضوئي (ورقة 1905). لجنة نوبل ما كانت متأكدة من النسبية لسا. المضحك إن أينشتاين كان طلّق زوجته الأولى ميليفا ووعدها بفلوس جائزة نوبل كجزء من اتفاقية الطلاق &mdash; قبل ما يفوز فيها أصلا! يعني كان واثق إنه بياخذها.</p>
+
+  <div class="quote-block">
+    <p>"لو كانت نظريتي صحيحة، الألمان بيقولون إني ألماني والفرنسيين بيقولون إني مواطن عالمي. لو كانت خطأ، الفرنسيين بيقولون إني ألماني والألمان بيقولون إني يهودي." &mdash; أينشتاين</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">الشهرة سيف ذو حدين</div>
+    <p>أينشتاين استخدم شهرته عشان يدعم قضايا مهمة مثل السلام والحقوق المدنية. بس الشهرة كمان خلت الناس تتوقع منه إنه يعرف كل شي &mdash; وبدأ يعطي آراء في مواضيع خارج تخصصه. الدرس: الشهرة أداة قوية، بس لازم تستخدمها بحكمة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>النجاح الكبير يجيب مسؤوليات كبيرة. أينشتاين اختار يستخدم شهرته لخدمة قضايا إنسانية، مو بس لمصلحته الشخصية. لما توصل لمكانة معيّنة، فكّر كيف تقدر تستخدمها عشان تفيد غيرك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">أينشتاين والسياسة</div>
+      <div class="chapter-title-en">Einstein &amp; Politics</div>
+    </div>
+  </div>
+
+  <span class="section-label">السلام والصهيونية والهروب من النازية</span>
+  <p>أينشتاين كان سلامي لآخر نفس. عاش الحرب العالمية الأولى في برلين وشاف بعينه كيف القومية والعسكرية تدمّر كل شي. رفض يوقع على بيان العلماء الألمان اللي يدعم الحرب &mdash; بينما تقريبا كل زملائه وقّعوا. هالموقف خلاه منبوذ في الأوساط الأكاديمية الألمانية.</p>
+  <p>بعد الحرب، أينشتاين بدأ يدعم الحركة الصهيونية. إيزاكسون يوضح إن دعمه ما كان قومي متطرف &mdash; أينشتاين كان يبي مكان آمن لليهود اللي يتعرضون للاضطهاد في أوروبا، بس كان يؤمن بالتعايش مع العرب. سنة 1952 عرضوا عليه يصير رئيس دولة إسرائيل &mdash; ورفض! قال إنه عالم فيزياء مو سياسي.</p>
+  <p>لما النازيين وصلوا للحكم في 1933، أينشتاين كان بره ألمانيا بالصدفة. ما رجع أبدا. النازيين صادروا بيته وأملاكه وحطوا مكافأة على رأسه. كتبهم تحت عنوان "مائة مؤلف ضد أينشتاين" حاولت تثبت إن نظرياته خطأ عشان هو يهودي. أينشتاين ردّ بهدوء: "لو كانت نظريتي خطأ، كان يكفي مؤلف واحد."</p>
+  <p>استقر في أمريكا في معهد الدراسات المتقدمة في برينستون. بس حتى هناك، تورّط في السياسة &mdash; كتب رسالة للرئيس روزفلت ينبّهه إن ألمانيا ممكن تصنع قنبلة ذرية. هالرسالة أدت لمشروع مانهاتن وصناعة أول قنبلة نووية. أينشتاين ندم على هالرسالة بقية حياته.</p>
+
+  <div class="quote-block">
+    <p>"لو كنت أعرف إن الألمان ما بينجحون في صنع القنبلة، ما كنت رفعت إصبع." &mdash; أينشتاين عن رسالته لروزفلت</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>القرارات الكبيرة لها عواقب ما تقدر تتوقعها. أينشتاين كتب رسالة بنية حسنة وانتهت بقنبلتين نوويتين على هيروشيما وناغازاكي. لازم تفكّر مليا قبل أي قرار كبير، بس كمان لازم تتقبّل إنك ما تقدر تتحكم في كل النتائج.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">ميكانيكا الكم والجدل</div>
+      <div class="chapter-title-en">Quantum Mechanics Debate</div>
+    </div>
+  </div>
+
+  <span class="section-label">"الله لا يلعب بالنرد"</span>
+  <p>هنا تجي المفارقة الكبرى في حياة أينشتاين. هو نفسه &mdash; بورقته عن التأثير الكهروضوئي سنة 1905 &mdash; كان من المؤسسين الأوائل لميكانيكا الكم. بس لما تطورت النظرية على يد نيلز بور وهايزنبرغ وغيرهم، أينشتاين رفض يتقبّلها.</p>
+  <p>المشكلة عند أينشتاين كانت فلسفية أكثر من علمية. ميكانيكا الكم تقول إن الجسيمات ما لها موقع محدد لين تقيسها &mdash; يعني الإلكترون في كل مكان وما في مكان في نفس الوقت. أينشتاين رفض هالفكرة. قال عبارته المشهورة: "الله لا يلعب بالنرد مع الكون." يعني الكون لازم يكون محدد ومنظّم، مو عشوائي.</p>
+  <p>الجدل بين أينشتاين وبور صار أشهر جدل علمي في القرن العشرين. في مؤتمرات سولفاي، أينشتاين كان كل صباح يجي بتجربة ذهنية جديدة تبيّن إن ميكانيكا الكم فيها تناقض. وبور كان كل مساء يلقى الخطأ في تجربة أينشتاين ويفنّدها. إيزاكسون يقول إن أينشتاين خسر المعركة علميا &mdash; ميكانيكا الكم ثبتت صحتها &mdash; بس اعتراضاته دفعت العلماء يفكرون بعمق أكثر.</p>
+  <p>المثير إن بعض اعتراضات أينشتاين ثبت إنها ذكية جدا. مفارقة EPR اللي طرحها سنة 1935 &mdash; عن التشابك الكمّي &mdash; تحوّلت من "دليل ضد ميكانيكا الكم" لواحد من أهم اكتشافات الفيزياء الحديثة اللي تُستخدم اليوم في الحوسبة الكمّية.</p>
+
+  <div class="quote-block">
+    <p>"الله لا يلعب بالنرد مع الكون." ردّ بور: "يا أينشتاين، توقّف عن إخبار الله وش يسوي!"</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">المعارض المفيد</div>
+    <p>حتى لما أينشتاين كان غلطان، اعتراضاته كانت مفيدة. أعظم الاكتشافات العلمية تجي لما شخص ذكي يعارض بذكاء. المعارضة البنّاءة مو ضعف &mdash; هي جزء أساسي من تقدّم العلم. لو ما أحد عارض، ما أحد فكّر بعمق.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>حتى العباقرة ممكن يكونون غلط. أينشتاين &mdash; أذكى شخص في القرن العشرين &mdash; رفض ميكانيكا الكم وثبت إنها صحيحة. الدرس مو إن أينشتاين غبي &mdash; الدرس إن ما أحد فوق النقد، وإن التمسك بالأفكار القديمة ممكن يعيقك حتى لو كنت عبقري.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">السنوات الأخيرة</div>
+      <div class="chapter-title-en">The Final Years</div>
+    </div>
+  </div>
+
+  <span class="section-label">البحث عن النظرية الموحّدة</span>
+  <p>آخر ثلاثين سنة من حياة أينشتاين (1925-1955) قضاها في معهد الدراسات المتقدمة في برينستون، نيوجيرسي. كان يروح مكتبه كل يوم ماشي &mdash; بشعره المنفوش وبدون جوارب &mdash; ويشتغل على هدف واحد: نظرية المجال الموحّد. كان يبي يوحّد الجاذبية والكهرومغناطيسية في نظرية واحدة أنيقة.</p>
+  <p>المشكلة إنه ما نجح. قضى عقود يحاول ويفشل. أغلب زملائه تركوه يشتغل لحاله واعتبروه "عالم عجوز يطارد حلم مستحيل." بس أينشتاين ما كان يهتم. كان يقول: "حتى لو فشلت، المحاولة نفسها تستاهل." والمثير إن هدفه &mdash; توحيد القوى الأساسية &mdash; صار لاحقا الهدف الرئيسي للفيزياء النظرية في القرن الحادي والعشرين (نظرية الأوتار مثلا).</p>
+  <p>إيزاكسون يرسم صورة حزينة وجميلة لسنوات أينشتاين الأخيرة. كان يعيش بسيط جدا &mdash; بيت صغير، أكل بسيط، ما يهتم بالمظاهر. كان يلعب كمان، يمشي مع أصدقائه، ويفكّر في الكون. لما سألوه عن الموت، قال: "أنا سويت نصيبي من العمل، جا وقت الراحة."</p>
+  <p>مات في 18 أبريل 1955 عن عمر 76 سنة. آخر شي كتبه كان معادلات على ورقة جنب سريره &mdash; لسا يحاول يحل نظرية المجال الموحّد. طلب إن جثته تُحرق وما يكون له قبر عشان ما يصير مزار &mdash; بس الطبيب اللي سوّا التشريح سرق دماغه بدون إذن عشان يدرسه. قصة غريبة ومحزنة.</p>
+
+  <div class="quote-block">
+    <p>"سويت نصيبي من العمل. جا وقت الراحة. وبسوّيها بأناقة." &mdash; أينشتاين قبل وفاته</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">العناد العلمي</div>
+    <p>أينشتاين قضى 30 سنة على مشروع اعتبره الكل فاشل. هل كان مخطئ؟ ممكن. بس هدفه &mdash; نظرية كل شيء &mdash; لسا هو الحلم الأكبر لعلماء الفيزياء اليوم. أحيانا تكون سابق لعصرك بدرجة إن الناس ما تفهم وش تسوي إلا بعد ما تموت.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>لا تخاف تشتغل على شي يعتبره الناس مستحيل. أينشتاين ما وصل للنظرية الموحّدة، بس محاولته ألهمت أجيال كاملة من العلماء. أحيانا قيمة المحاولة أكبر من قيمة النتيجة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 8 -->
+<article class="chapter" id="ch8">
+  <div class="chapter-header">
+    <div class="chapter-number">8</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">عبقرية أينشتاين: الدروس</div>
+      <div class="chapter-title-en">Einstein's Genius: Lessons</div>
+    </div>
+  </div>
+
+  <span class="section-label">وش نتعلم من أينشتاين</span>
+  <p>في نهاية الكتاب، إيزاكسون يجمع الدروس الأساسية من حياة أينشتاين. أول درس وأهمه: تمرّد على المسلّمات. أينشتاين ما اكتشف النسبية عشان كان أذكى من نيوتن &mdash; اكتشفها عشان كان عنده الشجاعة يسأل: "ليش نفترض إن الزمن ثابت؟ وش لو مو كذا؟" هالنوع من الأسئلة يحتاج شجاعة أكثر من ذكاء.</p>
+  <p>ثاني درس: استخدم خيالك. أينشتاين ما اكتشف نظرياته في مختبر &mdash; اكتشفها في عقله. التجارب الذهنية كانت أقوى أدواته. تخيّل نفسك تركب شعاع ضوء، تخيّل نفسك في مصعد يسقط حر &mdash; هالتمارين البسيطة قادته لأعظم اكتشافات في التاريخ.</p>
+  <p>ثالث درس: لا تنحصر في تخصصك. أينشتاين كان يقرأ فلسفة &mdash; خصوصا ديفيد هيوم وإرنست ماخ &mdash; وهالقراءات أثّرت على تفكيره العلمي بشكل كبير. كمان الموسيقى كانت جزء أساسي من حياته &mdash; كان يقول إنه أحيانا يلقى حلول لمشاكل فيزيائية وهو يعزف كمان.</p>
+  <p>رابع درس: تقبّل الفشل. أينشتاين فشل كثير. نظرية المجال الموحّد ما اكتملت. علاقاته العائلية كانت فاشلة. زواجه الأول انتهى بطلاق، وعلاقته بأولاده كانت متوترة. بس ما توقّف. استمر يشتغل ويحاول لآخر يوم في حياته.</p>
+  <p>خامس درس: كن إنسان. أينشتاين ما كان بس عالم &mdash; كان إنسان عنده مبادئ. وقف ضد العنصرية في أمريكا، دعم الحقوق المدنية، ورفض العسكرية. استخدم مكانته عشان يقول الحق حتى لو كلّفه. هالجانب الإنساني هو اللي يخلي قصته ملهمة لليوم.</p>
+
+  <div class="quote-block">
+    <p>"الخيال أهم من المعرفة. المعرفة محدودة بما نعرفه ونفهمه، بينما الخيال يحتضن العالم كله &mdash; كل ما سنعرفه ونفهمه في المستقبل." &mdash; ألبرت أينشتاين</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">أينشتاين اليوم</div>
+    <p>لو أينشتاين عاش اليوم، وش كان بيسوي؟ إيزاكسون يقول إنه كان بيكون مبهور بالتكنولوجيا بس قلقان من استخدامها. كان بيحب الإنترنت عشان ينشر أفكاره للعالم، بس كان بيكره السوشال ميديا عشان تشجع القطيع وتقتل التفكير المستقل &mdash; الشي اللي كان يكرهه أكثر من أي شي.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس الأخير</div>
+    <p>أينشتاين ما كان خارق &mdash; كان إنسان فضولي ومتمرد وعنده خيال واسع. هالصفات مو حكر على العباقرة. تقدر تطوّرها: اسأل "ليش؟" أكثر، تخيّل سيناريوهات مختلفة، تمرّد على الأفكار المسلّمة، واقرأ خارج تخصصك. ما تحتاج تكون أينشتاين عشان تفكر مثل أينشتاين.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>أينشتاين: حياته وكونه &mdash; والتر إيزاكسون</h3>
+  <p>ملخص شامل ومفصّل لأهم الأفكار والدروس من الكتاب</p>
+  <p>الكتاب الأصلي: Einstein: His Life and Universe by Walter Isaacson (2007)</p>
+  <div class="disclaimer">
+    هذا الملخص لأغراض تعليمية فقط ولا يُغني عن قراءة الكتاب الأصلي.
+    جميع الاقتباسات والأفكار تعود لمؤلف الكتاب والتر إيزاكسون.
+    لدعم المؤلف، يُرجى شراء نسخة أصلية من الكتاب.
+  </div>
+</footer>
+
+</body>
+</html>

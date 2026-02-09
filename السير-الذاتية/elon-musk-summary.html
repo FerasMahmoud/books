@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إيلون ماسك - ملخص شامل | والتر إيزاكسون</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #e74c3c; border-radius: 4px; }
+  .hero { background: linear-gradient(135deg, #5c1a1a 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #e74c3c; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(231, 76, 60, 0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #e74c3c; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(231, 76, 60, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(231, 76, 60, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #2d1b1b, #1a1a2e); border: 2px solid #c0392b; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section::before { content: '\1F680'; position: absolute; top: -15px; right: 30px; font-size: 1.8rem; background: #1a1a2e; padding: 0 10px; }
+  .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '\1F525'; position: absolute; right: 0; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #5c1a1a; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #e74c3c; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(231, 76, 60, 0.1); color: #e74c3c; transform: translateX(-4px); }
+  .toc-num { background: #e74c3c; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #5c1a1a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #5c1a1a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #e74c3c; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(231, 76, 60, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #e74c3c, #c0392b); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #e74c3c; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(231, 76, 60, 0.12); color: #e74c3c; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(231, 76, 60, 0.06); border-right: 4px solid #e74c3c; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(231, 76, 60, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(92, 26, 26, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(231, 76, 60, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #e74c3c; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(39, 174, 96, 0.08); border: 1px solid rgba(39, 174, 96, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #27ae60; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #b0d0b0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(231, 76, 60, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #e74c3c; }
+  .footer { background: linear-gradient(145deg, #5c1a1a, #1a1a2e); border-top: 3px solid #e74c3c; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(231, 76, 60, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } }
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="book-icon">&#x1F680;</span>
+    <h1>إيلون ماسك</h1>
+    <div class="subtitle">Elon Musk</div>
+    <div class="author">والتر إيزاكسون &mdash; Walter Isaacson</div>
+    <div class="meta-info">
+      <span>&#x1F4D6; سيرة ذاتية</span>
+      <span>&#x1F4CB; ملخص شامل ومفصّل</span>
+      <span>&#x1F697; تيسلا وسبيس إكس</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROBLEM SECTION ==================== -->
+<section class="problem-section">
+  <h2>&#x1F914; ليش هالكتاب مهم؟</h2>
+  <p>
+    إيلون ماسك واحد من أكثر الشخصيات اللي تثير الجدل في عصرنا. فيه ناس تشوفه عبقري يبي يغيّر مستقبل البشرية، وفيه ناس تشوفه شخص متهور ومستفز. بس الشي اللي ما يقدر أحد ينكره إن الرجّال هذا غيّر صناعات كاملة &mdash; من السيارات الكهربائية إلى صواريخ الفضاء إلى الذكاء الاصطناعي.
+  </p>
+  <p>
+    والتر إيزاكسون &mdash; نفس الكاتب اللي كتب سيرة ستيف جوبز &mdash; قعد سنتين كاملين مع ماسك، يتابعه في اجتماعاته، في بيته، في مصانعه، وحتى في لحظات انهياره النفسي. والنتيجة؟ كتاب يكشف لك الإنسان ورا العناوين الإعلامية.
+  </p>
+  <ul>
+    <li>كيف طفولة مؤلمة في جنوب أفريقيا صنعت شخصية ما تعرف المستحيل</li>
+    <li>القصة الحقيقية ورا تأسيس سبيس إكس وتيسلا والفشل اللي كاد يدمّره</li>
+    <li>أسلوب قيادة يخلّي الموظفين يبدعون... أو ينهارون</li>
+    <li>ليش اشترى تويتر وش اللي صار بعدها</li>
+    <li>الثمن الشخصي اللي دفعه عشان يحقق أحلامه</li>
+  </ul>
+</section>
+
+<!-- ==================== TABLE OF CONTENTS ==================== -->
+<nav class="toc" id="toc">
+  <h2>&#x1F4D1; فهرس الملخص</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item">
+      <span class="toc-num">1</span>
+      <span>طفولة في جنوب أفريقيا</span>
+    </a>
+    <a href="#ch2" class="toc-item">
+      <span class="toc-num">2</span>
+      <span>الهجرة وبداية الطموح</span>
+    </a>
+    <a href="#ch3" class="toc-item">
+      <span class="toc-num">3</span>
+      <span>سبيس إكس: حلم المريخ</span>
+    </a>
+    <a href="#ch4" class="toc-item">
+      <span class="toc-num">4</span>
+      <span>تيسلا: ثورة السيارات الكهربائية</span>
+    </a>
+    <a href="#ch5" class="toc-item">
+      <span class="toc-num">5</span>
+      <span>أسلوب القيادة المجنون</span>
+    </a>
+    <a href="#ch6" class="toc-item">
+      <span class="toc-num">6</span>
+      <span>تويتر والجدل</span>
+    </a>
+    <a href="#ch7" class="toc-item">
+      <span class="toc-num">7</span>
+      <span>الرؤية الكبرى</span>
+    </a>
+    <a href="#ch8" class="toc-item">
+      <span class="toc-num">8</span>
+      <span>الدروس من حياة ماسك</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ==================== INTRO SECTION ==================== -->
+<section class="intro-section">
+  <h2>&#x1F4D6; عن الكتاب</h2>
+  <p>
+    هالكتاب نزل سنة 2023 وسوّى ضجة كبيرة. والتر إيزاكسون &mdash; اللي سبق وكتب سير ذاتية لستيف جوبز وبنجامين فرانكلين وآينشتاين &mdash; حصل على وصول كامل لحياة إيلون ماسك لمدة سنتين. يعني ما كان يكتب من بعيد، كان حرفياً يمشي مع الرجّال وين ما راح.
+  </p>
+  <p>
+    الكتاب يغطي حياة ماسك من طفولته الصعبة في بريتوريا بجنوب أفريقيا، مرورًا بهجرته لكندا وبعدين أمريكا، وتأسيسه لشركات غيّرت وجه العالم. بس الشي المميز إن إيزاكسون ما حاول يلمّع صورة ماسك &mdash; عرض الجوانب المظلمة بنفس الصراحة اللي عرض فيها الإنجازات. تشوف ماسك العبقري وماسك الصعب وماسك اللي يعاني كلهم في نفس الكتاب.
+  </p>
+  <p>
+    إيزاكسون أجرى مقابلات مع أكثر من مئة شخص من حياة ماسك &mdash; زوجاته السابقات، أطفاله، موظفينه، أصدقائه، وحتى خصومه. والنتيجة صورة شاملة ومعقدة لواحد من أكثر الشخصيات تأثيرًا في القرن الواحد والعشرين.
+  </p>
+</section>
+
+<!-- ==================== CHAPTER 1 ==================== -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">طفولة في جنوب أفريقيا</div>
+      <div class="chapter-title-en">Childhood in South Africa</div>
+    </div>
+  </div>
+
+  <span class="section-label">&#x1F466; البداية المؤلمة</span>
+  <p>
+    إيلون ماسك انولد سنة 1971 في بريتوريا، جنوب أفريقيا. من صغره كان واضح إنه مختلف عن باقي الأطفال &mdash; كان يقرأ بشكل مهووس، يخلّص الموسوعة البريطانية كاملة وهو عمره تسع سنين. بس هالذكاء ما كان يساعده اجتماعيًا، بالعكس، خلّاه هدف للتنمّر القاسي من زملائه في المدرسة.
+  </p>
+  <p>
+    التنمّر اللي تعرّض له ماسك ما كان مجرد مضايقات بسيطة. مرة مجموعة من الأولاد ضربوه ورموه من الدرج وأدخلوه المستشفى. إيزاكسون يوضّح إن هالتجارب خلّت ماسك يبني حوله درع نفسي صلب &mdash; قدرة على تحمّل الألم والرفض اللي بعدين صارت من أهم صفاته كرجل أعمال.
+  </p>
+  <p>
+    بس الألم الأكبر كان من أبوه إيرول ماسك. إيزاكسون يوصف إيرول بأنه شخص ذكي بس مؤذي نفسيًا بشكل عميق. كان يحطّ إيلون ويذلّه ويخلّيه يحس إنه ما يسوى شي. إيلون نفسه قال لإيزاكسون إن أبوه كان "شرير" وإنه عاش طفولة "بائسة". هالعلاقة المسمومة مع أبوه هي اللي يرجع لها إيزاكسون كثير في الكتاب عشان يفسّر تصرفات ماسك كبالغ.
+  </p>
+
+  <div class="quote-block">
+    <p>"أبوي كان إنسان فظيع. عشت في بؤس حقيقي وأنا طفل. بس الشي الوحيد اللي تعلّمته إن الألم ما يقتلك &mdash; يخلّيك أقوى أو يكسرك، وأنا اخترت إنه يخلّيني أقوى."</p>
+  </div>
+
+  <p>
+    الشي اللي أنقذ ماسك كان التكنولوجيا. لمّا حصل على أول كمبيوتر Commodore VIC-20 وهو عمره عشر سنين، دخل عالم ثاني. تعلّم البرمجة لحاله وسوّى لعبة فيديو اسمها Blastar وباعها لمجلة بـ500 دولار وهو عمره اثنعشر سنة. الكمبيوتر صار عالمه الآمن &mdash; المكان اللي يقدر يتحكم فيه ويبدع بدون ما أحد يأذيه.
+  </p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>الطفولة الصعبة ممكن تكون وقود للنجاح أو سبب للانهيار. ماسك حوّل ألمه لدافع ما يوقف، بس الكتاب يبيّن إن الجروح القديمة ما اختفت &mdash; ظلّت تأثر على علاقاته وقراراته حتى وهو أغنى رجل في العالم.</p>
+  </div>
+
+  <div class="back-top">
+    <a href="#toc">&#x2191; الرجوع للفهرس</a>
+  </div>
+</article>
+
+<!-- ==================== CHAPTER 2 ==================== -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الهجرة وبداية الطموح</div>
+      <div class="chapter-title-en">Immigration & Early Ambition</div>
+    </div>
+  </div>
+
+  <span class="section-label">&#x2708;&#xFE0F; الهروب من جنوب أفريقيا</span>
+  <p>
+    لمّا صار عمر ماسك 17 سنة، قرر إنه لازم يطلع من جنوب أفريقيا. ما كان يبي يخدم في الجيش (كان فيه تجنيد إجباري وقتها بسبب نظام الفصل العنصري)، وكان يعرف إن مستقبله في أمريكا &mdash; البلد اللي "فيها كل شي ممكن". راح كندا أول شي لأن أمه كندية الأصل، واشتغل أعمال يدوية قاسية عشان يعيش.
+  </p>
+  <p>
+    بعد كندا، انتقل لجامعة بنسلفانيا في أمريكا ودرس فيزياء واقتصاد. هنا بدأ يفكّر بالأسئلة الكبيرة اللي بعدين صارت تحدد حياته: إيش الأشياء اللي بتأثر على مستقبل البشرية أكثر شي؟ وصل لثلاث إجابات: الإنترنت، الطاقة المستدامة، والفضاء. وقرر إنه يشتغل على الثلاث.
+  </p>
+
+  <span class="section-label">&#x1F4B0; أول ملايين</span>
+  <p>
+    أول مشروع حقيقي لماسك كان شركة Zip2 سنة 1995 &mdash; يعني بالعربي دليل أعمال إلكتروني (مثل خرائط قوقل بس في بداياتها). هو وأخوه كيمبال كانوا ينامون في المكتب ويستحمون في النادي الرياضي عشان يوفّرون فلوس. الشركة انباعت لـCompaq بـ307 مليون دولار، وماسك حصل على 22 مليون وعمره 27 سنة.
+  </p>
+  <p>
+    بدل ما يرتاح، حط كل فلوسه تقريبًا في مشروعه الجديد X.com اللي بعدين اندمج مع شركة ثانية وصار اسمه PayPal. قصة باي بال كانت مليانة دراما &mdash; ماسك انطرد من منصب المدير التنفيذي وهو في إجازة شهر العسل! بس لمّا eBay اشترت PayPal بـ1.5 مليار دولار سنة 2002، ماسك حصل على حوالي 180 مليون دولار. وبدل ما يتقاعد ويعيش حياته، قرر يسوّي شي ما أحد يتوقعه.
+  </p>
+
+  <div class="quote-block">
+    <p>"لمّا الناس سألوني ليش ما أتقاعد وأنا عندي 180 مليون، قلت لهم: أنا ما جيت لأمريكا عشان أجمع فلوس. جيت عشان أسوّي شي يغيّر مستقبل البشرية."</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; ملاحظة مهمة</div>
+    <p>من أول يوم، ماسك كان يحط كل فلوسه في مشاريعه. ما كان يلعب safe أبدًا. هالشي يبيّن لك إن الرجّال ما كان يدور الثروة بحد ذاتها &mdash; كان يدور التأثير. بس نفس هالصفة هي اللي كادت تفلسه بعدين.</p>
+  </div>
+
+  <div class="back-top">
+    <a href="#toc">&#x2191; الرجوع للفهرس</a>
+  </div>
+</article>
+
+<!-- ==================== CHAPTER 3 ==================== -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">سبيس إكس: حلم المريخ</div>
+      <div class="chapter-title-en">SpaceX: The Mars Dream</div>
+    </div>
+  </div>
+
+  <span class="section-label">&#x1F680; الجنون اللي صار حقيقة</span>
+  <p>
+    سنة 2002، ماسك سوّى شي الكل قال عنه جنون: أسس شركة صواريخ. مو بس كذا &mdash; هدفه النهائي كان إنه يوصّل البشر للمريخ ويخلّيهم يعيشون هناك. حاول أول شي يشتري صواريخ مستعملة من روسيا بس الروس استهزأوا فيه وطردوه. ماسك طلع من الاجتماع وقال لفريقه: "نقدر نسوّيها بأنفسنا."
+  </p>
+  <p>
+    أول ثلاث عمليات إطلاق لصاروخ Falcon 1 فشلت. كل فشل كان يكلّف ملايين، وماسك كان يحرق فلوسه بسرعة مجنونة. بعد الفشل الثالث سنة 2008، ماسك كان على حافة الإفلاس &mdash; حرفياً ما كان عنده فلوس يدفع إيجار بيته. الموظفين كانوا يشوفونه يبكي في مكتبه. كان ممكن يوقف ويقول خلاص بس ما وقف.
+  </p>
+  <p>
+    الإطلاق الرابع في سبتمبر 2008 نجح. وبعدها بأسابيع، ناسا أعطت سبيس إكس عقد بـ1.6 مليار دولار. إيزاكسون يوصف هاللحظة بأنها "معجزة" &mdash; لو الإطلاق الرابع فشل كان ماسك أفلس وسبيس إكس ماتت. بس نجح، وبعدها سبيس إكس صارت أهم شركة فضاء في العالم.
+  </p>
+
+  <div class="quote-block">
+    <p>"لمّا الناس يقولون لي إن شي مستحيل، أول سؤال أسأله: هل قوانين الفيزياء تمنعه؟ إذا الجواب لا، يعني الموضوع مجرد مسألة هندسة."</p>
+  </div>
+
+  <p>
+    اليوم سبيس إكس تسوّي أشياء كانت خيال علمي: صواريخ ترجع وتنزل على الأرض عشان تُستخدم مرة ثانية، شبكة أقمار Starlink اللي توصّل إنترنت لأي مكان في العالم، وصاروخ Starship اللي المفروض يوصّل البشر للمريخ. ماسك يقول إنه يبي يموت على المريخ &mdash; "بس مو عند الهبوط."
+  </p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>ماسك ما كان ينتظر أحد يقوله إن الشي ممكن. كان يسأل سؤال واحد: هل الفيزياء تسمح؟ إذا إيه، يعني المشكلة هندسية ولها حل. هالطريقة في التفكير &mdash; "التفكير من المبادئ الأولى" &mdash; هي اللي خلّته يسوّي أشياء الكل قال عنها مستحيلة.</p>
+  </div>
+
+  <div class="back-top">
+    <a href="#toc">&#x2191; الرجوع للفهرس</a>
+  </div>
+</article>
+
+<!-- ==================== CHAPTER 4 ==================== -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">تيسلا: ثورة السيارات الكهربائية</div>
+      <div class="chapter-title-en">Tesla: Electric Revolution</div>
+    </div>
+  </div>
+
+  <span class="section-label">&#x26A1; السيارة اللي غيّرت كل شي</span>
+  <p>
+    ماسك ما أسس تيسلا &mdash; هالشي كثير ناس ما يعرفونه. الشركة أسسها مارتن إيبرهارد وعمره ما يُذكر. بس ماسك دخل كأكبر مستثمر من البداية سنة 2004 وبعدين صار الرئيس التنفيذي. إيزاكسون يوضّح إن ماسك ما كان مجرد مستثمر &mdash; كان يتدخل في كل تفصيلة من تصميم السيارة لحد اختيار مقابض الأبواب.
+  </p>
+  <p>
+    تيسلا مرّت بلحظات كانت فيها على حافة الموت. سنة 2008 &mdash; نفس السنة اللي سبيس إكس كانت تحتضر &mdash; تيسلا كانت تحرق فلوس بشكل مرعب وما كان فيه مشترين كفاية لسيارة Roadster. ماسك حط آخر فلوسه الشخصية في الشركة. كان حرفيًا يقترض فلوس من أصدقائه عشان يدفع إيجار بيته بينما يحط الملايين في تيسلا.
+  </p>
+  <p>
+    بس النقطة اللي غيّرت كل شي كانت Model S سنة 2012. السيارة هذي ما كانت مجرد سيارة كهربائية &mdash; كانت أحسن سيارة بشكل عام. حصلت على أعلى تقييم في تاريخ Consumer Reports. فجأة، السيارات الكهربائية ما صارت "سيارات بيئية مملة" &mdash; صارت سيارات الأحلام. وكل شركات السيارات الكبيرة بدأت تلحق تيسلا.
+  </p>
+
+  <div class="quote-block">
+    <p>"تبي تسوّي شركة سيارات؟ هذا أصعب بزنس في العالم. آخر شركة سيارات أمريكية نجحت كانت كرايسلر سنة 1925. بس ماسك ما كان يبي يسوّي شركة سيارات &mdash; كان يبي يغيّر صناعة كاملة."</p>
+  </div>
+
+  <p>
+    إيزاكسون يحكي قصص مرعبة عن خطوط الإنتاج &mdash; ماسك كان ينام في المصنع أسابيع كاملة، يشتغل 120 ساعة في الأسبوع، ويطلب من موظفينه نفس الشي. فترة "جحيم الإنتاج" لـModel 3 سنة 2018 كانت من أصعب الفترات &mdash; ماسك وصف نفسه بأنه كان "يمشي على جمر" كل يوم.
+  </p>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; ملاحظة مهمة</div>
+    <p>تيسلا ما غيّرت بس صناعة السيارات &mdash; غيّرت الطريقة اللي العالم يفكّر فيها عن الطاقة. قبل تيسلا، السيارة الكهربائية كانت نكتة. بعد تيسلا، كل شركة سيارات في العالم تسابق تسوّي سيارات كهربائية. هذا هو التأثير الحقيقي.</p>
+  </div>
+
+  <div class="back-top">
+    <a href="#toc">&#x2191; الرجوع للفهرس</a>
+  </div>
+</article>
+
+<!-- ==================== CHAPTER 5 ==================== -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">أسلوب القيادة المجنون</div>
+      <div class="chapter-title-en">The Hardcore Leadership Style</div>
+    </div>
+  </div>
+
+  <span class="section-label">&#x1F608; وضع الشيطان</span>
+  <p>
+    من أكثر الأجزاء المثيرة في الكتاب هي وصف إيزاكسون لأسلوب ماسك في الإدارة. ماسك عنده شي اسمه "demon mode" &mdash; يعني "وضع الشيطان" &mdash; يدخل فيه لمّا يكون تحت ضغط أو يحس إن الأمور ماشية ببطء. في هالوضع، يصير قاسي بشكل ما يتخيّله أحد: يصرخ على الموظفين، يطردهم على طول، ويطلب أهداف مستحيلة بمواعيد مستحيلة.
+  </p>
+  <p>
+    إيزاكسون يحكي عن اجتماعات يدخلها ماسك ويقول: "مين المسؤول عن هالشي؟" وإذا الجواب ما عجبه، يطرد الشخص في نفس اللحظة. موظفين كثير وصفوا الشغل مع ماسك بأنه "أحسن تجربة مهنية في حياتهم" و"أسوأ تجربة شخصية في حياتهم" في نفس الوقت.
+  </p>
+  <p>
+    بس فيه جانب ثاني: ماسك يقود بالقدوة. ما يطلب من أحد شي ما يسوّيه هو. إذا طلب من الفريق يشتغلون 80 ساعة، هو يشتغل 120. إذا طلب منهم ينامون في المصنع، هو أول واحد ينام هناك. هالشي يخلّي بعض الموظفين يحبونه رغم قسوته &mdash; يحسون إنه صادق في جنونه.
+  </p>
+
+  <div class="quote-block">
+    <p>"ما أبي موظفين يجون الساعة 9 ويروحون الساعة 5. أبي ناس مهووسين. إذا ما أنت مهووس بالشغل، روح اشتغل في مكان ثاني. هنا نسوّي أشياء تغيّر العالم، ومافيه وقت للراحة."</p>
+  </div>
+
+  <p>
+    إيزاكسون يحلل إن هالأسلوب نتيجة مباشرة لطفولة ماسك. الأب اللي كان يذلّه علّمه إن العالم مكان قاسي وما فيه مكان للضعف. فصار ماسك يتعامل مع الناس بنفس القسوة &mdash; مو لأنه يستمتع، بس لأنه ما يعرف طريقة ثانية. المشكلة إن هالأسلوب ينجح في بناء شركات عظيمة بس يدمّر العلاقات الإنسانية.
+  </p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>أسلوب ماسك في القيادة مو للكل. ينتج نتائج خرافية بس بثمن إنساني عالي. الكتاب يخلّيك تسأل: هل النتائج تبرر الطريقة؟ وهل ممكن نحقق نفس النتائج بدون كل هالدمار؟ ما فيه جواب سهل.</p>
+  </div>
+
+  <div class="back-top">
+    <a href="#toc">&#x2191; الرجوع للفهرس</a>
+  </div>
+</article>
+
+<!-- ==================== CHAPTER 6 ==================== -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">تويتر والجدل</div>
+      <div class="chapter-title-en">Twitter & Controversy</div>
+    </div>
+  </div>
+
+  <span class="section-label">&#x1F426; الصفقة اللي ما أحد فهمها</span>
+  <p>
+    في أبريل 2022، ماسك عرض يشتري تويتر بـ44 مليار دولار. الكل استغرب: ليش أغنى رجل في العالم يبي يشتري منصة تواصل اجتماعي تخسر فلوس؟ ماسك قال إنه يبي يحمي "حرية التعبير" ويحارب "فيروس العقل المستيقظ" (woke mind virus). بس إيزاكسون يكشف إن القصة أعقد من كذا.
+  </p>
+  <p>
+    ماسك حاول يتراجع عن الصفقة بعد ما اكتشف إن تويتر فيها مشاكل أكثر مما توقع. بس تويتر رفعت عليه قضية وأجبرته يكمّل. وأول ما استلم الشركة في أكتوبر 2022، بدأ يسوّي أشياء ما أحد توقعها: طرد 80% من الموظفين، غيّر اسم الشركة لـX، وبدأ يتفاعل مع حسابات مثيرة للجدل.
+  </p>
+  <p>
+    إيزاكسون كان موجود في أول أيام ماسك في مقر تويتر. يوصف المشهد بأنه كان "فوضى منظمة" &mdash; ماسك يمشي في المكاتب ويسأل كل موظف: "وش تسوّي بالضبط؟ وليش؟" واللي ما يعجبه جوابه يطرده فورًا. بعض الموظفين اكتشفوا إنهم مطرودين لمّا ما قدروا يدخلون إيميلاتهم.
+  </p>
+
+  <div class="quote-block">
+    <p>"حرية التعبير مو حرية الوصول. تويتر لازم تكون الساحة الرقمية اللي الناس يقدرون يتكلمون فيها بحرية. بس السؤال هو: وين الخط بين الحرية والفوضى؟"</p>
+  </div>
+
+  <p>
+    قصة تويتر/X تبيّن جانب مهم من شخصية ماسك: هو شخص يتصرف بسرعة وبجرأة بس أحيانًا بدون ما يفكّر بالعواقب. نفس الصفة اللي خلّته ينجح في سبيس إكس وتيسلا &mdash; الجرأة على اتخاذ قرارات كبيرة &mdash; هي نفسها اللي سبّبت له مشاكل ضخمة في تويتر. المعلنين هربوا، القيمة نزلت، والجدل ما وقف.
+  </p>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; ملاحظة مهمة</div>
+    <p>إيزاكسون يطرح سؤال مهم: هل ماسك اشترى تويتر عشان يحمي حرية التعبير فعلاً، ولا عشان يبي يتحكم في المحادثة العامة؟ الكتاب ما يعطيك جواب واضح &mdash; يخلّيك أنت تقرر. بس اللي واضح إن الصفقة أثرت على سمعة ماسك بشكل كبير وقسمت الناس حوله أكثر.</p>
+  </div>
+
+  <div class="back-top">
+    <a href="#toc">&#x2191; الرجوع للفهرس</a>
+  </div>
+</article>
+
+<!-- ==================== CHAPTER 7 ==================== -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الرؤية الكبرى</div>
+      <div class="chapter-title-en">The Grand Vision</div>
+    </div>
+  </div>
+
+  <span class="section-label">&#x1F52D; أبعد من الأرض</span>
+  <p>
+    ماسك مو بس رجل أعمال &mdash; هو شخص عنده رؤية لمستقبل البشرية كاملة. وهالرؤية تتلخص في فكرة واحدة: البشر لازم يصيرون "نوع متعدد الكواكب" عشان ما ينقرضون. يعني لازم نروح المريخ ونعيش هناك كخطة بديلة في حال صار شي للأرض &mdash; سواء كويكب أو حرب نووية أو تغيّر مناخي كارثي.
+  </p>
+  <p>
+    بس المريخ مو الشي الوحيد اللي يشغل ماسك. شركة Neuralink تبي تربط الدماغ البشري بالكمبيوتر مباشرة &mdash; يعني حرفياً شريحة في دماغك تخلّيك تتحكم في الأجهزة بتفكيرك. ماسك يقول إن هالشي ضروري عشان البشر يقدرون "ينافسون" الذكاء الاصطناعي بدل ما يصيرون عبيد له. شركة The Boring Company تبي تحفر أنفاق تحت المدن عشان تحل مشكلة الازدحام. وماسك كمان أسس xAI عشان يبني ذكاء اصطناعي "يفهم الكون."
+  </p>
+  <p>
+    إيزاكسون يوصف ماسك بأنه يفكّر بمقياس مختلف عن أي رجل أعمال ثاني. بينما معظم المدراء التنفيذيين يفكّرون في الربع الجاي، ماسك يفكّر في القرن الجاي. هالشي يخلّيه ياخذ قرارات "مجنونة" بمعايير اليوم بس ممكن تكون عبقرية بمعايير المستقبل.
+  </p>
+
+  <div class="quote-block">
+    <p>"فيه احتمال كبير إن حضارتنا تنتهي. مو سؤال 'هل' بل 'متى'. السؤال الوحيد: هل بنكون جاهزين بخطة بديلة؟ المريخ هو الخطة البديلة."</p>
+  </div>
+
+  <p>
+    بس إيزاكسون يطرح سؤال مهم: هل ماسك فعلاً يبي ينقذ البشرية، ولا هو مدفوع بحاجة نفسية للسيطرة والتحكم؟ الكتاب يقترح إن الجواب "الاثنين." ماسك فعلاً يؤمن برسالته، بس كمان يستمتع بالسلطة والتحكم اللي تجيه من كونه الشخص اللي "ينقذ العالم." هالتعقيد هو اللي يخلّي شخصيته مثيرة للاهتمام.
+  </p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس المستفاد</div>
+    <p>التفكير الكبير مو ترف &mdash; هو ضرورة. ماسك يبيّن إن أكبر المشاريع في التاريخ بدأت بشخص واحد قال "ليش لا؟" بينما الكل يقول "مستحيل." مو لازم تكون ماسك عشان تفكّر كبير، بس لازم تتجاوز حدود اللي الناس حولك يقولون لك إنه "واقعي."</p>
+  </div>
+
+  <div class="back-top">
+    <a href="#toc">&#x2191; الرجوع للفهرس</a>
+  </div>
+</article>
+
+<!-- ==================== CHAPTER 8 ==================== -->
+<article class="chapter" id="ch8">
+  <div class="chapter-header">
+    <div class="chapter-number">8</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الدروس من حياة ماسك</div>
+      <div class="chapter-title-en">Lessons from Musk's Life</div>
+    </div>
+  </div>
+
+  <span class="section-label">&#x1F3AF; التفكير من المبادئ الأولى</span>
+  <p>
+    أهم درس من حياة ماسك هو مفهوم "التفكير من المبادئ الأولى" (First Principles Thinking). بدل ما تقبل الافتراضات اللي الكل يسلّم فيها، ترجع للأساسيات وتسأل: ليش نسوّيها بهالطريقة؟ هل فيه طريقة أحسن؟ ماسك استخدم هالمبدأ في كل شي &mdash; لمّا قالوا له إن الصاروخ يكلّف 130 مليون، سأل: إيش المواد الخام اللي يحتاجها الصاروخ وكم تكلّف؟ الجواب كان 2% من سعر الصاروخ. يعني 98% من التكلفة مبالغ فيها.
+  </p>
+  <p>
+    الدرس الثاني هو تحمّل المخاطر. ماسك حط كل ثروته في سبيس إكس وتيسلا وكاد يفلس. معظم الناس ما يقدرون يسوّون كذا &mdash; ومو المطلوب. بس الدرس مو إنك تراهن بكل شي، الدرس إنك لازم تكون مستعد تتحمّل خسائر حقيقية عشان تحقق أهداف حقيقية. إذا ما أنت مستعد تخسر، ما بتربح شي يستاهل.
+  </p>
+
+  <span class="section-label">&#x23F0; أخلاقيات العمل الخارقة</span>
+  <p>
+    ماسك يشتغل 80 إلى 120 ساعة في الأسبوع. ينام في المصانع. يرد على الإيميلات الساعة 3 الفجر. هالشي مو طبيعي ومو صحي، وإيزاكسون ما يحاول يلمّعه. بس الحقيقة إن كثير من إنجازات ماسك كانت مستحيلة بدون هالمستوى من التفاني المجنون. السؤال اللي يطرحه الكتاب: هل الإنجاز يستاهل الثمن الشخصي؟
+  </p>
+
+  <div class="quote-block">
+    <p>"ما أحد يغيّر العالم وهو يشتغل 40 ساعة في الأسبوع. ممكن تبني حياة مريحة، بس ما بتغيّر شي. التغيير يحتاج هوس. والهوس مؤلم."</p>
+  </div>
+
+  <p>
+    بس فيه الجانب المظلم: ماسك مطلّق عدة مرات، علاقته مع بعض أطفاله صعبة، ما عنده أصدقاء حقيقيين كثير. إيزاكسون يسأل: هل كان ممكن ماسك يحقق كل هالإنجازات ويكون إنسان "طبيعي" في حياته الشخصية؟ الكتاب يقترح إن الجواب لا &mdash; إن نفس الصفات اللي تخلّيه عبقري في الشغل هي نفسها اللي تدمّر حياته الشخصية. هل هذا يعني إنك لازم تختار بين العظمة والسعادة؟ مو بالضرورة &mdash; بس في حالة ماسك، يبدو إن الخيار انسوّى من زمان.
+  </p>
+
+  <div class="insight-box">
+    <div class="insight-title">&#x1F50D; الخلاصة النهائية</div>
+    <p>إيلون ماسك مو قدوة مثالية ومو شرير مطلق. هو إنسان معقد بإنجازات خارقة وعيوب عميقة. الكتاب ما يقول لك "كن مثل ماسك" &mdash; يقول لك "افهم ماسك." وإذا فهمته، بتفهم شي مهم عن الطبيعة البشرية: إن القوة والضعف أحيانًا وجهين لعملة واحدة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">&#x1F4A1; الدرس الأخير</div>
+    <p>خذ من ماسك اللي ينفعك واترك اللي ما ينفعك. خذ التفكير من المبادئ الأولى. خذ الجرأة على الأحلام الكبيرة. خذ الإصرار اللي ما يوقف. بس لا تنسى إن حياتك الشخصية وعلاقاتك وصحتك النفسية أشياء ما تستاهل تضحّي فيها &mdash; حتى لو تبي تغيّر العالم.</p>
+  </div>
+
+  <div class="back-top">
+    <a href="#toc">&#x2191; الرجوع للفهرس</a>
+  </div>
+</article>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <h3>&#x1F680; إيلون ماسك &mdash; والتر إيزاكسون</h3>
+  <p>
+    هالكتاب مو مجرد سيرة ذاتية &mdash; هو رحلة داخل عقل واحد من أكثر الشخصيات تأثيرًا وإثارة للجدل في عصرنا.
+    من طفل متنمَّر عليه في جنوب أفريقيا إلى أغنى رجل في العالم يبي يوصّل البشر للمريخ.
+  </p>
+  <p>
+    إيزاكسون يعطيك الصورة كاملة بدون تلميع أو تشويه: العبقرية والجنون، الإنجاز والدمار، الحلم والثمن.
+    وفي النهاية يخلّيك أنت تقرر: هل ماسك بطل ولا شرير؟ ولا ممكن يكون الاثنين؟
+  </p>
+  <p>
+    الكتاب يستاهل القراءة سواء كنت معجب بماسك أو ما تطيقه &mdash; لأنه في النهاية كتاب عن الطبيعة البشرية
+    وعن السؤال الأبدي: كم أنت مستعد تدفع عشان تحقق حلمك؟
+  </p>
+  <div class="disclaimer">
+    هذا الملخص للأغراض التعليمية فقط &mdash; ننصح بقراءة الكتاب كاملاً للاستفادة القصوى.
+    <br>
+    &copy; ملخص بالعامية السعودية &mdash; 2026
+  </div>
+</footer>
+
+</body>
+</html>

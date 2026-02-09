@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شو دوج: مذكرات مؤسس نايكي - ملخص شامل | فيل نايت</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #e67e22; border-radius: 4px; }
+  .hero { background: linear-gradient(135deg, #4a2a0a 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #e67e22; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(230, 126, 34, 0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #e67e22; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(230, 126, 34, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(230, 126, 34, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #4a2a0a, #1a1a2e); border: 2px solid #4a2a0a; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section::before { content: ''; position: absolute; top: -15px; right: 30px; font-size: 1.8rem; background: #1a1a2e; padding: 0 10px; }
+  .problem-section h2 { font-size: 1.6rem; color: #e67e22; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: ''; position: absolute; right: 0; color: #e67e22; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #4a2a0a; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #e67e22; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(230, 126, 34, 0.1); color: #e67e22; transform: translateX(-4px); }
+  .toc-num { background: #e67e22; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #4a2a0a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #e67e22; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #4a2a0a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #e67e22; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(230, 126, 34, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #e67e22, #d35400); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #e67e22; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(230, 126, 34, 0.12); color: #e67e22; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(230, 126, 34, 0.06); border-right: 4px solid #e67e22; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(230, 126, 34, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(74, 42, 10, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(230, 126, 34, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #e67e22; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(39, 174, 96, 0.08); border: 1px solid rgba(39, 174, 96, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #27ae60; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #b0d0b0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(230, 126, 34, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; }
+  .back-top a:hover { color: #e67e22; }
+  .footer { background: linear-gradient(145deg, #4a2a0a, #1a1a2e); border-top: 3px solid #e67e22; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(230, 126, 34, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } }
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="book-icon">&#128095;</span>
+    <h1>شو دوج: مذكرات مؤسس نايكي</h1>
+    <div class="subtitle">Shoe Dog: A Memoir by the Creator of Nike</div>
+    <div class="author">فيل نايت &mdash; Phil Knight</div>
+    <div class="meta-info">
+      <span>مذكرات</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>قصة نايكي</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>ليش تقرأ هالكتاب؟</h2>
+  <p>تبي تعرف كيف شركة نايكي &mdash; أكبر شركة أحذية رياضية في العالم &mdash; بدأت من شنطة سيارة؟ فيل نايت يحكي لك قصته الحقيقية بكل صراحة: الفشل، الديون، الأزمات، الدموع، وبعدين النجاح اللي ما كان أحد يتوقعه.</p>
+  <p>هالكتاب مو مجرد قصة نجاح تجاري &mdash; هو قصة إنسانية فيها:</p>
+  <ul>
+    <li>شاب عمره أربعة وعشرين سنة عنده حلم "مجنون" وما أحد يأخذه بجد</li>
+    <li>شركة عاشت على حافة الإفلاس لسنوات طويلة</li>
+    <li>منافسة شرسة ضد عمالقة مثل أديداس وبوما</li>
+    <li>خسارة شخصية مؤلمة غيّرت نظرة فيل للحياة</li>
+    <li>دروس في الإصرار والشجاعة ما تلقاها في كتب الأعمال العادية</li>
+  </ul>
+</section>
+
+<!-- TOC -->
+<nav class="toc" id="top">
+  <h2>فهرس الملخص</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span> الفكرة المجنونة</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span> الشركة الأولى</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span> الأزمات المالية</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span> ولادة نايكي</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span> المنافسة مع أديداس</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span> الاكتتاب العام</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span> الخسارة الشخصية</a>
+    <a href="#ch8" class="toc-item"><span class="toc-num">8</span> دروس من رحلة نايكي</a>
+  </div>
+</nav>
+
+<!-- Intro Section -->
+<section class="intro-section">
+  <h2>مقدمة عن الكتاب</h2>
+  <p>شو دوج يعني "مهووس بالأحذية" &mdash; وهذا بالضبط اللي كان عليه فيل نايت. الكتاب هذا مذكراته الشخصية عن السنوات من 1962 لـ 1980، من لحظة ما طرأت عليه الفكرة وهو يركض في الصباح، لحظة ما صارت نايكي شركة عالمية.</p>
+  <p>فيل نايت كتب هالكتاب بأسلوب صريح وعاطفي غير معتاد من مؤسس شركة بمليارات الدولارات. يحكي عن مخاوفه وشكوكه وأخطائه بدون تجميل. وهالصراحة هي اللي خلّت الكتاب من أنجح كتب المذكرات في التاريخ.</p>
+  <p>بيل غيتس قال إنه أحسن كتاب قرأه في حياته. ووارن بافيت قال إنه ما يقدر يحطه من يده. يعني مو بس كتاب للرياضيين &mdash; هو كتاب لأي واحد عنده حلم ويبي يحققه.</p>
+</section>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الفكرة المجنونة</div>
+      <div class="chapter-title-en">The Crazy Idea</div>
+    </div>
+  </div>
+
+  <span class="section-label">ركضة غيّرت التاريخ</span>
+  <p>سنة 1962، فيل نايت كان شاب عمره أربعة وعشرين سنة، خريج ماجستير إدارة أعمال من ستانفورد، وما يعرف شو يبي يسوي في حياته. بس كان يعرف شي واحد: يحب الركض. وكان عنده فكرة كتبها كبحث في الجامعة &mdash; إن الأحذية الرياضية اليابانية تقدر تنافس الأحذية الألمانية (أديداس وبوما) اللي مسيطرة على السوق.</p>
+
+  <p>بدل ما يدوّر وظيفة عادية، سافر لليابان وراح لشركة اسمها أونيتسوكا تايغر (اللي صارت أسيكس بعدين). دخل على المدير وقال له إنه يمثل شركة أمريكية تبي توزع أحذيتهم في أمريكا. المشكلة؟ ما كان عنده شركة! اخترع اسم على المكان: "بلو ريبون سبورتس".</p>
+
+  <div class="quote-block">
+    <p>قلت لنفسي: خل الناس يقولون عن فكرتك إنها مجنونة. خلهم يضحكون. بس لا توقف. لا تتوقف أبد. حتى لو ما تعرف وين الطريق يوديك، لا تتوقف.</p>
+  </div>
+
+  <p>اليابانيين وافقوا وأرسلوا له عينات. فيل رجع أمريكا وبدأ يبيع الأحذية من شنطة سيارته في سباقات الركض. كان يروح المضامير ويعرض على العدّائين. بعض الأحذية باعها وبعضها رجعوها. بس كل حذاء ينباع كان يحس إن حلمه يقرب شوي.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>أحياناً الفكرة اللي تبدو مجنونة هي الفكرة اللي تستاهل تتبعها. فيل نايت ما كان عنده خطة محكمة ولا رأس مال &mdash; كان عنده بس شغف وشجاعة إنه يبدأ. وهذا كان كافي.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>أبو فيل &mdash; اللي كان ناشر صحيفة &mdash; أعطاه أول قرض بقيمة خمسين دولار عشان يطلب أول شحنة أحذية. يعني أكبر شركة أحذية في العالم بدأت بخمسين دولار!</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الشركة الأولى</div>
+      <div class="chapter-title-en">Blue Ribbon Sports</div>
+    </div>
+  </div>
+
+  <span class="section-label">البدايات المتواضعة</span>
+  <p>شركة بلو ريبون سبورتس ما كانت شركة بالمعنى الحقيقي &mdash; كانت فيل نايت وصاحبه ومدربه بيل باورمان. باورمان كان مدرب ألعاب القوى في جامعة أوريغون، وكان مهووس بتصميم أحذية أخف وأحسن لعدّائيه. الاثنين حطوا خمسمئة دولار لكل واحد وبدأوا.</p>
+
+  <p>فيل كان يشتغل محاسب في النهار ويبيع أحذية في الليل وعطل نهاية الأسبوع. يحمل الأحذية في شنطة سيارته ويروح سباقات الركض وملاعب الجامعات. أول موظف عنده كان جيف جونسون &mdash; واحد مهووس بالأحذية أكثر منه &mdash; وكان يبيع من سيارته هو بعد.</p>
+
+  <div class="quote-block">
+    <p>ما كنا نبيع أحذية &mdash; كنا نبيع إيمان. كل عدّاء يلبس أحذيتنا كان يحس إنه أسرع وأقوى. وهالشعور ما له سعر.</p>
+  </div>
+
+  <p>المبيعات بدأت تنمو بسرعة. من ثمانية آلاف دولار في السنة الأولى لعشرين ألف، لأربعين ألف. بس المشكلة إن كل دولار يدخل كان يروح يشتري بضاعة أكثر. ما كان في ربح حقيقي &mdash; كل شي يُعاد استثماره. فيل كان يعيش على معاشه كمحاسب ويحط كل فلس من الأحذية في الشركة.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>أول موظفين في أي شركة ناجحة مو الأذكى أو الأكفأ &mdash; هم الأكثر شغف وإيمان بالفكرة. جيف جونسون ما كان يشتغل عشان المعاش &mdash; كان يشتغل عشان يحب الأحذية والركض.</p>
+  </div>
+
+  <p>باورمان كان يجرب تصاميم جديدة طول الوقت. يقص أحذية ويعيد تركيبها ويجرّبها على عدّائيه. مرة دمّر حذاء واحد من العدّائين عشان يجرب تصميم جديد! هالهوس بالتحسين المستمر هو اللي ميّز نايكي عن غيرها من البداية.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>فيل تزوج بيني &mdash; اللي صارت أول موظفة في الشركة بشكل غير رسمي. كانت تساعده في الحسابات والطلبات. يعني نايكي كانت حرفياً شغل عائلة.</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الأزمات المالية</div>
+      <div class="chapter-title-en">Financial Crises</div>
+    </div>
+  </div>
+
+  <span class="section-label">على حافة الهاوية</span>
+  <p>هالفصل هو أكثر فصل يخلّيك تحس بالتوتر. فيل نايت يحكي كيف كانت نايكي على حافة الإفلاس لسنوات &mdash; مو أسابيع، سنوات! المشكلة كانت بسيطة بس قاتلة: المبيعات تنمو بسرعة جنونية، بس كل نمو يحتاج بضاعة أكثر، والبضاعة تحتاج فلوس ما عندهم.</p>
+
+  <p>البنوك كانت تعطيهم قروض بالكاد تكفي. وكل ما يطلبون أكثر، البنك يهددهم. فيل كان ينام وهو يفكر: بكرة البنك ممكن يسحب القرض ونطيح. كل يوم كان يوم جديد من القلق. مرة البنك فعلاً جمّد حسابهم وكادوا ما يقدرون يدفعون رواتب الموظفين.</p>
+
+  <div class="quote-block">
+    <p>كنت خائف كل يوم. ما في يوم واحد ما حسيت فيه إن كل شي ممكن ينهار. بس الخوف ما وقفني &mdash; كان يدفعني أركض أسرع.</p>
+  </div>
+
+  <p>علاقة فيل مع بنك فيرست ناشيونال كانت مثل علاقة سامة. يحتاجهم بس ما يثقون فيه. مدير البنك كان يشك إن فيل يخبّي عليهم وإن الأرقام مو حقيقية. وفيل كان فعلاً أحياناً يتلاعب بالأرقام عشان يحصل على قروض أكبر &mdash; وهو يعترف بهالشي في الكتاب بكل صراحة.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>النمو السريع ممكن يقتل الشركة مثل ما يقتلها الركود. لازم توازن بين الطموح والواقعية المالية. وأهم شي: لا تخبّي المشاكل &mdash; واجهها بصراحة حتى لو مؤلمة.</p>
+  </div>
+
+  <p>في أصعب لحظة، لما البنك الأمريكي رفض يتعامل معهم، فيل لقى بنك ياباني &mdash; نيسهو إيواي &mdash; وافق يموّلهم. هالبنك أنقذ نايكي من الموت. فيل يقول إن لو ما لقى هالتمويل، نايكي كانت انتهت في بداية السبعينات ولا أحد كان سمع فيها.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>فيل نايت اكتشف إن رجال الأعمال الناجحين ما يتكلمون عن الأزمات المالية اللي مروا فيها عشان ما يبغون يخربون صورتهم. بس الحقيقة إن كل شركة ناجحة كادت تموت مرة على الأقل.</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">ولادة نايكي</div>
+      <div class="chapter-title-en">The Birth of Nike</div>
+    </div>
+  </div>
+
+  <span class="section-label">الاسم والعلامة</span>
+  <p>سنة 1971، الشركة احتاجت تغيّر اسمها من بلو ريبون سبورتس لشي أقوى. فيل وفريقه قعدوا يفكرون في أسماء. جيف جونسون &mdash; أول موظف &mdash; جاه الاسم في حلم بالليل: "نايكي"، اسم إلهة النصر عند الإغريق. فيل ما كان متحمس كثير بس وافق عشان ما لقوا أحسن منه.</p>
+
+  <p>والشعار؟ قصة الشعار أعجب. طالبة تصميم اسمها كارولين ديفيدسون صمّمت "السووش" &mdash; العلامة المميزة &mdash; وأخذت عليها خمسة وثلاثين دولار بس! فيل قال لها وقتها: "ما أحبه بس يمكن يعجبني مع الوقت." والحين السووش من أشهر الشعارات في التاريخ.</p>
+
+  <div class="quote-block">
+    <p>ما أحد فينا كان متحمس للاسم أو الشعار. بس مع الوقت، اكتشفنا إن الاسم والشعار ما يهمون &mdash; المهم الروح اللي وراهم.</p>
+  </div>
+
+  <p>بس الإبداع الحقيقي جاء من باورمان. في صباح يوم، وهو يتفرج على زوجته تسوي وافل (فطيرة)، جاته فكرة: ليش ما نحط نعل الحذاء بنفس شكل قالب الوافل؟ حط مطاط في قالب الوافل الحقيقي تبع زوجته وسوّى أول نعل وافل. هالنعل غيّر صناعة الأحذية الرياضية للأبد &mdash; كان أخف وأقوى قبضة على الأرض.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>الابتكار ما يحتاج مختبرات فخمة &mdash; يحتاج عقل فضولي يشوف الفرص في الأشياء العادية. باورمان شاف قالب وافل وتخيّل حذاء. هذا هو التفكير الإبداعي الحقيقي.</p>
+  </div>
+
+  <p>نعل الوافل صار ميزة نايكي التنافسية. الرياضيين بدأوا يلاحظون الفرق وبدأوا يطلبون أحذية نايكي بالاسم. المبيعات قفزت. وفجأة، الشركة اللي كانت تبيع أحذية يابانية من شنطة سيارة صارت تصنع أحذيتها الخاصة وتنافس الكبار.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>فيل نايت عوّض كارولين ديفيدسون بعدين &mdash; أعطاها أسهم في نايكي وخاتم ذهبي شكل السووش. الأسهم هذي صارت تساوي ملايين. يعني الخمسة وثلاثين دولار رجعوا أضعاف مضاعفة.</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">المنافسة مع أديداس</div>
+      <div class="chapter-title-en">Competing with Adidas</div>
+    </div>
+  </div>
+
+  <span class="section-label">داود ضد جالوت</span>
+  <p>أديداس كانت عملاق صناعة الأحذية الرياضية. عندهم عقود مع كل الرياضيين الكبار، عندهم مصانع في كل مكان، عندهم ميزانية إعلانات تساوي أضعاف إيرادات نايكي كلها. فيل نايت كان يعرف إنه ما يقدر ينافسهم بنفس طريقتهم &mdash; لازم يلعب لعبة مختلفة.</p>
+
+  <p>استراتيجية فيل كانت ذكية: بدل ما ينافس أديداس في الأحذية التقليدية، ركّز على أحذية الركض &mdash; سوق صغير أديداس ما تهتم فيه كثير. وركّز على الابتكار &mdash; أحذية أخف وأحسن تقنياً. ورياضيين حقيقيين يلبسون أحذيته مو عشان يدفع لهم، عشان فعلاً أحسن.</p>
+
+  <div class="quote-block">
+    <p>ما كنا نبي نكون أديداس. كنا نبي نكون نايكي. وهالفرق &mdash; إننا عرفنا مين حنا &mdash; هو اللي خلّانا ننتصر.</p>
+  </div>
+
+  <p>نقطة التحول الكبرى جت في أولمبياد 1972 في ميونخ. عدّائين أمريكيين لبسوا أحذية نايكي ونافسوا فيها. ما فازوا بذهب، بس الناس شافت العلامة الجديدة على أقدامهم. وبعدها، سوق الركض انفجر في أمريكا &mdash; الناس بدأت تركض للصحة، ونايكي كانت جاهزة بأحسن أحذية ركض في السوق.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>ما تحتاج تنافس العملاق في ملعبه. ابحث عن سوق صغير ما يهتم فيه وسيطر عليه. وبعدين توسّع. هذي استراتيجية "داود ضد جالوت" &mdash; اللي صغر حجمك يصير ميزتك عشان تتحرك أسرع.</p>
+  </div>
+
+  <p>سنة 1974، مبيعات نايكي وصلت لأربعة ملايين وثمانمئة ألف دولار. بعد ست سنوات وصلت لمئتين وسبعين مليون. هالنمو الجنوني ما كان متوقع حتى من فيل نفسه. نايكي ما بس نافست أديداس &mdash; صارت تهددها بشكل حقيقي.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>فيل نايت يعترف إن جزء من نجاحهم كان حظ &mdash; ثورة الركض في السبعينات جت في الوقت المثالي لنايكي. بس الحظ ما ينفع بدون استعداد. نايكي كانت جاهزة بالمنتج الصح في الوقت الصح.</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الاكتتاب العام</div>
+      <div class="chapter-title-en">Going Public</div>
+    </div>
+  </div>
+
+  <span class="section-label">من شركة خاصة لشركة عالمية</span>
+  <p>سنة 1980، نايكي طرحت أسهمها في البورصة. فيل نايت &mdash; اللي كان يبيع أحذية من شنطة سيارته قبل ثمانية عشر سنة &mdash; صار ملياردير على الورق. بس يقول إن اللحظة ما كانت سعيدة مثل ما يتخيّلها الناس. كانت مليانة مشاعر متناقضة.</p>
+
+  <p>من ناحية، الاكتتاب حل مشكلة الفلوس للأبد. ما عاد يحتاج يركض ورا البنوك ويتوسّل قروض. بس من ناحية ثانية، الشركة ما عادت ملكه لحاله. صار عنده مساهمين ومجلس إدارة وناس يبغون أرباح كل ربع سنة. الحرية اللي كان يحبها &mdash; إنه يسوي اللي يبيه &mdash; راحت شوي.</p>
+
+  <div class="quote-block">
+    <p>صرت "غني" بس ما حسيت إن شي تغيّر. نفس القلق، نفس الضغط، نفس الخوف من الفشل. الفلوس ما تشتري راحة البال.</p>
+  </div>
+
+  <p>فيل يحكي إنه في يوم الاكتتاب، بدل ما يحتفل، راح يركض. الركض كان دائماً علاجه &mdash; المكان اللي يفكر فيه ويرتاح. وبينما يركض، فكّر في كل الناس اللي ساعدوه في الطريق: باورمان، جيف جونسون، بيني زوجته، أبوه اللي أعطاه أول خمسين دولار.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>النجاح المالي مو نهاية الرحلة &mdash; هو بس محطة. فيل نايت اكتشف إن السعادة الحقيقية كانت في الرحلة نفسها: الصراعات، الانتصارات الصغيرة، الفريق اللي بناه. مو في الأرقام في حسابه البنكي.</p>
+  </div>
+
+  <p>بعد الاكتتاب، نايكي واجهت تحديات جديدة. ريبوك بدأت تنافسها في سوق أحذية الإيروبيك. نايكي خسرت حصة سوقية لأول مرة. فيل اضطر يغيّر استراتيجيته ويدخل سوق الموضة والحياة اليومية، مو بس الرياضة. وهذا التحول هو اللي خلّى نايكي تكبر أكثر وأكثر.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>فيل خلّى موظفيه الأوائل يستفيدون من الاكتتاب. ناس مثل جيف جونسون اللي كان يبيع أحذية من سيارته صاروا أثرياء. فيل يقول إن هالشي من أكثر الأشياء اللي تفرّحه.</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الخسارة الشخصية</div>
+      <div class="chapter-title-en">Personal Loss</div>
+    </div>
+  </div>
+
+  <span class="section-label">الجانب الإنساني</span>
+  <p>هالفصل هو أصعب فصل في الكتاب. فيل نايت يحكي عن ولده ماثيو اللي توفى في حادث غوص وعمره أربعة وثلاثين سنة. فيل يقول إن هالخسارة كانت أصعب شي مرّ عليه في حياته &mdash; أصعب من كل الأزمات المالية والمنافسة والضغط مجتمعين.</p>
+
+  <p>فيل يعترف إنه ما كان أب مثالي. كان مشغول ببناء نايكي وسافر كثير وفاته أشياء مهمة في حياة أولاده. يقول إن لو يرجع الزمن، كان يقضي وقت أكثر مع عائلته. هالندم واضح في كل كلمة يكتبها عن هالموضوع.</p>
+
+  <div class="quote-block">
+    <p>كل الأحذية في العالم، كل المليارات، كل الانتصارات &mdash; ما تساوي لحظة وحدة ثانية مع ماثيو. هالشي فهمته متأخر.</p>
+  </div>
+
+  <p>ماثيو كان يحب الغوص والمغامرات. وكان في شي من أبوه فيه &mdash; نفس الروح المغامرة ونفس الرغبة يكتشف العالم. فيل يحكي إنه كان فخور بولده بس ما قالها له بالشكل الكافي. وهالشي يأكله من جوا.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>النجاح في العمل ما يعوّض الفشل في العلاقات الشخصية. فيل نايت وصل لقمة النجاح المادي بس خسر شي ما يتعوّض. لازم توازن بين طموحك وعلاقاتك &mdash; عشان ما تحس بالندم لما يفوت الأوان.</p>
+  </div>
+
+  <p>بعد وفاة ماثيو، فيل تبرّع بمليارات الدولارات للجامعات والأعمال الخيرية. سمّى مبنى في جامعة ستانفورد باسم ماثيو. يقول إن التبرعات ما تخفف الألم، بس تعطيه إحساس إنه يسوي شي ذو معنى بدل ما يجلس ويتحسّر.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>فيل نايت قرر يكتب هالكتاب جزئياً عشان ماثيو. يبي يحكي القصة الحقيقية &mdash; بالحلو والمر &mdash; عشان أولاده وأحفاده يعرفون مين كان أبوهم فعلاً، مو بس الصورة اللي في المجلات.</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Chapter 8 -->
+<article class="chapter" id="ch8">
+  <div class="chapter-header">
+    <div class="chapter-number">8</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">دروس من رحلة نايكي</div>
+      <div class="chapter-title-en">Lessons from Nike's Journey</div>
+    </div>
+  </div>
+
+  <span class="section-label">الحكمة المستخلصة</span>
+  <p>في نهاية الكتاب، فيل نايت يلخّص الدروس اللي تعلّمها من رحلته الطويلة. أول درس وأهم درس: لا تتوقف. هو يقول إن الفرق بين اللي ينجحون واللي يفشلون مو الذكاء أو الحظ &mdash; هو الاستمرار. كل الناس يواجهون مشاكل، بس اللي يستمر هو اللي يوصل.</p>
+
+  <p>فيل يتكلم عن أهمية الفريق. يقول إنه ما بنى نايكي لحاله &mdash; بناها مع مجموعة من "المجانين" اللي آمنوا بنفس الحلم. باورمان اللي كان يذوب مطاط في قوالب الوافل. جيف جونسون اللي كان يبيع أحذية ويرسل رسائل حب للشركة. كل واحد فيهم أضاف شي ما كان ممكن بدونه.</p>
+
+  <div class="quote-block">
+    <p>نصيحتي للشباب: ابحث عن شغفك. لا تستقر على وظيفة أو مهنة أو حتى حياة &mdash; ابحث عن الشي اللي يخلّيك تصحى كل يوم متحمس. وبعدين اركض وراه. بكل قوتك. ولا تتوقف.</p>
+  </div>
+
+  <p>الدرس الثاني هو إن الشجاعة أهم من الكمال. فيل ما كان عنده خطة محكمة لما بدأ. ما كان يعرف شو يسوي نص الوقت. بس كان شجاع يبدأ وشجاع يستمر وشجاع يعترف بأخطائه. يقول إن الخطة المثالية اللي ما تنفّذ ما تسوى شي مقابل خطة ناقصة تنفّذها بشجاعة.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>فيل نايت يلخّص كل شي في كلمتين: "Just do it" &mdash; بس سوّها. لا تفكر كثير، لا تخطط كثير، لا تنتظر اللحظة المثالية. ابدأ الحين بالي عندك وحسّن في الطريق. هذي فلسفة نايكي وفلسفة حياة فيل نايت.</p>
+  </div>
+
+  <p>آخر شي يقوله فيل في الكتاب: "لو الله أعطاني فرصة أعيد كل شي من البداية، هل كنت أسويها؟ بدون تردد &mdash; نعم. بس كنت أقضي وقت أكثر مع عائلتي." وهالجملة تلخّص الكتاب كله &mdash; الشغف بالعمل والندم على اللي فات من الحياة الشخصية.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">نقطة مهمة</div>
+    <p>نايكي اليوم تسوى أكثر من مئة وخمسين مليار دولار وتوظّف أكثر من سبعين ألف شخص حول العالم. كل هالشي بدأ بفكرة "مجنونة" وخمسين دولار وشنطة سيارة. ليش فكرتك تكون أقل؟</p>
+  </div>
+
+  <div class="back-top"><a href="#top">&#8593; رجوع للفهرس</a></div>
+</article>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>شو دوج: مذكرات مؤسس نايكي</h3>
+  <p>تأليف: فيل نايت &mdash; Phil Knight</p>
+  <p>من أصدق وأجرأ المذكرات في عالم الأعمال &mdash; قصة حقيقية عن الحلم والإصرار والخسارة</p>
+  <div class="disclaimer">
+    هذا ملخص شامل للكتاب وليس بديلاً عن قراءته. الآراء المطروحة تمثل محتوى الكتاب. ننصح بشدة بقراءة الكتاب الأصلي للاستفادة الكاملة.
+  </div>
+</footer>
+
+</body>
+</html>

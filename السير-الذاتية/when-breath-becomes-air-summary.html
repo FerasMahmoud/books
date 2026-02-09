@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عندما يصبح النَفَس هواءً - ملخص شامل | بول كالانيثي</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #00cec9; border-radius: 4px; }
+  .hero { background: linear-gradient(135deg, #0a3a3a 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #00cec9; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(0, 206, 201, 0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #00cec9; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(0, 206, 201, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(0, 206, 201, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #0a3a3a, #1a1a2e); border: 2px solid #00a8a3; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section::before { content: '💡'; position: absolute; top: -15px; right: 30px; font-size: 1.8rem; background: #1a1a2e; padding: 0 10px; }
+  .problem-section h2 { font-size: 1.6rem; color: #00cec9; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '▸'; position: absolute; right: 0; color: #00cec9; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0a3a3a; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #00cec9; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(0, 206, 201, 0.1); color: #00cec9; transform: translateX(-4px); }
+  .toc-num { background: #00cec9; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0a3a3a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #00cec9; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0a3a3a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #00cec9; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(0, 206, 201, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #00cec9, #00a8a3); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(0, 206, 201, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #00cec9; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(0, 206, 201, 0.12); color: #00cec9; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(0, 206, 201, 0.06); border-right: 4px solid #00cec9; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '"'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(0, 206, 201, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(0, 168, 163, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(0, 206, 201, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(39, 174, 96, 0.08); border: 1px solid rgba(39, 174, 96, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #27ae60; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #b0d0b0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(0, 206, 201, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; }
+  .back-top a:hover { color: #00cec9; }
+  .footer { background: linear-gradient(145deg, #0a3a3a, #1a1a2e); border-top: 3px solid #00cec9; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(0, 206, 201, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } }
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">🫁</span>
+    <h1>عندما يصبح النَفَس هواءً</h1>
+    <div class="subtitle">When Breath Becomes Air</div>
+    <div class="author">بول كالانيثي — Paul Kalanithi</div>
+    <div class="meta-info">
+      <span>مذكرات</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>جراح أعصاب يواجه الموت</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>ليش هالكتاب مهم؟</h2>
+  <p>تخيل إنك جراح أعصاب في أرقى مستشفى بالعالم، عمرك ٣٦ سنة، قدامك مستقبل باهر... وفجأة تكتشف إنك مريض بسرطان الرئة المرحلة الرابعة. شو تسوي؟ هالكتاب يجاوبك.</p>
+  <ul>
+    <li>كيف تواجه الموت وأنت اللي كنت تحارب الموت عشان مرضاك؟</li>
+    <li>وش المعنى الحقيقي للحياة لما يكون عندك وقت محدود؟</li>
+    <li>كيف تبني إرث يبقى بعدك وأنت تعرف إن أيامك معدودة؟</li>
+    <li>ليش الكتابة تقدر تكون أقوى من الموت نفسه؟</li>
+  </ul>
+</section>
+
+<!-- TOC -->
+<nav class="toc" id="toc">
+  <h2>فهرس الملخص</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span> الطفل الذي أحب الكتب</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span> طريق الطب</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span> التشخيص</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span> المريض يصبح طبيباً</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span> البحث عن المعنى</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span> الأبوة في ظل الموت</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span> الكلمات الأخيرة</a>
+  </div>
+</nav>
+
+<!-- Intro Section -->
+<section class="intro-section">
+  <h2>مقدمة عن الكتاب</h2>
+  <p>هالكتاب كتبه بول كالانيثي وهو يعرف إنه بيموت. يعني مو كتاب عادي تقرأه وتنساه — هالكلمات كُتبت بدم وعرق إنسان يودّع الدنيا. بول كان جراح أعصاب في ستانفورد، من أذكى الأطباء اللي مرّوا على البرنامج، وفجأة صار هو المريض.</p>
+  <p>الكتاب نزل بعد وفاته سنة ٢٠١٦، وزوجته لوسي هي اللي أكملت الكتاب بخاتمة مؤثرة. صار من أكثر الكتب مبيعاً وأثّر بملايين الناس حول العالم. بس الشي اللي يميّزه إنه مو بس عن الموت — هو عن الحياة وكيف تعيشها صح.</p>
+</section>
+
+<!-- Chapter 1 -->
+<section class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الطفل الذي أحب الكتب</div>
+      <div class="chapter-title-en">The Boy Who Loved Books</div>
+    </div>
+  </div>
+  <span class="section-label">البداية</span>
+  <p>بول كالانيثي نشأ في عائلة تحب العلم والأدب. أبوه كان طبيب وأمه كانت تحرص إن أولادها يقرأون كل شي. يقول إنه من صغره كان يحس إن الكتب هي اللي تعطي الحياة معنى — مو بس معلومات، بس طريقة تفكير.</p>
+  <p>كان عنده شغف كبير بالأدب والفلسفة. يعني مو النوع اللي تتوقع يصير طبيب! كان يبي يصير كاتب أو فيلسوف. بس سؤال واحد ظل يلاحقه: وش العلاقة بين الدماغ والوعي؟ كيف كتلة من الأعصاب تقدر تنتج أفكار ومشاعر وأحلام؟</p>
+  <p>هالسؤال هو اللي خلاه يغيّر مساره بالكامل. قرر إنه بدل ما يدرس الإنسان من خلال الكتب، يدرسه من خلال الدماغ مباشرة. وهنا بدأت رحلته نحو الطب.</p>
+  <div class="quote-block">
+    <p>الأدب علّمني إن الحياة لها معنى. بس الطب هو اللي وريّاني كيف أحمي هالمعنى.</p>
+  </div>
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>أحياناً أكبر القرارات بحياتك تجي من سؤال بسيط ظل يلاحقك من صغرك. لا تتجاهل الأسئلة اللي ما تتركك — هي اللي ترسم طريقك.</p>
+  </div>
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</section>
+
+<!-- Chapter 2 -->
+<section class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">طريق الطب</div>
+      <div class="chapter-title-en">The Path to Medicine</div>
+    </div>
+  </div>
+  <span class="section-label">الرحلة الأكاديمية</span>
+  <p>بول دخل ستانفورد ودرس أدب إنجليزي وبيولوجيا بنفس الوقت. يعني الشخص هذا ما كان عادي — كان يجمع بين عالمين مختلفين تماماً. بعدها دخل كلية الطب وتخصص في جراحة الأعصاب، وهو من أصعب التخصصات الطبية على الإطلاق.</p>
+  <p>الإقامة الطبية في جراحة الأعصاب كانت جحيم حقيقي. ساعات عمل خرافية، ضغط نفسي ما يتحمله بشر، ومسؤولية حياة الناس على يدك كل يوم. بس بول كان يحب هالشي عشان كل عملية جراحية كانت تقرّبه من فهم العلاقة بين الدماغ والإنسان.</p>
+  <p>خلال سنوات الإقامة، شاف بول الموت مرات كثيرة. كان يفقد مرضى، كان يشوف عائلات تنهار. بس كان دايماً على الجانب الثاني — الجانب اللي يحاول ينقذ. ما كان يتخيّل إنه يوم من الأيام بيكون هو اللي يحتاج الإنقاذ.</p>
+  <div class="quote-block">
+    <p>جراحة الأعصاب مو بس شغل — هي علاقة بين يدك ودماغ شخص ثاني. كل حركة غلط ممكن تغيّر إنسان بالكامل.</p>
+  </div>
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>التميّز يتطلب تضحيات ضخمة. بول ضحّى بسنوات من حياته عشان يتقن تخصصه، بس هالتضحيات هي اللي صنعت منه الطبيب والإنسان اللي صار.</p>
+  </div>
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>بول كان قريب جداً من إنهاء الإقامة والحصول على منصب أكاديمي مرموق. يعني كان حرفياً على بُعد خطوات من تحقيق كل أحلامه المهنية.</p>
+  </div>
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</section>
+
+<!-- Chapter 3 -->
+<section class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">التشخيص</div>
+      <div class="chapter-title-en">The Diagnosis</div>
+    </div>
+  </div>
+  <span class="section-label">اللحظة اللي غيّرت كل شي</span>
+  <p>في عمر ٣٦ سنة، وهو تقريباً خالص من الإقامة، بول بدأ يحس بآلام في ظهره ونقص بوزنه. كطبيب، كان يعرف وش هالأعراض تعني. بس كان يتجاهلها — عشان الاعتراف بالحقيقة أصعب من تجاهلها.</p>
+  <p>لما سوّى الأشعة المقطعية، شاف بعينه الأورام منتشرة في رئتيه. سرطان رئة، مرحلة رابعة. يعني الطبيب اللي كان يقرأ أشعة مرضاه كل يوم، صار يقرأ أشعة نفسه ويشوف الموت فيها.</p>
+  <p>بول يوصف هاللحظة بشكل مؤثر جداً — كيف المستقبل اللي كان يخطط له انهار بثانية. كل الأحلام، المنصب الأكاديمي، العيادة الخاصة، كل شي تبخّر. وصار السؤال مو "وش بسوي بحياتي؟" بل "كم باقي لي من حياة؟"</p>
+  <p>الشي اللي يكسر القلب إن بول كان يعرف بالضبط وش بيصير له طبياً. ما كان عنده رفاهية الجهل اللي عند أغلب المرضى. كان يعرف الإحصائيات، يعرف نسب النجاة، يعرف كيف المرض بيتطور.</p>
+  <div class="quote-block">
+    <p>قبل التشخيص، المستقبل كان محيط واسع من الاحتمالات. بعده، صار كل شي ضيّق ومحدود — بس بطريقة غريبة، صار أوضح.</p>
+  </div>
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>الحياة ما تنتظر أحد. ممكن تكون على قمة العالم وبلحظة ينقلب كل شي. عشان كذا لازم تعيش كل يوم كأنه مهم — عشان فعلاً هو مهم.</p>
+  </div>
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</section>
+
+<!-- Chapter 4 -->
+<section class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">المريض يصبح طبيباً</div>
+      <div class="chapter-title-en">When the Doctor Becomes Patient</div>
+    </div>
+  </div>
+  <span class="section-label">انعكاس الأدوار</span>
+  <p>من أقوى أجزاء الكتاب لما بول يوصف كيف انقلبت الأدوار. هو اللي كان يلبس البالطو الأبيض ويدخل على المرضى، صار هو اللي يلبس ثوب المستشفى وينتظر الأطباء يدخلون عليه.</p>
+  <p>بول يحكي عن الإحساس الغريب لما تكون طبيب ومريض بنفس الوقت. كان يسمع الأطباء يتكلمون ويفهم كل كلمة طبية، بس بنفس الوقت كان يحس بالخوف والضعف زي أي مريض ثاني. المعرفة الطبية ما حمته من الألم النفسي.</p>
+  <p>الشي اللي يلفت الانتباه إن بول ما استسلم. بعد ما بدأ العلاج الكيماوي وتحسّنت حالته شوي، رجع لغرفة العمليات! يعني رجع يسوي جراحات أعصاب وهو مريض سرطان. عشان كان يحس إن هويته كجراح هي جزء أساسي من معنى حياته.</p>
+  <div class="quote-block">
+    <p>ما تبي تكون ضحية للمرض. تبي تكون إنسان يعيش مع المرض — وهالفرق كبير.</p>
+  </div>
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>هويتك مو بس وظيفتك، بس وظيفتك ممكن تكون جزء كبير من معنى حياتك. لما تلاقي الشي اللي يعطيك معنى، تمسّك فيه حتى في أصعب الظروف.</p>
+  </div>
+  <div class="insight-box">
+    <div class="insight-title">تأمّل عميق</div>
+    <p>بول يقول إن أصعب شي مو الألم الجسدي — أصعب شي إنك تفقد مستقبلك. إنك تعرف إن كل الخطط اللي حطيتها ما بتتحقق. هذا الألم اللي ما فيه مسكّن.</p>
+  </div>
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</section>
+
+<!-- Chapter 5 -->
+<section class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">البحث عن المعنى</div>
+      <div class="chapter-title-en">Searching for Meaning</div>
+    </div>
+  </div>
+  <span class="section-label">الأسئلة الكبرى</span>
+  <p>هنا يوصل بول للأسئلة اللي كلنا نخاف منها: وش اللي يخلي الحياة تستاهل؟ لما تعرف إن وقتك محدود، وش الشي اللي فعلاً يهمّك؟ هل هو الشهرة؟ الفلوس؟ العلاقات؟ الإنجازات؟</p>
+  <p>بول رجع لحبه القديم — الأدب والفلسفة. بدأ يقرأ بشكل مكثف عن معنى الحياة والموت. بس الفرق إنه هالمرة ما كان يقرأ من باب الفضول الأكاديمي — كان يقرأ عشان يلاقي إجابات حقيقية لحياته هو.</p>
+  <p>واكتشف إن المعنى مو شي تلاقيه جاهز — المعنى شي تصنعه. كل يوم تعيشه بوعي وقصد، كل لحظة تختار فيها إنك تكون حاضر ومنتبه، هذا هو المعنى. مو لازم تسوي إنجازات خرافية — بس لازم تعيش بصدق.</p>
+  <div class="quote-block">
+    <p>ما تحتاج تلاقي معنى كبير للحياة كلها. تحتاج بس تلاقي معنى لهاليوم — وتكرر كل يوم.</p>
+  </div>
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>المعنى مو وجهة توصل لها — المعنى طريقة تعيش فيها. كل يوم تقدر تصنع معنى جديد من خلال اختياراتك وعلاقاتك والأشياء اللي تركّز عليها.</p>
+  </div>
+  <div class="insight-box">
+    <div class="insight-title">فكرة مهمة</div>
+    <p>بول يقول إن مواجهة الموت ما خلته يكره الحياة — بالعكس، خلته يحبها أكثر. لما تعرف إن الوقت محدود، كل لحظة تصير أغلى وأحلى.</p>
+  </div>
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</section>
+
+<!-- Chapter 6 -->
+<section class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الأبوة في ظل الموت</div>
+      <div class="chapter-title-en">Fatherhood in the Shadow of Death</div>
+    </div>
+  </div>
+  <span class="section-label">الإرث الحقيقي</span>
+  <p>من أجمل وأصعب القرارات اللي اتخذها بول وزوجته لوسي: قرروا يجيبون طفلة. نعم، وهو مريض سرطان مرحلة رابعة، قرروا يصيرون أهل. ليش؟ عشان حسّوا إن الحب ما ينقص بالموت — الحب يزيد.</p>
+  <p>بنتهم كادي وُلدت وبول كان لسه حي. يوصف لحظة ما شافها لأول مرة بكلمات تكسر القلب. كان يعرف إنه ما بيشوفها تكبر، ما بيوصلها للمدرسة، ما بيشوفها تتخرج. بس كان سعيد إنه شافها ولو ليوم واحد.</p>
+  <p>كتب لبنته رسالة في الكتاب — من أجمل الأشياء اللي ممكن تقرأها في حياتك. يقول لها إنه يتمنى لها حياة مليانة بالمعنى، وإن حبه لها أكبر من الموت نفسه.</p>
+  <p>وهنا تحس إن بول فهم وش الإرث الحقيقي. مو الأبحاث العلمية ولا الجراحات الناجحة — الإرث الحقيقي هو الحب اللي تتركه في قلوب الناس اللي بعدك.</p>
+  <div class="quote-block">
+    <p>يا كادي، ما أقدر أكون معاك طول حياتك. بس أبيك تعرفين إن أبوك أحبك بكل ذرة في جسمه، حتى الذرات اللي كانت تحاربه.</p>
+  </div>
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>الحب مو عن الوقت اللي تقضيه مع شخص — الحب عن العمق. ممكن تحب شخص بعمق خلال أشهر قليلة أكثر من ناس عاشوا عمر كامل بدون ما يحسّون بشي.</p>
+  </div>
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</section>
+
+<!-- Chapter 7 -->
+<section class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الكلمات الأخيرة</div>
+      <div class="chapter-title-en">Final Words</div>
+    </div>
+  </div>
+  <span class="section-label">الوداع والإرث</span>
+  <p>بول ما قدر يكمل الكتاب. توفي في مارس ٢٠١٥ وهو عمره ٣٧ سنة. الكتاب ينتهي بشكل مفاجئ — زي ما الحياة انتهت بشكل مفاجئ. بس زوجته لوسي أكملت الكتاب بخاتمة مؤثرة جداً.</p>
+  <p>لوسي تحكي عن أيامه الأخيرة، كيف كان يكتب حتى وهو ما يقدر يتنفس زين. كيف كان يحاول ينهي الكتاب عشان يعرف إن هالكلمات هي الشي الوحيد اللي بيبقى منه. الكتابة كانت طريقته يحارب الموت.</p>
+  <p>لوسي تقول إن بول في آخر أيامه كان هادي وسلام. ما كان خايف من الموت قد ما كان حزين إنه بيفارق الناس اللي يحبهم. وهالشي يوريك إن الإنسان في النهاية ما يخاف من الموت — يخاف من الفراق.</p>
+  <p>الكتاب ينتهي بس الأثر ما ينتهي. كل شخص قرأ هالكتاب تغيّرت نظرته للحياة شوي. وهذا بحد ذاته هو أكبر إنجاز ممكن أي إنسان يحققه — إنه يغيّر الناس حتى بعد ما يموت.</p>
+  <div class="quote-block">
+    <p>ما تقدر تحدد متى تموت. بس تقدر تحدد كيف تعيش — وهالشي أهم بكثير.</p>
+  </div>
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>الإرث الحقيقي مو فلوس ولا ممتلكات — الإرث هو الأثر اللي تتركه في قلوب الناس والكلمات اللي تبقى بعدك. بول ترك كتاب غيّر حياة الملايين، وهذا أقوى من أي إنجاز طبي.</p>
+  </div>
+  <div class="insight-box">
+    <div class="insight-title">الرسالة النهائية</div>
+    <p>هالكتاب يعلّمك إن الحياة قصيرة بس عميقة. وإن كل يوم تعيشه بوعي ومعنى هو يوم ما ضاع. لا تنتظر تشخيص مرض عشان تبدأ تعيش — ابدأ الحين.</p>
+  </div>
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>عندما يصبح النَفَس هواءً — When Breath Becomes Air</h3>
+  <p>بول كالانيثي — Paul Kalanithi</p>
+  <p>كتاب نُشر سنة ٢٠١٦ بعد وفاة المؤلف</p>
+  <p>من أكثر المذكرات تأثيراً في القرن الحادي والعشرين</p>
+  <div class="disclaimer">
+    هالملخص للفائدة التعليمية فقط ولا يغني عن قراءة الكتاب الأصلي. جميع الحقوق محفوظة للمؤلف والناشر.
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأضواء الخضراء - ملخص شامل | ماثيو ماكونهي</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #27ae60; border-radius: 4px; }
+  .hero { background: linear-gradient(135deg, #0a3a1a 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #27ae60; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(39, 174, 96, 0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #27ae60; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(39, 174, 96, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(39, 174, 96, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #0a3a1a, #1a1a2e); border: 2px solid #1e8449; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section::before { content: '💡'; position: absolute; top: -15px; right: 30px; font-size: 1.8rem; background: #1a1a2e; padding: 0 10px; }
+  .problem-section h2 { font-size: 1.6rem; color: #27ae60; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '▸'; position: absolute; right: 0; color: #27ae60; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0a3a1a; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #27ae60; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(39, 174, 96, 0.1); color: #27ae60; transform: translateX(-4px); }
+  .toc-num { background: #27ae60; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0a3a1a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #27ae60; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0a3a1a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #27ae60; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(39, 174, 96, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #27ae60, #1e8449); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #27ae60; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(39, 174, 96, 0.12); color: #27ae60; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(39, 174, 96, 0.06); border-right: 4px solid #27ae60; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '"'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(39, 174, 96, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(30, 132, 73, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(39, 174, 96, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #27ae60; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(0, 206, 201, 0.08); border: 1px solid rgba(0, 206, 201, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #b0d0d0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(39, 174, 96, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; }
+  .back-top a:hover { color: #27ae60; }
+  .footer { background: linear-gradient(145deg, #0a3a1a, #1a1a2e); border-top: 3px solid #27ae60; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(39, 174, 96, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } }
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">🟢</span>
+    <h1>الأضواء الخضراء</h1>
+    <div class="subtitle">Greenlights</div>
+    <div class="author">ماثيو ماكونهي — Matthew McConaughey</div>
+    <div class="meta-info">
+      <span>مذكرات</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>فلسفة حياة ممثل أوسكار</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>ليش هالكتاب مهم؟</h2>
+  <p>ماثيو ماكونهي مو بس ممثل — الرجال فيلسوف بطريقته الخاصة. هالكتاب مو سيرة ذاتية عادية تحكي لك "ولدت هنا وسويت كذا". هالكتاب فلسفة حياة كاملة مبنية على فكرة بسيطة: كل شي بحياتك إما ضوء أخضر، أصفر، أو أحمر.</p>
+  <ul>
+    <li>كيف تحوّل المواقف الصعبة (الأضواء الحمراء) لفرص (أضواء خضراء)؟</li>
+    <li>وش الفرق بين النجاح الحقيقي والشهرة الفارغة؟</li>
+    <li>كيف تلاقي نفسك الحقيقية بعيد عن توقعات الناس؟</li>
+    <li>ليش أحياناً لازم تخسر عشان تفوز بالنهاية؟</li>
+  </ul>
+</section>
+
+<!-- TOC -->
+<nav class="toc" id="toc">
+  <h2>فهرس الملخص</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span> فلسفة الأضواء الخضراء</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span> طفولة تكساس</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span> هوليوود والشهرة</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span> الرحلة للصحراء</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span> النهضة الفنية</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span> الحب والعائلة</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span> دروس الأضواء الخضراء</a>
+  </div>
+</nav>
+
+<!-- Intro Section -->
+<section class="intro-section">
+  <h2>مقدمة عن الكتاب</h2>
+  <p>ماثيو ماكونهي قضى ٣٦ سنة يكتب يومياته. يعني كل يوم من حياته كان يسجّل أفكاره ومواقفه ودروسه. وبعدين جلس ٥٢ يوم في الصحراء يراجع كل هالملاحظات ويطلع منها هالكتاب.</p>
+  <p>الكتاب نزل سنة ٢٠٢٠ وصار رقم واحد في قائمة نيويورك تايمز لأكثر الكتب مبيعاً. بس الشي اللي يميّزه إن أسلوبه مختلف عن أي سيرة ذاتية ثانية — فيه شعر، فيه حكم قصيرة، فيه قصص مجنونة، وفيه فلسفة عميقة. زي ما تقعد مع صاحبك ويحكي لك عن حياته بكل صراحة.</p>
+</section>
+
+<!-- Chapter 1 -->
+<section class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">فلسفة الأضواء الخضراء</div>
+      <div class="chapter-title-en">The Greenlights Philosophy</div>
+    </div>
+  </div>
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>ماثيو يقول إن الحياة زي قيادة السيارة — فيه أضواء خضراء (الأشياء اللي تمشي معاك)، أضواء صفراء (التحذيرات والتردد)، وأضواء حمراء (المشاكل والعقبات). بس السر إن الأضواء الحمراء والصفراء بالنهاية ممكن تصير خضراء لو عرفت كيف تتعامل معاها.</p>
+  <p>يعني مو كل مشكلة تواجهك هي نهاية الطريق. أحياناً الضوء الأحمر يوقفك عشان يحميك من حادث كان بيصير. وأحياناً الضوء الأصفر يبطّئك عشان توصل بالوقت المناسب مو بالوقت اللي أنت تبيه.</p>
+  <p>الفلسفة هذي مو بس كلام حلو — ماثيو يثبتها بقصص حقيقية من حياته. كل فشل مرّ فيه صار لاحقاً سبب نجاح أكبر. وكل باب انسكر بوجهه، انفتح بعده باب أحسن. بس لازم تكون صبور وتثق بالعملية.</p>
+  <div class="quote-block">
+    <p>الأضواء الخضراء ما تجي لأنك محظوظ — تجي لأنك جاهز. جهّز نفسك وخلّ الطريق يفتح لك.</p>
+  </div>
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>لا تشوف المشاكل كأعداء — شوفها كمعلّمين. كل ضوء أحمر هو فرصة تتعلم شي جديد وتصير أقوى. الصبر والثقة بالعملية هم مفتاح النجاح.</p>
+  </div>
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</section>
+
+<!-- Chapter 2 -->
+<section class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">طفولة تكساس</div>
+      <div class="chapter-title-en">Texas Childhood</div>
+    </div>
+  </div>
+  <span class="section-label">البدايات</span>
+  <p>ماثيو نشأ في عائلة تكساسية من الطراز القديم. أبوه جيم كان رجال خشن — محب بس صارم بشكل ما تتخيله. أمه كاي كانت شخصية قوية ومسيطرة. والديه طلّقوا وتزوجوا بعض ثلاث مرات! يعني علاقتهم كانت عاصفة بكل معنى الكلمة.</p>
+  <p>يحكي عن مواقف من طفولته تخليك تضحك وتتأثر بنفس الوقت. أبوه كان يعلّمه الحياة بطريقة قاسية بس فعّالة — إذا وقعت قوم، إذا خفت واجه، إذا بكيت بكّي بس بعدين امسح دموعك وكمّل.</p>
+  <p>هالتربية الخشنة هي اللي بنت شخصية ماثيو. يقول إنه يشكر أهله على كل شي — حتى اللحظات الصعبة. عشان هي اللي علّمته إنه ما يستسلم أبداً وإنه يواجه الحياة بكل ما فيها.</p>
+  <p>من أقوى القصص لما يحكي عن أبوه اللي مات وهو يضحك — حرفياً توفي بنوبة قلبية وهو يضحك. ماثيو يقول إن أبوه عاش حياته كاملة وما ترك شي ما سوّاه.</p>
+  <div class="quote-block">
+    <p>أبوي ما علّمني أتجنب الألم. علّمني أتقبّله وأتعلم منه. وهذا أعظم درس ممكن أب يعطيه لابنه.</p>
+  </div>
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>التربية القاسية مو دايماً سيئة. أحياناً أصعب الدروس هي اللي تبني فيك القوة اللي تحتاجها لاحقاً بحياتك. اشكر الصعوبات عشان هي اللي صنعتك.</p>
+  </div>
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة عن تكساس</div>
+    <p>ماثيو يفتخر بجذوره التكساسية بشكل كبير. يقول إن تكساس علّمته قيم ما تتغير: الصدق، الكرم، والثقة بالنفس. مهما وصل بهوليوود، ظل تكساسي بالقلب.</p>
+  </div>
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</section>
+
+<!-- Chapter 3 -->
+<section class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">هوليوود والشهرة</div>
+      <div class="chapter-title-en">Hollywood & Fame</div>
+    </div>
+  </div>
+  <span class="section-label">دخول عالم السينما</span>
+  <p>دخول ماثيو لهوليوود كان بالصدفة تقريباً. كان طالب جامعة ودخل بار وقابل مخرج فيلم Dazed and Confused. سوّوا له تجربة أداء وأخذ الدور. وهالفيلم هو اللي فتح له الباب لعالم السينما بالكامل.</p>
+  <p>بس ماثيو يعترف بصراحة إنه ضاع فترة بهوليوود. صار معروف كـ "ممثل الأفلام الرومانسية الخفيفة" وكان يقبل أي دور يجيه عشان الفلوس والشهرة. كان يعيش حياة سطحية — حفلات ومناسبات وأفلام ما تضيف شي.</p>
+  <p>يقول إن الشهرة شي غريب — تعطيك كل شي بس تاخذ منك نفسك. الناس تشوفك بطريقة معينة وتتوقع منك أشياء معينة، وأنت بدون ما تحس تصير الشخصية اللي هم يبونها مو الشخصية اللي أنت فعلاً هي.</p>
+  <div class="quote-block">
+    <p>النجاح بدون معنى زي أكل بدون طعم — يشبعك بس ما يمتّعك. لازم تلاقي الطعم قبل ما تاكل.</p>
+  </div>
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>النجاح المادي بدون رضا داخلي ما يسوى شي. ممكن تكون أشهر شخص بالعالم وتكون فارغ من الداخل. الشهرة مو المقياس — المقياس هو رضاك عن نفسك.</p>
+  </div>
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</section>
+
+<!-- Chapter 4 -->
+<section class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الرحلة للصحراء</div>
+      <div class="chapter-title-en">The Desert Journey</div>
+    </div>
+  </div>
+  <span class="section-label">البحث عن الذات</span>
+  <p>من أقوى أجزاء الكتاب — ماثيو قرر يوقف كل شي ويسافر. راح لأفريقيا، راح للأمازون، عاش ٥٢ يوم بالصحراء بعيد عن هوليوود وبعيد عن كل شي يعرفه. كان يبي يلاقي نفسه الحقيقية.</p>
+  <p>خلال هالرحلة كتب يوميات مفصّلة. كان يسأل نفسه أسئلة صعبة: مين أنا فعلاً بدون الشهرة؟ وش أبي من حياتي؟ وش القيم اللي ما أتنازل عنها؟ وكتب الإجابات بكل صراحة وشفافية.</p>
+  <p>الرحلة غيّرته بالكامل. رجع من الصحراء شخص مختلف — أوضح، أهدأ، أعرف وش يبي. قرر إنه ما بياخذ أي دور سينمائي ما يؤمن فيه. وهالقرار هو اللي غيّر مسيرته المهنية بالكامل.</p>
+  <p>يقول إنك أحياناً لازم تبتعد عن حياتك عشان تشوفها بوضوح. زي اللوحة — لو وقفت قريب منها جداً ما تشوف الصورة الكاملة. لازم تبتعد شوي عشان تفهم.</p>
+  <div class="quote-block">
+    <p>ما لقيت نفسي بهوليوود. لقيت نفسي بالصحراء — بعيد عن كل شي وكل شخص. أحياناً لازم تضيع عشان تلاقي طريقك.</p>
+  </div>
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>الابتعاد عن الروتين مو هروب — هو استثمار. أحياناً تحتاج تنعزل عشان تسمع صوتك الداخلي بدون تشويش العالم الخارجي.</p>
+  </div>
+  <div class="insight-box">
+    <div class="insight-title">تفصيلة مثيرة</div>
+    <p>خلال رحلته بأفريقيا، ماثيو عاش مع قبائل محلية وتعلّم منهم إن السعادة ما لها علاقة بالممتلكات. ناس ما عندهم شي بس عندهم كل شي — عندهم المجتمع والحب والانتماء.</p>
+  </div>
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</section>
+
+<!-- Chapter 5 -->
+<section class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">النهضة الفنية</div>
+      <div class="chapter-title-en">The McConaissance</div>
+    </div>
+  </div>
+  <span class="section-label">العودة القوية</span>
+  <p>بعد رحلة الصحراء، ماثيو رجع لهوليوود بعقلية مختلفة تماماً. رفض أدوار الكوميديا الرومانسية — وهالقرار كلّفه كثير عشان كانت هالأفلام تجيب فلوس زينة. بس كان مقتنع إنه لازم يتغيّر.</p>
+  <p>وجاء الدور اللي غيّر كل شي: Dallas Buyers Club. لعب دور رون وودروف، رجل مصاب بالإيدز يحارب النظام الطبي. نحف ٢٣ كيلو عشان الدور وعاش الشخصية بكل تفاصيلها. وفاز بالأوسكار عنه.</p>
+  <p>بس ماثيو يقول إن الأوسكار مو الإنجاز الحقيقي. الإنجاز الحقيقي هو إنه أخيراً صار يسوي شغل يفتخر فيه. صار يختار أدوار تتحداه وتطوّره — مو أدوار تكرر نفسها. وهذا هو معنى الضوء الأخضر الحقيقي.</p>
+  <div class="quote-block">
+    <p>الأوسكار حلو، بس أحلى شي إنك تنام الليل وأنت راضي عن نفسك. هذا الجائزة اللي ما لها تاريخ انتهاء.</p>
+  </div>
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>أحياناً لازم تخسر على المدى القصير عشان تفوز على المدى البعيد. ماثيو خسر فلوس وفرص لما رفض الأدوار السهلة، بس فاز بالأوسكار واحترام نفسه.</p>
+  </div>
+  <div class="insight-box">
+    <div class="insight-title">فترة "ماكونيسانس"</div>
+    <p>الصحافة سمّت هالفترة "The McConaissance" — يعني نهضة ماكونهي. بعد Dallas Buyers Club جاءت أدوار قوية مثل True Detective وInterstellar. كل هالأعمال جاءت عشان ماثيو قال "لا" للأشياء السهلة.</p>
+  </div>
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</section>
+
+<!-- Chapter 6 -->
+<section class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الحب والعائلة</div>
+      <div class="chapter-title-en">Love & Family</div>
+    </div>
+  </div>
+  <span class="section-label">الاستقرار</span>
+  <p>ماثيو يحكي عن زوجته كاميلا بطريقة جميلة. قابلها وهي من البرازيل، ومن أول نظرة عرف إنها هي. بس ما كان مستعجل — أخذ وقته عشان يتأكد. والنتيجة إنهم بنوا عائلة قوية ومستقرة.</p>
+  <p>عنده ثلاثة أطفال ويتكلم عنهم بحب كبير. يقول إن الأبوة هي أكبر ضوء أخضر بحياته — عشان علّمته أشياء ما كان يقدر يتعلمها من أي مكان ثاني. الصبر، التواضع، الحب بدون شروط.</p>
+  <p>يقول إن كاميلا هي اللي ثبّتته. قبلها كان زي الريح — يروح كل مكان بدون هدف. هي اللي عطته جذور بدون ما تقص أجنحته. وهالتوازن بين الجذور والأجنحة هو سر العلاقة الناجحة.</p>
+  <div class="quote-block">
+    <p>الحب الحقيقي مو إنك تلاقي شخص كامل. الحب إنك تلاقي شخص يكمّلك — ويخليك تبي تكون أحسن نسخة من نفسك.</p>
+  </div>
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>النجاح المهني بدون حياة عائلية مستقرة يظل ناقص. لما تلاقي الشخص الصح، لا تخاف من الالتزام — عشان الالتزام هو اللي يعطي حياتك عمق ومعنى.</p>
+  </div>
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</section>
+
+<!-- Chapter 7 -->
+<section class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">دروس الأضواء الخضراء</div>
+      <div class="chapter-title-en">Greenlights Lessons</div>
+    </div>
+  </div>
+  <span class="section-label">الخلاصة</span>
+  <p>ماثيو يختم الكتاب بمجموعة حكم ودروس قصيرة — يسمّيها "bumper stickers" يعني ملصقات السيارات. كل وحدة فيها درس بسيط بس عميق. وهذي بعض أقواها:</p>
+  <p>أول شي: لا تقارن نفسك بغيرك — قارن نفسك بنفسك أمس. إذا أنت اليوم أحسن من أمس، أنت ناجح. ثاني شي: الحياة مو عدل وما لازم تكون عدل — بس لازم تكون صادق. ثالث شي: أحسن طريقة تتعلم فيها هي إنك تعيش — مو إنك تقرأ عن الحياة.</p>
+  <p>ماثيو يقول إن أهم درس تعلّمه هو إن الأضواء الخضراء ما تنتهي. مهما كانت حالتك الحين — سيئة أو زينة — فيه ضوء أخضر قادم. بس لازم تكون مستعد له ولازم تكون صبور.</p>
+  <p>ويختم بفكرة جميلة: بطلك مو شخص ثاني — بطلك هو أنت بعد عشر سنوات. اسأل نفسك: الشخص اللي أبي أكونه بعد عشر سنوات، وش بيفكر عن اللي أسويه الحين؟ إذا بيفتخر، كمّل. إذا لا، غيّر.</p>
+  <div class="quote-block">
+    <p>بطلي أنا بعد عشر سنوات. كل يوم أسأل نفسي: هل أنا أقرّب نفسي من هالبطل ولا أبعّد؟</p>
+  </div>
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>الحياة رحلة مو وجهة. كل يوم هو فرصة جديدة تصنع ضوء أخضر. لا تنتظر الظروف المثالية — اصنع ظروفك بنفسك واستمتع بالطريق.</p>
+  </div>
+  <div class="insight-box">
+    <div class="insight-title">الرسالة النهائية</div>
+    <p>هالكتاب مو بس عن ماثيو ماكونهي — هو عنك أنت. كل شخص عنده أضواء خضراء بحياته، بس لازم يفتح عيونه ويشوفها. وكل ضوء أحمر هو بس ضوء أخضر ينتظر وقته.</p>
+  </div>
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>الأضواء الخضراء — Greenlights</h3>
+  <p>ماثيو ماكونهي — Matthew McConaughey</p>
+  <p>كتاب نُشر سنة ٢٠٢٠ — رقم واحد في قائمة نيويورك تايمز</p>
+  <p>مذكرات وفلسفة حياة من ممثل أوسكار</p>
+  <div class="disclaimer">
+    هالملخص للفائدة التعليمية فقط ولا يغني عن قراءة الكتاب الأصلي. جميع الحقوق محفوظة للمؤلف والناشر.
+  </div>
+</footer>
+
+</body>
+</html>

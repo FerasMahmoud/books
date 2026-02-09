@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلة العمر - ملخص شامل | بوب إيغر</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #9b59b6; border-radius: 4px; }
+  .hero { background: linear-gradient(135deg, #3a1a4a 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #9b59b6; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(155, 89, 182, 0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #9b59b6; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(155, 89, 182, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(155, 89, 182, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #2a1a3a, #1a1a2e); border: 2px solid #8e44ad; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section::before { content: ''; position: absolute; top: -15px; right: 30px; font-size: 1.8rem; background: #1a1a2e; padding: 0 10px; }
+  .problem-section h2 { font-size: 1.6rem; color: #9b59b6; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0d0; font-size: 1rem; }
+  .problem-section ul li::before { content: ''; position: absolute; right: 0; color: #9b59b6; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3a1a4a; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #9b59b6; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(155, 89, 182, 0.1); color: #9b59b6; transform: translateX(-4px); }
+  .toc-num { background: #9b59b6; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3a1a4a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #9b59b6; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3a1a4a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #9b59b6; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(155, 89, 182, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #9b59b6, #8e44ad); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #9b59b6; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(155, 89, 182, 0.12); color: #9b59b6; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(155, 89, 182, 0.06); border-right: 4px solid #9b59b6; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '"'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(155, 89, 182, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(142, 68, 173, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(155, 89, 182, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #9b59b6; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(39, 174, 96, 0.08); border: 1px solid rgba(39, 174, 96, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #27ae60; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #b0d0b0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(155, 89, 182, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; }
+  .back-top a:hover { color: #9b59b6; }
+  .footer { background: linear-gradient(145deg, #3a1a4a, #1a1a2e); border-top: 3px solid #9b59b6; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(155, 89, 182, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } }
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#x1F3F0;</span>
+    <h1>رحلة العمر</h1>
+    <div class="subtitle">The Ride of a Lifetime: Lessons Learned from 15 Years as CEO of Disney</div>
+    <div class="author">بوب إيغر &mdash; Bob Iger</div>
+    <div class="meta-info">
+      <span>مذكرات</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>الرئيس التنفيذي لديزني</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>ليش تقرا هالكتاب؟</h2>
+  <p>هالكتاب مو بس قصة نجاح واحد صار CEO لأكبر شركة ترفيه بالعالم. بوب إيغر يحكي لك كيف واحد عادي، بدا من الصفر بوظيفة بسيطة، وصل لقمة ديزني وغيّر وجهها بالكامل. يعني لو تبي تفهم كيف القيادة الحقيقية تشتغل، وكيف القرارات الجريئة تصنع إمبراطوريات، هالكتاب هو اللي تحتاجه.</p>
+  <ul>
+    <li>كيف تقود شركة عملاقة وتاخذ قرارات بمليارات الدولارات بدون ما تتردد</li>
+    <li>شو اللي خلّى ستيف جوبز يوافق يبيع بيكسار لديزني بعد سنوات من العداوة</li>
+    <li>ليش التفاؤل والشجاعة أهم من الذكاء والخبرة في القيادة</li>
+    <li>كيف تتعامل مع الفشل والانتقادات وتحوّلها لوقود للنجاح</li>
+    <li>الدروس اللي تعلمها إيغر من 45 سنة شغل في عالم الإعلام والترفيه</li>
+  </ul>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc" id="toc">
+  <h2>فهرس الملخص</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span> البدايات المتواضعة</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span> الصعود في ABC</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span> تولي قيادة ديزني</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span> استحواذ بيكسار</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span> مارفل وستار وورز</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span> مبادئ القيادة</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span> ديزني+ والمستقبل</a>
+    <a href="#ch8" class="toc-item"><span class="toc-num">8</span> الدروس المستفادة</a>
+  </div>
+</nav>
+
+<!-- Introduction -->
+<section class="intro-section">
+  <h2>مقدمة عن الكتاب</h2>
+  <p>بوب إيغر يكتب هالكتاب وهو يسترجع رحلة 45 سنة في عالم الإعلام والترفيه. بدا من وظيفة مساعد استديو في ABC وانتهى كأقوى رجل في هوليوود. هالكتاب مو بس سيرة ذاتية، هو دليل عملي في القيادة والإدارة والتعامل مع الضغوط.</p>
+  <p>الكتاب صدر سنة 2019 وصار من أكثر كتب الأعمال مبيعا، عشان إيغر يحكي بصراحة عن أخطائه ونجاحاته. يعني ما يقعد يمدح نفسه، بس يعطيك الصورة الكاملة &mdash; الحلو والسيء &mdash; وأنت تاخذ الدروس.</p>
+</section>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">البدايات المتواضعة</div>
+      <div class="chapter-title-en">Humble Beginnings</div>
+    </div>
+  </div>
+  <span class="section-label">الطفولة والبدايات</span>
+  <p>بوب إيغر نشأ في عائلة متوسطة في نيويورك. أبوه كان يشتغل في الإعلان بس كان يعاني من الاكتئاب، وهالشي أثّر على الجو العائلي بشكل كبير. يقول إيغر إنه تعلم من صغره إنه لازم يعتمد على نفسه وما يستنى حد يساعده.</p>
+  <p>أول وظيفة حقيقية له كانت مساعد استديو في ABC. يعني كان الواحد اللي يشيل الكراسي ويرتب الاستديو ويجيب القهوة. وظيفة ما فيها أي بريق، بس إيغر يقول إنها علمته شي مهم: كل وظيفة فيها شي تتعلمه لو فتحت عيونك.</p>
+
+  <div class="quote-block">
+    <p>ما تقدر تحلم بأحلام كبيرة لو قاعد تخاف من الفشل. الخوف هو أكبر عدو للإبداع والطموح.</p>
+  </div>
+
+  <p>كان يشتغل ساعات طويلة بدون ما أحد يلاحظه. بس الشي اللي ميّزه إنه كان دايم يراقب ويتعلم. كان يلاحظ كيف المنتجين يتخذون قراراتهم، وكيف المذيعين يتعاملون مع الضغط، وكيف البرامج الناجحة تختلف عن الفاشلة.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>لا تستصغر أي وظيفة. البدايات المتواضعة تعلّمك التواضع والملاحظة، وهذي صفات القادة الحقيقيين. إيغر ما كان يحلم إنه بيصير CEO، بس كان يشتغل بجد وكأن كل يوم مهم.</p>
+  </div>
+
+  <p>من الأشياء اللي يذكرها إيغر إن أبوه، رغم معاناته مع الاكتئاب، كان يحب القراءة والمعرفة. وهالشي زرع في بوب حب التعلم المستمر، واللي صار بعدين من أهم أسلحته في عالم الأعمال.</p>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الصعود في ABC</div>
+      <div class="chapter-title-en">Rising Through ABC</div>
+    </div>
+  </div>
+  <span class="section-label">من مساعد لمنتج</span>
+  <p>بعد سنوات من الشغل كمساعد، إيغر بدا يترقى بالتدريج في ABC. صار يشتغل في الإنتاج، وبعدين انتقل للإدارة. كل مرحلة كانت تعلّمه شي جديد عن كيف التلفزيون يشتغل من الداخل.</p>
+  <p>واحد من أهم المحطات كان لما اشتغل مع Roone Arledge، اللي كان رئيس ABC Sports. هالرجل كان عبقري في تقديم الرياضة بطريقة درامية ومشوّقة. إيغر يقول إنه تعلم منه إن المحتوى الممتاز هو الأساس، وكل شي ثاني يجي بعده.</p>
+
+  <div class="quote-block">
+    <p>ما تحتاج تعرف كل شي عشان تقود. بس تحتاج تحيط نفسك بناس يعرفون أكثر منك وتسمع لهم بصدق.</p>
+  </div>
+
+  <p>إيغر ترقى لين صار رئيس ABC Entertainment. وهنا بدا يفهم الفرق بين إنك تكون منفّذ ممتاز وإنك تكون قائد. القائد ما يشتغل بالتفاصيل، القائد يحدد الاتجاه ويثق بفريقه.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>إيغر يقول إن أكبر غلطة يسويها المدراء الجدد إنهم يحاولون يثبتون إنهم أذكى واحد في الغرفة. القائد الحقيقي يخلي فريقه يحس إنهم هم الأبطال.</p>
+  </div>
+
+  <p>خلال هالفترة، إيغر تعلم يتعامل مع الضغط والمنافسة الشديدة بين القنوات. كان يشوف برامج تنجح وبرامج تفشل، وبدا يفهم إن النجاح في الإعلام يعتمد على المخاطرة المحسوبة، مو على اللعب الآمن.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>القيادة مو إنك تتحكم بكل شي. القيادة إنك تبني فريق قوي وتعطيهم المساحة يبدعون. إيغر تعلم هالدرس من Roone Arledge وطبّقه طول حياته المهنية.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">تولي قيادة ديزني</div>
+      <div class="chapter-title-en">Taking Over Disney</div>
+    </div>
+  </div>
+  <span class="section-label">المعركة على القيادة</span>
+  <p>لما مايكل آيزنر استقال من رئاسة ديزني سنة 2005، الشركة كانت في وضع صعب. العلاقة مع بيكسار كانت محطّمة، الأفلام ما كانت تنجح مثل قبل، ومجلس الإدارة كان منقسم. إيغر كان المرشح الداخلي، بس كثير ناس ما كانوا متأكدين إنه الشخص المناسب.</p>
+  <p>إيغر يحكي إن أصعب لحظة كانت لما قعد قدام مجلس الإدارة وسألوه: "شو خطتك؟" وهو كان عارف إن الإجابة لازم تكون واضحة ومقنعة. فقدّم ثلاث أولويات بسيطة: محتوى عالي الجودة، تبني التكنولوجيا، والتوسع العالمي.</p>
+
+  <div class="quote-block">
+    <p>لما تتولى القيادة، أول شي لازم تسويه هو إنك تحدد أولوياتك بوضوح. الناس تبي تعرف وين رايحين، مو كيف بيوصلون.</p>
+  </div>
+
+  <p>البساطة كانت سر إيغر. ثلاث أولويات فقط. ما جلس يحكي عن خطط معقدة وأرقام كثيرة. قال لهم: هذي الثلاث أشياء اللي بنركز عليها، وكل قرار بناخذه لازم يخدم وحدة منها. مجلس الإدارة اقتنع.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>الاستراتيجية الحقيقية بسيطة. لو ما تقدر تشرح خطتك في جملتين، يعني ما عندك خطة. إيغر حدد ثلاث أولويات واضحة وكل شي بعدها صار يمشي.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>إيغر يقول إنه تعمّد ما يتكلم بالسوء عن آيزنر أبدا. حتى لو كان فيه مشاكل، القائد اللي يبني نفسه على هدم اللي قبله يخسر ثقة الناس. بدال كذا، ركّز على المستقبل وشو يقدر يسوي مختلف.</p>
+  </div>
+
+  <p>أول قرار كبير اتخذه كان إنه يتصل بستيف جوبز ويحاول يصلح العلاقة المحطّمة بين ديزني وبيكسار. الكل قال له هالشي مستحيل، بس إيغر كان شايف إن بدون بيكسار، ديزني بتضل تنتج أفلام متوسطة. وهذا القرار غيّر كل شي.</p>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">استحواذ بيكسار</div>
+      <div class="chapter-title-en">The Pixar Acquisition</div>
+    </div>
+  </div>
+  <span class="section-label">إقناع ستيف جوبز</span>
+  <p>العلاقة بين ديزني وبيكسار كانت محطّمة بالكامل. ستيف جوبز كان يكره مايكل آيزنر ورفض يتعامل مع ديزني مرة ثانية. بس إيغر سوى شي ما أحد توقعه: اتصل بجوبز مباشرة وكان صريح معه بالكامل.</p>
+  <p>إيغر قال لجوبز: "أنا عارف إن ديزني أخطأت. أنا مو آيزنر. وأنا أبي نبني علاقة جديدة من الصفر." هالصراحة أثّرت في جوبز، اللي كان يحترم الناس اللي يتكلمون بصدق بدال ما يحاولون يتلاعبون.</p>
+
+  <div class="quote-block">
+    <p>الاحترام مو إنك توافق على كل شي. الاحترام إنك تكون صادق حتى لو الصدق صعب ومؤلم.</p>
+  </div>
+
+  <p>الصفقة ما كانت سهلة. جوبز طلب 7.4 مليار دولار وطلب يكون أكبر مساهم فردي في ديزني. إيغر كان عارف إن السعر غالي، بس كان شايف الصورة الكبيرة: بيكسار مو بس أفلام، بيكسار ثقافة إبداعية كاملة. لو ديزني اشترت بيكسار، بتشتري مستقبل الأنيميشن.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>أحيانا أحسن طريقة لحل مشكلة هي الصراحة المطلقة. إيغر ما حاول يتلاعب بجوبز أو يستخدم تكتيكات تفاوض ذكية. كان صادق، واعترف بأخطاء الماضي، وهالشي فتح باب ما كان حد يتوقع ينفتح.</p>
+  </div>
+
+  <p>بعد الاستحواذ، إيغر اتخذ قرار ذكي ثاني: خلّى بيكسار تشتغل باستقلالية. ما حاول يدمجها في ثقافة ديزني. خلّى جون لاسيتر وإد كاتمول يديرون الاستديو بطريقتهم. وهالقرار حافظ على الروح الإبداعية اللي خلّت بيكسار بيكسار.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>أكثر الاستحواذات تفشل عشان الشركة الكبيرة تحاول تغيّر ثقافة الشركة الصغيرة. إيغر فهم إن القيمة الحقيقية لبيكسار مو في الأفلام فقط، بس في الناس والثقافة. ولذلك حماها من التغيير.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">مارفل وستار وورز</div>
+      <div class="chapter-title-en">Marvel & Star Wars</div>
+    </div>
+  </div>
+  <span class="section-label">الاستحواذات الاستراتيجية</span>
+  <p>بعد نجاح صفقة بيكسار، إيغر بدا يشوف فرص ثانية. مارفل كانت شركة كوميكس بدأت تدخل عالم الأفلام بنجاح من خلال Iron Man. إيغر شاف الإمكانيات الهائلة: آلاف الشخصيات، قصص ما تنتهي، وجمهور متعصب. فقرر يشتري مارفل بـ 4 مليارات دولار.</p>
+  <p>الناس قالوا إنه مجنون. "ديزني تشتري شركة كوميكس؟ شو دخل الأميرات بالأبطال الخارقين؟" بس إيغر كان شايف شي ما غيره شايفه: مارفل عندها أقوى ملكية فكرية في العالم، والأفلام بس البداية. فيه ألعاب، ملاهي، مسلسلات، ومنتجات ما لها نهاية.</p>
+
+  <div class="quote-block">
+    <p>لما الناس كلها تقول لك إنك غلطان، لازم تسأل نفسك: هل أنا شايف شي هم مو شايفينه؟ لو الجواب نعم، امشي قدام ولا تلتفت.</p>
+  </div>
+
+  <p>بعد مارفل جات الصفقة الأكبر: لوكاس فيلم وستار وورز. جورج لوكاس كان مستعد يبيع بس كان خايف على إرثه. إيغر قعد معه وقت طويل وأقنعه إن ديزني بتحترم رؤيته. الصفقة تمت بـ 4 مليارات دولار ثانية، وديزني صارت تملك أقوى ثلاث ملكيات فكرية في هوليوود.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>الاستحواذات الناجحة مو بس عن السعر والأرقام. هي عن العلاقات والثقة. إيغر نجح عشان بنى علاقات شخصية مع جوبز ولوكاس وأصحاب مارفل. الناس تبيع لناس تثق فيهم.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>مجموع الاستحواذات الثلاث (بيكسار + مارفل + لوكاس فيلم) كلّف ديزني حوالي 15.4 مليار دولار. اليوم، هالاستثمارات تسوى أضعاف أضعاف هالمبلغ. مارفل لحالها حققت أكثر من 29 مليار دولار في شباك التذاكر.</p>
+  </div>
+
+  <p>إيغر يقول إن سر نجاح هالصفقات كان إنه ما فكّر فيها كصفقات مالية. فكّر فيها كاستثمار في القصص والشخصيات والثقافة. لأن في نهاية المطاف، ديزني شركة قصص، واللي يملك أحسن القصص يملك المستقبل.</p>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">مبادئ القيادة</div>
+      <div class="chapter-title-en">Leadership Principles</div>
+    </div>
+  </div>
+  <span class="section-label">فلسفة إيغر في القيادة</span>
+  <p>إيغر يحدد أربع صفات أساسية يشوفها ضرورية لأي قائد: التفاؤل، الشجاعة، الحسم، والعدل. يقول إن هالأربع صفات مو بس كلام جميل، هي اللي خلّته يبني ديزني من جديد ويتغلب على كل التحديات.</p>
+  <p>التفاؤل مو معناه إنك ساذج أو ما تشوف المشاكل. التفاؤل معناه إنك تؤمن إن المستقبل ممكن يكون أحسن من الحاضر، وإنك مستعد تشتغل عشان تحقق هالشي. إيغر يقول إن القائد المتشائم ما يقدر يلهم أحد، عشان الناس تبي تتبع شخص يعطيها أمل.</p>
+
+  <div class="quote-block">
+    <p>التفاؤل مو ضعف. التفاؤل هو أقوى سلاح عند القائد. الناس ما تتبع المتشائمين، تتبع اللي يعطونهم أمل ورؤية.</p>
+  </div>
+
+  <p>الشجاعة تعني إنك تاخذ قرارات صعبة حتى لو الأغلبية ضدك. إيغر يقول إن أصعب القرارات هي اللي تكون صح بس ما أحد يبي يسمعها. مثل لما قرر إنه يضحي بأرباح قصيرة المدى عشان يبني ديزني بلس.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>الحسم مو معناه إنك تقرر بسرعة بدون تفكير. معناه إنك ما تتردد لما يجي وقت القرار. إيغر يقول إن التردد أخطر من القرار الغلط، عشان التردد يقتل الزخم ويضيّع الفرص.</p>
+  </div>
+
+  <p>العدل هو المبدأ الرابع وربما الأهم. إيغر يقول إن الناس تتحمل القرارات الصعبة لو حسّت إنها عادلة. بس لو حسّت إن القائد يحابي أو يظلم، يخسر ثقتهم للأبد. ولذلك كان دايم يحرص إنه يسمع كل الأطراف قبل ما يقرر.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>إيغر يركّز على نقطة مهمة: القيادة ما تعني إنك دايم صح. تعني إنك مستعد تعترف بأخطائك وتصلّحها. يقول إن أسوأ القادة هم اللي ما يعترفون بأخطائهم عشان خايفين يبانون ضعفاء.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">ديزني+ والمستقبل</div>
+      <div class="chapter-title-en">Disney+ & The Future</div>
+    </div>
+  </div>
+  <span class="section-label">ثورة البث الرقمي</span>
+  <p>إيغر كان شايف إن البث الرقمي هو المستقبل من زمان. كان يراقب نتفليكس وهي تكبر ويعرف إن ديزني لازم تدخل هالسوق. بس القرار ما كان سهل: ديزني كانت تربح مليارات من القنوات التلفزيونية والتراخيص. دخول البث الرقمي يعني التضحية بهالأرباح.</p>
+  <p>بس إيغر كان مقتنع إن اللي ما يتغير يموت. فاتخذ قرار جريء: ديزني بتبني منصتها الخاصة وبتسحب محتواها من نتفليكس. وول ستريت ما عجبها الفكرة وسهم ديزني نزل، بس إيغر ما تراجع.</p>
+
+  <div class="quote-block">
+    <p>لو تستنى لين التكنولوجيا تهدد وجودك عشان تتحرك، فات الأوان. لازم تخرّب على نفسك قبل ما غيرك يخرّب عليك.</p>
+  </div>
+
+  <p>ديزني بلس انطلقت في نوفمبر 2019 وحققت نجاح هائل. خلال سنة وحدة وصلت لأكثر من 100 مليون مشترك. بس بعدها بكم شهر جات جائحة كورونا وقلبت كل شي. الملاهي أغلقت، الأفلام تأجلت، والشركة خسرت مليارات.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>الأزمات تكشف القادة الحقيقيين. إيغر يقول إنه خلال الجائحة تعلم إن أهم شي القائد يسويه وقت الأزمة هو إنه يكون حاضر وصريح مع فريقه. الناس تتحمل الأخبار السيئة لو حسّت إن قائدهم صادق معهم.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>ديزني بلس كانت جاهزة قبل الجائحة بكم شهر بس. لو إيغر تأخر في قراره، ديزني كانت بتكون في وضع كارثي خلال الجائحة بدون أي منصة رقمية. التوقيت أحيانا يكون كل شي.</p>
+  </div>
+
+  <p>إيغر سلّم القيادة لبوب شابيك في فبراير 2020، قبل الجائحة بأسابيع. بس رجع سنة 2022 لما الشركة احتاجته مرة ثانية. يقول إن هالتجربة علمته إن التقاعد مو نهاية، وإن القائد الحقيقي يرجع لما فريقه يحتاجه.</p>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 8 -->
+<article class="chapter" id="ch8">
+  <div class="chapter-header">
+    <div class="chapter-number">8</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الدروس المستفادة</div>
+      <div class="chapter-title-en">Lessons Learned</div>
+    </div>
+  </div>
+  <span class="section-label">خلاصة 45 سنة</span>
+  <p>في نهاية الكتاب، إيغر يلخّص أهم الدروس اللي تعلمها من 45 سنة في عالم الإعلام. يقول إن أول درس هو إنك لازم تكون فضولي. الفضول هو اللي يفتح لك أبواب ما كنت تعرف إنها موجودة. لو وقفت عن التعلم، وقفت عن النمو.</p>
+  <p>ثاني درس هو إن الجودة مو رفاهية، هي ضرورة. إيغر يقول إن ديزني لما تنازلت عن الجودة في فترة ما، الجمهور حسّ والنتائج بانت. والعكس صحيح: لما رجعوا للجودة العالية مع بيكسار ومارفل، كل شي تغيّر.</p>
+
+  <div class="quote-block">
+    <p>لو لازم تختار بين سرعة التنفيذ وجودة المنتج، اختار الجودة دايما. السرعة ممكن تكسبك سباق، بس الجودة تكسبك السوق كله.</p>
+  </div>
+
+  <p>إيغر يتكلم عن أهمية إنك تتقبل التغيير بدال ما تقاومه. يقول إن أكبر تهديد لأي شركة مو المنافسة الخارجية، هو الخوف الداخلي من التغيير. الشركات اللي تموت هي اللي تتمسك بالماضي وترفض تتطور.</p>
+
+  <div class="lesson-box">
+    <div class="lesson-title">درس من هالفصل</div>
+    <p>إيغر يلخّص فلسفته بجملة وحدة: "كن جريء، كن عادل، كن فضولي." يقول إن هالثلاث كلمات لو طبقتها في حياتك المهنية والشخصية، بتوصل لأماكن ما كنت تتخيلها.</p>
+  </div>
+
+  <p>آخر نقطة يتكلم عنها هي العلاقات. يقول إن كل نجاحاته كانت بسبب علاقات بناها مع ناس استثنائيين: ستيف جوبز، جورج لوكاس، أوبرا وينفري، وغيرهم كثير. القائد اللي ما يبني علاقات حقيقية ما يقدر يبني شي يدوم.</p>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>إيغر يختم بنصيحة للشباب: لا تستعجلون. النجاح الحقيقي ياخذ وقت. هو أخذ 45 سنة عشان يوصل. بس كل يوم من هال 45 سنة كان يتعلم فيه شي جديد، وكل تجربة &mdash; حتى الفاشلة &mdash; كانت تقرّبه من هدفه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>رحلة العمر &mdash; بوب إيغر</h3>
+  <p>ملخص شامل ومفصّل لكتاب The Ride of a Lifetime</p>
+  <p>من أهم كتب القيادة والإدارة في القرن الواحد والعشرين</p>
+  <div class="disclaimer">
+    هذا ملخص غير رسمي للكتاب ولا يغني عن قراءة النسخة الأصلية. جميع الاقتباسات مترجمة بتصرف. الكتاب من تأليف بوب إيغر وصدر عن دار نشر Random House سنة 2019.
+  </div>
+</footer>
+
+</body>
+</html>

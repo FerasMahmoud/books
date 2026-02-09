@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ليوناردو دافنشي - ملخص شامل | والتر إيزاكسون</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #f39c12; border-radius: 4px; }
+  .hero { background: linear-gradient(135deg, #4a3a0a 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #f39c12; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(243, 156, 18, 0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #f39c12; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(243, 156, 18, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(243, 156, 18, 0.2); }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+  .problem-section { background: linear-gradient(145deg, #2a2a1e, #1a1a2e); border: 2px solid #d68910; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; position: relative; }
+  .problem-section::before { content: '\1F4A1'; position: absolute; top: -15px; right: 30px; font-size: 1.8rem; background: #1a1a2e; padding: 0 10px; }
+  .problem-section h2 { font-size: 1.6rem; color: #f39c12; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0c0a0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0c0a0; font-size: 1rem; }
+  .problem-section ul li::before { content: '\25B8'; position: absolute; right: 0; color: #f39c12; }
+  .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #4a3a0a; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+  .toc h2 { font-size: 1.8rem; color: #f39c12; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(243, 156, 18, 0.1); color: #f39c12; transform: translateX(-4px); }
+  .toc-num { background: #f39c12; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #4a3a0a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+  .intro-section h2 { font-size: 1.6rem; color: #f39c12; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #4a3a0a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; transition: border-color 0.3s ease; }
+  .chapter:hover { border-color: #f39c12; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(243, 156, 18, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #f39c12, #d68910); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #f39c12; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+  .section-label { display: inline-block; background: rgba(243, 156, 18, 0.12); color: #f39c12; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+  .quote-block { background: rgba(243, 156, 18, 0.06); border-right: 4px solid #f39c12; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(243, 156, 18, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+  .lesson-box { background: linear-gradient(135deg, rgba(74, 58, 10, 0.4), rgba(26, 26, 46, 0.8)); border: 1px solid rgba(243, 156, 18, 0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .lesson-box .lesson-title { color: #f39c12; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+  .insight-box { background: rgba(39, 174, 96, 0.08); border: 1px solid rgba(39, 174, 96, 0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+  .insight-box .insight-title { color: #27ae60; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #b0d0b0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(243, 156, 18, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; }
+  .back-top a:hover { color: #f39c12; }
+  .footer { background: linear-gradient(145deg, #4a3a0a, #1a1a2e); border-top: 3px solid #f39c12; padding: 50px 20px; margin-top: 60px; text-align: center; }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(243, 156, 18, 0.15); font-size: 0.85rem; color: #666680; }
+  @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } }
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">&#x1F3A8;</span>
+    <h1>ليوناردو دافنشي</h1>
+    <div class="subtitle">Leonardo da Vinci</div>
+    <div class="author">والتر إيزاكسون &mdash; Walter Isaacson</div>
+    <div class="meta-info">
+      <span>سيرة ذاتية</span>
+      <span>ملخص شامل ومفصّل</span>
+      <span>عبقري عصر النهضة</span>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+  <h2>ليش تقرأ هالكتاب؟</h2>
+  <p>هالكتاب مو بس سيرة ذاتية عادية عن رسّام مشهور. والتر إيزاكسون يبي يوريك إن ليوناردو دافنشي كان أعظم عبقري في تاريخ البشرية، مو عشان كان ذكي بس، لا، عشان كان فضولي بشكل ما له حدود. الكتاب يجاوب على أسئلة كبيرة:</p>
+  <ul>
+    <li>كيف ولد غير شرعي بدون تعليم رسمي صار أعظم فنان ومخترع في التاريخ؟</li>
+    <li>وش السر ورا إبداعه اللي ما توقف طول حياته؟</li>
+    <li>كيف تقدر تستفيد من أساليبه في حياتك اليوم؟</li>
+    <li>ليش الفضول أهم من الذكاء الخارق؟</li>
+  </ul>
+  <p>إيزاكسون درس أكثر من 7,200 صفحة من دفاتر ليوناردو الأصلية عشان يكتب هالكتاب. النتيجة؟ رحلة مذهلة في عقل أعظم عبقري عرفته البشرية.</p>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc" id="toc">
+  <h2>فهرس الفصول</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span> الطفولة في فلورنسا</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span> التلمذة الفنية</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span> الموناليزا والعشاء الأخير</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span> دفاتر العبقرية</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span> العالم والمهندس</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span> الفضول اللامحدود</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span> الإبداع عند دافنشي</a>
+    <a href="#ch8" class="toc-item"><span class="toc-num">8</span> الدروس من حياة دافنشي</a>
+  </div>
+</nav>
+
+<!-- Introduction -->
+<section class="intro-section">
+  <h2>مقدمة الكتاب</h2>
+  <p>والتر إيزاكسون &mdash; نفس الكاتب اللي كتب سيرة ستيف جوبز وأينشتاين &mdash; قرر يكتب عن ليوناردو دافنشي عشان يشوفه كأعظم مثال على الإبداع البشري. مو عشان ليوناردو كان عبقري فطري ما يقدر أحد يوصله، بس عشان أسراره كانت بسيطة: الفضول، الملاحظة الدقيقة، والخيال اللي ما يعرف حدود.</p>
+  <p>إيزاكسون يقول إن ليوناردو كان يكتب في دفاتره قوائم مهام غريبة مثل: "وصف لسان نقّار الخشب" و"ليش السمك في الماء أسرع من الطير في الهواء؟" هالفضول هو اللي خلاه يتفوق على كل معاصريه.</p>
+</section>
+
+<!-- Chapter 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الطفولة في فلورنسا</div>
+      <div class="chapter-title-en">Childhood in Florence</div>
+    </div>
+  </div>
+
+  <span class="section-label">البداية الصعبة</span>
+  <p>ليوناردو انولد سنة 1452 في بلدة فينشي الصغيرة قريبة من فلورنسا. بس المشكلة إنه كان ابن غير شرعي &mdash; يعني أبوه كان كاتب عدل محترم اسمه سير بييرو، وأمه كاترينا كانت فلاحة بسيطة. هالشي في ذاك الوقت كان يعني إنه ما يقدر يدخل الجامعة ولا يمارس مهنة أبوه.</p>
+  <p>بس إيزاكسون يقول إن هالشي اللي يبان سلبي كان في الحقيقة نعمة مقنّعة. ليوناردو ما تقيّد بالتعليم الرسمي اللي كان يعتمد على حفظ النصوص اللاتينية القديمة. بدال كذا، تعلّم من الطبيعة مباشرة. كان يقضي ساعات يراقب الطيور والماء والنباتات.</p>
+  <p>طفولته كانت بين بيت أبوه في فلورنسا وبيت جده في الريف. في الريف، ليوناردو الصغير بدأ يرسم كل شي يشوفه. أبوه لاحظ موهبته وقرر يدخله ورشة فنية بدال ما يتركه بدون مستقبل.</p>
+
+  <div class="quote-block">
+    <p>ليوناردو كان يقول: "الطبيعة هي أعظم معلّمة، واللي يبي يتعلم لازم يروح لها مباشرة مو يقرأ عنها في كتب."</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>أحيانا العقبات اللي تواجهك في حياتك &mdash; مثل عدم دخول الجامعة أو ظروف الولادة &mdash; تكون هي اللي تفتح لك أبواب ما كنت تتخيلها. ليوناردو لو كان ابن شرعي كان صار كاتب عدل مثل أبوه وما عرفنا عنه شي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">التلمذة الفنية</div>
+      <div class="chapter-title-en">Artistic Apprenticeship</div>
+    </div>
+  </div>
+
+  <span class="section-label">ورشة فيروكيو</span>
+  <p>لما ليوناردو صار عمره 14 سنة، أبوه دخّله ورشة أندريا ديل فيروكيو &mdash; واحد من أشهر الفنانين في فلورنسا. هالورشة ما كانت بس مكان للرسم، كانت مصنع كامل: نحت، صياغة، هندسة، وحتى تصميم مسارح.</p>
+  <p>في ورشة فيروكيو، ليوناردو تعلّم شي مهم جدا: إن الفن مو بس موهبة، الفن حرفة تتعلمها بالممارسة. كان لازم يطحن الألوان بيده، يحضّر اللوحات، يدرس التشريح عشان يرسم الجسم البشري صح. هالتدريب العملي هو اللي فرّقه عن غيره.</p>
+  <p>القصة المشهورة إن فيروكيو طلب من ليوناردو الشاب يرسم ملاك واحد في لوحة "تعميد المسيح". ليوناردو رسم الملاك بشكل أجمل بكثير من رسم أستاذه نفسه. يُقال إن فيروكيو بعدها قرر يترك الرسم ويركّز على النحت عشان شاف إن تلميذه تفوّق عليه.</p>
+  <p>بس الأهم من كذا، في ورشة فيروكيو ليوناردو تعلّم إن الفنان لازم يكون عالم. ما تقدر ترسم الماء لو ما تفهم كيف يتحرك. ما تقدر ترسم وجه لو ما تعرف العضلات تحت الجلد.</p>
+
+  <div class="quote-block">
+    <p>"الرسم هو علم، مو بس موهبة. كل خط تخطه لازم يكون مبني على ملاحظة حقيقية للطبيعة."</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">ملاحظة مهمة</div>
+    <p>نظام التلمذة في عصر النهضة كان أقوى من أي جامعة اليوم. التلميذ يتعلم بالممارسة المباشرة مع خبير، مو بالمحاضرات النظرية. هالأسلوب هو اللي صنع ليوناردو ومايكل أنجلو ورافائيل.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>لا تستهين بالتدريب العملي. أحيانا أفضل طريقة تتعلم فيها شي هي إنك تشتغل مع شخص يتقنه، مو إنك تقرأ عنه في كتاب. ليوناردو ما صار عبقري من يوم وليلة، صار عبقري عشان تمرّن سنين طويلة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الموناليزا والعشاء الأخير</div>
+      <div class="chapter-title-en">Mona Lisa &amp; The Last Supper</div>
+    </div>
+  </div>
+
+  <span class="section-label">أشهر لوحتين في التاريخ</span>
+  <p>لوحة العشاء الأخير رسمها ليوناردو على جدار في دير سانتا ماريا في ميلانو بين 1495 و1498. اللوحة تصوّر اللحظة اللي المسيح يقول فيها لتلاميذه "واحد منكم بيخونني." إيزاكسون يقول إن عبقرية اللوحة مو بس في الرسم، بس في إنها تجمّد لحظة درامية كاملة &mdash; كل شخصية من الاثني عشر تلميذ تتفاعل بشكل مختلف.</p>
+  <p>ليوناردو كان يروح للدير الصبح ويرسم طول اليوم بدون ما يوقف حتى ياكل. وأيام ثانية يجي يتأمل اللوحة لساعات بدون ما يلمس الفرشاة. الراهب اللي يدير الدير اشتكى للدوق إن ليوناردو بطيء جدا. ليوناردو ردّ وقال إنه يبحث عن الوجه المناسب ليهوذا، وقال بمزح إنه ممكن يستخدم وجه الراهب نفسه.</p>
+  <p>أما الموناليزا &mdash; فهالعمل كان مشروع حياة ليوناردو. بدأه حوالي 1503 واستمر يشتغل عليه لأكثر من 16 سنة. ما سلّمه أبدا للشخص اللي طلبه، وخذه معاه وين ما راح لين مات. السر ورا ابتسامتها الغامضة هو تقنية اسمها "السفوماتو" &mdash; يعني إن ليوناردو كان يحطّ طبقات رقيقة جدا من اللون فوق بعض لين الحدود تصير ضبابية.</p>
+
+  <div class="quote-block">
+    <p>"ابتسامة الموناليزا تتغير كل ما تشوفها من زاوية مختلفة. ليوناردو استخدم فهمه للبصريات والتشريح عشان يخلق هالتأثير العجيب."</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">تقنية السفوماتو</div>
+    <p>ليوناردو كان يحطّ طبقات لون رقيقة بأصابعه مباشرة &mdash; بدون فرشاة &mdash; عشان يخلق تدرّج ناعم بين الضل والنور. العلماء في القرن الحادي والعشرين حللوا اللوحة ولقوا إن بعض الطبقات سمكها أقل من 2 ميكرون. مستحيل بشري عادي يسويها.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>الكمال ياخذ وقت. ليوناردو ما كان كسلان لما يأخر &mdash; كان يبي كل تفصيلة تكون مثالية. أحيانا أعظم الأعمال هي اللي ما تستعجل عليها. بس لازم تفرّق بين السعي للكمال والتسويف.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">دفاتر العبقرية</div>
+      <div class="chapter-title-en">The Notebooks</div>
+    </div>
+  </div>
+
+  <span class="section-label">أكثر من 7,200 صفحة</span>
+  <p>أعظم إرث تركه ليوناردو مو لوحاته &mdash; بس دفاتره. أكثر من 7,200 صفحة وصلتنا (والعلماء يقدّرون إن اللي ضاع ضعف هالرقم). هالدفاتر فيها كل شي: رسومات تشريحية، تصاميم آلات طيران، ملاحظات عن حركة الماء، وحتى قوائم مشتريات وطبخات.</p>
+  <p>إيزاكسون يقول إن دفاتر ليوناردو هي "أعظم نافذة على عقل بشري فضولي في التاريخ." ليوناردو كان يكتب بخط معكوس &mdash; يعني من اليسار لليمين &mdash; وتقدر تقرأه بس لو حطيت مرآة. في نظريات إنه سوا كذا عشان يخفي أفكاره، بس الأرجح إنه كان أشول واللي يكتب باليسار أسهل له يكتب معكوس.</p>
+  <p>في الدفاتر، تلقى صفحة فيها رسم تشريحي دقيق لقلب الإنسان، وبجانبه رسم لجهاز ميكانيكي، وتحته ملاحظة عن ليش السماء لونها أزرق. هالتنوع المجنون هو اللي يميّز ليوناردو &mdash; عقله ما كان يعرف الحدود بين العلوم.</p>
+  <p>بس في مشكلة: ليوناردو ما نشر أي شي من دفاتره في حياته. لو كان نشرها، كان ممكن يسبق العلم بقرون. ملاحظاته عن التشريح كانت أدق من أي شي موجود لين جاء فيساليوس بعده بعقود.</p>
+
+  <div class="quote-block">
+    <p>"صف لسان نقّار الخشب" &mdash; واحدة من قوائم مهام ليوناردو اللي تبيّن إن فضوله ما كان له حدود. مين في الدنيا يحطّ هالشي في قائمة مهامه؟</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>اكتب كل شي. أفكارك، ملاحظاتك، أسئلتك &mdash; كلها مهمة. ليوناردو كان يمشي ومعاه دفتر صغير يكتب فيه أي فكرة تجيه. هالعادة البسيطة ممكن تغيّر طريقة تفكيرك بالكامل.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">العالم والمهندس</div>
+      <div class="chapter-title-en">The Scientist &amp; Engineer</div>
+    </div>
+  </div>
+
+  <span class="section-label">التشريح والطيران والهندسة</span>
+  <p>ليوناردو شرّح أكثر من 30 جثة بشرية في حياته. كان يروح المستشفيات بالليل وياخذ الجثث اللي ما لها أهل ويشرّحها طبقة طبقة، ويرسم كل عضلة وعظمة وعصب. رسوماته التشريحية كانت أدق من أي شي موجود في عصره &mdash; بل أدق من كتب التشريح اللي جت بعده بمئة سنة.</p>
+  <p>في مجال الطيران، ليوناردو صمم أكثر من 20 آلة طيران مختلفة. درس أجنحة الخفاش والطيور بتفصيل مذهل، وفهم إن الهواء مادة لها كثافة وتقدر "تشيل" الأشياء. تصاميمه للمروحية والمظلّة &mdash; اللي رسمها قبل 500 سنة &mdash; ثبت إنها تشتغل لما جربوها في العصر الحديث.</p>
+  <p>في الهندسة المائية، ليوناردو كان مهووس بحركة الماء. رسم دوامات مائية بدقة مذهلة، وفهم مبادئ الديناميكا المائية قبل ما تتأسس كعلم رسمي. صمم قنوات وسدود، وحتى اقترح مشروع لتحويل مجرى نهر أرنو كسلاح حرب ضد بيزا.</p>
+
+  <div class="quote-block">
+    <p>"التجربة هي أم كل المعرفة. كل اللي تقرأه في الكتب ما يسوى شي لو ما جربته بنفسك."</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">سبق علمي مذهل</div>
+    <p>ليوناردو اكتشف إن الدم يمر عبر الشرايين بحركة حلزونية، وإن صمامات القلب الأبهري تنفتح وتنسكر بفعل الدوامات المائية. هالاكتشاف ما أثبته العلم الحديث إلا في القرن العشرين بتقنيات التصوير المتقدمة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>لا تخلي التخصص يحدّك. ليوناردو كان فنان وعالم ومهندس في نفس الوقت. الإبداع الحقيقي يجي لما تربط بين مجالات مختلفة. اللي يفهم التشريح يرسم أحسن، واللي يفهم الفيزياء يصمم أحسن.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الفضول اللامحدود</div>
+      <div class="chapter-title-en">Boundless Curiosity</div>
+    </div>
+  </div>
+
+  <span class="section-label">السر الحقيقي ورا عبقريته</span>
+  <p>إيزاكسون يقول إن أهم صفة عند ليوناردو ما كانت الذكاء &mdash; كانت الفضول. فيه ناس كثير أذكياء، بس ليوناردو كان فضولي بشكل مجنون. كان يسأل أسئلة ما أحد يسألها: ليش السماء زرقاء؟ كيف يشتغل لسان نقّار الخشب؟ وش شكل فك التمساح؟</p>
+  <p>المميز إن فضوله ما كان عملي دايم. يعني ما كان يسأل عشان يحل مشكلة معينة أو يكسب فلوس. كان يسأل عشان يبي يفهم. هالنوع من الفضول &mdash; الفضول الخالص &mdash; هو أندر أنواع الفضول وأقواها.</p>
+  <p>ليوناردو كان يمشي في شوارع فلورنسا ويتتبع الناس اللي عندهم ملامح غريبة عشان يرسمهم. كان يروح السوق ويشتري طيور في أقفاص بس عشان يطلقها ويراقب كيف تطير. كان يقف عند النهر ساعات يراقب كيف الماء يدور حول الصخور.</p>
+  <p>بس الأهم إنه ما كان يكتفي بالملاحظة &mdash; كان يسجّل كل شي. ويسأل "ليش؟" ثم يحاول يجرّب ويلقى الجواب بنفسه. هالمنهجية &mdash; الملاحظة ثم السؤال ثم التجربة &mdash; هي نفس المنهج العلمي اللي ما تأسس رسميا إلا بعده بقرن.</p>
+
+  <div class="quote-block">
+    <p>"ما عمري ملّيت من إني أكون مفيد. الملل هو اللي يجي لما تتوقف عن التعلم." &mdash; ليوناردو دافنشي</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">قوائم المهام العجيبة</div>
+    <p>في دفاتره، ليوناردو كتب قوائم مهام مثل: "اسأل عالم الرياضيات عن تربيع المثلث" و"ارسم ميلانو" و"تعلّم من صانع الأقفال كيف يشتغل القفل." هالقوائم تبيّن إنه كان يتعلم من كل شخص يقابله، مو بس من الكتب.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>خلّ فضولك يقودك. اسأل أسئلة "غبية" بدون ما تخاف. ليوناردو ما كان يستحي يسأل جزّار عن تشريح البقر أو حدّاد عن خصائص المعادن. كل شخص عنده علم تقدر تتعلمه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الإبداع عند دافنشي</div>
+      <div class="chapter-title-en">Da Vinci's Creative Process</div>
+    </div>
+  </div>
+
+  <span class="section-label">كيف كان يبدع</span>
+  <p>ليوناردو كان عنده طريقة فريدة في الإبداع: كان يبدأ بالملاحظة، ثم يسأل أسئلة، ثم يرسم، ثم يجرّب، ثم يعدّل. هالدورة كانت تتكرر مرات ومرات لين يوصل لنتيجة ترضيه. وأحيانا ما يوصل &mdash; وهذا كان عادي عنده.</p>
+  <p>من أهم أساليبه كان الربط بين أشياء ما لها علاقة ببعض. مثلا، لما درس حركة الماء في الأنهار، لاحظ إن الدوامات المائية تشبه تموّجات الشعر. فرسم شعر الموناليزا بنفس أنماط الدوامات المائية. هالقدرة على ربط أنماط من مجالات مختلفة هي جوهر الإبداع.</p>
+  <p>كمان ليوناردو كان يؤمن إن الخيال مهم مثل الملاحظة. كان يقول لتلاميذه: "انظروا للجدران المتسخة واللطخات &mdash; راح تشوفون فيها مناظر طبيعية ومعارك ووجوه." يعني كان يستخدم العشوائية كأداة لتحفيز الخيال.</p>
+  <p>بس في نقطة مهمة: ليوناردو كان يماطل كثير. مشاريع كثيرة ما كمّلها. تمثال الحصان البرونزي الضخم اللي وعد فيه دوق ميلانو &mdash; ما كمّله. لوحة "معركة أنغياري" &mdash; ما كمّلها. إيزاكسون يقول إن هالمماطلة كانت جزء من عملية الإبداع عنده &mdash; كان يحتاج وقت عشان الأفكار "تتخمّر" في عقله.</p>
+
+  <div class="quote-block">
+    <p>"الفن ما يكتمل أبدا &mdash; بس يُهجر. في لحظة ما الفنان يقرر يتوقف، بس العمل نفسه ما يكمل عمره."</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس المستفاد</div>
+    <p>الإبداع مو شي يجيك فجأة &mdash; الإبداع عملية. لازم تلاحظ، تسأل، تجرّب، وتعدّل. ولا تخاف من المماطلة أحيانا &mdash; عقلك يشتغل في الخلفية حتى لو أنت ما تحس. بس لازم تفرّق بين المماطلة المنتجة والكسل.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Chapter 8 -->
+<article class="chapter" id="ch8">
+  <div class="chapter-header">
+    <div class="chapter-number">8</div>
+    <div class="chapter-titles">
+      <div class="chapter-title-ar">الدروس من حياة دافنشي</div>
+      <div class="chapter-title-en">Lessons from Da Vinci's Life</div>
+    </div>
+  </div>
+
+  <span class="section-label">وش نتعلم من ليوناردو</span>
+  <p>في نهاية الكتاب، إيزاكسون يجمع أهم الدروس اللي نقدر نتعلمها من حياة ليوناردو. أول درس: كن فضولي بشكل جنوني. مو بس فضول عادي &mdash; فضول عميق. اسأل "ليش؟" عن كل شي، حتى الأشياء اللي تبان بديهية. ليش السماء زرقاء؟ ليش الماء يدوّر بهالشكل؟</p>
+  <p>ثاني درس: لاحظ. أغلب الناس يشوفون بس ما يلاحظون. ليوناردو كان يلاحظ تفاصيل ما أحد ينتبه لها: كيف الضحكة تغيّر شكل العضلات حول الفم، كيف ظل الذقن يختلف حسب زاوية الإضاءة. هالملاحظة الدقيقة هي أساس كل إبداع.</p>
+  <p>ثالث درس: فكّر بصريا. ليوناردو كان يفكّر بالرسم أكثر من الكلام. كان يرسم أفكاره بدال ما يكتبها. هالطريقة تساعدك تشوف العلاقات بين الأشياء بشكل أوضح.</p>
+  <p>رابع درس: اربط بين المجالات المختلفة. أعظم اكتشافات ليوناردو جت لما ربط بين الفن والعلم. فهمه للتشريح خلاه يرسم أحسن، وفهمه للبصريات خلاه يخترع تقنيات فنية جديدة. لا تخلي نفسك تنحصر في تخصص واحد.</p>
+
+  <div class="quote-block">
+    <p>"تعلّم كيف تشوف. كل شي مرتبط بكل شي ثاني." &mdash; ليوناردو دافنشي</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">دروس إيزاكسون العملية</div>
+    <p>إيزاكسون يقترح عادات بسيطة مستوحاة من ليوناردو: اكتب قائمة أسئلة كل يوم، لاحظ تفصيلة ما أحد ينتبه لها، ارسم أفكارك بدال ما تكتبها، اقرأ في مجال ما له علاقة بشغلك، وروح تمشّى وراقب الطبيعة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">الدرس الأخير</div>
+    <p>ليوناردو ما كان خارق &mdash; كان إنسان عنده فضول ما ينتهي وانضباط في تسجيل ملاحظاته وشجاعة يسأل أسئلة ما أحد يسألها. هالصفات مو حكر على العباقرة &mdash; أي واحد يقدر يطوّرها. ابدأ اليوم: اسأل سؤال غريب، لاحظ شي جديد، واكتبه في دفترك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+</article>
+
+<!-- Footer -->
+<footer class="footer">
+  <h3>ليوناردو دافنشي &mdash; والتر إيزاكسون</h3>
+  <p>ملخص شامل ومفصّل لأهم الأفكار والدروس من الكتاب</p>
+  <p>الكتاب الأصلي: Leonardo da Vinci by Walter Isaacson (2017)</p>
+  <div class="disclaimer">
+    هذا الملخص لأغراض تعليمية فقط ولا يُغني عن قراءة الكتاب الأصلي.
+    جميع الاقتباسات والأفكار تعود لمؤلف الكتاب والتر إيزاكسون.
+    لدعم المؤلف، يُرجى شراء نسخة أصلية من الكتاب.
+  </div>
+</footer>
+
+</body>
+</html>
