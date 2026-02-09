@@ -107,6 +107,9 @@ html {
   -webkit-tap-highlight-color: transparent;
   height: 100%;
   overscroll-behavior-y: none;
+  /* Fill safe area behind body so no black bars appear on iOS PWA */
+  background: var(--bg-primary);
+  min-height: calc(100% + env(safe-area-inset-top));
 }
 
 body {
@@ -118,6 +121,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+  min-height: 100dvh;
   min-height: -webkit-fill-available;
   overflow-x: hidden;
   transition: background 0.3s ease, color 0.3s ease;
