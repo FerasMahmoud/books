@@ -8,7 +8,9 @@
   'use strict';
 
   const TURSO_URL = 'https://islamic-sync-ferasmahmoud.aws-eu-west-1.turso.io/v2/pipeline';
-  const TURSO_TOKEN = 'eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzA1NTUzODAsImlkIjoiMjBkNzQyZDAtZmRlMi00YWI3LTgzZmEtNjA5ZWQyZDUzN2QxIiwicmlkIjoiZjY1MjY4ZmUtZTNlNi00Y2UxLTg5MDMtZjI0ZGQzOTVmNWY2In0.sT3mdvCjT76rr15kbOgv9JFLeR0xeTiXq4NzAEnBupwN1gE7pwPuY_vF2WRuxBSx2t166YLiwtX1MmB9PZS9DQ';
+  // Token loaded from localStorage to avoid exposing in public repo.
+  // Set it once via browser console: localStorage.setItem('turso_token', 'your-token')
+  const TURSO_TOKEN = localStorage.getItem('turso_token') || '';
 
   // Debounce timers for progress saves (avoid spamming on scroll)
   const _debounceTimers = {};
@@ -16,6 +18,8 @@
   // ==================== TURSO HTTP API ====================
 
   async function tursoExec(statements) {
+    if (!TURSO_TOKEN) return null;
+
     const requests = statements.map((s) => ({
       type: 'execute',
       stmt: s.args

@@ -82,7 +82,8 @@
     function setupScrollTracking() {
         // Throttled for progress saving (500ms)
         window.addEventListener('scroll', throttle(handleScroll, SCROLL_THROTTLE), { passive: true });
-        // Scroll direction detection removed - header always visible
+        // Scroll direction detection for immersive reading
+        window.addEventListener('scroll', handleScrollDirection, { passive: true });
     }
 
     function handleScrollDirection() {

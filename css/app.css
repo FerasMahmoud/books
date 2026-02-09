@@ -891,6 +891,11 @@ textarea:focus {
   margin-top: calc(env(safe-area-inset-top) + 59px);
   margin-bottom: 0;
   background: var(--bg-secondary);
+  transition: margin-top 0.3s ease;
+}
+
+#book-frame.immersive {
+  margin-top: 0;
 }
 
 /* Reader Toolbar */

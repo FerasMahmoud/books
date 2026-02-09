@@ -632,6 +632,14 @@
     currentBookPath = bookPath;
     switchView('reader');
 
+    // Reset immersive state — show header when opening a book
+    const rh = document.querySelector('.reader-header');
+    const rp = document.querySelector('.reader-progress-container');
+    const bf = document.getElementById('book-frame');
+    if (rh) rh.classList.remove('reader-hidden');
+    if (rp) rp.classList.remove('reader-hidden');
+    if (bf) bf.classList.remove('immersive');
+
     const frame = document.getElementById('book-frame');
     if (frame) {
       frame.src = bookPath;
@@ -818,7 +826,20 @@
         break;
 
       case 'SCROLL_DIRECTION':
-        // No longer hiding header on scroll - always visible
+        {
+          const rh = document.querySelector('.reader-header');
+          const rp = document.querySelector('.reader-progress-container');
+          const bf = document.getElementById('book-frame');
+          if (data.direction === 'down') {
+            if (rh) rh.classList.add('reader-hidden');
+            if (rp) rp.classList.add('reader-hidden');
+            if (bf) bf.classList.add('immersive');
+          } else {
+            if (rh) rh.classList.remove('reader-hidden');
+            if (rp) rp.classList.remove('reader-hidden');
+            if (bf) bf.classList.remove('immersive');
+          }
+        }
         break;
 
       case 'CONTENT_LOADED':
