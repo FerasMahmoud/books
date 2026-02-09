@@ -632,12 +632,6 @@
     currentBookPath = bookPath;
     switchView('reader');
 
-    // Reset header visibility
-    const header = document.querySelector('.reader-header');
-    const progress = document.querySelector('.reader-progress-container');
-    if (header) header.classList.remove('reader-hidden');
-    if (progress) progress.classList.remove('reader-hidden');
-
     const frame = document.getElementById('book-frame');
     if (frame) {
       frame.src = bookPath;
@@ -824,17 +818,7 @@
         break;
 
       case 'SCROLL_DIRECTION':
-        {
-          const header = document.querySelector('.reader-header');
-          const progress = document.querySelector('.reader-progress-container');
-          if (data.direction === 'down') {
-            if (header) header.classList.add('reader-hidden');
-            if (progress) progress.classList.add('reader-hidden');
-          } else {
-            if (header) header.classList.remove('reader-hidden');
-            if (progress) progress.classList.remove('reader-hidden');
-          }
-        }
+        // No longer hiding header on scroll - always visible
         break;
 
       case 'CONTENT_LOADED':

@@ -82,8 +82,7 @@
     function setupScrollTracking() {
         // Throttled for progress saving (500ms)
         window.addEventListener('scroll', throttle(handleScroll, SCROLL_THROTTLE), { passive: true });
-        // Fast listener for scroll direction (hide/show bars)
-        window.addEventListener('scroll', handleScrollDirection, { passive: true });
+        // Scroll direction detection removed - header always visible
     }
 
     function handleScrollDirection() {
