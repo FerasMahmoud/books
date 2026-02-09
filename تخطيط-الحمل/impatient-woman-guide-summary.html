@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>دليل المستعجلة للحمل - ملخص شامل | جين تونج</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #f39c12; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #f1c40f; }
+
+  .hero {
+    background: linear-gradient(135deg, #4a3000 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #f39c12;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(243, 156, 18, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(74, 48, 0, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #f39c12;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(243, 156, 18, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(243, 156, 18, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #d0b0b0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #d0b0b0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '⚡';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #4a3000;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #f39c12;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(243, 156, 18, 0.1);
+    color: #f39c12;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #f39c12;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #4a3000;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #f39c12;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #4a3000;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #f39c12;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(243, 156, 18, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #f39c12, #d68910);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #f39c12;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(243, 156, 18, 0.12);
+    color: #f39c12;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(243, 156, 18, 0.06);
+    border-right: 4px solid #f39c12;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '"';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(243, 156, 18, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(74, 48, 0, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(243, 156, 18, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #f39c12;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(243, 156, 18, 0.08);
+    border: 1px solid rgba(243, 156, 18, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #f1c40f;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #d0c0a0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(243, 156, 18, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #f39c12;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #4a3000, #1a1a2e);
+    border-top: 3px solid #f39c12;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(243, 156, 18, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">⏱️</span>
+    <h1>دليل المستعجلة للحمل</h1>
+    <p class="subtitle">The Impatient Woman's Guide to Getting Pregnant</p>
+    <p class="author">جين تونج — Jean M. Twenge, PhD</p>
+    <div class="meta-info">
+      <span>مبني على الأبحاث العلمية</span>
+      <span>دحض خرافات الخصوبة</span>
+      <span>دليل عملي وسريع</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>ليش هذا الكتاب مهم؟</h2>
+  <p>
+    لو أنتِ من النوع اللي يبي كل شي "أمس" ومو قادرة تستحمل الانتظار — هذا الكتاب كُتب لك حرفياً. جين تونج (باحثة نفسية) كتبته من تجربة شخصية ومهنية:
+  </p>
+  <ul>
+    <li>القلق من "تأخر" الحمل يأكلك حتى لو بديتي قبل شهر بس</li>
+    <li>الإنترنت مليان معلومات متضاربة ومخيفة عن العمر والخصوبة</li>
+    <li>ضغط الأهل والمجتمع يزيد التوتر بدل ما يساعد</li>
+    <li>ما تعرفين الفرق بين المعلومات العلمية والخرافات المنتشرة</li>
+  </ul>
+  <p>
+    جين تونج تستخدم خلفيتها البحثية عشان ترجع للدراسات الأصلية وتفصل الحقيقة عن الخرافة. كتابها خفيف ومليان فكاهة — يخلّيك تحسين إنك مو لوحدك في هالقلق، ويعطيك معلومات تهدّي أعصابك بالعلم مو بالكلام الفاضي.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    جين تونج أستاذة علم النفس في جامعة سان دييغو، ومعروفة بأبحاثها عن الأجيال والتغيرات الاجتماعية. لما قررت تحمل، سوّت اللي تعرف تسويه أحسن شي: بحثت. وبعد ما اكتشفت إن كثير من المعلومات "المعروفة" عن الخصوبة مبنية على دراسات قديمة أو ضعيفة، قررت تكتب هذا الكتاب.
+  </p>
+  <p>
+    أسلوب الكتاب خفيف ومضحك — تونج تعترف إنها كانت "مستعجلة" ومهووسة وتشارك لحظاتها المحرجة بصراحة. لكن وراء الفكاهة فيه محتوى علمي قوي. كل معلومة مدعومة بدراسات حقيقية ومراجع واضحة. النتيجة: كتاب يخفف قلقك ويعطيك خطة عملية بنفس الوقت.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الأجزاء</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>ضغط الوقت</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>خرافات يجب دحضها</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>عامل العمر</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>التعامل مع التوتر</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>المكملات والتغذية</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>متى تراجعي الطبيب</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">ضغط الوقت</h2>
+      <span class="chapter-title-en">The Timing Pressure</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    تونج تبدأ بالاعتراف: الانتظار صعب. لما تقررين إنك تبين طفل، تبينه الحين — مو بعد سنة. كل شهر تجي الدورة يحس مثل الفشل حتى لو عقلك يعرف إن هذا طبيعي. هالشعور طبيعي وإنساني ومو خطأ فيك.
+  </p>
+  <p>
+    لكن — والمفاجأة اللي تهدّي الأعصاب — احتمالية الحمل في أي شهر واحد هي حوالي 20-25% للأزواج الأصحاء في العشرينات والثلاثينات. يعني حتى لو كل شي تمام، ممكن تاخذ 4-5 أشهر وهذا طبيعي تماماً. 80% من الأزواج يحملون خلال 6 أشهر، و90% خلال سنة.
+  </p>
+  <p>
+    تونج تقول: لا تقارنين نفسك بصديقتك اللي حملت من أول شهر — هذي محظوظة مو عبقرية. ولا تقارنين نفسك باللي أخذت سنة — كل وحدة ظروفها مختلفة. ركّزي على اللي تقدرين تتحكمين فيه (توقيت العلاقة، صحتك) وسلّمي الباقي.
+  </p>
+
+  <div class="quote-block">
+    <p>الحمل مو مثل الامتحان — ما فيه رسوب ونجاح. فيه محاولات، وكل محاولة عندها نسبة نجاح محددة. المثابرة مطلوبة — الكمال مو مطلوب.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>الانتظار طبيعي ومتوقع. احتمالية الحمل في كل شهر حوالي 20-25% — يعني ممكن تاخذ عدة أشهر وهذا طبيعي تماماً. لا تخلين كل شهر يحس مثل الأزمة. خذيها بروقان وثقي بالعملية.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>حددي لنفسك "فترة تجربة" — مثلاً 6 أشهر — وقولي لنفسك: خلال هالفترة بحاول بأفضل ما أقدر وما بقلق. بعدها أقيّم. هالحد الزمني يساعدك تبعدين عن القلق اليومي وتعطين جسمك فرصة بدون ضغط.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">خرافات يجب دحضها</h2>
+      <span class="chapter-title-en">Myths to Debunk</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    هذا الفصل من أقوى أجزاء الكتاب. تونج ترجع للدراسات الأصلية اللي بُنيت عليها "حقائق" الخصوبة المنتشرة، وتكتشف إن كثير منها ضعيفة أو مغلوطة.
+  </p>
+  <p>
+    <strong>خرافة: "بعد الـ35 خصوبتك تنهار"</strong> — تونج تكشف إن الإحصائية الشهيرة (إن ثلث النساء فوق 35 ما يقدرون يحملون خلال سنة) مبنية على سجلات ولادات فرنسية من القرن الثامن عشر! دراسات حديثة أكثر تظهر إن الانخفاض تدريجي ومو حاد كما يُصوّر. في الـ35-39، حوالي 82% يحملون خلال سنة (مقارنة بـ86% في الـ27-34).
+  </p>
+  <p>
+    <strong>خرافة: "لازم ترقدين على ظهرك بعد العلاقة"</strong> — ما فيه دليل علمي يدعم هالفكرة. الحيوانات المنوية تصل لقناة فالوب خلال دقائق. <strong>خرافة: "الأوضاع تأثر على الحمل"</strong> — كذلك ما فيه أي دليل. <strong>خرافة: "لازم تتوقفين عن القهوة تماماً"</strong> — كوب أو كوبين يومياً ما يأثر حسب الدراسات.
+  </p>
+
+  <div class="quote-block">
+    <p>أخطر خرافة في عالم الخصوبة: إذا ما صار حمل بسرعة يعني فيه مشكلة. الحقيقة: الحمل يحتاج وقت وهذا طبيعي تماماً.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>كثير من "الحقائق" المنتشرة عن الخصوبة مبنية على دراسات قديمة أو ضعيفة. لا تصدقين كل ما تقرينه على الإنترنت. ارجعي للمصدر. الخصوبة ما تنهار فجأة في عمر معين — هي تنخفض تدريجياً وببطء أكثر مما يُقال.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>لما تقرين معلومة مخيفة عن الخصوبة على الإنترنت، اسألي: وش الدراسة اللي مبنية عليها؟ كم عدد المشاركات؟ متى نُشرت؟ غالباً بتلاقين إن المعلومة مبالغ فيها. وتذكري: أغلب النساء يحملون بشكل طبيعي — القصص المخيفة هي الاستثناء مو القاعدة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">عامل العمر</h2>
+      <span class="chapter-title-en">The Age Factor</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    تونج تتعمق أكثر في موضوع العمر — الموضوع اللي يسبب أكبر قلق عند النساء. تقول: نعم، العمر يأثر. لكن التأثير أقل دراماتيكية بكثير مما تسمعين في الإعلام والسوشال ميديا.
+  </p>
+  <p>
+    الأرقام الحقيقية من دراسات حديثة: في عمر 35-39، احتمالية الحمل خلال سنة حوالي 82%. في عمر 40-44، تنخفض لكن مو بالشكل الكارثي اللي يُصوّر. الانخفاض الكبير يصير بعد 40 مو بعد 35. و"الهاوية" اللي يخوفونك منها عند 35 ما لها أساس علمي قوي.
+  </p>
+  <p>
+    لكن تونج ما تقول "ما تقلقين أبداً". تقول: كوني واقعية. لو عمرك فوق 35، لا تنتظرين سنة كاملة قبل ما تراجعين طبيب — 6 أشهر كافية. لو عمرك فوق 40، راجعي من البداية. الواقعية مو تشاؤم — الواقعية هي إنك تعرفين الحقائق وتتصرفين بناءً عليها.
+  </p>
+
+  <div class="quote-block">
+    <p>العمر عامل من ضمن عوامل كثيرة — مو الحكم النهائي. نساء كثيرات حملن طبيعياً في الأربعينات. لا تخلين رقم عمرك يحدد مستقبلك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>العمر يأثر على الخصوبة لكن بشكل تدريجي ومو كارثي كما يُصوّر. الإحصائيات المخيفة غالباً من دراسات قديمة. الدراسات الحديثة تظهر نتائج أكثر تفاؤلاً. كوني واقعية بس لا تكوني متشائمة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التعامل مع التوتر</h2>
+      <span class="chapter-title-en">Managing Stress</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    "بس استرخي وبيصير حمل" — تونج تكره هالجملة (ومن حقها). لكنها تعترف إن العلاقة بين التوتر والخصوبة حقيقية — بس مو بالطريقة اللي الناس تفكر فيها.
+  </p>
+  <p>
+    التوتر العادي (شغل، مشاغل يومية) ما يمنع الحمل. التوتر الشديد والمزمن (اكتئاب حقيقي، قلق مرضي) ممكن يأثر على الهرمونات والتبويض. يعني لو أنتِ متوترة شوي من رحلة الحمل — هذا طبيعي وما يمنع الحمل. لو أنتِ في حالة توتر شديد يأثر على حياتك اليومية — هذا يحتاج علاج مو لأنه يمنع الحمل بس، لأنه يأثر على صحتك العامة.
+  </p>
+  <p>
+    تونج تنتقد فكرة إن "التوتر سبب عدم الحمل" لأنها تحمّل المرأة المسؤولية — كإنها لو بس "استرخت" كان حملت. هذا مو عدل ومو علمي. بدل ما تحاولين "ما تتوترين" (اللي هو بحد ذاته يسبب توتر!)، ركّزي على التعامل مع مشاعرك بطريقة صحية.
+  </p>
+
+  <div class="quote-block">
+    <p>قول "بس استرخي وبيصير حمل" مثل قول "بس استرخي وبتنحفين". ما يفيد ويزيد الضغط. الحل مو في إنكار المشاعر — الحل في التعامل معها.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>التوتر العادي ما يمنع الحمل — فلا تتوترين من التوتر! لكن صحتك النفسية مهمة لذاتها. تعاملي مع مشاعرك بصراحة: اعترفي بالقلق، تكلمي عنه، واطلبي مساعدة لو احتجتي. ومن يقول لك "استرخي" — تجاهليه بابتسامة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>بدل ما تحاولين "ما تتوترين"، اعملي أشياء تساعدك تتعاملين مع التوتر: مارسي رياضة خفيفة، تكلمي مع شخص تثقين فيه، قللي وقت البحث عن الخصوبة على الإنترنت (خصصي 15 دقيقة بس في اليوم)، وسوّي أشياء تسعدك — هوايات، خروجات، أي شي يخليك تنسين شوي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">المكملات والتغذية</h2>
+      <span class="chapter-title-en">Supplements & Nutrition</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    تونج تتعامل مع المكملات بأسلوبها المعتاد: وش يقول العلم فعلاً؟ تراجع الدراسات وتفصل بين اللي ثبت فعلاً واللي مجرد ادعاءات.
+  </p>
+  <p>
+    <strong>المثبت علمياً:</strong> حمض الفوليك (أو ميثيل فوليت) — ضروري لمنع تشوهات الأنبوب العصبي ويُفضل البدء فيه قبل الحمل بـ3 أشهر. فيتامين D — نقصه مرتبط بمشاكل الخصوبة وأغلب الناس عندها نقص. أوميغا 3 — مفيد للصحة العامة والخصوبة.
+  </p>
+  <p>
+    <strong>اللي فيه أدلة واعدة بس مو قاطعة:</strong> CoQ10 (خصوصاً فوق 35)، فيتامين E، السيلينيوم. تونج تقول: هالمكملات ما بتضرك غالباً، وممكن تفيدك، فلا بأس من أخذها. بس لا تنفقين ميزانية كبيرة على مكملات ما ثبت فعاليتها.
+  </p>
+  <p>
+    بالنسبة للتغذية: تونج تأخذ نهج واقعي. ما تحتاجين دايت مثالي — تحتاجين تغذية "جيدة بما فيه الكفاية". كلي متوازن، قللي الأطعمة المصنعة، خذي فيتامينات الحمل، ولا تحرمين نفسك من كل شي.
+  </p>
+
+  <div class="quote-block">
+    <p>الكمال في التغذية مستحيل ومو مطلوب. "جيد بما فيه الكفاية" أفضل من "محاولة مثالية تنهار بعد أسبوع". كلي صحي أغلب الوقت وما تقلقين على الباقي.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>خذي الأساسيات المثبتة علمياً (فوليت + فيتامين D + أوميغا 3) ولا تغرقين في عالم المكملات. التغذية الجيدة مهمة لكن الكمال مو مطلوب. كلي متوازن، خذي فيتاميناتك، وعيشي حياتك بدون هوس.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">متى تراجعي الطبيب</h2>
+      <span class="chapter-title-en">When to See a Doctor</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    تونج تختم بالسؤال المهم: متى الانتظار يكفي ولازم تطلبين مساعدة متخصصة؟ القاعدة العامة: لو عمرك أقل من 35 وما صار حمل بعد سنة من المحاولة — راجعي طبيب. لو عمرك فوق 35 — بعد 6 أشهر. لو عمرك فوق 40 — من البداية.
+  </p>
+  <p>
+    لكن فيه حالات تراجعين فيها فوراً بغض النظر عن عمرك: دورة غير منتظمة جداً (أقل من 21 يوم أو أكثر من 35 يوم)، ألم شديد وقت الدورة، تاريخ سابق لعمليات في الحوض، أو مشاكل صحية معروفة مثل تكيس المبايض أو بطانة الرحم المهاجرة.
+  </p>
+  <p>
+    تونج تشجّع على إن المرأة تروح مستعدة: خذي معك بيانات تتبع الدورة (أطوال الدورة، نتائج اختبارات التبويض لو سويتيها)، قائمة بالأدوية والمكملات اللي تاخذينها، وأسئلة مكتوبة. الطبيب يقدر يساعدك أكثر لما تجينه بمعلومات واضحة.
+  </p>
+
+  <div class="quote-block">
+    <p>طلب المساعدة الطبية مو اعتراف بالفشل — هو خطوة ذكية. الطب الحديث عنده أدوات مذهلة تساعد، والخطوة الأولى دايماً هي إنك تسألين.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>اعرفي متى الانتظار طبيعي ومتى لازم تتحركين. القواعد واضحة: أقل من 35 = سنة، فوق 35 = 6 أشهر، فوق 40 = فوراً. ولا تنتظرين لو عندك أعراض تثير القلق. المساعدة الطبية المبكرة توفر وقت وتوتر كثير.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>سوّي لنفسك ملف فيه: تواريخ دوراتك الأخيرة، أي أعراض غير طبيعية لاحظتيها، قائمة مكملاتك وأدويتك، وأسئلتك المكتوبة. حطيه في جوالك أو دفترك عشان يكون جاهز لو قررتي تراجعين الطبيب. التحضير يخلي الزيارة أكثر فعالية.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>دليل المستعجلة للحمل — الخلاصة النهائية</h3>
+  <p>
+    جين تونج — Jean M. Twenge, PhD
+  </p>
+  <p>
+    هذا الكتاب يهدّي أعصاب أي وحدة تحاول تحمل. يكشف إن كثير من المعلومات المخيفة عن الخصوبة والعمر مبنية على دراسات قديمة وضعيفة. الحقيقة أقل رعباً بكثير مما يُصوّر.
+  </p>
+  <p>
+    الرسائل الأساسية: (1) الانتظار طبيعي — الحمل يحتاج وقت. (2) العمر يأثر بس مو بشكل كارثي. (3) التوتر العادي ما يمنع الحمل. (4) خذي المكملات الأساسية بس لا تتهوسين. (5) اعرفي متى تطلبين مساعدة. (6) عيشي حياتك — مو لازم كل يوم يكون عن الحمل.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص شخصي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل ومراجع علمية وقصص شخصية ممتعة أكثر بكثير.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدرين تطبقينها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>ابدئي بأخذ فيتامينات الحمل (فوليت + فيتامين D + أوميغا 3)</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>حددي "حد زمني" للبحث على الإنترنت — 15 دقيقة يومياً بس</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>تتبعي دورتك (حرارة + إفرازات) بدون ما تتهوسين بالنتائج</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>حددي نشاط واحد يسعدك ومارسيه أسبوعياً (هواية، خروجة، رياضة)</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>جهّزي ملف "زيارة الطبيب" بتواريخ دوراتك وأسئلتك</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>لما أحد يقول "بس استرخي" — ابتسمي وتجاهلي النصيحة</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

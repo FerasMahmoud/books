@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملخص كتاب: دليل نجاة الأب الجديد</title>
+    <link rel="stylesheet" href="../css/reader.css">
+    <style>
+        @import url('../css/fonts.css');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+        body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #16213e; }
+        ::-webkit-scrollbar-thumb { background: #27ae60; border-radius: 4px; }
+        .hero { background: linear-gradient(135deg, #0a3a1a 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #27ae60; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(39,174,96,0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+        @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+        .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+        .hero .subtitle { font-size: 1.3rem; color: #27ae60; font-weight: 700; margin-bottom: 8px; }
+        .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+        .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+        .hero .meta-info span { background: rgba(39,174,96,0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(39,174,96,0.2); }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .problem-section { background: linear-gradient(145deg, #0a3a1a, #1a1a2e); border: 2px solid #219a52; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+        .problem-section h2 { font-size: 1.6rem; color: #27ae60; margin-bottom: 20px; font-weight: 800; }
+        .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+        .problem-section ul { list-style: none; margin: 20px 0; }
+        .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+        .problem-section ul li::before { content: '\25B8'; position: absolute; right: 0; color: #27ae60; }
+        .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0a3a1a; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+        .toc h2 { font-size: 1.8rem; color: #27ae60; margin-bottom: 25px; text-align: center; font-weight: 800; }
+        .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+        .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+        .toc-item:hover { background: rgba(39,174,96,0.1); color: #27ae60; transform: translateX(-4px); }
+        .toc-num { background: #27ae60; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+        .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0a3a1a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+        .intro-section h2 { font-size: 1.6rem; color: #27ae60; margin-bottom: 15px; font-weight: 800; }
+        .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+        .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0a3a1a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; transition: border-color 0.3s ease; }
+        .chapter:hover { border-color: #27ae60; }
+        .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(39,174,96,0.15); }
+        .chapter-number { background: linear-gradient(135deg, #27ae60, #219a52); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(39,174,96,0.3); }
+        .chapter-titles { flex: 1; }
+        .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+        .chapter-title-en { font-size: 0.95rem; color: #27ae60; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+        .section-label { display: inline-block; background: rgba(39,174,96,0.12); color: #27ae60; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+        .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+        .quote-block { background: rgba(39,174,96,0.06); border-right: 4px solid #27ae60; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+        .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(39,174,96,0.2); font-family: Georgia, serif; }
+        .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+        .lesson-box { background: linear-gradient(135deg, rgba(39,174,96,0.4), rgba(26,26,46,0.8)); border: 1px solid rgba(39,174,96,0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+        .lesson-box .lesson-title { color: #27ae60; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+        .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+        .insight-box { background: rgba(0,206,201,0.08); border: 1px solid rgba(0,206,201,0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+        .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+        .insight-box p { color: #b0d0d0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+        .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(39,174,96,0.1); }
+        .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; }
+        .back-top a:hover { color: #27ae60; }
+        .action-plan { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #0a3a1a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+        .action-plan h2 { font-size: 1.8rem; color: #e94560; margin-bottom: 25px; text-align: center; font-weight: 800; }
+        .action-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(233,69,96,0.1); }
+        .action-item:last-child { border-bottom: none; }
+        .action-num { background: #e94560; color: #fff; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; }
+        .action-item p { color: #c0c0d0; font-size: 1rem; line-height: 1.8; margin: 0; }
+        .footer { background: linear-gradient(145deg, #0a3a1a, #1a1a2e); border-top: 3px solid #27ae60; padding: 50px 20px; margin-top: 60px; text-align: center; }
+        .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+        .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+        .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(39,174,96,0.15); font-size: 0.85rem; color: #666680; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="book-icon">&#x1F6E1;&#xFE0F;</span>
+            <h1>دليل نجاة الأب الجديد</h1>
+            <div class="subtitle">The New Dad's Survival Guide</div>
+            <div class="author">سكوت ماكتافيش | Scott Mactavish</div>
+            <div class="meta-info">
+                <span>6 فصول</span>
+                <span>ملخص شامل</span>
+                <span>نصائح رجال</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <h2>ليش هالكتاب مهم؟</h2>
+        <p>هالكتاب مكتوب بأسلوب "من رجل لرجل". المؤلف يتكلم معك بصراحة ما تلقاها في كتب الأبوة التقليدية. يعترف إن الأبوة الجديدة فيها صدمة، وإن حياتك بتتغير بشكل جذري، ويعطيك أدوات عملية تتعامل مع هالتغيير.</p>
+        <ul>
+            <li>تحس إن حياتك اتقلبت رأساً على عقب وما تدري كيف ترجع للمسار</li>
+            <li>علاقتك الزوجية تتأثر وما تعرف كيف تصلحها</li>
+            <li>تحاول توازن بين الشغل والبيت ودايماً تحس إنك مقصر</li>
+            <li>تبي تكون أب كويس بس ما عندك قدوة أو دليل واضح</li>
+        </ul>
+    </section>
+
+    <!-- TOC -->
+    <nav class="toc" id="toc">
+        <h2>فهرس الفصول</h2>
+        <div class="toc-grid">
+            <a href="#ch1" class="toc-item"><span class="toc-num">1</span> صدمة الواقع</a>
+            <a href="#ch2" class="toc-item"><span class="toc-num">2</span> العناية بالطفل</a>
+            <a href="#ch3" class="toc-item"><span class="toc-num">3</span> النجاة من قلة النوم</a>
+            <a href="#ch4" class="toc-item"><span class="toc-num">4</span> العلاقة الزوجية</a>
+            <a href="#ch5" class="toc-item"><span class="toc-num">5</span> التوازن بين العمل والبيت</a>
+            <a href="#ch6" class="toc-item"><span class="toc-num">6</span> من النجاة للازدهار</a>
+        </div>
+    </nav>
+
+    <!-- Intro -->
+    <section class="intro-section">
+        <h2>مقدمة الكتاب</h2>
+        <p>سكوت ماكتافيش كتب هالكتاب لأنه حس إن كتب الأبوة مكتوبة بلغة ما تخاطب الرجل بشكل مباشر. كان يبي كتاب يتكلم بصراحة عن المخاوف والتحديات اللي يواجهها كل أب جديد بدون تنميق أو مثالية.</p>
+        <p>الرسالة الأساسية: الأبوة الجديدة صعبة، بس أنت أقدر مما تفتكر. المرحلة الأولى مرحلة نجاة، وبعدها تبدأ تزدهر وتستمتع. المهم إنك ما تستسلم في المرحلة الصعبة.</p>
+    </section>
+
+    <div class="container">
+
+        <!-- Chapter 1 -->
+        <section class="chapter" id="ch1">
+            <div class="chapter-header">
+                <div class="chapter-number">1</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">صدمة الواقع</div>
+                    <div class="chapter-title-en">Reality Shock</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>المؤلف يبدأ بصراحة: لما يجي المولود الأول، حياتك بتتغير بشكل ما توقعته. حتى لو قريت كل الكتب وحضرت كل الدورات، الواقع مختلف. وهذا طبيعي. كل أب يمر بصدمة الواقع هذي.</p>
+            <p>الصدمة تيجي من كم مصدر: قلة النوم المفاجئة، فقدان الحرية اللي كنت تاخذها كأنها مسلّمة، الإحساس بالمسؤولية الثقيلة، والتغيير في العلاقة مع زوجتك. كل هالأشياء تصير في نفس الوقت وهذا هو السبب إنها صادمة.</p>
+            <p>بس المؤلف يقول: هالصدمة مؤقتة. خلال أسابيع لشهور، تبدأ تتأقلم ويصير عندك إيقاع جديد. السر إنك ما تقاوم التغيير بل تتقبله وتتكيف معه. حياتك القديمة انتهت، وحياتك الجديدة أحلى بس تحتاج وقت تكتشفها.</p>
+
+            <div class="quote-block">
+                <p>صدمة الأبوة مو دليل إنك غير جاهز. دليل إنك إنسان طبيعي يواجه أكبر تغيير في حياته. اعترف فيها وعدّيها.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>تقبل إن حياتك تغيرت ولا تحاول ترجع للقديم. الواقع الجديد فيه جمال كثير بس تحتاج عيون جديدة تشوفه. كن صبور مع نفسك واعطِ نفسك وقت تتأقلم.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>الأبحاث تبين إن أغلب الآباء الجدد يحتاجون من ٣ لـ ٦ شهور عشان يتأقلمون مع حياتهم الجديدة. إذا حسيت إنك تايه في الأسابيع الأولى، اعرف إن هذا طبيعي وبيمر.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 2 -->
+        <section class="chapter" id="ch2">
+            <div class="chapter-header">
+                <div class="chapter-number">2</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">العناية بالطفل</div>
+                    <div class="chapter-title-en">Caring for the Baby</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>المؤلف يقول بصراحة: أول مرة تمسك طفلك بتحس إنك ممكن تكسره. هالشعور طبيعي وكل أب مر فيه. بس الحقيقة إن الأطفال أقوى مما نفتكر، وأنت بتتعلم بسرعة أكبر مما تتوقع.</p>
+            <p>النصيحة الأهم: لا تنتظر زوجتك تطلب منك. بادر. شيل الطفل من نفسك، غير الحفاظ من نفسك، جهز الرضعة من نفسك. كل مرة تسوي فيها شي بنفسك، تبني ثقة وتبني رابطة مع طفلك.</p>
+            <p>المؤلف يتكلم عن فك شفرة البكاء: الطفل يبكي لأسباب محدودة - جوع، حفاظ متسخ، تعب، حاجة للحضن، أو مغص. تعلم تميز بينها بالتجربة. ومع الوقت بتعرف بكاء طفلك زي ما تعرف صوت جوالك.</p>
+
+            <div class="quote-block">
+                <p>ما تحتاج شهادة عشان تعتني بطفلك. تحتاج بس إنك تبادر وتتعلم من التجربة. كل خطأ يعلمك شي جديد.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>بادر في العناية بطفلك من اليوم الأول. لا تنتظر أحد يعلمك أو يطلب منك. جرب، غلط، تعلم، كرر. هذي طريقة كل أب ناجح تعلم فيها الأبوة.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 3 -->
+        <section class="chapter" id="ch3">
+            <div class="chapter-header">
+                <div class="chapter-number">3</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">النجاة من قلة النوم</div>
+                    <div class="chapter-title-en">Surviving Sleep Deprivation</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>المؤلف يقول: قلة النوم هي "الزومبي مود" اللي بتعيشه كأب جديد. مافيه مبالغة - بتحس إنك مو إنسان من التعب. بس فيه طرق تخفف الضرر وتخليك تنجو من هالمرحلة بأقل خسائر.</p>
+            <p>أول قاعدة: نام لما الطفل ينام. مو وقت تتفرج على مسلسلات أو تلعب قيمز. جسمك يحتاج كل دقيقة نوم تقدر تاخذها. ثاني قاعدة: تناوب مع زوجتك. واحد ينام من ٨ لـ ١٢ والثاني من ١٢ لـ ٤، وبعدين يتبادلون.</p>
+            <p>وإذا عندكم أهل قريبين يقدرون يساعدون، لا تترددون تطلبون مساعدة. ولا تخلون الكبرياء يمنعكم. ما أحد يقدر يسوي كل شي لحاله، والأبوة مو وقت البطولات الفردية.</p>
+
+            <div class="quote-block">
+                <p>قلة النوم مؤقتة بس تأثيرها ممكن يكون دائم إذا ما تعاملت معها بذكاء. اهتم بنومك مثل ما تهتم بأكلك.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>خذ النوم بجدية واستخدم كل الاستراتيجيات المتاحة: التناوب مع زوجتك، النوم مع الطفل، طلب المساعدة من الأهل. وتجنب الكافيين بعد الظهر عشان ما يأثر على نوعية نومك القليل.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>قلة النوم تأثر على قدرتك في اتخاذ القرارات وعلى مزاجك. إذا حسيت بعصبية غير طبيعية أو إحباط مستمر، اعرف إن السبب غالباً التعب. خذ غفوة بدال ما تتشاجر.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 4 -->
+        <section class="chapter" id="ch4">
+            <div class="chapter-header">
+                <div class="chapter-number">4</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">العلاقة الزوجية</div>
+                    <div class="chapter-title-en">The Marriage</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>المؤلف يتكلم بصراحة عن موضوع حساس: العلاقة الزوجية بعد المولود. يقول إن أغلب الأزواج يمرون بفترة صعبة والكثير ما يتكلمون عنها. التعب والضغط والمسؤوليات الجديدة تاخذ كل شي وما يبقى طاقة للعلاقة.</p>
+            <p>نصيحته الأولى: لا تاخذ الأمور بشكل شخصي. زوجتك مو زعلانة منك - هي تعبانة وهرموناتها متقلبة وجسمها يتعافى. كن صبور ومتفهم. والأهم: ساعدها بدون ما تنتظر تطلب. لما تشوفها تعبانة، خذ الطفل وقول لها "روحي ارتاحي".</p>
+            <p>ثاني نصيحة: حافظوا على التواصل. حتى لو خمس دقائق في اليوم تجلسون وتتكلمون عن أشياء غير الطفل. ذكروا بعض ليش تحبون بعض. هالأشياء الصغيرة تحافظ على الشرارة لين تعدي المرحلة الصعبة.</p>
+
+            <div class="quote-block">
+                <p>أقوى شي تقدمه لطفلك هو بيت فيه أب وأم يحبون ويحترمون بعض. علاقتكم الزوجية هي الأساس اللي يُبنى عليه كل شي.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>لا تهمل علاقتك الزوجية وأنت منشغل بالطفل. كونوا فريق، تكلموا بصراحة، ساعدوا بعض. المرحلة الصعبة تمر، بس الضرر اللي يصير في العلاقة ممكن ياخذ وقت طويل ينصلح إذا ما انتبهت له بدري.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 5 -->
+        <section class="chapter" id="ch5">
+            <div class="chapter-header">
+                <div class="chapter-number">5</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">التوازن بين العمل والبيت</div>
+                    <div class="chapter-title-en">Work-Life Balance</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>واحد من أكبر التحديات للأب الجديد: كيف توازن بين الشغل والبيت. ترجع من الدوام وأنت تعبان، وتلقى البيت يحتاجك. ما تقدر تنعزل في غرفتك - طفلك وزوجتك يحتاجونك.</p>
+            <p>المؤلف يقول: لازم تعيد ترتيب أولوياتك. الشغل مهم عشان توفر لعائلتك، بس مو أهم من عائلتك نفسها. إذا كنت تشتغل ساعات إضافية ما لها داعي، قللها. إذا تقدر تاخذ إجازة أبوة، خذها بدون تردد.</p>
+            <p>وفي البيت: خصص وقت نوعي. يعني لما تكون مع طفلك، كن معه فعلاً - طفي الجوال، ارمي اللابتوب، وركز. نص ساعة من الحضور الكامل أفضل من ثلاث ساعات وأنت شارد ذهنياً.</p>
+
+            <div class="quote-block">
+                <p>ما أحد على فراش الموت تمنى لو قعد في المكتب أكثر. بس كثيرين تمنوا لو قضوا وقت أكثر مع عيالهم. فكر فيها.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>أعد ترتيب أولوياتك بشكل واعي. الشغل مهم بس مو كل شي. خصص وقت نوعي لعائلتك كل يوم. وتذكر: التوازن مو تقسيم مثالي ٥٠/٥٠ - هو إنك تعطي كل شي حقه حسب أهميته الحقيقية.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>كثير من الشركات صارت تقدم إجازات أبوة أو مرونة في العمل. اسأل عن حقوقك ولا تستحي. الأب اللي يهتم بعائلته مو أقل إنتاجية - بالعكس، الدراسات تبين إنه أكثر ولاءً وتركيزاً.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 6 -->
+        <section class="chapter" id="ch6">
+            <div class="chapter-header">
+                <div class="chapter-number">6</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">من النجاة للازدهار</div>
+                    <div class="chapter-title-en">From Surviving to Thriving</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>الفصل الأخير هو رسالة أمل. المؤلف يقول: المرحلة الصعبة تنتهي. يجي يوم تصحى فيه وتلقى إنك نمت ٦ ساعات متواصلة. يجي يوم طفلك يبتسم لك ويمد يده لك وتحس إن كل التعب راح.</p>
+            <p>الانتقال من النجاة للازدهار يصير تدريجياً. تبدأ تلقى إيقاعك الجديد. تعرف وش يبكي طفلك ووش يضحكه. تكتشف إن عندك قدرات أبوية ما كنت تعرفها. تحس بثقة ما كانت موجودة من قبل.</p>
+            <p>المفتاح إنك تستثمر في نموك الشخصي كأب وكإنسان. اقرأ، تعلم، تكلم مع آباء ثانيين، خذ وقت لنفسك. الأب السعيد والمتوازن هو أفضل أب. ما تحتاج تضحي بكل شي - تحتاج تلقى التوازن اللي يخليك تعطي أحسن ما عندك.</p>
+
+            <div class="quote-block">
+                <p>الأبوة مو اختبار تنجح أو ترسب فيه. هي رحلة كل يوم فيها فرصة جديدة تكون أحسن. استمتع بالطريق مو بس بالوجهة.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>ثق إن المرحلة الصعبة بتعدي وإن الأحسن جاي. استمر في التعلم والنمو. حافظ على صحتك وعلاقاتك. واستمتع بكل مرحلة من مراحل نمو طفلك - لأنها ما بترجع.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>ابحث عن مجتمع آباء - سواء أونلاين أو في منطقتك. التواصل مع آباء يمرون بنفس التجربة يعطيك دعم ونصائح وإحساس إنك مو لحالك في هالرحلة.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+    </div>
+
+    <!-- Action Plan -->
+    <section class="action-plan">
+        <h2>خطة العمل</h2>
+        <div class="action-item">
+            <div class="action-num">1</div>
+            <p>اكتب قائمة بمخاوفك من الأبوة الجديدة. بعدين لكل خوف، اكتب خطوة عملية واحدة تقدر تسويها. تحويل الخوف لفعل يقلل التوتر بشكل كبير.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">2</div>
+            <p>سوّ نظام تناوب واضح مع زوجتك للنوبات الليلية. اكتبوه ورقياً وعلقوه على الثلاجة. النظام الواضح يمنع الخلافات ويضمن إن كل واحد ياخذ راحته.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">3</div>
+            <p>خصص ١٥ دقيقة يومياً "وقت زوجين" بعد ما الطفل ينام. لا جوالات، لا تلفزيون. بس أنتم والكلام. حافظوا على هالعادة مهما صار.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">4</div>
+            <p>تكلم مع مديرك عن وضعك الجديد واطلب أي مرونة متاحة. إجازة أبوة، عمل من البيت يوم أو يومين، ساعات مرنة. اللي ما يسأل ما يحصل.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">5</div>
+            <p>انضم لمجموعة آباء جدد - سواء في حيك أو أونلاين. شارك تجربتك واسمع تجارب غيرك. الدعم الاجتماعي يسوي فرق كبير.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">6</div>
+            <p>حدد هواية أو نشاط واحد تحبه وخصص له وقت أسبوعي حتى لو ساعة. صحتك النفسية مهمة، والأب السعيد يعطي أكثر.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h3>دليل نجاة الأب الجديد - The New Dad's Survival Guide</h3>
+        <p>سكوت ماكتافيش</p>
+        <p>ملخص شامل بالعربية</p>
+        <div class="disclaimer">
+            هذا الملخص للأغراض التعليمية فقط. للاستفادة الكاملة، ننصح بقراءة الكتاب كاملاً.
+        </div>
+    </footer>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

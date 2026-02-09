@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>يبدأ بالبويضة - ملخص شامل | ريبيكا فيت</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #9b59b6; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #b07cc6; }
+
+  .hero {
+    background: linear-gradient(135deg, #2d0a4a 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #9b59b6;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(155, 89, 182, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(45, 10, 74, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #9b59b6;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(155, 89, 182, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(155, 89, 182, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #d0b0b0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #d0b0b0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '⚡';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #2d0a4a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #9b59b6;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(155, 89, 182, 0.1);
+    color: #9b59b6;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #9b59b6;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #2d0a4a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #9b59b6;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #2d0a4a;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #9b59b6;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(155, 89, 182, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #9b59b6, #7d3c98);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #9b59b6;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(155, 89, 182, 0.12);
+    color: #9b59b6;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(155, 89, 182, 0.06);
+    border-right: 4px solid #9b59b6;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '"';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(155, 89, 182, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(45, 10, 74, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(155, 89, 182, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #9b59b6;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(155, 89, 182, 0.08);
+    border: 1px solid rgba(155, 89, 182, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #b07cc6;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #c0b0d0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(155, 89, 182, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #9b59b6;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #2d0a4a, #1a1a2e);
+    border-top: 3px solid #9b59b6;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(155, 89, 182, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">🥚</span>
+    <h1>يبدأ بالبويضة</h1>
+    <p class="subtitle">It Starts with the Egg</p>
+    <p class="author">ريبيكا فيت — Rebecca Fett</p>
+    <div class="meta-info">
+      <span>أبحاث علمية عن جودة البويضات</span>
+      <span>مكملات ونصائح عملية</span>
+      <span>دليل شامل مبني على الأدلة</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>ليش هذا الكتاب مهم؟</h2>
+  <p>
+    كثير من الأزواج يواجهون صعوبة في الحمل ولا يعرفون إن جودة البويضة ممكن تكون السبب. ريبيكا فيت تعالج هالفجوة بالعلم والأدلة:
+  </p>
+  <ul>
+    <li>جودة البويضة تنخفض مع العمر ولا أحد يخبرك كيف تحسّنينها</li>
+    <li>المواد الكيميائية اليومية تأثر على خصوبتك بدون ما تدرين</li>
+    <li>المكملات الغذائية ممكن تسوي فرق كبير لكن ما تعرفين أي واحد تاخذين</li>
+    <li>الأطباء ما دايماً يعطونك خطة عملية لتحسين فرصك</li>
+  </ul>
+  <p>
+    هذا الكتاب يعتبر من أهم الكتب في مجال الخصوبة — مبني على مئات الأبحاث العلمية ويعطيك خطة واضحة وعملية لتحسين جودة بويضاتك. سواء كنتي تحاولين طبيعياً أو مقبلة على تلقيح صناعي، هالمعلومات ممكن تغيّر النتيجة.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    ريبيكا فيت باحثة في الكيمياء الحيوية، بدأت رحلتها مع هذا الموضوع لما واجهت هي نفسها صعوبة في الحمل. بدل ما تستسلم، غرقت في الأبحاث العلمية وطلعت بهذا الكتاب اللي غيّر حياة آلاف النساء حول العالم.
+  </p>
+  <p>
+    الكتاب يركّز على فكرة محورية: جودة البويضة مو شي ثابت ما تقدرين تغيرينه. فيه أشياء كثيرة تقدرين تسوينها عشان تحسّنين جودة بويضاتك — من تجنب السموم البيئية لأخذ مكملات معينة لتغيير نمط حياتك. والتحسينات تبين خلال 3-4 أشهر لأن البويضة تاخذ حوالي 90 يوم عشان تنضج.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الأجزاء</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>علم جودة البويضة</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>السموم البيئية</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>المكملات الأساسية</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>التغذية والخصوبة</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>نمط الحياة</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>الاستعداد للتلقيح</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>خطة العمل</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">علم جودة البويضة</h2>
+      <span class="chapter-title-en">The Science of Egg Quality</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    فيت تبدأ بشرح وش يعني "جودة البويضة" علمياً. البويضة مو بس خلية — هي أكبر خلية في الجسم وفيها كل المعلومات الوراثية اللي بتنتقل للطفل. جودة البويضة تعتمد بشكل كبير على صحة الكروموسومات فيها وعلى الميتوكوندريا (مصانع الطاقة في الخلية).
+  </p>
+  <p>
+    مع التقدم في العمر، تزيد احتمالية الأخطاء الكروموسومية في البويضات. هذي الأخطاء هي السبب الرئيسي في عدم حدوث الحمل أو الإجهاض المبكر. لكن — وهذي النقطة المهمة — مو كل شي مرتبط بالعمر. فيه عوامل بيئية ونمط حياة تأثر كثير على جودة البويضة.
+  </p>
+  <p>
+    الميتوكوندريا تلعب دور محوري: البويضة تحتاج طاقة هائلة عشان تنقسم صح بعد التخصيب. لو الميتوكوندريا ما تشتغل زين، البويضة ما تقدر تنقسم بشكل سليم وتصير أخطاء كروموسومية. عشان كذا، تحسين صحة الميتوكوندريا = تحسين جودة البويضة.
+  </p>
+
+  <div class="quote-block">
+    <p>جودة البويضة مو قدر محتوم مرتبط بعمرك. فيه أشياء كثيرة تقدرين تسوينها اليوم عشان تحسّنين جودة بويضاتك خلال الأشهر الجاية.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>جودة البويضة ممكن تتحسن! العمر عامل مهم لكن مو العامل الوحيد. الميتوكوندريا والبيئة الكيميائية حول البويضة يتأثرون بنمط حياتك ومكملاتك. البويضة تاخذ 90 يوم عشان تنضج — يعني عندك نافذة 3 أشهر لتحسين الجودة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>ابدئي خطة التحسين قبل 3-4 أشهر من محاولة الحمل أو موعد التلقيح. هالفترة هي الوقت اللي تنضج فيه البويضات اللي بتتبيضين، وكل تحسين تسوينه اليوم بيأثر على بويضات بعد 3 أشهر.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">السموم البيئية</h2>
+      <span class="chapter-title-en">Environmental Toxins</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    هذا الفصل من أهم أجزاء الكتاب وأكثرها إثارة للقلق. فيت تشرح كيف المواد الكيميائية اللي نتعرض لها يومياً تأثر بشكل مباشر على جودة البويضات. أخطرها: <strong>BPA</strong> (بيسفينول أ) الموجود في البلاستيك والعلب المعدنية.
+  </p>
+  <p>
+    BPA يقلّد هرمون الإستروجين في الجسم ويخرب التوازن الهرموني. الدراسات أثبتت إن النساء اللي عندهم مستويات عالية من BPA في الدم عندهم بويضات أقل جودة ومعدلات نجاح أقل في التلقيح الصناعي. والمشكلة إن BPA موجود في كل مكان — علب الأكل، إيصالات الكاشير، علب المشروبات.
+  </p>
+  <p>
+    وما هو بس BPA — فيه الفثالات (Phthalates) في العطور ومستحضرات التجميل، والمبيدات الحشرية في الخضار والفواكه غير العضوية، وحتى مواد التنظيف المنزلية. كلها تدخل تحت فئة "مشوشات الغدد الصماء" — يعني تخرب التوازن الهرموني.
+  </p>
+
+  <div class="quote-block">
+    <p>ما تحتاجين تعيشين في فقاعة — بس محتاجة تعرفين وش تتجنبين. تقليل التعرض للسموم البيئية من أسهل وأرخص الخطوات لتحسين خصوبتك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>البيئة اللي حولك تأثر على خصوبتك أكثر مما تتوقعين. BPA والفثالات والمبيدات كلها تضر بجودة البويضات. الخبر الحلو: تقليل التعرض لها سهل نسبياً ويسوي فرق كبير خلال أسابيع.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>غيّري علب البلاستيك لزجاج أو ستيل. اختاري مستحضرات تجميل خالية من الفثالات. اشتري خضار وفواكه عضوية (على الأقل "الاثنعشر القذرة" - Dirty Dozen). استخدمي منتجات تنظيف طبيعية. وتجنبي تسخين الأكل في البلاستيك نهائياً.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">المكملات الأساسية</h2>
+      <span class="chapter-title-en">Essential Supplements</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    هنا يجي الجزء العملي اللي كثير ناس يدورون عليه. فيت تراجع عشرات الدراسات العلمية وتطلع بقائمة المكملات اللي فعلاً أثبتت فعاليتها في تحسين جودة البويضات.
+  </p>
+  <p>
+    <strong>CoQ10 (كو إنزيم كيو 10):</strong> هذا المكمل الأهم في الكتاب. CoQ10 يدعم الميتوكوندريا (مصانع الطاقة) في البويضة. الدراسات أظهرت تحسن ملحوظ في جودة البويضات وعددها عند النساء اللي أخذوه. الجرعة الموصى بها: 200-600 ملغ يومياً (النوع Ubiquinol أفضل من Ubiquinone لأنه يُمتص أسهل).
+  </p>
+  <p>
+    <strong>فيتامين D:</strong> نقصه شائع جداً خصوصاً في الخليج، وربطته الدراسات بمشاكل الخصوبة. <strong>حمض الفوليك:</strong> الميثيل فوليت أفضل من حمض الفوليك العادي، خصوصاً إذا عندك طفرة MTHFR. <strong>فيتامين E:</strong> مضاد أكسدة يحمي البويضة من التلف. <strong>DHEA:</strong> للنساء فوق 38 أو اللي عندهم مخزون مبيض منخفض (بس تحت إشراف طبي).
+  </p>
+
+  <div class="quote-block">
+    <p>المكملات مو بديل عن نمط حياة صحي — هي إضافة له. ابدئي بالأساسيات (CoQ10 + فوليت + فيتامين D) وأضيفي حسب حالتك بالتشاور مع طبيبتك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>المكملات الصحيحة تقدر تسوي فرق حقيقي في جودة البويضات. CoQ10 هو الأهم لأنه يدعم الميتوكوندريا مباشرة. لكن لازم تبدئين قبل 3 أشهر على الأقل عشان تشوفين النتيجة، وتختارين الأنواع الصحيحة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>ابدئي بالثلاثة الأساسية: CoQ10 (200 ملغ Ubiquinol يومياً)، ميثيل فوليت (800 ميكروغرام)، وفيتامين D3 (2000-4000 وحدة دولية). افحصي مستوى فيتامين D في الدم عشان تعرفين الجرعة المناسبة لك. استشيري طبيبتك قبل إضافة أي مكمل ثاني.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التغذية والخصوبة</h2>
+      <span class="chapter-title-en">Nutrition & Fertility</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    فيت تشرح إن ما تاكلينه يأثر مباشرة على جودة بويضاتك. مو بس "كلي صحي" بشكل عام — فيه أطعمة محددة تساعد الخصوبة وأطعمة تضرها. النظام الغذائي يأثر على الالتهابات في الجسم، مستوى السكر في الدم، والتوازن الهرموني.
+  </p>
+  <p>
+    <strong>السكر هو العدو الأول:</strong> ارتفاع السكر في الدم يسبب مقاومة الأنسولين، واللي بدورها تأثر على هرمونات الخصوبة وتزيد الالتهابات. تقليل السكر والكربوهيدرات المكررة من أهم الخطوات. حمية البحر الأبيض المتوسط أثبتت فعاليتها في تحسين الخصوبة — خضار، فواكه، أسماك، زيت زيتون، مكسرات.
+  </p>
+  <p>
+    <strong>البروتين مهم:</strong> خصوصاً من مصادر نباتية وأسماك. الدهون الصحية (أوميغا 3) ضرورية لصحة البويضة. تجنبي الدهون المتحولة (Trans fats) الموجودة في الأطعمة المصنّعة. والغلوتين — فيت تقول إن بعض النساء يستفيدون من تقليله حتى لو ما عندهم حساسية.
+  </p>
+
+  <div class="quote-block">
+    <p>كل وجبة هي فرصة لتغذية بويضاتك أو إضعافها. اختاري بوعي — جسمك يستخدم ما تأكلينه كمواد خام لبناء بويضة سليمة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>التغذية أداة قوية لتحسين الخصوبة. تقليل السكر والأطعمة المصنعة وزيادة الخضار والدهون الصحية والبروتين النظيف — هالتغييرات تأثر مباشرة على جودة البويضات والتوازن الهرموني.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">نمط الحياة</h2>
+      <span class="chapter-title-en">Lifestyle Factors</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    بعد المكملات والتغذية، فيت تتكلم عن عوامل نمط الحياة اللي تأثر على جودة البويضات. ثلاثة عوامل رئيسية: النوم، التوتر، والتمارين.
+  </p>
+  <p>
+    <strong>النوم:</strong> الميلاتونين (هرمون النوم) ما هو بس يساعدك تنامين — هو أيضاً مضاد أكسدة قوي يحمي البويضات. الدراسات أظهرت إن النساء اللي ينمن كويس عندهم نتائج أفضل في التلقيح الصناعي. حاولي تنامين 7-8 ساعات في الظلام الكامل، وتجنبي الشاشات قبل النوم بساعة.
+  </p>
+  <p>
+    <strong>التوتر:</strong> الكورتيزول (هرمون التوتر) يأثر سلبياً على هرمونات الخصوبة. التوتر المزمن يقلل الدم المتدفق للمبايض ويأثر على التبويض. اليوغا والتأمل وتمارين التنفس كلها أثبتت فعاليتها في تحسين الخصوبة.
+  </p>
+  <p>
+    <strong>التمارين:</strong> الاعتدال هو المفتاح. تمارين معتدلة (مشي، سباحة، يوغا) ممتازة. لكن التمارين المكثفة جداً (ماراثون، كروسفيت مكثف) ممكن توقف التبويض. الهدف 30-45 دقيقة 4-5 مرات في الأسبوع.
+  </p>
+
+  <div class="quote-block">
+    <p>جسمك يقرر إنه مستعد للحمل لما يحس بالأمان — نوم كافي، توتر منخفض، وحركة معتدلة ترسل رسالة لجسمك: البيئة آمنة للإنجاب.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>نمط حياتك يأثر على خصوبتك بطرق مباشرة وعلمية. النوم الجيد يحمي البويضات بالميلاتونين، تقليل التوتر يحسن التوازن الهرموني، والتمارين المعتدلة تزيد تدفق الدم للمبايض. مو لازم تكونين مثالية — بس ابدئي بتحسينات تدريجية.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>حسّني نومك أول شي: حطي جوالك بره الغرفة، اظلمي الغرفة كامل، ونامي قبل 11. ثاني شي: جربي تطبيق تأمل 10 دقائق يومياً. ثالث شي: امشي 30 دقيقة يومياً. هالثلاث خطوات بسيطة لكن تأثيرها كبير.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الاستعداد للتلقيح</h2>
+      <span class="chapter-title-en">IVF Preparation</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    فيت تخصص فصل كامل للنساء المقبلات على التلقيح الصناعي (IVF) أو التلقيح المجهري (ICSI). البحث يثبت إن التحضير الجيد قبل الدورة العلاجية يحسّن النتائج بشكل ملموس.
+  </p>
+  <p>
+    <strong>التوقيت مهم:</strong> ابدئي خطة المكملات والتغذية قبل 3 أشهر على الأقل من دورة التلقيح. هذا يعطي البويضات وقت تنضج في بيئة أفضل. النساء اللي أخذوا CoQ10 قبل التلقيح حصلوا على بويضات أكثر وأجنة أفضل جودة.
+  </p>
+  <p>
+    فيت تتكلم أيضاً عن بروتوكولات التنشيط المختلفة وكيف تناقشينها مع طبيبتك. تؤكد على أهمية إنك تكونين شريكة فاعلة في قرارات العلاج — اسألي عن البروتوكول المناسب لحالتك، عن المكملات اللي ممكن تضيفينها، وعن أي تغييرات في نمط الحياة تساعد.
+  </p>
+
+  <div class="quote-block">
+    <p>التلقيح الصناعي مو بس إجراء طبي — هو رحلة تبدأ قبل الموعد بأشهر. كل ما استثمرتي أكثر في التحضير، كل ما زادت فرصك في النجاح.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>التحضير للتلقيح الصناعي يبدأ قبل 3 أشهر على الأقل. المكملات (خصوصاً CoQ10)، تجنب السموم البيئية، التغذية الصحية، والنوم الجيد — كلها أثبتت علمياً تحسين نتائج التلقيح. لا تتركين الموضوع للحظ.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">خطة العمل</h2>
+      <span class="chapter-title-en">Your Action Plan</span>
+    </div>
+  </div>
+
+  <span class="section-label">الخطة</span>
+  <p>
+    فيت تختم بخطة عمل واضحة ومنظمة. مو لازم تسوين كل شي مرة واحدة — الأهم تبدين وتتدرجين. هنا ملخص الخطوات مرتبة حسب الأولوية:
+  </p>
+  <p>
+    <strong>الأسبوع الأول:</strong> ابدئي بالمكملات الأساسية (CoQ10، ميثيل فوليت، فيتامين D). غيّري علب البلاستيك لزجاج. توقفي عن تسخين الأكل في البلاستيك.
+  </p>
+  <p>
+    <strong>الأسبوع الثاني:</strong> راجعي مستحضرات التجميل ومنتجات العناية — استبدلي اللي فيها فثالات وبارابين. ابدئي بتقليل السكر والأطعمة المصنعة.
+  </p>
+  <p>
+    <strong>الأسبوع الثالث:</strong> حسّني نومك — ظلمي الغرفة، بعّدي الجوال، ونامي في وقت ثابت. ابدئي بروتين تمارين خفيفة (مشي يومي).
+  </p>
+  <p>
+    <strong>الشهر الثاني وما بعده:</strong> ثبتي العادات اللي بدأتيها. أضيفي تحسينات تدريجية. تابعي مع طبيبتك. واستمري على المكملات لمدة 3 أشهر على الأقل قبل محاولة الحمل.
+  </p>
+
+  <div class="quote-block">
+    <p>ما تحتاجين تكونين مثالية. تحتاجين تكونين أفضل مما كنتي بالأمس. كل خطوة صغيرة في الاتجاه الصح تسوي فرق.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>التغيير التدريجي أفضل من محاولة تغيير كل شي مرة واحدة. ابدئي بالأساسيات (مكملات + تجنب BPA) وأضيفي تحسينات كل أسبوع. الاستمرارية أهم من الكمال. 3 أشهر من الالتزام تقدر تغيّر جودة بويضاتك بشكل ملموس.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>اكتبي قائمة بكل التغييرات اللي تبين تسوينها. رتبيها حسب السهولة. ابدئي بأسهل 3 هالأسبوع. الأسبوع الجاي أضيفي 3 ثانية. خلال شهر بتكونين غيرتي حياتك بدون ما تحسين بضغط. ولا تنسين: كل هالجهد يستاهل عشان أنتِ وطفلك المستقبلي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>يبدأ بالبويضة — الخلاصة النهائية</h3>
+  <p>
+    ريبيكا فيت — Rebecca Fett
+  </p>
+  <p>
+    هذا الكتاب يثبت بالعلم إن جودة البويضة ممكن تتحسن. مو قدر محتوم مرتبط بالعمر بس. المكملات الصحيحة (خصوصاً CoQ10)، تجنب السموم البيئية (خصوصاً BPA)، التغذية السليمة، والنوم الكافي — كلها أدوات بين يديك لتحسين فرصك.
+  </p>
+  <p>
+    الرسالة الأساسية: ابدئي قبل 3 أشهر من محاولة الحمل. البويضة تاخذ 90 يوم عشان تنضج — وكل تحسين تسوينه اليوم يأثر على بويضات المستقبل. المعرفة قوة، والعمل بها يغيّر النتائج.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص شخصي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأبحاث ومراجع علمية أكثر بكثير. استشيري طبيبتك قبل أخذ أي مكملات.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدرين تطبقينها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>ابدئي بأخذ CoQ10 (200 ملغ Ubiquinol) + ميثيل فوليت يومياً</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>استبدلي كل علب البلاستيك بزجاج أو ستانلس ستيل</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>افحصي مستوى فيتامين D في الدم وعالجي النقص</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>قللي السكر والأطعمة المصنعة واستبدليها بحمية البحر المتوسط</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>حسّني نومك: ظلام كامل + بدون شاشات قبل النوم بساعة</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>راجعي مستحضرات التجميل واستبدلي اللي فيها مواد ضارة</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

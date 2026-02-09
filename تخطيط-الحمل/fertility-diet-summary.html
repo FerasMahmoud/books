@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>حمية الخصوبة - ملخص شامل | خورخي تشافارو</title>
+<link rel="stylesheet" href="../css/reader.css">
+<style>
+  @import url('../css/fonts.css');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #00b894; border-radius: 4px; }
+  .hero { background: linear-gradient(135deg, #003d2e 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #00b894; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(0,184,148,0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #00b894; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(0,184,148,0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(0,184,148,0.2); }
+  .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+  .problem-section { background: linear-gradient(135deg, rgba(0,184,148,0.05) 0%, rgba(22,33,62,0.5) 100%); border: 1px solid rgba(0,184,148,0.15); border-radius: 16px; padding: 35px; margin-bottom: 40px; }
+  .problem-section h2 { color: #00b894; font-size: 1.5rem; margin-bottom: 20px; text-align: center; }
+  .problem-section ul { list-style: none; padding: 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; border-bottom: 1px solid rgba(0,184,148,0.08); }
+  .problem-section ul li::before { content: '🔹'; position: absolute; right: 0; top: 10px; }
+  .toc { background: #16213e; border-radius: 16px; padding: 30px; margin-bottom: 40px; border: 1px solid rgba(0,184,148,0.1); }
+  .toc h2 { color: #00b894; font-size: 1.4rem; margin-bottom: 20px; text-align: center; }
+  .toc ul { list-style: none; padding: 0; }
+  .toc ul li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .toc ul li a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; }
+  .toc ul li a:hover { color: #00b894; }
+  .toc ul li .ch-num { color: #00b894; font-weight: 700; margin-left: 8px; }
+  .chapter { background: rgba(22,33,62,0.4); border-radius: 16px; padding: 35px; margin-bottom: 35px; border: 1px solid rgba(0,184,148,0.08); transition: border-color 0.3s; }
+  .chapter:hover { border-color: rgba(0,184,148,0.25); }
+  .chapter-header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 2px solid rgba(0,184,148,0.15); }
+  .chapter-header .ch-number { background: linear-gradient(135deg, #00b894, #003d2e); color: white; width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; flex-shrink: 0; }
+  .chapter-header h2 { font-size: 1.4rem; color: #ffffff; }
+  .chapter-header h2 small { display: block; font-size: 0.8rem; color: #00b894; font-weight: 400; margin-top: 4px; }
+  .section-label { color: #00b894; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: block; }
+  .chapter p { margin-bottom: 16px; color: #c8c8d8; font-size: 1.05rem; }
+  .quote-block { background: linear-gradient(135deg, rgba(0,184,148,0.1), rgba(0,184,148,0.03)); border-right: 4px solid #00b894; padding: 20px 25px; margin: 25px 0; border-radius: 0 12px 12px 0; font-style: italic; color: #d0d0e0; }
+  .quote-block .quote-author { display: block; margin-top: 8px; font-style: normal; color: #00b894; font-size: 0.9rem; }
+  .lesson-box { background: rgba(0,184,148,0.08); border: 1px solid rgba(0,184,148,0.2); border-radius: 12px; padding: 20px; margin: 20px 0; }
+  .lesson-box .label { color: #00b894; font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; display: block; }
+  .lesson-box p { color: #c8c8d8; margin: 0; }
+  .insight-box { background: rgba(255,255,255,0.03); border: 1px dashed rgba(0,184,148,0.3); border-radius: 12px; padding: 20px; margin: 20px 0; }
+  .insight-box .label { color: #00b894; font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; display: block; }
+  .insight-box p { color: #b0b0c0; margin: 0; }
+  .back-top { text-align: center; margin-top: 20px; }
+  .back-top a { color: #00b894; text-decoration: none; font-size: 0.9rem; }
+  .action-plan { background: linear-gradient(135deg, rgba(233,69,96,0.08), rgba(22,33,62,0.5)); border: 1px solid rgba(233,69,96,0.2); border-radius: 16px; padding: 35px; margin-bottom: 40px; }
+  .action-plan h2 { color: #e94560; font-size: 1.5rem; margin-bottom: 25px; text-align: center; }
+  .action-plan .action-item { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 18px; }
+  .action-plan .action-num { background: #e94560; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+  .action-plan .action-text { color: #c8c8d8; font-size: 1rem; line-height: 1.7; }
+  .footer { text-align: center; padding: 40px 20px; border-top: 1px solid rgba(0,184,148,0.1); margin-top: 40px; color: #666680; font-size: 0.85rem; }
+  .footer .book-title { color: #00b894; font-weight: 700; font-size: 1rem; margin-bottom: 5px; }
+  .intro-section { background: rgba(0,184,148,0.04); border-radius: 16px; padding: 35px; margin-bottom: 35px; border: 1px solid rgba(0,184,148,0.1); }
+  .intro-section h2 { color: #00b894; margin-bottom: 15px; }
+  .intro-section p { color: #c8c8d8; font-size: 1.05rem; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">🥗</span>
+    <h1>حمية الخصوبة</h1>
+    <p class="subtitle">The Fertility Diet</p>
+    <p class="author">تأليف: خورخي تشافارو | Jorge Chavarro, MD, ScD</p>
+    <div class="meta-info">
+      <span>📖 ملخص شامل</span>
+      <span>⏱️ 20 دقيقة قراءة</span>
+      <span>🥗 تغذية وخصوبة</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+  <section class="problem-section">
+    <h2>ليش هالكتاب مهم؟</h2>
+    <ul>
+      <li>كثير ناس ما يدرون إن الأكل اللي ياكلونه يوميًا يأثر بشكل مباشر على فرصهم في الحمل</li>
+      <li>الدراسات العلمية أثبتت إن تغييرات بسيطة في النظام الغذائي تقدر ترفع الخصوبة بنسبة كبيرة</li>
+      <li>أغلب المعلومات المنتشرة عن الأكل والخصوبة مبنية على خرافات مو على علم حقيقي</li>
+      <li>الكتاب مبني على دراسة هارفارد الشهيرة اللي تابعت أكثر من 18,000 امرأة</li>
+    </ul>
+  </section>
+
+  <nav class="toc">
+    <h2>فهرس الملخص</h2>
+    <ul>
+      <li><a href="#ch1"><span class="ch-num">01</span> علم التغذية والخصوبة</a></li>
+      <li><a href="#ch2"><span class="ch-num">02</span> العناصر الغذائية الأساسية</a></li>
+      <li><a href="#ch3"><span class="ch-num">03</span> أطعمة تعزز الخصوبة</a></li>
+      <li><a href="#ch4"><span class="ch-num">04</span> أطعمة يجب تجنبها</a></li>
+      <li><a href="#ch5"><span class="ch-num">05</span> تخطيط الوجبات</a></li>
+      <li><a href="#ch6"><span class="ch-num">06</span> المكملات الغذائية</a></li>
+    </ul>
+  </nav>
+
+  <section class="intro-section">
+    <h2>مقدمة</h2>
+    <p>كتاب "حمية الخصوبة" من أهم الكتب اللي ربطت بين التغذية وصحة الإنجاب بطريقة علمية. الدكتور خورخي تشافارو من جامعة هارفارد قضى سنوات يدرس كيف الأكل اللي ناكله كل يوم يأثر على قدرتنا على الإنجاب.</p>
+    <p>الجميل في الكتاب إنه مو مجرد نظريات، هو مبني على دراسة ضخمة تابعت آلاف النساء وسجلت وش اللي أكلنه وكيف أثر على خصوبتهم. النتائج كانت مذهلة وقابلة للتطبيق من أي شخص.</p>
+  </section>
+
+  <!-- Chapter 1 -->
+  <article class="chapter" id="ch1">
+    <div class="chapter-header">
+      <div class="ch-number">01</div>
+      <h2>علم التغذية والخصوبة <small>Nutrition Science & Fertility</small></h2>
+    </div>
+    <span class="section-label">كيف الأكل يأثر على الإنجاب</span>
+    <p>الفصل الأول يحط الأساس العلمي لكل الكتاب. الدكتور تشافارو يشرح كيف إن كل لقمة ناكلها تأثر على الهرمونات، والتبويض، وجودة البويضات. مو شي بسيط - الأكل يدخل في كل عملية من عمليات الجسم المرتبطة بالإنجاب.</p>
+    <p>دراسة هارفارد للممرضات اللي شملت أكثر من 18,000 امرأة أظهرت إن النظام الغذائي يقدر يأثر على الخصوبة بنسبة تصل إلى 80% في بعض الحالات. يعني التغذية مو شي ثانوي، هي عامل أساسي.</p>
+    <p>الجسم يحتاج مواد خام عشان يبني هرمونات، وعشان يغذي البويضات، وعشان يجهز الرحم. لو ما وفرنا هالمواد بالشكل الصحيح، الجسم يضطر يوفر في أماكن ثانية - وأول شي يتأثر هو الجهاز التناسلي.</p>
+
+    <div class="quote-block">
+      "الخصوبة ما تبدأ في العيادة - تبدأ في المطبخ. كل وجبة هي فرصة لتحسين صحتك الإنجابية."
+      <span class="quote-author">— خورخي تشافارو</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>الأكل اللي تاكله يوميًا يأثر مباشرة على هرموناتك وتبويضك. التغذية السليمة مو رفاهية، هي أساس لأي شخص يخطط للحمل.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 2 -->
+  <article class="chapter" id="ch2">
+    <div class="chapter-header">
+      <div class="ch-number">02</div>
+      <h2>العناصر الغذائية الأساسية <small>Key Nutrients</small></h2>
+    </div>
+    <span class="section-label">حمض الفوليك والحديد والأوميغا-3 والزنك</span>
+    <p>هالفصل يركز على العناصر الغذائية اللي أثبت العلم إنها ضرورية للخصوبة. حمض الفوليك مثلاً مو بس مهم بعد الحمل - هو مهم قبل الحمل بأشهر عشان يجهز الجسم ويمنع التشوهات الخلقية من البداية.</p>
+    <p>الحديد عنصر كثير ناس يهملونه. نقص الحديد يأثر على التبويض بشكل مباشر. الدراسات أظهرت إن النساء اللي ياخذون حديد كافي عندهم فرص حمل أعلى بنسبة 40% مقارنة باللي عندهم نقص.</p>
+    <p>أوميغا-3 تساعد في تنظيم الهرمونات وتقلل الالتهابات اللي ممكن تأثر على الخصوبة. والزنك مهم لكلا الزوجين - للمرأة يساعد في نضج البويضات وللرجل يحسن جودة الحيوانات المنوية.</p>
+
+    <div class="quote-block">
+      "لو تبي تعرف وش ينقصك، لازم أول تفهم وش جسمك يحتاج. المعرفة هي الخطوة الأولى."
+      <span class="quote-author">— خورخي تشافارو</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>أربع عناصر أساسية لازم تتأكد منها: حمض الفوليك، الحديد، أوميغا-3، والزنك. النقص في أي واحد منهم يقدر يأثر على فرص الحمل بشكل كبير.</p>
+    </div>
+
+    <div class="insight-box">
+      <span class="label">💡 معلومة مهمة</span>
+      <p>ابدأ بتناول حمض الفوليك قبل التخطيط للحمل بثلاثة أشهر على الأقل. الجرعة الموصى بها هي 400-800 ميكروغرام يوميًا.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 3 -->
+  <article class="chapter" id="ch3">
+    <div class="chapter-header">
+      <div class="ch-number">03</div>
+      <h2>أطعمة تعزز الخصوبة <small>Fertility-Boosting Foods</small></h2>
+    </div>
+    <span class="section-label">أفضل الأطعمة وقت التخطيط للحمل</span>
+    <p>هنا الجزء العملي اللي الكل يستناه. الدكتور تشافارو يعطينا قائمة بأفضل الأطعمة اللي تعزز الخصوبة. الحبوب الكاملة مثلاً أفضل بكثير من الحبوب المكررة لأنها تحافظ على مستوى السكر ثابت وتمنع ارتفاع الأنسولين اللي يأثر على التبويض.</p>
+    <p>الدهون الصحية زي زيت الزيتون والأفوكادو والمكسرات تعتبر من أهم الأشياء اللي تقدر تضيفها لأكلك. هالدهون تساعد الجسم يمتص الفيتامينات الذائبة في الدهون وتساعد في بناء الهرمونات.</p>
+    <p>البروتينات النباتية زي العدس والفاصوليا والحمص أظهرت نتائج أفضل من البروتين الحيواني في تحسين الخصوبة. مو لازم تصير نباتي، بس زيادة نسبة البروتين النباتي في أكلك شي مفيد جدًا.</p>
+
+    <div class="quote-block">
+      "الأكل الطبيعي غير المعالج هو أفضل دواء للخصوبة. الطبيعة حطت كل اللي نحتاجه في الأطعمة الكاملة."
+      <span class="quote-author">— خورخي تشافارو</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>ركز على الحبوب الكاملة، الدهون الصحية، والبروتينات النباتية. هالثلاثة أعمدة التغذية اللي تعزز الخصوبة بشكل علمي مثبت.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 4 -->
+  <article class="chapter" id="ch4">
+    <div class="chapter-header">
+      <div class="ch-number">04</div>
+      <h2>أطعمة يجب تجنبها <small>Foods to Avoid</small></h2>
+    </div>
+    <span class="section-label">وش الأشياء اللي تضر الخصوبة</span>
+    <p>زي ما في أطعمة تساعد، في أطعمة تضر. الدهون المتحولة (Trans fats) من أخطر الأشياء على الخصوبة. موجودة في المقليات والوجبات السريعة والمعجنات الجاهزة. حتى كميات صغيرة منها تقدر تأثر على التبويض.</p>
+    <p>السكريات المكررة والمشروبات الغازية ترفع مستوى الأنسولين بشكل كبير، وهالشي يربك التوازن الهرموني. الكافيين بكميات كبيرة (أكثر من كوبين قهوة باليوم) أيضًا مرتبط بانخفاض فرص الحمل.</p>
+    <p>الدكتور تشافارو يحذر أيضًا من الحليب قليل الدسم. وهالشي يفاجئ كثير ناس - الحليب كامل الدسم أفضل للخصوبة من قليل الدسم لأن عملية إزالة الدسم تشيل معاها هرمونات مفيدة.</p>
+
+    <div class="quote-block">
+      "أحيانًا اللي تشيله من أكلك أهم من اللي تضيفه. تجنب الأشياء الضارة نصف العلاج."
+      <span class="quote-author">— خورخي تشافارو</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>تجنب الدهون المتحولة، قلل السكريات المكررة والكافيين، واختار الحليب كامل الدسم بدل قليل الدسم. التغييرات البسيطة هذي تفرق كثير.</p>
+    </div>
+
+    <div class="insight-box">
+      <span class="label">💡 معلومة مهمة</span>
+      <p>اقرأ ملصقات الأطعمة بعناية. الدهون المتحولة أحيانًا تنكتب باسم "زيوت مهدرجة جزئيًا" وتكون موجودة في أطعمة ما تتوقعها.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 5 -->
+  <article class="chapter" id="ch5">
+    <div class="chapter-header">
+      <div class="ch-number">05</div>
+      <h2>تخطيط الوجبات <small>Meal Planning</small></h2>
+    </div>
+    <span class="section-label">خطط أسبوعية عملية</span>
+    <p>الحين بعد ما عرفنا وش ناكل ووش نتجنب، الكتاب يعطينا خطة عملية. الدكتور تشافارو يقترح نظام غذائي أسبوعي متكامل يغطي كل الاحتياجات الغذائية ويكون سهل التطبيق.</p>
+    <p>الفطور المثالي يكون فيه حبوب كاملة (شوفان أو خبز أسمر) مع فاكهة وبيض أو زبادي كامل الدسم. الغداء يركز على البروتين النباتي مع خضار ملونة. والعشاء يكون خفيف مع سمك أو دجاج مع سلطة.</p>
+    <p>الوجبات الخفيفة بين الوجبات مهمة أيضًا - مكسرات نيئة، فواكه، أو حمص مع خضار. الهدف إنك تحافظ على مستوى السكر ثابت طول اليوم وما تخلي جسمك يجوع لفترات طويلة.</p>
+
+    <div class="quote-block">
+      "ما تحتاج تكون طباخ محترف عشان تأكل صح. التخطيط البسيط يكفي."
+      <span class="quote-author">— خورخي تشافارو</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>خطط لوجباتك مسبقًا كل أسبوع. الفكرة مو إنك تعقد حياتك، بالعكس التخطيط يسهلها ويضمن إنك تاكل الأشياء الصحية بدون تفكير.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 6 -->
+  <article class="chapter" id="ch6">
+    <div class="chapter-header">
+      <div class="ch-number">06</div>
+      <h2>المكملات الغذائية <small>Supplements</small></h2>
+    </div>
+    <span class="section-label">متى ووش تاخذ من المكملات</span>
+    <p>المكملات الغذائية مو بديل عن الأكل الصحي، لكنها إضافة مهمة خصوصًا وقت التخطيط للحمل. الدكتور تشافارو يشرح إن بعض العناصر صعب تاخذ الكمية الكافية منها من الأكل بس.</p>
+    <p>فيتامين ما قبل الحمل (Prenatal Vitamin) لازم يكون أول شي تبدأين فيه. يحتوي على حمض الفوليك وحديد وفيتامينات أساسية. بالإضافة له، أوميغا-3 (زيت السمك) مكمل مهم جدًا خصوصًا لو ما تاكلين سمك بانتظام.</p>
+    <p>فيتامين D أيضًا مهم ويعاني كثير ناس من نقصه خصوصًا في المنطقة. والكوانزيم Q10 يساعد في تحسين جودة البويضات خصوصًا بعد سن الثلاثين. لكن مهم تستشير طبيبك قبل ما تبدأ أي مكمل.</p>
+
+    <div class="quote-block">
+      "المكملات تكمّل - ما تستبدل. الأساس دايمًا هو الأكل الصحي المتوازن."
+      <span class="quote-author">— خورخي تشافارو</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>ابدأ بفيتامين ما قبل الحمل وأوميغا-3 كأساس. أضف فيتامين D والكوانزيم Q10 حسب الحاجة وبعد استشارة الطبيب.</p>
+    </div>
+
+    <div class="insight-box">
+      <span class="label">💡 معلومة مهمة</span>
+      <p>اعمل تحليل دم شامل قبل ما تبدأ أي مكملات عشان تعرف بالضبط وش ينقصك. مو كل المكملات مناسبة لكل شخص.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Action Plan -->
+  <section class="action-plan">
+    <h2>🎯 خطة العمل</h2>
+    <div class="action-item">
+      <div class="action-num">1</div>
+      <div class="action-text">اعمل تحليل دم شامل يشمل الحديد وفيتامين D وحمض الفوليك والزنك عشان تعرف وضعك الحالي.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">2</div>
+      <div class="action-text">ابدأ بتناول فيتامين ما قبل الحمل يحتوي على 400-800 ميكروغرام حمض فوليك على الأقل.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">3</div>
+      <div class="action-text">استبدل الحبوب البيضاء بالحبوب الكاملة - أرز بني بدل أبيض، خبز أسمر بدل أبيض.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">4</div>
+      <div class="action-text">أضف حصتين على الأقل من البقوليات أسبوعيًا (عدس، فاصوليا، حمص) كمصدر بروتين نباتي.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">5</div>
+      <div class="action-text">تخلص من الدهون المتحولة نهائيًا - راجع ملصقات الأطعمة وقلل الوجبات السريعة.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">6</div>
+      <div class="action-text">خطط وجباتك كل أسبوع مقدمًا واكتب قائمة مشتريات عشان تلتزم بالأكل الصحي.</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="book-title">حمية الخصوبة - The Fertility Diet</div>
+    <p>تأليف: خورخي تشافارو | Jorge Chavarro, MD, ScD</p>
+    <p>هذا ملخص للكتاب وليس بديلاً عن قراءته كاملاً. استشر طبيبك دائمًا قبل إجراء تغييرات على نظامك الغذائي أو تناول مكملات.</p>
+  </footer>
+
+</div>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

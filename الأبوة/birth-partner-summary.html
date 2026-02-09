@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملخص كتاب: شريك الولادة</title>
+    <link rel="stylesheet" href="../css/reader.css">
+    <style>
+        @import url('../css/fonts.css');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+        body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #16213e; }
+        ::-webkit-scrollbar-thumb { background: #e74c3c; border-radius: 4px; }
+        .hero { background: linear-gradient(135deg, #3d0a0a 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #e74c3c; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(231,76,60,0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+        @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+        .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+        .hero .subtitle { font-size: 1.3rem; color: #e74c3c; font-weight: 700; margin-bottom: 8px; }
+        .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+        .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+        .hero .meta-info span { background: rgba(231,76,60,0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(231,76,60,0.2); }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .problem-section { background: linear-gradient(145deg, #3d0a0a, #1a1a2e); border: 2px solid #c0392b; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+        .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+        .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+        .problem-section ul { list-style: none; margin: 20px 0; }
+        .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+        .problem-section ul li::before { content: '\25B8'; position: absolute; right: 0; color: #e74c3c; }
+        .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d0a0a; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+        .toc h2 { font-size: 1.8rem; color: #e74c3c; margin-bottom: 25px; text-align: center; font-weight: 800; }
+        .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+        .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+        .toc-item:hover { background: rgba(231,76,60,0.1); color: #e74c3c; transform: translateX(-4px); }
+        .toc-num { background: #e74c3c; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+        .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d0a0a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+        .intro-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 15px; font-weight: 800; }
+        .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+        .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d0a0a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; transition: border-color 0.3s ease; }
+        .chapter:hover { border-color: #e74c3c; }
+        .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(231,76,60,0.15); }
+        .chapter-number { background: linear-gradient(135deg, #e74c3c, #c0392b); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(231,76,60,0.3); }
+        .chapter-titles { flex: 1; }
+        .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+        .chapter-title-en { font-size: 0.95rem; color: #e74c3c; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+        .section-label { display: inline-block; background: rgba(231,76,60,0.12); color: #e74c3c; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+        .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+        .quote-block { background: rgba(231,76,60,0.06); border-right: 4px solid #e74c3c; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+        .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(231,76,60,0.2); font-family: Georgia, serif; }
+        .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+        .lesson-box { background: linear-gradient(135deg, rgba(231,76,60,0.4), rgba(26,26,46,0.8)); border: 1px solid rgba(231,76,60,0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+        .lesson-box .lesson-title { color: #e74c3c; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+        .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+        .insight-box { background: rgba(0,206,201,0.08); border: 1px solid rgba(0,206,201,0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+        .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+        .insight-box p { color: #b0d0d0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+        .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(231,76,60,0.1); }
+        .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; }
+        .back-top a:hover { color: #e74c3c; }
+        .action-plan { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d0a0a; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+        .action-plan h2 { font-size: 1.8rem; color: #e94560; margin-bottom: 25px; text-align: center; font-weight: 800; }
+        .action-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(233,69,96,0.1); }
+        .action-item:last-child { border-bottom: none; }
+        .action-num { background: #e94560; color: #fff; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; }
+        .action-item p { color: #c0c0d0; font-size: 1rem; line-height: 1.8; margin: 0; }
+        .footer { background: linear-gradient(145deg, #3d0a0a, #1a1a2e); border-top: 3px solid #e74c3c; padding: 50px 20px; margin-top: 60px; text-align: center; }
+        .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+        .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+        .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(231,76,60,0.15); font-size: 0.85rem; color: #666680; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="book-icon">&#x1F91D;</span>
+            <h1>شريك الولادة</h1>
+            <div class="subtitle">The Birth Partner</div>
+            <div class="author">بيني سيمكين | Penny Simkin</div>
+            <div class="meta-info">
+                <span>7 فصول</span>
+                <span>ملخص شامل</span>
+                <span>دليل الولادة</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <h2>ليش هالكتاب مهم؟</h2>
+        <p>يوم الولادة من أكثر الأيام أهمية في حياتكم كزوجين. بس كثير من الآباء يدخلون غرفة الولادة وهم ما يدرون وش يسوون. يقفون على جنب يحسون بالعجز والخوف. هالكتاب يحولك من متفرج خايف لشريك فعال وداعم.</p>
+        <ul>
+            <li>ما تعرف مراحل الولادة وش يصير في كل مرحلة</li>
+            <li>تخاف تكون عبء على زوجتك بدال ما تكون دعم لها</li>
+            <li>ما عندك أدوات عملية تساعدها في التعامل مع الألم</li>
+            <li>تحتار في القرارات الطبية ولا تعرف وش الصح</li>
+        </ul>
+    </section>
+
+    <!-- TOC -->
+    <nav class="toc" id="toc">
+        <h2>فهرس الفصول</h2>
+        <div class="toc-grid">
+            <a href="#ch1" class="toc-item"><span class="toc-num">1</span> فهم الولادة</a>
+            <a href="#ch2" class="toc-item"><span class="toc-num">2</span> تقنيات الدعم</a>
+            <a href="#ch3" class="toc-item"><span class="toc-num">3</span> إجراءات الراحة</a>
+            <a href="#ch4" class="toc-item"><span class="toc-num">4</span> الإجراءات الطبية</a>
+            <a href="#ch5" class="toc-item"><span class="toc-num">5</span> اتخاذ القرارات</a>
+            <a href="#ch6" class="toc-item"><span class="toc-num">6</span> ما بعد الولادة</a>
+            <a href="#ch7" class="toc-item"><span class="toc-num">7</span> الحضور الكامل</a>
+        </div>
+    </nav>
+
+    <!-- Intro -->
+    <section class="intro-section">
+        <h2>مقدمة الكتاب</h2>
+        <p>بيني سيمكين من أشهر المتخصصات في عالم الولادة. عندها خبرة عقود في مساعدة الأزواج يمرون بتجربة الولادة بأفضل شكل ممكن. هالكتاب صار مرجع أساسي في دورات التحضير للولادة حول العالم.</p>
+        <p>الفكرة المركزية: وجود شريك داعم ومُعَد أثناء الولادة يسوي فرق حقيقي في تجربة الأم وصحتها النفسية بعد الولادة. أنت مو بس موجود - أنت عنصر فعال يقدر يغير التجربة كلها.</p>
+    </section>
+
+    <div class="container">
+
+        <!-- Chapter 1 -->
+        <section class="chapter" id="ch1">
+            <div class="chapter-header">
+                <div class="chapter-number">1</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">فهم الولادة</div>
+                    <div class="chapter-title-en">Understanding Birth</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>عشان تكون شريك فعال في الولادة، لازم أول شي تفهم وش بيصير. الولادة لها ثلاث مراحل رئيسية: الطلق (المخاض)، خروج الطفل، وخروج المشيمة. كل مرحلة لها خصائصها وتحدياتها.</p>
+            <p>مرحلة المخاض هي الأطول وفيها ثلاث أجزاء: المخاض المبكر (الانقباضات خفيفة ومتباعدة)، المخاض النشط (الانقباضات أقوى وأقرب)، والمرحلة الانتقالية (أصعب مرحلة بس أقصرها). فهمك لهالتقسيم يخليك تعرف وين زوجتك ووش تحتاج.</p>
+            <p>المؤلفة تشرح كل مرحلة بالتفصيل: كم تستمر عادةً، وش تحس فيه الأم، ووش العلامات اللي تدل على الانتقال للمرحلة التالية. هالمعرفة تعطيك ثقة بدال الخوف.</p>
+
+            <div class="quote-block">
+                <p>المعرفة أقوى سلاح ضد الخوف. لما تفهم وش يصير، تتحول من شخص خايف لشخص واثق وقادر يساعد.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>ادرس مراحل الولادة بالتفصيل. اعرف العلامات والأعراض لكل مرحلة. هالمعرفة بتخليك هادي وقت ما زوجتك تحتاجك أكثر شي.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>كل ولادة مختلفة. حتى لو قريت كل الكتب، ممكن تفاجئك أشياء ما توقعتها. المهم إنك تكون مرن ومستعد للتعامل مع أي سيناريو.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 2 -->
+        <section class="chapter" id="ch2">
+            <div class="chapter-header">
+                <div class="chapter-number">2</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">تقنيات الدعم</div>
+                    <div class="chapter-title-en">Support Techniques</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>هالفصل هو قلب الكتاب. المؤلفة تعطيك تقنيات عملية تساعد فيها زوجتك خلال الولادة. مو كلام نظري - حركات ولمسات ووضعيات وكلمات محددة تقدر تستخدمها.</p>
+            <p>من أهم التقنيات: التنفس المنتظم. أنت تقدر تقود التنفس - تتنفس معها وتحافظ على إيقاع هادي. لما الانقباضات تشتد، وجودك وصوتك الهادي يساعدها تركز وما تفقد السيطرة.</p>
+            <p>تقنيات ثانية تشمل: المساج في أسفل الظهر، الضغط المضاد على الوركين، تغيير الوضعيات، المشي معها بين الانقباضات، وتوفير جو هادي في الغرفة.</p>
+            <p>المؤلفة تنصح تتدربون على هالتقنيات قبل يوم الولادة. مارسوها في البيت عشان تكون طبيعية لما تحتاجونها فعلاً.</p>
+
+            <div class="quote-block">
+                <p>لمستك الهادية وصوتك المطمئن ممكن يكونون أقوى مسكن ألم تقدر تقدمه لزوجتك في أصعب لحظاتها.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>تعلم تقنيات الدعم وتدرب عليها مع زوجتك قبل الولادة. التنفس، المساج، الوضعيات - كلها أدوات في صندوقك. كل ما تدربت أكثر، كل ما كانت استجابتك أسرع وأفضل.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 3 -->
+        <section class="chapter" id="ch3">
+            <div class="chapter-header">
+                <div class="chapter-number">3</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">إجراءات الراحة</div>
+                    <div class="chapter-title-en">Comfort Measures</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>الراحة خلال الولادة مو رفاهية - هي حاجة أساسية تساعد الجسم يشتغل بشكل أفضل. المؤلفة تشرح إجراءات راحة متنوعة تقدر تقدمها لزوجتك حسب وش تحتاج.</p>
+            <p>الكمادات الدافية على الظهر أو البطن تساعد كثير مع الانقباضات. الماء الدافي - سواء دش أو حوض - يريح العضلات ويخفف الألم. بعض المستشفيات توفر حوض ولادة مائية وهي خيار ممتاز.</p>
+            <p>الحركة مهمة بعد. المشي، التأرجح على كرة الولادة، الوقوف والميلان على شي - كل هالحركات تساعد الطفل ينزل وتخفف الضغط. أنت كشريك تقدر تساعدها تتحرك وتسندها.</p>
+
+            <div class="quote-block">
+                <p>جسم المرأة يعرف كيف يولد. دورك إنك توفر بيئة آمنة ومريحة تخلي الجسم يشتغل بحرية.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>جهز "صندوق أدوات الراحة": كمادات حرارية، زيت مساج، مكبر صوت صغير لموسيقى هادية، شراب ومأكولات خفيفة. كونك مستعد يخليك تستجيب بسرعة لاحتياجات زوجتك.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>إجراءات الراحة مو بديل عن التخدير لمن يحتاجه. هي أدوات إضافية تساعد في كل الحالات. لا تحكم على زوجتك إذا طلبت إبرة الظهر - ادعمها في قرارها.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 4 -->
+        <section class="chapter" id="ch4">
+            <div class="chapter-header">
+                <div class="chapter-number">4</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">الإجراءات الطبية</div>
+                    <div class="chapter-title-en">Medical Procedures</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>أحياناً الولادة تحتاج تدخل طبي، ولازم تكون فاهم الخيارات المتاحة. المؤلفة تشرح الإجراءات الطبية الشائعة: تحفيز الولادة، إبرة الظهر (الإبيديورال)، الشفط، الملقط، والولادة القيصرية.</p>
+            <p>لكل إجراء فوائد ومخاطر. المهم إنك تفهمها عشان لما الدكتور يقترح شي، تقدر تسأل أسئلة ذكية وتاخذ قرار مبني على معرفة. المؤلفة تعطيك أسئلة محددة تسألها: "هل هذا ضروري الحين؟ وش البدائل؟ وش يصير لو انتظرنا شوي؟"</p>
+            <p>الولادة القيصرية خصوصاً - لازم تعرف إنها ممكن تصير حتى لو ما كانت مخططة. كونك مستعد ذهنياً لهالاحتمال يساعدك تتعامل معه بهدوء إذا صار.</p>
+
+            <div class="quote-block">
+                <p>فهمك للإجراءات الطبية ما يعني إنك تتحدى الأطباء. يعني إنك تكون شريك واعي في اتخاذ قرارات تخص عائلتك.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>اقرأ عن الإجراءات الطبية الشائعة في الولادة وافهم متى تُستخدم وليش. جهز أسئلة مسبقة. كن مستعد لأي سيناريو - الولادة المثالية مو دايماً واقعية، والمرونة هي المفتاح.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 5 -->
+        <section class="chapter" id="ch5">
+            <div class="chapter-header">
+                <div class="chapter-number">5</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">اتخاذ القرارات</div>
+                    <div class="chapter-title-en">Decision Making</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>خلال الولادة بتواجه قرارات كثيرة وبعضها لازم تنتاخذ بسرعة. المؤلفة تعلمك كيف تاخذ قرارات ذكية تحت الضغط باستخدام منهج اسمه "B.R.A.I.N" - يعني: وش الفوائد؟ وش المخاطر؟ وش البدائل؟ وش حدسك يقول؟ ووش يصير لو ما سوينا شي؟</p>
+            <p>هالمنهج يخليك تاخذ قرارات مدروسة بدال ما تستسلم للخوف أو تقول "إي" لكل شي بدون تفكير. وبنفس الوقت، تقدر تحترم خبرة الطاقم الطبي وتاخذ رأيهم بجدية.</p>
+            <p>والأهم: القرارات هذي لازم تكون مشتركة مع زوجتك. أنت مو المسؤول الوحيد - أنت صوتها لما هي ما تقدر تتكلم. اعرف رغباتها من قبل واحترمها.</p>
+
+            <div class="quote-block">
+                <p>أهم قرار تاخذه في غرفة الولادة هو إنك تبقى هادي وواعي. الهدوء يساعدك تفكر وتدعم زوجتك بأفضل شكل.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>تعلم منهج اتخاذ القرارات وتدرب عليه. ناقش مع زوجتك قبل الولادة: وش تبون؟ وش ما تبون؟ وش القرارات اللي تقدرون تتفقون عليها من الحين؟ هالحوار يسهل كل شي يوم الولادة.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>خطة الولادة مو قانون - هي دليل مرن. الأمور ممكن تتغير والمهم صحة الأم والطفل. كن مستعد تعدل الخطة حسب الوضع.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 6 -->
+        <section class="chapter" id="ch6">
+            <div class="chapter-header">
+                <div class="chapter-number">6</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">ما بعد الولادة</div>
+                    <div class="chapter-title-en">After the Birth</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>بعد الولادة، الاهتمام كله يروح للطفل الجديد. بس المؤلفة تذكرك: زوجتك لسا تحتاج دعمك. جسمها يمر بتغيرات كبيرة، وهرموناتها تتقلب، وممكن تمر بفترة "بيبي بلوز" أو حتى اكتئاب ما بعد الولادة.</p>
+            <p>دورك في هالفترة حاسم. راقب حالتها النفسية. إذا شفتها حزينة كثير أو ما تقدر تتفاعل مع الطفل أو تبكي بدون سبب لفترة طويلة، هذي علامات لازم تاخذها بجدية وتساعدها تراجع متخصص.</p>
+            <p>وعملياً: ساعد في كل شي. الأكل، النظافة، الزوار، الطفل. كل ما خففت عليها، كل ما تعافت أسرع. والأهم: لا تقارنها بأحد ولا تتوقع منها تكون "طبيعية" بسرعة.</p>
+
+            <div class="quote-block">
+                <p>ما بعد الولادة مرحلة حساسة جداً. دعمك لزوجتك في هالفترة ممكن يمنع كثير من المشاكل النفسية اللي تصير بعد الولادة.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>ثقف نفسك عن اكتئاب ما بعد الولادة واعرف علاماته. كن موجود وداعم ولا تستهين بمشاعر زوجتك. إذا حسيت إن الوضع ما هو طبيعي، ساعدها تراجع متخصص بدون ما تحسسها بعيب.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 7 -->
+        <section class="chapter" id="ch7">
+            <div class="chapter-header">
+                <div class="chapter-number">7</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">الحضور الكامل</div>
+                    <div class="chapter-title-en">Being Fully Present</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>الفصل الأخير يجمع كل شي ويركز على مفهوم "الحضور الكامل". مو بس إنك موجود جسدياً في غرفة الولادة - لا، إنك موجود بكل حواسك وقلبك وعقلك. تشوف زوجتك وتحس فيها وتستجيب لاحتياجاتها.</p>
+            <p>الحضور الكامل يعني إنك تطفي جوالك، تنسى الشغل، وتكون حاضر في اللحظة. تمسك يدها، تنظر في عيونها، تقول لها كلام يرفع معنوياتها. "أنتِ قوية"، "أنا فخور فيكِ"، "قربنا".</p>
+            <p>المؤلفة تقول إن الآباء اللي يكونون حاضرين بشكل كامل في الولادة يحسون بارتباط أقوى مع أطفالهم ومع زوجاتهم. هالتجربة تغيرك وتخليك أب أفضل من أول لحظة.</p>
+
+            <div class="quote-block">
+                <p>الحضور الكامل في الولادة مو عن الكمال - عن إنك تكون إنسان حقيقي، خايف وشجاع بنفس الوقت، موجود لأهم شخصين في حياتك.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>تعهد لنفسك إنك بتكون حاضر بشكل كامل يوم الولادة. حضّر نفسك ذهنياً وعاطفياً. تذكر: ما أحد يتوقع منك تكون مثالي، بس يتوقعون منك تكون موجود. وهذا أقوى شي تقدر تقدمه.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>لا تنسى تاكل وتشرب وتاخذ فترات راحة قصيرة خلال الولادة. ما تقدر تدعم زوجتك إذا أنت منهك. اعتنِ بنفسك عشان تقدر تعتني فيها.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+    </div>
+
+    <!-- Action Plan -->
+    <section class="action-plan">
+        <h2>خطة العمل</h2>
+        <div class="action-item">
+            <div class="action-num">1</div>
+            <p>سجل في دورة تحضير للولادة مع زوجتك. تعلموا مراحل الولادة وتقنيات الدعم وتدربوا عليها مع بعض.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">2</div>
+            <p>جهز "صندوق أدوات الولادة": كمادات حرارية، زيت مساج، سماعة بلوتوث، وجبات خفيفة، وتغيير ملابس لك ولزوجتك.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">3</div>
+            <p>اكتبوا خطة ولادة مرنة مع بعض. حددوا رغباتكم وبدائلكم، وشاركوها مع الطاقم الطبي.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">4</div>
+            <p>تعلم منهج B.R.A.I.N لاتخاذ القرارات وتدرب عليه. هالأداة بتساعدك في لحظات الضغط.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">5</div>
+            <p>اقرأ عن اكتئاب ما بعد الولادة واعرف علاماته. كن مستعد تدعم زوجتك وتطلب مساعدة متخصصة إذا لزم الأمر.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">6</div>
+            <p>زور المستشفى مسبقاً وتعرف على المكان. اعرف وين تركن، وين مدخل الطوارئ، ووين غرف الولادة. هالشي يقلل التوتر يوم الولادة.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h3>شريك الولادة - The Birth Partner</h3>
+        <p>بيني سيمكين</p>
+        <p>ملخص شامل بالعربية</p>
+        <div class="disclaimer">
+            هذا الملخص للأغراض التعليمية فقط. للاستفادة الكاملة، ننصح بقراءة الكتاب كاملاً.
+        </div>
+    </footer>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

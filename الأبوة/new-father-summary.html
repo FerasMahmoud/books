@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملخص كتاب: الأب الجديد</title>
+    <link rel="stylesheet" href="../css/reader.css">
+    <style>
+        @import url('../css/fonts.css');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+        body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #16213e; }
+        ::-webkit-scrollbar-thumb { background: #00b894; border-radius: 4px; }
+        .hero { background: linear-gradient(135deg, #003d2e 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #00b894; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(0,184,148,0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+        @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+        .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+        .hero .subtitle { font-size: 1.3rem; color: #00b894; font-weight: 700; margin-bottom: 8px; }
+        .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+        .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+        .hero .meta-info span { background: rgba(0,184,148,0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(0,184,148,0.2); }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .problem-section { background: linear-gradient(145deg, #003d2e, #1a1a2e); border: 2px solid #009b77; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+        .problem-section h2 { font-size: 1.6rem; color: #00b894; margin-bottom: 20px; font-weight: 800; }
+        .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+        .problem-section ul { list-style: none; margin: 20px 0; }
+        .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+        .problem-section ul li::before { content: '\25B8'; position: absolute; right: 0; color: #00b894; }
+        .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #003d2e; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+        .toc h2 { font-size: 1.8rem; color: #00b894; margin-bottom: 25px; text-align: center; font-weight: 800; }
+        .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+        .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+        .toc-item:hover { background: rgba(0,184,148,0.1); color: #00b894; transform: translateX(-4px); }
+        .toc-num { background: #00b894; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+        .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #003d2e; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+        .intro-section h2 { font-size: 1.6rem; color: #00b894; margin-bottom: 15px; font-weight: 800; }
+        .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+        .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #003d2e; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; transition: border-color 0.3s ease; }
+        .chapter:hover { border-color: #00b894; }
+        .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(0,184,148,0.15); }
+        .chapter-number { background: linear-gradient(135deg, #00b894, #009b77); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(0,184,148,0.3); }
+        .chapter-titles { flex: 1; }
+        .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+        .chapter-title-en { font-size: 0.95rem; color: #00b894; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+        .section-label { display: inline-block; background: rgba(0,184,148,0.12); color: #00b894; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+        .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+        .quote-block { background: rgba(0,184,148,0.06); border-right: 4px solid #00b894; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+        .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(0,184,148,0.2); font-family: Georgia, serif; }
+        .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+        .lesson-box { background: linear-gradient(135deg, rgba(0,184,148,0.4), rgba(26,26,46,0.8)); border: 1px solid rgba(0,184,148,0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+        .lesson-box .lesson-title { color: #00b894; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+        .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+        .insight-box { background: rgba(0,206,201,0.08); border: 1px solid rgba(0,206,201,0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+        .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+        .insight-box p { color: #b0d0d0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+        .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(0,184,148,0.1); }
+        .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; }
+        .back-top a:hover { color: #00b894; }
+        .action-plan { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #003d2e; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+        .action-plan h2 { font-size: 1.8rem; color: #e94560; margin-bottom: 25px; text-align: center; font-weight: 800; }
+        .action-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(233,69,96,0.1); }
+        .action-item:last-child { border-bottom: none; }
+        .action-num { background: #e94560; color: #fff; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; }
+        .action-item p { color: #c0c0d0; font-size: 1rem; line-height: 1.8; margin: 0; }
+        .footer { background: linear-gradient(145deg, #003d2e, #1a1a2e); border-top: 3px solid #00b894; padding: 50px 20px; margin-top: 60px; text-align: center; }
+        .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+        .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+        .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(0,184,148,0.15); font-size: 0.85rem; color: #666680; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="book-icon">&#x1F476;</span>
+            <h1>الأب الجديد</h1>
+            <div class="subtitle">The New Father</div>
+            <div class="author">أرمين بروت | Armin A. Brott</div>
+            <div class="meta-info">
+                <span>7 فصول</span>
+                <span>ملخص شامل</span>
+                <span>السنة الأولى</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <h2>ليش هالكتاب مهم؟</h2>
+        <p>السنة الأولى مع طفلك الجديد هي أصعب وأجمل سنة في حياتك. ما أحد يجهزك لها بشكل كافي. تحس إنك تايه، ما تنام، وتتسائل: هل أنا أسوي الشي الصح؟ هالكتاب يمسك بيدك خطوة بخطوة.</p>
+        <ul>
+            <li>ما تعرف كيف تبني رابطة قوية مع طفلك الرضيع</li>
+            <li>تحديات النوم تخليك منهك جسدياً وعاطفياً</li>
+            <li>العلاقة الزوجية تتأثر والتواصل يقل</li>
+            <li>ما تفهم مراحل نمو طفلك ووش المتوقع في كل مرحلة</li>
+        </ul>
+    </section>
+
+    <!-- TOC -->
+    <nav class="toc" id="toc">
+        <h2>فهرس الفصول</h2>
+        <div class="toc-grid">
+            <a href="#ch1" class="toc-item"><span class="toc-num">1</span> السنة الأولى</a>
+            <a href="#ch2" class="toc-item"><span class="toc-num">2</span> بناء الرابطة</a>
+            <a href="#ch3" class="toc-item"><span class="toc-num">3</span> تحديات النوم</a>
+            <a href="#ch4" class="toc-item"><span class="toc-num">4</span> التغذية والرضاعة</a>
+            <a href="#ch5" class="toc-item"><span class="toc-num">5</span> مراحل النمو</a>
+            <a href="#ch6" class="toc-item"><span class="toc-num">6</span> العلاقة الزوجية</a>
+            <a href="#ch7" class="toc-item"><span class="toc-num">7</span> النمو معاً</a>
+        </div>
+    </nav>
+
+    <!-- Intro -->
+    <section class="intro-section">
+        <h2>مقدمة الكتاب</h2>
+        <p>هالكتاب هو الجزء الثاني من سلسلة أرمين بروت الشهيرة. بعد ما غطى فترة الحمل في "الأب المنتظر"، هنا يركز على السنة الأولى من حياة طفلك. الكتاب عملي جداً ومبني على أبحاث ومقابلات مع مئات الآباء.</p>
+        <p>الفكرة المركزية: أنت مو مجرد "مساعد" للأم - أنت أب كامل الأهلية وطفلك يحتاجك بنفس القدر اللي يحتاج فيه أمه. دورك فريد وما أحد يقدر يقوم فيه غيرك.</p>
+    </section>
+
+    <div class="container">
+
+        <!-- Chapter 1 -->
+        <section class="chapter" id="ch1">
+            <div class="chapter-header">
+                <div class="chapter-number">1</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">السنة الأولى</div>
+                    <div class="chapter-title-en">The First Year</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>السنة الأولى من حياة طفلك هي أسرع سنة بتمر عليك. كل يوم فيها تغيير وتطور. من كائن صغير ما يقدر يسوي شي، لطفل يزحف ويبتسم ويناغي. المؤلف يقسم السنة لمراحل عشان تعرف وش تتوقع.</p>
+            <p>أول ثلاث شهور هي مرحلة "البقاء" - تحاول تتأقلم مع النوم المتقطع والروتين الجديد. من الشهر الرابع للسادس، تبدأ تحس بإيقاع وتفهم إشارات طفلك. من السادس للتاسع، طفلك يصير أكثر تفاعل ومتعة. والأشهر الأخيرة تشوف طفلك يتحول لشخصية مستقلة.</p>
+            <p>كل مرحلة لها تحدياتها وجمالها. السر إنك تعيش كل لحظة بدال ما تستعجل اللي بعدها.</p>
+
+            <div class="quote-block">
+                <p>السنة الأولى تمر بسرعة ما تتخيلها. استمتع بكل لحظة حتى الصعبة منها، لأنها ما بترجع.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>عش اللحظة مع طفلك. لا تستعجل المراحل ولا تقارن طفلك بغيره. كل طفل عنده إيقاعه الخاص، وكل مرحلة لها جمالها. ركز على الحاضر وبتلقى السعادة في التفاصيل الصغيرة.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>الأبحاث تبين إن الآباء اللي يقضون وقت نوعي مع أطفالهم في السنة الأولى يبنون رابطة تستمر مدى الحياة. مو المهم كم وقت - المهم كيف تقضيه.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 2 -->
+        <section class="chapter" id="ch2">
+            <div class="chapter-header">
+                <div class="chapter-number">2</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">بناء الرابطة</div>
+                    <div class="chapter-title-en">Building the Bond</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>كثير من الآباء يحسون إن الرابطة مع الطفل تجي تلقائياً - وإذا ما حسوا فيها من أول لحظة، يخافون إن فيهم مشكلة. المؤلف يطمنك: الرابطة بين الأب والطفل تُبنى بالوقت والتكرار، مو بلحظة سحرية.</p>
+            <p>كيف تبني هالرابطة؟ شيل طفلك كثير، حط جلده على جلدك، كلمه حتى لو ما يفهم، غني له، اقرأ له. كل تفاعل بسيط يبني طبقة جديدة في العلاقة بينكم.</p>
+            <p>والشي اللي يميز رابطة الأب إنها مختلفة عن رابطة الأم. الأب عادةً يلعب بطريقة أكثر حركة وإثارة، وهذا شي مفيد جداً لنمو الطفل. لا تحاول تقلد الأم - كن أب بطريقتك الخاصة.</p>
+
+            <div class="quote-block">
+                <p>رابطتك مع طفلك ما تحتاج تكون نسخة من رابطته مع أمه. أنت تقدم شي فريد ومختلف ومهم بنفس القدر.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>لا تنتظر الرابطة تجيك - اصنعها. خصص وقت يومي تكون فيه أنت والطفل لحالكم. غير الحفاظ، أعطه الرضعة، نومه. كل ما سويت أكثر، كل ما حسيت بالرابطة أقوى.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 3 -->
+        <section class="chapter" id="ch3">
+            <div class="chapter-header">
+                <div class="chapter-number">3</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">تحديات النوم</div>
+                    <div class="chapter-title-en">Sleep Challenges</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>النوم - أو بالأصح قلة النوم - هو التحدي الأكبر في السنة الأولى. المؤلف يقول بصراحة: بتفقد نوم كثير وما فيه حل سحري. بس فيه استراتيجيات تساعدك تتعامل مع الموضوع بشكل أفضل.</p>
+            <p>أول شي، افهم إن نوم الرضيع مختلف تماماً عن نوم الكبار. دورات نومه أقصر ويحتاج يصحى عشان ياكل. هذا طبيعي ومو لأنك سويت شي غلط. مع الوقت، دورات النوم تطول والأمور تتحسن.</p>
+            <p>ثاني شي، تناوب مع زوجتك. لا تخلي كل الحمل عليها. حتى لو هي ترضع طبيعي، أنت تقدر تقوم وتجيب لها الطفل وترجعه لسريره وتغير حفاظه. هالمشاركة تسوي فرق كبير.</p>
+
+            <div class="quote-block">
+                <p>قلة النوم مو عقوبة - هي جزء مؤقت من رحلة الأبوة. تمر وتنتهي، بس الرابطة اللي تبنيها في هالليالي الطويلة ما تنتهي.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>تقبل إن نومك بيتأثر وخطط لذلك. نام لما الطفل ينام، حتى لو بالنهار. اطلب مساعدة من الأهل. والأهم: تناوب مع زوجتك عشان كل واحد ياخذ فترة راحة.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>الأبحاث تبين إن قلة النوم المزمنة تأثر على الصحة النفسية والعلاقة الزوجية. لا تتحمل لحالك - اطلب مساعدة وخذها بجدية.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 4 -->
+        <section class="chapter" id="ch4">
+            <div class="chapter-header">
+                <div class="chapter-number">4</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">التغذية والرضاعة</div>
+                    <div class="chapter-title-en">Feeding and Nursing</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>موضوع الرضاعة والتغذية من المواضيع اللي كثير من الآباء يحسون إنهم مستبعدين منها. إذا زوجتك ترضع طبيعي، ممكن تحس إن ما لك دور. المؤلف يقول: غلط! دورك كبير حتى لو ما تقدر ترضع.</p>
+            <p>أنت تقدر تدعم الرضاعة الطبيعية بطرق كثيرة: جهز لزوجتك مكان مريح، جيب لها ماء وأكل وهي ترضع، ساعدها في التجشؤ بعد الرضعة، خذ الطفل بعد ما يخلص عشان هي ترتاح.</p>
+            <p>ولما يبدأ الطفل ياكل أكل صلب حول الشهر السادس، هنا يجي دورك الكبير. حضر الأكل، أطعمه، خله يجرب نكهات جديدة. هالوقت ممتع ويبني رابطة قوية.</p>
+
+            <div class="quote-block">
+                <p>دورك في التغذية أكبر مما تتخيل. حتى لو ما تقدر ترضع، أنت تقدر تكون الداعم الأول لزوجتك وطفلك.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>لا تستخدم الرضاعة الطبيعية كعذر للابتعاد. ابحث عن طرق تشارك في التغذية سواء بالدعم أو بتحضير الأكل الصلب. مشاركتك تخفف الحمل عن زوجتك وتقربك من طفلك.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 5 -->
+        <section class="chapter" id="ch5">
+            <div class="chapter-header">
+                <div class="chapter-number">5</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">مراحل النمو</div>
+                    <div class="chapter-title-en">Developmental Milestones</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>كل طفل يمر بمراحل نمو معينة في السنة الأولى. من التحكم بالرأس، للتقلب، للجلوس، للزحف، وأخيراً المشي. المؤلف يشرح كل مرحلة ووش المتوقع فيها، ويؤكد إن كل طفل عنده إيقاعه الخاص.</p>
+            <p>المهم إنك ما تقارن طفلك بأطفال غيرك. ولد صاحبك مشى على عشر شهور؟ طفلك ممكن يمشي على سنة وشوي وهذا طبيعي تماماً. المقارنة ما تفيد، بس تسبب قلق ما له داعي.</p>
+            <p>دورك كأب إنك توفر بيئة آمنة ومحفزة لطفلك. العب معه بطرق تناسب مرحلته. حطه على بطنه عشان يقوي عضلاته. قدم له ألعاب مختلفة. كلمه كثير عشان تنمي لغته. كل هالأشياء البسيطة تصنع فرق كبير.</p>
+
+            <div class="quote-block">
+                <p>طفلك مو في سباق مع أحد. نموه رحلة خاصة فيه، ودورك إنك تمشي معه بإيقاعه مو إنك تستعجله.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>اعرف مراحل النمو الطبيعية عشان تقدر تدعم طفلك، بس لا تحولها لمصدر قلق. ركز على توفير بيئة غنية بالتفاعل واللعب والحب، والباقي بييجي بوقته.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>الدراسات تبين إن لعب الأب مع طفله - خصوصاً اللعب الجسدي والحركي - يساهم بشكل كبير في تطور المهارات الحركية والاجتماعية عند الطفل.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 6 -->
+        <section class="chapter" id="ch6">
+            <div class="chapter-header">
+                <div class="chapter-number">6</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">العلاقة الزوجية</div>
+                    <div class="chapter-title-en">The Marriage Relationship</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>من أكثر الأشياء اللي ما أحد يحذرك منها: العلاقة الزوجية تتأثر كثير بعد المولود الأول. التعب وقلة النوم والمسؤوليات الجديدة تاخذ كل طاقتكم. وفجأة تلقى إنك وزوجتك ما تتكلمون إلا عن الطفل.</p>
+            <p>المؤلف يقول إن هذا شي طبيعي ويمر فيه أغلب الأزواج. بس لازم تنتبه له وتشتغل عليه. العلاقة الزوجية القوية هي أساس العائلة السعيدة. إذا أنت وزوجتك بخير، طفلكم بيكون بخير.</p>
+            <p>خصصوا وقت لكم كزوجين. حتى لو نص ساعة بعد ما الطفل ينام. تكلموا عن أشياء غير الطفل. عبروا عن تقديركم لبعض. وكونوا صبورين - هالمرحلة تمر والأمور ترجع أحسن.</p>
+
+            <div class="quote-block">
+                <p>طفلك يحتاج أب وأم يحبون بعض. علاقتك الزوجية مو رفاهية - هي حاجة أساسية لعائلتك كلها.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>لا تهمل علاقتك الزوجية بحجة الانشغال بالطفل. خصصوا وقت لكم كزوجين، تكلموا بصراحة عن مشاعركم واحتياجاتكم، وتذكروا إنكم فريق واحد.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 7 -->
+        <section class="chapter" id="ch7">
+            <div class="chapter-header">
+                <div class="chapter-number">7</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">النمو معاً</div>
+                    <div class="chapter-title-en">Growing Together</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>الفصل الأخير يتكلم عن فكرة جميلة: أنت وطفلك تنمون مع بعض. هو يتعلم يمشي ويتكلم، وأنت تتعلم تصبر وتحب بشكل أعمق وتكتشف قدرات فيك ما كنت تعرفها.</p>
+            <p>الأبوة تغيرك كإنسان. تصير أكثر صبر، أكثر تعاطف، أكثر مسؤولية. تتعلم تضحي بدون ما تحس إنك خسران. تكتشف إن العطاء يعطيك أكثر مما ياخذ منك.</p>
+            <p>المؤلف يختم بنصيحة مهمة: استمتع بالرحلة. السنة الأولى تمر بسرعة خيالية، ويوم ما تلتفت ورا بتتمنى لو ترجع لهالأيام. فعش كل لحظة بوعي وامتنان.</p>
+
+            <div class="quote-block">
+                <p>مو أنت بس تربي طفلك - طفلك بعد يربيك. يعلمك أشياء عن نفسك ما كنت بتعرفها بدونه.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>شف الأبوة كرحلة نمو شخصي مو بس مسؤولية. كل تحدي يقويك وكل لحظة حلوة تثريك. أنت تبني إنسان وبنفس الوقت تبني نفسك من جديد.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>الآباء اللي يشوفون أنفسهم "متعلمين" بدال "خبراء" يكونون أكثر مرونة وسعادة في تجربة الأبوة. تقبل إنك ما تعرف كل شي واستمتع بالتعلم.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+    </div>
+
+    <!-- Action Plan -->
+    <section class="action-plan">
+        <h2>خطة العمل</h2>
+        <div class="action-item">
+            <div class="action-num">1</div>
+            <p>خصص ٣٠ دقيقة يومياً تكون فيها أنت والطفل لحالكم. العب معه، كلمه، اقرأ له. هالوقت يبني الرابطة بينكم.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">2</div>
+            <p>سوّ جدول تناوب مع زوجتك للنوبات الليلية. كل واحد ياخذ فترة عشان الثاني يرتاح. التعاون ينقذ العلاقة والصحة.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">3</div>
+            <p>تعلم مرحلة نمو طفلك الحالية ووش الأنشطة اللي تناسبها. اقرأ، اسأل طبيب الأطفال، تابع مصادر موثوقة.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">4</div>
+            <p>خصصوا "موعد" أسبوعي لكم كزوجين حتى لو في البيت. حطوا الجوالات واتكلموا عن أشياء غير الطفل.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">5</div>
+            <p>شارك في التغذية بشكل فعال. جهز الأكل الصلب، أطعم طفلك، خله يجرب نكهات جديدة معك.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">6</div>
+            <p>سجل لحظات وذكريات مع طفلك. صور، فيديوهات، مذكرات. بتشكر نفسك بعد سنين لما ترجع لها.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h3>الأب الجديد - The New Father</h3>
+        <p>أرمين بروت</p>
+        <p>ملخص شامل بالعربية</p>
+        <div class="disclaimer">
+            هذا الملخص للأغراض التعليمية فقط. للاستفادة الكاملة، ننصح بقراءة الكتاب كاملاً.
+        </div>
+    </footer>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

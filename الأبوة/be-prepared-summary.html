@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملخص كتاب: كن مستعداً</title>
+    <link rel="stylesheet" href="../css/reader.css">
+    <style>
+        @import url('../css/fonts.css');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+        body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #16213e; }
+        ::-webkit-scrollbar-thumb { background: #f39c12; border-radius: 4px; }
+        .hero { background: linear-gradient(135deg, #3d2500 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #f39c12; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(243,156,18,0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+        @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+        .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+        .hero .subtitle { font-size: 1.3rem; color: #f39c12; font-weight: 700; margin-bottom: 8px; }
+        .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+        .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+        .hero .meta-info span { background: rgba(243,156,18,0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(243,156,18,0.2); }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .problem-section { background: linear-gradient(145deg, #3d2500, #1a1a2e); border: 2px solid #e67e22; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+        .problem-section h2 { font-size: 1.6rem; color: #f39c12; margin-bottom: 20px; font-weight: 800; }
+        .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+        .problem-section ul { list-style: none; margin: 20px 0; }
+        .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+        .problem-section ul li::before { content: '\25B8'; position: absolute; right: 0; color: #f39c12; }
+        .toc { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d2500; border-radius: 16px; padding: 40px; margin: 40px auto; max-width: 900px; }
+        .toc h2 { font-size: 1.8rem; color: #f39c12; margin-bottom: 25px; text-align: center; font-weight: 800; }
+        .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+        .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+        .toc-item:hover { background: rgba(243,156,18,0.1); color: #f39c12; transform: translateX(-4px); }
+        .toc-num { background: #f39c12; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+        .intro-section { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d2500; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+        .intro-section h2 { font-size: 1.6rem; color: #f39c12; margin-bottom: 15px; font-weight: 800; }
+        .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+        .chapter { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d2500; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; transition: border-color 0.3s ease; }
+        .chapter:hover { border-color: #f39c12; }
+        .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(243,156,18,0.15); }
+        .chapter-number { background: linear-gradient(135deg, #f39c12, #e67e22); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(243,156,18,0.3); }
+        .chapter-titles { flex: 1; }
+        .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+        .chapter-title-en { font-size: 0.95rem; color: #f39c12; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+        .section-label { display: inline-block; background: rgba(243,156,18,0.12); color: #f39c12; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+        .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+        .quote-block { background: rgba(243,156,18,0.06); border-right: 4px solid #f39c12; padding: 20px 24px; margin: 20px 0; border-radius: 0 12px 12px 0; position: relative; }
+        .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(243,156,18,0.2); font-family: Georgia, serif; }
+        .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+        .lesson-box { background: linear-gradient(135deg, rgba(243,156,18,0.4), rgba(26,26,46,0.8)); border: 1px solid rgba(243,156,18,0.25); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+        .lesson-box .lesson-title { color: #f39c12; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+        .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+        .insight-box { background: rgba(0,206,201,0.08); border: 1px solid rgba(0,206,201,0.25); border-radius: 12px; padding: 18px 22px; margin: 20px 0; }
+        .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+        .insight-box p { color: #b0d0d0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+        .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(243,156,18,0.1); }
+        .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; }
+        .back-top a:hover { color: #f39c12; }
+        .action-plan { background: linear-gradient(145deg, #16213e, #1a1a2e); border: 1px solid #3d2500; border-radius: 16px; padding: 40px; margin: 30px auto; max-width: 900px; }
+        .action-plan h2 { font-size: 1.8rem; color: #e94560; margin-bottom: 25px; text-align: center; font-weight: 800; }
+        .action-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(233,69,96,0.1); }
+        .action-item:last-child { border-bottom: none; }
+        .action-num { background: #e94560; color: #fff; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; flex-shrink: 0; }
+        .action-item p { color: #c0c0d0; font-size: 1rem; line-height: 1.8; margin: 0; }
+        .footer { background: linear-gradient(145deg, #3d2500, #1a1a2e); border-top: 3px solid #f39c12; padding: 50px 20px; margin-top: 60px; text-align: center; }
+        .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+        .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+        .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(243,156,18,0.15); font-size: 0.85rem; color: #666680; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .toc-grid { grid-template-columns: 1fr; } .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; } .chapter-header { flex-direction: column; gap: 12px; } }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="book-icon">&#x1F392;</span>
+            <h1>كن مستعداً</h1>
+            <div class="subtitle">Be Prepared</div>
+            <div class="author">غاري غرينبرغ | Gary Greenberg</div>
+            <div class="meta-info">
+                <span>6 فصول</span>
+                <span>ملخص شامل</span>
+                <span>دليل عملي</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <h2>ليش هالكتاب مهم؟</h2>
+        <p>هالكتاب مختلف عن باقي كتب الأبوة. أسلوبه فكاهي وعملي جداً - يعطيك حلول "ماكغايفر" لمواقف واقعية بتمر فيها كأب جديد. ما فيه كلام فلسفي كثير، بس فيه خطوات واضحة تقدر تطبقها من اليوم.</p>
+        <ul>
+            <li>ما تعرف كيف تلف الرضيع أو تسوي له حمام بدون ما يطيح منك</li>
+            <li>تحتار وش تسوي لما يبكي ولا شي يسكته</li>
+            <li>بيتك صار منطقة خطر والطفل يبي يحط كل شي في ثمه</li>
+            <li>تبي تستمتع بالأبوة بس التوتر ياكلك</li>
+        </ul>
+    </section>
+
+    <!-- TOC -->
+    <nav class="toc" id="toc">
+        <h2>فهرس الفصول</h2>
+        <div class="toc-grid">
+            <a href="#ch1" class="toc-item"><span class="toc-num">1</span> أساسيات الرضيع</a>
+            <a href="#ch2" class="toc-item"><span class="toc-num">2</span> مهارات البقاء</a>
+            <a href="#ch3" class="toc-item"><span class="toc-num">3</span> حيل الأب</a>
+            <a href="#ch4" class="toc-item"><span class="toc-num">4</span> السلامة والأمان</a>
+            <a href="#ch5" class="toc-item"><span class="toc-num">5</span> الصحة والعافية</a>
+            <a href="#ch6" class="toc-item"><span class="toc-num">6</span> استمتع بالرحلة</a>
+        </div>
+    </nav>
+
+    <!-- Intro -->
+    <section class="intro-section">
+        <h2>مقدمة الكتاب</h2>
+        <p>غاري غرينبرغ كتب هالكتاب بعد ما صار أب وحس إن كتب الأبوة التقليدية ما تناسبه. كان يبي شي عملي ومباشر وفيه شوية ضحك. فكتب الكتاب اللي تمنى لو لقاه قبل ما يصير أب.</p>
+        <p>الكتاب مليان رسومات توضيحية وخطوات مرقمة لكل شي - من كيف تغير حفاظ في مطعم لكيف تشيل الطفل بيد وحدة وأنت تفتح الباب باليد الثانية. عملي لدرجة إنك تحس إنه دليل ميداني مو كتاب.</p>
+    </section>
+
+    <div class="container">
+
+        <!-- Chapter 1 -->
+        <section class="chapter" id="ch1">
+            <div class="chapter-header">
+                <div class="chapter-number">1</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">أساسيات الرضيع</div>
+                    <div class="chapter-title-en">Baby Basics</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>أول فصل يعلمك الأساسيات اللي ما أحد يعلمك إياها: كيف تشيل الرضيع بشكل صحيح، كيف تلفه بالقماطة، كيف تغير الحفاظ بسرعة وكفاءة. المؤلف يشرح كل شي بخطوات واضحة مثل دليل تجميع أثاث ايكيا.</p>
+            <p>النقطة المهمة: الرضيع مو هش لهالدرجة. كثير من الآباء الجدد يخافون يشيلون أطفالهم لأنهم يحسبون إنهم بيكسرونهم. المؤلف يقول: رأسه نعم لازم تسنده، بس الرضيع أقوى مما تتوقع.</p>
+            <p>ويعلمك "خمس S" لتهدئة الرضيع: Swaddle (القماطة)، Side (وضع على الجنب)، Shush (صوت "شش")، Swing (الهز الخفيف)، Suck (المصاصة). هالتقنيات مبنية على أبحاث وفعلاً تشتغل.</p>
+
+            <div class="quote-block">
+                <p>الرضيع ما يجي مع دليل استخدام، بس الأساسيات أبسط مما تتخيل. تعلمها وبتحس بثقة خلال أيام.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>تعلم الأساسيات وتدرب عليها. شيل الطفل كثير، غير حفايظ كثير، لفه بالقماطة. مع التكرار تصير هالأشياء طبيعية وبتحس بثقة تتعامل مع طفلك بدون خوف.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>تقنية "الخمس S" تشتغل مع أغلب الرضع تحت عمر ثلاث شهور. جربها بالترتيب ولا تستسلم من أول محاولة. أحياناً تحتاج دقائق عشان تبدأ تأثر.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 2 -->
+        <section class="chapter" id="ch2">
+            <div class="chapter-header">
+                <div class="chapter-number">2</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">مهارات البقاء</div>
+                    <div class="chapter-title-en">Survival Skills</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>هالفصل يتكلم عن المهارات اللي تحتاجها عشان "تنجو" من الأسابيع والأشهر الأولى. والمؤلف يقصدها بمعنى فكاهي - بس فيه كثير من الجد. لأن التعب وقلة النوم والضغط يخلون حتى أبسط الأشياء تصير صعبة.</p>
+            <p>من أهم المهارات: تعلم تنام لما تقدر (حتى لو غفوة ٢٠ دقيقة)، تعلم تأكل بيد وحدة وأنت شايل الطفل بالثانية، تعلم تنظم وقتك بشكل واقعي. انسَ الجدول المثالي - خذها يوم بيوم.</p>
+            <p>المؤلف يؤكد على أهمية قبول المساعدة. إذا أمك أو حماتك عرضت تساعد، قول إي. إذا صاحبك قال بجيب لكم أكل، قول إي. مو وقت البطولات - وقت فريق.</p>
+
+            <div class="quote-block">
+                <p>البقاء في الأشهر الأولى مو عن الكمال. عن إنكم كلكم تأكلون وتنامون وما أحد صار فيه شي. هذا كافي.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>خفض توقعاتك في الأشهر الأولى. البيت ما بيكون نظيف، الأكل ما بيكون مثالي، وأنت ما بتكون في أحسن حالاتك. وهذا عادي تماماً. اقبل المساعدة وركز على الأساسيات.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 3 -->
+        <section class="chapter" id="ch3">
+            <div class="chapter-header">
+                <div class="chapter-number">3</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">حيل الأب</div>
+                    <div class="chapter-title-en">Dad Hacks</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>هالفصل هو اللي يميز الكتاب عن غيره. المؤلف يعطيك حيل عملية لمواقف يومية ما أحد يتكلم عنها. كيف تغير حفاظ في حمام مطعم ما فيه طاولة تغيير؟ كيف تطلع من البيت مع الطفل بدون ما تنسى نص أغراضك؟</p>
+            <p>يعلمك تسوي "شنطة الطوارئ" اللي فيها كل شي تحتاجه لأي خروجة: حفايظ إضافية، مناديل، غيار ملابس كامل (للطفل ولك!)، أكياس بلاستيك، ولاعة (تشيل الريحة)، ووجبات خفيفة.</p>
+            <p>وفيه حيل للتعامل مع مواقف طارئة: الطفل طاح عليه شي، الطفل بلع شي صغير، الطفل حرارته ارتفعت. المؤلف يعطيك خطوات أولية بس يؤكد: إذا شكيت، روح الطوارئ. لا تستهبل.</p>
+
+            <div class="quote-block">
+                <p>الأب الذكي مو اللي ما تصير معه مشاكل - اللي عنده حل لكل مشكلة تصير. جهز نفسك والباقي يهون.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>جهز شنطة طوارئ وخلها معك دايماً. تعلم الإسعافات الأولية للأطفال. واعرف إن الحيل العملية البسيطة هي اللي تنقذك في المواقف الصعبة. ما تحتاج تكون مثالي، بس تحتاج تكون مستعد.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>سجل في دورة إسعافات أولية للأطفال. هالدورة ممكن تنقذ حياة طفلك يوم من الأيام. كثير من المستشفيات والهلال الأحمر يقدمونها بشكل دوري.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 4 -->
+        <section class="chapter" id="ch4">
+            <div class="chapter-header">
+                <div class="chapter-number">4</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">السلامة والأمان</div>
+                    <div class="chapter-title-en">Safety and Security</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>لما الطفل يبدأ يزحف ويتحرك، بيتك يتحول لحقل ألغام. المؤلف يعطيك قائمة تأمين البيت الشاملة: أغطية المقابس الكهربائية، أقفال الأدراج، حواجز السلالم، تثبيت الأثاث الكبير بالجدار.</p>
+            <p>وما ينسى السيارة. كرسي السيارة لازم يكون مركب صح - وكثير من الآباء يركبونه غلط بدون ما يدرون. المؤلف يشرح بالتفصيل كيف تركبه وكيف تتأكد إنه آمن.</p>
+            <p>والنوم الآمن: على ظهره، على سطح صلب ومستوي، بدون وسائد أو بطانيات زيادة أو ألعاب محشوة. هالقواعد البسيطة تقلل خطر الاختناق بشكل كبير.</p>
+
+            <div class="quote-block">
+                <p>أفضل وقت لتأمين البيت هو قبل ما يحتاج التأمين. لا تنتظر لين طفلك يوصل للخطر عشان تسويه آمن.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>أمّن بيتك قبل ما طفلك يبدأ يتحرك. انزل على ركبك وشف البيت من مستوى الطفل - بتكتشف مخاطر ما كنت تنتبه لها. سلامة طفلك مسؤوليتك الأولى.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 5 -->
+        <section class="chapter" id="ch5">
+            <div class="chapter-header">
+                <div class="chapter-number">5</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">الصحة والعافية</div>
+                    <div class="chapter-title-en">Health and Wellness</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>هالفصل يتكلم عن صحة طفلك وصحتك أنت. بالنسبة للطفل: اعرف الفرق بين المرض العادي والطوارئ. حرارة خفيفة عند طفل عمره سنة مختلفة عن حرارة عند رضيع عمره شهر. المؤلف يعطيك إرشادات واضحة: متى تنتظر ومتى تروح الطوارئ.</p>
+            <p>وبالنسبة لصحتك أنت: كثير من الآباء الجدد يهملون أنفسهم. ما يأكلون صح، ما يتمرنون، ما يشربون ماء كافي. المؤلف يقول: أنت مو سوبرمان. إذا ما اعتنيت بنفسك، ما بتقدر تعتني بأحد ثاني.</p>
+            <p>وموضوع الصحة النفسية مهم بعد. اكتئاب ما بعد الولادة يصيب الآباء بعد، مو بس الأمهات. إذا حسيت بحزن مستمر أو انعزال أو فقدان اهتمام، لا تستحي تطلب مساعدة.</p>
+
+            <div class="quote-block">
+                <p>صحتك مو رفاهية. أنت الأساس اللي تقوم عليه عائلتك. إذا انهار الأساس، انهار كل شي.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>اعتنِ بصحتك الجسدية والنفسية. كُل صح، تحرك، نام لما تقدر، واطلب مساعدة لما تحتاج. ما فيها عيب. والأهم: اعرف متى تاخذ طفلك للدكتور ومتى تقدر تتعامل مع الموقف بالبيت.</p>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">نقطة مهمة</div>
+                <p>سجل رقم طوارئ الأطفال وطبيب الأطفال في جوالك بمكان سهل الوصول. في لحظات الطوارئ، ما تبي تضيع وقت تدور الرقم.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+        <!-- Chapter 6 -->
+        <section class="chapter" id="ch6">
+            <div class="chapter-header">
+                <div class="chapter-number">6</div>
+                <div class="chapter-titles">
+                    <div class="chapter-title-ar">استمتع بالرحلة</div>
+                    <div class="chapter-title-en">Enjoy the Ride</div>
+                </div>
+            </div>
+            <span class="section-label">الفكرة الأساسية</span>
+            <p>الفصل الأخير يذكرك بشي مهم: الأبوة ممتعة! نعم فيها تعب وسهر وقلق، بس فيها لحظات سعادة ما تلقاها في أي مكان ثاني. أول ضحكة، أول خطوة، أول مرة يقول "بابا" - هالأشياء ما لها ثمن.</p>
+            <p>المؤلف يشجعك تسوي أنشطة ممتعة مع طفلك حتى وهو صغير. روح معه البر، خله يلعب بالرمل، خله يشوف الطبيعة. الأطفال يتعلمون باللعب والاستكشاف، ودورك إنك توفر الفرص وتكون معه.</p>
+            <p>وأهم نصيحة في الكتاب: لا تاخذ نفسك بجدية زيادة. بتسوي أخطاء، بتنسى أشياء، بيصير مواقف محرجة. اضحك عليها وتعلم منها. الكمال مو الهدف - الاستمتاع هو الهدف.</p>
+
+            <div class="quote-block">
+                <p>أحسن هدية تقدمها لطفلك مو لعبة غالية أو غرفة فخمة. هي أب يضحك معه ويلعب معه ويستمتع بوقته معه.</p>
+            </div>
+
+            <div class="lesson-box">
+                <div class="lesson-title">الدرس المستفاد</div>
+                <p>خفف على نفسك واستمتع بالرحلة. الأبوة مو واجب ثقيل - هي مغامرة حلوة. اضحك كثير، العب كثير، وسوّ ذكريات حلوة مع طفلك. السنين تمر بسرعة وبتتمنى لو ترجع.</p>
+            </div>
+
+            <div class="back-top"><a href="#toc">العودة للفهرس</a></div>
+        </section>
+
+    </div>
+
+    <!-- Action Plan -->
+    <section class="action-plan">
+        <h2>خطة العمل</h2>
+        <div class="action-item">
+            <div class="action-num">1</div>
+            <p>تدرب على الأساسيات: شيل الرضيع، القماطة، تغيير الحفاظ، والتجشؤ. تدرب على دمية أو على طفل قريب لك قبل ما يجي طفلك.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">2</div>
+            <p>جهز "شنطة طوارئ الأب" اللي تاخذها معك كل ما طلعت مع الطفل. حفايظ، مناديل، غيار، أكياس، وجبات خفيفة.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">3</div>
+            <p>أمّن بيتك قبل ما طفلك يبدأ يزحف. اشترِ أغطية المقابس وأقفال الأدراج وثبت الأثاث الكبير.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">4</div>
+            <p>سجل في دورة إسعافات أولية للأطفال. هالمهارة ممكن تنقذ حياة يوم من الأيام.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">5</div>
+            <p>اعتنِ بصحتك: حدد وقت للرياضة حتى لو ١٥ دقيقة، كل صحي، واشرب ماء. صحتك أساس قدرتك على العطاء.</p>
+        </div>
+        <div class="action-item">
+            <div class="action-num">6</div>
+            <p>خطط لنشاط ممتع أسبوعي مع طفلك: نزهة في الحديقة، لعب بالماء، زيارة مكان جديد. الذكريات تُصنع بالأفعال مو بالنوايا.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h3>كن مستعداً - Be Prepared</h3>
+        <p>غاري غرينبرغ</p>
+        <p>ملخص شامل بالعربية</p>
+        <div class="disclaimer">
+            هذا الملخص للأغراض التعليمية فقط. للاستفادة الكاملة، ننصح بقراءة الكتاب كاملاً.
+        </div>
+    </footer>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

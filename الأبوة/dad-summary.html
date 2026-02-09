@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>أب - ملخص شامل | كريغ ويلكنسون</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #34495e; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #4a6a8a; }
+
+  .hero {
+    background: linear-gradient(135deg, #0d1520 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #34495e;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(52,73,94, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(13,21,32, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #34495e; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(52,73,94, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(52,73,94, 0.2); }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+  .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '⚡'; position: absolute; right: 0; }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0d1520;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+  .toc h2 { font-size: 1.8rem; color: #34495e; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(52,73,94, 0.1); color: #34495e; transform: translateX(-4px); }
+  .toc-num { background: #34495e; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0d1520;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+  .intro-section h2 { font-size: 1.6rem; color: #34495e; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0d1520;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+  .chapter:hover { border-color: #34495e; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(52,73,94, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #34495e, #2c3e50); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(52,73,94, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #34495e; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+
+  .section-label { display: inline-block; background: rgba(52,73,94, 0.12); color: #34495e; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+
+  .quote-block {
+    background: rgba(52,73,94, 0.06);
+    border-right: 4px solid #34495e;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(52,73,94, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(13,21,32, 0.4), rgba(26,26,46, 0.8));
+    border: 1px solid rgba(52,73,94, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .lesson-box .lesson-title { color: #34495e; font-weight: 700; font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+
+  .insight-box {
+    background: rgba(0,206,201, 0.08);
+    border: 1px solid rgba(0,206,201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+  .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #b0d0d0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(52,73,94, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #34495e; }
+
+  .footer {
+    background: linear-gradient(145deg, #0d1520, #1a1a2e);
+    border-top: 3px solid #34495e;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(52,73,94, 0.15); font-size: 0.85rem; color: #666680; }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">❤️</span>
+    <h1>أب: كيف تكون الأب الذي يحتاجه أطفالك</h1>
+    <p class="subtitle">Dad: How to Be the Father Your Children Need</p>
+    <p class="author">كريغ ويلكنسون — Craig Wilkinson</p>
+    <div class="meta-info">
+      <span>7 فصول أساسية</span>
+      <span>قصص شخصية وأبحاث علمية</span>
+      <span>القيادة بالمحبة</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>ليش هالكتاب مهم؟</h2>
+  <p>
+    كثير رجال يصيرون آباء بدون ما يكون عندهم نموذج واضح يتبعونه. بعضهم كان أبوه غايب، وبعضهم كان أبوه قاسي، وبعضهم ما يعرف وش يعني يكون "أب حقيقي". كريغ ويلكنسون يقدم خارطة طريق مبنية على الحب والحكمة.
+  </p>
+  <ul>
+    <li>ما عندك نموذج واضح للأبوة الصحية تتبعه</li>
+    <li>تخاف تكرر أخطاء أبوك معك</li>
+    <li>تحس إن المجتمع يهمّش دور الأب ويركّز على الأم بس</li>
+    <li>تبي تعرف كيف تقود بيتك بالحب مو بالخوف</li>
+  </ul>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الملخص</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>دور الأب</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>القيادة بالمحبة</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>الانضباط الحكيم</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>القدوة الحسنة</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>الذكاء العاطفي</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>بناء الثقة</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>الأثر الدائم</a>
+  </div>
+</nav>
+
+<section class="intro-section">
+  <h2>مقدمة عن الكتاب</h2>
+  <p>
+    كريغ ويلكنسون أب وباحث من جنوب أفريقيا أسس منظمة "Father a Nation" عشان يساعد الآباء يكونون أفضل. شاف بعينه كيف غياب الأب يأثر على المجتمعات بالكامل — جريمة، إدمان، فقر. وشاف كيف أب واحد حاضر يقدر يغيّر مسار عائلة كاملة.
+  </p>
+  <p>
+    الكتاب يمزج بين القصص الشخصية والأبحاث العلمية عشان يوريك إن الأبوة مو بس مسؤولية — هي فرصة. فرصة تصنع فرق حقيقي في حياة عيالك وحياة المجتمع. ويلكنسون يقول: كل أب عنده القدرة يكون الأب اللي عياله يحتاجونه، بس يحتاج يعرف كيف.
+  </p>
+</section>
+
+<!-- CHAPTER 1 -->
+<section class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">دور الأب</h2>
+      <span class="chapter-title-en">The Father's Role</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    ويلكنسون يبدأ بسؤال قوي: ليش الأب مهم أصلاً؟ الجواب في الأبحاث واضح وصادم — الأطفال اللي يكبرون بدون أب عندهم احتمال أكبر للفشل الدراسي، المشاكل النفسية، الإدمان، والسلوك العنيف. مو لأن الأم ما تكفي — لأن الأب يقدم شي مختلف.
+  </p>
+  <p>
+    الأب يعلّم عياله كيف يتعاملون مع العالم الخارجي. الأم غالباً تقدم الأمان والحنان، والأب يقدم التحدي والمغامرة والحدود. الطفل يحتاج الاثنين عشان ينمو بشكل متوازن. ويلكنسون يقول: دورك كأب ما ينحصر في إنك تصرف على البيت — دورك إنك تكون حاضر وفاعل في حياة عيالك.
+  </p>
+  <p>
+    الأبحاث تبيّن إن الأب اللي يلعب مع عياله ويتفاعل معاهم بشكل يومي يساهم في تطوير ذكائهم العاطفي وثقتهم بأنفسهم. حتى لو كان الوقت قليل — الجودة تعوّض الكمية.
+  </p>
+
+  <div class="quote-block">
+    <p>الأب مو بس مصدر دخل — هو مرساة عاطفية، ومعلّم للحياة، ونموذج يحتذى به. حضوره يصنع فرق ما يقدر يعوّضه أي شي ثاني.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>دورك كأب أكبر مما تتصور. حضورك في حياة عيالك يأثر على صحتهم النفسية وثقتهم بأنفسهم ونجاحهم في الحياة. مو لازم تكون كامل — لازم تكون موجود.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>اسأل نفسك: هل عيالي يحسون إني حاضر في حياتهم؟ لو ما أنت متأكد — اسألهم. سؤال بسيط مثل "وش أكثر شي تبيني أسويه معك؟" يفتح باب كبير للتواصل.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 2 -->
+<section class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">القيادة بالمحبة</h2>
+      <span class="chapter-title-en">Leading with Love</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    كثير رجال تربّوا على فكرة إن القوة تعني القسوة — إن الأب القوي هو اللي يخافونه عياله. ويلكنسون يقلب هالمفهوم: القوة الحقيقية في اللطف. الأب القوي فعلاً هو اللي عياله يحبونه ويثقون فيه، مو اللي يخافون منه.
+  </p>
+  <p>
+    القيادة بالمحبة تعني إنك تكون حازم لكن بلطف. تقول "لا" لما لازم تقول لا، لكن تشرح ليش. تحط حدود لكن بدون إهانة. تأدّب لكن بدون تحطيم. هالتوازن بين الحزم والحنان هو سر الأبوة الناجحة.
+  </p>
+
+  <div class="quote-block">
+    <p>الأب اللي يقود بالخوف يصنع أطفال خائفين. الأب اللي يقود بالحب يصنع أطفال واثقين. القوة الحقيقية مو في رفع الصوت — في خفضه والكلام بثقة وهدوء.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>القيادة بالمحبة مو ضعف — هي أقوى أنواع القيادة. لما عيالك يحسون بالحب والأمان، يتعلمون أفضل، يسمعون أكثر، ويصيرون أقوى من الداخل.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 3 -->
+<section class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الانضباط الحكيم</h2>
+      <span class="chapter-title-en">Wise Discipline</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    الانضباط كلمة تخوّف كثير آباء — يخافون يكونون قاسيين زيادة أو متساهلين زيادة. ويلكنسون يقول: الانضباط الصحيح أصله "تعليم" مو "عقاب". الهدف مو إنك تخلّي الطفل يخاف، الهدف إنك تعلّمه.
+  </p>
+  <p>
+    القاعدة الذهبية: العلاقة قبل القاعدة. لو عندك علاقة قوية مع ولدك، الانضباط يصير أسهل بكثير. الطفل اللي يحس إن أبوه يحبه يتقبّل التوجيه. الطفل اللي يحس إن أبوه بس يعاقبه يتمرد.
+  </p>
+  <p>
+    ويلكنسون يقترح أسلوب "الحدود بالحب": حدد القواعد بوضوح مسبقاً، اشرح ليش هالقواعد موجودة، وطبّقها بثبات. لما الطفل يخالف القاعدة، العاقبة تكون منطقية ومرتبطة بالسلوك — مو عشوائية أو مبنية على غضبك.
+  </p>
+
+  <div class="quote-block">
+    <p>الانضباط الحقيقي مو إنك تكسر إرادة الطفل — إنك تبنيها. تعلّمه يتحمل المسؤولية ويختار الصح حتى لما ما أحد يراقبه.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>الانضباط الحكيم يعتمد على التعليم مو العقاب. ابني علاقة قوية أولاً، حدد القواعد بوضوح، وطبّقها بثبات وبدون غضب. الهدف: طفل يتعلم يتحكم بنفسه، مو طفل يخاف منك.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>لما ولدك يغلط، بدل ما تصرخ عليه، اسأله: "وش اللي صار؟ وش كان ممكن تسويه بشكل مختلف؟ وش بنسوي المرة الجاية؟" هالأسئلة تعلّمه يفكر في أفعاله بدل ما يبس يخاف من العقوبة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 4 -->
+<section class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">القدوة الحسنة</h2>
+      <span class="chapter-title-en">Being a Role Model</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    عيالك يراقبونك أكثر مما يسمعونك. ممكن تعطيهم ألف محاضرة عن الصدق، لكن لو شافوك تكذب مرة واحدة، المحاضرات كلها راحت. ويلكنسون يقول: أقوى طريقة تعلّم عيالك هي إنك تعيش اللي تعلّمهم إياه.
+  </p>
+  <p>
+    الأطفال يتعلمون بالملاحظة أكثر من الكلام. يتعلمون كيف يتعاملون مع الغضب من طريقتك أنت. يتعلمون كيف يعاملون زوجاتهم من طريقة معاملتك لأمهم. يتعلمون كيف يتعاملون مع الفشل من ردة فعلك أنت.
+  </p>
+
+  <div class="quote-block">
+    <p>عيالك ما يسمعون كلامك — يراقبون أفعالك. لو تبيهم يكونون صادقين، كن صادق. لو تبيهم يكونون محترمين، كن محترم. أنت الكتاب اللي يقرأونه كل يوم.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>كن النموذج اللي تبي عيالك يتبعونه. كل تصرف تسويه أمامهم هو درس — سواء حبيت أو لا. اسأل نفسك: "لو ولدي سوّى نفس اللي أسويه، هل بكون راضي؟"</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 5 -->
+<section class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الذكاء العاطفي</h2>
+      <span class="chapter-title-en">Emotional Intelligence</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    كثير آباء يعتقدون إن مهمتهم هي "تقسية" عيالهم — خصوصاً الأولاد. "لا تصيح"، "كن رجّال"، "المشاعر للضعفاء". ويلكنسون يقول إن هالطريقة تصنع رجال مكسورين من الداخل يخبّون مشاعرهم ويعانون بصمت.
+  </p>
+  <p>
+    الذكاء العاطفي يعني إنك تعلّم عيالك — أولاد وبنات — يفهمون مشاعرهم ويعبّرون عنها بشكل صحي. تعلّمهم إن الحزن طبيعي، الغضب طبيعي، الخوف طبيعي — المهم كيف يتعاملون معاه.
+  </p>
+  <p>
+    وأول خطوة: أنت كأب لازم تعترف بمشاعرك قدام عيالك. لما تقول "أنا اليوم شوي زعلان" أو "هالشي أحبطني"، أنت تعطيهم إذن يعبّرون عن مشاعرهم هم بعد. أنت تبني ثقافة بيت يقدر فيها كل واحد يكون صادق مع نفسه.
+  </p>
+
+  <div class="quote-block">
+    <p>الرجل القوي مو اللي ما يحس — القوي اللي يحس ويعرف يتعامل مع مشاعره. علّم عيالك هالقوة الحقيقية.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>علّم عيالك الذكاء العاطفي بالقدوة. اعترف بمشاعرك، ساعدهم يسمّون مشاعرهم، وعلّمهم طرق صحية للتعامل معاها. هالمهارة بتفيدهم في كل علاقاتهم مدى الحياة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>لما ولدك يزعل أو يصيح، بدل ما تقول "لا تصيح"، قول: "أشوف إنك زعلان. تبي تحكي لي وش صار؟" هالجملة البسيطة تعلّمه إن مشاعره مقبولة وإن عنده مكان آمن يعبّر فيه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 6 -->
+<section class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">بناء الثقة</h2>
+      <span class="chapter-title-en">Building Trust</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    الثقة بين الأب وعياله مو شي تلقائي — تُبنى بالأفعال وتُهدم بالأخطاء. ويلكنسون يقول: كل وعد توفيه يبني لبنة ثقة، وكل وعد تخلفه يهدم عشر لبنات. عشان كذا، لا توعد إلا إذا بتوفي.
+  </p>
+  <p>
+    الثقة تُبنى أيضاً بالاعتراف بالخطأ. لما تغلط — وكل أب يغلط — اعتذر. اعتذار حقيقي: "أنا غلطت لما صرخت عليك. ما كان المفروض. أنا آسف." هالكلمات مو ضعف — هي قوة. تعلّم ولدك إن الاعتذار شجاعة.
+  </p>
+
+  <div class="quote-block">
+    <p>الثقة مثل الحساب البنكي — كل فعل إيجابي إيداع، وكل خلف وعد سحب. لازم إيداعاتك تكون أكثر بكثير من سحوباتك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>ابني الثقة بالثبات — وفِّ بوعودك الصغيرة قبل الكبيرة، واعتذر لما تغلط. الأب اللي يعترف بأخطائه يكسب احترام عياله أكثر من الأب اللي يدّعي الكمال.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 7 -->
+<section class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الأثر الدائم</h2>
+      <span class="chapter-title-en">Lasting Impact</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    ويلكنسون يختم بفكرة مؤثرة: تأثيرك كأب ما ينتهي عند عيالك — يمتد لأحفادك وأحفاد أحفادك. الأبحاث تبيّن إن أنماط الأبوة تنتقل عبر الأجيال. الأب القاسي يصنع أب قاسي، والأب الحنون يصنع أب حنون.
+  </p>
+  <p>
+    هذا يعني إن كل جهد تبذله اليوم عشان تكون أب أفضل ما يأثر بس على عيالك — يأثر على أجيال قادمة. لما تكسر دورة القسوة أو الغياب أو الإهمال، أنت تغيّر مسار عائلتك بالكامل. هذا إرث حقيقي.
+  </p>
+  <p>
+    ويلكنسون يقول: حتى لو ما كان عندك أب مثالي، تقدر تختار تكون مختلف. ما أنت مجبر تكرر نفس الأخطاء. عندك القدرة والاختيار إنك تبدأ تقليد جديد في عائلتك — تقليد قائم على الحب والحضور والحكمة.
+  </p>
+
+  <div class="quote-block">
+    <p>لما تكون أب أفضل، أنت ما تغيّر حياة ولدك بس — أنت تغيّر مستقبل عائلتك لأجيال قادمة. هذا هو التأثير الحقيقي للأبوة الواعية.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>أثرك كأب يمتد لأجيال. كل قرار واعي تاخذه اليوم في تربية عيالك يصنع فرق في مستقبل عائلتك. اكسر الأنماط السلبية وابدأ تقليد جديد قائم على الحب والحكمة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>اكتب رسالة لكل واحد من عيالك — قول لهم فيها وش تحب فيهم ووش تتمنى لهم. احتفظ فيها أو اعطهم إياها. هالفعل البسيط يصنع ذكرى تبقى للأبد ويوصل رسالة حب قوية.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+</div>
+
+<footer class="footer">
+  <h3>أب — كريغ ويلكنسون</h3>
+  <p>كريغ ويلكنسون — Craig Wilkinson</p>
+  <p>مؤسس منظمة "Father a Nation" لدعم الآباء</p>
+  <div class="disclaimer">
+    هذا ملخص شخصي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>كل يوم قول لعيالك "أحبك" وعانقهم — حتى لو كبار</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>اعتذر لعيالك لما تغلط — اوريهم إن الاعتذار قوة</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>لما ولدك يغلط، اسأله أسئلة بدل ما تعاقبه — علّمه يفكر</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>عبّر عن مشاعرك قدام عيالك — خلّهم يشوفون إن الأب يحس وعادي</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>وفِّ بكل وعد تعطيه مهما كان صغير — الثقة تُبنى بالتفاصيل</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>اكتب رسالة حب لكل واحد من عيالك واحتفظ فيها لهم</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

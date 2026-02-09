@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>آباء أفضل، أبناء أقوى - ملخص شامل | ريك جونسون</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #ff9800; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #ffb74d; }
+
+  .hero {
+    background: linear-gradient(135deg, #3d2500 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #ff9800;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(255,152,0, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(61,37,0, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #ff9800; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(255,152,0, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(255,152,0, 0.2); }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+  .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '⚡'; position: absolute; right: 0; }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d2500;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+  .toc h2 { font-size: 1.8rem; color: #ff9800; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(255,152,0, 0.1); color: #ff9800; transform: translateX(-4px); }
+  .toc-num { background: #ff9800; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d2500;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+  .intro-section h2 { font-size: 1.6rem; color: #ff9800; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d2500;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+  .chapter:hover { border-color: #ff9800; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(255,152,0, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #ff9800, #e65100); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(255,152,0, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #ff9800; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+
+  .section-label { display: inline-block; background: rgba(255,152,0, 0.12); color: #ff9800; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+
+  .quote-block {
+    background: rgba(255,152,0, 0.06);
+    border-right: 4px solid #ff9800;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(255,152,0, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(61,37,0, 0.4), rgba(26,26,46, 0.8));
+    border: 1px solid rgba(255,152,0, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .lesson-box .lesson-title { color: #ff9800; font-weight: 700; font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+
+  .insight-box {
+    background: rgba(0,206,201, 0.08);
+    border: 1px solid rgba(0,206,201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+  .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #b0d0d0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,152,0, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #ff9800; }
+
+  .footer {
+    background: linear-gradient(145deg, #3d2500, #1a1a2e);
+    border-top: 3px solid #ff9800;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,152,0, 0.15); font-size: 0.85rem; color: #666680; }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">👨‍👦</span>
+    <h1>آباء أفضل، أبناء أقوى</h1>
+    <p class="subtitle">Better Dads, Stronger Sons</p>
+    <p class="author">ريك جونسون — Rick Johnson</p>
+    <div class="meta-info">
+      <span>7 فصول أساسية</span>
+      <span>بناء شخصية الرجل</span>
+      <span>تربية الأبناء الذكور</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>ليش هالكتاب مهم؟</h2>
+  <p>
+    تربية الأولاد (الذكور) فيها تحديات خاصة — الولد يحتاج أبوه بطريقة مختلفة عن البنت. يحتاج نموذج يوريه كيف يكون رجل صالح، شجاع، ومسؤول. ريك جونسون يقول: بدون أب حاضر، الولد يدوّر على نماذج ثانية — وكثير منها خطأ.
+  </p>
+  <ul>
+    <li>ولدك يكبر وأنت ما تعرف كيف تعلّمه يكون "رجل" بالمعنى الصحيح</li>
+    <li>تخاف يكون ضعيف أو يكون قاسي زيادة — وش التوازن؟</li>
+    <li>المجتمع يعطيه رسائل مختلطة عن الرجولة وأنت محتار</li>
+    <li>تبي تبني شخصيته لكن ما تبي تكسر روحه</li>
+  </ul>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الملخص</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>القدوة الذكورية</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>بناء الشخصية</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>الحب القاسي</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>المغامرة والتحدي</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>الاحترام والمسؤولية</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>الإرشاد والتوجيه</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>رجل بشخصية</a>
+  </div>
+</nav>
+
+<section class="intro-section">
+  <h2>مقدمة عن الكتاب</h2>
+  <p>
+    ريك جونسون أب ومؤلف متخصص في قضايا الرجولة والأبوة. كتب هالكتاب لأنه شاف جيل كامل من الشباب ضايعين — ما عندهم قدوة ذكورية صحية، ما يعرفون وش يعني يكون رجل حقيقي. وشاف إن الحل يبدأ من الأب.
+  </p>
+  <p>
+    الكتاب يركّز على بناء شخصية الولد من الداخل — الصدق، الشجاعة، الاحترام، المسؤولية. مو بالكلام بس — بالقدوة والتجارب والتحديات المشتركة. جونسون يقول: ولدك ما يحتاج أب يحميه من الحياة — يحتاج أب يعلّمه كيف يواجه الحياة.
+  </p>
+</section>
+
+<!-- CHAPTER 1 -->
+<section class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">القدوة الذكورية</h2>
+      <span class="chapter-title-en">The Male Role Model</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    الولد يتعلم كيف يكون رجل من أبوه — هذي حقيقة بسيطة لكن تأثيرها ضخم. جونسون يقول: ولدك يراقبك 24/7. يراقب كيف تتعامل مع أمه، كيف تتصرف تحت الضغط، كيف تعامل الناس، وش تسوي لما تغلط. كل هذا يشكّل فهمه للرجولة.
+  </p>
+  <p>
+    المشكلة إن كثير أولاد اليوم ما عندهم قدوة ذكورية صحية. بعضهم أبوه غايب، وبعضهم أبوه موجود جسدياً بس غايب عاطفياً. وبالتالي يدوّرون على نماذج في السوشال ميديا أو الأفلام أو الشارع — ونماذج كثير منها مشوّهة.
+  </p>
+  <p>
+    أنت كأب، مو لازم تكون كامل — لازم تكون حقيقي. ولدك يتعلم من أخطائك قد ما يتعلم من نجاحاتك. لما يشوفك تغلط وتعتذر، يتعلم الاعتذار. لما يشوفك تفشل وتقوم، يتعلم المثابرة. لما يشوفك تحترم أمه، يتعلم الاحترام.
+  </p>
+
+  <div class="quote-block">
+    <p>ولدك يحتاج يشوف في أبوه رجل حقيقي — مو كامل، لكن صادق وشجاع ومسؤول. هذا النموذج يبقى معاه حتى بعد ما يكبر ويصير أب بنفسه.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>أنت أول وأهم نموذج للرجولة في حياة ولدك. كل تصرف تسويه هو درس. عش القيم اللي تبي تزرعها فيه — الصدق والشجاعة والاحترام — وهو بيتعلم بالملاحظة قبل الكلام.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>هالأسبوع، سوّي شي قدام ولدك يبيّن له القيمة اللي تبي تعلّمه إياها. لو تبيه يتعلم الصدق، كن صادق في موقف صعب قدامه. لو تبيه يتعلم الشجاعة، واجه تحدي قدامه. الأفعال أقوى من ألف كلمة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 2 -->
+<section class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">بناء الشخصية</h2>
+      <span class="chapter-title-en">Character Building</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    جونسون يقول إن بناء شخصية ولدك أهم من بناء مهاراته. المهارات تتغير مع الزمن، لكن الشخصية تبقى. الصدق، النزاهة، الشرف، الوفاء — هذي القيم اللي تصنع رجل حقيقي. وتُزرع في البيت، مو في المدرسة.
+  </p>
+  <p>
+    كيف تبني شخصية ولدك؟ أولاً: علّمه يتحمل عواقب أفعاله. لو كسر شي، يصلحه أو يدفع ثمنه. لو أذى أحد، يعتذر بنفسه. ثانياً: علّمه قيمة الكلمة — لما يوعد، يوفي. ثالثاً: علّمه إن الصح هو الصح حتى لو ما أحد يشوفه.
+  </p>
+
+  <div class="quote-block">
+    <p>الشخصية تُبنى في اللحظات الصغيرة — لما يختار الصدق وهو يقدر يكذب، لما يساعد وهو يقدر يتجاهل، لما يتحمل المسؤولية وهو يقدر يلوم غيره.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>ركّز على بناء شخصية ولدك قبل مهاراته. علّمه الصدق والنزاهة والمسؤولية من خلال مواقف الحياة اليومية. الشخصية القوية هي الأساس اللي ينبني عليه كل شي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 3 -->
+<section class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الحب القاسي</h2>
+      <span class="chapter-title-en">Tough Love</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    متى تكون حازم ومتى تكون لطيف؟ جونسون يقول: الاثنين لازم يكونون موجودين دايماً. الحب بدون حزم يصنع ولد مدلّل ما يتحمل المسؤولية. الحزم بدون حب يصنع ولد خائف ومكسور. التوازن هو السر.
+  </p>
+  <p>
+    "الحب القاسي" يعني إنك تحب ولدك بما فيه الكفاية إنك تقول له "لا" لما يحتاج يسمعها. تحبه بما فيه الكفاية إنك تخلّيه يتحمل عواقب أخطائه بدل ما تنقذه كل مرة. تحبه بما فيه الكفاية إنك تتوقع منه أعلى المعايير.
+  </p>
+  <p>
+    جونسون يحذّر من "الأب المنقذ" — الأب اللي كل ما ولده يوقع في مشكلة يجي ينقذه. هالطريقة تعلّم الولد إنه ما يحتاج يتحمل مسؤولية لأن أبوه بينقذه. الأفضل: خلّه يتعلم من أخطائه وكن موجود تدعمه وتوجهه — مو تنقذه.
+  </p>
+
+  <div class="quote-block">
+    <p>الحب الحقيقي أحياناً يعني إنك تخلّي ولدك يفشل — لأن الفشل معلّم أقوى منك. دورك مو تمنع الفشل — دورك تكون موجود بعده.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>وازن بين الحزم والحنان. قول "لا" بحب، خلّه يتحمل عواقب أفعاله، وكن موجود تدعمه بعد الفشل. هالتوازن يصنع رجل قوي من الداخل ومسؤول عن حياته.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>المرة الجاية ولدك يطلب منك تنقذه من مشكلة سبّبها بنفسه، قول له: "أنا أحبك وأثق فيك. كيف تشوف إنك تحل هالموضوع؟" وكن موجود تساعده يفكر — بدون ما تحل بداله.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 4 -->
+<section class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">المغامرة والتحدي</h2>
+      <span class="chapter-title-en">Adventure &amp; Challenge</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    الأولاد بطبيعتهم يحبون المغامرة والتحدي والمخاطرة. جونسون يقول: بدل ما تحاول تمنعهم، وجّههم. الولد يحتاج يتسلق أشياء ويركض ويخاطر ويستكشف — هذي الطريقة اللي يتعلم فيها ويكبر. مهمتك كأب إنك توفر له تحديات مناسبة.
+  </p>
+  <p>
+    المغامرة ما لازم تكون شي ضخم. ممكن تكون رحلة تخييم بسيطة، أو مشي في الجبل، أو تعلّم مهارة جديدة سوا. المهم إنها تتحداه شوي وتطلعه من منطقة الراحة. كل مرة يواجه تحدي وينجح، ثقته تزيد.
+  </p>
+
+  <div class="quote-block">
+    <p>الولد اللي ما يتحدى أبداً يكبر وهو خائف من الحياة. الولد اللي يتحدى ويتعلم يكبر وهو مستعد لأي شي. التحدي هو مدرسة الرجولة الحقيقية.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>وفّر لولدك تحديات ومغامرات مناسبة لعمره. خلّه يتسلق ويخاطر ويفشل ويقوم. هالتجارب تبني شجاعته وثقته بنفسه وتعلّمه إنه يقدر يواجه الصعوبات.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 5 -->
+<section class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الاحترام والمسؤولية</h2>
+      <span class="chapter-title-en">Respect &amp; Responsibility</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    جونسون يقول إن من أهم الأشياء اللي لازم تعلّمها لولدك: الاحترام والمسؤولية. الاحترام يبدأ من البيت — احترام أمه، احترام إخوانه، احترام القواعد. والمسؤولية تبدأ بأشياء صغيرة — ترتيب غرفته، غسل صحنه، الالتزام بمواعيده.
+  </p>
+  <p>
+    علّم ولدك إن الاحترام مو ضعف — هو قوة. الرجل اللي يحترم الآخرين يكسب احترامهم. والمسؤولية مو عبء — هي امتياز. كل ما زادت مسؤولياته، كل ما زادت حريته. هالمعادلة لازم يفهمها من صغره.
+  </p>
+
+  <div class="quote-block">
+    <p>علّم ولدك إن الرجل الحقيقي يتحمل مسؤولية أفعاله — ما يلوم غيره ولا يتهرب. هذي أهم صفة تميّز الرجال عن الأولاد.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>ازرع الاحترام والمسؤولية في ولدك من صغره. أعطه مسؤوليات مناسبة لعمره وتوقع منه يلتزم فيها. علّمه إن الاحترام يُكتسب بالأفعال والمسؤولية طريق الحرية.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>أعطِ ولدك مسؤولية جديدة هالأسبوع — ممكن يكون مسؤول عن إطعام الحيوان الأليف أو ترتيب طاولة العشاء أو غسل السيارة. خلّه يتحمل النتيجة لو ما سواها. المسؤوليات الصغيرة تبني رجل مسؤول.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 6 -->
+<section class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الإرشاد والتوجيه</h2>
+      <span class="chapter-title-en">Mentoring</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    جونسون يقول إن دور الأب يتغير مع عمر الولد. لما يكون صغير، أنت "الحارس" — تحميه وتحدد له. لما يكبر شوي، أنت "المدرّب" — تعلّمه وتدرّبه. لما يصير مراهق، أنت "المرشد" — تنصحه وتوجّهه لكن تخلّيه ياخذ قراراته.
+  </p>
+  <p>
+    المشكلة إن كثير آباء يبقون "حراس" حتى لما ولدهم يكبر — يتحكمون في كل شي. أو يبقون "مدرّبين" ويعطونه أوامر بدل نصائح. الأب الحكيم يعرف متى يتكلم ومتى يسكت، متى يتدخل ومتى يخلّيه يتعلم بنفسه.
+  </p>
+
+  <div class="quote-block">
+    <p>المرشد الحقيقي ما يعطي الأجوبة — يساعد في صياغة الأسئلة. علّم ولدك كيف يفكّر، مو بس وش يفكّر.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>تكيّف مع مراحل نمو ولدك — من حارس لمدرّب لمرشد. كل ما كبر، أعطه مساحة أكثر واجعل نفسك مستشار بدل متحكم. الهدف: رجل يقدر ياخذ قرارات حكيمة بنفسه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 7 -->
+<section class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">رجل بشخصية</h2>
+      <span class="chapter-title-en">A Man of Character</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    جونسون يختم بتعريف "الرجل الحقيقي" اللي يبي كل أب يربّيه: رجل صادق حتى لما الصدق صعب. شجاع حتى لما يخاف. محترم حتى لما ما أحد يراقبه. مسؤول عن أفعاله وكلامه. يقف مع الحق حتى لو وقف لحاله.
+  </p>
+  <p>
+    هالرجل ما ينبني بالكلام — ينبني بالتجارب والتحديات والقدوة. كل شي تكلمنا عنه في الفصول السابقة يصب في هالهدف: بناء رجل بشخصية. رجل يفتخر فيه أبوه ويفتخر فيه المجتمع وأهم شي — يفتخر بنفسه.
+  </p>
+  <p>
+    جونسون يقول: هذا أعظم مشروع في حياتك كأب. مو الشغل ولا المال ولا الإنجازات المهنية — بناء رجل صالح. هذا إرثك الحقيقي اللي يبقى بعدك ويمتد لأجيال.
+  </p>
+
+  <div class="quote-block">
+    <p>العالم ما يحتاج رجال أكثر — يحتاج رجال أفضل. ومهمتك كأب إنك تساهم بواحد على الأقل. ولدك هو مشروعك الأعظم.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>هدفك كأب لولد: بناء رجل بشخصية قوية — صادق وشجاع ومسؤول ومحترم. هذا ما يتحقق بين يوم وليلة — يتحقق بسنين من القدوة والتحدي والحب والتوجيه. استثمر في هالمشروع — إنه أعظم مشاريعك.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>اجلس مع ولدك هالأسبوع وسأله: "وش تتمنى تكون لما تكبر؟ مو بس كوظيفة — كشخص؟" ناقشه عن الصفات اللي يحبها في الناس. هالمحادثة تفتح باب كبير وتخلّيه يفكر في نوع الرجل اللي يبي يكونه.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+</div>
+
+<footer class="footer">
+  <h3>آباء أفضل، أبناء أقوى — ريك جونسون</h3>
+  <p>ريك جونسون — Rick Johnson</p>
+  <p>مؤلف ومتحدث متخصص في قضايا الأبوة والرجولة</p>
+  <div class="disclaimer">
+    هذا ملخص شخصي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>عش القيم اللي تبي تزرعها في ولدك — كن النموذج قبل ما تكون المعلّم</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>أعطِ ولدك مسؤولية جديدة مناسبة لعمره وتابع التزامه فيها</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>خطط لمغامرة مشتركة هالشهر — تخييم أو رحلة مشي أو نشاط جديد</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>المرة الجاية ولدك يغلط، خلّه يتحمل العاقبة بدل ما تنقذه</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>تكلّم مع ولدك عن معنى الرجولة الحقيقية — افتح حوار صريح</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>علّمه مهارة يدوية جديدة — إصلاح شي أو طبخ أو بناء مشروع سوا</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'books-library-v10';
+const CACHE_NAME = 'books-library-v11';
 
 // Files to pre-cache on install
 const PRECACHE_URLS = [
@@ -48,6 +48,28 @@ const PRECACHE_URLS = [
   '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/when-breath-becomes-air-summary.html',
   '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/greenlights-summary.html',
   '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/caged-bird-sings-summary.html',
+  // Book HTML files - Pregnancy Planning
+  '/books/%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D8%A7%D9%84%D8%AD%D9%85%D9%84/taking-charge-fertility-summary.html',
+  '/books/%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D8%A7%D9%84%D8%AD%D9%85%D9%84/it-starts-with-egg-summary.html',
+  '/books/%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D8%A7%D9%84%D8%AD%D9%85%D9%84/awakening-fertility-summary.html',
+  '/books/%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D8%A7%D9%84%D8%AD%D9%85%D9%84/impatient-woman-guide-summary.html',
+  '/books/%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D8%A7%D9%84%D8%AD%D9%85%D9%84/womens-bodies-wisdom-summary.html',
+  '/books/%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D8%A7%D9%84%D8%AD%D9%85%D9%84/fertility-diet-summary.html',
+  '/books/%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D8%A7%D9%84%D8%AD%D9%85%D9%84/empowered-fertility-summary.html',
+  '/books/%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D8%A7%D9%84%D8%AD%D9%85%D9%84/fourth-trimester-summary.html',
+  '/books/%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D8%A7%D9%84%D8%AD%D9%85%D9%84/period-repair-manual-summary.html',
+  '/books/%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D8%A7%D9%84%D8%AD%D9%85%D9%84/couples-pregnancy-guide-summary.html',
+  // Book HTML files - Fatherhood
+  '/books/%D8%A7%D9%84%D8%A3%D8%A8%D9%88%D8%A9/expectant-father-summary.html',
+  '/books/%D8%A7%D9%84%D8%A3%D8%A8%D9%88%D8%A9/new-father-summary.html',
+  '/books/%D8%A7%D9%84%D8%A3%D8%A8%D9%88%D8%A9/birth-partner-summary.html',
+  '/books/%D8%A7%D9%84%D8%A3%D8%A8%D9%88%D8%A9/be-prepared-summary.html',
+  '/books/%D8%A7%D9%84%D8%A3%D8%A8%D9%88%D8%A9/new-dad-survival-summary.html',
+  '/books/%D8%A7%D9%84%D8%A3%D8%A8%D9%88%D8%A9/dads-edge-summary.html',
+  '/books/%D8%A7%D9%84%D8%A3%D8%A8%D9%88%D8%A9/dad-summary.html',
+  '/books/%D8%A7%D9%84%D8%A3%D8%A8%D9%88%D8%A9/strong-fathers-daughters-summary.html',
+  '/books/%D8%A7%D9%84%D8%A3%D8%A8%D9%88%D8%A9/better-dads-sons-summary.html',
+  '/books/%D8%A7%D9%84%D8%A3%D8%A8%D9%88%D8%A9/fatherhood-summary.html',
 ];
 
 // Install event - pre-cache all static assets

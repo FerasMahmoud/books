@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الأبوة: القبول بالتحدي الأعظم - ملخص شامل | إيتان توماس</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #e94560; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #f06080; }
+
+  .hero {
+    background: linear-gradient(135deg, #3d0a15 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #e94560;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(233,69,96, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(61,10,21, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #e94560; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(233,69,96, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(233,69,96, 0.2); }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+  .problem-section h2 { font-size: 1.6rem; color: #e74c3c; margin-bottom: 20px; font-weight: 800; }
+  .problem-section p { color: #d0b0b0; font-size: 1.05rem; line-height: 2; margin-bottom: 15px; }
+  .problem-section ul { list-style: none; margin: 20px 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; color: #d0b0b0; font-size: 1rem; }
+  .problem-section ul li::before { content: '⚡'; position: absolute; right: 0; }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d0a15;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+  .toc h2 { font-size: 1.8rem; color: #e94560; margin-bottom: 25px; text-align: center; font-weight: 800; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; text-decoration: none; color: #c0c0d0; transition: all 0.25s ease; font-size: 0.95rem; }
+  .toc-item:hover { background: rgba(233,69,96, 0.1); color: #e94560; transform: translateX(-4px); }
+  .toc-num { background: #e94560; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d0a15;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+  .intro-section h2 { font-size: 1.6rem; color: #e94560; margin-bottom: 15px; font-weight: 800; }
+  .intro-section p { color: #b0b0c0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #3d0a15;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+  .chapter:hover { border-color: #e94560; }
+  .chapter-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid rgba(233,69,96, 0.15); }
+  .chapter-number { background: linear-gradient(135deg, #e94560, #c0392b); color: #fff; width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 900; flex-shrink: 0; box-shadow: 0 4px 15px rgba(233,69,96, 0.3); }
+  .chapter-titles { flex: 1; }
+  .chapter-title-ar { font-size: 1.6rem; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
+  .chapter-title-en { font-size: 0.95rem; color: #e94560; font-weight: 500; font-style: italic; direction: ltr; text-align: right; }
+
+  .section-label { display: inline-block; background: rgba(233,69,96, 0.12); color: #e94560; padding: 4px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; margin-top: 20px; }
+  .chapter p { color: #c0c0d0; font-size: 1.05rem; line-height: 2; margin-bottom: 12px; }
+
+  .quote-block {
+    background: rgba(233,69,96, 0.06);
+    border-right: 4px solid #e94560;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+  .quote-block::before { content: '\201C'; position: absolute; top: -5px; right: 12px; font-size: 3rem; color: rgba(233,69,96, 0.2); font-family: Georgia, serif; }
+  .quote-block p { color: #e0e0e0; font-size: 1.1rem; font-weight: 500; font-style: italic; margin: 0; padding-right: 20px; }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(61,10,21, 0.4), rgba(26,26,46, 0.8));
+    border: 1px solid rgba(233,69,96, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .lesson-box .lesson-title { color: #e94560; font-weight: 700; font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .lesson-box p { color: #d0d0e0; font-size: 1rem; margin: 0; line-height: 1.9; }
+
+  .insight-box {
+    background: rgba(0,206,201, 0.08);
+    border: 1px solid rgba(0,206,201, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+  .insight-box .insight-title { color: #00cec9; font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+  .insight-box p { color: #b0d0d0; font-size: 0.98rem; margin: 0; line-height: 1.9; }
+
+  .back-top { display: block; text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(233,69,96, 0.1); }
+  .back-top a { color: #8888a0; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  .back-top a:hover { color: #e94560; }
+
+  .footer {
+    background: linear-gradient(145deg, #3d0a15, #1a1a2e);
+    border-top: 3px solid #e94560;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+  .footer h3 { color: #ffffff; font-size: 1.4rem; margin-bottom: 15px; }
+  .footer p { color: #8888a0; font-size: 0.95rem; margin-bottom: 8px; line-height: 1.8; }
+  .footer .disclaimer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(233,69,96, 0.15); font-size: 0.85rem; color: #666680; }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">🏀</span>
+    <h1>الأبوة: القبول بالتحدي الأعظم</h1>
+    <p class="subtitle">Fatherhood: Rising to the Ultimate Challenge</p>
+    <p class="author">إيتان توماس — Etan Thomas</p>
+    <div class="meta-info">
+      <span>7 فصول أساسية</span>
+      <span>قصص حقيقية من آباء متنوعين</span>
+      <span>لاعب NBA سابق</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>ليش هالكتاب مهم؟</h2>
+  <p>
+    إيتان توماس لاعب كرة سلة سابق في NBA عاش حياة مليانة سفر وضغط ومسؤوليات — وفي نفس الوقت كان يحاول يكون أب حاضر لعياله. جمع قصصه وقصص آباء ثانيين من خلفيات متنوعة عشان يعطينا صورة حقيقية وصادقة عن الأبوة.
+  </p>
+  <ul>
+    <li>تحس إنك لحالك في تحديات الأبوة وما أحد يفهم وش تمر فيه</li>
+    <li>شغلك ياخذ وقتك وتحس بالذنب إنك مو مع عيالك</li>
+    <li>تبي تسمع تجارب آباء ثانيين عشان تعرف إنك مو لحالك</li>
+    <li>تبي منظور مختلف وصادق عن الأبوة بعيد عن المثالية</li>
+  </ul>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الملخص</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>أن تصبح أباً</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>التحديات اليومية</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>منظورات متنوعة</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>حياة كرة السلة والأبوة</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>التضحية والعطاء</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>المجتمع والأبوة</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>التحدي الأعظم</a>
+  </div>
+</nav>
+
+<section class="intro-section">
+  <h2>مقدمة عن الكتاب</h2>
+  <p>
+    إيتان توماس لعب في NBA لمدة 11 سنة — حياة مليانة سفر وتدريبات ومباريات. لكن أهم لقب عنده ما كان "لاعب محترف" — كان "أب". في هالكتاب يشاركنا رحلته الشخصية مع الأبوة بكل صدق وشفافية، بدون تجميل.
+  </p>
+  <p>
+    اللي يميّز هالكتاب إنه يجمع قصص من آباء مختلفين — أغنياء وفقراء، مشهورين وعاديين، من خلفيات وثقافات مختلفة. الرسالة: الأبوة تحدي عالمي يجمع كل الرجال، والقصص المشتركة تعطينا قوة وإلهام.
+  </p>
+</section>
+
+<!-- CHAPTER 1 -->
+<section class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">أن تصبح أباً</h2>
+      <span class="chapter-title-en">Becoming a Father</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    توماس يحكي عن اللحظة اللي تغيّر فيها كل شي — لحظة ما شاف ولده لأول مرة. يقول: "كنت أفكّر إني مستعد. ما كنت مستعد أبداً." هاللحظة غيّرت أولوياته بالكامل. فجأة، كل شي ثاني — المال، الشهرة، الفوز — صار ثانوي.
+  </p>
+  <p>
+    يشارك قصص آباء ثانيين عن لحظة التحوّل — كلهم يتفقون على شي واحد: ما أحد يقدر يوصف لك الإحساس لين تعيشه بنفسك. مزيج من الفرح والخوف والمسؤولية والحب اللي ما حسيت فيه قبل. هذا الإحساس هو اللي يخلّيك تبدأ تتغير.
+  </p>
+  <p>
+    توماس يقول: لحظة ما تصير أب، تبدأ تشوف نفسك بطريقة مختلفة. تبدأ تسأل: "هل أنا الشخص اللي يستاهل هالطفل يعتمد عليه؟" وهالسؤال يحفّزك تكون أفضل نسخة من نفسك. الأبوة ما هي بس مسؤولية — هي دعوة للنمو.
+  </p>
+
+  <div class="quote-block">
+    <p>لحظة ما شلت ولدي لأول مرة، عرفت إن حياتي القديمة انتهت. بدأت حياة جديدة — أصعب وأجمل وأهم حياة ممكن أعيشها.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>لحظة ما تصير أب، كل شي يتغير. هالتغيير ممكن يخوّفك — لكن خلّه يحفّزك. هي فرصة تكون أفضل نسخة من نفسك، لأن فيه إنسان صغير يعتمد عليك ويشوفك قدوته.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>اكتب رسالة لنفسك عن ليش قررت تكون أب أفضل. وش تبي تحقق؟ وش تبي عيالك يتذكرونه عنك؟ ارجع لهالرسالة كل ما حسيت بالتعب أو الإحباط — بتذكّرك ليش هالجهد يستاهل.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 2 -->
+<section class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التحديات اليومية</h2>
+      <span class="chapter-title-en">Daily Challenges</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    توماس يتكلم بصراحة عن الجوانب الصعبة في الأبوة — الأشياء اللي ما أحد يحكي عنها. قلة النوم، الضغط المالي، الخلافات مع الزوجة حول التربية، الإحساس بالذنب لما ما تقدر تكون موجود. يقول: "لو أحد قال لك إن الأبوة سهلة، هو يكذب عليك."
+  </p>
+  <p>
+    لكن هالصعوبات مو نهاية العالم — هي جزء من الرحلة. توماس يشارك كيف تعلّم يتعامل مع التحديات اليومية: التخطيط، طلب المساعدة، التواصل مع زوجته، وقبول إن فيه أيام بتكون صعبة وهذا عادي.
+  </p>
+  <p>
+    يحكي عن أيام كان يلعب مباراة مهمة وفي نفس الوقت ولده مريض ويبيه. الإحساس بالتمزق بين المسؤوليات. يقول: "ما فيه حل سحري. فيه اختيارات صعبة وفيه سلام مع إنك ما تقدر تكون في كل مكان."
+  </p>
+
+  <div class="quote-block">
+    <p>الأبوة مو بس اللحظات الحلوة — هي الليالي الطويلة والقرارات الصعبة والتضحيات اللي ما أحد يشوفها. لكن كل تحدي تتجاوزه يخلّيك أب أقوى.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>التحديات اليومية جزء طبيعي من الأبوة — مو عيب ولا فشل. تعلّم تطلب المساعدة، تواصل مع زوجتك، واقبل إن فيه أيام صعبة. القوة مو إنك ما تتعب — القوة إنك تكمّل رغم التعب.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 3 -->
+<section class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">منظورات متنوعة</h2>
+      <span class="chapter-title-en">Diverse Perspectives</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    من أقوى أجزاء الكتاب — توماس يجمع قصص من آباء مختلفين تماماً. أب عسكري كان يغيب أشهر عن عياله ويحاول يعوّض. أب أعزب يربي عياله لحاله. أب فقد وظيفته ويحاول يبقى قوي لعائلته. أب من خلفية صعبة يحاول يكسر الدورة.
+  </p>
+  <p>
+    كل قصة تعطيك منظور مختلف — لكن كلها تجتمع على نقطة واحدة: الأبوة تحدي يجمع كل الرجال بغض النظر عن خلفياتهم. المشاعر نفسها — الخوف، الحب، القلق، الفخر. والرغبة في إنك تكون أفضل لعيالك هي رغبة عالمية.
+  </p>
+  <p>
+    توماس يقول إن سماع قصص آباء ثانيين كان من أكثر الأشياء اللي ساعدته. لما تعرف إن فيه أب ثاني يمر بنفس اللي تمر فيه، تحس إنك مو لحالك. ويمكن تتعلم من تجربته شي يساعدك في رحلتك أنت.
+  </p>
+
+  <div class="quote-block">
+    <p>كل أب عنده قصة تستحق تنسمع. ولما نتشارك قصصنا بصدق، كلنا نطلع أقوى. الأبوة مو منافسة — هي رحلة مشتركة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>ما أنت لحالك في تحديات الأبوة. كل أب يمر بصعوبات — الفرق في اللي يتكلم عنها واللي يخبّيها. ابحث عن مجتمع آباء تشاركهم تجاربك — هالدعم يصنع فرق كبير.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>هالأسبوع، تكلّم مع أب ثاني تعرفه — صديق أو قريب — وشاركه تحدي تواجهه. اسأله عن تحدياته. بتتفاجأ كم القصص متشابهة وكم هالمحادثة تريّح وتفيد.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 4 -->
+<section class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">حياة كرة السلة والأبوة</h2>
+      <span class="chapter-title-en">Basketball Life &amp; Fatherhood</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    توماس يحكي عن التحدي الخاص اللي واجهه كلاعب محترف — السفر المستمر، الغياب عن البيت أيام وأسابيع، الضغط الرهيب للأداء. وفي نفس الوقت، عياله يكبرون وهو بعيد. كيف توازن بين شغل يتطلب كل وقتك وعيال يحتاجون كل حبك؟
+  </p>
+  <p>
+    الدرس اللي يعطيه مو بس للاعبين — لكل أب عنده شغل يبعده عن عياله. توماس يقول: لما تكون بعيد، اجعل التواصل أولوية — اتصال فيديو كل يوم، رسائل، حضور ذهني حتى لو مو جسدي. ولما تكون موجود، كن موجود فعلاً — مو بس جسم بدون روح.
+  </p>
+  <p>
+    يشارك لحظة مؤثرة: يوم رجع من رحلة طويلة وولده الصغير ما عرفه لثواني. هاللحظة كسرت قلبه — لكنها خلّته يقرر يغيّر أولوياته. بدأ يرفض فرص ممكن تبعده أكثر، وبدأ يستغل كل لحظة مع عياله.
+  </p>
+
+  <div class="quote-block">
+    <p>ما فيه بطولة في العالم تعوّض ابتسامة ولدك لما يشوفك. ما فيه عقد بملايين يساوي لحظة يقول لك فيها "أحبك يا بابا". الأبوة هي البطولة الحقيقية.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>التوازن بين الشغل والأبوة تحدي حقيقي — لكنه ممكن. حدد أولوياتك بوضوح، استغل كل لحظة موجود فيها، وتذكّر إن عيالك ما بيتذكرون راتبك — بيتذكرون حضورك.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 5 -->
+<section class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التضحية والعطاء</h2>
+      <span class="chapter-title-en">Sacrifice &amp; Giving</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    توماس يتكلم بصراحة عن التضحيات — الأشياء اللي تتخلى عنها لما تصير أب. النوم، الحرية الشخصية، بعض الطموحات المهنية، الوقت مع الأصدقاء. لكنه يقول: كل تضحية تسويها، ترجع لك أضعاف في شكل ثاني.
+  </p>
+  <p>
+    يحكي عن أب ترك وظيفة مرموقة عشان يكون أقرب لعياله. وأب ثاني رفض ترقية لأنها كانت بتأثر على وقته مع عائلته. القرارات كانت صعبة — لكن ولا واحد منهم ندم. لأنهم اكتشفوا إن اللي كسبوه أكبر بكثير مما خسروه.
+  </p>
+
+  <div class="quote-block">
+    <p>الأبوة أكبر تضحية ممكن تسويها — وأعظم استثمار في نفس الوقت. كل شي تتخلى عنه يرجع لك بشكل أجمل: حب وفخر ومعنى ما يقدر يشتريه أي شي في الدنيا.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>التضحية جزء من الأبوة — لكنها مو خسارة. كل شي تعطيه لعيالك يرجع لك بأشكال ما توقعتها. لا تشوف الأبوة كتضحية بس — شوفها كاستثمار في أهم مشروع في حياتك.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>فكّر في شي واحد تقدر تتخلى عنه عشان تعطي عيالك وقت أكثر. ممكن يكون ساعة من السوشال ميديا، أو مشروع جانبي مو ضروري. جرّب لمدة شهر واشوف الفرق في علاقتك معاهم.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 6 -->
+<section class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">المجتمع والأبوة</h2>
+      <span class="chapter-title-en">Community &amp; Fatherhood</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    "يحتاج قرية كاملة لتربية طفل" — توماس يؤمن بهالمثل بقوة. يقول إن الأب مو لازم يسوي كل شي لحاله. المجتمع — العائلة الكبيرة، الأصدقاء، الجيران، المدرسة — كلهم شركاء في تربية عيالك.
+  </p>
+  <p>
+    يحكي كيف مجتمعه ساعده يكون أب أفضل — جده اللي علّمه الحكمة، أصدقاؤه اللي دعموه في اللحظات الصعبة، زملاؤه اللي شاركوه تجاربهم. ويقول: لا تنعزل. ابحث عن مجتمع يدعمك ويدعم عيالك.
+  </p>
+  <p>
+    أيضاً، توماس يتكلم عن مسؤولية الأب تجاه المجتمع — مو بس تجاه عياله. لما تكون أب صالح، أنت تساهم في بناء مجتمع أفضل. عيالك بيكونون أعضاء في هالمجتمع — والتربية الصالحة تنعكس على الجميع.
+  </p>
+
+  <div class="quote-block">
+    <p>ما أحد يقدر يكون أب ممتاز لحاله. كلنا نحتاج مجتمع يدعمنا ونحتاج نكون جزء من مجتمع ندعمه. الأبوة رحلة جماعية حتى لو المسؤولية شخصية.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>لا تحاول تكون أب لحالك — ابني مجتمع حولك يدعمك ويساعدك. وكن أنت بعد جزء من مجتمع يدعم آباء ثانيين. التربية مسؤولية مشتركة والمجتمع القوي يصنع آباء أقوياء.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+<!-- CHAPTER 7 -->
+<section class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التحدي الأعظم</h2>
+      <span class="chapter-title-en">The Ultimate Challenge</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة الأساسية</span>
+  <p>
+    توماس يختم بفكرة قوية: الأبوة هي التحدي الأعظم اللي بتواجهه في حياتك — أعظم من أي مباراة، أي وظيفة، أي إنجاز مهني. لكنها أيضاً أعظم فرصة. فرصة تصنع فرق حقيقي في حياة إنسان ثاني. فرصة تترك أثر يبقى بعدك بأجيال.
+  </p>
+  <p>
+    يقول: "في الملعب، الخسارة تنتهي بصافرة النهاية. لكن في الأبوة، ما فيه صافرة — المباراة مستمرة كل يوم. وما فيه موسم إجازة. لكن الجائزة أعظم بكثير من أي كأس — الجائزة هي عيالك."
+  </p>
+  <p>
+    رسالته الأخيرة لكل أب: ارتفع فوق كل شي — فوق التعب، فوق الخوف، فوق الشك في نفسك. عيالك يستاهلون أفضل ما عندك. وأنت قادر تعطيهم أفضل ما عندك لو قبلت التحدي ودخلت الملعب بكل قلبك.
+  </p>
+
+  <div class="quote-block">
+    <p>لعبت في أكبر ملاعب العالم قدام ملايين المشاهدين. لكن أهم ملعب في حياتي كان بيتي. وأهم جمهور كان عيالي. هذي هي المباراة اللي فعلاً تهم.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>الأبوة هي التحدي الأعظم والفرصة الأعظم في حياتك. اقبل التحدي بكل قلبك. ارتفع فوق التعب والخوف والشك. عيالك يستاهلون أب يعطيهم كل اللي عنده — وأنت قادر.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 فائدة عملية</div>
+    <p>اليوم، لما ترجع البيت، عانق عيالك عناق طويل وقول لكل واحد فيهم شي تحبه فيه. هاللحظة البسيطة تلخّص كل شي في الكتاب — الحضور، الحب، والالتزام. هذا هو التحدي الأعظم وهذي هي الجائزة الأعظم.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</section>
+
+</div>
+
+<footer class="footer">
+  <h3>الأبوة: القبول بالتحدي الأعظم — إيتان توماس</h3>
+  <p>إيتان توماس — Etan Thomas</p>
+  <p>لاعب NBA سابق، مؤلف وناشط مجتمعي</p>
+  <div class="disclaimer">
+    هذا ملخص شخصي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي تفاصيل وأمثلة أكثر بكثير.
+  </div>
+</footer>
+
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدر تطبقها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>كل يوم لما ترجع البيت، عانق عيالك وقول لهم شي تحبه فيهم</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>تكلّم مع أب ثاني هالأسبوع عن تحدياتك — اكسر حاجز الصمت</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>تخلى عن شي واحد غير ضروري عشان تعطي عيالك وقت أكثر</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>لو شغلك يبعدك، اتصل فيديو بعيالك كل يوم — حتى لو 5 دقائق</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>اكتب رسالة لنفسك عن ليش تبي تكون أب أفضل — ارجع لها وقت التعب</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>ساعد أب ثاني في مجتمعك — شاركه تجربتك أو ادعمه في وقت صعب</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

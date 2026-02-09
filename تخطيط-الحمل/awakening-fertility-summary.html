@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>إيقاظ الخصوبة - ملخص شامل | هينغ أو</title>
+<style>
+  @import url('../css/fonts.css');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #27ae60; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #2ecc71; }
+
+  .hero {
+    background: linear-gradient(135deg, #0a4a2d 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid #27ae60;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(39, 174, 96, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(10, 74, 45, 0.15) 0%, transparent 50%);
+    animation: heroGlow 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(10deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero .book-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+    color: #27ae60;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero .author {
+    font-size: 1.1rem;
+    color: #a0a0b0;
+    margin-bottom: 25px;
+  }
+
+  .hero .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #8888a0;
+  }
+
+  .hero .meta-info span {
+    background: rgba(39, 174, 96, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(39, 174, 96, 0.2);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .problem-section {
+    background: linear-gradient(145deg, #2d1b1b, #1a1a2e);
+    border: 2px solid #c0392b;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .problem-section h2 {
+    font-size: 1.6rem;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .problem-section p {
+    color: #d0b0b0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 15px;
+  }
+
+  .problem-section ul {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .problem-section ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+    color: #d0b0b0;
+    font-size: 1rem;
+  }
+
+  .problem-section ul li::before {
+    content: '⚡';
+    position: absolute;
+    right: 0;
+  }
+
+  .toc {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a4a2d;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+
+  .toc h2 {
+    font-size: 1.8rem;
+    color: #27ae60;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c0c0d0;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+  }
+
+  .toc-item:hover {
+    background: rgba(39, 174, 96, 0.1);
+    color: #27ae60;
+    transform: translateX(-4px);
+  }
+
+  .toc-num {
+    background: #27ae60;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .intro-section {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a4a2d;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+  }
+
+  .intro-section h2 {
+    font-size: 1.6rem;
+    color: #27ae60;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  .intro-section p {
+    color: #b0b0c0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .chapter {
+    background: linear-gradient(145deg, #16213e, #1a1a2e);
+    border: 1px solid #0a4a2d;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .chapter:hover {
+    border-color: #27ae60;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(39, 174, 96, 0.15);
+  }
+
+  .chapter-number {
+    background: linear-gradient(135deg, #27ae60, #1e8449);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+  }
+
+  .chapter-titles {
+    flex: 1;
+  }
+
+  .chapter-title-ar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .chapter-title-en {
+    font-size: 0.95rem;
+    color: #27ae60;
+    font-weight: 500;
+    font-style: italic;
+    direction: ltr;
+    text-align: right;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(39, 174, 96, 0.12);
+    color: #27ae60;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+
+  .chapter p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 12px;
+  }
+
+  .quote-block {
+    background: rgba(39, 174, 96, 0.06);
+    border-right: 4px solid #27ae60;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+  }
+
+  .quote-block::before {
+    content: '"';
+    position: absolute;
+    top: -5px;
+    right: 12px;
+    font-size: 3rem;
+    color: rgba(39, 174, 96, 0.2);
+    font-family: Georgia, serif;
+  }
+
+  .quote-block p {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .lesson-box {
+    background: linear-gradient(135deg, rgba(10, 74, 45, 0.4), rgba(26, 26, 46, 0.8));
+    border: 1px solid rgba(39, 174, 96, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .lesson-box .lesson-title {
+    color: #27ae60;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-box p {
+    color: #d0d0e0;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .insight-box {
+    background: rgba(39, 174, 96, 0.08);
+    border: 1px solid rgba(39, 174, 96, 0.25);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+
+  .insight-box .insight-title {
+    color: #2ecc71;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .insight-box p {
+    color: #b0d0b0;
+    font-size: 0.98rem;
+    margin: 0;
+    line-height: 1.9;
+  }
+
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(39, 174, 96, 0.1);
+  }
+
+  .back-top a {
+    color: #8888a0;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .back-top a:hover {
+    color: #27ae60;
+  }
+
+  .footer {
+    background: linear-gradient(145deg, #0a4a2d, #1a1a2e);
+    border-top: 3px solid #27ae60;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .footer h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .footer p {
+    color: #8888a0;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .footer .disclaimer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(39, 174, 96, 0.15);
+    font-size: 0.85rem;
+    color: #666680;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1.1rem; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc, .chapter, .intro-section, .problem-section { padding: 24px; margin: 20px 12px; }
+    .chapter-header { flex-direction: column; gap: 12px; }
+    .chapter-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    .chapter-title-ar { font-size: 1.3rem; }
+    .hero .meta-info { flex-direction: column; gap: 10px; align-items: center; }
+    .footer { padding: 30px 16px; }
+  }
+
+  @media (max-width: 480px) {
+    html { font-size: 14px; }
+    .hero { padding: 50px 16px 40px; }
+    .hero h1 { font-size: 1.7rem; }
+  }
+</style>
+<link rel="stylesheet" href="../css/reader.css">
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">🌿</span>
+    <h1>إيقاظ الخصوبة</h1>
+    <p class="subtitle">Awakening Fertility</p>
+    <p class="author">هينغ أو — Heng Ou</p>
+    <div class="meta-info">
+      <span>الطب الصيني التقليدي والخصوبة</span>
+      <span>وصفات صحية للتحضير للحمل</span>
+      <span>رحلة اكتشاف الذات</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="problem-section">
+  <h2>ليش هذا الكتاب مهم؟</h2>
+  <p>
+    في عالم مليان ضغوط وسرعة، كثير من النساء ينسون إن التحضير للحمل مو بس تحاليل وأدوية. هذا الكتاب يقدم منظور مختلف وعميق:
+  </p>
+  <ul>
+    <li>نركّز على الجانب الطبي ونهمل الجانب الروحي والنفسي في رحلة الخصوبة</li>
+    <li>ما نعرف كيف نغذي أجسامنا بطريقة تدعم الخصوبة فعلاً</li>
+    <li>ننسى إن التحضير للحمل فرصة للنمو الشخصي والاكتشاف الذاتي</li>
+    <li>نفتقد الحكمة القديمة اللي كانت تعرفها أمهاتنا وجداتنا</li>
+  </ul>
+  <p>
+    هينغ أو تجمع بين الطب الصيني التقليدي والتغذية الحديثة، وتقدم أكثر من 50 وصفة صحية مصممة خصيصاً لتحضير الجسم للحمل. الكتاب ينظر لمرحلة ما قبل الحمل كرحلة اكتشاف ذاتي — مو مجرد انتظار.
+  </p>
+</section>
+
+<section class="intro-section">
+  <h2>عن هذا الكتاب</h2>
+  <p>
+    هينغ أو مؤسسة شركة MotherBees المتخصصة في رعاية ما بعد الولادة، وعندها خلفية عميقة في الطب الصيني التقليدي والتغذية الشمولية. كتابها هذا يختلف عن كتب الخصوبة الثانية لأنه يركّز على الجانب الروحي والعاطفي بقدر ما يركز على الجانب الجسدي.
+  </p>
+  <p>
+    الفلسفة الأساسية: جسمك يحتاج يكون في حالة توازن وتناغم عشان يكون جاهز للحمل. هذا التوازن يجي من التغذية الواعية، الحركة اللطيفة، الراحة النفسية، والتواصل مع ذاتك. الكتاب مليان وصفات عملية وتمارين نفسية ونصائح مستوحاة من آلاف السنين من الحكمة الصينية.
+  </p>
+</section>
+
+<nav class="toc" id="toc">
+  <h2>فهرس الأجزاء</h2>
+  <div class="toc-grid">
+    <a href="#ch1" class="toc-item"><span class="toc-num">1</span>الطب الصيني والخصوبة</a>
+    <a href="#ch2" class="toc-item"><span class="toc-num">2</span>التغذية الواعية</a>
+    <a href="#ch3" class="toc-item"><span class="toc-num">3</span>تحضير الجسم</a>
+    <a href="#ch4" class="toc-item"><span class="toc-num">4</span>الاكتشاف الذاتي</a>
+    <a href="#ch5" class="toc-item"><span class="toc-num">5</span>الوصفات الصحية</a>
+    <a href="#ch6" class="toc-item"><span class="toc-num">6</span>التحضير النفسي</a>
+    <a href="#ch7" class="toc-item"><span class="toc-num">7</span>النهج الشمولي</a>
+  </div>
+</nav>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-number">1</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الطب الصيني والخصوبة</h2>
+      <span class="chapter-title-en">Chinese Medicine & Fertility</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    الطب الصيني التقليدي ينظر للخصوبة بطريقة مختلفة تماماً عن الطب الغربي. بدل ما يركّز على الأعراض والتحاليل بس، يشوف الجسم كنظام متكامل — كل شي مرتبط بكل شي. الخصوبة في نظر الطب الصيني هي انعكاس لصحة الجسم الكاملة.
+  </p>
+  <p>
+    هينغ أو تشرح مفهوم <strong>"التشي" (Qi)</strong> — الطاقة الحيوية اللي تتدفق في الجسم. لما التشي يكون متوازن ومتدفق بشكل سليم، الجسم يكون في أفضل حالاته للحمل. لما يكون فيه ركود أو نقص في التشي، تظهر مشاكل صحية ومنها مشاكل الخصوبة.
+  </p>
+  <p>
+    أيضاً مفهوم <strong>"الين واليانغ"</strong> — التوازن بين الطاقة الأنثوية والذكرية في الجسم. الدورة الشهرية نفسها تعكس هالتوازن: المرحلة الأولى (الجُريبية) هي مرحلة "الين" (بناء وتغذية)، والمرحلة الثانية (الأصفرية) هي مرحلة "اليانغ" (دفء وطاقة). فهم هالتوازن يساعدك تدعمين كل مرحلة بالتغذية والعادات المناسبة.
+  </p>
+
+  <div class="quote-block">
+    <p>الخصوبة في الطب الصيني مو مشكلة تحتاج حل — هي حالة طبيعية يحتاج جسمك يرجع لها. شغلك هو إزالة العوائق وتوفير البيئة المناسبة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>الطب الصيني يعلّمنا إن الخصوبة مرتبطة بصحة الجسم الكاملة — مو بس الجهاز التناسلي. التوازن في التغذية والحركة والراحة والعواطف كلها تأثر على قدرتك على الحمل. النظرة الشمولية تكمّل الطب الحديث.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>جربي تقسمين شهرك حسب مراحل الدورة: في النصف الأول (بعد الدورة) ركّزي على الأطعمة المغذية والرطبة (شوربات، خضار مطبوخة). في النصف الثاني (بعد التبويض) ركّزي على الأطعمة الدافئة والمقوية (بهارات، زنجبيل). هالتوازن يدعم كل مرحلة بالطريقة الصح.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-number">2</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التغذية الواعية</h2>
+      <span class="chapter-title-en">Mindful Nutrition</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    هينغ أو ما تتكلم عن "دايت" أو حرمان — تتكلم عن "التغذية الواعية". يعني إنك تاكلين بوعي وقصد، تختارين أطعمة تغذي جسمك وروحك، وتستمتعين بالأكل بدل ما يكون مصدر توتر.
+  </p>
+  <p>
+    في الطب الصيني، الأطعمة تنقسم حسب طبيعتها: حارة، باردة، رطبة، جافة. الهدف هو التوازن — مو أكل "صحي" بس، لكن أكل يناسب جسمك واحتياجاتك الحالية. مثلاً، لو جسمك "بارد" (أطرافك باردة دايماً، دورتك خفيفة)، تحتاجين أطعمة دافئة مثل الزنجبيل والقرفة والشوربات.
+  </p>
+  <p>
+    الكتاب يركّز على أطعمة محددة تعزز الخصوبة: <strong>المرق العظمي</strong> (مليان كولاجين ومعادن)، <strong>البيض</strong> (مصدر كولين ممتاز)، <strong>الخضار الورقية الداكنة</strong> (حمض الفوليك والحديد)، <strong>الأسماك الدهنية</strong> (أوميغا 3)، و<strong>المكسرات والبذور</strong> (زنك وسيلينيوم). الفكرة: الأكل الحقيقي الطبيعي أفضل من أي مكمل.
+  </p>
+
+  <div class="quote-block">
+    <p>الأكل مو بس وقود — هو تواصل مع جسمك. كل وجبة فرصة تقولين لجسمك: أنا أهتم فيك، أنا أحضّرك لأجمل رحلة في حياتك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>التغذية الواعية تختلف عن الدايت. ما فيها حرمان أو قواعد صارمة — فيها وعي واختيار مدروس. اختاري أطعمة طبيعية ومغذية، حضّريها بحب، وكليها بوعي. هذا النهج يغذي جسمك وروحك في نفس الوقت.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-number">3</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">تحضير الجسم</h2>
+      <span class="chapter-title-en">Preparing the Body</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    هينغ أو تشوف إن تحضير الجسم للحمل يشبه تحضير التربة قبل الزراعة. ما تقدرين تزرعين في تربة يابسة وتتوقعين نتائج حلوة. لازم تغذين التربة، ترويها، وتهيئيها عشان البذرة تنمو.
+  </p>
+  <p>
+    الحركة جزء أساسي من التحضير، لكن مو أي حركة. الطب الصيني يفضّل الحركات اللطيفة اللي تحسّن تدفق الدم والطاقة بدون ما ترهق الجسم: <strong>اليوغا</strong> (خصوصاً يوغا الخصوبة)، <strong>التاي تشي</strong>، <strong>المشي في الطبيعة</strong>، و<strong>تمارين التنفس العميق</strong>. هالتمارين تحسّن تدفق الدم للرحم والمبايض وتقلل التوتر.
+  </p>
+  <p>
+    أيضاً، <strong>الدفء</strong> مهم جداً في الطب الصيني. تجنبي المشروبات المثلجة والأطعمة الباردة جداً، خصوصاً في النصف الثاني من الدورة. حطي كمادة دافية على بطنك. البسي جرابات دافية. هالأشياء تبدو بسيطة لكنها تحسّن تدفق الدم للرحم حسب فلسفة الطب الصيني.
+  </p>
+
+  <div class="quote-block">
+    <p>جسمك حديقة — والحمل هو الزهرة اللي تطلعين تنتظرينها. شغلك مو إنك تجبرين الزهرة تطلع — شغلك إنك تهيئين التربة والماء والشمس.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>تحضير الجسم للحمل يحتاج رفق مو قسوة. الحركات اللطيفة أفضل من التمارين المكثفة. الدفء أفضل من البرودة. الهدوء أفضل من الضغط. عاملي جسمك بلطف وهو بيستجيب.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>ابدئي بـ15 دقيقة يوغا صباحية (فيه فيديوهات مخصصة ليوغا الخصوبة على يوتيوب). في المساء، حطي كمادة دافية على بطنك لمدة 20 دقيقة وأنتِ تسترخين. قللي المشروبات المثلجة واستبدليها بشاي أعشاب دافي. لاحظي كيف يتغير إحساسك بجسمك خلال أسبوعين.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-number">4</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الاكتشاف الذاتي</h2>
+      <span class="chapter-title-en">Self-Discovery</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    هذا الفصل هو اللي يخلي الكتاب مميز عن غيره. هينغ أو تقول إن مرحلة ما قبل الحمل مو مجرد "انتظار" — هي فرصة ذهبية للنمو الشخصي. مرحلة تكتشفين فيها نفسك وتتصالحين مع مخاوفك وتوقعاتك.
+  </p>
+  <p>
+    تطرح أسئلة عميقة تستحق التفكير: وش معنى الأمومة بالنسبة لك؟ وش المخاوف اللي عندك؟ كيف كانت علاقتك مع أمك وكيف تأثر على نظرتك للأمومة؟ وش القيم اللي تبين تربين عليها أطفالك؟ هالأسئلة مو للإجابة السريعة — هي للتأمل والتعمق.
+  </p>
+  <p>
+    هينغ أو تقترح ممارسات مثل <strong>الكتابة الحرة</strong> (journaling) — اكتبي أفكارك ومشاعرك بدون فلتر كل يوم. <strong>التأمل</strong> — حتى 5 دقائق يومياً تسوي فرق. <strong>التواصل مع الطبيعة</strong> — المشي بين الأشجار والنباتات يهدّي الجهاز العصبي. هالممارسات ما تحسّن بس صحتك النفسية — تحسّن خصوبتك فعلياً لأن التوتر والقلق يأثرون على الهرمونات.
+  </p>
+
+  <div class="quote-block">
+    <p>قبل ما تصيرين أم، اكتشفي مين أنتِ كإنسانة. كل ما عرفتي نفسك أعمق، كل ما صرتي أم أقوى وأوعى.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>مرحلة ما قبل الحمل فرصة للنمو مو مجرد انتظار. استغليها في اكتشاف ذاتك، مواجهة مخاوفك، وتحديد قيمك كأم مستقبلية. هالعمل الداخلي مو رفاهية — هو أساس أمومة واعية ومتوازنة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-number">5</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">الوصفات الصحية</h2>
+      <span class="chapter-title-en">Healing Recipes</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    هذا الجزء العملي من الكتاب — أكثر من 50 وصفة مصممة خصيصاً لتعزيز الخصوبة. كل وصفة موضح فيها ليش هي مفيدة ووش المغذيات اللي فيها. الوصفات متنوعة ولذيذة — مو أكل "صحي" ممل.
+  </p>
+  <p>
+    من الوصفات المميزة: <strong>مرق العظم بالزنجبيل</strong> (مليان كولاجين ومعادن، يدعم بطانة الرحم)، <strong>سلطة الكينوا بالخضار المشوية</strong> (بروتين نباتي + حديد + فوليت)، <strong>سموذي التوت والسبانخ</strong> (مضادات أكسدة عالية)، <strong>شوربة العدس بالكركم</strong> (مضاد التهابات + بروتين + حديد).
+  </p>
+  <p>
+    الكتاب أيضاً يتكلم عن <strong>أشاي الأعشاب</strong> المفيدة للخصوبة: شاي أوراق التوت الأحمر (يقوّي الرحم)، شاي النعناع (يهدّي الجهاز الهضمي)، وشاي الزنجبيل (يدفّي ويحسّن الدورة الدموية). لكن تنبّه إن بعض الأعشاب لازم تتوقفين عنها بمجرد ما يصير حمل.
+  </p>
+
+  <div class="quote-block">
+    <p>الطبخ فعل حب — حب لنفسك ولجسمك ولطفلك المستقبلي. كل وصفة تحضرينها بوعي وقصد هي استثمار في صحتك وخصوبتك.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>الأكل الحقيقي المحضّر في البيت بمكونات طبيعية أفضل من أي مكمل غذائي. الوصفات في هذا الكتاب مصممة عشان تكون لذيذة ومغذية في نفس الوقت. الطبخ نفسه يصير ممارسة وعي وتأمل.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>ابدئي بوصفة واحدة هالأسبوع — جربي مرق العظم مثلاً (سهل ويُطبخ بالقدر البطيء). الأسبوع الجاي أضيفي وصفة ثانية. خلال شهر بيكون عندك مجموعة وصفات صحية تدورين عليها. والأهم: استمتعي بالطبخ ولا تخلينه ضغط إضافي.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-number">6</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">التحضير النفسي</h2>
+      <span class="chapter-title-en">Mental Preparation</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    هينغ أو تخصص فصل كامل للجانب النفسي والعاطفي. رحلة الخصوبة ممكن تكون من أصعب الرحلات عاطفياً — القلق، الانتظار، الأمل والخوف، الضغط الاجتماعي. كل هالمشاعر طبيعية ولازم نعترف فيها.
+  </p>
+  <p>
+    الكتاب يتكلم عن أهمية <strong>بناء شبكة دعم</strong>. مو لازم تمرين بهالرحلة لوحدك. تكلمي مع زوجك بصراحة عن مشاعرك ومخاوفك. ابحثي عن صديقة أو مجموعة دعم تفهم وش تمرين فيه. ولو حسيتي إنك محتاجة مساعدة متخصصة — لا تتردين تروحين لمعالج نفسي.
+  </p>
+  <p>
+    أيضاً، هينغ أو تتكلم عن <strong>التخلي عن السيطرة</strong>. واحد من أصعب الدروس في رحلة الخصوبة إنك ما تقدرين تتحكمين في كل شي. تقدرين تسوين كل شي صح — وبرضو النتيجة مو بيدك. تعلّم التسليم والقبول جزء من الرحلة.
+  </p>
+
+  <div class="quote-block">
+    <p>القوة الحقيقية مو في السيطرة على كل شي — القوة في القدرة على التسليم مع الاستمرار في العمل. سوّي اللي عليك وسلّمي النتيجة.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>صحتك النفسية مو أقل أهمية من صحتك الجسدية في رحلة الخصوبة. التوتر والقلق يأثرون فعلياً على الهرمونات والخصوبة. بناء شبكة دعم، ممارسة التأمل، وتعلّم التسليم — كلها أدوات قوية تحتاجينها.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>ابدئي بـ5 دقائق تأمل يومياً (استخدمي تطبيق مثل Calm أو Headspace). اكتبي في دفتر يومياً — حتى لو سطرين بس. وتكلمي مع زوجك مرة في الأسبوع عن مشاعركم حول الرحلة — بدون ضغط أو لوم، بس مشاركة صادقة.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+<!-- CHAPTER 7 -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-number">7</div>
+    <div class="chapter-titles">
+      <h2 class="chapter-title-ar">النهج الشمولي</h2>
+      <span class="chapter-title-en">The Holistic Approach</span>
+    </div>
+  </div>
+
+  <span class="section-label">الفكرة</span>
+  <p>
+    هينغ أو تختم بدمج كل العناصر في نهج شمولي واحد. النهج الشمولي يعني إنك تهتمين بكل جوانب حياتك — الجسد والعقل والروح — كنظام واحد متكامل. تحسين أي جانب يحسّن الكل.
+  </p>
+  <p>
+    تقترح إنشاء <strong>"طقوس يومية"</strong> تجمع بين عناصر مختلفة: صباحك يبدأ بتأمل قصير وشاي أعشاب. غداءك يكون وجبة مغذية محضّرة بوعي. مساءك يتضمن يوغا لطيفة وكتابة في الدفتر. النوم في وقت ثابت في غرفة هادية ومظلمة.
+  </p>
+  <p>
+    الكتاب يؤكد إن هالنهج ما يتعارض مع الطب الحديث — يكمّله. تقدرين تتابعين مع طبيبتك وتاخذين أي علاج لازم، وفي نفس الوقت تدعمين جسمك بالتغذية الواعية والحركة اللطيفة والراحة النفسية. الاثنين مع بعض أقوى من كل واحد لوحده.
+  </p>
+
+  <div class="quote-block">
+    <p>الخصوبة مو هدف تطاردينه — هي حالة تخلقينها بالتوازن. لما يتوازن جسمك وعقلك وروحك، يصير الحمل امتداد طبيعي لهالتوازن.</p>
+  </div>
+
+  <div class="lesson-box">
+    <div class="lesson-title">💡 الدرس الرئيسي</div>
+    <p>النهج الشمولي يدمج الطب الحديث مع الحكمة القديمة. ما تحتاجين تختارين بينهم — خذي أفضل ما عند كل واحد. التغذية الواعية + الحركة اللطيفة + الراحة النفسية + المتابعة الطبية = أفضل فرصة للحمل وأجمل رحلة.</p>
+  </div>
+
+  <div class="insight-box">
+    <div class="insight-title">📌 الفائدة العملية</div>
+    <p>صممي "طقوسك اليومية" الخاصة — مو لازم تكون معقدة. ممكن تكون: 5 دقائق تأمل صباحي + وجبة مغذية + 15 دقيقة يوغا مسائية + كتابة سطرين في الدفتر. جربيها أسبوع وعدّليها حسب ما يناسبك. المهم الاستمرارية مو الكمال.</p>
+  </div>
+
+  <div class="back-top"><a href="#toc">↑ العودة للفهرس</a></div>
+</article>
+
+</div>
+
+<footer class="footer">
+  <h3>إيقاظ الخصوبة — الخلاصة النهائية</h3>
+  <p>
+    هينغ أو — Heng Ou
+  </p>
+  <p>
+    هذا الكتاب يقدم نظرة مختلفة وجميلة لرحلة الخصوبة. يجمع بين حكمة الطب الصيني التقليدي والتغذية الحديثة، ويشوف مرحلة ما قبل الحمل كفرصة للنمو والاكتشاف الذاتي — مو مجرد انتظار.
+  </p>
+  <p>
+    الرسالة الأساسية: عاملي جسمك بلطف، غذّيه بوعي، حرّكيه برفق، وأعطي نفسك مساحة للنمو. النهج الشمولي اللي يجمع بين الجسد والعقل والروح هو أقوى طريقة للتحضير للحمل والأمومة.
+  </p>
+  <div class="disclaimer">
+    هذا ملخص شخصي للكتاب وليس بديلاً عن قراءته. الكتاب الأصلي يحتوي وصفات مفصّلة وتمارين أكثر بكثير.
+  </div>
+</footer>
+
+<!-- ==================== خطة التطبيق ==================== -->
+<section class="action-plan" style="max-width:800px;margin:40px auto;padding:30px 20px;">
+  <div style="background:var(--card-bg, #1a1a2e);border-radius:16px;padding:24px;border:2px solid rgba(233,69,96,0.3);">
+    <h2 style="text-align:center;margin-bottom:20px;color:#e94560;">خطة التطبيق العملية</h2>
+    <p style="text-align:center;color:#8888a0;margin-bottom:24px;font-size:0.9rem;">6 إجراءات عملية تقدرين تطبقينها من اليوم</p>
+    <ol style="list-style:none;padding:0;margin:0;counter-reset:action-counter;">
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">1</span>
+        <span>ابدئي بـ5 دقائق تأمل صباحي مع كوب شاي أعشاب دافي</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">2</span>
+        <span>حضّري وصفة مرق العظم هالأسبوع واشربي كوب يومياً</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">3</span>
+        <span>جربي 15 دقيقة يوغا خصوبة يومياً (ابحثي عن Fertility Yoga على يوتيوب)</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">4</span>
+        <span>اشتري دفتر واكتبي فيه أفكارك ومشاعرك كل مساء</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">5</span>
+        <span>قللي المشروبات المثلجة واستبدليها بمشروبات دافية ومغذية</span>
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;padding:14px 0;">
+        <span style="background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;flex-shrink:0;">6</span>
+        <span>خصصي وقت أسبوعي للتحدث مع زوجك عن مشاعركم ومخاوفكم</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

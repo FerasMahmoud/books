@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الفصل الرابع - ملخص شامل | كيمبرلي آن جونسون</title>
+<link rel="stylesheet" href="../css/reader.css">
+<style>
+  @import url('../css/fonts.css');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #ff9800; border-radius: 4px; }
+  .hero { background: linear-gradient(135deg, #3d2500 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #ff9800; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(255,152,0,0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #ff9800; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(255,152,0,0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(255,152,0,0.2); }
+  .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+  .problem-section { background: linear-gradient(135deg, rgba(255,152,0,0.05) 0%, rgba(22,33,62,0.5) 100%); border: 1px solid rgba(255,152,0,0.15); border-radius: 16px; padding: 35px; margin-bottom: 40px; }
+  .problem-section h2 { color: #ff9800; font-size: 1.5rem; margin-bottom: 20px; text-align: center; }
+  .problem-section ul { list-style: none; padding: 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; border-bottom: 1px solid rgba(255,152,0,0.08); }
+  .problem-section ul li::before { content: '🔹'; position: absolute; right: 0; top: 10px; }
+  .toc { background: #16213e; border-radius: 16px; padding: 30px; margin-bottom: 40px; border: 1px solid rgba(255,152,0,0.1); }
+  .toc h2 { color: #ff9800; font-size: 1.4rem; margin-bottom: 20px; text-align: center; }
+  .toc ul { list-style: none; padding: 0; }
+  .toc ul li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .toc ul li a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; }
+  .toc ul li a:hover { color: #ff9800; }
+  .toc ul li .ch-num { color: #ff9800; font-weight: 700; margin-left: 8px; }
+  .chapter { background: rgba(22,33,62,0.4); border-radius: 16px; padding: 35px; margin-bottom: 35px; border: 1px solid rgba(255,152,0,0.08); transition: border-color 0.3s; }
+  .chapter:hover { border-color: rgba(255,152,0,0.25); }
+  .chapter-header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 2px solid rgba(255,152,0,0.15); }
+  .chapter-header .ch-number { background: linear-gradient(135deg, #ff9800, #3d2500); color: white; width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; flex-shrink: 0; }
+  .chapter-header h2 { font-size: 1.4rem; color: #ffffff; }
+  .chapter-header h2 small { display: block; font-size: 0.8rem; color: #ff9800; font-weight: 400; margin-top: 4px; }
+  .section-label { color: #ff9800; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: block; }
+  .chapter p { margin-bottom: 16px; color: #c8c8d8; font-size: 1.05rem; }
+  .quote-block { background: linear-gradient(135deg, rgba(255,152,0,0.1), rgba(255,152,0,0.03)); border-right: 4px solid #ff9800; padding: 20px 25px; margin: 25px 0; border-radius: 0 12px 12px 0; font-style: italic; color: #d0d0e0; }
+  .quote-block .quote-author { display: block; margin-top: 8px; font-style: normal; color: #ff9800; font-size: 0.9rem; }
+  .lesson-box { background: rgba(255,152,0,0.08); border: 1px solid rgba(255,152,0,0.2); border-radius: 12px; padding: 20px; margin: 20px 0; }
+  .lesson-box .label { color: #ff9800; font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; display: block; }
+  .lesson-box p { color: #c8c8d8; margin: 0; }
+  .insight-box { background: rgba(255,255,255,0.03); border: 1px dashed rgba(255,152,0,0.3); border-radius: 12px; padding: 20px; margin: 20px 0; }
+  .insight-box .label { color: #ff9800; font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; display: block; }
+  .insight-box p { color: #b0b0c0; margin: 0; }
+  .back-top { text-align: center; margin-top: 20px; }
+  .back-top a { color: #ff9800; text-decoration: none; font-size: 0.9rem; }
+  .action-plan { background: linear-gradient(135deg, rgba(233,69,96,0.08), rgba(22,33,62,0.5)); border: 1px solid rgba(233,69,96,0.2); border-radius: 16px; padding: 35px; margin-bottom: 40px; }
+  .action-plan h2 { color: #e94560; font-size: 1.5rem; margin-bottom: 25px; text-align: center; }
+  .action-plan .action-item { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 18px; }
+  .action-plan .action-num { background: #e94560; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+  .action-plan .action-text { color: #c8c8d8; font-size: 1rem; line-height: 1.7; }
+  .footer { text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,152,0,0.1); margin-top: 40px; color: #666680; font-size: 0.85rem; }
+  .footer .book-title { color: #ff9800; font-weight: 700; font-size: 1rem; margin-bottom: 5px; }
+  .intro-section { background: rgba(255,152,0,0.04); border-radius: 16px; padding: 35px; margin-bottom: 35px; border: 1px solid rgba(255,152,0,0.1); }
+  .intro-section h2 { color: #ff9800; margin-bottom: 15px; }
+  .intro-section p { color: #c8c8d8; font-size: 1.05rem; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">🤱</span>
+    <h1>الفصل الرابع</h1>
+    <p class="subtitle">The Fourth Trimester</p>
+    <p class="author">تأليف: كيمبرلي آن جونسون | Kimberly Ann Johnson</p>
+    <div class="meta-info">
+      <span>📖 ملخص شامل</span>
+      <span>⏱️ 25 دقيقة قراءة</span>
+      <span>🤱 ما بعد الولادة</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+  <section class="problem-section">
+    <h2>ليش هالكتاب مهم؟</h2>
+    <ul>
+      <li>أغلب الناس يركزون على الحمل والولادة وينسون إن فيه مرحلة رابعة مهمة جدًا بعد الولادة</li>
+      <li>التحضير لفترة ما بعد الولادة من قبل الحمل يقلل كثير من الصدمة والمعاناة</li>
+      <li>كثير أمهات يحسون بالوحدة والضياع بعد الولادة لأن ما حد حضرهم لهالمرحلة</li>
+      <li>الكتاب يعطيك خطة واضحة تقدر تجهزها من الحين عشان تكون مستعد لما يجي الوقت</li>
+    </ul>
+  </section>
+
+  <nav class="toc">
+    <h2>فهرس الملخص</h2>
+    <ul>
+      <li><a href="#ch1"><span class="ch-num">01</span> التحضير قبل الولادة</a></li>
+      <li><a href="#ch2"><span class="ch-num">02</span> التعافي من الولادة</a></li>
+      <li><a href="#ch3"><span class="ch-num">03</span> تغيرات الجسم</a></li>
+      <li><a href="#ch4"><span class="ch-num">04</span> التغذية بعد الولادة</a></li>
+      <li><a href="#ch5"><span class="ch-num">05</span> الدعم العاطفي</a></li>
+      <li><a href="#ch6"><span class="ch-num">06</span> دور الشريك</a></li>
+      <li><a href="#ch7"><span class="ch-num">07</span> الوضع الطبيعي الجديد</a></li>
+    </ul>
+  </nav>
+
+  <section class="intro-section">
+    <h2>مقدمة</h2>
+    <p>كتاب "الفصل الرابع" يتكلم عن الفترة اللي أغلب الناس ما يفكرون فيها: أول ثلاثة أشهر بعد الولادة. كيمبرلي آن جونسون تقول إن هالفترة هي "الفصل الرابع" من الحمل، ولازم نتعامل معاها بنفس الأهمية.</p>
+    <p>الجميل في قراءة هالكتاب وأنت لسه في مرحلة التخطيط للحمل إنك تقدر تجهز كل شي من الحين. عشان لما يجي الوقت، ما تكون في حالة صدمة بل تكون مستعد ومرتاح.</p>
+  </section>
+
+  <!-- Chapter 1 -->
+  <article class="chapter" id="ch1">
+    <div class="chapter-header">
+      <div class="ch-number">01</div>
+      <h2>التحضير قبل الولادة <small>Pre-Birth Preparation</small></h2>
+    </div>
+    <span class="section-label">التخطيط المبكر لفترة ما بعد الولادة</span>
+    <p>أهم شي تاخذه من هالفصل: التحضير لما بعد الولادة يبدأ قبل الولادة بوقت طويل. الكاتبة تقول إن ثقافتنا تركز كلها على الحمل والولادة وتنسى إن الأم تحتاج عناية ورعاية بعد الولادة بنفس القدر.</p>
+    <p>التحضير يشمل أشياء عملية: من اللي رح يساعدك في الأسابيع الأولى؟ وش رح تاكل؟ كيف رح تنظم النوم؟ هل عندك شبكة دعم قوية؟ كل هالأسئلة لازم تنحل قبل ما يجي المولود.</p>
+    <p>الكاتبة تنصح بإنشاء "خطة ما بعد الولادة" زي ما الناس يسوون خطة ولادة. تحدد فيها من يساعدك، وجبات مجمدة جاهزة، أرقام طوارئ، وحتى قائمة بالناس اللي تقدر تتصل عليهم لما تحتاج دعم.</p>
+
+    <div class="quote-block">
+      "ما ننتظر لين السيل يجي عشان نبني السد. التحضير المبكر هو أفضل هدية تقدمها لنفسك ولطفلك."
+      <span class="quote-author">— كيمبرلي آن جونسون</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>ابدأ بتجهيز خطة ما بعد الولادة من الحين. حدد شبكة الدعم، جهز وجبات مسبقة، ورتب كل التفاصيل العملية قبل ما تحتاجها.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 2 -->
+  <article class="chapter" id="ch2">
+    <div class="chapter-header">
+      <div class="ch-number">02</div>
+      <h2>التعافي من الولادة <small>Birth Recovery</small></h2>
+    </div>
+    <span class="section-label">وش شكل التعافي الجسدي الحقيقي</span>
+    <p>الناس يتخيلون إن بعد الولادة بكم يوم كل شي يرجع طبيعي. الحقيقة إن التعافي الجسدي ياخذ أسابيع وأشهر. الكاتبة تشرح بصراحة وش يصير للجسم وكيف يتعافى - سواء كانت ولادة طبيعية أو قيصرية.</p>
+    <p>في الأسبوعين الأولين، الأولوية هي الراحة والتعافي. الجسم يمر بتغيرات هرمونية ضخمة، والرحم يرجع لحجمه الطبيعي، والجروح تلتئم. هالفترة مو وقت إنك "ترجع لحياتك الطبيعية" - هالوقت للشفاء.</p>
+    <p>الكاتبة تنتقد ثقافة "الرجوع السريع" اللي تضغط على الأمهات يرجعون لشكلهم وحياتهم بسرعة. التعافي الحقيقي يحتاج صبر واحترام لجسمك ووقته.</p>
+
+    <div class="quote-block">
+      "جسمك سوى شي خارق. أقل شي تقدم له هو الوقت والراحة اللي يحتاجها عشان يتعافى."
+      <span class="quote-author">— كيمبرلي آن جونسون</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>التعافي من الولادة ياخذ وقت أطول مما تتوقع. خطط لفترة راحة حقيقية ولا تضغط على نفسك ترجع بسرعة.</p>
+    </div>
+
+    <div class="insight-box">
+      <span class="label">💡 معلومة مهمة</span>
+      <p>الأسبوع الأول بعد الولادة سميه "أسبوع السرير" - حرفيًا. لا تقوم إلا للضرورة. كل اللي تحتاجه يكون بجنبك: ماء، أكل، مناديل، والمولود.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 3 -->
+  <article class="chapter" id="ch3">
+    <div class="chapter-header">
+      <div class="ch-number">03</div>
+      <h2>تغيرات الجسم <small>Body Changes</small></h2>
+    </div>
+    <span class="section-label">فهم جسم ما بعد الولادة</span>
+    <p>الجسم بعد الولادة مختلف عن قبل الحمل - وهالشي طبيعي تمامًا. الكاتبة تشرح التغيرات اللي تصير: تغيرات في عضلات البطن والحوض، تغيرات في الثدي، تغيرات في الهرمونات، وحتى تغيرات في القدمين والشعر.</p>
+    <p>انفراق عضلات البطن (Diastasis Recti) شي شائع وما لازم تخاف منه. الكاتبة تشرح تمارين بسيطة تساعد العضلات ترجع، ومتى تحتاج تشوف أخصائي علاج طبيعي.</p>
+    <p>قاع الحوض من أهم المناطق اللي تحتاج اهتمام بعد الولادة. الكاتبة تؤكد على أهمية تمارين كيجل وعلاج قاع الحوض لمنع مشاكل مستقبلية.</p>
+
+    <div class="quote-block">
+      "جسمك بنى إنسان كامل بداخله. التغيرات اللي تشوفها هي شهادة على هالإنجاز العظيم."
+      <span class="quote-author">— كيمبرلي آن جونسون</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>تغيرات الجسم بعد الولادة طبيعية ومتوقعة. تعرف عليها من الحين عشان ما تفاجئك، واعرف إن أغلبها يتحسن مع الوقت والعناية المناسبة.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 4 -->
+  <article class="chapter" id="ch4">
+    <div class="chapter-header">
+      <div class="ch-number">04</div>
+      <h2>التغذية بعد الولادة <small>Postpartum Nutrition</small></h2>
+    </div>
+    <span class="section-label">أطعمة الشفاء وأنماط الأكل</span>
+    <p>التغذية بعد الولادة مهمة جدًا للتعافي وللرضاعة. الكاتبة تركز على الأطعمة "الدافئة والمغذية" - شوربات، يخنات، أطعمة مطبوخة ببطء. هالأطعمة سهلة الهضم ومليانة بالعناصر اللي الجسم يحتاجها.</p>
+    <p>فكرة "الأطعمة الدافئة" مأخوذة من ثقافات كثيرة حول العالم. في الثقافة العربية عندنا شوربة العدس والمرق والطبخ الدافئ - وهالأشياء فعلاً هي اللي يحتاجها الجسم بعد الولادة.</p>
+
+    <div class="quote-block">
+      "التغذية بعد الولادة مو رفاهية - هي ضرورة للشفاء. جسمك يحتاج وقود عشان يرمم نفسه."
+      <span class="quote-author">— كيمبرلي آن جونسون</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>جهز وجبات مغذية ودافئة (شوربات، يخنات، عصائد) وجمدها قبل الولادة. لما تحتاجها تكون جاهزة بدون ما تتعب في الطبخ.</p>
+    </div>
+
+    <div class="insight-box">
+      <span class="label">💡 معلومة مهمة</span>
+      <p>ابدأ من الحين بتجميد وجبات. كل ما طبخت شي زيادة، حط الزيادة في علبة وجمدها. بحلول الولادة يكون عندك مخزون كافي.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 5 -->
+  <article class="chapter" id="ch5">
+    <div class="chapter-header">
+      <div class="ch-number">05</div>
+      <h2>الدعم العاطفي <small>Emotional Support</small></h2>
+    </div>
+    <span class="section-label">الصحة النفسية بعد الولادة</span>
+    <p>اكتئاب ما بعد الولادة حقيقي ومنتشر أكثر مما نتخيل. الكاتبة تقول إن 1 من كل 5 أمهات يمر بشكل من أشكال اضطراب المزاج بعد الولادة. المشكلة إن كثير منهم ما يطلبون مساعدة لأنهم يحسون بالعيب.</p>
+    <p>"كآبة النفاس" (Baby Blues) شي طبيعي في أول أسبوعين ويروح لحاله. لكن لو المشاعر السلبية استمرت أكثر من أسبوعين أو زادت حدتها، لازم تراجع متخصص. مو عيب - هالشي طبي ويحتاج علاج.</p>
+    <p>التحضير النفسي المبكر يساعد كثير. لما تعرف وش تتوقع وعندك خطة جاهزة، تقدر تتعامل مع المشاعر الصعبة بشكل أفضل وتعرف متى تطلب مساعدة.</p>
+
+    <div class="quote-block">
+      "طلب المساعدة مو ضعف. هو أقوى شي ممكن تسويه لنفسك ولطفلك."
+      <span class="quote-author">— كيمبرلي آن جونسون</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>اعرف الفرق بين كآبة النفاس الطبيعية واكتئاب ما بعد الولادة. جهز أرقام أخصائيين نفسيين من الحين عشان لو احتجت ما تضيع وقت بالبحث.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 6 -->
+  <article class="chapter" id="ch6">
+    <div class="chapter-header">
+      <div class="ch-number">06</div>
+      <h2>دور الشريك <small>Partner's Role</small></h2>
+    </div>
+    <span class="section-label">كيف الشريك يقدر يساعد فعلاً</span>
+    <p>دور الشريك بعد الولادة كبير ومهم. الكاتبة تشرح إن الشريك المثالي مو اللي يمسك البيبي بس - هو اللي يتحمل مسؤولية البيت والطبخ والتنظيف ويخلي الأم تركز على التعافي والرضاعة.</p>
+    <p>الشريك أيضًا يمر بتغيرات عاطفية كبيرة. مشاعر الخوف والمسؤولية والإحساس بالإهمال أحيانًا كلها طبيعية. الكتاب يعطي نصائح للشريكين كيف يتواصلون بفعالية في هالفترة الحساسة.</p>
+
+    <div class="quote-block">
+      "أفضل شي يقدمه الشريك مو الكلام - هو الأفعال. اغسل الأطباق، اطبخ الأكل، خلها ترتاح."
+      <span class="quote-author">— كيمبرلي آن جونسون</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>اتفقوا كزوجين من الحين على توزيع المهام بعد الولادة. الشريك يتحمل البيت والأم تتحمل الرضاعة والتعافي. فريق واحد بأدوار واضحة.</p>
+    </div>
+
+    <div class="insight-box">
+      <span class="label">💡 معلومة مهمة</span>
+      <p>الشريك يقدر يجهز "صندوق طوارئ" فيه كل اللي تحتاجه الأم: وجبات خفيفة، ماء، مناديل، شاحن جوال، كتاب - كل شي في متناول اليد.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 7 -->
+  <article class="chapter" id="ch7">
+    <div class="chapter-header">
+      <div class="ch-number">07</div>
+      <h2>الوضع الطبيعي الجديد <small>The New Normal</small></h2>
+    </div>
+    <span class="section-label">التأقلم مع الحياة مع المولود</span>
+    <p>الحياة بعد المولود مختلفة - مو أسوأ ولا أحسن، بس مختلفة. الكاتبة تشرح إن محاولة الرجوع لـ"الحياة الطبيعية القديمة" مستحيلة ومحبطة. الأفضل هو بناء حياة طبيعية جديدة.</p>
+    <p>النوم رح يتغير، الروتين رح يتغير، العلاقات رح تتغير. وكل هالتغييرات فيها تحديات بس أيضًا فيها جمال. لما تتقبل التغيير بدل ما تقاومه، كل شي يصير أسهل.</p>
+    <p>الكاتبة تنصح بالتركيز على اللحظة الحالية بدل ما تفكر في المستقبل. كل مرحلة تمر - المرحلة الصعبة تمر والمرحلة الحلوة تمر. استمتع بكل لحظة وهي موجودة.</p>
+
+    <div class="quote-block">
+      "ما في رجوع للوراء - في بس تقدم للأمام. والأمام جميل لو سمحت لنفسك تشوفه."
+      <span class="quote-author">— كيمبرلي آن جونسون</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>تقبل إن حياتك رح تتغير بشكل كبير وهالشي طبيعي. بدل ما تحاول ترجع لحياتك القديمة، ابنِ حياة جديدة تناسب وضعك الجديد.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Action Plan -->
+  <section class="action-plan">
+    <h2>🎯 خطة العمل</h2>
+    <div class="action-item">
+      <div class="action-num">1</div>
+      <div class="action-text">اكتب "خطة ما بعد الولادة" تشمل: من يساعدك، جدول الزيارات، أرقام الطوارئ، ومواعيد المراجعات.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">2</div>
+      <div class="action-text">ابدأ بتجميد وجبات مغذية من الحين - استهدف 30 وجبة على الأقل جاهزة قبل الولادة.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">3</div>
+      <div class="action-text">ابحث عن أخصائي علاج طبيعي لقاع الحوض في منطقتك واحفظ رقمه من الحين.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">4</div>
+      <div class="action-text">اتفق مع شريكك على توزيع المهام المنزلية بعد الولادة وحدد مسؤوليات واضحة لكل شخص.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">5</div>
+      <div class="action-text">جهز قائمة بأرقام أخصائيين نفسيين متخصصين في فترة ما بعد الولادة في حال احتجت دعم.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">6</div>
+      <div class="action-text">جهز "صندوق الأم" بجانب السرير فيه كل اللي تحتاجه: وجبات خفيفة، ماء، مناديل، وأغراض البيبي الأساسية.</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="book-title">الفصل الرابع - The Fourth Trimester</div>
+    <p>تأليف: كيمبرلي آن جونسون | Kimberly Ann Johnson</p>
+    <p>هذا ملخص للكتاب وليس بديلاً عن قراءته كاملاً. استشيري طبيبتك للحصول على نصائح شخصية مناسبة لوضعك.</p>
+  </footer>
+
+</div>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الخصوبة المُمكّنة - ملخص شامل | كلير هول وديفورا ليبرمان</title>
+<link rel="stylesheet" href="../css/reader.css">
+<style>
+  @import url('../css/fonts.css');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+  body { font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif; background-color: #1a1a2e; color: #e0e0e0; line-height: 1.9; direction: rtl; text-align: right; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #16213e; }
+  ::-webkit-scrollbar-thumb { background: #2196f3; border-radius: 4px; }
+  .hero { background: linear-gradient(135deg, #0a2a4a 0%, #1a1a2e 50%, #16213e 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; border-bottom: 3px solid #2196f3; }
+  .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 50%, rgba(33,150,243,0.08) 0%, transparent 50%); animation: heroGlow 15s ease-in-out infinite alternate; }
+  @keyframes heroGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(10deg); } }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero .book-icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+  .hero h1 { font-size: 2.8rem; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
+  .hero .subtitle { font-size: 1.3rem; color: #2196f3; font-weight: 700; margin-bottom: 8px; }
+  .hero .author { font-size: 1.1rem; color: #a0a0b0; margin-bottom: 25px; }
+  .hero .meta-info { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; font-size: 0.9rem; color: #8888a0; }
+  .hero .meta-info span { background: rgba(33,150,243,0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid rgba(33,150,243,0.2); }
+  .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+  .problem-section { background: linear-gradient(135deg, rgba(33,150,243,0.05) 0%, rgba(22,33,62,0.5) 100%); border: 1px solid rgba(33,150,243,0.15); border-radius: 16px; padding: 35px; margin-bottom: 40px; }
+  .problem-section h2 { color: #2196f3; font-size: 1.5rem; margin-bottom: 20px; text-align: center; }
+  .problem-section ul { list-style: none; padding: 0; }
+  .problem-section ul li { padding: 10px 0; padding-right: 30px; position: relative; border-bottom: 1px solid rgba(33,150,243,0.08); }
+  .problem-section ul li::before { content: '🔹'; position: absolute; right: 0; top: 10px; }
+  .toc { background: #16213e; border-radius: 16px; padding: 30px; margin-bottom: 40px; border: 1px solid rgba(33,150,243,0.1); }
+  .toc h2 { color: #2196f3; font-size: 1.4rem; margin-bottom: 20px; text-align: center; }
+  .toc ul { list-style: none; padding: 0; }
+  .toc ul li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .toc ul li a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; }
+  .toc ul li a:hover { color: #2196f3; }
+  .toc ul li .ch-num { color: #2196f3; font-weight: 700; margin-left: 8px; }
+  .chapter { background: rgba(22,33,62,0.4); border-radius: 16px; padding: 35px; margin-bottom: 35px; border: 1px solid rgba(33,150,243,0.08); transition: border-color 0.3s; }
+  .chapter:hover { border-color: rgba(33,150,243,0.25); }
+  .chapter-header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 2px solid rgba(33,150,243,0.15); }
+  .chapter-header .ch-number { background: linear-gradient(135deg, #2196f3, #0a2a4a); color: white; width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; flex-shrink: 0; }
+  .chapter-header h2 { font-size: 1.4rem; color: #ffffff; }
+  .chapter-header h2 small { display: block; font-size: 0.8rem; color: #2196f3; font-weight: 400; margin-top: 4px; }
+  .section-label { color: #2196f3; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: block; }
+  .chapter p { margin-bottom: 16px; color: #c8c8d8; font-size: 1.05rem; }
+  .quote-block { background: linear-gradient(135deg, rgba(33,150,243,0.1), rgba(33,150,243,0.03)); border-right: 4px solid #2196f3; padding: 20px 25px; margin: 25px 0; border-radius: 0 12px 12px 0; font-style: italic; color: #d0d0e0; }
+  .quote-block .quote-author { display: block; margin-top: 8px; font-style: normal; color: #2196f3; font-size: 0.9rem; }
+  .lesson-box { background: rgba(33,150,243,0.08); border: 1px solid rgba(33,150,243,0.2); border-radius: 12px; padding: 20px; margin: 20px 0; }
+  .lesson-box .label { color: #2196f3; font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; display: block; }
+  .lesson-box p { color: #c8c8d8; margin: 0; }
+  .insight-box { background: rgba(255,255,255,0.03); border: 1px dashed rgba(33,150,243,0.3); border-radius: 12px; padding: 20px; margin: 20px 0; }
+  .insight-box .label { color: #2196f3; font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; display: block; }
+  .insight-box p { color: #b0b0c0; margin: 0; }
+  .back-top { text-align: center; margin-top: 20px; }
+  .back-top a { color: #2196f3; text-decoration: none; font-size: 0.9rem; }
+  .action-plan { background: linear-gradient(135deg, rgba(233,69,96,0.08), rgba(22,33,62,0.5)); border: 1px solid rgba(233,69,96,0.2); border-radius: 16px; padding: 35px; margin-bottom: 40px; }
+  .action-plan h2 { color: #e94560; font-size: 1.5rem; margin-bottom: 25px; text-align: center; }
+  .action-plan .action-item { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 18px; }
+  .action-plan .action-num { background: #e94560; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+  .action-plan .action-text { color: #c8c8d8; font-size: 1rem; line-height: 1.7; }
+  .footer { text-align: center; padding: 40px 20px; border-top: 1px solid rgba(33,150,243,0.1); margin-top: 40px; color: #666680; font-size: 0.85rem; }
+  .footer .book-title { color: #2196f3; font-weight: 700; font-size: 1rem; margin-bottom: 5px; }
+  .intro-section { background: rgba(33,150,243,0.04); border-radius: 16px; padding: 35px; margin-bottom: 35px; border: 1px solid rgba(33,150,243,0.1); }
+  .intro-section h2 { color: #2196f3; margin-bottom: 15px; }
+  .intro-section p { color: #c8c8d8; font-size: 1.05rem; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="book-icon">✨</span>
+    <h1>الخصوبة المُمكّنة</h1>
+    <p class="subtitle">Empowered Fertility</p>
+    <p class="author">تأليف: كلير هول وديفورا ليبرمان | Claire Hall & Dr. Devora Lieberman</p>
+    <div class="meta-info">
+      <span>📖 ملخص شامل</span>
+      <span>⏱️ 25 دقيقة قراءة</span>
+      <span>✨ تمكين نفسي وعلمي</span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+  <section class="problem-section">
+    <h2>ليش هالكتاب مهم؟</h2>
+    <ul>
+      <li>رحلة الخصوبة مو بس جسدية - الجانب النفسي والعاطفي يأثر بشكل كبير وكثير ناس يتجاهلونه</li>
+      <li>الكتاب يجمع بين خبرة طبيب خصوبة وأخصائية نفسية عشان يعطيك صورة كاملة</li>
+      <li>كثير أزواج يحسون بالوحدة في رحلتهم ويحتاجون دليل عملي يمشون عليه خطوة بخطوة</li>
+      <li>التمكين والمعرفة يقللون القلق ويعطونك إحساس بالسيطرة على رحلتك</li>
+    </ul>
+  </section>
+
+  <nav class="toc">
+    <h2>فهرس الملخص</h2>
+    <ul>
+      <li><a href="#ch1"><span class="ch-num">01</span> فهم رحلة الخصوبة</a></li>
+      <li><a href="#ch2"><span class="ch-num">02</span> الجانب العاطفي</a></li>
+      <li><a href="#ch3"><span class="ch-num">03</span> الجوانب الطبية</a></li>
+      <li><a href="#ch4"><span class="ch-num">04</span> دعم الشريك</a></li>
+      <li><a href="#ch5"><span class="ch-num">05</span> الصحة النفسية</a></li>
+      <li><a href="#ch6"><span class="ch-num">06</span> الدليل العملي</a></li>
+      <li><a href="#ch7"><span class="ch-num">07</span> التمكين والقوة</a></li>
+    </ul>
+  </nav>
+
+  <section class="intro-section">
+    <h2>مقدمة</h2>
+    <p>كتاب "الخصوبة المُمكّنة" من الكتب اللي تشوف رحلة الحمل من زاوية مختلفة. مو بس عن التحاليل والأدوية - هو عن الإنسان اللي يمر بهالرحلة بكل مشاعره ومخاوفه وآماله.</p>
+    <p>كلير هول كأخصائية نفسية والدكتورة ديفورا ليبرمان كطبيبة خصوبة اتحدوا عشان يعطوك دليل متكامل يغطي كل شي - من العلم للمشاعر، ومن الخطوات العملية للدعم النفسي.</p>
+  </section>
+
+  <!-- Chapter 1 -->
+  <article class="chapter" id="ch1">
+    <div class="chapter-header">
+      <div class="ch-number">01</div>
+      <h2>فهم رحلة الخصوبة <small>Understanding the Fertility Journey</small></h2>
+    </div>
+    <span class="section-label">وش تتوقع جسديًا وعاطفيًا</span>
+    <p>أول شي لازم تفهمه إن رحلة الخصوبة مو خط مستقيم. في صعود ونزول، أمل وإحباط، وهالشي طبيعي جدًا. المؤلفات يشرحون إن فهم هالشي من البداية يخليك أقوى وأكثر استعدادًا.</p>
+    <p>كثير ناس يدخلون الرحلة بتوقعات إن الحمل لازم يصير بسرعة. الحقيقة إن حتى الأزواج الأصحاء ممكن ياخذ عندهم وقت. فهم الجدول الزمني الطبيعي يقلل القلق ويعطيك صبر.</p>
+    <p>الكتاب يقسم الرحلة لمراحل واضحة: التحضير، المحاولة، التقييم، والتدخل إذا لزم. كل مرحلة لها تحدياتها ومشاعرها الخاصة، وفهمها مسبقًا يخليك مستعد لها.</p>
+
+    <div class="quote-block">
+      "المعرفة تحرر. لما تفهم وش يصير في جسمك ونفسيتك، تقدر تتعامل مع كل شي بثقة أكبر."
+      <span class="quote-author">— كلير هول</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>رحلة الخصوبة لها مراحل طبيعية فيها صعود ونزول. فهم هالمراحل من البداية يخليك أقوى ويقلل المفاجآت العاطفية.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 2 -->
+  <article class="chapter" id="ch2">
+    <div class="chapter-header">
+      <div class="ch-number">02</div>
+      <h2>الجانب العاطفي <small>The Emotional Side</small></h2>
+    </div>
+    <span class="section-label">التعامل مع الحزن والأمل وعدم اليقين</span>
+    <p>هالفصل من أقوى فصول الكتاب. كلير هول تتكلم بصراحة عن المشاعر اللي يمر فيها اللي يحاولون الحمل: الأمل اللي يجي كل شهر، والإحباط لما ما تنجح المحاولة، والحسد أحيانًا لما تشوف غيرك يحمل بسهولة.</p>
+    <p>الكتاب يعلمك إن كل هالمشاعر طبيعية ومو شي تستحي منه. الغضب طبيعي، الحزن طبيعي، حتى الشعور بالذنب لما تحس بالحسد طبيعي. المهم كيف تتعامل مع هالمشاعر.</p>
+    <p>أحد أهم الأشياء اللي يذكرها الكتاب هي فكرة "الحداد المتجدد" - كل شهر تمر بدورة كاملة من الأمل ثم الخسارة. وهالشي يستنزف طاقتك النفسية بشكل كبير لو ما كان عندك أدوات للتعامل.</p>
+
+    <div class="quote-block">
+      "مشاعرك صحيحة مهما كانت. ما في مشاعر غلط في رحلة الخصوبة - في بس مشاعر تحتاج اهتمام."
+      <span class="quote-author">— كلير هول</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>كل المشاعر اللي تمر فيها طبيعية ومشروعة. الخطوة الأولى للتعامل معاها هي إنك تعترف فيها وتعطيها مساحة بدون ما تحكم على نفسك.</p>
+    </div>
+
+    <div class="insight-box">
+      <span class="label">💡 معلومة مهمة</span>
+      <p>لو حسيت إن المشاعر بدأت تأثر على حياتك اليومية بشكل كبير، لا تتردد تطلب مساعدة من أخصائي نفسي. هالشي مو ضعف - هالشي قوة.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 3 -->
+  <article class="chapter" id="ch3">
+    <div class="chapter-header">
+      <div class="ch-number">03</div>
+      <h2>الجوانب الطبية <small>Medical Aspects</small></h2>
+    </div>
+    <span class="section-label">الفحوصات والعلاجات والخيارات</span>
+    <p>الدكتورة ديفورا تشرح الجوانب الطبية بطريقة سهلة وواضحة. من أول الفحوصات الأساسية (تحاليل الهرمونات، فحص الرحم، تحليل السائل المنوي) لين العلاجات المتقدمة زي التلقيح الصناعي وأطفال الأنابيب.</p>
+    <p>الكتاب يساعدك تفهم متى تحتاج تراجع طبيب - عادةً بعد سنة من المحاولة لو عمرك أقل من 35، أو بعد 6 أشهر لو عمرك أكثر. بس في حالات لازم تراجع من البداية زي لو عندك دورة غير منتظمة.</p>
+
+    <div class="quote-block">
+      "الطب تطور كثير في مجال الخصوبة. في خيارات كثيرة متاحة اليوم ما كانت موجودة قبل عشر سنين."
+      <span class="quote-author">— د. ديفورا ليبرمان</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>اعرف الفحوصات الأساسية والجداول الزمنية الطبية عشان تقدر تاخذ قرارات مبنية على معرفة مو على خوف.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 4 -->
+  <article class="chapter" id="ch4">
+    <div class="chapter-header">
+      <div class="ch-number">04</div>
+      <h2>دعم الشريك <small>Partner Support</small></h2>
+    </div>
+    <span class="section-label">كيف تمرون بالرحلة كزوجين</span>
+    <p>رحلة الخصوبة تأثر على العلاقة بشكل كبير. الكتاب يتكلم بصراحة عن التحديات: الضغط على العلاقة الحميمية لما تصير "مجدولة"، اختلاف طريقة التعامل مع المشاعر بين الزوجين، والشعور بالذنب أو اللوم.</p>
+    <p>أحد أكبر التحديات إن كل شخص يتعامل مع الضغط بطريقة مختلفة. واحد ممكن يبي يتكلم كثير والثاني يبي وقت لحاله. الكتاب يشرح كيف تفهم طريقة شريكك وتحترمها حتى لو مختلفة عنك.</p>
+    <p>المؤلفات يقترحون تمارين عملية للتواصل: جلسات أسبوعية تتكلمون فيها عن مشاعركم بدون حكم، وقواعد واضحة لمتى تتكلمون عن الموضوع ومتى تاخذون استراحة.</p>
+
+    <div class="quote-block">
+      "أنتم فريق واحد. العدو مو بعضكم - العدو هو الموقف. لما تتذكرون هالشي، كل شي يتغير."
+      <span class="quote-author">— كلير هول</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>حافظوا على التواصل المفتوح كزوجين. خصصوا وقت تتكلمون فيه عن مشاعركم بدون حكم وتذكروا إنكم في نفس الفريق.</p>
+    </div>
+
+    <div class="insight-box">
+      <span class="label">💡 معلومة مهمة</span>
+      <p>خصصوا أوقات ممتعة مع بعض ما لها علاقة بموضوع الحمل. حافظوا على هويتكم كزوجين مو بس كأشخاص يحاولون الإنجاب.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 5 -->
+  <article class="chapter" id="ch5">
+    <div class="chapter-header">
+      <div class="ch-number">05</div>
+      <h2>الصحة النفسية <small>Mental Health</small></h2>
+    </div>
+    <span class="section-label">استراتيجيات التكيف والعناية بالنفس</span>
+    <p>هالفصل يعطيك أدوات عملية للحفاظ على صحتك النفسية. أول شي: التنفس العميق والتأمل مو كلام فاضي - الدراسات أثبتت إنهم يقللون هرمون الكورتيزول (هرمون التوتر) اللي يأثر فعليًا على الخصوبة.</p>
+    <p>الكتاب يتكلم عن أهمية وضع حدود صحية. مثلاً: حق لك ما تحضر حفلات استقبال مواليد لو تحس إنها تضرك نفسيًا. وحق لك تقول للناس "ما أبي أتكلم عن هالموضوع" لما يسألونك أسئلة شخصية.</p>
+
+    <div class="quote-block">
+      "العناية بنفسك مو أنانية. لما تكون بخير نفسيًا، جسمك يكون أفضل أيضًا."
+      <span class="quote-author">— كلير هول</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>صحتك النفسية أولوية مو رفاهية. تعلم تحط حدود صحية ومارس تقنيات الاسترخاء بشكل يومي.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 6 -->
+  <article class="chapter" id="ch6">
+    <div class="chapter-header">
+      <div class="ch-number">06</div>
+      <h2>الدليل العملي <small>Practical Guide</small></h2>
+    </div>
+    <span class="section-label">12 خطوة قابلة للتطبيق</span>
+    <p>هالفصل هو الجزء العملي من الكتاب. المؤلفات يعطونك 12 خطوة واضحة تقدر تبدأ فيها اليوم. من أهمها: اعمل ملف طبي كامل فيه كل تاريخك الصحي، تابع دورتك بدقة، وحدد أهدافك مع شريكك.</p>
+    <p>كل خطوة مشروحة بالتفصيل مع أمثلة عملية. مثلاً خطوة "تتبع الدورة" ما تعني بس تكتبين التاريخ - تعني تتابعين درجة الحرارة والإفرازات وأعراض التبويض عشان تفهمين جسمك بشكل أعمق.</p>
+    <p>الكتاب يعطيك أيضًا نماذج جاهزة: قائمة أسئلة تاخذها معك للدكتور، جدول متابعة للدورة، وخطة عمل شهرية تقدر تخصصها حسب وضعك.</p>
+
+    <div class="quote-block">
+      "الخطة الأفضل هي اللي تقدر تلتزم فيها. ما نبي كمال - نبي استمرارية."
+      <span class="quote-author">— د. ديفورا ليبرمان</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>خذ الـ12 خطوة وطبقهم واحدة واحدة. لا تحاول تسوي كل شي مرة وحدة. التقدم البطيء والثابت أفضل من الحماس اللي ينطفي بسرعة.</p>
+    </div>
+
+    <div class="insight-box">
+      <span class="label">💡 معلومة مهمة</span>
+      <p>حمّل تطبيق لتتبع الدورة واستخدمه بانتظام. البيانات اللي تجمعها مع الوقت تصير ذهبية لما تحتاج تراجع طبيب.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Chapter 7 -->
+  <article class="chapter" id="ch7">
+    <div class="chapter-header">
+      <div class="ch-number">07</div>
+      <h2>التمكين والقوة <small>Empowerment</small></h2>
+    </div>
+    <span class="section-label">بناء المرونة والأمل</span>
+    <p>الفصل الأخير يركز على القوة الداخلية. المؤلفات يذكرونك إنك أقوى مما تتخيل. الرحلة صعبة، بس كل يوم تمر فيه وأنت مستمر هو دليل على قوتك.</p>
+    <p>المرونة النفسية (Resilience) مو شي تولد فيه - هي مهارة تتعلمها. الكتاب يعطيك تمارين عملية لبناء هالمهارة: إعادة صياغة الأفكار السلبية، التركيز على اللي تقدر تتحكم فيه، والاحتفال بالخطوات الصغيرة.</p>
+    <p>الأمل مو سذاجة - الأمل هو قرار واعي إنك تؤمن بإمكانية النجاح مع الاعتراف بالصعوبات. الكتاب يعلمك كيف توازن بين الأمل والواقعية بطريقة صحية.</p>
+
+    <div class="quote-block">
+      "أنت لست رحلة الخصوبة. أنت إنسان كامل عنده حياة كاملة - والخصوبة جزء واحد بس منها."
+      <span class="quote-author">— كلير هول</span>
+    </div>
+
+    <div class="lesson-box">
+      <span class="label">📌 الدرس الأساسي</span>
+      <p>التمكين يبدأ بالمعرفة وينمو بالممارسة. أنت أقوى مما تتخيل، وكل خطوة صغيرة تاخذها هي انتصار يستحق الاحتفال.</p>
+    </div>
+    <div class="back-top"><a href="#top">↑ رجوع للأعلى</a></div>
+  </article>
+
+  <!-- Action Plan -->
+  <section class="action-plan">
+    <h2>🎯 خطة العمل</h2>
+    <div class="action-item">
+      <div class="action-num">1</div>
+      <div class="action-text">اجلس مع شريكك واتكلموا بصراحة عن مشاعركم ومخاوفكم وتوقعاتكم من رحلة الخصوبة.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">2</div>
+      <div class="action-text">ابدأ بتتبع دورتك بشكل مفصل (درجة حرارة، أعراض، إفرازات) لمدة 3 أشهر على الأقل.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">3</div>
+      <div class="action-text">حدد حدود صحية مع الأهل والأصدقاء بخصوص الأسئلة الشخصية عن الإنجاب.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">4</div>
+      <div class="action-text">مارس تمرين التنفس العميق أو التأمل لمدة 10 دقائق يوميًا لتخفيف التوتر.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">5</div>
+      <div class="action-text">جهز ملف طبي شامل فيه تاريخك الصحي وقائمة أسئلة للدكتور للموعد القادم.</div>
+    </div>
+    <div class="action-item">
+      <div class="action-num">6</div>
+      <div class="action-text">خصص وقت أسبوعي ممتع مع شريكك ما له علاقة بموضوع الحمل - حافظوا على علاقتكم.</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="book-title">الخصوبة المُمكّنة - Empowered Fertility</div>
+    <p>تأليف: كلير هول وديفورا ليبرمان | Claire Hall & Dr. Devora Lieberman</p>
+    <p>هذا ملخص للكتاب وليس بديلاً عن قراءته كاملاً. استشر طبيبك وأخصائيك النفسي للحصول على مساعدة شخصية.</p>
+  </footer>
+
+</div>
+
+<script src="../js/book-reader.js"></script>
+</body>
+</html>
