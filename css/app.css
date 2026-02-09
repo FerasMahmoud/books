@@ -819,6 +819,7 @@ textarea:focus {
   z-index: 1001;
   display: flex;
   align-items: center;
+  transition: transform 0.3s ease;
   gap: 12px;
 }
 
@@ -851,15 +852,13 @@ textarea:focus {
   gap: 8px;
 }
 
-/* Reader Progress Bar */
-.reader-progress-bar {
-  position: fixed;
-  top: calc(env(safe-area-inset-top) + 56px);
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--border);
-  z-index: 1001;
+/* Reader auto-hide on scroll down */
+.reader-header.reader-hidden {
+  transform: translateY(-100%);
+}
+
+.reader-progress-container.reader-hidden {
+  transform: translateY(calc(-100% - 60px));
 }
 
 .reader-progress-fill {
@@ -2772,6 +2771,7 @@ textarea:focus {
   height: 3px;
   background: var(--border);
   z-index: 1001;
+  transition: transform 0.3s ease;
 }
 
 .reader-progress-bar {

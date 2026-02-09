@@ -562,6 +562,12 @@
     currentBookPath = bookPath;
     switchView('reader');
 
+    // Reset header visibility
+    const header = document.querySelector('.reader-header');
+    const progress = document.querySelector('.reader-progress-container');
+    if (header) header.classList.remove('reader-hidden');
+    if (progress) progress.classList.remove('reader-hidden');
+
     const frame = document.getElementById('book-frame');
     if (frame) {
       frame.src = bookPath;
@@ -732,6 +738,32 @@
         if (currentBookPath) {
           await DB.markCompleted(currentBookPath);
           showCelebration();
+        }
+        break;
+
+      case 'HIGHLIGHT_REMOVED':
+        if (currentBookPath && data.text) {
+          // Find and delete the highlight from DB by matching text + bookPath
+          const allHighlights = await DB.getHighlights(currentBookPath);
+          const match = allHighlights.find((h) => h.text === data.text);
+          if (match) {
+            await DB.deleteHighlight(match.id);
+          }
+          showToast('\u062A\u0645 \u0625\u0632\u0627\u0644\u0629 \u0627\u0644\u062A\u0638\u0644\u064A\u0644');
+        }
+        break;
+
+      case 'SCROLL_DIRECTION':
+        {
+          const header = document.querySelector('.reader-header');
+          const progress = document.querySelector('.reader-progress-container');
+          if (data.direction === 'down') {
+            if (header) header.classList.add('reader-hidden');
+            if (progress) progress.classList.add('reader-hidden');
+          } else {
+            if (header) header.classList.remove('reader-hidden');
+            if (progress) progress.classList.remove('reader-hidden');
+          }
         }
         break;
 

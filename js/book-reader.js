@@ -14,6 +14,8 @@
     };
     let isReadingComplete = false;
     let lastScrollUpdate = 0;
+    let lastScrollTop = 0;
+    let scrollDirection = 'up';
     const SCROLL_THROTTLE = 500; // ms
 
     // UI Elements (created dynamically)
@@ -78,7 +80,23 @@
 
     // === Scroll Tracking ===
     function setupScrollTracking() {
+        // Throttled for progress saving (500ms)
         window.addEventListener('scroll', throttle(handleScroll, SCROLL_THROTTLE), { passive: true });
+        // Fast listener for scroll direction (hide/show bars)
+        window.addEventListener('scroll', handleScrollDirection, { passive: true });
+    }
+
+    function handleScrollDirection() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const delta = scrollTop - lastScrollTop;
+        if (Math.abs(delta) > 8) {
+            const newDir = delta > 0 ? 'down' : 'up';
+            if (newDir !== scrollDirection) {
+                scrollDirection = newDir;
+                sendToParent({ type: 'SCROLL_DIRECTION', direction: scrollDirection });
+            }
+            lastScrollTop = scrollTop;
+        }
     }
 
     function handleScroll() {
@@ -162,10 +180,21 @@
         if (tapActionBar && tapActionBar.contains(e.target)) return;
         if (e.target.closest('.comment-indicator')) return;
         if (e.target.closest('.comment-popup')) return;
+        if (e.target.closest('.dehighlight-bar')) return;
 
         // Ignore if text is selected (let the selection popup handle it)
         const sel = window.getSelection();
         if (sel && !sel.isCollapsed && sel.toString().trim().length > 0) return;
+
+        // Check if tapping on a highlighted mark element
+        const markEl = e.target.closest('mark[class^="highlight-"]');
+        if (markEl) {
+            showDehighlightBar(markEl);
+            return;
+        }
+
+        // Hide dehighlight bar if tapping elsewhere
+        hideDehighlightBar();
 
         // Find the closest content element
         const el = e.target.closest('p, li, h1, h2, h3, h4, h5, h6, blockquote, td, th');
@@ -340,6 +369,110 @@
         if (tapTimeout) {
             clearTimeout(tapTimeout);
             tapTimeout = null;
+        }
+    }
+
+    // === De-highlight ===
+    let dehighlightBar = null;
+    let dehighlightTarget = null;
+
+    function showDehighlightBar(markEl) {
+        hideTapActionBar();
+        dehighlightTarget = markEl;
+
+        // Outline the highlight
+        markEl.style.outline = '2px solid #e94560';
+        markEl.style.outlineOffset = '2px';
+        markEl.style.borderRadius = '3px';
+
+        if (!dehighlightBar) {
+            dehighlightBar = document.createElement('div');
+            dehighlightBar.className = 'dehighlight-bar';
+            dehighlightBar.style.cssText = `
+                position: fixed;
+                bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+                left: 50%;
+                transform: translateX(-50%);
+                display: none;
+                gap: 8px;
+                padding: 10px 16px;
+                background: rgba(30, 30, 50, 0.95);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border-radius: 16px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+                z-index: 10002;
+                direction: rtl;
+                align-items: center;
+            `;
+
+            dehighlightBar.innerHTML = `
+                <button class="dehighlight-remove-btn" style="
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    font-family: inherit;
+                    font-weight: 600;
+                    background: rgba(233,69,96,0.25);
+                    color: #e94560;
+                    white-space: nowrap;
+                ">إزالة التظليل</button>
+                <button class="dehighlight-cancel-btn" style="
+                    padding: 10px 16px;
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    font-family: inherit;
+                    font-weight: 600;
+                    background: #2a2a40;
+                    color: #e0e0e0;
+                    white-space: nowrap;
+                ">إلغاء</button>
+            `;
+
+            document.body.appendChild(dehighlightBar);
+
+            dehighlightBar.querySelector('.dehighlight-remove-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (!dehighlightTarget) return;
+                const text = dehighlightTarget.textContent;
+                const parent = dehighlightTarget.parentNode;
+
+                // Unwrap: replace mark with its text content
+                const textNode = document.createTextNode(text);
+                parent.replaceChild(textNode, dehighlightTarget);
+                parent.normalize();
+
+                // Notify parent to delete from DB
+                sendToParent({
+                    type: 'HIGHLIGHT_REMOVED',
+                    text: text
+                });
+
+                hideDehighlightBar();
+            });
+
+            dehighlightBar.querySelector('.dehighlight-cancel-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                hideDehighlightBar();
+            });
+        }
+
+        dehighlightBar.style.display = 'flex';
+    }
+
+    function hideDehighlightBar() {
+        if (dehighlightBar) {
+            dehighlightBar.style.display = 'none';
+        }
+        if (dehighlightTarget) {
+            dehighlightTarget.style.removeProperty('outline');
+            dehighlightTarget.style.removeProperty('outline-offset');
+            dehighlightTarget.style.removeProperty('border-radius');
+            dehighlightTarget = null;
         }
     }
 

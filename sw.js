@@ -1,4 +1,4 @@
-const CACHE_NAME = 'books-library-v5';
+const CACHE_NAME = 'books-library-v6';
 
 // Files to pre-cache on install
 const PRECACHE_URLS = [
