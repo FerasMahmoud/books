@@ -1,4 +1,4 @@
-const CACHE_NAME = 'books-library-v1';
+const CACHE_NAME = 'books-library-v2';
 
 // Files to pre-cache on install
 const PRECACHE_URLS = [
@@ -6,6 +6,7 @@ const PRECACHE_URLS = [
   '/css/app.css',
   '/css/reader.css',
   '/js/db.js',
+  '/js/sync.js',
   '/js/app.js',
   '/js/book-reader.js',
   '/manifest.json',
@@ -98,6 +99,11 @@ self.addEventListener('fetch', (event) => {
 
   // Skip chrome-extension and other non-http(s) requests
   if (!request.url.startsWith('http')) {
+    return;
+  }
+
+  // Skip Turso API requests (cloud sync)
+  if (request.url.includes('turso.io')) {
     return;
   }
 

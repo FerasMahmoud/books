@@ -123,7 +123,13 @@
         const store = transaction.objectStore('reading_progress');
         const request = store.put(merged);
 
-        request.onsuccess = () => resolve();
+        request.onsuccess = () => {
+          // Cloud sync (fire-and-forget)
+          if (window.CloudSync) {
+            CloudSync.pushProgress(bookPath, merged);
+          }
+          resolve();
+        };
         request.onerror = () => reject(request.error);
       });
     } catch (error) {
@@ -199,14 +205,19 @@
           bookTitle: bookmark.bookTitle,
           scrollPercent: bookmark.scrollPercent,
           note: bookmark.note || '',
-          createdAt: Date.now()
+          createdAt: bookmark.createdAt || Date.now()
         };
 
         const transaction = db.transaction(['bookmarks'], 'readwrite');
         const store = transaction.objectStore('bookmarks');
         const request = store.add(data);
 
-        request.onsuccess = () => resolve(request.result);
+        request.onsuccess = () => {
+          if (window.CloudSync && !bookmark._fromSync) {
+            CloudSync.pushBookmark(data);
+          }
+          resolve(request.result);
+        };
         request.onerror = () => reject(request.error);
       });
     } catch (error) {
@@ -240,12 +251,26 @@
 
   async function deleteBookmark(id) {
     try {
+      // Get bookmark data before deleting (for cloud sync)
+      const bookmark = await new Promise((resolve) => {
+        const tx = db.transaction(['bookmarks'], 'readonly');
+        const s = tx.objectStore('bookmarks');
+        const r = s.get(id);
+        r.onsuccess = () => resolve(r.result);
+        r.onerror = () => resolve(null);
+      });
+
       return new Promise((resolve, reject) => {
         const transaction = db.transaction(['bookmarks'], 'readwrite');
         const store = transaction.objectStore('bookmarks');
         const request = store.delete(id);
 
-        request.onsuccess = () => resolve();
+        request.onsuccess = () => {
+          if (window.CloudSync && bookmark) {
+            CloudSync.deleteBookmarkCloud(bookmark.createdAt, bookmark.bookPath);
+          }
+          resolve();
+        };
         request.onerror = () => reject(request.error);
       });
     } catch (error) {
@@ -264,14 +289,19 @@
           text: highlight.text,
           color: highlight.color,
           elementSelector: highlight.elementSelector,
-          createdAt: Date.now()
+          createdAt: highlight.createdAt || Date.now()
         };
 
         const transaction = db.transaction(['highlights'], 'readwrite');
         const store = transaction.objectStore('highlights');
         const request = store.add(data);
 
-        request.onsuccess = () => resolve(request.result);
+        request.onsuccess = () => {
+          if (window.CloudSync && !highlight._fromSync) {
+            CloudSync.pushHighlight(data);
+          }
+          resolve(request.result);
+        };
         request.onerror = () => reject(request.error);
       });
     } catch (error) {
@@ -305,12 +335,26 @@
 
   async function deleteHighlight(id) {
     try {
+      // Get highlight data before deleting (for cloud sync)
+      const highlight = await new Promise((resolve) => {
+        const tx = db.transaction(['highlights'], 'readonly');
+        const s = tx.objectStore('highlights');
+        const r = s.get(id);
+        r.onsuccess = () => resolve(r.result);
+        r.onerror = () => resolve(null);
+      });
+
       return new Promise((resolve, reject) => {
         const transaction = db.transaction(['highlights'], 'readwrite');
         const store = transaction.objectStore('highlights');
         const request = store.delete(id);
 
-        request.onsuccess = () => resolve();
+        request.onsuccess = () => {
+          if (window.CloudSync && highlight) {
+            CloudSync.deleteHighlightCloud(highlight.createdAt, highlight.bookPath);
+          }
+          resolve();
+        };
         request.onerror = () => reject(request.error);
       });
     } catch (error) {
@@ -328,14 +372,19 @@
           bookTitle: comment.bookTitle,
           text: comment.text,
           elementSelector: comment.elementSelector,
-          createdAt: Date.now()
+          createdAt: comment.createdAt || Date.now()
         };
 
         const transaction = db.transaction(['comments'], 'readwrite');
         const store = transaction.objectStore('comments');
         const request = store.add(data);
 
-        request.onsuccess = () => resolve(request.result);
+        request.onsuccess = () => {
+          if (window.CloudSync && !comment._fromSync) {
+            CloudSync.pushComment(data);
+          }
+          resolve(request.result);
+        };
         request.onerror = () => reject(request.error);
       });
     } catch (error) {
@@ -369,12 +418,26 @@
 
   async function deleteComment(id) {
     try {
+      // Get comment data before deleting (for cloud sync)
+      const comment = await new Promise((resolve) => {
+        const tx = db.transaction(['comments'], 'readonly');
+        const s = tx.objectStore('comments');
+        const r = s.get(id);
+        r.onsuccess = () => resolve(r.result);
+        r.onerror = () => resolve(null);
+      });
+
       return new Promise((resolve, reject) => {
         const transaction = db.transaction(['comments'], 'readwrite');
         const store = transaction.objectStore('comments');
         const request = store.delete(id);
 
-        request.onsuccess = () => resolve();
+        request.onsuccess = () => {
+          if (window.CloudSync && comment) {
+            CloudSync.deleteCommentCloud(comment.createdAt, comment.bookPath);
+          }
+          resolve();
+        };
         request.onerror = () => reject(request.error);
       });
     } catch (error) {
@@ -528,7 +591,13 @@
         const store = transaction.objectStore('settings');
         const request = store.put({ key, value });
 
-        request.onsuccess = () => resolve();
+        request.onsuccess = () => {
+          // Sync important settings to cloud
+          if (window.CloudSync && ['theme', 'fontSize', 'fontFamily', 'zoom'].includes(key)) {
+            CloudSync.pushSetting(key, value);
+          }
+          resolve();
+        };
         request.onerror = () => reject(request.error);
       });
     } catch (error) {
