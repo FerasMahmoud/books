@@ -1,15 +1,33 @@
-const CACHE_NAME = 'books-library-v9';
+const CACHE_NAME = 'books-library-v10';
 
 // Files to pre-cache on install
 const PRECACHE_URLS = [
   '/books/',
   '/books/css/app.css',
   '/books/css/reader.css',
+  '/books/css/fonts.css',
   '/books/js/db.js',
   '/books/js/sync.js',
   '/books/js/app.js',
   '/books/js/book-reader.js',
   '/books/manifest.json',
+  '/books/icon-192.png',
+  '/books/icon-512.png',
+  // Self-hosted fonts (Tajawal)
+  '/books/fonts/tajawal-Iura6YBj_oCad4k1rzY.ttf',
+  '/books/fonts/tajawal-Iurf6YBj_oCad4k1l4qkLrY.ttf',
+  '/books/fonts/tajawal-Iurf6YBj_oCad4k1l5anLrY.ttf',
+  '/books/fonts/tajawal-Iurf6YBj_oCad4k1l5qjLrY.ttf',
+  '/books/fonts/tajawal-Iurf6YBj_oCad4k1l7KmLrY.ttf',
+  '/books/fonts/tajawal-Iurf6YBj_oCad4k1l8KiLrY.ttf',
+  // Self-hosted fonts (Noto Naskh Arabic)
+  '/books/fonts/notonaskharabic-RrQ5bpV-9Dd1b1OAGA6M9PkyDuVBePeKNaxcsss0Y7bwWslkrA.ttf',
+  '/books/fonts/notonaskharabic-RrQ5bpV-9Dd1b1OAGA6M9PkyDuVBePeKNaxcsss0Y7bwY8lkrA.ttf',
+  '/books/fonts/notonaskharabic-RrQ5bpV-9Dd1b1OAGA6M9PkyDuVBePeKNaxcsss0Y7bwj85krA.ttf',
+  '/books/fonts/notonaskharabic-RrQ5bpV-9Dd1b1OAGA6M9PkyDuVBePeKNaxcsss0Y7bwvc5krA.ttf',
+  // Self-hosted fonts (Amiri)
+  '/books/fonts/amiri-J7aRnpd8CGxBHqUp.ttf',
+  '/books/fonts/amiri-J7acnpd8CGxBHp2VkZY4.ttf',
   // Book HTML files - Productivity & Balance
   '/books/%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B2%D9%86/4-hour-workweek-summary.html',
   '/books/%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B2%D9%86/deep-work-summary.html',
@@ -30,8 +48,6 @@ const PRECACHE_URLS = [
   '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/when-breath-becomes-air-summary.html',
   '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/greenlights-summary.html',
   '/books/%D8%A7%D9%84%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9/caged-bird-sings-summary.html',
-  // Google Fonts
-  'https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap'
 ];
 
 // Install event - pre-cache all static assets
