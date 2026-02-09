@@ -234,10 +234,10 @@
       btnBookmark.addEventListener('click', () => addBookmarkAtCurrentPosition());
     }
 
-    // Reader highlight mode button
-    const btnHighlight = document.getElementById('btn-highlight-mode');
-    if (btnHighlight) {
-      btnHighlight.addEventListener('click', () => toggleHighlightMode());
+    // TOC button
+    const btnToc = document.getElementById('btn-toc');
+    if (btnToc) {
+      btnToc.addEventListener('click', () => showTableOfContents());
     }
 
     // Reader font settings button
@@ -488,9 +488,13 @@
       }, '*');
 
       frame.contentWindow.postMessage({
-        type: 'SET_FONT',
-        fontSize: currentFontSize,
-        fontFamily: currentFontFamily,
+        type: 'SET_FONT_SIZE',
+        size: currentFontSize,
+      }, '*');
+
+      frame.contentWindow.postMessage({
+        type: 'SET_FONT_FAMILY',
+        family: currentFontFamily,
       }, '*');
 
       frame.contentWindow.postMessage({
@@ -507,33 +511,21 @@
     if (!frame || !frame.contentWindow) return;
 
     try {
-      // Send saved scroll position
+      // Send all saved data via INIT message (single message, handles everything)
       const progress = await DB.getProgress(bookPath);
-      if (progress && progress.scrollPercent > 0) {
-        frame.contentWindow.postMessage({
-          type: 'RESTORE_POSITION',
-          scrollPercent: progress.scrollPercent,
-          scrollTop: progress.scrollTop,
-        }, '*');
-      }
-
-      // Send saved highlights
       const highlights = await DB.getHighlights(bookPath);
-      if (highlights.length > 0) {
-        frame.contentWindow.postMessage({
-          type: 'RESTORE_HIGHLIGHTS',
-          highlights,
-        }, '*');
-      }
-
-      // Send saved comments
       const comments = await DB.getComments(bookPath);
-      if (comments.length > 0) {
-        frame.contentWindow.postMessage({
-          type: 'RESTORE_COMMENTS',
-          comments,
-        }, '*');
-      }
+
+      frame.contentWindow.postMessage({
+        type: 'INIT',
+        theme: currentTheme,
+        fontSize: currentFontSize,
+        fontFamily: currentFontFamily,
+        zoom: currentZoom,
+        scrollPercent: progress ? progress.scrollPercent : 0,
+        highlights: highlights || [],
+        comments: comments || [],
+      }, '*');
     } catch (e) {
       console.warn('Failed to send saved data to iframe:', e);
     }
@@ -726,9 +718,12 @@
     if (frame && frame.contentWindow) {
       try {
         frame.contentWindow.postMessage({
-          type: 'SET_FONT',
-          fontSize: currentFontSize,
-          fontFamily: currentFontFamily,
+          type: 'SET_FONT_SIZE',
+          size: currentFontSize,
+        }, '*');
+        frame.contentWindow.postMessage({
+          type: 'SET_FONT_FAMILY',
+          family: currentFontFamily,
         }, '*');
       } catch (e) { /* cross-origin */ }
     }
@@ -749,6 +744,96 @@
         }, '*');
       } catch (e) { /* cross-origin */ }
     }
+  }
+
+  // ==================== TABLE OF CONTENTS ====================
+
+  function showTableOfContents() {
+    const frame = document.getElementById('book-frame');
+    if (!frame) return;
+
+    // Remove existing TOC panel
+    const existing = document.getElementById('toc-panel');
+    if (existing) {
+      existing.remove();
+      return;
+    }
+
+    let headings = [];
+    try {
+      const doc = frame.contentDocument || frame.contentWindow.document;
+      const els = doc.querySelectorAll('h1, h2, h3');
+      els.forEach((el, idx) => {
+        const text = el.textContent.trim();
+        if (text && text.length > 1) {
+          headings.push({
+            text,
+            tag: el.tagName.toLowerCase(),
+            index: idx,
+          });
+        }
+      });
+    } catch (e) {
+      console.warn('Cannot access iframe headings:', e);
+      return;
+    }
+
+    if (headings.length === 0) {
+      showToast('\u0644\u0627 \u064A\u0648\u062C\u062F \u0641\u0647\u0631\u0633');
+      return;
+    }
+
+    // Build TOC panel
+    const panel = document.createElement('div');
+    panel.id = 'toc-panel';
+    panel.className = 'toc-panel';
+    panel.innerHTML = `
+      <div class="toc-backdrop"></div>
+      <div class="toc-content">
+        <div class="toc-header">
+          <h3>\u0627\u0644\u0641\u0647\u0631\u0633</h3>
+          <button class="toc-close">\u2715</button>
+        </div>
+        <div class="toc-list">
+          ${headings.map((h, i) => `
+            <button class="toc-item toc-${h.tag}" data-heading-index="${h.index}">
+              ${h.text}
+            </button>
+          `).join('')}
+        </div>
+      </div>
+    `;
+
+    document.getElementById('view-reader').appendChild(panel);
+
+    // Animate in
+    requestAnimationFrame(() => panel.classList.add('visible'));
+
+    // Close handlers
+    panel.querySelector('.toc-backdrop').addEventListener('click', () => {
+      panel.classList.remove('visible');
+      setTimeout(() => panel.remove(), 300);
+    });
+    panel.querySelector('.toc-close').addEventListener('click', () => {
+      panel.classList.remove('visible');
+      setTimeout(() => panel.remove(), 300);
+    });
+
+    // Heading click handlers
+    panel.querySelectorAll('.toc-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        const idx = parseInt(item.getAttribute('data-heading-index'));
+        try {
+          const doc = frame.contentDocument || frame.contentWindow.document;
+          const allHeadings = doc.querySelectorAll('h1, h2, h3');
+          if (allHeadings[idx]) {
+            allHeadings[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        } catch (e) { /* ignore */ }
+        panel.classList.remove('visible');
+        setTimeout(() => panel.remove(), 300);
+      });
+    });
   }
 
   // ==================== READING TIMER ====================
