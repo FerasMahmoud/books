@@ -887,21 +887,12 @@ textarea:focus {
   transition: width 0.1s ease;
 }
 
-/* Book Frame - absolute positioning for reliable bottom coverage */
+/* Book Frame */
 #book-frame {
-  position: absolute;
-  top: calc(env(safe-area-inset-top) + 59px);
-  left: 0;
-  right: 0;
-  bottom: 0;
+  flex: 1;
   width: 100%;
   border: none;
   background: var(--bg-primary);
-  transition: top 0.3s ease;
-}
-
-#book-frame.immersive {
-  top: 0;
 }
 
 /* Reader Toolbar */
